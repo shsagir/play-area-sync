@@ -1,0 +1,70 @@
+---
+
+template:         article
+naviTitle:        SendGrid
+reviewed:         2016-02-23
+title:            Using SendGrid with fortrabbit
+
+group:            Extending_fortrabbit
+
+websiteLink:      https://sendgrid.com?utm_source=fortrabbit
+websiteLinkText:  sendgrid.com
+category:         transactional mail
+dataCenters:      n/a
+image:            sendgrid-mark.svg
+
+keywords:
+     - "transactional mail"
+
+tags:
+     - advanced
+
+---
+
+## About transactional mails
+
+OK, you want to send your "forgotten passsword link mail" from your App. Transactional e-mails are automated customer relationship messages triggered by user action. It's where marketing meets communications.
+
+Please mind that you can NOT use `sendmail` out of the box with fortrabbit — see our [quirks article](/quirks#toc-mailing). So you either use SMTP in combination with a classical mail provider or a transactional e-mail provider. They usually offer an API or simply SMTP interface. In our experience the API way should be preferred, as it is faster and more reliable.
+
+
+## About SendGrid
+
+SendGrid offers an e-mail delivery service that assists businesses with transactional e-mail management.
+
+
+## Pricing
+
+Like other e-mail services, you'll find two different pricing models:
+
+1. Fixed monthly subscriptions
+2. Pay as you go by volume
+3. There is also a free plan to get started
+
+
+## Booking & signing up
+
+Choose your desired plan to initiate the sign up. You'll first just need to choose a user name, tell them your email address and choose a password. Later on they want to know a little more about you. "Provisioning" your account includes human! checks.
+
+## Setting it up
+
+In order to get your mails through the SPAM filter of your users, you'll need to authorize the ownership of the domain you are using — think DNS modifications. fortrabbit is not envolved here. You do this with your domain or DNS provider of choice. This is done with DKIM ([SendGrid docs](https://sendgrid.com/docs/Glossary/dkim.html)) and SPF ([SendGrid docs](https://sendgrid.com/docs/Glossary/spf.html)).
+
+
+<!-- TODO: get more detailed here  -->
+
+## Using SendGrid with fortrabbit
+
+Once you have the setup done, you can finally start using SendGrid from your fortrabbit App. This is straight forward:
+
+The **SendGrid PHP library** [here on GitHub](https://github.com/sendgrid/sendgrid-php) can be required from your `Composer.json` like so:
+
+```
+{
+  "require": {
+    "sendgrid/sendgrid": "~4.0"
+  }
+}
+```
+
+To send e-mails via the API, you'll need to specify your SendGrid API key. We recommend to store this with your [App secrets](/secrets). There is also an [PHP SendGrid example on GitHub](https://github.com/sendgrid/sendgrid-php-example) which makes use of both, the API and the SMTP gateway.
