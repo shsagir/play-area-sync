@@ -22,6 +22,7 @@ tags:
   - advanced
   - profiling
   - performance
+  - testing
 
 seeAlsoLinks:
   - new-relic
@@ -30,7 +31,7 @@ seeAlsoLinks:
 
 ## About Blackfire
 
-Blackfire is a relatively new profiling service that can deeply look in your PHP web application. It helps you analyze your PHP code. It's made by [SensioLabs](https://sensiolabs.com/) — Créateur de Symfony.
+Blackfire empowers all developers and IT/Ops to continuously verify and improve their app’s performance, throughout its lifecycle, by getting the right information at the right moment. Relying on a cutting-edge profiling technology, Blackfire enables to write performance tests that can be run along your standard test suite. Better than that, it provides recommendations to help you improve the performance of your app.
 
 
 
