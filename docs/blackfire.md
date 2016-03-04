@@ -7,7 +7,7 @@ naviTitle:        Blackfire
 group:            Extending_fortrabbit
 group:            Extending_fortrabbit
 
-image:            blackfire-mark.png
+image:            blackfire-orig.png
 websiteLink:      https://blackfire.io?utm_source=fortrabbit
 websiteLinkText:  blackfire.io
 dataCenters:      n/a
