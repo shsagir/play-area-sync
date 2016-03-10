@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        Redis Cloud
-reviewed:         2016-02-23
+reviewed:         2016-03-10
 title:            Using Redis Cloud with fortrabbit
 
 group:            Extending_fortrabbit
@@ -69,15 +69,15 @@ REDIS_PASSWORD=your-password
 
 Now you can use Redis Cloud in general. To use Redis Cloud from your fortrabbit App you need to do two more things:
 
-## 1. Request a firewall whitelisting
+### 1. Request a firewall whitelisting
 
-By default all outgoing calls from your fortrabbit App are blocked for [security](security) reasons. But you can request the fortrabbit team to open up any port for you. That doesn't take long and isn't complicated.
+By default all outgoing calls to non-standard ports from your fortrabbit App are blocked for [security](security) reasons. But you can request the fortrabbit team to open up any port for you. That doesn't take long and isn't complicated.
 
-Login to the fortrabbit Dashboard, navigate to your App > Firewall whitelist and request a custom firewall rule. Write nothing under the optional IP field and insert the port you got from Redis Labs in the Port field. As descriptions we suggest "Redis Cloud on Redis Labs" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new Redis database!
+Login to the fortrabbit Dashboard, navigate to your App > Settings > Firewall whitelist and request a custom firewall rule. Write nothing under the optional IP field and insert the port you got from Redis Labs in the Port field. As descriptions we suggest "Redis Cloud on Redis Labs" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new Redis database!
 
-## 2. Enable the PHP extension
+### 2. Enable the PHP extension
 
-While you are logged in the Dashboard, navigate to your App > PHP Settings and enable the `redis` extension.
+While you are logged in the Dashboard, navigate to your App > Settings > PHP and enable the `redis` extension.
 
 
 ## Using Redis Cloud
