@@ -11,6 +11,7 @@ group:         Kitchen_sink
 seeAlsoLinks:
     - scaling
     - app
+    - about-profiling
 
 tags:
    - advanced
@@ -85,7 +86,7 @@ Web applications are usually fast after the launch, but degrade over time. They 
 
 ## Frontend design
 
-Are you a full-stack developer? So far we have mostly covered performance on the PHP side. Let's have a look what can be done on the last meters and how to optimize content efficiency:
+Are you a full-stack developer? So far we have mostly covered performance on the PHP side. A lot of delivery can be optimized in the front facing side of your application. Let's have a look what can be done on the last meters and how to optimize content efficiency:
 
 ### Dealing with assets
 

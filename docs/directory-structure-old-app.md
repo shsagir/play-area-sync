@@ -14,7 +14,7 @@ otherVersionLinks:
 
 seeAlsoLinks:
     - deployment
-    - domains
+    - about-domains
 
 keywords:
     - create directory

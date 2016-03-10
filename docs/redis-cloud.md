@@ -5,11 +5,11 @@ naviTitle:        Redis Cloud
 reviewed:         2016-03-10
 title:            Using Redis Cloud with fortrabbit
 
-group:            Extending_fortrabbit
+group:            Databases
+section:          Extending_fortrabbit
 
 websiteLink:      https://redislabs.com/redis-cloud?utm_source=fortrabbit
 websiteLinkText:  redislabs.com/redis-cloud
-category:         data stores
 dataCenters:      US, EU
 image:            redis-cloud-logo.png
 

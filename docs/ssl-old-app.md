@@ -18,7 +18,7 @@ keywords:
     - subdomain
 
 seeAlsoLinks:
-    - domains
+    - about-domains
 
 tags:
     - DNS

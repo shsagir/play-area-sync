@@ -5,7 +5,8 @@ naviTitle:        ElephantSQL
 reviewed:         2016-02-25
 title:            Using ElephantSQL with fortrabbit
 
-group:            Extending_fortrabbit
+group:            Databases
+section:          Extending_fortrabbit
 
 websiteLink:      http://www.elephantsql.com?utm_source=fortrabbit
 websiteLinkText:  elephantsql.com

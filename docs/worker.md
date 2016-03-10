@@ -13,7 +13,16 @@ otherVersionLinks:
 tags:
     - advanced
 
+seeAlsoLinks:
+    - about-queuing
+
 ---
+
+<!--
+
+TODO: say something about message queuing ??
+
+-->
 
 ## Problem
 

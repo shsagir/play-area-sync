@@ -10,7 +10,7 @@ oldApp:        true
 group:         Kitchen_sink
 
 otherVersionLinks:
-    - domains
+    - about-domains
 
 tags:
     - beginner

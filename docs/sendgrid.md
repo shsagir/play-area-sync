@@ -2,35 +2,32 @@
 
 template:         article
 naviTitle:        SendGrid
-reviewed:         2016-02-23
+reviewed:         2016-03-10
 title:            Using SendGrid with fortrabbit
 
-group:            Extending_fortrabbit
+group:            Transactional_e-mail
+section:          Extending_fortrabbit
 
 websiteLink:      https://sendgrid.com?utm_source=fortrabbit
 websiteLinkText:  sendgrid.com
-category:         transactional mail
 dataCenters:      n/a
 image:            sendgrid-mark.svg
 
 keywords:
-     - "transactional mail"
+    - "transactional mail"
 
 tags:
-     - advanced
+    - advanced
+
+seeAlsoLinks:
+    - about-transactional-e-mail
 
 ---
-
-## About transactional mails
-
-OK, you want to send your "forgotten passsword link mail" from your App. Transactional e-mails are automated customer relationship messages triggered by user action. It's where marketing meets communications.
-
-Please mind that you can NOT use `sendmail` out of the box with fortrabbit — see our [quirks article](/quirks#toc-mailing). So you either use SMTP in combination with a classical mail provider or a transactional e-mail provider. They usually offer an API or simply SMTP interface. In our experience the API way should be preferred, as it is faster and more reliable.
 
 
 ## About SendGrid
 
-SendGrid offers an e-mail delivery service that assists businesses with transactional e-mail management.
+SendGrid offers an e-mail delivery service that assists businesses with transactional e-mail management — see our [category article](/about-transactional-e-mail).
 
 
 ## Pricing

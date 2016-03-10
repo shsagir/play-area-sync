@@ -4,9 +4,9 @@ template:         article
 naviTitle:        mLab
 reviewed:         2016-03-10
 title:            Using mLab with fortrabbit
-dontList:         true
 
-group:            Extending_fortrabbit
+group:            Databases
+section:          Extending_fortrabbit
 
 websiteLink:      https://mlab.com?utm_source=fortrabbit
 websiteLinkText:  mlab.com
@@ -23,6 +23,9 @@ keywords:
      - DBaaS
      - ORM
 
+seeAlsoLinks:
+    - about-databases
+
 ---
 
 
@@ -33,7 +36,7 @@ MongoDB is a widely used, open-source NoSQL database. It stores data using a fle
 
 ## About mLab
 
-mLab, formally known as MongoLab, is a MongoDB-as-a-Service provider.
+mLab, formally known as MongoLab, is a MongoDB-as-a-Service provider. Many fortrabbit clients are using it.
 
 
 ## Pricing
@@ -81,11 +84,11 @@ MLAB_USER=frbit-your-app-usr1
 MLAB_PASSWORD=your-password
 ```
 
-### 1. Request a firewall whitelisting
+### 1. Request a firewall white-listing
 
 By default all outgoing calls to non-standard ports from your fortrabbit App are blocked for [security](security) reasons. But you can request the fortrabbit team to open up any port for you. That doesn't take long and isn't complicated.
 
-Navigate in the fortrabbit dashboard to App > Settings > Firewall whitelist and request a custom firewall rule. Write nothing under the optional IP field and insert the port you noted down before in the Port field. As descriptions we suggest "MongoDB on mLab" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new Redis database!
+Navigate in the fortrabbit [Dashboard](dashboard) to your App > Settings > Firewall whitelist and request a new custom firewall rule. Write nothing under the optional IP field and insert the port you noted down before in the Port field. As descriptions we suggest "MongoDB on mLab" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new Redis database!
 
 ### 2. Enable the PHP extension
 

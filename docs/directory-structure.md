@@ -13,7 +13,7 @@ otherVersionLinks:
 
 seeAlsoLinks:
     - deeployment
-    - domains
+    - about-domains
 
 keywords:
     - create directory

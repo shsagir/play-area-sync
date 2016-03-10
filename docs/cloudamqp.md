@@ -5,7 +5,8 @@ naviTitle:        CloudAMQP
 reviewed:         2016-02-25
 title:            Using CloudAMQP with fortrabbit
 
-group:            Extending_fortrabbit
+group:            Queues
+section:          Extending_fortrabbit
 
 websiteLink:      https://www.cloudamqp.com/
 websiteLinkText:  cloudamqp.com
