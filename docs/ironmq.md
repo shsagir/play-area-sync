@@ -5,11 +5,11 @@ naviTitle:        IronMQ
 reviewed:         2016-02-23
 title:            Using IronMQ with fortrabbit
 
-group:            Extending_fortrabbit
+group:            Queues
+section:          Extending_fortrabbit
 
 websiteLink:      https://www.iron.io/platform/ironmq/
 websiteLinkText:  iron.io/platform/ironmq
-category:         queues
 dataCenters:      n/a
 image:            iron-mq-mark.png
 

@@ -2,10 +2,11 @@
 
 template:         article
 naviTitle:        iwantmyname
-reviewed:         2016-02-23
+reviewed:         2016-03-10
 title:            Using iwantmyname with fortrabbit
 
-group:            Extending_fortrabbit
+group:            Domains_and_DNS
+section:          Extending_fortrabbit
 
 websiteLink:      https://iwantmyname.com/
 websiteLinkText:  iwantmyname.com
@@ -14,7 +15,7 @@ dataCenters:      n/a
 image:            iwantmyname-logo.png
 
 seeAlsoLinks:
-     - domains
+     - about-domains
 
 keywords:
      - domain
@@ -29,22 +30,7 @@ keywords:
 ---
 
 
-<!--
-
-TODO: 
-
-* review whole article 
-* outsource general BLA BLA to category article
-
--->
-
-## About domains on fortrabbit
-
-If you found this article then you must know: fortrabbit does not offer domain registration. However, most clients run their Apps on custom top level domains. And those need to be registered somewhere.  Back in the days hosting providers sold packages including domain, webspace and email. We believe in decoupled services. So a specialized domain registration service without extra gimmicks fits perfectly in the picture.
-
-### E-mail hosting
-
-Before jumping right in: think about your personal e-mail addresses as well. Will you need e-mail accounts for that domain? With a dedicated domain registration service you need to host your e-mail addresses elsewhere. There are providers out there for this as well.
+With fortrabbit you can configure how your [App handles domain requests](/app#toc-domains). fortrabbit does not offer domain ordering — see our [comprehensive domain article](/about-domains).
 
 
 ## About iwantmyname

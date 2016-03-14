@@ -1,13 +1,13 @@
 ---
 
 template:         article
-reviewed:         2016-01-17
+reviewed:         2016-03-10
 naviTitle:        GitHub
 title:            Combine fortrabbit with GitHub
 lead:             Learn how to integrate the most popular Git-as-a-service provider with your fortrabbit workflow.
 
-group:            Extending_fortrabbit
-subGroup:         Code_collaboration
+group:            Code_collaboration
+section:          Extending_fortrabbit
 
 websiteLink:      https://github.com?utm_source=fortrabbit
 websiteLinkText:  github.com
@@ -15,6 +15,7 @@ image:            github-octocat.png
 dataCenters:      n/a
 
 seeAlsoLinks:
+    - about-code-collaboration
     - deployment
     - git
     - git-submodules
@@ -45,11 +46,6 @@ You hopefully already know that [GitHub](https://github.com) is the most popular
 ### GitHub is not Git
 
 GitHub is so popular that beginners sometimes confuse GitHub with Git. Git is the version control system established by Linus Torvalds. GitHub is the service, which offers Git remote hosting and additional extra magic collaboration features.
-
-### Why combine fortrabbit with GitHub?
-
-Each [App](/app) with fortrabbit already comes with a Git repo. See our [Git guide](/git). So why do you want to use GitHub together with fortrabbit at all? Well, Git with fortrabbit is mostly used as a deployment tool. fortrabbit does not offer the familiar enhanced collaboration tools, such as "pull requests". You are probably quite used to that, or it is a requirement in your company.
-
 
 ## Integration
 
@@ -111,9 +107,3 @@ What you need is the `token` value. In the above example it is `12345abc12345123
 ```
 
 That's it. Your API token will be used to give you a personal rate limit which is much more higher than the default one.
-
-## Alternatives
-
-Did you know? BitBucket - from Atlassian - is an alternative Git hosting service which offers private Git repos for free — also a popular choice among our clients. Also see our [integration guide ](/bitbucket).
-
-Last not least we should mention [GitLab](https://about.gitlab.com/) as an alternative VCS provider.

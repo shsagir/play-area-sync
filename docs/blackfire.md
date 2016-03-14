@@ -4,8 +4,9 @@ template:         article
 reviewed:         2016-02-20
 title:            Using Blackfire with fortrabbit
 naviTitle:        Blackfire
-group:            Extending_fortrabbit
-group:            Extending_fortrabbit
+
+group:            Profiling
+section:          Extending_fortrabbit
 
 image:            blackfire-orig.png
 websiteLink:      https://blackfire.io?utm_source=fortrabbit
