@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-03-02
+reviewed:         2016-03-04
 naviTitle:        eZ Platform
 title:            Install eZ Platform on fortrabbit
 lead:             Learn how to install and tune the eZ Platform on fortrabbit.
@@ -10,7 +10,7 @@ websiteLink:      http://ez.no/
 websiteLinkText:  ez.no
 category:         CMS
 image:            ez-mark.png
-version:          1.1
+version:          1.2
 group:            Install_guides
 
 seeAlsoLinks:
