@@ -113,7 +113,7 @@ Tuning
 
 ### Installing plugins
 
-[Bedrock allows](https://github.com/roots/bedrock/wiki/Composer#plugins) two ways to install plugins:  Use Composer to install plugins from [WordPress Packagist](http://wpackagist.org/); Just download and unpack the plugins into `web/app/plugins`
+[Bedrock allows](https://roots.io/bedrock/docs/composer/#plugins) two ways to install plugins:  Use Composer to install plugins from [WordPress Packagist](http://wpackagist.org/); Just download and unpack the plugins into `web/app/plugins`
 
 #### With Composer
 
@@ -161,7 +161,7 @@ Once that's done you can head over your WordPress admin and activate the plugin 
 
 ### Installing themes
 
-Bedrock recommends to install themes by unpacking them into the `web/app/themes` folder and to use Composer only in [rare cases](https://github.com/roots/bedrock/wiki/Composer#themes).
+Bedrock recommends to install themes by unpacking them into the `web/app/themes` folder and to use Composer only in [rare cases](https://roots.io/bedrock/docs/composer/#themes).
 
 ### Persistent storage
 

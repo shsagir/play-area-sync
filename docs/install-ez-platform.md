@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-03-02
+reviewed:         2016-03-14
 naviTitle:        eZ Platform
 title:            Install eZ Platform on fortrabbit
 lead:             Learn how to install and tune the eZ Platform on fortrabbit.
@@ -10,7 +10,7 @@ websiteLink:      http://ez.no/
 websiteLinkText:  ez.no
 category:         CMS
 image:            ez-mark.png
-version:          1.1
+version:          1.2
 group:            Install_guides
 
 seeAlsoLinks:
@@ -44,7 +44,8 @@ If you don't have one, you can setup a new one locally:
 
 ```bash
 $ cd ~/Projects
-$ composer create-project --prefer-dist --no-dev ezsystems/ezplatform MyApp "~1.1"
+$ composer create-project --prefer-dist --no-dev ezsystems/ezplatform MyApp "~1.2"
+$ cd MyApp
 ```
 
 **Note**: Use `dev` as environment when asked. `prod` should be the environment for running on fortrabbit.
@@ -60,7 +61,7 @@ To proceed, make sure you have your bucket name, your key and your secret at you
 eZ Platform uses [Flysystem](https://github.com/thephpleague/flysystem) to handle the storage, so you need to install the [AWS PHP SDK](https://github.com/aws/aws-sdk-php) to use the S3 storage adapter:
 
 ```
-$ composer require aws/aws-sdk-php
+$ composer require "aws/aws-sdk-php:2.*"
 ```
 
 ### Parameter config
@@ -78,21 +79,23 @@ $container->setParameter('database_user', $secrets['MYSQL']['USER']);
 $container->setParameter('database_password', $secrets['MYSQL']['PASSWORD']);
 
 // Memcache session
-$container->setParameter('session_memcache_expire', getenv('SESSION_MEMCACHE_EXPIRE') ?: 86400);
-$container->setParameter('session_memcache_prefix', getenv('SESSION_MEMCACHE_PREFIX') ?: 'ez_');
-$container->setParameter('session_memcache_host_1', $secrets['MEMCACHE']['HOST1']);
-$container->setParameter('session_memcache_port_1', $secrets['MEMCACHE']['PORT1']);
+$container->setParameter('session_expire', getenv('SESSION_EXPIRE') ?: 86400);
+$container->setParameter('session_prefix', getenv('SESSION_PREFIX') ?: 'ez_');
+$container->setParameter('memcache_host_1', $secrets['MEMCACHE']['HOST1']);
+$container->setParameter('memcache_port_1', $secrets['MEMCACHE']['PORT1']);
 if (isset($secrets['MEMCACHE']['HOST2'])) {
-    $container->setParameter('session_memcache_host_2', $secrets['MEMCACHE']['HOST2']);
-    $container->setParameter('session_memcache_port_2', $secrets['MEMCACHE']['PORT2']);
+    $container->setParameter('memcache_host_2', $secrets['MEMCACHE']['HOST2']);
+    $container->setParameter('memcache_port_2', $secrets['MEMCACHE']['PORT2']);
 }
 
 // AWS S3 storage credentials
 $container->setParameter('aws_s3_key', $secrets['CUSTOM']['AWS_S3_KEY']);
 $container->setParameter('aws_s3_secret', $secrets['CUSTOM']['AWS_S3_SECRET']);
-$container->setParameter('aws_s3_region', getenv('AWS_S3_REGION'));
+$container->setParameter('aws_s3_region', getenv('AWS_S3_REGION') ?: 'eu-west-1');
 $container->setParameter('aws_s3_bucket', getenv('AWS_S3_BUCKET'));
-$container->setParameter('aws_s3_prefix', getenv('AWS_S3_PREFIX'));
+$container->setParameter('aws_s3_prefix', getenv('AWS_S3_PREFIX') ?: 'ez');
+$container->setParameter('aws_s3_host', getenv('AWS_S3_HOST') ?: 's3-eu-west-1.amazonaws.com');
+
 
 // Logging to error log
 $container->setParameter('log_type', 'error_log');
@@ -131,20 +134,20 @@ services:
     session.memcached:
         class: Memcached
         arguments:
-            persistent_id: %session_memcache_prefix%
+            persistent_id: %session_prefix%
         calls:
-            - [ addServer, [ %session_memcache_host_1%, %session_memcache_port_1% ]]
+            - [ addServer, [ %memcache_host_1%, %memcache_port_1% ]]
             # if you are using a Memcache Production plan (with two nodes):
-            #- [ addServer, [ %session_memcache_host_2%, %session_memcache_port_2% ]]
+            #- [ addServer, [ %memcache_host_2%, %memcache_port_2% ]]
 
     session.handler.memcached:
         class:     Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler
-        arguments: [@session.memcached, { prefix: %session_memcache_prefix%, expiretime: %session_memcache_expire% }]
+        arguments: [@session.memcached, { prefix: %session_prefix%, expiretime: %session_expire% }]
 ```
 
 ### EZ platform config
 
-Now it's time to set S3 via flysystem as the default I/O system for eZ. Replace `app/config/ezplatform_prod.yml` with:
+Now it's time to set S3 via flysystem as the default I/O system for eZ and to change the stash cache engine to Memcache. Replace `app/config/ezplatform_prod.yml` with:
 
 ```yaml
 imports:
@@ -156,7 +159,7 @@ ezpublish:
             io:
                 metadata_handler: default
                 binarydata_handler: default
-
+                url_prefix: "//%aws_s3_host%/%aws_s3_bucket%/%aws_s3_prefix%"
 ez_io:
     metadata_handlers:
         default:
@@ -175,13 +178,31 @@ oneup_flysystem:
                 bucket: %aws_s3_bucket%
                 prefix: %aws_s3_prefix%
 
+stash:
+    caches:
+        default:
+            drivers: [ Memcache ]
+            inMemory: true
+            registerDoctrineAdapter: false
+            Memcache:
+                prefix_key: cache_
+                retry_timeout: 1
+                servers:
+                    - { server: %memcache_host_1%, port: %memcache_port_1%, weight: 1 }
+                    # - { server: %memcache_host_2%, port: %memcache_port_2%, weight: 1 }
+
 services:
     s3_client:
         class: Aws\S3\S3Client
         factory_class: Aws\S3\S3Client
         factory_method: factory
         arguments:
-            - ["%aws_s3_key%", "%aws_s3_secret%"]
+            -
+                version: latest
+                region: "%aws_s3_region%"
+                credentials:
+                    key: "%aws_s3_key%"
+                    secret: "%aws_s3_secret%"            
 
 ```
 
@@ -200,6 +221,7 @@ Now you need to add a couple of environment variables: Go to your App > ENV vars
 AWS_S3_REGION="YourAWSS3Region, eg eu-west-1"
 AWS_S3_BUCKET="YourAWSS3Bucket, eg my-app-bucket"
 AWS_S3_PREFIX="YourAWSS3Prefix, eg my-app/files"
+AWS_S3_HOST="YourAWSS3PublicHost, eg s3-eu-west-1.amazonaws.com"
 SYMFONY_ENV=prod
 ```
 
