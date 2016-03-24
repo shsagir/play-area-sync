@@ -61,7 +61,6 @@ $ git remote add fortrabbit git@deploy.eu2.frbit.com:my-app.git
 $ git push fortrabbit master
 ```
 
-<!--
 ## GitHub API limits and Composer
 
 The reason why you can run into this issue temporarily is that GitHub limits it's API per IP. Given that you deploy on our Git servers (or use composer from our SSH servers) this IP address is shared with other developers deploying there as well. So if there is a deployment spike, GitHub might close down for a while.
@@ -108,4 +107,3 @@ What you need is the `token` value. In the above example it is `12345abc12345123
 ```
 
 That's it. Your API token will be used to give you a personal rate limit which is much more higher than the default one.
--->
