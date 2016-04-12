@@ -176,7 +176,23 @@ On root level of your Object Storage you'll find a virtual folder called `privat
 The location of the Object Storage will match the Apps location. So if you choose your App to be hosted in Virginia, the files in your Object Storage will be there as well. We have ideas to extend the Object Storage with by CDN functionality (think CloudFront).
 
 
+## Big files
+
+
+
+TB filesize (denke Max-Groesse wird im unteren GB Berreich liegen)
+
+
+## Advanced S3 Bucket API
+
+Currently only standard S3 operations (protocol version 4) are supported.
+
+
+## Custom domains
+
+Currently, the Object Storage can only be accessed by HTTP via the standard app-name related URL. You can not route any custom domains. Neither you can use your own TLS (SSL) termination here.
+
 
 ## Alternatives
 
-The Object Storage is optional, you might not need it or you can use AWS S3, or Rackspace Cloud Files or alike. You probably also have a look at image transformation services, which will render images in any possible format/compression and size.
+The use of the Object Storage is optional, you might not need it or you can use AWS S3, or Rackspace Cloud Files or alike. You probably also have a look at image transformation services, which will render images in any possible format/compression and size.
