@@ -75,6 +75,7 @@ The Object Storage is implemented as an core App Component. It's use is optional
 
 The Object Storage is sized in reasonable packages. Traffic is cumulated together with the total traffic of your App. See the [pricing details page](https://www.fortrabbit.com/specs) for up-to-date costs and package sizes. 
 
+
 ### Exceeding the quota
 
 Please mind that you will not be updated automatically, when you exceed the Object Storage quota. So when you reach the limit of the  You have to login to the Dashboard and upgrade the Component to a bigger plan yourself. You will however see 
@@ -90,6 +91,7 @@ First you'll need to to put files on the Object Storage then you can serve them.
 To upload files to the Object Storage you'll need to identify with: a Bucket name, maybe a server?, a key and a secret. Those are storeed with the [App secrets](/secrets) (Dashboard > Your App > App Secrets). Please see the Dashboard for copy/paste commands to obtain the credentials.
 
 To upload files to the Object Storage you have two general directions:
+
 
 ### 1. Programmatic upload from within the App
 
@@ -181,7 +183,7 @@ In some scenarios you might want to upload the files manually, one by one. Or yo
 * Transmit, a GUI client for MacOs X has been tested
 * s3cmd, a cross platform command line tool has been tested
 
-In those cases S3 behaves pretty much like you already know from FTP. You can do all kind of CRUD operations there.
+In those cases S3 behaves pretty much like your good old friend FTP. You can do all kind of CRUD operations there.
 
 ### HTTPs access
 
@@ -198,7 +200,7 @@ Please mind that most plugins will already rewrite the URLs in your template wit
 
 ## Advanced usage, troubleshooting & quirks
 
-Still reading? Go on dig the details:
+Still reading? Go on and dig the details:
 
 
 ### Resetting the secret key
