@@ -106,6 +106,10 @@ Most CMS/frameorks offer easy-to-use plugins for either one of the above.
 #### Laravel
 
 Just use Flysystem, which can easily be installed via Composer. More infos [over here](/install-laravel#toc-). Use at least Laravel 5.1.
+<!-- 
+Laravel 4 flysystem bridge
+https://github.com/GrahamCampbell/Laravel-Flysystem/tree/v1.0.0
+-->
 
 <!-- TODO:
 what's up with this service provider?
@@ -126,6 +130,21 @@ You can use [WP Offload S3 Lite](https://wordpress.org/plugins/amazon-s3-and-clo
 TODO/TBD: 
 endpoint not supported?
 https://github.com/deliciousbrains/wp-amazon-s3-and-cloudfront/blob/master/classes/amazon-s3-and-cloudfront.php#L2122
+
+Requires this 'plugin' (plugins/amazon-s3-alternative.php)
+
+<?php
+/*
+Plugin Name: Amazon S3 alternative
+*/
+
+add_filter('aws_get_client_args', function($args) { 
+	if (getenv('S3_API_ENDPOINT')) {
+		$args['endpoint'] = getenv('S3_API_ENDPOINT');
+	}
+	return $args; 
+});
+
 -->
 
 
@@ -142,10 +161,14 @@ https://github.com/aws/aws-sdk-php-symfony
 
 There is [something in the works](https://github.com/pixelandtonic/Craft-Release/blob/master/app/assetsourcetypes/S3AssetSourceType.php) for Craft 3.
 
+<!-- TODO / TBD:
+Craft 2 is important! We try to get a patch in core.
+-->
+
 
 #### Shopware
 
-Use the [SwagMediaS3](https://github.com/shopwareLabs/SwagMediaS3) Amazon S3 adaptor.
+Use the [SwagMediaS3](https://github.com/shopwareLabs/SwagMediaS3) Amazon S3 adapter.
 
 <!-- 
 TODO/TBD: 
@@ -165,7 +188,11 @@ https://github.com/arkadedigital/magento2-s3/blob/master/Model/MediaStorage/File
 
 #### eZ publish
 
-???
+...
+
+<!--
+PR/Patch for S3 on the way
+-->
 
 
 #### Custom/plain PHP applications
