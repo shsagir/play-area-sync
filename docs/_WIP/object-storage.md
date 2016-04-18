@@ -230,6 +230,22 @@ Please mind that most plugins will already rewrite the URLs in your template wit
 Still reading? Go on and dig the details:
 
 
+### Caching
+
+All files on the Object Storage will be cached for a short time by default. The benefit of this is, that cached files are getting delivered even faster as no requests to backing file system need to be made. The downside is that you or your users will not see latest updates on a file immediately. Say for instance that your App allows to crop an image. Now your application will be replace the old original file with new cropped version. But still the cached version will be delivered for a while.
+
+You want:
+
+* no caching when your files often change, during development for instance
+* **little caching** when your files might change from time to time
+* massive caching to happen when your files will never change
+
+Little caching is the default. You can control caching in two ways:
+
+* Object Storage cache settings in the Dashboard: quickly change the default
+* Over-ride the default with: custom HTTP cache headers on individual files
+
+
 ### Resetting the secret key
 
 You might want to change the secret key to your Object Storage from time to time, for example when your team changed. You can do so in the Dashboard, there is a button labled "Reset the Object Storage secret key" and it does exactly that.
