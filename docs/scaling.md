@@ -145,16 +145,13 @@ Production level Memcache scalings run on two Nodes. Now it depends on how you u
 All worker plans run only on a single Node. In case one of those Nodes fails they are restarted automatically. This does not guarantee high availability but eventual availability, which is in almost all cases a good approach for executing background tasks. See also the main [Workers article](/workers).
 
 
+### Object Storage
 
+[fortrabbit (New) Apps](new-apps) have an ephemeral local storage, which means that all files on the server will be wiped on each deploy or change of configuration, also on maintenance. 
 
-<!-- TODO: review on asset storage, object storage launch  -->
+Content driven websites usually make use of the local file system to store assets. If you have a "media website" or an social community focused on image or videos for example, the storage needs to be able to scale as well. For those use cases we recommend to use our [Object Storage](object-storage) component. It's easy to setup, supports best practices and reduces load on the PHP Nodes.
 
-### Storage
-
-If you have a "media website" or an social community focused on image or videos for example, the storage needs to be able to scale as well. For those use cases we recommend to use a cloud asset storage - they are tailor-made for this.
-
-
-
+The Object Storage plans are limited by storage (not traffic). It will not scale automatically, you need to keep an eye on the size. In the App overview in the Dashboard you can find a graph that shows you home much storage within the current plan is in use. Scaling up and down can (almost) instantly be done in the Dashboard.
 
 
 ## Clean code safes money
