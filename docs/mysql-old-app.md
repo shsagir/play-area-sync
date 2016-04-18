@@ -219,10 +219,3 @@ doctrine:
 ```
 
 The `1002` is the value of `PDO::MYSQL_ATTR_INIT_COMMAND`, as you cannot use PHP constants in a YAML file.
-
-
-
-
-## Alternatives
-
-For certain use cases other databases or object storage might be an interesting alternative, you can integrate those over an [external service](external-services).

@@ -87,8 +87,6 @@ An example: assume you have a domain `domain.tld` and want to receive mails for 
 
 There are DNS providers, which allow you to use non-standard records, which they call `ANAME` or `ALIAS`. Those combine the *positive* attributes of `CNAME`  with `A` records. In short: you can route a naked domain to a hostname without loosing your `MX` records.
 
-Here is a [list of providers](/external-services#toc-dns-as-a-service).
-
 #### Solution 2: Use forwarding
 
 Many domain providers support a simple HTTP redirect. This basically means: they provide a web server for you and redirect all incoming requests to `http://domain.tld/` to `http://www.domain.tld/`.
@@ -101,7 +99,7 @@ Alternative names for this feature are *Domain forwarding*, *Web forwarding*, *D
 * [Gandi](https://wiki.gandi.net/en/domains/management/domain-as-website/forwarding)
 * [1&1](http://help.1and1.com/domains-c36931/manage-domains-c79822/domain-destination-c38672redirectforward-your-domain-a594868.html)
 
-**Alternative:** If your domain provider does not support forwarding, you can use a [forwarding service](/external-services#toc-domain-forwarding-as-a-service).
+**Alternative:** If your domain provider does not support forwarding, you can use a DNS forwarding service.
 
 #### Solution 3: Use CloudFlare
 
@@ -123,4 +121,4 @@ You probably want to route all requests for subdomains to your fortrabbit App li
 
 ### HTTPS
 
-For SSL connections on your own custom domain you'll additionally need: certificate, signed form an [external vendor](external-services#toc-ssl) and the [TLS component](tls).
+For SSL connections on your own custom domain you'll additionally need: certificate, signed form an external vendor and the [TLS component](tls).

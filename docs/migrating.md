@@ -7,9 +7,6 @@ naviTitle:   Migration
 lead:        How to transfer an application to fortrabbit.
 group:       Kitchen_sink
 
-otherVersionLinks:
-     - migrating-old-app
-
 tags:
      - beginner
 
@@ -43,11 +40,13 @@ After that's done make sure to add all the domains to your new fortrabbit App in
 
 ## Migrate your runtime data
 
-Runtime data means all kinds of data, which is created by your App at runtime. Usually these are user uploads or uplodas from a CMS or somesuch.
+Runtime data means all kinds of data, which is created by your App at runtime. Usually these are user uploads or uploads from a CMS or some-such.
 
-<!-- TODO: change on asset storage launch -->
+<!-- TODO: change on asset storage object storage launch -->
 
 Apps on fortrabbit do not have a persistent storage, so you need an alternative. We highly recommend to use a cloud storage, such as Amazon's S3. The setup is [neither hard nor does it take long](http://blog.fortrabbit.com/new-app-cloud-storage-s3).
+
+
 
 ## Migrate your code
 
@@ -59,7 +58,7 @@ If your App is using a MySQL database, you will need to migrate the database dat
 
 ## Sending e-mails
 
-If your App needs to send mails, you'll need a [3rd party provider](external-services#toc-transactional-mails).
+If your App needs to send mails, you'll need a 3rd party provider.
 
 ## TLS/SSL (optional)
 

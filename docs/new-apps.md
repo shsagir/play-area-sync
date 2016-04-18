@@ -24,7 +24,7 @@ Should you migrate your Old Apps to New Apps today? Yes, good idea. The New Apps
 
 Old Apps have a **persistent storage**: you have access via SSH and the App can permanently write on the file system. New Apps have an **ephemeral storage**: you have no SSH access, all files will be replaced on each deployment. There is no place for runtime data. In other words: your App should not write any relevant data (user uploads) you might want to reuse later on the local file system.
 
-The upside is, it's a design that scales much better. The downside is, that you'll need some efforts from your side. Currently you can use an external [cloud storage provider](external-services#toc-cloud-storage). In the future you will be offered an integrated service with fortrabbit.
+The upside is, it's a design that scales much better. The downside is, that you'll need some efforts from your side. Currently you can use an external cloud storage provider. In the future you will be offered an integrated service with fortrabbit.
 
 
 ### Communication

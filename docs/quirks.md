@@ -52,9 +52,13 @@ There are special solutions for [WordPress](install-wordpress#toc-smtp), [Larave
 Currently only [live logs](logging) are available.
 
 
+<!--  TODO: rewrite on object storage launch -->
+
 ## Ephemeral storage
 
-Each App has a limited amount of local non-persistent, floating storage. During each [deployment](/deployment) this storage gets whipped. So you better not store any runtime data, like user uploads there. So it's a good idea to use a [cloud storage](articles/external-services#toc-cloud-storage) for large data sets. Please see [universal specs pages](http://www.fortrabbit.com/specs#limits) for limits.
+Each App has a limited amount of local non-persistent, floating — so called ephemeral storage. During each [deployment](/deployment) this storage gets whipped. So you better not store any runtime data, like user uploads there. 
+
+So it's a good idea to use a cloud storage for large data sets. Please see [universal specs pages](http://www.fortrabbit.com/specs#limits) for limits.
 
 
 ## PHP
@@ -132,7 +136,7 @@ Apps don't have a fixed IP address. This is a side effect of "the cloud", as App
 
 As we are currently only in the AWS EU1 (Ireland) region, there is an semi-official [list of ip ranges](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html), which we are using. Depending on the use-case, it is possible to use a [HTTP](https://www.quotaguard.com/pricing#_quotaguardstatic) [proxy](http://www.vpnuk.info/dedicated-ip.html) provider, which offers a static IP.
 
-The context for requests on this is for payment processing, have a look at an [external provider](external-services#toc-payment-processing).
+The context for requests on this is for payment processing, have a look at an external provider.
 
 ## What this isn't
 

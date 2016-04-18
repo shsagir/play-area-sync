@@ -365,6 +365,9 @@ $ DB_PASSWORD="your database password" php artisan migrate --database=mysql-tunn
 $ DB_PASSWORD="your database password" php artisan db:seed --database=mysql-tunnel
 ```
 
+
+<!-- TODO: rewrite on Object Storage launch  -->
+
 ### Persistent storage
 
 If you require a persistent storage, for uploaded media or anything else, you can use a cloud storage. We recommend Amazon's S3 and have written up a BLOG[guide to get your started](new-app-cloud-storage-s3).

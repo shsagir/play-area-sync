@@ -44,9 +44,9 @@ The SSL component itself needs to run separated, that's why there is a dedicated
 
 Let's be honest here. Although SSL is one of the usual business requirements, it's still a bit complicated to configure. We would love to provide a more convenient solution. Fact is that most of the stuff here is beyond our control, so that's the way it is now:
 
-1. Have an [external domain](external-services#toc-domains) registered;
+1. Have an external domain registered;
 2. create a key and a cert locally;
-3. purchase an SSL cert from an [external provider](external-services#toc-ssl-certificates);
+3. purchase an SSL cert from an external provider;
 4. book the SSL component for your App in the Dashboard;
 4. upload your key and cert(s) to the Dashboard;
 6. (re)route the external domain(s) to your new App SSL endpoint.
@@ -90,7 +90,7 @@ openssl rsa -in my-app.key -out my-app.rsa.key
 
 Do not enter a password! Also: if you plan on using `www.yourdomain.tld`, don't miss the `www.` in the "Common Name"!
 
-With the now generated CSR, you can go to an external [certificate vendor](external-services#toc-ssl-certificates), which will issue a certificate for you.
+With the now generated CSR, you can go to an external certificate vendor, which will issue a certificate for you.
 
 
 ### Convert existing key to RSA format

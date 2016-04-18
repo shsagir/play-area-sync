@@ -144,11 +144,18 @@ Production level Memcache scalings run on two Nodes. Now it depends on how you u
 
 All worker plans run only on a single Node. In case one of those Nodes fails they are restarted automatically. This does not guarantee high availability but eventual availability, which is in almost all cases a good approach for executing background tasks. See also the main [Workers article](/workers).
 
+
+
+
 <!-- TODO: review on asset storage, object storage launch  -->
 
 ### Storage
 
-If you have a "media website" or an social community focused on image or videos for example, the storage needs to be able to scale as well. For those use cases we recommend to use a [cloud asset storage](external-services#cloud-storage) - they are tailor-made for this.
+If you have a "media website" or an social community focused on image or videos for example, the storage needs to be able to scale as well. For those use cases we recommend to use a cloud asset storage - they are tailor-made for this.
+
+
+
+
 
 ## Clean code safes money
 

@@ -64,7 +64,7 @@ This article helps you to integrate an external CI provider in your workflow.
   you                       
 ```
 
-Most, if not all, of the CI providers assume that you host your code on a public available version control (Git) repository. This does not mean your repository publicly accessible without authentication, just that it's not on your local host. You can use [GitHub](https://github.com) or [Bitbucket](http://bitbucket.org/) and [any other VCS provider](external-services) to host a (private) public repositories.
+Most, if not all, of the CI providers assume that you host your code on a public available version control (Git) repository. This does not mean your repository publicly accessible without authentication, just that it's not on your local host. You can use [GitHub](https://github.com) or [Bitbucket](http://bitbucket.org/) and any other VCS provider to host a (private) public repositories.
 
 
 

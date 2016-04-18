@@ -45,7 +45,7 @@ In recent days, this is a really bad practice: your web server can send mails, b
 
 Instead of `sendmail` you can use a mail script that uses SMTP (Simple Mail Transfer Protocol) directly. But you can't do this with fortrabbit directly either.
 
-[Transactional mail services](external-services#toc-transactional-mails) can actually do the bulk mailing for you. You can either connect to them via "SMTP relay" or by "API". Those services help you to save your Apps resources, are probably more reliable and have some nice extra features like analytics.
+Transactional mail services such as [SendGrid](/sendgrid) can actually do the bulk mailing for you. You can either connect to them via "SMTP relay" or by "API". Those services help you to save your Apps resources, are probably more reliable and have some nice extra features like analytics.
 
 In the following we focus on an SMTP implementation. There are countless possibilities how to do this. Most frameworks and CMS give them to you out of the box. If you use a custom script, have a look at [Swift Mailer](http://swiftmailer.org/).
 
@@ -73,7 +73,7 @@ Swift_Preferences::getInstance()->setCharset('UTF-8');
 
 ### Storage limit
 
-The storage is limited, please see [pricing pages](http://www.fortrabbit.com/pricing) for details. This limit cannot be adjusted. It's anyway a good idea to use a [cloud storage](articles/external-services#toc-cloud-storage) for large data sets.
+The storage is limited, please see [pricing pages](http://www.fortrabbit.com/pricing) for details. This limit cannot be adjusted. It's anyway a good idea to use a cloud storage for large data sets.
 
 ## PHP
 
@@ -194,5 +194,5 @@ Apps don't have a fixed outgoing IP address. This is a side effect of "the cloud
 
 As we are currently only in the AWS EU1 (Ireland) region, there is an semi-official [list of ip ranges](https://forums.aws.amazon.com/ann.jspa?annID=1701), which we are using. Depending on the use-case, it is possible to use a [HTTP](https://www.quotaguard.com/pricing#_quotaguardstatic) [proxy](http://www.vpnuk.info/dedicated-ip.html) provider, which offers a static IP.
 
-The context for requests on this is for payment processing, have a look at an [external provider](external-services#toc-payment-processing).
+The context for requests on this is for payment processing, have a look at an external provider.
 

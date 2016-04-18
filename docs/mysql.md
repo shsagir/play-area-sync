@@ -169,7 +169,3 @@ $pdo = new PDO(
     )
 );
 ```
-
-## Alternatives
-
-For certain use cases other databases or object storage might be an interesting alternative, you can integrate those over an [external service](external-services).
