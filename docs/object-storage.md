@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-04-11
+reviewed:      2016-04-21
 title:         Object Storage 
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base in a modern cloud application. 
@@ -63,12 +63,12 @@ The fortrabbit Object Storage is a multi purpose solution for offshore files. Yo
 
 ### Implementation
 
-The fortrabbit Object Storage implements large parts of the S3 REST API making it compatible with most S3 clients, plugins and libraries. In fact, it still stores all objects in the highly available and endlessly scalable S3 - it just provides 
+The fortrabbit Object Storage implements large parts of the S3 REST API making it compatible with most S3 clients, plugins and libraries. In fact, it stores all objects in the highly available and endlessly scalable S3 space.
 
 
 ## Booking & scaling
 
-The Object Storage is available as a core App Component. As a component it is completely optional and it comes in different sizes. You can [scale](scaling) it up and down any time without downtimes from the Dashboard.
+The Object Storage is available as a core App Component. It is completely optional and it comes in different sizes. You can [scale](scaling) it up and down any time without downtimes from the Dashboard.
 
 
 ## Pricing
@@ -78,7 +78,7 @@ The Object Storage is sized in reasonable packages. Traffic is cumulated togethe
 
 ### Exceeding the quota
 
-Please mind that in alignment with all the other APp components the object storage will not be upgraded automatically: when you exceed the Object Storage quota you simply cannot upload more files and need to scale the component in the Dashboard. Again: No downtime, whatsoever.
+Please mind that in alignment with all the other App Components the Object Storage will not be upgraded automatically: when you exceed the Object Storage quota you simply cannot upload more files and need to scale the component in the Dashboard. Again: No downtime, whatsoever.
 
 
 ## Accessing the Object Storage
@@ -88,7 +88,7 @@ First you'll need to to put files on the Object Storage then you can serve them.
 
 ### Obtaining upload credentials
 
-To upload files to the Object Storage you'll need to authenticate with your individual credentials. Those consist of: a bucket name, a server (aka: endpoint), a key and a secret. As all credentials those are stored with the [App secrets](/secrets) (Dashboard > Your App > App Secrets). Please see the Dashboard for copy/paste commands to obtain the credentials.
+To upload files to the Object Storage you'll need to authenticate with your individual credentials. Those consist of: a bucket name, a server (aka: endpoint), a key and a secret. As all credentials those are stored with the [App secrets](/secrets). Please see the Dashboard for copy/paste commands to obtain the credentials.
 
 To upload files to the Object Storage you have two general options:
 
@@ -276,16 +276,16 @@ On root level of your Object Storage you'll find a folder called `private`. This
 The location of the Object Storage will match the Apps location. So if you choose your App to be hosted in US, the files in your Object Storage will be there as well. We have ideas to extend the Object Storage with by CDN functionality (think CloudFront).
 
 
-## Big files
+### Big files
 
 The Object Storage is laid out to handle lot's of small to medium sized files, not very large files. Please see our [specs](https://fortrabbit.com/specs) table for current limitations.
 
 
-## No directory listings
+### No directory listings
 
 As with S3 it is not possible to list directories. You can place an `index.html` file containing your custom listing.
 
-## Custom domains
+### Custom domains
 
 The Object Storage can only be accessed by HTTP(S) via the standard App name related URL. You can currently not route any custom domains. Neither you can use your own TLS (SSL) termination here.
 
