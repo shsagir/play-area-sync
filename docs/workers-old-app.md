@@ -42,10 +42,6 @@ SSH is automaticlly available for all our Apps — but the application is limite
 
 The Worker Node is build on top of that. If booked it replaces the general SSH access. It's a dedicated, isolated, individually scalable node, accessible via SSH — think of it as a little VPS just for this one purpose. There are various Worker Node sizes, differing in memory and CPU resources. Just book a Worker Node in the [dashboard](https://dashboard.fortrabbit.com).
 
-#### Possible future changes
-
-Our upcoming "Ephemeral Apps" are going to be different and the Worker will change along with it. We will probably introduce a new process (not node) based model in the future. This will introduce a more affordable entry level pricing — making it better suitable for simpler tasks.
-
 
 ## Usage
 
@@ -388,7 +384,7 @@ Now you have come a long way and you know most about the fortrabbit Worker Node.
 
 Ok, you got your worker and cron tasks running. Now you figure out that you probably need something else: a pipeline with which you can push jobs into your worker. Enter: queues.
 
-Queues and worker are like bread and butter. There are [external queue providers](external-services#queues) and, of course, you can use the database - while developing.
+Queues and worker are like bread and butter. There are external queue providers and, of course, you can use the database - while developing.
 
 
 #### Queue example
@@ -467,7 +463,7 @@ Of course, there are also (MVC framework) independent tools for running backgrou
 
 ## Alternatives
 
-Sometimes you might just want to run a small not compute intensive script. So the above described solutions might be a bit oversized. Maybe just use an [external cron job service](external-services#toc-crons) for this.
+Sometimes you might just want to run a small not compute intensive script. So the above described solutions might be a bit oversized. Maybe just use an external cron job for this.
 
 
 

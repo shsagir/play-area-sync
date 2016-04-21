@@ -68,7 +68,7 @@ Once you have booked the Worker Component, an additional setting page is availab
 
 ### 1. Nonstop Jobs
 
-Nonstop Jobs are continuous running PHP processes. They are meant to run forever and will be automatically restarted if they fail. Most Nonstop Job solutions use [queues](/external-services#toc-message-queuing) to inject tasks from the web application into the Nonstop Job (running in the background).
+Nonstop Jobs are continuous running PHP processes. They are meant to run forever and will be automatically restarted if they fail. Most Nonstop Job solutions use queues to inject tasks from the web application into the Nonstop Job (running in the background).
 
 **Example — Transforming images**: A visitor uploads an image to the web application. Instead of transforming the image directly, which would slow down the web application, because it costs lots of compute power and can take a long time, the web application creates a new task in a queue, which is very inexpensive. The running Nonstop Job then receives the task from the queue and transforms the image. Since the transformation runs in the background it does not matter (nearly as much) how long it takes - eventually it will finish and the web application stays fast and responsive.
 
@@ -247,4 +247,4 @@ If you don't know what that is: never mind. If you do know: don't detach. To gua
 
 ## Alternatives to the Worker
 
-Sometimes you might just want to run a small not compute intensive script. So the above described solutions might be a bit over-sized. Maybe just use an [external cron job service](external-services#toc-crons) for this.
+Sometimes you might just want to run a small not compute intensive script. So the above described solutions might be a bit over-sized. Maybe just use an external cron job service for this.

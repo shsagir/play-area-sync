@@ -85,4 +85,4 @@ $m->get('SomeKey');
 
 ## Alternatives
 
-There are some other cache stores, most importantly [Redis](http://redis.io/). We currently don't offer any of those directly, but you can easily use a [3rd party provided](external-services#toc-application-helpers) with your fortrabbit App.
+There are some other cache stores, most importantly [Redis](http://redis.io/). We currently don't offer any of those directly, but you can easily use a 3rd party provider with your fortrabbit App.

@@ -59,13 +59,14 @@ Now, since you are working on a local copy which you want to deploy to your fort
 
 **Note**: Rinse and repeat with all your local asset sources!
 
-**Note:** To make use of the cloud storage suppport of Craft you need "Pro" license. This is required since fortrabbit's filesystem is not persistent and assets needs a place, too.
+**Note:** To make use of the cloud storage suppport of Craft you need "Pro" license. This is required since fortrabbit's file system is not persistent and assets needs a place, too.
 
 Now that is done you can safely remove the empty, local asset sources:
 
-* Got to Settings > Assets
-* Click the remove button for every `Local Folder` type asset source
-* Done
+1. Got to Settings > Assets
+2. Click the remove button for every `Local Folder` type asset source
+3. Done
+
 
 ### Migrate database
 
