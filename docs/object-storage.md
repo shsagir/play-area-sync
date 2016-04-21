@@ -216,12 +216,9 @@ Still reading? Go on and dig into the details:
 
 All files served from the Object Storage will be served with caching headers. Those caching headers have two effects: The client (browser) knows that it does not need to reload the files from the server, which, of course, makes things quite a bit faster. The other effect of the caching header is that the Object Storage server will cache the files as well. This might sound a bit strange on first view but the result is that besides re-visiting browsers also newcomers will get their files very fast, because they are read mostly from the memory of the Object Storage servers, which is extremely fast.
 
-<!--
+Not existing files (404) are also cached, but only shortly.
 
-TODO: write about the negative cache, it's part of specs and part of Dashboard activity. Either remove those...
-
--->
-
+See [specs](https://www.fortrabbit.com/specs) for details on default cache durations.
 
 #### Manipulate cache durations
 
@@ -292,9 +289,15 @@ The Object Storage is laid out to handle lot's of small to medium sized files, n
 
 As with S3 it is not possible to list directories. You can place an `index.html` file containing your custom listing.
 
+
 ### Custom domains
 
 The Object Storage can only be accessed by HTTP(S) via the standard App name related URL. You can currently not route any custom domains. Neither you can use your own TLS (SSL) termination here.
+
+
+### Case sensitivity
+
+Same as S3 the Object Storage is case sensitive. So you can upload `file` and `FILE` in the same folder. Also there is a difference between `https://your-app.objects.frb.io/file` and `https://your-app.objects.frb.io/FILE`.
 
 
 ## Alternatives
