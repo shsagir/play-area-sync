@@ -216,6 +216,13 @@ Still reading? Go on and dig into the details:
 
 All files served from the Object Storage will be served with caching headers. Those caching headers have two effects: The client (browser) knows that it does not need to reload the files from the server, which, of course, makes things quite a bit faster. The other effect of the caching header is that the Object Storage server will cache the files as well. This might sound a bit strange on first view but the result is that besides re-visiting browsers also newcomers will get their files very fast, because they are read mostly from the memory of the Object Storage servers, which is extremely fast.
 
+<!--
+
+TODO: write about the negative cache, it's part of specs and part of Dashboard activity. Either remove those...
+
+-->
+
+
 #### Manipulate cache durations
 
 You can change the default cache durations of 24 hours in the Dashboard (Dashboard > App > Settings > Object Storage cache). If you need a finer granulation then you can simple set either of two headers: `Cache-Control` or `Expires`. Those will then be forwarded to the browser and also define the caching time on the server. A helpful guide to work with caching headers can be found [here](http://www.mobify.com/blog/beginners-guide-to-http-cache-headers/).
