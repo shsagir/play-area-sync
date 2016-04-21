@@ -134,10 +134,10 @@ Plugin Name: Amazon S3 alternative
 */
 
 add_filter('aws_get_client_args', function($args) { 
-	if (getenv('S3_API_ENDPOINT')) {
-		$args['endpoint'] = getenv('S3_API_ENDPOINT');
-	}
-	return $args; 
+  if (getenv('S3_API_ENDPOINT')) {
+    $args['endpoint'] = getenv('S3_API_ENDPOINT');
+  }
+  return $args; 
 });
 
 
