@@ -202,6 +202,10 @@ Replace `your-app` with the actual name of your [App](app) and `path/to/file.jpg
 
 Most framwork/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
 
+### Log access
+
+As with all fortrabbit components you can use the [logging](help.fortrabbit.com/logging) service to tail live logs.
+
 
 ## Advanced usage, troubleshooting & quirks
 
