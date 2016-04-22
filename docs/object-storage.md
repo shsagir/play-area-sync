@@ -265,9 +265,11 @@ CORS is partially supported: CORS rules will be not be accepted but a default CO
 
 ### Deploying static assets to the Object Storage
 
-You usually Git push to deploy all your files. In our [assets blog article](https://blog.fortrabbit.com/i-love-assets) we have discussed several solutions to deal with compressed front-end assets such as minified and concatenated JS and CSS — those actually should not be part of your Git. We advice to exclude the files from Git, generate them locally and upload them directly from your build tool. You can do so, with Gulp for example and an extra S3 plugins, such as `gulp-awspublish`. 
+You usually Git push to deploy all your files. In our [assets blog article](https://blog.fortrabbit.com/i-love-assets) we have discussed several solutions to deal with compressed front-end assets such as minified and concatenated JS and CSS — those actually should not be part of your Git. We advice to exclude the files from Git, generate them locally and upload them directly from your build tool. 
 
-Please mind to find a plugin that supports to send over the `endpoint`, as standard AWS locations will not work.
+#### Gulp, Grunt & co
+
+You can automate the process of uploading files with a task runner or build script. You can use Gulp with an S3 plugin, such as `gulp-awspublish` or `gulp-S3`. Please mind to find a plugin that supports to send over the `endpoint`, as standard AWS locations will not work. Plugins that are based on `knox` or `aws-sdk` will probably work.
 
 
 ### The private folder
