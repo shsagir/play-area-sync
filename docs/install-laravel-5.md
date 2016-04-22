@@ -366,13 +366,11 @@ $ DB_PASSWORD="your database password" php artisan db:seed --database=mysql-tunn
 ```
 
 
-<!-- TODO: rewrite on Object Storage launch  -->
-
 ### Persistent storage
 
-If you require a persistent storage, for uploaded media or anything else, you can use a cloud storage. We recommend Amazon's S3 and have written up a BLOG[guide to get your started](new-app-cloud-storage-s3).
+If you require a persistent storage, eg for user uploads or any other runtime data your App creates, you can use our [Object Storage component](/object-storage). Once you have booked the component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
 
-For the sake of an example, let's say you are using S3. First setup the `S3_*` [custom App secrets](/secrets#toc-adding-custom-app-secrets). Then you can open up `config/filesystems.php` and modify it akin to the following:
+To use the credentials open up `config/filesystems.php` and modify it as following:
 
 ```php
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
@@ -382,11 +380,12 @@ return [
     'disks' => [
         // ..
         's3' => [
-            'driver' => 's3',
-            'key'    => $secrets['CUSTOM']['S3_KEY'],
-            'secret' => $secrets['CUSTOM']['S3_SECRET'],
-            'region' => $secrets['CUSTOM']['S3_REGION'],
-            'bucket' => $secrets['CUSTOM']['S3_BUCKET'],
+            'driver'   => 's3',
+            'key'      => $secrets['OBJECT_STORAGE']['KEY'],
+            'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
+            'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
+            'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
+            'region'   => 'us-east-1', // value doesn't matter
         ],
         // ..
     ],
@@ -394,7 +393,7 @@ return [
 ];
 ```
 
-If you want to use S3 remotely and a local storage locally, then replace the "default" value. For example like so:
+If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. For example like so:
 
 ```php
 // ...
@@ -402,7 +401,9 @@ If you want to use S3 remotely and a local storage locally, then replace the "de
 // ..
 ```
 
-Now set `FS_TYPE` in your local `.env` file and the [environment variables](/env-vars) in the Dashboard.
+Now set `FS_TYPE` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
+
+An alternative to the Object Storage component is Amazon's S3 and we have written up a BLOG[guide to get your started](new-app-cloud-storage-s3).
 
 ### Sending mail
 
