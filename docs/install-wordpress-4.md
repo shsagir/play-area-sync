@@ -165,41 +165,51 @@ Bedrock recommends to install themes by unpacking them into the `web/app/themes`
 
 ### Persistent storage
 
-Since WordPress is a CMS living on editorial provided content you most likely need a persistent storage. That's not so hard.
+Since WordPress is a CMS living on editorial provided content you most likely need a persistent storage. That's not so hard: you can use our [Object Storage component](/object-storage). Once you have booked the component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
 
-First you need an Amazon Web Services (AWS) account, then you simply install two plugins and configure them. The AWS account can be easily obtained. Just follow the instructions in BLOG[our guide to S3](new-app-cloud-storage-s3) - should not take more than a couple of minutes.
-
-Once that's done you need to install two plugins. Best do it with composer:
+Now you need to install two plugins. Best do it with composer:
 
 ```bash
 $ composer require wpackagist-plugin/amazon-web-services
 $ composer require deliciousbrains/wp-amazon-s3-and-cloudfront
 ```
 
-Now switch to the fortrabbit Dashboard and add two environment [secrets](secrets):
+Next create the file `web/app/plugins/amazon-s3-fortrabbit.php` with the following contents:
 
 ```
-AWS_ACCESS_KEY_ID=YourAWSAccessKey
-AWS_SECRET_ACCESS_KEY=YourAWSSecretKey
-```
+<?php
+/*
+Plugin Name: Amazon S3 fortrabbit
+*/
 
-Next open your environment config, for example `config/environments/production.php`, and add:
-
-```php
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+define('DBI_AWS_ACCESS_KEY_ID', $secrets['OBJECT_STORAGE']['KEY']);
+define('DBI_AWS_SECRET_ACCESS_KEY', $secrets['OBJECT_STORAGE']['SECRET']);
 
-define('AWS_ACCESS_KEY_ID', $secrets['CUSTOM']['AWS_ACCESS_KEY_ID']);
-define('AWS_SECRET_ACCESS_KEY', $secrets['CUSTOM']['AWS_ACCESS_KEY_ID']);
+add_filter('aws_get_client_args', function($args) use ($secrets) {
+    $args['endpoint'] = 'https://'. $secrets['OBJECT_STORAGE']['SERVER'];
+    return $args;
+});
+```
+
+To make sure the plugin becomes part of the Git repo you need to open the `.gitignore` file and edit it like so:
+
+```
+# ...
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+!web/app/plugins/amazon-s3-fortrabbit.php
+# ...
 ```
 
 Now commit everything and push it online:
 
 ```bash
-$ git commit -am "With S3"
+$ git commit -am "With Object Storage"
 $ git push
 ```
 
-Once that's done, you can head over to the WordPress Admin, activate the two previously installed plugins ("Amazon Web Services" and "WP Offload S3") and then go to the settings of "WP Offload S3". Here you can choose one of your buckets. And, besides some optional fine-tuning, that's it. Any media you will upload hence will be persisted to S3.
+Once the deployment is done, you can head over to the WordPress Admin, activate the all three plugins ("Amazon S3 fortrabbit", "Amazon Web Services" and "WP Offload S3 (Lite)") and then navigate to AWS > "S3 and CloudFront". First choose your bucket (there will be only one with the same name as your App), then enable "CloudFront or Custom Domain" and enter `your-app.objects.frb.io` as a custom domain. Save and done!
 
 ### Sending mail
 
