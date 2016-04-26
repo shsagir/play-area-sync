@@ -13,6 +13,8 @@ image:            ez-mark.png
 version:          1.2
 group:            Install_guides
 
+dontList:   true
+
 seeAlsoLinks:
     - app
 
