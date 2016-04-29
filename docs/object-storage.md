@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-04-21
+reviewed:      2016-04-29
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base in a modern cloud application.
@@ -259,13 +259,14 @@ Still reading? Go on and dig into the details:
 
 All files served from the Object Storage will be served with caching headers. Those caching headers have two effects: The client (browser) knows that it does not need to reload the files from the server, which, of course, makes things quite a bit faster. The other effect of the caching header is that the Object Storage server will cache the files as well. This might sound a bit strange on first view but the result is that besides re-visiting browsers also newcomers will get their files very fast, because they are read mostly from the memory of the Object Storage servers, which is extremely fast.
 
-Not existing files (404) are also cached, but only shortly.
+Not existing files (404) are also cached, but only shortly. See [specs](https://www.fortrabbit.com/specs) for details on default cache durations.
 
-See [specs](https://www.fortrabbit.com/specs) for details on default cache durations.
 
 #### Manipulate cache durations
 
 You can change the default cache durations of 24 hours in the Dashboard (Dashboard > App > Settings > Object Storage cache). If you need a finer granulation then you can simple set either of two headers: `Cache-Control` or `Expires`. Those will then be forwarded to the browser and also define the caching time on the server. A helpful guide to work with caching headers can be found [here](http://www.mobify.com/blog/beginners-guide-to-http-cache-headers/).
+
+Take care that we don't do cache purging. So when changing the cache duration, only new assets will be effected. Assets already in the cache will stay there as long as the old value is past.
 
 #### Cache busting
 
