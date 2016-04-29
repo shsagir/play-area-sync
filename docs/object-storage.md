@@ -2,9 +2,9 @@
 
 template:      article
 reviewed:      2016-04-21
-title:         Object Storage 
+title:         Object Storage
 naviTitle:     Object Storage
-lead:          How to work with files that are not part of your code base in a modern cloud application. 
+lead:          How to work with files that are not part of your code base in a modern cloud application.
 
 group:         Components
 
@@ -48,14 +48,14 @@ Back in the days you had persistent storage with your local file system on the s
                   │                │   └───────┘            │ │.jpg ││.png ││.mp4 ││.min.js││.min.css│ │
                   │                │                        │ └─────┘└─────┘└─────┘└───────┘└────────┘ │
                   └────────────────┘                        └────────────────────▲─────────────────────┘
-                                                                                 │                      
-                                                                            S3 protocol                 
-                                                                                 │                      
-                                                                           ┌─────┴─────┐                
-                                                                           │           │                
-                                                                           │ Developer │                
-                                                                           │           │                
-                                                                           └───────────┘                
+                                                                                 │
+                                                                            S3 protocol
+                                                                                 │
+                                                                           ┌─────┴─────┐
+                                                                           │           │
+                                                                           │ Developer │
+                                                                           │           │
+                                                                           └───────────┘
 ```
 
 The fortrabbit Object Storage is a multi purpose solution for offshore files. You can use it to store user uploads, any files your App generates and all other static assets: logos, compressed JS and CSS... you get the gist.
@@ -73,7 +73,7 @@ The Object Storage is available as a core App Component. It is completely option
 
 ## Pricing
 
-The Object Storage is sized in reasonable packages. Traffic is cumulated together with the total traffic of your App. See the [pricing details page](https://www.fortrabbit.com/specs) for up-to-date costs and package sizes. 
+The Object Storage is sized in reasonable packages. Traffic is cumulated together with the total traffic of your App. See the [pricing details page](https://www.fortrabbit.com/specs) for up-to-date costs and package sizes.
 
 
 ### Exceeding the quota
@@ -97,8 +97,51 @@ To upload files to the Object Storage you have two general options:
 
 Your App handles user uploads or storing all other created runtime data on the Object Storage. To that purpose most modern Apps come with file system abstractions. Those allow you to easily switch out the storage layer by changing your App's configuration. How that is done depends on your framework/CMS. Since we live in the Composer age most of those abstraction libraries use the AWS S3 SDK, with which our Object Storage is compatible. The most commonly used libraries are:
 
-* [Flysystem](http://flysystem.thephpleague.com/) by The PHP League / Frank De-Jonge, newer more hip
-* [Gaufrette](https://github.com/KnpLabs/Gaufrette) by KnpLabs, a bit older, also actively maintained
+
+#### Flysystem
+
+[Flysystem](http://flysystem.thephpleague.com/) by The PHP League / Frank De-Jonge. Both available AWS Adapters are compatible with the Object Storage.
+
+
+##### V2
+
+```php
+$credentials = [
+    'bucket'   => 'your-app',
+    'endpoint' => 'https://objects.eu2.frbit.com', // or 'https://objects.us1.frbit.com'
+    'key'      => 'your-app',
+    'region'   => 'eu-west-1', // use 'us-east-1' for 'us1' region
+    'secret'   => 'your-long-secret',
+];
+$client     = Aws\S3\S3Client::factory($credentials);
+$adapter    = new League\Flysystem\AwsS3v2\AwsS3Adapter($client, $credentials['bucket'], 'flysystem-s3-v2');
+$filesystem = new League\Flysystem\Filesystem($adapter);
+$filesystem->put('hello', 'world...');
+```
+
+##### V3
+
+```php
+$credentials = [
+    'credentials' => [
+        'key'    => 'your-app',
+        'secret' => 'your-long-secret',
+    ],
+    'region'   => 'eu-west-1', // use 'us-east-1' for 'us1' region
+    'bucket'   => 'your-app',
+    'endpoint' => 'https://objects.eu2.frbit.com', // or 'https://objects.us1.frbit.com'
+    'version'  => 'latest',
+];
+$client     = Aws\S3\S3Client::factory($credentials);
+$adapter    = new League\Flysystem\AwsS3v3\AwsS3Adapter($client, $credentials['bucket'], 'flysystem-s3-v3');
+$filesystem = new League\Flysystem\Filesystem($adapter);
+$filesystem->put('hello', 'world...');
+```
+
+#### Gaufrette
+
+
+[Gaufrette](https://github.com/KnpLabs/Gaufrette) by KnpLabs, a bit older, also actively maintained
 
 
 <!--
@@ -133,11 +176,11 @@ Requires this 'plugin' (plugins/amazon-s3-alternative.php)
 Plugin Name: Amazon S3 alternative
 */
 
-add_filter('aws_get_client_args', function($args) { 
+add_filter('aws_get_client_args', function($args) {
   if (getenv('S3_API_ENDPOINT')) {
     $args['endpoint'] = getenv('S3_API_ENDPOINT');
   }
-  return $args; 
+  return $args;
 });
 
 
@@ -265,7 +308,7 @@ CORS is partially supported: CORS rules will be not be accepted but a default CO
 
 ### Deploying static assets to the Object Storage
 
-You usually Git push to deploy all your files. In our [assets blog article](https://blog.fortrabbit.com/i-love-assets) we have discussed several solutions to deal with compressed front-end assets such as minified and concatenated JS and CSS — those actually should not be part of your Git. We advice to exclude the files from Git, generate them locally and upload them directly from your build tool. 
+You usually Git push to deploy all your files. In our [assets blog article](https://blog.fortrabbit.com/i-love-assets) we have discussed several solutions to deal with compressed front-end assets such as minified and concatenated JS and CSS — those actually should not be part of your Git. We advice to exclude the files from Git, generate them locally and upload them directly from your build tool.
 
 #### Gulp, Grunt & co
 
