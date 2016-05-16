@@ -1,8 +1,9 @@
 ---
 
 template:      article
-reviewed:      2016-03-10
+reviewed:      2016-05-16
 title:         All about Domains & DNS
+lead:          How to configure and route any domains to your fortrabbit App.
 naviTitle:     Domains
 
 otherVersionLinks:

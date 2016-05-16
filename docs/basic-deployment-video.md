@@ -2,7 +2,7 @@
 
 template:      video
 naviTitle:     Basic deployment
-title:         Basic deployment demo
+title:         "Basic deployment video"
 videoid:       J3VY8HSmn64
 group:         Videos
 

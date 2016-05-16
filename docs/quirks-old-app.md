@@ -2,7 +2,7 @@
 
 template:    article
 reviewed:    2016-01-22
-title:       Quirks & constraints
+title:       "Quirks & constraints — old Apps"
 lead:        Limits, restrictions, permissions there are some — aren't there always?
 dontList:    true
 oldApp:      true
