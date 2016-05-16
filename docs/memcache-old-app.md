@@ -2,7 +2,7 @@
 
 template:   article
 reviewed:   2016-01-21
-title:      Memcache on fortrabbit
+title:      Memcache on fortrabbit - old App
 naviTitle:  Memcache
 lead:       Speed speed speed - caching on fortrabbit.
 dontList:   true

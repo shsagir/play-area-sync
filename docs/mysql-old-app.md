@@ -2,7 +2,7 @@
 
 template:      article
 reviewed:      2016-02-18
-title:         All about MySQL
+title:         All about MySQL — old App
 naviTitle:     MySQL
 lead:          Access and configure the database.
 dontList:      true
