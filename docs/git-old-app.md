@@ -2,7 +2,7 @@
 
 template:    article
 reviewed:    2016-01-22
-title:       Git deployment
+title:       Git deployment — old App
 naviTitle:   Git deployment
 lead:        Learn how to deploy with Git and see advanced configuration.
 dontList:    true

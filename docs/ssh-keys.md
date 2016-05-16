@@ -4,7 +4,7 @@ template:       article
 reviewed:       2016-01-08
 naviTitle:      SSH keys setup
 title:          Troubleshooting SSH keys
-lead:           We get a lot regular support requests regarding SSH key setup. This article helps solving common issues and is a resource where to get more help.
+lead:           This article helps solving common issues in setting up your SSH keys.
 group:          Kitchen_sink
 
 
