@@ -52,13 +52,11 @@ There are special solutions for [WordPress](install-wordpress#toc-smtp), [Larave
 Currently only [live logs](logging) are available.
 
 
-<!--  TODO: rewrite on object storage launch -->
-
 ## Ephemeral storage
 
 Each App has a limited amount of local non-persistent, floating — so called ephemeral storage. During each [deployment](/deployment) this storage gets whipped. So you better not store any runtime data, like user uploads there. 
 
-So it's a good idea to use a cloud storage for large data sets. Please see [universal specs pages](http://www.fortrabbit.com/specs#limits) for limits.
+With the [Object Storage](/object-storage) Component you can offshore your static assets easily.
 
 
 ## PHP
@@ -94,6 +92,7 @@ The PHP extension `HTTP` from PECL is enabled by default. The classes `HttpReque
 Available locales are:
 
 <pre><code class="plain" id="locales"></code></pre>
+
 <script type="text/javascript">
     $(function() {
         console.log("Loading locales");
