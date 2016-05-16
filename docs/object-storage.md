@@ -4,7 +4,7 @@ template:      article
 reviewed:      2016-04-29
 title:         Object Storage
 naviTitle:     Object Storage
-lead:          How to work with files that are not part of your code base in a modern cloud application.
+lead:          How to work with files that are not part of your code base.
 
 group:         Components
 
@@ -27,11 +27,13 @@ seeAlsoLinks:
 
 ## Problem
 
-Back in the days you had persistent storage with your local file system on the server. This allowed you to upload an image, or any other static asset, directly to the web server and it would be served from there. The interweb has moved on and the powers that be concluded the modern 12-factor-app is the way to go. Same goes for fortrabbit's [New Apps](/new-apps). These have an [ephemeral file system](/new-apps#toc-asset-storage), which means that all changes to the file system, will be undone with each deploy – meaning: each `git push`. So you need a place to store stuff you'd like to keep. And apart from that you might also want to …
+Back in the days you had persistent storage with your local file system on the web server. This allowed you to upload an image - or any other static asset - directly to the server so that it would be served from there linked like so: `uploads/photo.jpg`. With modern cloud 12-factor-app based Infrastructures this is different: 
 
-* separate content and code to make your App resilient
-* keep your Git clean and lean to keep deployments fast
-* separate HTTP and PHP requests to increase performance
+fortrabbit Apps have an [ephemeral file system](/new-apps#toc-asset-storage). This means that all changes to the local file system will be undone with each deploy. So, each time you `git push` a completely new package will be deployed, replacing everything else on the Node.
+
+Imagine you have a CMS and you are uploading images. Next time you push some changes, those images will be gone.
+
+
 
 ## Solution
 
@@ -58,12 +60,18 @@ Back in the days you had persistent storage with your local file system on the s
                                                                            └───────────┘
 ```
 
+So you need a place to store stuff you'd like to keep, something like `https://myapp.objects.frb.io/uploads/photo.jpg`. And apart from that you might also want to …
+
+* separate content and code to make your App resilient
+* keep your Git clean and lean to keep deployments fast
+* separate HTTP and PHP requests to increase performance
+
 The fortrabbit Object Storage is a multi purpose solution for offshore files. You can use it to store user uploads, any files your App generates and all other static assets: logos, compressed JS and CSS... you get the gist.
 
 
 ### Implementation
 
-The fortrabbit Object Storage implements large parts of the S3 REST API making it compatible with most S3 clients, plugins and libraries. In fact, it stores all objects in the highly available and endlessly scalable S3 space.
+The fortrabbit Object Storage implements large parts of the AWS S3 REST API making it compatible with most S3 clients, plugins and libraries. In fact, it stores all objects in the highly available and endlessly scalable S3 space.
 
 
 ## Booking & scaling
@@ -238,7 +246,7 @@ In those cases S3 behaves pretty much like your good old friend FTP.
 Once you have uploaded some files, the ultimate goal is of course to serve them to the browser. To that purpose all Apps come with an Object Storage URL in the form:
 
 ``` plain
-https://your-app.assets.frb.io/path/to/file.jpg
+https://your-app.objects.frb.io/path/to/file.jpg
 ```
 
 Replace `your-app` with the actual name of your [App](app) and `path/to/file.jpg` with the actual path to your file. Note that we recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS.
@@ -314,6 +322,27 @@ You usually Git push to deploy all your files. In our [assets blog article](http
 #### Gulp, Grunt & co
 
 You can automate the process of uploading files with a task runner or build script. You can use Gulp with an S3 plugin, such as `gulp-awspublish` or `gulp-S3`. Please mind to find a plugin that supports to send over the `endpoint`, as standard AWS locations will not work. Plugins that are based on `knox` or `aws-sdk` will probably work.
+
+
+Example `objects.json`. Mind to replace all value with your own ones. Exclude this file from Git for security reasons.
+```
+{
+  "key":      "app-name",
+  "secret":   "mgr()242Nd%D/D.T_ww.zO.jx8Zkc6WmlLl.Lsa.Y-pIB.3NCNfTsdsdbM",
+  "bucket":   "app-name",
+  "region":   "eu-west-1",
+  "endpoint": "objects.eu2.frbit.com"
+}
+```
+
+Example of a `gulpfile.js`. Reading credentials from the json file then deploying files to the object storage via the S3 protocol.
+```
+var s3 = require("gulp-s3");
+ 
+aws = JSON.parse(fs.readFileSync('./objects.json'));
+gulp.src('./dist/**')
+    .pipe(s3(aws));
+```
 
 
 ### The private folder
