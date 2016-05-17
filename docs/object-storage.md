@@ -154,6 +154,7 @@ $filesystem->put('hello', 'world...');
 
 #### Frameworks & CMS
 
+Offshore files is relatively new concept, but support is growing. Most frameworks and CMS systems are already supporting it via plugins or modules. Here is a short list:
 
 
 #### Laravel
@@ -188,33 +189,34 @@ Use can either use the [OneUp Flysystem bundle](https://github.com/1up-lab/Oneup
 
 There is [something in the works](https://github.com/pixelandtonic/Craft-Release/blob/master/app/assetsourcetypes/S3AssetSourceType.php) for Craft 3.
 
-  TODO / TBD: Craft 2 is important! We try to get a patch in core.
 
 
 #### Shopware
 
-Use the [SwagMediaS3](https://github.com/shopwareLabs/SwagMediaS3) Amazon S3 adapter.
+You might use the [SwagMediaS3](https://github.com/shopwareLabs/SwagMediaS3) Amazon S3 adapter (not tested).
 
-  TODO/TBD:  endpoint missing? https://github.com/shopwareLabs/SwagMediaS3/blob/master/Bootstrap.php#L96
+<!--  TODO/TBD:  endpoint missing? https://github.com/shopwareLabs/SwagMediaS3/blob/master/Bootstrap.php#L96 -->
 
 #### Magento
 
-There is the [Arkade S3 Extension](https://github.com/arkadedigital/magento2-s3) which you can use.
+There is the [Arkade S3 Extension](https://github.com/arkadedigital/magento2-s3) which you might can use (not tested).
 
-  TODO/TBD:  endpoint not supported? PR  https://github.com/arkadedigital/magento2-s3/blob/master/Model/MediaStorage/File/Storage/S3.php#L59
+<!-- TODO/TBD: endpoint not supported? PR  https://github.com/arkadedigital/magento2-s3/blob/master/Model/MediaStorage/File/Storage/S3.php#L59 -->
 
+
+<!-- 
 #### eZ publish
 
 ...
 
   INFO: PR/Patch for S3 on the way
+-->
 
 
 #### Custom/plain PHP applications
 
 There is an official [AWS PHP SDK](https://github.com/aws/aws-sdk-php) from Amazon you can use.
 
--->
 
 
 ### 2. Manual upload
