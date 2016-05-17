@@ -1,9 +1,10 @@
 ---
 
-template:   article
-title:      "Quirks & constraints"
-naviTitle:  Quirks
-lead:       "Limits, restrictions, permissions there are some — aren't there always? Heads up so it doesn't cost you hours of debugging in the wrong direction."
+template:      article
+title:         "Quirks & constraints"
+reviewed:      2016-05-17
+naviTitle:     Quirks
+lead:          "Limits, restrictions, permissions there are some — aren't there always? Heads up so it doesn't cost you hours of debugging in the wrong direction."
 
 otherVersionLinks:
     - quirks-old-app

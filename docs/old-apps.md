@@ -5,8 +5,15 @@ template:      article
 reviewed:      2016-02-18
 title:         How to still work with the Old Apps
 naviTitle:     Old Apps 
-lead:          New Apps are out of BETA and are becoming the new standard. During sunset you can still use the Old Apps, this article helps finding your way.
+lead:          New Apps are the new standard. During sunset you can still use the Old Apps, this article helps finding your way.
 group:         Kitchen_sink
+
+seeAlsoLinks:
+     - app
+     - new-apps
+     - old-apps
+     - app-design
+     - migrating-old-new-app
 
 ---
 
