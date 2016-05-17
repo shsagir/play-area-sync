@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-04-29
+reviewed:      2016-05-17
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -137,7 +137,7 @@ $credentials = [
     ],
     'region'   => 'eu-west-1', // use 'us-east-1' for 'us1' region
     'bucket'   => 'your-app',
-    'endpoint' => 'https://objects.eu2.frbit.com', // or 'https://objects.us1.frbit.com'
+    'endpoint' => 'https://objects.eu2.frbit.com', // or 'https://objects.us1.frbit.com' depends on App location
     'version'  => 'latest',
 ];
 $client     = Aws\S3\S3Client::factory($credentials);
@@ -149,12 +149,13 @@ $filesystem->put('hello', 'world...');
 #### Gaufrette
 
 
-[Gaufrette](https://github.com/KnpLabs/Gaufrette) by KnpLabs, a bit older, also actively maintained
+[Gaufrette](https://github.com/KnpLabs/Gaufrette) is an alternative file system abstraction by KnpLabs, a bit older, but also actively maintained.
 
 
-<!--
+#### Frameworks & CMS
 
-  TODO:
+Offshore files is relatively new concept, but support is growing. Most frameworks and CMS systems are already supporting it via plugins or modules. Here is a short list:
+
 
 #### Laravel
 
@@ -165,9 +166,10 @@ Laravel 4 flysystem bridge: https://github.com/GrahamCampbell/Laravel-Flysystem/
   TODO: what's up with this service provider? https://github.com/aws/aws-sdk-php-laravel
 
 
-#### Drupal
 
-There is an extra module that adapts Flysystem with Drupal. More over [here](/install-drupal).
+#### Drupal 8
+
+There is an [module](https://www.drupal.org/project/flysystem) that adapts Flysystem with Drupal. More soon.
 
 
 #### WordPress
@@ -175,60 +177,46 @@ There is an extra module that adapts Flysystem with Drupal. More over [here](/in
 You can use [WP Offload S3 Lite](https://wordpress.org/plugins/amazon-s3-and-cloudfront/) to upload and serve files. More infos [here](/install-wordpress).
 
 
-  TODO/TBD:  endpoint not supported? https://github.com/deliciousbrains/wp-amazon-s3-and-cloudfront/blob/master/classes/amazon-s3-and-cloudfront.php#L2122
-
-Requires this 'plugin' (plugins/amazon-s3-alternative.php)
-
-<?php
-/*
-Plugin Name: Amazon S3 alternative
-*/
-
-add_filter('aws_get_client_args', function($args) {
-  if (getenv('S3_API_ENDPOINT')) {
-    $args['endpoint'] = getenv('S3_API_ENDPOINT');
-  }
-  return $args;
-});
-
 
 #### Symfony
 
 Use can either use the [OneUp Flysystem bundle](https://github.com/1up-lab/OneupFlysystemBundle) or the [Gaufrette bundle](https://github.com/KnpLabs/KnpGaufretteBundle). More infos [here](/install-symfony).
 
-  TODO / TBD: what's up with this AWS service provider? https://github.com/aws/aws-sdk-php-symfony
+
+
 
 #### Craft CMS
 
 There is [something in the works](https://github.com/pixelandtonic/Craft-Release/blob/master/app/assetsourcetypes/S3AssetSourceType.php) for Craft 3.
 
-  TODO / TBD: Craft 2 is important! We try to get a patch in core.
 
 
 #### Shopware
 
-Use the [SwagMediaS3](https://github.com/shopwareLabs/SwagMediaS3) Amazon S3 adapter.
+You might use the [SwagMediaS3](https://github.com/shopwareLabs/SwagMediaS3) Amazon S3 adapter (not tested).
 
-  TODO/TBD:  endpoint missing? https://github.com/shopwareLabs/SwagMediaS3/blob/master/Bootstrap.php#L96
+<!--  TODO/TBD:  endpoint missing? https://github.com/shopwareLabs/SwagMediaS3/blob/master/Bootstrap.php#L96 -->
 
 #### Magento
 
-There is the [Arkade S3 Extension](https://github.com/arkadedigital/magento2-s3) which you can use.
+There is the [Arkade S3 Extension](https://github.com/arkadedigital/magento2-s3) which you might can use (not tested).
 
-  TODO/TBD:  endpoint not supported? PR  https://github.com/arkadedigital/magento2-s3/blob/master/Model/MediaStorage/File/Storage/S3.php#L59
+<!-- TODO/TBD: endpoint not supported? PR  https://github.com/arkadedigital/magento2-s3/blob/master/Model/MediaStorage/File/Storage/S3.php#L59 -->
 
+
+<!-- 
 #### eZ publish
 
 ...
 
   INFO: PR/Patch for S3 on the way
+-->
 
 
 #### Custom/plain PHP applications
 
 There is an official [AWS PHP SDK](https://github.com/aws/aws-sdk-php) from Amazon you can use.
 
--->
 
 
 ### 2. Manual upload

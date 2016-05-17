@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-02-20
+reviewed:         2016-05-17
 title:            Install Phalcon 2
 naviTitle:        Phalcon
 lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C extension providing high performance and low resource consumption. Here you learn how to best getting started with Phalcon 2 on fortrabbit.
@@ -49,3 +49,6 @@ Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashbo
 
 As Phalcon is a C Extension, you need to enable it in the Dashboard under your Apps PHP Extensions.
 
+## Proceed as usual
+
+See our [deployment article](deployment) to get the picture.

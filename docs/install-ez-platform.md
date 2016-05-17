@@ -50,6 +50,8 @@ $ cd MyApp
 
 **Note**: Use `dev` as environment when asked. `prod` should be the environment for running on fortrabbit.
 
+
+
 <!-- TODO: rewrite on object storage, asset storage launch  -->
 
 ### Prepare storage

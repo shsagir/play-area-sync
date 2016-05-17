@@ -35,14 +35,14 @@ We assume you've already created a New App with fortrabbit. You also need a loca
 
 ## Install
 
-You can either use an existing one or initialize a new one. For a new one execute locally:
+You can either use an existing code base or initialize a new one. For a new one execute locally:
 
 ```bash
 $ cd ~/Projects
 $ composer create-project laravel/laravel --prefer-dist MyApp
 ```
 
-In any case: change into your local app directory, make sure it is initialized as a Git repo, everything is added and add your App's Git remote:
+In any case: change into the app directory of your local machine, make sure it is initialized as a Git repo, everything is added and add your App's Git remote:
 
 ```bash
 $ cd ~/Projects/MyApp
@@ -72,14 +72,14 @@ This first push can take a bit, since all the Composer packages need to be insta
 
 When the push is done you can visit your App URL in the browser and see the Laravel welcome screen! Any subsequent push will be much faster and you can leave you the `-u fortrabbit master`.
 
-Tuning
-------
 
-The above will give you an up and running App. However, to make the most of Laravel on fortabbit, it needs some tuning.
+## Tuning
+
+The above will give you an up and running App. However, to make the most of Laravel on fortabbit, it needs some fine tuning.
 
 ### Logging
 
-Per default Laravel writes all logs to `storage/log/..`. Since you don't have direct file access, you need to configure Laravel to write to the PHP `error_log` method instead. That's easily done: open `boostrap/app.php` and add the following just before the `return $app` statement at the bottom:
+Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead. That's easily done: open `boostrap/app.php` and add the following just before the `return $app` statement at the bottom:
 
 ```php
 $app->configureMonologUsing(function($monolog) {
@@ -95,7 +95,7 @@ You can now use the regular [log access](logging) to view the stream.
 
 ### MySQL
 
-You can use the [App secrets](secrets) to attain your database credentials. Modify the `config/database.php` like so:
+Use the [App secrets](secrets) to attain your database credentials. Modify the `config/database.php` like so:
 
 ```php
 $mysql = [
@@ -160,7 +160,7 @@ return [
 
 ### Memcache
 
-Make sure you enabled the [Memcache](memcache) component. Then you can use the [App secrets](app-secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
+Make sure you enabled the [Memcache](memcache) Component. Then you can use the [App Secrets](app-secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
 
 ```php
 $servers = [[
@@ -368,7 +368,7 @@ $ DB_PASSWORD="your database password" php artisan db:seed --database=mysql-tunn
 
 ### Persistent storage
 
-If you require a persistent storage, eg for user uploads or any other runtime data your App creates, you can use our [Object Storage component](/object-storage). Once you have booked the component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
+If you require a storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). You can also see those with your App in the Dashboard.
 
 To use the credentials open up `config/filesystems.php` and modify it as following:
 
@@ -403,7 +403,8 @@ If you want to use the Object Storage with your fortrabbit App and a local stora
 
 Now set `FS_TYPE` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
 
-An alternative to the Object Storage component is Amazon's S3 and we have written up a BLOG[guide to get your started](new-app-cloud-storage-s3).
+An alternative to our Object Storage Component is Amazon S3 and we have written up a [guide to get your started](new-app-cloud-storage-s3).
+
 
 ### Sending mail
 

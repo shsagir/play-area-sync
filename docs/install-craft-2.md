@@ -1,11 +1,11 @@
 ---
 
-template:      article
-reviewed:      2016-02-18
-title:         Install Craft CMS 2 on fortrabbit
-naviTitle:     Craft CMS
-lead:          Craft is a CMS you and your clients love. Learn how to deploy Craft using git on fortrabbit.
-group:         Install_guides
+template:         article
+reviewed:         2016-05-17
+title:            Install Craft CMS 2 on fortrabbit
+naviTitle:        Craft CMS
+lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using git on fortrabbit.
+group:            Install_guides
 
 websiteLink:      https://craftcms.com/?utm_source=fortrabbit
 websiteLinkText:  craftcms.com
@@ -33,11 +33,19 @@ tags:
 We assume you've already created an [App](app) with fortrabbit. You also need a local, running Craft installation. If you are starting from scratch then best use the [HappyLager Demo](https://github.com/pixelandtonic/HappyLager) and follow their install guide. If you have a running (production) installation then you need to export its data and set up a local, working "clone" with which you can proceed.
 
 
+
+
 <!--  TODO: rewrite on object storage launch, asset storage -->
 
-### Setup asset source
+### Setup Object Storage
 
-Since fortrabbit does not support a persistent storage you want to use S3 for that. If you don't have an AWS account or no S3 bucket handy just follow [our quick guide](http://blog.fortrabbit.com/new-app-cloud-storage-s3) and you'll have a bucket ready within a few minutes.
+Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets. We'll publish more infos on how to do this soon. So long here is an alternative way:
+
+
+
+#### AWS S3 as cloud storage
+
+If you don't have an AWS account or no S3 bucket handy just follow [our quick guide](http://blog.fortrabbit.com/new-app-cloud-storage-s3) and you'll have a bucket ready within a few minutes.
 
 Once that's done your can create you S3 asset source:
 
@@ -60,6 +68,7 @@ Now, since you are working on a local copy which you want to deploy to your fort
 **Note**: Rinse and repeat with all your local asset sources!
 
 **Note:** To make use of the cloud storage suppport of Craft you need "Pro" license. This is required since fortrabbit's file system is not persistent and assets needs a place, too.
+
 
 Now that is done you can safely remove the empty, local asset sources:
 

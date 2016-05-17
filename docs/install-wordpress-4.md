@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-04-28
+reviewed:         2016-05-17
 title:            Install WordPress 4
 naviTitle:        WordPress
 lead:             WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
@@ -210,6 +210,11 @@ $ git push
 ```
 
 Once the deployment is done, you can head over to the WordPress Admin, activate the all three plugins ("Amazon S3 fortrabbit", "Amazon Web Services" and "WP Offload S3 (Lite)") and then navigate to AWS > "S3 and CloudFront". First choose your bucket (there will be only one with the same name as your App), then enable "CloudFront or Custom Domain" and enter `your-app.objects.frb.io` as a custom domain. Save and done!
+
+
+
+
+
 
 ### Sending mail
 
