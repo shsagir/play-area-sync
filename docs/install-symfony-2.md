@@ -149,14 +149,14 @@ $ php app/console doctrine:migrations:generate --db-configuration=app/config/tun
 
 ### Persistent storage
 
-If you require a persistent storage, eg for user uploads or any other runtime data your App creates, you can use our [Object Storage component](/object-storage). Once you have booked the component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
+fortrabbit Apps have [ephemeral storage](quirks#toc-ephemeral-storage). If you require a permanent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
 
 * [Gaufrette Symfony bundle](https://github.com/KnpLabs/KnpGaufretteBundle)
 * [Flysystem Symfony bundle](https://github.com/1up-lab/OneupFlysystemBundle)
 
 Both are well documented. In essence, you should configure your filesystem abstraction so that you use the cloud storage adapter in your prod environment (on fortrabbit) and locally, well, a local adapter.
 
-An alternative to the Object Storage component is Amazon's S3 and we have written up a BLOG[guide to get your started](new-app-cloud-storage-s3).
+An alternative to the Object Storage component is Amazon S3 and we have written up a [guide to get your started](new-app-cloud-storage-s3).
 
 ### Memcache sessions
 

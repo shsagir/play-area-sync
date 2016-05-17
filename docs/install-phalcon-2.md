@@ -49,3 +49,6 @@ Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashbo
 
 As Phalcon is a C Extension, you need to enable it in the Dashboard under your Apps PHP Extensions.
 
+## Proceed as usual
+
+See our [deployment article](deployment) to get the picture.

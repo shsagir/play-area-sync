@@ -137,7 +137,7 @@ $credentials = [
     ],
     'region'   => 'eu-west-1', // use 'us-east-1' for 'us1' region
     'bucket'   => 'your-app',
-    'endpoint' => 'https://objects.eu2.frbit.com', // or 'https://objects.us1.frbit.com'
+    'endpoint' => 'https://objects.eu2.frbit.com', // or 'https://objects.us1.frbit.com' depends on App location
     'version'  => 'latest',
 ];
 $client     = Aws\S3\S3Client::factory($credentials);
@@ -149,12 +149,12 @@ $filesystem->put('hello', 'world...');
 #### Gaufrette
 
 
-[Gaufrette](https://github.com/KnpLabs/Gaufrette) by KnpLabs, a bit older, also actively maintained
+[Gaufrette](https://github.com/KnpLabs/Gaufrette) is an alternative file system abstraction by KnpLabs, a bit older, but also actively maintained.
 
 
-<!--
+#### Frameworks & CMS
 
-  TODO:
+
 
 #### Laravel
 
@@ -165,9 +165,10 @@ Laravel 4 flysystem bridge: https://github.com/GrahamCampbell/Laravel-Flysystem/
   TODO: what's up with this service provider? https://github.com/aws/aws-sdk-php-laravel
 
 
-#### Drupal
 
-There is an extra module that adapts Flysystem with Drupal. More over [here](/install-drupal).
+#### Drupal 8
+
+There is an [module](https://www.drupal.org/project/flysystem) that adapts Flysystem with Drupal. More soon.
 
 
 #### WordPress
@@ -175,28 +176,13 @@ There is an extra module that adapts Flysystem with Drupal. More over [here](/in
 You can use [WP Offload S3 Lite](https://wordpress.org/plugins/amazon-s3-and-cloudfront/) to upload and serve files. More infos [here](/install-wordpress).
 
 
-  TODO/TBD:  endpoint not supported? https://github.com/deliciousbrains/wp-amazon-s3-and-cloudfront/blob/master/classes/amazon-s3-and-cloudfront.php#L2122
-
-Requires this 'plugin' (plugins/amazon-s3-alternative.php)
-
-<?php
-/*
-Plugin Name: Amazon S3 alternative
-*/
-
-add_filter('aws_get_client_args', function($args) {
-  if (getenv('S3_API_ENDPOINT')) {
-    $args['endpoint'] = getenv('S3_API_ENDPOINT');
-  }
-  return $args;
-});
-
 
 #### Symfony
 
 Use can either use the [OneUp Flysystem bundle](https://github.com/1up-lab/OneupFlysystemBundle) or the [Gaufrette bundle](https://github.com/KnpLabs/KnpGaufretteBundle). More infos [here](/install-symfony).
 
-  TODO / TBD: what's up with this AWS service provider? https://github.com/aws/aws-sdk-php-symfony
+
+
 
 #### Craft CMS
 

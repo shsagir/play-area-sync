@@ -54,7 +54,7 @@ $ cd MyApp
 
 ### Persistent storage
 
-If you require a persistent storage, eg for user uploads or any other runtime data your App creates, you can use our [Object Storage component](/object-storage). Once you have booked the component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
+If you require a storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
 
 eZ Platform uses [Flysystem](https://github.com/thephpleague/flysystem) to handle the storage, so you need to install the [AWS PHP SDK](https://github.com/aws/aws-sdk-php) to use the S3 storage adapter:
 
