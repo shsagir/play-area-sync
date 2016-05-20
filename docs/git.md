@@ -49,9 +49,9 @@ With fortrabbit you also use Git to deploy code from your local machine to our r
 
 To successfully use fortrabbit you should be familiar with Git standard operations and concepts — `commit`, `push`, `pull`. If you don't know Git yet, go ahead learn it. You will profit from it — either you and using fortrabbit or not. It's a cornerstone of todays software development. It's not very intuitive at start, but very very handy when you know it a bit better. There are many good tutorials out there in the interwebs to get started. For example:
 
-* [Guides & ebook from Git Tower](https://www.git-tower.com/learn/)
 * [Offical docs from Git SCM](https://git-scm.com/doc)
 * [Try Git in your browser for free](https://try.github.io/levels/1/challenges/1)
+* [Guides & ebook from Git Tower](https://www.git-tower.com/learn/)
 * [Get Git right from Atlassian](https://www.atlassian.com/git/)
 * and [many more](http://lmgtfy.com/?q=learn+git)
 
