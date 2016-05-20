@@ -65,10 +65,7 @@ If you see an existing key pair listed (for example id_rsa.pub and id_rsa) that 
 
 If you don't have any key pairs or you receive an error that ~/.ssh doesn't exist, you probably have a different/incorrect setting or haven't set up anything yet.
 
-On Windows: If you don't know what the Git Bash is, or you have a different setup, check our [Git article](git) again and/or follow this question:
-
-* [Stack Overflow: Where to find my private RSA key](http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key)
-
+On Windows: If you don't know what the Git Bash is, or you have a different setup, check our recommendation on the [Git article](git) (again).
 
 
 ## Generate SSH keys
@@ -130,7 +127,7 @@ fatal: Could not read from remote repository.
 
 A) And you have never deployed to fortrabbit before, chances are that the setup is not yet correct. Please see if you have [Git](git) and SSH keys (see above) correctly installed — on your local machine and on fortrabbit. If you installed your SSH keys on Windows with PuTTY, you either know exactly what you are doing, or you might have followed a Google result and have it not yet correctly. You may also have a look on this StackOverflow question:
 
-* [Windows where to find my private rsa key](http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key)
+* [Windows: where to find my private RSA key](http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key)
 
 
 B) And if you have deployed before, please check if you have changed something, compare your local keys with the remote one, see if any change in collaboration happened. If not, have a look at out [status page](https://status.fortrabbit.com), maybe it's us, not you.
