@@ -128,7 +128,10 @@ Permission denied (publickey).
 fatal: Could not read from remote repository.
 ```
 
-A) And you have never deployed to fortrabbit before, chances are that the setup is not yet correct. Please see if you have [Git](git) and SSH keys (see above) correctly installed — on your local machine and on fortrabbit. If you installed your SSH keys on Windows with PuTTY, you either know exactly what you are doing, or you might have followed a Google result and have it not yet correctly.
+A) And you have never deployed to fortrabbit before, chances are that the setup is not yet correct. Please see if you have [Git](git) and SSH keys (see above) correctly installed — on your local machine and on fortrabbit. If you installed your SSH keys on Windows with PuTTY, you either know exactly what you are doing, or you might have followed a Google result and have it not yet correctly. You may also have a look on this StackOverflow question:
+
+* [Windows where to find my private rsa key](http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key)
+
 
 B) And if you have deployed before, please check if you have changed something, compare your local keys with the remote one, see if any change in collaboration happened. If not, have a look at out [status page](https://status.fortrabbit.com), maybe it's us, not you.
 
