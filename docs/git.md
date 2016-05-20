@@ -61,23 +61,25 @@ To successfully use fortrabbit you should be familiar with Git standard operatio
 
 To use Git, you need to have it installed on your local machine. You might already have Git? Open a Terminal session and type ``git --version`.
 
+
 ### Git on Mac Os & Linux
 
 Good news: you most likely already have it installed.
 
+
 ### Git on Windows
 
-Good news: you can work it out. Take care, there are multiple ways to do it, there is [TortoiseGit](https://tortoisegit.org/) (a Windows shell interface) and there is the Git BASH which comes with the offical Git installer.
+Good news: you can work it out. There are multiple version floating around, we recommend to download and install Git from the **[official Git website](https://git-scm.com/downloads)**. This one comes with the "Git Bash".
 
-* [Beanstalk Git Windows install guides](http://guides.beanstalkapp.com/version-control/git-on-windows.html#installing-Git)
-* [Git for Windows by GitHub](https://git-for-windows.github.io/)
-* …
+* [StackOverflow: Difference between Gits for Windows](http://stackoverflow.com/questions/22310007/differences-between-git-scm-msysgit-git-for-windows)
+* [Beanstalk Git Windows install guides with SSH key setup](http://guides.beanstalkapp.com/version-control/git-on-windows.html#installing-Git)
+
 
 
 
 ## Installing your public SSH keys
 
-Bravo: You know how to use Git and you have installed on your machine. There is one more thing: You need to install and use SSH keys to make it work with fortrabbit. Please see the dedicated article: [SSH key setup help and troubleshooting](/ssh-keys) to get that working.
+BRAVO: You know how to use Git and you have installed on your machine. There is one more thing: You need to install and use SSH keys to make it work with fortrabbit. Please see the dedicated article: [SSH key setup help and troubleshooting](/ssh-keys) to get that working.
 
 
 ## Using Git with fortrabbit
@@ -93,6 +95,12 @@ Each [App](app) comes with a dedicated Git remote repo. This server-side reposit
 
 On top of the standard usage we also use Git to deploy your code. Your ``git push`` on the master branch will update the remote repository and trigger a chain of processes which will finally distribute your code changes to your public [Apps](app). Please see our [deployment article](deployment) for detailed informations and advanced usage.
 
+
+## Git desktop app GUIs
+
+Most people probably use Git on command line level (bash/terminal). But you will also find GUIs (desktop Apps) to manage Git. Those help to get started and to see visually what's going on:
+
+* [Git Desktop GUIs list](https://git-scm.com/downloads/guis)
 
 
 ### Git is not GitHub
