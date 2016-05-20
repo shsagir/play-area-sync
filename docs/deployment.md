@@ -2,9 +2,9 @@
 
 template:      article
 reviewed:      2016-01-22
-title:         How to deploy on fortrabbit
+title:         Deploy with Git on fortrabbit
 naviTitle:     Deployment
-lead:          Get your code up with a simple git push, see advanced configuration.
+lead:          Get your code up and running with a simple git push, see advanced configuration.
 group:         Kitchen_sink
 
 otherVersionLinks:
@@ -18,7 +18,9 @@ tags:
      - git
 
 seeAlsoLinks:
+    - git
     - deployment
+    - ssh-keys
     - deployment-architecture-video
     - git-submodules
     - deployment-file-v2
@@ -26,7 +28,6 @@ seeAlsoLinks:
     - ssh-sftp-old-app
     - security
     - quirks
-    - ssh-keys
 
 
 ---
