@@ -1,4 +1,4 @@
-s---
+---
 
 template:      article
 reviewed:      2016-05-16
