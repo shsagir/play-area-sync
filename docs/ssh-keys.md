@@ -40,11 +40,11 @@ tags:
 
 ---
 
-Your public SSH keys are used to authenticate you with a variety of fortrabbit services such as **[deploying via Git](git)**, [accessing live logs](logging) and [remote MySQL access](mysql#toc-remote-mysql-access). So, in other words: No SSH keys installed, no fun with fortrabbit — it's quite crucial to get this part right. 
+Your public SSH keys are used to authenticate you with a variety of fortrabbit services such as **[deploying via Git](git)**, [accessing live logs](logging) and [remote MySQL access](mysql#toc-remote-mysql-access). So, in other words: No SSH keys installed, no fun with fortrabbit — it's quite crucial to get this part right.
 
-The goals here: 
+The goals here:
 
-1. Create an SSH key pair (RSA keys) consisting of public and private key. 
+1. Create an SSH key pair consisting of public and private key.
 2. Store the keys on the right location, so that your Operating System can make use of them.
 
 
@@ -58,10 +58,10 @@ For the everything to work together, first check if you have Git installed on yo
 To check if you have any existing SSH keys installed: Mac Os & Linux: Open a terminal (Mac OS & Linux) or a Git Bash (Windows) and type:
 
 ```
-ls -al ~/.ssh
+ls -hal ~/.ssh
 ```
 
-If you see an existing key pair listed (for example id_rsa.pub and id_rsa) that you would like to use to connect to fortrabbit, you can already add the public SSH key to your fortrabbit Account in the Dashboard, see below.
+If you see an existing key pair listed (for example `id_rsa.pub` and `id_rsa`) that you would like to use to connect to fortrabbit, you can skip the generation and add the public SSH key (contents of `id_rsa.pub`) to your fortrabbit Account in the Dashboard, see below.
 
 If you don't have any key pairs or you receive an error that ~/.ssh doesn't exist, you probably have a different/incorrect setting or haven't set up anything yet.
 
@@ -70,11 +70,11 @@ On Windows: If you don't know what the Git Bash is, or you have a different setu
 
 ## Generate SSH keys
 
-The procedure to create SSH keys is a bit different on each Operating System. 
+The procedure to create SSH keys is a bit different on each Operating System.
 
-### SSH keys generation on Windows 
+### SSH keys generation on Windows
 
-There are different ways to setup and use Git with Windows, thus there are also different ways setup and  store the keys. We recommend to use the official installer form the Git website, together with the Git Bash tool. This tutorial from GitHub is lazer-sharp:
+There are different ways to setup and use Git with Windows, thus there are also different ways setup and store the keys. We recommend to use the official installer form the Git website, together with the Git Bash tool. This tutorial from GitHub is lazer-sharp:
 
 * [Generate a new SSH key & add it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-windows)
 
@@ -108,7 +108,7 @@ S/eTlx2qWrmhsf20H+P/FK8otXKa+EW4UY6mew/lVxboEYDfCTju8cS5raJBmTehBaYyWI2dy
 IvP1bffus+WdY75 you@localhost
 ```
 
-MIND THE DIFFERNCE BETWEEN PUBLIC AND PRIVATE KEY! The above is multi-line only for readability. Please don't use multi-line SSH keys in the Dashboard. The key should start with `ssh-rsa`, if not, it's not the right version.
+MIND THE DIFFERNCE BETWEEN PUBLIC AND PRIVATE KEY! The above is multi-line only for readability. Please remove the line breaks from the SSH key when adding it to the Dashboard. The key should start with `ssh-rsa`, `ssh-dss` or `ecdsa-sha2-nistp...` if not, it's probably not a supported version.
 
 
 ### Shortcut: GitHub import
@@ -121,7 +121,7 @@ Maybe you are using GitHub with SSH keys already? If so, then you can easily imp
 When you get this after a `git push` or `git pull` like so:
 
 ```
-Permission denied (publickey). 
+Permission denied (publickey).
 fatal: Could not read from remote repository.
 ```
 
@@ -139,7 +139,7 @@ Don't hesitate to contact our support as well.
 
 In case you haven't worked with SSH keys before — you'll might be interested to understand how it works. The bottom line is that SSH key authentication is a bit nerdy, but actually both: convenient and secure. "SSH keys are a way to identify trusted computers, without involving passwords." That's from GitHub and probably the shortest way to explain what it is about and the most crucial benefit.
 
-In public key authentication you have a key pair that consists of a public (id_rsa.pub) and a private key (id_rsa). What is encrypted with one (eg the public key) can be decrypted by the other (then: the private key). Further, having only the public key [does not allow you to derive the private key](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics). Hence you can safely "give out" your public key.
+In public key authentication you have a key pair that consists of a public (eg `id_rsa.pub`) and a private key (eg `id_rsa`). What is encrypted with one (eg the public key) can be decrypted by the other (then: the private key). Further, having only the public key [does not allow you to derive the private key](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics). Hence you can safely "give out" your public key.
 
 When you install your public key with fortrabbit it can be used to authenticate you: your SSH clients uses your private key to encrypt plain text data, which is then decrypted, using your public key, on the fortrabbit SSH server. If this decryption succeeds, then it must have been encrypted by your private key and you are let in.
 
