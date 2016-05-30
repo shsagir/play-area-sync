@@ -2,15 +2,17 @@
 
 template:      article
 reviewed:      2016-05-30
-title:         SSH
+title:         Remote SSH commands
 naviTitle:     SSH
 lead:          Executing remote SSH commands in your App.
-dontList:      1
-oldApp:        true
 group:         Kitchen_sink
 
 seeAlsoLinks:
     - deployment
+    - ssh-keys
+
+otherVersionLinks:
+    - ssh-sftp-old-app
 
 tags:
     - git
@@ -44,16 +46,15 @@ $ ssh your-app@deploy.eu2.frbit.com php htdocs/script.php
 
 **Note**: In the example you can see that the `htdocs` path is placed before the `script.php` file. Your App has the "home" folder `/srv/app/your-app`, which contains the sub folder `htdocs` to which your App is deployed. So if the file `script.php` is top-level in your local directory, then it is in the `htdocs` sub folder of your App. Read more about the [directory structure](/directory-structure).
 
+So the main difference of the SSH remote exec to a "full SSH environment" is that you can only execute one command at once and that you specify the command to be executed with the SSH login command line.
+
 
 ### Limitations
 
-Code changes made via remote SSH execution don't have any effect in your running App! This means: You can run the migrate command, which changes the contents of your database and thereby has effect on your App. If you'd instead remove a file, it will only be removed from the "deployment Container" in which the SSH command was executed, not in the "Web Container", which is used to serve your App to the web. All code changes need to be made locally and then [committed and pushed via Git](/deployment).
-
-To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments are not allowed.
-
-The maximal execution time for remote SSH commands is [limited](/specs).
-
-Commands cannot be detached to the background. That means: When the command execution is finished and you are back on your local shell, then the remote command execution has terminated as well.
+* **No code deployment**: Code changes made via remote SSH execution don't have any effect in your running App! This means: You can run the migrate command, which changes the contents of your database and thereby has effect on your App. If you'd instead remove a file, it will only be removed from the "deployment Container" in which the SSH command was executed, not in the "Web Container", which is used to serve your App to the web. All code changes need to be made locally and then [committed and pushed via Git](/deployment).
+* **Concurrent usage**: To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments are not allowed.
+* **Limited execution time**: The maximal execution time for remote SSH commands is [limited](/specs).
+* **No background execution**: Commands cannot be detached to the background. That means: When the command execution is finished and you are back on your local shell, then the remote command execution has terminated as well.
 
 ### Advanced
 
