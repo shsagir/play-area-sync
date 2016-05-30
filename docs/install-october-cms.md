@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-03-10
+reviewed:         2016-05-30
 title:            Install October CMS on fortrabbit
 naviTitle:        October CMS
 lead:             October is a free, open-source, self-hosted CMS based on the Laravel PHP framework. Learn how to install and use it on fortrabbit.
@@ -97,6 +97,8 @@ return [
 ];
 ```
 
+<!--
+
 Now create a database tunnel file, which will be needed later in this guide, under `config/tunnel/database.php` with the following contents:
 
 ```php
@@ -121,6 +123,8 @@ return [
 **Note**: You can get your App's database credentials using the `secrets` command, eg `ssh git@deploy.eu2.frbit.com secrets your-app-name`
 
 **Note**: This file will be later on placed in the `.gitignore` file so it will not be part of your Git history.
+
+-->
 
 ### Configure app settings
 
@@ -219,14 +223,6 @@ return [
 ];
 ```
 
-## Setup database
-
-Now that all config files are created it's time to setup your App's database. Start by [opening a tunnel](mysql#toc-shell-tunnel-mysql) and then executing:
-
-```bash
-$ php artisan october:up --env=tunnel
-```
-
 ## Dashboard settings
 
 Go to the fortrabbit [Dashboard](dashboard), navigate to your App > ENV vars and create:
@@ -282,13 +278,21 @@ nbproject
 
 (`composer.lock` must be removed and `/config/tunnel` must be added)
 
-Finally add everything to Git, make an initial commit, add your App's remote and push:
+Now add everything to Git, make an initial commit, add your App's remote and push:
 
 ```bash
 $ git add -A
 $ git commit -m 'Initial'
 $ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
 $ git push -u fortrabbit master
+```
+
+## Setup database
+
+Now that your code is pushed and all config files are created the last step is to setup your App's database. You can do so by [executing a remote commands via SSH](/ssh):
+
+```bash
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan october:up
 ```
 
 Done
@@ -322,4 +326,3 @@ If you plan on using scheduled jobs then you can configure a new Cron Job in the
 * **Name:** `scheduler`
 * **Command:** `artisan schedule:run`
 * **Interval:** `every minute`
-

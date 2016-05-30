@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-04-28
+reviewed:         2016-05-30
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -30,7 +30,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit. You also need a local [Laravel](http://laravel.com/docs/5.1/installation) installation. 
+We assume you've already created a New App with fortrabbit. You also need a local [Laravel](http://laravel.com/docs/5.1/installation) installation.
 
 
 ## Install
@@ -264,10 +264,10 @@ if (isset($_SERVER['APP_SECRETS'])) {
         'exchange_name'  => null,
         'exchange_type'  => null,
         'exchange_flags' => null,
-        
+
          //Durable queue (survives server crash)
         'queue_flags'=> ['durable' => true, 'routing_key' => null],
-        
+
         //Persistent messages (survives server crash)
         'message_properties' => ['delivery_mode' => 2],
     ];
@@ -330,27 +330,39 @@ Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard 
 
 ### Migrate & other database commands
 
-Open `config/database.php` and add a new connection:
+You can [execute remote commands via SSH](/ssh), for example:
+
+```bash
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan migrate
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan migrate:rollack
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan tinkering
+```
+
+#### Using envoy
+
+Easy. Here is an `Envoy.blade.php` example:
 
 ```php
-// ..
-'connections' => [
-    // ..
-    'mysql-tunnel' => [
-        'driver'    => 'mysql',
-        'host'      => '127.0.0.1',
-        'port'      => '13306',
-        'database'  => 'your-app-name',
-        'username'  => 'your-app-name',
-        'password'  => env('DB_PASSWORD', ''),
-        'charset'   => 'utf8',
-        'collation' => 'utf8_unicode_ci',
-        'prefix'    => '',
-        'strict'    => false,
-    ],
-    // ..
-],
+@servers(['fr' => 'your-app@deploy.eu2.frbit.com'])
+
+@task('ls', ['on' => 'fr'])
+    ls -lha htdocs
+@endtask
+
+@task('migrate', ['on' => 'fr'])
+    cd htdocs
+    php artisan migrate
+@endtask
 ```
+
+Then execute locally:
+
+```bash
+$ envoy run ls
+$ envoy run migrate
+```
+
+<!--
 
 Fetch your current database password using the `secrets` command:
 
@@ -364,6 +376,8 @@ Now open up a [tunnel](/mysql#toc-shell-tunnel-mysql) and run in another termina
 $ DB_PASSWORD="your database password" php artisan migrate --database=mysql-tunnel
 $ DB_PASSWORD="your database password" php artisan db:seed --database=mysql-tunnel
 ```
+
+-->
 
 
 ### Persistent storage

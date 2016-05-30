@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-03-14
+reviewed:         2016-05-30
 naviTitle:        eZ Platform
 title:            Install eZ Platform on fortrabbit
 lead:             Learn how to install and tune the eZ Platform on fortrabbit.
@@ -35,7 +35,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit which has the [MySQL](mysql) and [Memcache](memcache) components enabled. You also need a local [EZ Platform](https://github.com/ezsystems/ezplatform/blob/master/INSTALL.md) installation. 
+We assume you've already created a New App with fortrabbit which has the [MySQL](mysql) and [Memcache](memcache) components enabled. You also need a local [EZ Platform](https://github.com/ezsystems/ezplatform/blob/master/INSTALL.md) installation.
 
 
 ## Install
@@ -204,7 +204,7 @@ services:
                 region: "%aws_s3_region%"
                 credentials:
                     key: "%aws_s3_key%"
-                    secret: "%aws_s3_secret%"            
+                    secret: "%aws_s3_secret%"
 
 ```
 
@@ -231,13 +231,16 @@ Next go to App > Domains and set the document root of your domain(s) to the `web
 
 Lastly enable the `xsl` PHP extension in App > PHP.
 
-### Initialize database
+### Initialize local database
 
 If you started from scratch and don't have a local database yet, it's now time to create it:
+
 
 ```bash
 $ php app/console --env=dev ezplatform:install clean
 ```
+
+<!--
 
 Now you need to create a new environment. Let's call it `tunnel`. Begin by creating the file `app/config/config_tunnel.yml` with the following content:
 
@@ -283,7 +286,9 @@ Once both files are created you should [open up a tunnel](mysql#toc-shell-tunnel
 $ php app/console --env=tunnel ezplatform:install clean
 ```
 
-### Finish up
+-->
+
+### Deploy
 
 You are nearly done. Since eZ uses `app.php` as the "index file", you need to make that clear to the web server by creating `web/.htaccess`:
 
@@ -331,7 +336,7 @@ behat.yml
 app/config/parameters_tunnel.php
 ```
 
-That's about it. If your local project director is not already a Git repo, then you should make it now so:
+If your local project director is not already a Git repo, then you should make it now so:
 
 ```bash
 # optional:
@@ -344,6 +349,14 @@ $ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
 $ git add -A
 $ git commit -m 'Initial'
 $ git push -u fortrabbit master
+```
+
+### Initialize remote database
+
+Lastly execute the install command [via SSH remote exec](/ssh):
+
+```bash
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/app/console --env=prod ezplatform:install clean
 ```
 
 Done.
