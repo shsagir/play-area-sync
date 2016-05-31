@@ -330,12 +330,12 @@ Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard 
 
 ### Migrate & other database commands
 
-You can [execute remote commands via SSH](/ssh), for example:
+You can [execute remote commands via SSH](/remote-ssh-execution), for example:
 
 ```bash
 $ ssh your-app@deploy.eu2.frbit.com php artisan migrate
 $ ssh your-app@deploy.eu2.frbit.com php artisan migrate:rollack
-$ ssh your-app@deploy.eu2.frbit.com php artisan tinkering
+$ ssh your-app@deploy.eu2.frbit.com php artisan tinker
 ```
 
 #### Using envoy
