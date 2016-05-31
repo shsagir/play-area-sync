@@ -37,7 +37,7 @@ Remote SSH execution: run single commands remotely using the SSH remote exec pro
 * Use CLI tools for tasks like database migration (see below)
 * Use remote task runners like [Envoy](https://laravel.com/docs/master/envoy) (or [Gulp/SSH](https://www.npmjs.com/package/gulp-ssh))
 * List files on remote: see what actually has been deployed
-* Debug while developing your [Workers](/workers) and cron jobs
+* Debug while developing your [Worker](/worker) and cron jobs
 * Debug while developing your [pre/post deploy scripts](/deployment-file-v2#toc-full-schema)
 * Execute arbitrary PHP scripts within your Apps
 * …
