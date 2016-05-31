@@ -9,6 +9,7 @@ group:         Kitchen_sink
 
 seeAlsoLinks:
     - deployment
+    - git
     - ssh-keys
     - deployment-architecture-video
 
@@ -35,9 +36,9 @@ Remote SSH execution: run single commands remotely using the SSH remote exec pro
 ### Application scenarios
 
 * Use CLI tools for tasks like database migration (see below)
-* Use remote task runners like [Envoy](https://laravel.com/docs/master/envoy) or [Gulp/SSH](https://www.npmjs.com/package/gulp-ssh)
+* Use remote task runners like [Envoy](https://laravel.com/docs/master/envoy) (or [Gulp/SSH](https://www.npmjs.com/package/gulp-ssh))
 * List files on remote: see what actually has been deployed
-* Debug while developing your [Workers](/workers) and Crons
+* Debug while developing your [Workers](/workers) and cron jobs
 * Debug while developing your [pre/post deploy scripts](/deployment-file-v2#toc-full-schema)
 * Execute arbitrary PHP scripts within your Apps
 * …
@@ -45,7 +46,7 @@ Remote SSH execution: run single commands remotely using the SSH remote exec pro
 
 ## Usage
 
-All you need to do is: prefix the command you want to execute remotely with the SSH login command. For example:
+The main difference of the SSH remote exec to a "full SSH environment" is that you can only execute one command at once and that you specify the command to be executed with the SSH login command line. All you need to do is: prefix the command you want to execute remotely with the SSH login command. For example:
 
 ```
 $ ssh your-app@deploy.eu2.frbit.com php htdocs/script.php
@@ -57,13 +58,11 @@ $ ssh your-app@deploy.eu2.frbit.com php htdocs/script.php
 
 **Note**: In the example you can see that the `htdocs` path is placed before the `script.php` file. Your App has the "home" folder `/srv/app/your-app` from where all commands will be executed. The "home" folder contains the sub folder `htdocs` which in turn contains your App's code, which is deployed via Git. So if the file `script.php` is top-level in your local code directory, then it will be deployed into the `htdocs` sub folder of your App. Read more about the directory structure [here](/directory-structure).
 
-So you see: the main difference of the SSH remote exec to a "full SSH environment" is that you can only execute one command at once and that you specify the command to be executed with the SSH login command line.
-
 ### Authentication
 
 <!-- TODO: rewrite on password-username launch -->
 
-For remote SSH execution you identify using your public SSH keys. If you get a connection error, please check if your SSH key setup is correct and if in doubt refer to our [SSH key troubleshooting](/ssh-keys) guide.
+For remote SSH execution you identify using your public SSH keys. If you get a connection error, please check if your SSH key setup is correct and if in doubt refer to our [SSH key troubleshooting guide](/ssh-keys).
 
 
 ### Using CLI tools
@@ -75,7 +74,7 @@ Many modern web development frameworks and CMS come with a programmable command 
 
 **No persistent code manipulation**: Code changes made via remote SSH execution don't have any effect in your running App! This means: You can run a database migrate command, which changes the contents of your database and thereby has effect on your App. But: If your remote command actually modifies, creates or removes files, it will only be modified, created or removed from the "deployment Container" in which the SSH command was executed, not in the "Web Container", which is used to serve your App to the web. Also those changes will be undone with your next deploy. Hence: All code changes need to be made locally and then [committed and pushed via Git](/deployment).
 
-**No deployment via SFTP**: SFTP is not available. Again: All code changes need to be made via [Git deployment](/deployment).
+**No uploads**: SFTP is not available. All code changes need to be made via [Git deployment](/deployment) due to [ephemeral storage](quirks#toc-ephemeral-storage).
 
 **No concurrent usage**: To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments are not allowed.
 
@@ -86,7 +85,7 @@ Many modern web development frameworks and CMS come with a programmable command 
 
 ### Examples
 
-One line of code says more than 1000 pages of docu..
+One line of code says more than 1000 pages of documentation:
 
 #### Arbitrary PHP script
 
@@ -114,7 +113,7 @@ $ ssh your-app@deploy.eu2.frbit.com php htdocs/app/console some:command
 
 #### Gulp/SSH
 
-A simple example which executes `my-script.php` remotely and write it's output into local `logs/output.log` file:
+A simple example which executes `my-script.php` remotely and write it's output into local `logs/output.log` file. This is the `gulpfile.js`:
 
 ```js
 'use strict'
