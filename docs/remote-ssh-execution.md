@@ -2,9 +2,8 @@
 
 template:      article
 reviewed:      2016-05-31
-title:         Remote SSH commands
-naviTitle:     SSH
-lead:          How to execute remote SSH commands in your App.
+naviTitle:     Remote SSH execution
+title:         Using remote SSH commands
 group:         Kitchen_sink
 
 seeAlsoLinks:
