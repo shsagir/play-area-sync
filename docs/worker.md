@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2016-01-10
+reviewed:     2016-05-31
 title:        Worker
 naviTitle:    Worker
 lead:         Offshore long running and compute intensive tasks with background jobs — that's what the Worker Component is for.
@@ -243,6 +243,11 @@ while (true) {
 ### Do not detach
 
 If you don't know what that is: never mind. If you do know: don't detach. To guarantee that we can monitor jobs correctly they need to run with-under the parent processes which started them. All detached processes will be killed.
+
+
+### Developing your worker
+
+When developing you Worker script/command it helps if you are able to execute it once and see what it does. To that end you can use [remote SSH commands](/remote-ssh-execution).
 
 
 ## Alternatives to the Worker

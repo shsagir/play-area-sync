@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-05-30
+reviewed:      2016-05-31
 title:         Remote SSH commands
 naviTitle:     SSH
 lead:          How to execute remote SSH commands in your App.
@@ -26,18 +26,20 @@ tags:
 
 With fortrabbit you [deploy with Git](/deployment). But sometimes SSH access to your App can be helpful as well. fortrabbit Apps have [ephemeral storage](quirks#toc-ephemeral-storage) and a horizontal scalable infrastructure. This allows great performance and grants high availability. One trade of is that full SSH access is not feasible.
 
+
 ## Solution
 
 Remote SSH execution: run single commands remotely using the SSH remote exec protocol.
 
+
 ### Application scenarios
 
 * Use CLI tools for tasks like database migration (see below)
-* List files on remote, see what actually has been deployed
-* Debug your [workers](/workers) and crons
-* Debug your post/pre deploy scripts
-* Integrate third party services (like Envoyer)
-* Execute PHP scripts on remote
+* Use remote task runners like [Envoy](https://laravel.com/docs/master/envoy) or [Gulp/SSH](https://www.npmjs.com/package/gulp-ssh)
+* List files on remote: see what actually has been deployed
+* Debug while developing your [Workers](/workers) and Crons
+* Debug while developing your [pre/post deploy scripts](/deployment-file-v2#toc-full-schema)
+* Execute arbitrary PHP scripts within your Apps
 * …
 
 
@@ -64,12 +66,6 @@ So you see: the main difference of the SSH remote exec to a "full SSH environmen
 For remote SSH execution you identify using your public SSH keys. If you get a connection error, please check if your SSH key setup is correct and if in doubt refer to our [SSH key troubleshooting](/ssh-keys) guide.
 
 
-### Available commands
-
-* ls
-* …
-
-
 ### Using CLI tools
 
 Many modern web development frameworks and CMS come with a programmable command line interfaces (CLI), Drush and Artisan for example. These CLIs allow you to automate often occurring tasks, help you to develop your App via code generators and provide useful helpers to set up new installations. Executing commands, like database migration, can hugely simplify development.
@@ -77,22 +73,77 @@ Many modern web development frameworks and CMS come with a programmable command 
 
 ### Limitations
 
-**Nothing that leaves a permanent result on disk**: Remember the [ephemeral storage](quirks#toc-ephemeral-storage). Everything you'll write to the local file storage will be wiped on change of settings or deployment.
+**No persistent code manipulation**: Code changes made via remote SSH execution don't have any effect in your running App! This means: You can run a database migrate command, which changes the contents of your database and thereby has effect on your App. But: If your remote command actually modifies, creates or removes files, it will only be modified, created or removed from the "deployment Container" in which the SSH command was executed, not in the "Web Container", which is used to serve your App to the web. Also those changes will be undone with your next deploy. Hence: All code changes need to be made locally and then [committed and pushed via Git](/deployment).
 
-**No deployment via SSH/sFTP**: For the same reason as above: Don't use SSH to deploy code, use Git instead.
+**No deployment via SFTP**: SFTP is not available. Again: All code changes need to be made via [Git deployment](/deployment).
 
-**No code manipulation**: Code changes made via remote SSH execution don't have any effect in your running App! This means: You can run the migrate command, which changes the contents of your database and thereby has effect on your App. If your remote command instead modifies or removes a file, it will only be modified or removed from the "deployment Container" in which the SSH command was executed, not in the "Web Container", which is used to serve your App to the web. All code changes need to be made locally and then [committed and pushed via Git](/deployment).
-
-**Concurrent usage**: To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments are not allowed.
+**No concurrent usage**: To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments are not allowed.
 
 **Limited execution time**: The maximal execution time for remote SSH commands is [limited](https://www.fortrabbit.com/specs#limits).
 
-* **No background execution**: Commands cannot be detached to the background. That means: When the command execution is finished and you are back on your local shell, then the remote command execution has terminated as well.
+**No background execution**: Commands cannot be detached to the background. This means: When the command execution is finished and you are back on your local shell, then the remote command execution has terminated as well - whether there are still running detached processes or not.
 
-### Commands that are not available
 
-* mkdir
-* …
+### Examples
+
+One line of code says more than 1000 pages of docu..
+
+#### Arbitrary PHP script
+
+```bash
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/my-script.php arg1 arg2
+```
+
+#### Laravel: artisan
+
+Execute `some:command` using Laravels's `artisan` CLI:
+
+```bash
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan some:command
+```
+
+Check out the [Laravel article](/install-laravel-5#toc-migrate-amp-other-database-commands) for more examples.
+
+#### Symfony: console
+
+Execute `some:command` using Symfony's `app/console` CLI:
+
+```bash
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/app/console some:command
+```
+
+#### Gulp/SSH
+
+A simple example which executes `my-script.php` remotely and write it's output into local `logs/output.log` file:
+
+```js
+'use strict'
+
+var fs = require('fs'),
+  gulp = require('gulp'),
+  SSH  = require('gulp-ssh');
+
+var config = {
+  host:       'deploy.eu2.frbit.com',
+  port:       22,
+  username:   'your-app',
+  privateKey: fs.readFileSync(process.env.HOME + '/.ssh/id_rsa')
+};
+var ssh = new SSH({ignoreErrors: false, sshConfig: config});
+
+gulp.task('run-script', function() {
+  return ssh
+    .exec('php htdocs/my-script.php some-arg', {filePath: 'output.log'})
+    .pipe(gulp.dest('logs'));
+});
+
+```
+
+Then run in your local terminal:
+
+```bash
+$ gulp run-script
+```
 
 
 ## Advanced usage
