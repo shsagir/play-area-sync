@@ -55,7 +55,7 @@ $ ssh your-app@deploy.eu2.frbit.com php script.php
 #      the ssh login command       the remote command
 ```
 
-**Note I**: Unless otherwise specified all commands are executed from within `/srv/app/your-app/htdocs`, which is also the location to which your files are [deployed](/deployment). So if the script, you want to execute, is locally under `vendor/bin/foo` then you'd need to execute `ssh …frbit.com php vendor/bin/foo`. Check out the [directory structure](/directory-structure) for more information.
+**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/your-app/htdocs`, which is also the location to which your files are [deployed](/deployment). So if the script, you want to execute, is locally under `vendor/bin/foo` then you'd need to execute `ssh …frbit.com php vendor/bin/foo`. Check out the [directory structure](/directory-structure) for more information.
 
 **Note II**: You must write the interpreter `php` before all PHP scripts, including CLIs like `artisan` or `app/console`, you want to execute. So `ssh …frbit.com php script.php` works and `ssh …frbit.com script.php` does not.
 
