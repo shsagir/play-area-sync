@@ -60,7 +60,7 @@ If you haven't already created a key for your Laravel installation, you can do i
 $ php artisan key:generate
 ```
 
-This will print out the key and write it to your local `.env` file. You can now either create another key or use that one and set is as an [environment variable](/env-vars) to your App, via the Dashboard.
+This will print out the key and write it to your local `.env` file. You can now either create another key or use that one and set is as an [environment variable](/env-vars) named `APP_KEY` to your App, via the Dashboard.
 
 Once that is done, you can just push your local repo to the App remote:
 
