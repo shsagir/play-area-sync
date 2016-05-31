@@ -126,7 +126,7 @@ You can safely remove `path` from the `nested` block as well. You can now use th
 
 ### Migrate & other database commands
 
-You can [execute remote commands via SSH](/ssh), for example:
+You can [execute remote commands via SSH](/remote-ssh-execution), for example:
 
 ```bash
 $ ssh your-app@deploy.eu2.frbit.com php app/console doctrine:migrations:generate
