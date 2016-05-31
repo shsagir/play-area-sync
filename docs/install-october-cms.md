@@ -292,7 +292,7 @@ $ git push -u fortrabbit master
 Now that your code is pushed and all config files are created the last step is to setup your App's database. You can do so by [executing a remote commands via SSH](/ssh):
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan october:up
+$ ssh your-app@deploy.eu2.frbit.com php artisan october:up
 ```
 
 Done

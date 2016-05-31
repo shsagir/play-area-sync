@@ -356,7 +356,7 @@ $ git push -u fortrabbit master
 Lastly execute the install command [via SSH remote exec](/ssh):
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/app/console --env=prod ezplatform:install clean
+$ ssh your-app@deploy.eu2.frbit.com php app/console --env=prod ezplatform:install clean
 ```
 
 Done.

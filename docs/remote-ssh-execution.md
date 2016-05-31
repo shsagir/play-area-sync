@@ -48,14 +48,12 @@ Remote SSH execution: run single commands remotely using the SSH remote exec pro
 The main difference of the SSH remote exec to a "full SSH environment" is that you can only execute one command at once and that you specify the command to be executed with the SSH login command line. All you need to do is: prefix the command you want to execute remotely with the SSH login command. For example:
 
 ```
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/script.php
-# \                               / \                   /
-#  --------------|---------------    ---------|---------
-#                v                            v
-#      the ssh login command          the remote command
+$ ssh your-app@deploy.eu2.frbit.com php script.php
+# \                               / \             /
+#  --------------|---------------    ------|------
+#                v                         v
+#      the ssh login command       the remote command
 ```
-
-**Note**: In the example you can see that the `htdocs` path is placed before the `script.php` file. Your App has the "home" folder `/srv/app/your-app` from where all commands will be executed. The "home" folder contains the sub folder `htdocs` which in turn contains your App's code, which is deployed via Git. So if the file `script.php` is top-level in your local code directory, then it will be deployed into the `htdocs` sub folder of your App. Read more about the directory structure [here](/directory-structure).
 
 ### Authentication
 
@@ -89,7 +87,7 @@ One line of code says more than 1000 pages of documentation:
 #### Arbitrary PHP script
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/my-script.php arg1 arg2
+$ ssh your-app@deploy.eu2.frbit.com php my-script.php arg1 arg2
 ```
 
 #### Laravel: artisan
@@ -97,7 +95,7 @@ $ ssh your-app@deploy.eu2.frbit.com php htdocs/my-script.php arg1 arg2
 Execute `some:command` using Laravels's `artisan` CLI:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan some:command
+$ ssh your-app@deploy.eu2.frbit.com php artisan some:command
 ```
 
 Check out the [Laravel article](/install-laravel-5#toc-migrate-amp-other-database-commands) for more examples.
@@ -107,7 +105,7 @@ Check out the [Laravel article](/install-laravel-5#toc-migrate-amp-other-databas
 Execute `some:command` using Symfony's `app/console` CLI:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/app/console some:command
+$ ssh your-app@deploy.eu2.frbit.com php app/console some:command
 ```
 
 #### Gulp/SSH
@@ -131,7 +129,7 @@ var ssh = new SSH({ignoreErrors: false, sshConfig: config});
 
 gulp.task('run-script', function() {
   return ssh
-    .exec('php htdocs/my-script.php some-arg', {filePath: 'output.log'})
+    .exec('php my-script.php some-arg', {filePath: 'output.log'})
     .pipe(gulp.dest('logs'));
 });
 
@@ -154,7 +152,7 @@ You can execute multiple commands at once by quoting everything and separating t
 
 ```
 # execute three scripts
-$ ssh your-app@deploy.eu2.frbit.com "php htdocs/foo.php ; php htdocs/bar.php ; php htdocs/baz.php"
+$ ssh your-app@deploy.eu2.frbit.com "php foo.php ; php bar.php ; php baz.php"
 ```
 
 ### Aliases
@@ -163,11 +161,11 @@ On Mac and Linux: You can define local "aliases", which reduce the amount typing
 
 ```
 # create the alias
-$ alias artisan-my-app="ssh your-app@deploy.eu2.frbit.com php htdocs/artisan"
+$ alias artisan-my-app="ssh your-app@deploy.eu2.frbit.com php artisan"
 
 # use the alias
 $ artisan-my-app migrate
-# this actuall calls "ssh your-app@deploy.eu2.frbit.com php htdocs/artisan migrate"
+# this actuall calls "ssh your-app@deploy.eu2.frbit.com php artisan migrate"
 ```
 
 To persist those aliases between shell sessions you need to add them to your shell profile file. Usually that is either `~/.profile`, `~/.zshrc` or `~/.bashrc`.

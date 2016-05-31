@@ -215,8 +215,8 @@ return [
 You can [execute remote commands via SSH](/ssh), for example:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan migrate
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan migrate:rollack
+$ ssh your-app@deploy.eu2.frbit.com php artisan migrate
+$ ssh your-app@deploy.eu2.frbit.com php artisan migrate:rollack
 ```
 
 <!--

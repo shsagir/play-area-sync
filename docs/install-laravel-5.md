@@ -333,9 +333,9 @@ Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard 
 You can [execute remote commands via SSH](/ssh), for example:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan migrate
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan migrate:rollack
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan tinkering
+$ ssh your-app@deploy.eu2.frbit.com php artisan migrate
+$ ssh your-app@deploy.eu2.frbit.com php artisan migrate:rollack
+$ ssh your-app@deploy.eu2.frbit.com php artisan tinkering
 ```
 
 #### Using envoy
@@ -350,7 +350,6 @@ Easy. Here is an `Envoy.blade.php` example:
 @endtask
 
 @task('migrate', ['on' => 'fr'])
-    cd htdocs
     php artisan migrate
 @endtask
 ```

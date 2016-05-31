@@ -129,7 +129,7 @@ You can safely remove `path` from the `nested` block as well. You can now use th
 You can [execute remote commands via SSH](/ssh), for example:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php htdocs/app/console doctrine:migrations:generate
+$ ssh your-app@deploy.eu2.frbit.com php app/console doctrine:migrations:generate
 ```
 
 <!--
