@@ -27,7 +27,7 @@ keywords:
 
 seeAlsoLinks:
     - git
-    - ssh
+    - remote-ssh-execution
     - deployment
     - app
     - github
