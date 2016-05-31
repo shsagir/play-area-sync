@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-05-17
+reviewed:         2016-05-30
 title:            Install Symfony 2
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 on fortrabbit.
@@ -126,6 +126,14 @@ You can safely remove `path` from the `nested` block as well. You can now use th
 
 ### Migrate & other database commands
 
+You can [execute remote commands via SSH](/ssh), for example:
+
+```bash
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/app/console doctrine:migrations:generate
+```
+
+<!--
+
 Create a new file `app/config/tunnel-db.php` and add your App's MySQL credentials:
 
 ```php
@@ -146,6 +154,8 @@ Now open up a [tunnel](/mysql#toc-shell-tunnel-mysql) and run in another termina
 ```bash
 $ php app/console doctrine:migrations:generate --db-configuration=app/config/tunnel-db.php
 ```
+
+-->
 
 ### Persistent storage
 

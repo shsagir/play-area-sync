@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-14
+reviewed:      2016-05-31
 title:         Advanced Git deployment workflows with fortrabbit.yml
 naviTitle:     Deployment file
 lead:          Enhance your deployment process with the fortrabbit.yml deployment file.
@@ -37,7 +37,7 @@ version: 2
 
 # called before Composer runs
 pre:
-    
+
     # relative to ~/htdocs
     path: my-script.php
 
@@ -49,7 +49,7 @@ pre:
 
 # optional Composer settings
 composer:
-    
+
     # Per default dist is prefered
     prefer-source: false
 
@@ -67,7 +67,7 @@ post:
 
     # relative to ~/htdocs
     path: sub/folder/my-script.php
-    
+
     # optional parameters
     args:
         - foo
@@ -91,6 +91,10 @@ post:
     path: post.php
 
 ```
+
+## Developing pre or post calls
+
+When developing you Worker pre or post calls it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution).
 
 ## Multi staging use case
 

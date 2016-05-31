@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-02-20
+reviewed:         2016-05-30
 title:            Install Laravel 4
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 4 on fortrabbit.
@@ -212,6 +212,15 @@ return [
 
 ### Migrate & other database commands
 
+You can [execute remote commands via SSH](/ssh), for example:
+
+```bash
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan migrate
+$ ssh your-app@deploy.eu2.frbit.com php htdocs/artisan migrate:rollack
+```
+
+<!--
+
 Create a connection to your local environment database config by opening adding the following to `app/config/local/database.php`:
 
 ```php
@@ -246,3 +255,5 @@ Now open up a [tunnel](/mysql#toc-shell-tunnel-mysql) and run in another termina
 $ DB_PASSWORD="your database password" php artisan migrate --database=mysql-tunnel
 $ DB_PASSWORD="your database password" php artisan db:seed --database=mysql-tunnel
 ```
+
+-->
