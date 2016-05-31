@@ -117,7 +117,24 @@ MIND THE DIFFERNCE BETWEEN PUBLIC AND PRIVATE KEY! The above is multi-line only 
 Maybe you are using GitHub with SSH keys already? If so, then you can easily import those keys to fortrabbit. You can do this [here](https://dashboard.fortrabbit.com/boarding/keys/github) (login required).
 
 
-## Troubleshooting Git deployment
+## Troubleshooting
+
+### Authenticity error
+
+The first time you are connecting to fortrabbit service via SSH, you might get an error and a prompt like this:
+
+```
+The authenticity of host '…' can't be established
+RSA key fingerprint is … 
+Are you sure you want to continue connecting (yes/no)?
+```
+
+Please answer with `yes`. This will add our servers to the known hosts. That should be a one time setup. 
+
+If you are being asked this every time you deploy, something with your `known_hosts` file is probably wrong. See [this StackOverflow question](http://stackoverflow.com/questions/9299651/git-says-warning-permanently-added-to-the-list-of-known-hosts).
+
+
+### Permission denied error
 
 When you get this after a `git push` or `git pull` like so:
 

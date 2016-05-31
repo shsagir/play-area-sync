@@ -10,7 +10,7 @@ seeAlsoLinks:
     - deployment
     - git
     - ssh-keys
-    - deployment-architecture-video
+    - logging
 
 otherVersionLinks:
     - ssh-sftp-old-app

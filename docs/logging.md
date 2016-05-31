@@ -2,10 +2,14 @@
 
 template:   article
 reviewed:   2016-01-21
-title:      Acces your App's logs
+title:      About logs on fortrabbit
 naviTitle:  Logging
 lead:       Accessing live logs of your App is essential for developing. Here is how you can do it on fortrabbit.
 group:       Kitchen_sink
+
+seeAlsoLinks:
+    - remote-ssh-execution
+
 
 keywords:
     - Logging
