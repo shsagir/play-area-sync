@@ -5,6 +5,7 @@ reviewed:      2016-05-16
 title:         All about Domains & DNS
 lead:          How to configure and route any domains to your fortrabbit App.
 naviTitle:     Domains
+group:         Kitchen_sink
 
 otherVersionLinks:
     - domains-old-app
@@ -27,7 +28,15 @@ seeAlsoLinks:
 
 ---
 
-Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external top-level-domain to your App.
+Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external top-level-domain to your App. Your goal is to have your App running under your own domain. This is the high level of what's gonna happen:
+
+<!-- TODO: rewrite on launch of www-izer domain handling  -->
+
+1. register `www.mydomain.com` with the App in the fortrabbit Dashboard
+2. route `www.mydomain.com` via CNAME to `your-app.frb.io` using your domain provider
+3. forward all requests for the naked domain `mydomain.com` to `www.mydomain.com` with your domain provider or even a third party service
+
+And here are the details:
 
 
 ## Choosing a domain provider
@@ -117,3 +126,31 @@ Most DNS records have a TTL (Time To Live) of 24 hours. This means that all name
 * [iwantmyname: ALIAS-type DNS records break the internet](https://iwantmyname.com/blog/2014/01/why-alias-type-records-break-the-internet.html)
 * [www.yes-www.org](http://www.yes-www.org)
 * [no-www.org](http://no-www.org)
+
+## Troubleshooting domains
+
+You can use the Terminal (Bash) to see the current DNS settings of your domain. With the `dig` command you can see if there are any CNAME entries and where they are pointing to. Here we lookup `help.fortrabbit.com` and see a CNAME pointing to the App URL: `help-frbit.frb.io`.
+
+```
+$ dig ANY help.fortrabbit.com
+;; Truncated, retrying in TCP mode.
+
+; <<>> DiG 9.8.3-P1 <<>> ANY help.fortrabbit.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44565
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;help.fortrabbit.com.       IN  ANY
+
+;; ANSWER SECTION:
+help.fortrabbit.com.      600    IN  CNAME   help-frbit.frb.io.
+help-frbit.frb.io.        300    IN  CNAME   help-frbit.eu2.frbit.net.
+help-frbit.eu2.frbit.net.  20    IN  A       52.48.51.144
+
+;; Query time: 863 msec
+;; SERVER: 192.168.178.1#53(192.168.178.1)
+;; WHEN: Wed Jun  1 10:25:40 2016
+;; MSG SIZE  rcvd: 122
+```
