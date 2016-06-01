@@ -24,7 +24,7 @@ tags:
 
 ## Problem
 
-With fortrabbit you [deploy with Git](/deployment). But sometimes SSH access to your App can be helpful as well. fortrabbit Apps have [ephemeral storage](quirks#toc-ephemeral-storage) and a horizontal scalable infrastructure. This allows great performance and grants high availability. One trade of is that full SSH access is not feasible.
+With fortrabbit you [deploy with Git](/deployment). But sometimes SSH access to your App can be helpful as well. fortrabbit Apps have [ephemeral storage](quirks#toc-ephemeral-storage) and a horizontal scalable infrastructure. This allows great performance and grants high availability. One trade off is that full SSH access is not feasible.
 
 
 ## Solution
@@ -68,7 +68,7 @@ For remote SSH execution you identify using your public SSH keys. If you get a c
 
 ### Using CLI tools
 
-Many modern web development frameworks and CMS come with a programmable command line interfaces (CLI), Drush and Artisan for example. These CLIs allow you to automate often occurring tasks, help you to develop your App via code generators and provide useful helpers to set up new installations. Executing commands, like database migration, can hugely simplify development.
+Many modern web development frameworks and CMS come with a programmable command line interfaces (CLI), Drupal Console and Artisan for example. These CLIs allow you to automate often occurring tasks, help you to develop your App via code generators and provide useful helpers to set up new installations. Executing commands, like database migration, can hugely simplify development.
 
 
 ### Limitations
