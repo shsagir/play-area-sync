@@ -34,15 +34,42 @@ We assume you've already created an [App](app) with fortrabbit. You also need a 
 
 
 
-
-<!--  TODO: rewrite on object storage launch, asset storage -->
-
 ### Setup Object Storage
 
-Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets. We'll publish more infos on how to do this soon. So long here is an alternative way:
+Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets. 
+
+We've prepared a Craft plugin that acts as a drop-in replacement for the Amazon S3 asset source. [Download the plugin](https://github.com/fortrabbit/craft-s3-fortrabbit) from github and follow the setup instructions in the README.md.
+
+Once that's done your can create you Object Storage asset source:
+
+* Go to Settings > Assets
+* Click on `New asset source` to create a new `AssetSource`
+* Give it a name like `Object Storage` and set the Type to `Amazon S3`
+* Enter the Access Key ID and Secret Access Key click on `Refresh`
+* Select a `Bucket`
+* Enter a `Subfolder` (we prefer to put the App's name here)
+* Click `Save` in the upper right corner
+* Done
+
+Now, since you are working on a local copy which you want to deploy to your fortrabbit App you now need to move all the "local assets" to the newly created `Object Storage` asset source:
+
+* Go to Assets
+* Drag and drop all your assets to the `Object Storage` asset source on the left side
+* Done
+
+**Note**: Rinse and repeat with all your local asset sources!
+
+**Note:** To make use of the cloud storage suppport of Craft you need "Pro" license. This is required since fortrabbit's file system is not persistent and assets needs a place, too.
 
 
+Now that is done you can safely remove the empty, local asset sources:
 
+1. Got to Settings > Assets
+2. Click the remove button for every `Local Folder` type asset source
+3. Done
+
+
+<!--
 #### AWS S3 as cloud storage
 
 If you don't have an AWS account or no S3 bucket handy just follow [our quick guide](http://blog.fortrabbit.com/new-app-cloud-storage-s3) and you'll have a bucket ready within a few minutes.
@@ -75,7 +102,7 @@ Now that is done you can safely remove the empty, local asset sources:
 1. Got to Settings > Assets
 2. Click the remove button for every `Local Folder` type asset source
 3. Done
-
+-->
 
 ### Migrate database
 
