@@ -15,7 +15,6 @@ seeAlsoLinks:
 tags:
     - beginner
 
-
 ---
 
 ## Free trial
