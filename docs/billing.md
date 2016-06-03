@@ -40,11 +40,11 @@ When you book a Component on the 16th day of a month and the month has 30 days y
 
 ## Plans & prices
 
-The service structure is modular. Most Components come in different size and flavors, you can combine anything as needed. Please see our **[pricing page](http://www.fortrabbit.com/pricing)** for an up-to-date pricing & product table.
+The service structure is modular. Most Components come in different size and flavors, you can combine anything as needed. Please see our **[pricing page](https://www.fortrabbit.com/pricing)** for an up-to-date pricing & product table.
 
 ## Storage & traffic limits
 
-Each App includes a fair amount of web storage and traffic. These are soft limits, small exceeding and peaks will be tolerated. See our [specs page](http://www.fortrabbit.com/specs) for over-traffic costs.
+Each App includes a fair amount of web storage and traffic. These are soft limits, small exceeding and peaks will be tolerated. See our [specs page](https://www.fortrabbit.com/specs) for over-traffic costs.
 
 ## Costs monitoring
 
@@ -73,7 +73,9 @@ fortrabbit is a B2B hosting solution, it's for entrepreneurs only, we expect you
 
 We recommend to enter your VAT-IN with your Billing Contact. This way you save upfront costs for VAT — reverse charge makes this possible.
 
-## Why am I charged?
+---
+
+## Why am I still charged for this?
 
 We get a few e-mails each month after invoicing. People are confused why they still see Apps on the invoice that have been deleted.
 
@@ -84,3 +86,27 @@ fortrabbit has a consumption based billing. The minimum billing period is one da
 So, when you start using an App on the 15th of Jan, you'll be invoiced at the end of Jan for using the App for half a month.
 
 So at the start of each month you'll get an invoice for the stuff you have booked last month. Also look at the invoice period.
+
+
+## What if I cancel my Account?
+
+We will delete all your Account data. But it is required by law to keep your billing related data, that is basically the invoices and infos around it. The same applies to your credit card informations, but those are stored with our credit card service merchant — not with us. 
+
+And yes, if you cancel the service while still having open invoices with us, they stay open and we might take further legal steps to finally get that money.
+
+
+## What if my credit card has not enough credits?
+
+Then it will bounce — which costs us a lot of money each month. We might pass those costs to the clients in the future. We will inform you about bounced payments. We also try to debit again.
+
+
+## What if my credit card expires?
+
+We will inform you. Please add your new credit card details to your Billing Contact.
+
+
+## What if I have open invoices with fortrabbit?
+
+Please just pay your open invoices, you can do this in the Dashboard (Login & follow the instructions). If you are unable to pay them immediately, please least contact us. Otherwise we might delete your Apps. See [this story](https://blog.fortrabbit.com/bounced-payment).
+
+
