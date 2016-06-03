@@ -72,7 +72,7 @@ fortrabbit is a B2B hosting solution, it's for entrepreneurs only, we expect you
 
 We recommend to enter your VAT-IN with your Billing Contact. This way you save upfront costs for VAT — reverse charge makes this possible.
 
----
+- - -
 
 ## Why am I still charged for this?
 
