@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-05-31
+reviewed:      2016-06-03
 naviTitle:     Remote SSH execution
 title:         Using remote SSH commands
 group:         Kitchen_sink
@@ -77,7 +77,7 @@ Many modern web development frameworks and CMS come with a programmable command 
 
 **No uploads**: SFTP is not available. All code changes need to be made via [Git deployment](/deployment) due to [ephemeral storage](quirks#toc-ephemeral-storage).
 
-**No concurrent usage**: To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments are not allowed.
+**No concurrent usage**: To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments and parallel SSH executions are not allowed.
 
 **Limited execution time**: The maximal execution time for remote SSH commands is [limited](https://www.fortrabbit.com/specs#limits).
 
