@@ -75,4 +75,12 @@ We recommend to enter your VAT-IN with your Billing Contact. This way you save u
 
 ## Why am I charged?
 
-We get a few e-mails each month after invoicing. People are used to pay upfront for stuff they book online. Due to the above described fair pricing, upfront payments are not possible with fortrabbit. A fortrabbit invoice is like your old-school telephone bill, you'll get it at the start of each month, the performance period is the last month.
+We get a few e-mails each month after invoicing. People are confused why they still see Apps on the invoice that have been deleted.
+
+Usually you pay upfront for stuff you book online. You want something, you pay for it. Due to the above described fair pricing, upfront payments are not possible with fortrabbit.
+
+fortrabbit has a consumption based billing. The minimum billing period is one day. That means we charge after usage. Just like with your old telephone bill. At the end of the month you'll get an invoice for what you have used in that month.
+
+So, when you start using an App on the 15th of Jan, you'll be invoiced at the end of Jan for using the App for half a month.
+
+So at the start of each month you'll get an invoice for the stuff you have booked last month. Also look at the invoice period.
