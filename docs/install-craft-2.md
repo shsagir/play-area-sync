@@ -33,14 +33,13 @@ tags:
 We assume you've already created an [App](app) with fortrabbit. You also need a local, running Craft installation. If you are starting from scratch then best use the [HappyLager Demo](https://github.com/pixelandtonic/HappyLager) and follow their install guide. If you have a running (production) installation then you need to export its data and set up a local, working "clone" with which you can proceed.
 
 
-
 ### Setup Object Storage
 
 Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets. 
 
-We've prepared a Craft plugin that acts as a drop-in replacement for the Amazon S3 asset source. [Download the plugin](https://github.com/fortrabbit/craft-s3-fortrabbit) from github and follow the setup instructions in the README.md.
+We've prepared a Craft plugin that acts as a drop-in replacement for the Amazon S3 asset source. [Download the plugin](https://github.com/fortrabbit/craft-s3-fortrabbit) from GitHub and follow the setup instructions in the README.md.
 
-Once that's done your can create you Object Storage asset source:
+Once that's done, you can create your Object Storage asset source:
 
 * Go to Settings > Assets
 * Click on `New asset source` to create a new `AssetSource`
@@ -51,7 +50,7 @@ Once that's done your can create you Object Storage asset source:
 * Click `Save` in the upper right corner
 * Done
 
-Now, since you are working on a local copy which you want to deploy to your fortrabbit App you now need to move all the "local assets" to the newly created `Object Storage` asset source:
+You now need to move all the "local assets" to the newly created `Object Storage` asset source:
 
 * Go to Assets
 * Drag and drop all your assets to the `Object Storage` asset source on the left side
@@ -59,7 +58,7 @@ Now, since you are working on a local copy which you want to deploy to your fort
 
 **Note**: Rinse and repeat with all your local asset sources!
 
-**Note:** To make use of the cloud storage suppport of Craft you need "Pro" license. This is required since fortrabbit's file system is not persistent and assets needs a place, too.
+**Note:** To make use of the cloud storage support of Craft you need a "Pro" license.
 
 
 Now that is done you can safely remove the empty, local asset sources:
