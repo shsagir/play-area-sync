@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-06-03
+reviewed:      2016-06-06
 title:         All about billing, pricing, payments, invoices & taxes
 naviTitle:     Billing
 lead:          Our consumption based pricing model explained.
@@ -51,7 +51,7 @@ Log in to the Dashboard > Billing Contact. There you'll find a cost preview for 
 
 ## Payment methods
 
-You can pay by **credit card** (Visa & Master, no debit cards) or **SEPA direct debit** (EU clients only). For "enterprise clients" we also offer to pay by **bill** (on account).
+You can pay by **credit card** (Visa & Master, no debit cards) or **SEPA direct debit** (EU clients only). For "enterprise clients" (large volume) we also offer to pay by **bill** (on account, after invoice).
 
 
 ## Billing mail address
@@ -72,7 +72,10 @@ fortrabbit is a B2B hosting solution, it's for entrepreneurs only, we expect you
 
 We recommend to enter your VAT-IN with your Billing Contact. This way you save upfront costs for VAT — reverse charge makes this possible.
 
-- - -
+
+
+
+# FAQ
 
 ## Why am I still charged for this?
 
@@ -109,3 +112,11 @@ We will inform you. Please add your new credit card details to your Billing Cont
 Please just pay your open invoices, you can do this in the Dashboard (Login & follow the instructions). If you are unable to pay them immediately, please least contact us. Otherwise we might delete your Apps. See [this story](https://blog.fortrabbit.com/bounced-payment).
 
 
+## Can I pay yearly?
+
+Sorry, as there are no upfront payments, this is not possible.
+
+
+## Where can I see my current costs?
+
+You can like so: Dashboard > Your Account > Your Company Name > Billing Contact / Current costs. This overview shows you what will be printed on the next invoice. Please mind that it will show the current costs of the day of the month so far. 
