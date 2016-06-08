@@ -108,7 +108,7 @@ openssl rsa -in my-app.key -out my-app.rsa.key
 # writing RSA key
 ```
 
-The RSA format is required by our TLS implmentation.
+The RSA format is required by our TLS implementation.
 
 
 ### Book & install
@@ -148,7 +148,7 @@ For cURL, the option CURLOPT_CAPATH needs to be set to `/etc/ssl/certs`.
 
 ### Redirect all requests to HTTPS
 
-Create or modify an `.htaccess` file in your document root folder like so:
+Create or modify an `.htaccess` file in your root path folder like so:
 
 ```plain
 RewriteEngine On
@@ -164,6 +164,17 @@ RewriteCond %{HTTP:X-Forwarded-Port} !=80
 RewriteRule (.*) http://%{HTTP_HOST}/$1 [R=301,L]
 ```
 
+### Force HTTPS for future visits with HSTS
+
+In your `.htaccess` file you can add this line (in addition to the rewrite rule above):
+
+```plain
+Header always set Strict-Transport-Security "max-age=31536000"
+```
+
+This will make your browser remember to always use the secured version of your App. It makes use of the "HTTP Strict Transport Security" policy and improves security by eliminating the risks of man-in-the-middle TLS-protocol-downgrade attacks. Be careful when using it, it's cached in your browser.
+
+
 ### Get help
 
 Unsure about certain parts? Have questions? Yes it is confusing. Don't be afraid to ask. We are experienced and we can help you get this done. [Contact us](http://www.fortrabbit.com/contact)!
@@ -171,4 +182,4 @@ Unsure about certain parts? Have questions? Yes it is confusing. Don't be afraid
 
 ### Let's encrypt
 
-There is a new service called [let's encrypt](https://letsencrypt.org/) to offer a free Certificate Authority and beat tools around it. There is no support on fortrabbit yet.
+There is a new service called [let's encrypt](https://letsencrypt.org/) to offer a free Certificate Authority and beat tools around it. There will be support on fortrabbit soon.
