@@ -34,6 +34,8 @@ tags:
 
 ---
 
+## About Git
+
 Git is a distributed version control system. It's quite popular to work with text files — hence in software development. It's fast, assures data integrity and supports non-linear workflows (branching). Git was developed by Linux kernel developers (including Linus Torvalds). It's free and can be used either from the command line or via graphical user interfaces.
 
 Git can help you to collaborate on code projects, keep track of your code changes and rollback to points in time, if needed. It comes with:
@@ -42,7 +44,6 @@ Git can help you to collaborate on code projects, keep track of your code change
 * Powerful file merging which makes collaboration easy
 
 To deploy code to fortrabbit you use Git from your local machine and push to the remote on fortrabbit.
-
 
 
 ## Learn Git
