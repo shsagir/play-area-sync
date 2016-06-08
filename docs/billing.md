@@ -109,7 +109,9 @@ We will inform you. Please add your new credit card details to your Billing Cont
 
 ## What if I have open invoices with fortrabbit?
 
-Please just pay your open invoices, you can do this in the Dashboard (Login & follow the instructions). If you are unable to pay them immediately, please least contact us. Otherwise we might delete your Apps. See [this story](https://blog.fortrabbit.com/bounced-payment).
+You can pay your open invoices in the Dashboard yourself like so: Login to the Dashboard > follow the instructions on the "open invoices" warning. Credit card payments are done "live". SEPA direct payments are delayed. When your credit card didn't had enough balance at first, we might try again during the month.
+
+Please contact us when you are aware that you habe open invoices with us. Otherwise we might delete your Apps. See [this story](https://blog.fortrabbit.com/bounced-payment).
 
 
 ## Can I pay yearly?

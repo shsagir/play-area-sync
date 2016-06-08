@@ -43,6 +43,10 @@ The fortrabbit TLS Component enables you to establish a verified HTTPS-connectio
 Transport Layer Security (TLS) is the successor to the Secure Sockets Layer (SSL), it's a protocol to ensure privacy between applications and users. HTTPS is the Secure version of the Hyper Text Transfer Protocol. It's used between browser and server.
 
 
+
+
+
+
 ## Usage
 
 Let's be honest here. Although TLS is one of the usual business requirements, it's still a bit complicated to configure. We would love to provide a more convenient solution. Fact is that most of the stuff here is beyond our control, so that's the way it is now:
