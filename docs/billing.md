@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-06-06
+reviewed:      2016-06-08
 title:         All about billing, pricing, payments, invoices & taxes
 naviTitle:     Billing
 lead:          Our consumption based pricing model explained.
