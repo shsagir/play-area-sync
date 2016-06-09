@@ -11,9 +11,9 @@ This repo lives under (clone URL):
 
 ## Contributing
 
-Found a typo or an error? Do you want to add something about your framework or service of choice? You are more than welcome to contribute. Please send us a Pull Request. 
+Found a typo or an error? Do you want to add something about your framework or service of choice? You are more than welcome to contribute. Please send us a Pull Request.
 
-Do you run a 3rd party service or an open source project that can be integrated with fortrabbit? You are also more than welcome to add it. 
+Do you run a 3rd party service or an open source project that can be integrated with fortrabbit? You are also more than welcome to add it.
 
 
 ### _WIP
@@ -23,7 +23,7 @@ The folder _WIP contains — as you might can guess — work in progress. All in
 
 ### Logos and brand assets
 
-Place logos for external services and projects in the media folder. They ideally should be svg or either PNG with transparent background. Favor an "image mark" over a "word image mark". 
+Place logos for external services and projects in the media folder. They ideally should be svg or either PNG with transparent background. Favor an "image mark" over a "word image mark".
 
 
 
@@ -46,7 +46,7 @@ title: What is an App anyways?
 # pages older than one year will be marked outdated
 reviewed: 2016-02-22
 
-# under which headline the content will be shown on home 
+# under which headline the content will be shown on home
 # (use underscore instead of space)
 group: Extending_fortrabbit
 
@@ -68,6 +68,9 @@ dataCenters: n/a
 
 # lead text for article detail view -> what to expect from content
 lead: Forget servers. Think services instead. Learn the basic fortrabbit concepts.
+
+# alternative to lead text. when lead is intro & excerpt is overview or lead is not available
+excerpt: Get to know about the basic concepts.
 
 # disable TOC generation for this article
 noToc: true
@@ -97,7 +100,7 @@ keywords:
 
 # tag article to filter
 # (currently not in use)
-tags: 
+tags:
     - beginner
     - cms
 ```
@@ -122,7 +125,7 @@ tags:
 
 ## Maintainability
 
-Find the right balance between being general and being precise (aka Captain Obvious). Very detailed step-by-step articles are easy to follow but get outdated very quickly. 
+Find the right balance between being general and being precise (aka Captain Obvious). Very detailed step-by-step articles are easy to follow but get outdated very quickly.
 
 
 ## fortrabbit owned words and common casing
@@ -210,7 +213,7 @@ please do not use the following "bullshit" words:
 * innovative
 * game-changing
 * empowering
-* revolutionizing 
+* revolutionizing
 
 
 ## Corporate identity
