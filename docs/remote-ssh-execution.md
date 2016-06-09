@@ -1,16 +1,18 @@
 ---
 
 template:      article
-reviewed:      2016-06-03
+reviewed:      2016-06-09
 naviTitle:     Remote SSH execution
 title:         Using remote SSH commands
 group:         Kitchen_sink
+excerpt:       "How to run Artisan migrate and other useful commands."
 
 seeAlsoLinks:
     - deployment
     - git
     - ssh-keys
     - logging
+    - new-apps
 
 otherVersionLinks:
     - ssh-sftp-old-app
