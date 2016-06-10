@@ -44,7 +44,7 @@ In PHP you have two drivers to connect to a memcached server: [Memcache](http://
 
 ## Production PHP and Memcache
 
-All PHP production scaling are running on two Nodes. If your App needs to handle session data, you need to keep it consistent across the Nodes. Memcache is also our recommended a solution for this. See our [PHP scaling article](php-scaling#toc-memcache-is-probably-needed).
+All PHP production scaling are running on two Nodes. If your App needs to handle session data, you need to keep it consistent across the Nodes. Memcache is also our recommended a solution for this.
 
 
 ## Scaling

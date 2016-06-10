@@ -8,7 +8,6 @@ lead:          When and how to grow and shrink your Apps resources.
 group:         Kitchen_sink
 
 seeAlsoLinks:
-    - php-scaling
     - app-design
     - app
     - terminology
