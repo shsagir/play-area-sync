@@ -106,3 +106,15 @@ You can currently run two different generations of Apps on fortrabbit: classical
 * [When and how to scale](/scaling) - help article about scaling
 * [fortrabbit VS Digital Ocean](http://www.fortrabbit.com/why-not-digitalocean) - marketing article comparing fortrabbit with VPS hosting
 
+## FAQ
+
+### Can i change the App URL later on?
+
+Sorry that is not possible as it as an identifier for many services.
+
+### I want to reuse an App URL but the name unavailable
+
+After 7 days you can reuse the App URL.
+
+
+
