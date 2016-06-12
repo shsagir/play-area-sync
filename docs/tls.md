@@ -1,8 +1,8 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
-title:         Using the TLS component
+reviewed:      2016-06-12
+title:         Using the TLS Component
 naviTitle:     TLS
 lead:          "HTTPS for the rest of us! How to use Secure Socket Layer connections for custom domains on fortrabbit. Setting up TLS is (still) a bit of a hassle, but together we will make it! Here are all the infos you'll need."
 group:         Components
@@ -12,11 +12,10 @@ otherVersionLinks:
 
 keywords:
     - ssl
-    - addon
-    - add-on
     - domain
     - naked
     - subdomain
+    - wildcard
 
 seeAlsoLinks:
     - about-domains
@@ -25,6 +24,9 @@ tags:
     - DNS
 
 ---
+
+
+
 
 ## Problem
 

@@ -18,12 +18,11 @@ keywords:
     - Top Level Domain
     - registration
     - ordering
-    - TLS
 
 seeAlsoLinks:
+    - tls
     - app
     - directory-structure
-    - tls
     - iwantmyname
 
 ---
@@ -72,7 +71,9 @@ www           CNAME      your-chosen-name.frb.io.
 
 Enter the domain `www.yourproject.com` as a new external custom domain in the domain settings of the App in the [Dashboard](/dashboard). 
 
-Additionally you might set a [custom root path](/app#toc-set-a-custom-root-path) and [change the default domain](/app#toc-change-the-default-domain) or book the [TLS Component](/tls).
+Additionally you might set a [custom root path](/app#toc-set-a-custom-root-path) and [change the default domain](/app#toc-change-the-default-domain).
+
+Please also see our [TLS help article](/tls) to learn about options for https encryption.
 
 
 ## Advanced routing alternatives
