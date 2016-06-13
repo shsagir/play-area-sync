@@ -155,3 +155,5 @@ help-frbit.eu2.frbit.net.  20    IN  A       52.48.51.144
 ;; WHEN: Wed Jun  1 10:25:40 2016
 ;; MSG SIZE  rcvd: 122
 ```
+
+Alternately you can use a browser based DNS lookup tool. See [these results](http://lmgtfy.com/?q=dns+lookup).
