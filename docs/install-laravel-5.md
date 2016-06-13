@@ -422,7 +422,7 @@ If you want to use the Object Storage with your fortrabbit App and a local stora
 
 Now set `FS_TYPE` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
 
-An alternative to our Object Storage Component is Amazon S3 and we have written up a [guide to get your started](new-app-cloud-storage-s3).
+An alternative to our Object Storage Component is Amazon S3 and we have written up a [guide to get your started](https://blog.fortrabbit.com/new-app-cloud-storage-s3).
 
 
 ### Sending mail

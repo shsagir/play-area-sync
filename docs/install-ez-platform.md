@@ -68,7 +68,7 @@ $ composer require "aws/aws-sdk-php:2.*"
 
 ### Parameter config
 
-Since you don't want any credentials in Git you need to create a PHP parameter file, which reads all credentials either from your [App's secrets](secrets) or [environment variables](env-vars). Create the `app/config/parameters_prod.php` with the following contents:
+Since you don't want any credentials in Git you need to create a PHP parameter file, which reads all credentials either from your [App's Secrets](secrets) or [environment variables](env-vars). Create the `app/config/parameters_prod.php` with the following contents:
 
 ```php
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
