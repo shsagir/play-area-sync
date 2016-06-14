@@ -36,10 +36,15 @@ Instead of making use of Let's Encrypt in the free version, you can bring your o
 
 ## Why use TLS custom
 
-* You want to use a higher trusted commercial certificate
+* You want to use a [higher trusted](https://en.wikipedia.org/wiki/Extended_Validation_Certificate) commercial certificate
 * You need a wildcard certificate
-* You want an internationalized domain name (punycode)
-* You don't trust Let's Encrypt that much
+* You don't trust freebies
+
+## Why not to use TLS custom
+
+* You don't want to spend money on a certificate
+* You don't want to spend time on creating and obtaining a certificate
+* Your application is not business critical
 
 
 ## How use TLS custom
