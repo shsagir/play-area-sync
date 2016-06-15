@@ -36,12 +36,12 @@ The interwebs is full of criminals trying to read your communication.
 
 ## Solution
 
-All requests should be routed over `HTTPS` not only `HTTP`.
+All requests should be served using `HTTPS` not `HTTP`.
 
 
 ### About HTTPS, TLS & SSL
 
-`HTTPS` is **H**yper **T**ext **T**ransfer **P**rotocol over Transport Layer **S**ecurity. It can used between browser and server. **TLS** is the successor to the (still better known) **SSL** (Secure Sockets Layer). Current browsers show a green lock in the address bar when the connection is over https and the certificate could be verified.
+`HTTPS` is **H**yper **T**ext **T**ransfer **P**rotocol over Transport Layer **S**ecurity. It is used to secure the data transport between a client (browser) and a server. **TLS** is the successor to the (still better known) **SSL** (Secure Sockets Layer). Current browsers show a green lock in the address bar if the connection is over HTTPS, the certificate could be verified and if the certificate is still valid.
 
 
 ## TLS options on fortrabbit
@@ -51,11 +51,11 @@ As part of [security efforts](/security) our aim is to give you secure, easy-to-
 
 ### Piggyback TLS
 
-You can already reach your [App URL](app#toc-app-url) under HTTPS provided by us like so: `https://your-app.frb.io`. Use this for testing and when a domain is not important.
+You can already access your [App URL](app#toc-app-url) using HTTPS which is provided by us like so. For example: `https://your-app.frb.io`. Use this URL for testing or if a custom domain is not important to you.
 
 ### TLS free
 
-This is the default free and zero-config option which makes use of the external [Let's Encrypt](https://letsencrypt.org/) service. There is nothing to setup or configure. SSL certificates will be created installed and renewed automatically for each [custom domain](/about-domains) you are adding to fortrabbit.
+This is the default free and zero-config option which makes use of the external [Let's Encrypt](https://letsencrypt.org/) service. There is nothing to setup or configure. Certificates will be created installed and renewed automatically for each [custom domain](/about-domains) you are adding to fortrabbit.
 
 * [TLS free introduction blog post](https://blog.fortrabbit.com/tls-free-launched)
 
@@ -96,8 +96,8 @@ In your `.htaccess` file you can add this line (in addition to the rewrite rule 
 Header always set Strict-Transport-Security "max-age=31536000"
 ```
 
-This will make your browser remember to always use the secured version of your App. It makes use of the "HTTP Strict Transport Security" policy and improves security by eliminating the risks of man-in-the-middle TLS-protocol-downgrade attacks. Be careful when using it, it's cached in your browser.
+This will make your browser remember to always use the secured version of your App. It makes use of the "[HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security)" policy and improves security by eliminating the risks of man-in-the-middle TLS-protocol-downgrade attacks. Be careful: setting this header will tell the browser never (or that is: until max-age) to use `http://` again. So if you later on decide to serve (parts of) your site using no encryption, all those clients (browsers) which saw the header will not comply and keep using `https://`.
 
-### It's not working with Internet Explorer 8
+### It's not working with Internet Explorer 8 or older
 
 Sorry, IE8 is not supported any more. All our TLS implementations are based on SNI.
