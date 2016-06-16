@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-03-14
+reviewed:         2016-06-16
 naviTitle:        eZ Platform
 title:            Install eZ Platform on fortrabbit
 lead:             Learn how to install and tune the eZ Platform on fortrabbit.
@@ -290,7 +290,7 @@ The last step is to initialize the database remotely. You can use a [remote SSH 
 ssh your-app@deploy.eu2.frbit.com php app/console --env=prod ezplatform:install clean
 ```
 
-**Note**: Using remote SSH execution, you can run all app/console commands.
+**Note**: Using remote SSH execution, you can run all `app/console` commands.
 
 Done.
 
