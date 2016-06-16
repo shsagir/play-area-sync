@@ -1,10 +1,11 @@
 ---
 
 template:      article
-reviewed:      2016-06-12
-title:         Using the TLS Component
+reviewed:      2016-02-15
+dontList:      false
+title:         Using TLS with fortrabbit
 naviTitle:     TLS
-lead:          "HTTPS for the rest of us! How to use Secure Socket Layer connections for custom domains on fortrabbit. Setting up TLS is (still) a bit of a hassle, but together we will make it! Here are all the infos you'll need."
+lead:          "How to make use of HTTPS on fortrabbit. Learn about the three options."
 group:         Components
 
 otherVersionLinks:
@@ -13,11 +14,14 @@ otherVersionLinks:
 keywords:
     - ssl
     - domain
-    - naked
     - subdomain
-    - wildcard
+    - CA
+    - Certificate Authority
+    - port 443
+    - port 80
 
 seeAlsoLinks:
+    - tls-custom
     - about-domains
 
 tags:
@@ -25,127 +29,45 @@ tags:
 
 ---
 
-
-
-
 ## Problem
 
 The interwebs is full of criminals trying to read your communication.
 
+
 ## Solution
 
-Encrypt the connection between your App and your users with a Transport Layer Security (TLS) connection aka `HTTPS`.
-
-You already can use a piggyback `HTTPS` on your App URL. But what about your own [custom domain](domains)?
-
-The fortrabbit TLS Component enables you to establish a verified HTTPS-connection on a [custom domain](domains). The TLS Component itself needs to run separated, that's why there is a dedicated load balancer hosting your SSL/TLS certificate and that's also why we have to charge for it.
-
-### TLS, SSL, HTTPS, WTF?
-
-Transport Layer Security (TLS) is the successor to the Secure Sockets Layer (SSL), it's a protocol to ensure privacy between applications and users. HTTPS is the Secure version of the Hyper Text Transfer Protocol. It's used between browser and server.
+All requests should be served using `HTTPS` not `HTTP`.
 
 
+### About HTTPS, TLS & SSL
+
+`HTTPS` is **H**yper **T**ext **T**ransfer **P**rotocol over Transport Layer **S**ecurity. It is used to secure the data transport between a client (browser) and a server. **TLS** is the successor to the (still better known) **SSL** (Secure Sockets Layer). Current browsers show a green lock in the address bar if the connection is over HTTPS, the certificate could be verified and if the certificate is still valid.
+
+
+## TLS options on fortrabbit
+
+As part of [security efforts](/security) our aim is to give you secure, easy-to-use and affordable options:
+
+
+### Piggyback TLS
+
+You can already access your [App URL](app#toc-app-url) using HTTPS which is provided by us like so. For example: `https://your-app.frb.io`. Use this URL for testing or if a custom domain is not important to you.
+
+### TLS free
+
+This is the default free and zero-config option which makes use of the external [Let's Encrypt](https://letsencrypt.org/) service. There is nothing to setup or configure. Certificates will be created installed and renewed automatically for each [custom domain](/about-domains) you are adding to fortrabbit.
+
+* [TLS free introduction blog post](https://blog.fortrabbit.com/tls-free-launched)
+
+### TLS custom
+
+Bring your own certificate for even more security and advanced options for your custom domains. See the [TLS custom help article](/tls-custom) for why and how.
 
 
 
+## General usage
 
-## Usage
-
-Let's be honest here. Although TLS is one of the usual business requirements, it's still a bit complicated to configure. We would love to provide a more convenient solution. Fact is that most of the stuff here is beyond our control, so that's the way it is now:
-
-1. have an external domain registered
-2. create a key and a cert locally
-3. purchase an SSL/TLS cert from an external provider
-4. book the TLS component for your App in the Dashboard
-5. upload your key and cert(s) to the Dashboard
-5. route all your (sub)domains to your App's hostname via CNAME
-
-
-### Create a new key and certificate request
-
-Your external SSL/TLS certificate provider will ask you for those. To create a new key and a certificate signing request (CSR), issue the following commands on the console of your local machine (Mac/Linux):
-
-```bash
-openssl req -new -nodes -keyout my-app.key -out my-app.csr -newkey rsa:2048
-# Generating a 2048 bit RSA private key
-# ..........................................................................................++
-# .............................................+++
-# writing new private key to 'my-app.key'
-# -----
-# You are about to be asked to enter information that will be incorporated
-# into your certificate request.
-# What you are about to enter is what is called a Distinguished Name or a DN.
-# There are quite a few fields but you can leave some blank
-# For some fields there will be a default value,
-# If you enter '.', the field will be left blank.
-# -----
-# Country Name (2 letter code) [AU]:DE
-# State or Province Name (full name) [Some-State]:Berlin
-# Locality Name (eg, city) []:Berlin
-# Organization Name (eg, company) [Internet Widgits Pty Ltd]:fortrabbit
-# Organizational Unit Name (eg, section) []:Website
-# Common Name (e.g. server FQDN or YOUR name) []:www.fortrabbit.com
-# Email Address []:info@fortrabbit.com
-# -----
-# Please enter the following 'extra' attributes
-# to be sent with your certificate request
-# A challenge password []:
-# An optional company name []
-
-# Update key format
-openssl rsa -in my-app.key -out my-app.rsa.key
-```
-
-Do not enter a password! Also: if you plan on using `www.yourdomain.tld`, don't miss the `www.` in the "Common Name"!
-
-With the now generated CSR, you can go to an external certificate vendor, which will issue a certificate for you.
-
-
-### Convert existing key to RSA format
-
-If you already have a private key and it begins with `----BEGIN PRIVATE KEY----` you need to convert it to the RSA format, using:
-
-```bash
-openssl rsa -in my-app.key -out my-app.rsa.key
-# writing RSA key
-```
-
-The RSA format is required by our TLS implementation.
-
-
-### Book & install
-
-Now you are ready to book the TLS component in the fortrabbit Dashboard. During the booking you will be asked to insert your certificate, your private key and possibly your intermediate (chain) certificates, which your certificate vendor might have send you.
-
-### Route domains
-
-Whether you want to use HTTP or HTTPS you need to [route all your (sub)domains](domains#toc-route-a-custom-domain) to your App's hostname.
-
-## Common issues
-
-### Solve SSL verification errors
-
-This is the fix for verification errors when using ssl_verify. If you are receiving an error like the following:
-
-```
-error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
-```
-You need to set the `capath` as well. Assuming you are using PHP streams, it would look like this:
-```php
-$context = stream_context_create();
-stream_context_set_option($context, 'ssl', 'verify_peer', true);
-stream_context_set_option($context, 'ssl', 'capath', '/etc/ssl/certs'); # <<< that's the one
-stream_context_set_option($context, 'ssl', 'allow_self_signed', false);
-
-$fp = stream_socket_client("thedomain.tld:443", $errno, $errstr, 5, STREAM_CLIENT_CONNECT, $context);
-# ..
-if (stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_SSLv3_CLIENT) === false) {
-    die("Failed to verify certificate");
-}
-#...
-```
-
-For cURL, the option CURLOPT_CAPATH needs to be set to `/etc/ssl/certs`.
+The following applies to all three TLS options on fortrabbit:
 
 
 ### Redirect all requests to HTTPS
@@ -174,14 +96,8 @@ In your `.htaccess` file you can add this line (in addition to the rewrite rule 
 Header always set Strict-Transport-Security "max-age=31536000"
 ```
 
-This will make your browser remember to always use the secured version of your App. It makes use of the "HTTP Strict Transport Security" policy and improves security by eliminating the risks of man-in-the-middle TLS-protocol-downgrade attacks. Be careful when using it, it's cached in your browser.
+This will make your browser remember to always use the secured version of your App. It makes use of the "[HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security)" policy and improves security by eliminating the risks of man-in-the-middle TLS-protocol-downgrade attacks. Be careful: setting this header will tell the browser never (or that is: until max-age) to use `http://` again. So if you later on decide to serve (parts of) your site using no encryption, all those clients (browsers) which saw the header will not comply and keep using `https://`.
 
+### It's not working with Internet Explorer 8 or older
 
-### Get help
-
-Unsure about certain parts? Have questions? Yes it is confusing. Don't be afraid to ask. We are experienced and we can help you get this done. [Contact us](http://www.fortrabbit.com/contact)!
-
-
-### Let's encrypt
-
-There is a new service called [let's encrypt](https://letsencrypt.org/) to offer a free Certificate Authority and beat tools around it. There will be support on fortrabbit soon.
+Sorry, IE8 is not supported any more. All our TLS implementations are based on SNI.

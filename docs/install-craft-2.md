@@ -68,41 +68,6 @@ Now that is done you can safely remove the empty, local asset sources:
 3. Done
 
 
-<!--
-#### AWS S3 as cloud storage
-
-If you don't have an AWS account or no S3 bucket handy just follow [our quick guide](http://blog.fortrabbit.com/new-app-cloud-storage-s3) and you'll have a bucket ready within a few minutes.
-
-Once that's done your can create you S3 asset source:
-
-* Go to Settings > Assets
-* Click on `New asset source` to create a new `AssetSource`
-* Give it a name and set the Type to `Amazon S3`
-* Enter the S3 Access Key ID and Secret Access Key click on `Refresh`
-* Select a `Bucket`
-* Enter a `Subfolder` (we prefer to put the App's name here)
-* Set `Cache Duration` to 1 hour (you can tune that later)
-* Click `Save` in the upper right corner
-* Done
-
-Now, since you are working on a local copy which you want to deploy to your fortrabbit App you now need to move all the "local assets" to the newly created S3 asset source:
-
-* Go to Assets
-* Drag and drop all your assets to the "Amazon S3" asset source on the left side
-* Done
-
-**Note**: Rinse and repeat with all your local asset sources!
-
-**Note:** To make use of the cloud storage suppport of Craft you need "Pro" license. This is required since fortrabbit's file system is not persistent and assets needs a place, too.
-
-
-Now that is done you can safely remove the empty, local asset sources:
-
-1. Got to Settings > Assets
-2. Click the remove button for every `Local Folder` type asset source
-3. Done
--->
-
 ### Migrate database
 
 Database migration is straight forward: export the database of the local installation and import it to your fortrabbit App. You can use a [GUI](mysql#toc-mysql-guis) or the shell. From the shell you start out by [opening up a tunnel](mysql#toc-shell-tunnel-mysql) and then use `mysqldump` to export and `mysql` to import:

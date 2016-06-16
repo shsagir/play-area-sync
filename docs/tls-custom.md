@@ -1,8 +1,8 @@
 ---
 
 template:      article
-reviewed:      2016-02-13
-dontList:      true
+reviewed:      2016-02-15
+dontList:      false
 title:         Using the TLS custom
 naviTitle:     TLS custom
 lead:          "How to setup HTTPS with your own certificate."
