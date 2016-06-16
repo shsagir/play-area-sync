@@ -134,6 +134,11 @@ Please answer with `yes`. This will add our servers to the known hosts. That sho
 If you are being asked this every time you deploy, something with your `known_hosts` file is probably wrong. See [this StackOverflow question](http://stackoverflow.com/questions/9299651/git-says-warning-permanently-added-to-the-list-of-known-hosts).
 
 
+### General connection errors
+
+If you can't establish a connection at all, a firewall might be the cause. This can a protection software on your computer or something in your company. You can fix this by allowing communication on the SSH standard port: `22`.
+
+
 ### Permission denied error
 
 When you get this after a `git push` or `git pull` like so:
