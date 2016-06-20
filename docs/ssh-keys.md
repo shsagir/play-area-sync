@@ -1,7 +1,7 @@
 ---
 
 template:       article
-reviewed:       2016-05-20
+reviewed:       2016-06-20
 naviTitle:      SSH keys setup
 title:          Troubleshooting SSH keys setup
 lead:           This article helps solving common issues setting up your SSH keys.
@@ -94,11 +94,16 @@ This tutorial from GitHub is lazer-sharp:
 
 After you have set up Git and created your local SSH key and stored it on the correct place, you'll need to tell fortrabbit about that. So that we can securely identify you later on.
 
-Install the public SSH key in the fortrabbit Dashboard under your Account:
+While boarding (first time in the Dashboard) to fortrabbit you'll be asked to do this. Later on you can install the public SSH key in the fortrabbit Dashboard under your Account:
 
 * Dashboard > Your Account > Add a new SSH key
 
-You might be asked to re-enter your fortrabbit Account password to do this. Then you will see a form where you can set a title (this can be anything you like, just to identify the key later on) and paste the actual key in. This is what a valid SSH key looks like:
+You might be asked to re-enter your fortrabbit Account password to do this. Then you will see a form with two fields: 
+
+1. an input for title — anything you like, identify the key later on
+2. a textarea for the actual key — paste the key value here
+
+This is what a valid SSH key looks like (don't paste this):
 
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbez9IDLYECMpQUQgNTWPG5aPMwJFNNP3a0
