@@ -157,3 +157,42 @@ help-frbit.eu2.frbit.net.  20    IN  A       52.48.51.144
 ```
 
 Alternately you can use a browser based DNS lookup tool. See [these results](http://lmgtfy.com/?q=dns+lookup).
+
+
+
+
+## Testing domain routing with your local hosts file
+
+Let's say you have your domain registered with your fortrabbit App and are now ready to point the domain to fortrabbit. Before changing your domain's name-servers, you want to test it. Or you have pointed the domain to fortrabbit but it doesn't really show up yet, so you want to know where the error is.
+
+To test the routing on the fortrabbit side: Tell your local computer to visit a certain IP for a certain domain without looking for official DNS entries. To do so, add your Apps IP address as an entry on your computer's hosts file.
+
+### hosts file location
+
+The hosts file is a text file (without file type ending). It can be found here:
+
+* Windows: `c:\windows\system32\drivers\etc\hosts`
+* MacOS: `/etc/hosts`
+* Linux:  `/etc/hosts`
+
+### How to get your Apps IP
+
+See the above troubleshooting section to grab the current IP of your App. Mind that this IP might change in the future and that this IP is just for now.
+
+### Editing your local hosts file
+
+Your local file contains many entries, do not edit those. Just add a new line with the IP of your App and the domain you want to see routed there like so:
+
+```
+# pattern (how it works)
+[your App's IP address] [your fully qualified domain name]
+
+#example (how it looks like)
+12.0.0.1 mydomain.com www.mydomain.com
+```
+
+
+### Undo changes to your hosts file
+
+After your domain has been moved/propagated be sure to remove the entry from your hosts file.
+
