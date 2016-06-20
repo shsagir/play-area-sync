@@ -187,7 +187,7 @@ Your local file contains many entries, do not edit those. Just add a new line wi
 # pattern (how it works)
 [your App's IP address] [your fully qualified domain name]
 
-#example (how it looks like)
+# example (how it looks like)
 12.0.0.1 mydomain.com www.mydomain.com
 ```
 
