@@ -38,6 +38,13 @@ seeAlsoLinks:
 
 We assume you've already created a New App with fortrabbit. You also need a local [Laravel](http://laravel.com/docs/5.1/installation) installation.
 
+<!-- TODO: rewrite on stack config helper launch -->
+
+### Set the root path
+
+In the fortrabbit Dashboard: [Set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
+
+
 
 ## Install
 
@@ -74,7 +81,7 @@ Once that is done, you can just push your local repo to the App remote:
 $ git push -u fortrabbit master
 ```
 
-This first push can take a bit, since all the Composer packages need to be installed. While that is happening, change back to the Dashboard and [set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `public`.
+This first push can take a bit, since all the Composer packages need to be installed.
 
 When the push is done you can visit your App URL in the browser and see the Laravel welcome screen! Any subsequent push will be much faster and you can leave you the `-u fortrabbit master`.
 
@@ -82,6 +89,47 @@ When the push is done you can visit your App URL in the browser and see the Lara
 ## Tuning
 
 The above will give you an up and running App. However, to make the most of Laravel on fortabbit, it needs some fine tuning.
+
+### Setup Object Storage
+
+If you require a storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). You can also see those with your App in the Dashboard.
+
+To use the credentials open up `config/filesystems.php` and modify it as following:
+
+```php
+$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+
+return [
+    // ..
+    'disks' => [
+        // ..
+        's3' => [
+            'driver'   => 's3',
+            'key'      => $secrets['OBJECT_STORAGE']['KEY'],
+            'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
+            'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
+            'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
+            'region'   => $secrets['OBJECT_STORAGE']['REGION']
+        ],
+        // ..
+    ],
+    // ..
+];
+```
+
+If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. For example like so:
+
+```php
+// ...
+'default' => env('FS_TYPE', 'local'),
+// ..
+```
+
+Now set `FS_TYPE` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
+
+An alternative to our Object Storage Component is Amazon S3 and we have written up a [guide to get your started](https://blog.fortrabbit.com/new-app-cloud-storage-s3).
+
+
 
 ### Logging
 
@@ -384,45 +432,6 @@ $ DB_PASSWORD="your database password" php artisan db:seed --database=mysql-tunn
 
 -->
 
-
-### Persistent storage
-
-If you require a storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). You can also see those with your App in the Dashboard.
-
-To use the credentials open up `config/filesystems.php` and modify it as following:
-
-```php
-$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-
-return [
-    // ..
-    'disks' => [
-        // ..
-        's3' => [
-            'driver'   => 's3',
-            'key'      => $secrets['OBJECT_STORAGE']['KEY'],
-            'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
-            'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
-            'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
-            'region'   => $secrets['OBJECT_STORAGE']['REGION']
-        ],
-        // ..
-    ],
-    // ..
-];
-```
-
-If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. For example like so:
-
-```php
-// ...
-'default' => env('FS_TYPE', 'local'),
-// ..
-```
-
-Now set `FS_TYPE` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
-
-An alternative to our Object Storage Component is Amazon S3 and we have written up a [guide to get your started](https://blog.fortrabbit.com/new-app-cloud-storage-s3).
 
 
 ### Sending mail

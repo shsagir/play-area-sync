@@ -1,10 +1,10 @@
 ---
 
 template:         article
-reviewed:         2016-05-17
+reviewed:         2016-06-20
 title:            Install Craft CMS 2 on fortrabbit
 naviTitle:        Craft CMS
-lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using git on fortrabbit.
+lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
 group:            Install_guides
 
 websiteLink:      https://craftcms.com/?utm_source=fortrabbit
@@ -30,65 +30,53 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You also need a local, running Craft installation. If you are starting from scratch then best use the [HappyLager Demo](https://github.com/pixelandtonic/HappyLager) and follow their install guide. If you have a running (production) installation then you need to export its data and set up a local, working "clone" with which you can proceed.
+We assume you've already created an [App](app) with fortrabbit. You also need a local Craft installation. 
+
+If you are starting from scratch then best use the [HappyLager Demo](https://github.com/pixelandtonic/HappyLager) and follow their install guide to run it locally first. If you have a running (production) installation then you need to export its data and set up a local, working "clone" with which you can proceed.
+
+### Set the root path
+
+In the fortrabbit Dashboard: [Set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
 
 
-### Setup Object Storage
+
+## Setup Object Storage
 
 Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets. 
 
-We've prepared a Craft plugin that acts as a drop-in replacement for the Amazon S3 asset source. [Download the plugin](https://github.com/fortrabbit/craft-s3-fortrabbit) from GitHub and follow the setup instructions in the README.md.
+We've prepared a Craft plugin that acts as a drop-in replacement for the Amazon S3 asset source. [Download the plugin](https://github.com/fortrabbit/craft-s3-fortrabbit) from GitHub and **follow the setup instructions in the [README.md](https://github.com/fortrabbit/craft-s3-fortrabbit/blob/master/README.md)**. Once that's done, you can create your Object Storage asset source:
 
-Once that's done, you can create your Object Storage asset source:
-
-* Go to Settings > Assets
-* Click on `New asset source` to create a new `AssetSource`
-* Give it a name like `Object Storage` and set the Type to `Amazon S3`
-* Enter the Access Key ID and Secret Access Key click on `Refresh`
-* Select a `Bucket`
-* Enter a `Subfolder` (we prefer to put the App's name here)
-* Click `Save` in the upper right corner
-* Done
+1. In the Craft admin: Go to Settings > Assets
+2. Click on `New asset source` to create a new `AssetSource`
+3. Give it a name like `Object Storage`
+4. Set the Type to `Amazon S3`
+4. Enter the Access Key ID and Secret Access Key 
+5. Click on `Refresh`
+5. Select a `Bucket`
+6. Enter a `Subfolder` (use the App name here)
+7. Click `Save` in the upper right corner
 
 You now need to move all the "local assets" to the newly created `Object Storage` asset source:
 
-* Go to Assets
-* Drag and drop all your assets to the `Object Storage` asset source on the left side
-* Done
+1. Go to Assets
+2. Drag & drop assets to the `Object Storage` asset source (left side)
 
-**Note**: Rinse and repeat with all your local asset sources!
-
-**Note:** To make use of the cloud storage support of Craft you need a "Pro" license.
-
+**Note**: Rinse and repeat with all your local asset sources! To make use of the cloud storage support of Craft you need a "Pro" license.
 
 Now that is done you can safely remove the empty, local asset sources:
 
 1. Got to Settings > Assets
 2. Click the remove button for every `Local Folder` type asset source
-3. Done
 
 
-### Migrate database
 
-Database migration is straight forward: export the database of the local installation and import it to your fortrabbit App. You can use a [GUI](mysql#toc-mysql-guis) or the shell. From the shell you start out by [opening up a tunnel](mysql#toc-shell-tunnel-mysql) and then use `mysqldump` to export and `mysql` to import:
 
-```bash
-# on your local machine
 
-# export from local
-$ mysqldump database-name > database.sql
+## Configuration files
 
-# import to fortrabbit using the tunnel
-$ mysql -h127.0.0.1 -P13306 -umy-app -p my-app < database.sql
-```
+Craft's native multi-environment configuration (also see our [multi-staging article](multi-staging)) options allow you to define configuration options based on the domain name. This is great, but there is a potential security flaw (when using Git based deployments) you should be aware of: You're hard-coding the configuration details of your production environment into your code, which means you will have sensitive information in your Git version history. Do not fear, that's easily solved:
 
-### Configuration files
-
-Craft's native multi-environment configuration options allow you to define configuration options based on the domain name. This is great, but there is a potential security flaw when using Git based deployments you should be aware of: you're hard-coding the configuration details of your production environment into your code, which means you will have sensitive information in your Git version history.
-
-Do not fear, that's easily solved:
-
-#### General
+### General config
 
 Login the fortrabbit Dashboard and set the following [environment variables](env-vars):
 
@@ -97,13 +85,12 @@ CRAFT_DEBUG=0
 CRAFT_CACHE=memcache
 CRAFT_UPDATES=0
 ```
+
 Then, still in the fortrabbit Dashboard, head over to the [App secrets](secrets) and add a validation key (long random string):
 
 ```osterei32
 CRAFT_KEY=LongRandomString
 ```
-
-Also, while you are at it, head over to your domains and set the document root to `public`.
 
 Now open up `craft/config/general.php` and change it like so:
 
@@ -127,12 +114,12 @@ return [
 ];
 ```
 
-#### Database
+### Database
 
-Open `craft/config/db.php` and modify it like the following:
+Your App needs database access - when working local and on remote. We use environment detection and have both access informations stored. On the fortrabbit remote the actual credentials are getting parsed from the [App secrets](secrets). Open `craft/config/db.php` and modify it like the following:
 
 ```php
-// production environment (fortrabbit)
+// remote (production) environment at fortrabbit
 if ($file = getenv('APP_SECRETS')) {
     $secrets = json_decode(file_get_contents($file), true);
     return [
@@ -155,15 +142,15 @@ return [
 ];
 ```
 
-#### Cache & Session
+### Cache & Session
 
-If you are just testing out Craft then make sure you use tinkering PHP plan. With those you can set the cache variable (above) to `file`, `db` or `apc` during your tinkering, for example:
+If you are just testing out Craft: make sure you use tinkering PHP plan with fortrabbit. With those you can set the cache variable (above) to `file`, `db` or `apc` during your tinkering, for example:
 
 ```
 CRAFT_CACHE=db
 ```
 
-All fortrabbit production PHP plans run on multiple nodes and require a cache which is accessible jointly - same goes for sessions, of course. This disqualifies `apc`, `db` and `file` and leaves you with `memcache` as options.
+All fortrabbit production PHP plans run on multiple Nodes and require a cache which is accessible jointly - same goes for sessions, of course. This disqualifies `apc`, `db` and `file` and leaves you with `memcache` as options.
 
 So make sure you have booked the [Memcache component](memcache) and then create the file `craft/config/memcache.php` with the following content:
 
@@ -205,10 +192,24 @@ if ($file = getenv('APP_SECRETS')) {
 }
 ```
 
+## Migrate database
 
-### Deploy with Git
+Database migration is straight forward: export the database of the local installation and import it to your fortrabbit App. You can use a [GUI](mysql#toc-mysql-guis) or the shell. From the shell you start out by [opening up a tunnel](mysql#toc-shell-tunnel-mysql) and then use `mysqldump` to export and `mysql` to import:
 
-If your local Craft installation is not under Git version control, then you do it now:
+```bash
+# on your local machine
+
+# export from local
+$ mysqldump database-name > database.sql
+
+# import to fortrabbit using the tunnel
+$ mysql -h127.0.0.1 -P13306 -umy-app -p my-app < database.sql
+```
+
+
+## Deploy with Git
+
+If your local Craft installation is not under Git version control already, then you do it now:
 
 ```
 $ cd ~/Projects/MyApp
@@ -256,20 +257,17 @@ $ git commit -m 'Init'
 $ git push -u fortrabbit master
 ```
 
-Done! Your Craft App is online!
+**Done! Your Craft App is online!**
 
-Advanced Topics / Tuning
--------
+## Tuning
 
-### Logging & Debugging
 
-Per default Craft writes all the logs to a file, which won't do. So we wrote a simple plugin, which writes all logs to STDERR instead. Then the logs are accessible via our standard [logging](logging).
 
-The plugin can be found here: [github.com/ostark/craft-stderr-logger](https://github.com/ostark/craft-stderr-logger)
+### Logging & debugging
 
+Per default Craft writes all the logs to a file, which won't do. So we wrote a simple plugin, which writes all logs to STDERR instead. Then the logs are accessible via our standard [logging](logging). The plugin can be found here: [github.com/ostark/craft-stderr-logger](https://github.com/ostark/craft-stderr-logger)
 
 
 ### Sending mail
 
-You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Craft provides multiple alternative options. Just go to Settings > Email, change the `Protocol` to `SMTP` or `Gmail` and enter the credentials of your mail service.
-
+You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Craft provides multiple alternative options. In the Craft admin: just go to Settings > Email, change the `Protocol` to `SMTP` or `Gmail` and enter the credentials of your mail service.
