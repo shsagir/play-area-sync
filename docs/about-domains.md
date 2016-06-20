@@ -172,8 +172,7 @@ To test the routing on the fortrabbit side: Tell your local computer to visit a 
 The hosts file is a text file (without file type ending). It can be found here:
 
 * Windows: `c:\windows\system32\drivers\etc\hosts`
-* MacOS: `/etc/hosts`
-* Linux:  `/etc/hosts`
+* MacOS & Linux: `/etc/hosts`
 
 ### How to get your Apps IP
 
