@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-06-21
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access and configure the most common database on fortrabbit.
