@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-05-16
+reviewed:      2016-06-21
 title:         All about Domains & DNS
 lead:          How to configure and route any domains to your fortrabbit App.
 naviTitle:     Domains
@@ -40,15 +40,15 @@ And here are the details:
 
 ## Choosing a domain provider
 
-fortrabbit is not offering direct domain registration and management. In classical hosting domain registration & e-mail hosting locked-in the user. Today you can find specialized domain services. There are various offerings, so you should consider upfront what you'll need:
+fortrabbit is not offering direct domain registration and management. In classical hosting, domain registration & e-mail hosting where bundled in packages. Today you can find specialized domain services. There are various offerings, so you should consider upfront what you'll need:
 
-* Additional IMAP/POP3 e-mail hosting
-* Additional SSL certificate ordering
-* Advanced DNS configurations
-* Exotic TLD-endings
-* Support for forwards with ALIAS or ANAME records — see [below](#toc-forwarding-a-naked-domain) 
+1. Additional IMAP/POP3 e-mail hosting
+2. Additional SSL certificate ordering
+3. Specialized in advanced DNS configurations
+4. Exotic TLD-endings
+5. Support for forwards with ALIAS or ANAME records — see [below](#toc-forwarding-a-naked-domain) 
 
-
+Many of our clients are using classical offerings combining domain ordering and e-mail hosting. Others are using separated services for domain registration and e-mail hosting.
 
 
 ## Route a custom domain
@@ -57,7 +57,7 @@ Many different and advanced configurations are possible, see below. Here is the 
 
 #### 1. Domain provider
 
-Point `www.yourproject.com` using `CNAME` to your fortrabbit App URL `my-app.frb.io` (use your own App URL here).
+Point `www.yourproject.com` using `CNAME` to your fortrabbit App URL `my-app.frb.io` (use your own App URL here). 
 
 ```plain
 HOSTNAME      TYPE       VALUE
@@ -106,7 +106,7 @@ At your **external domain provider**: forward naked domain `yourproject.com` to 
 
 Some domain providers also support a simple HTTP redirect. This basically means: they provide a web server for you and redirect all incoming requests to `http://domain.tld/` to `http://www.domain.tld/`. Alternative names for this feature are "Domain forwarding", "Web forwarding", "Domain masking" and the like.
 
-**Domain forwarding docs of some domain providers**
+##### Domain forwarding docs of some domain providers
 
 * [GoDaddy domain forwarding documentation](https://support.godaddy.com/help/article/422/manually-forwarding-or-masking-your-domain-name)
 * [Gandi domain forwarding documentation](https://wiki.gandi.net/en/domains/management/domain-as-website/forwarding)
@@ -115,18 +115,16 @@ Some domain providers also support a simple HTTP redirect. This basically means:
 When your external domain service does not support such forwarding methods, you can make use of a free service like [RootDirect](https://www.rootredirect.com/) or [wwwizer](http://wwwizer.com/) for naked domain redirects. It's pretty simple, as they do not even require any registration or setup, you only need to point your naked domain to their IP and they will redirect to your `www.` address. 
 
 
-
 ### Time delays
 
 Most DNS records have a TTL (Time To Live) of 24 hours. This means that all name servers will only look every 24 hours if a domain target has been changed. In some cases it might even take longer. That is actually a good thing as it helps to reduce round trips. Some providers let you set down the TTL, this can be useful when moving domains.
 
 
-### Further readings
+### Configuring your domain for e-mail
 
-* [iwantmyname: ALIAS-type DNS records for CNAME](https://iwantmyname.com/blog/2014/05/alias-type-dns-records-for-cname-functionality-on-naked-domains.html)
-* [iwantmyname: ALIAS-type DNS records break the internet](https://iwantmyname.com/blog/2014/01/why-alias-type-records-break-the-internet.html)
-* [www.yes-www.org](http://www.yes-www.org)
-* [no-www.org](http://no-www.org)
+So far we have covered how to route a domain to fortrabbit. To receive and send e-mails from your domain you will configure the MX record of your domain. Please see your e-mail hosting provider for instructions.
+
+
 
 ## Troubleshooting domains
 
