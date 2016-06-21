@@ -67,7 +67,8 @@ To access MySQL from remote you still need the MySQL username, password, host an
 
 Sometimes it's handy to manage your MySQL database with a graphical interface. We recommend the official [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows) from Oracle. There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
 
-Most of those clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step.
+Most of those clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information. The MySQL hostname will not be `127.0.0.1` or `localhost` — it will be the remote server name which looks something like this `your-app.mysql.eu2.frbit.com`.
+
 
 ### Shell › Tunnel › MySQL
 
