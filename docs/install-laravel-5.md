@@ -97,6 +97,7 @@ If you require a storage, for user uploads or any other runtime data your App cr
 To use the credentials open up `config/filesystems.php` and modify it as following:
 
 ```php
+// construct credentials from App secrets, when running on fortrabbit in production
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
 
 return [
@@ -149,9 +150,11 @@ You can now use the regular [log access](logging) to view the stream.
 
 ### MySQL
 
-Use the [App secrets](secrets) to attain your database credentials. Modify the `config/database.php` like so:
+Use the [App secrets](secrets) to attain your database credentials. Modify the `config/database.php` like so (contains environment detection):
 
 ```php
+
+// construct credentials from App secrets, when running locally
 $mysql = [
     'driver'    => 'mysql',
     'host'      => env('DB_HOST', 'localhost'),
@@ -165,6 +168,7 @@ $mysql = [
     'engine'    => null,
 ];
 
+// construct credentials from App secrets, when running on fortrabbit in production
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
     $mysql = [
@@ -217,11 +221,15 @@ return [
 Make sure you enabled the [Memcache](memcache) Component. Then you can use the [App Secrets](app-secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
 
 ```php
+
+// construct credentials from App secrets, when running locally
 $servers = [[
     'host' => env('MEMCACHED_HOST', '127.0.0.1'),
     'port' => env('MEMCACHED_PORT', 11211),
     'weight' => 100,
 ]];
+
+// construct credentials from App secrets, when running on fortrabbit in production
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
     $servers = [[
@@ -261,6 +269,8 @@ In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you
 Redis can be used in Laravel as a cache or a queue or both. First integrate with [Redis Cloud](redis-cloud) then configure the redis database connection in `config/database.php`:
 
 ```php
+
+// construct credentials from .env, when running locally
 $redis = [
     'host'     => env('REDIS_HOST', 'localhost'),
     'password' => env('REDIS_PASSWORD', null),
@@ -268,6 +278,7 @@ $redis = [
     'database' => 0,
 ];
 
+// construct credentials from App secrets, when running on fortrabbit in production
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
     $redis = [
@@ -304,6 +315,8 @@ CloudAMQP  can be used in Laravel as a queue driver. First integrate with [Cloud
 
 ```php
 $amqp = [];
+
+// construct credentials from App secrets, when running on fortrabbit in production
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
     $amqp = [
@@ -347,6 +360,8 @@ Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard 
 IronMQ can be used in Laravel as a queue driver. First integrate with [IronMQ](ironmq) then configure the queue connection in `config/queue.php`:
 
 ```php
+
+// construct credentials from .env, when running locally
 $iron = [
     'driver'  => 'iron',
     'host'    => env('IRON_MQ_HOST'),
@@ -355,6 +370,8 @@ $iron = [
     'queue'   => env('IRON_MQ_QUEUE'),
     'encrypt' => true,
 ];
+
+// construct credentials from App secrets, when running on fortrabbit in production
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
     $iron = [
