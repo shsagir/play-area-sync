@@ -50,7 +50,10 @@ $ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
 $ composer install
 ```
 
-Now head over to the Dashboard, [set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `web` and then add the following [App secrets](secrets):
+
+### Setup WordPress authentication unique keys and salts
+
+Now head over to the [Dashboard](dashboard), [set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `web` and then add the following [App secrets](secrets):
 
 ```osterei32
 AUTH_KEY=LongRandomString
@@ -63,7 +66,7 @@ LOGGED_IN_SALT=LongRandomString
 NONCE_SALT=LongRandomString
 ```
 
-WordPress recommends replace each `LongRandomString` with a different random string.
+It is recommended to use different random strings.
 
 ### Set the domain
 
