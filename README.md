@@ -216,6 +216,17 @@ please do not use the following "bullshit" words:
 * revolutionizing
 
 
+## Gender-neutral language
+
+When referencing a hypothetical person, such as "a user with a session cookie", use gender-neutral pronouns (they/their/them). For example, instead of:
+
+* he or she, use they
+* him or her, use them
+* his or her, use their
+* his or hers, use theirs
+* himself or herself, use themselves
+
+
 ## Corporate identity
 
 There is no fortrabbit logo as graphic file. To create the brand logo just type: "• fortrabbit" — bullet character, a normal space and then name of the company with a f. Use the [Georgia Typeface](http://en.wikipedia.org/wiki/Georgia_(typeface)) in bold and italic. Use lot's of whitespace around the logo, don't put other text nearby the logo. When using the company name within a paragraph of text, write "fortrabbit" with a f, even at the beginning of a sentence. Don't use the bullet or any other typeface here.

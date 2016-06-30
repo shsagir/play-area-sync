@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-06-05
+reviewed:         2016-06-30
 title:            Install WordPress 4
 naviTitle:        WordPress
 lead:             WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
@@ -63,13 +63,22 @@ LOGGED_IN_SALT=LongRandomString
 NONCE_SALT=LongRandomString
 ```
 
-WordPress recommends replace each `LongRandomString` with a *different* random string. The last configuration in the Dashboard is to set the WordPress URLs and environment as [environment variables](env-vars):
+WordPress recommends replace each `LongRandomString` with a different random string.
+
+### Set the domain
+
+The last configuration in the Dashboard is to set the WordPress URLs and environment as [environment variables](env-vars). With `Dashboard > App > Settings > ENV vars` you enter the following in the textarea and save.
 
 ```
 WP_ENV=production
-WP_HOME=http://your-app.eu2.frbit.net
-WP_SITEURL=http://your-app.eu2.frbit.net/wp
+WP_HOME=http://your-app.eu2.frb.io
+WP_SITEURL=http://your-app.eu2.frb.io/wp
 ```
+
+Replace `your-app.eu2` with the App URL (see Dashboard). You can also use your own domain here of course – just take care to also [route the domain](about-domains) then. The folder `wp` in the WP_SITEURL is Bedrock-specific. You can also use the encrypted `https` protocol. 
+
+
+### Database setup 
 
 Now open up the main config file in `config/application.php` and the following at the very top of the file:
 
@@ -77,7 +86,7 @@ Now open up the main config file in `config/application.php` and the following a
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
 ```
 
-Go to the `DB settings` section and replace the `getenv("DB_*")` calls with access to the MySQL secrets:
+In the same file, go to the `DB settings` section and replace the `getenv("DB_*")` calls with access to the MySQL secrets:
 
 ```php
 define('DB_NAME', $secrets['MYSQL']['DATABASE']);
@@ -99,7 +108,7 @@ define('LOGGED_IN_SALT', $secrets['CUSTOM']['LOGGED_IN_SALT']);
 define('NONCE_SALT', $secrets['CUSTOM']['NONCE_SALT']);
 ```
 
-Before visiting your site, push all the changes:
+Before visiting your site, git push all the changes:
 
 ``` bash
 $ git commit -am "Initial"
@@ -108,8 +117,8 @@ $ git push -u fortrabbit master
 
 Finally you can visit your App in the browser and follow the WordPress setup. Done.
 
-Tuning
-------
+
+## Tuning
 
 ### Installing plugins
 
