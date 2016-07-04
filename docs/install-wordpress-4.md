@@ -50,10 +50,13 @@ $ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
 $ composer install
 ```
 
+### Set the root path
+
+Head over to the [Dashboard](dashboard), [set the root path](/domains#toc-set-a-custom-root-path) of your App's domains to `web`.
 
 ### Setup WordPress authentication unique keys and salts
 
-Now head over to the [Dashboard](dashboard), [set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `web` and then add the following [App secrets](secrets):
+Add the following [App secrets](secrets):
 
 ```osterei32
 AUTH_KEY=LongRandomString
