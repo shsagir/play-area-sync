@@ -1,9 +1,9 @@
 ---
 
 template:      article
-reviewed:      2016-06-21
+reviewed:      2016-07-11
 title:         All about Domains & DNS
-lead:          How to configure and route any domains to your fortrabbit App.
+lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
 group:         Kitchen_sink
 
@@ -27,53 +27,30 @@ seeAlsoLinks:
 
 ---
 
-Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external top-level-domain to your App. Your goal is to have your App running under your own domain. This is the high level of what's gonna happen:
+Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external top-level-domain to your App. Your goal is to have your App running under your own domain.
 
-<!-- TODO: rewrite on launch of www-izer domain handling  -->
-
-1. register `www.mydomain.com` with the App in the fortrabbit Dashboard
-2. route `www.mydomain.com` via CNAME to `your-app.frb.io` using your domain provider
-3. forward all requests for the naked domain `mydomain.com` to `www.mydomain.com` with your domain provider or even a third party service
-
-And here are the details:
-
-
-## Choosing a domain provider
-
-fortrabbit is not offering direct domain registration and management. In classical hosting, domain registration & e-mail hosting where bundled in packages. Today you can find specialized domain services. There are various offerings, so you should consider upfront what you'll need:
-
-1. Additional IMAP/POP3 e-mail hosting
-2. Additional SSL certificate ordering
-3. Specialized in advanced DNS configurations
-4. Exotic TLD-endings
-5. Support for forwards with ALIAS or ANAME records — see [below](#toc-forwarding-a-naked-domain) 
-
-Many of our clients are using classical offerings combining domain ordering and e-mail hosting. Others are using separated services for domain registration and e-mail hosting.
 
 
 ## Route a custom domain
 
-Many different and advanced configurations are possible, see below. Here is the dead simple setup:
+First off, let's make sure that the App knows about the domain. Then point the domain to your fortrabbit App with your domain. This is how the process is started within the fortrabbit Dashboard: 
 
-#### 1. Domain provider
+1. Your App > Domains > "Add a new domain" button
+2. Choose a domain name
+3. Set the [root path](/app#toc-set-a-custom-root-path)
+4. Use the provided informations for routing with your domain provider
 
-Point `www.yourproject.com` using `CNAME` to your fortrabbit App URL `my-app.frb.io` (use your own App URL here). 
 
 ```plain
 HOSTNAME      TYPE       VALUE
 -------------------------------------------------
 www           CNAME      your-chosen-name.frb.io.
+@             A          127.0.0.1 < see Dashboard for correct IP
 ```
 
 
 
-#### 2. fortrabbit Dashboard
 
-Enter the domain `www.yourproject.com` as a new external custom domain in the domain settings of the App in the [Dashboard](/dashboard). 
-
-Additionally you might set a [custom root path](/app#toc-set-a-custom-root-path) and [change the default domain](/app#toc-change-the-default-domain).
-
-Please also see our [TLS help article](/tls) to learn about options for https encryption.
 
 
 ## Advanced routing alternatives
@@ -192,4 +169,18 @@ Your local file contains many entries, do not edit those. Just add a new line wi
 ### Undo changes to your hosts file
 
 After your domain has been moved/propagated be sure to remove the entry from your hosts file.
+
+- - -
+
+## Choosing a domain provider
+
+fortrabbit is not offering direct domain registration and management. In classical hosting, domain registration & e-mail hosting where bundled in packages. Today you can find specialized domain services. There are various offerings, so you should consider upfront what you'll need:
+
+1. Additional IMAP/POP3 e-mail hosting
+2. Additional SSL certificate ordering
+3. Specialized in advanced DNS configurations
+4. Exotic TLD-endings
+5. Support for forwards with ALIAS or ANAME records — see [below](#toc-forwarding-a-naked-domain) 
+
+Many of our clients are using classical offerings combining domain ordering and e-mail hosting. Others are using separated services for domain registration and e-mail hosting.
 
