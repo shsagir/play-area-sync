@@ -97,6 +97,12 @@ We will delete all your Account data. But it is required by law to keep your bil
 And yes, if you cancel the service while still having open invoices with us, they stay open and we might take further legal steps to finally get that money.
 
 
+## What is this €15 pending transaction?
+
+We do a debit test on your credit card, when you enter the informations with us. This should not show up on your credit card statements, as it just a test. We have heard from clients that it sometimes shows up. Please don't worry, it will not be processed.
+
+
+
 ## What if my credit card has not enough credits?
 
 Then it will bounce — which costs us a lot of money each month. We might pass those costs to the clients in the future. We will inform you about bounced payments. We also try to debit again.
