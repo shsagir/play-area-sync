@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-07-08
+reviewed:         2016-07-11
 title:            Install Drupal 8
 naviTitle:        Drupal
 lead:             Drupal is one of the best known open source PHP CMS. Learn here how to use it with fortrabbit.
@@ -27,8 +27,7 @@ tags:
 
 ---
 
-Install
--------
+## Install
 
 We assume you've already created a New App with fortrabbit. You also need a local Composer based [Drupal 8 installation](https://github.com/drupal-composer/drupal-project) installation. You can either use an existing one or initialize a new one.
 
@@ -41,7 +40,7 @@ $ composer create-project drupal-composer/drupal-project:8.x-dev --stability dev
 $ cd MyApp
 ```
 
-Once that is done, visit your local installation in the browser and proceed with the installation wizzard. Once that is also done you can continue with "Existing installation" below.
+Once that is done, visit your local installation in the browser and proceed with the installation wizard. Once that is also done you can continue with "Existing installation" below.
 
 ### Existing installation
 
@@ -136,7 +135,7 @@ $ mysql -u<your-app> -h127.0.0.1 -P13306 -p <your-app> < drupal.sql
 ```
 
 
-### Deploy first time
+### Deploy the first time
 
 Before you can push your first deploy you need to create the `.gitignore` file, if it does not already exist, on top level:
 
@@ -168,4 +167,4 @@ $ git add -A
 $ git commit -m 'Initial'
 ```
 
-While the code is being pushed and composer is executed head over to the Dasboard to your App > Domains and set the Root path of your domain(s) to `web`. Once the deployment has finished (takes much longer on the first time when all composer packages need to be installed) you can go to `https://your-app.frb.io/`
+While the code is being pushed and Composer is executed head over to the [Dashboard](/dashboard) and go to your App > Domains and set the Root path of your domain(s) to `web`. Once the deployment has finished (takes much longer on the first time as all Composer packages need to be installed) you can visit the App URL in your browser: `https://your-app.frb.io/`.
