@@ -70,7 +70,7 @@ You could just use CNAME routing for your naked domain. It's theoretically possi
 You still should care about your naked domain, as some users might type it in directly in the browser. So you want to forward all requests from your naked domain to your primary canonical subdomain:
 
 
-#### Forwarding a naked domain to www
+### Forwarding a naked domain to www
 
 When you enter a `www.` domain with fortrabbit, we additionally provide you with a forwarding service for your naked domain. You'll get two routing values, the main CNAME routing which targets to your App URL and an additional A-record that points to our forwarding service.
 
@@ -85,11 +85,11 @@ That will redirect all requests for the naked domain to the www version.
 
 
 
-#### Alternative ways to use a naked domain
+### Alternative ways to use a naked domain
 
 You don't have to use our free domain forwarding service, here are some alternative options:
 
-##### ALIAS / ANAME routing
+#### ALIAS / ANAME routing
 
 In the fortrabbit Dashboard you can add a naked domain. To make this work you need a domain provider that supports so called "ALIAS" or "ANAME" routing. This allows you to have the functionality of CNAME routing (host-name instead of IP) on a naked domain. These domain / DNS providers offer support:
 
@@ -98,7 +98,7 @@ In the fortrabbit Dashboard you can add a naked domain. To make this work you ne
 * [Easy DNS: ANAME records](https://fusion.easydns.com/index.php?/Knowledgebase/Article/View/190/7/aname-records/)
 
 
-##### Forwarding using your domain provider
+#### Forwarding using your domain provider
 
 Some domain providers also support a simple HTTP redirect. Please see your domain providers documentation. Here are some examples:
 
@@ -110,6 +110,15 @@ Some domain providers also support a simple HTTP redirect. Please see your domai
 ### Using CloudFlare
 
 Please see our [CloudFlare article](/cloudlfare) on how to setup and use CloudFlare together with fortrabbit.
+
+
+### Wildcard domains
+
+You probably want to route all requests for all possible sub-domains to your fortrabbit App like so: `*.mydomain.com` — for instance when the users of your App create spaces within your domain name. That's possible, but for security reasons we'll need to verify your request. Also after you have a setup a wildcard for a domain, all other new requests for custom routings for this domain also need to be verified.
+
+## Changing the default domain
+
+This is an optional setting. Per default your App URL is the default domain. You can change this so that links and the thumbnail preview generation will work with the new primary domain. We also use the default domain for global monitoring. You can use any of your external domains as the default domain. To change the default domain: In the Dashboard got your App > Domains. There click on the star icon beside the list.
 
 
 - - -

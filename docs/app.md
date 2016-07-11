@@ -74,11 +74,6 @@ While creating your fortrabbit App you will be asked for an App name. This name 
 You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/about-domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard. 
 
 
-##### Wildcards
-
-You probably want to route all requests for sub-domains to your fortrabbit App like so: `*.mydomain.com` — for instance when the users of your App create spaces within your domain name. That's possible, but for security reasons we'll need to verify your request. Also after you have a setup a wildcard for a domain, all other new requests for custom routings for this domain also need to be verified.
-
-
 #### Set a custom root path
 
 Per default the domains of the App will route to the `~/htdocs` [folder](directory-structure). In some cases, you need to set a different document root or want to route different domains to different folder. [Laravel](/install-laravel), for examples, requires you to use `~/htdocs/public` per default.
@@ -86,10 +81,6 @@ Per default the domains of the App will route to the `~/htdocs` [folder](directo
 You can set a custom root path by writing the relative path to the sub-folder (all folders below the htdocs folder are allowed). You can do so for each domain (including App URL) you have registered within the Dashboard.
 
 For example, if you want to use the folder `~/htdocs/web`, just enter `web` in the input. If you want to use the folder `~/htdocs/app/webbroot`, just enter `app/webroot`.
-
-#### Change the default domain
-
-This is an optional setting. Per default your App URL is the default domain. You can change this so that links and the thumbnail preview generation will work with the new primary domain. We also use the default domain for global monitoring.
 
 
 
