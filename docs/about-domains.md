@@ -2,7 +2,7 @@
 
 template:      article
 reviewed:      2016-07-11
-title:         All about Domains & DNS
+title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
 group:         Kitchen_sink
@@ -42,10 +42,10 @@ Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Add
 
 First off, make sure that the App knows about the domain. Then point the domain to your fortrabbit App with your domain provider. Start the process in the fortrabbit Dashboard like so: 
 
-1. Click: Your App > Domains > "Add a new domain" button
-2. Choose: a domain name
-3. Set: the [root path](/app#toc-set-a-custom-root-path)
-4. Use: the provided informations to route the domain with your domain provider
+1. Click Your App > Domains > "Add a new domain"
+2. Choose a domain name
+3. Set the [root path](/app#toc-set-a-custom-root-path)
+4. Use the provided informations to route the domain with your domain provider
 
 
 ## Advanced routing options
@@ -55,24 +55,26 @@ The world of DNS is one of its own. Let's dive into it – understand the backgr
 
 ### www and other subdomains
 
-Back in the days the www. prefix indicated that this is an address to type into the browser. Nowadays the www. prefix indicates a "cloud-enabled" application which can be moved in seconds to another server location. Test it: all big players run on a www. subdomain. The name of the subdomain prefix is not so important, but `www` is the convention for (marketing) entry points. We also use `help.fortrabbit.com` for the page you are currently reading and `blog.fortrabbit.com` to publish our thinkings.
+Back in the days the www. prefix indicated that this is an address to type into the browser. Nowadays the www. prefix indicates a "cloud-enabled" application which can be moved in seconds to another server location. The name of the subdomain prefix is not so important, but `www` is the convention for (marketing) entry points. We also use `help.fortrabbit.com` for the page you are currently reading and `blog.fortrabbit.com` to publish our thinkings.
 
 The trick is that you can route subdomains using `CNAME` records. With this you tell your DNS provider to send resolve to a more variable `hostname` instead of a fixed `IP`. The great advantage is that the IP address behind the hostname target can change later on — without your intervention.
 
 ### Naked domains
 
-There are so called "naked"-, "APEX"- or "root"- domains. They have no prefix and look like so: `fortrabbit.com`. On a on a aesthetic level, they are more pleasing than there subdomain counterparts. But they don't play well as primary domains with cloud services like ours. Naked domains can't be routed with `CNAME`, they require an `A`-Record type rooting. 
+There are so called "naked", "APEX" or "root" domains. They have no prefix and look like so: `fortrabbit.com`. They are aesthetically more pleasing than there subdomain counterparts. But they don't play well as primary domains with cloud services like ours. Naked domains can't be routed with `CNAME`, they require an `A`-Record type rooting. 
+
+#### Don't dos
 
 You could grab the IP of your App and use that as an A-record for your domain. It's technical possible, but than your App will be offline, once we move it to a another Node (as the IP changes).
 
 You could just use CNAME routing for your naked domain. It's theoretically possible, but not recommended by [DNS specs](http://www.ietf.org/rfc/rfc1035.txt) and also would break any e-mail delivery for your domain.
 
-You still should care about your naked domain, as some users might type it in directly in the browser. So you want to forward all requests from your naked domain to your primary canonical subdomain:
-
 
 ### Forwarding a naked domain to www
 
-When you enter a `www.` domain with fortrabbit, we additionally provide you with a forwarding service for your naked domain. You'll get two routing values, the main CNAME routing which targets to your App URL and an additional A-record that points to our forwarding service.
+You still should care about your naked domain, as some users might type it in directly in the browser. So you want to forward all requests from your naked domain to your primary canonical subdomain:
+
+When you enter a `www.` domain with fortrabbit, we additionally provide a forwarding service for your naked domain. You'll get two routing values, the main CNAME routing which targets to your App URL and an additional A-record that points to our forwarding service.
 
 ```plain
 HOSTNAME      TYPE       VALUE
@@ -119,6 +121,10 @@ You probably want to route all requests for all possible sub-domains to your for
 ## Changing the default domain
 
 This is an optional setting. Per default your App URL is the default domain. You can change this so that links and the thumbnail preview generation will work with the new primary domain. We also use the default domain for global monitoring. You can use any of your external domains as the default domain. To change the default domain: In the Dashboard got your App > Domains. There click on the star icon beside the list.
+
+## Using HTTPS
+
+Domains on fortrabbit can be accessed by `HTTP` and `HTTPS`. Please see the [TLS article](/tls) for informations on secured connections and SSL certificates.
 
 
 - - -
