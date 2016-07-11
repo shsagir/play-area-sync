@@ -16,8 +16,19 @@ tags:
 keywords:
     - TLD
     - Top Level Domain
+    - top-level-domain
     - registration
     - ordering
+    - zone apex
+    - apex domain
+    - root domain
+    - naked domain
+    - subdomain
+    - domain masking
+    - domain name server
+    - DNS
+    - ns
+    - lookup
 
 seeAlsoLinks:
     - tls
@@ -27,83 +38,84 @@ seeAlsoLinks:
 
 ---
 
-Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external top-level-domain to your App. Your goal is to have your App running under your own domain.
+Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external domain to your App. Your goal here is to have your App running under your own domain.
+
+First off, make sure that the App knows about the domain. Then point the domain to your fortrabbit App with your domain provider. Start the process in the fortrabbit Dashboard like so: 
+
+1. Click: Your App > Domains > "Add a new domain" button
+2. Choose: a domain name
+3. Set: the [root path](/app#toc-set-a-custom-root-path)
+4. Use: the provided informations to route the domain with your domain provider
 
 
+## Advanced routing options
 
-## Route a custom domain
+The world of DNS is one of its own. Let's dive into it – understand the backgrounds, explore advanced and alternative settings.
 
-First off, let's make sure that the App knows about the domain. Then point the domain to your fortrabbit App with your domain. This is how the process is started within the fortrabbit Dashboard: 
 
-1. Your App > Domains > "Add a new domain" button
-2. Choose a domain name
-3. Set the [root path](/app#toc-set-a-custom-root-path)
-4. Use the provided informations for routing with your domain provider
+### www and other subdomains
 
+Back in the days the www. prefix indicated that this is an address to type into the browser. Nowadays the www. prefix indicates a "cloud-enabled" application which can be moved in seconds to another server location. Test it: all big players run on a www. subdomain. The name of the subdomain prefix is not so important, but `www` is the convention for (marketing) entry points. We also use `help.fortrabbit.com` for the page you are currently reading and `blog.fortrabbit.com` to publish our thinkings.
+
+The trick is that you can route subdomains using `CNAME` records. With this you tell your DNS provider to send resolve to a more variable `hostname` instead of a fixed `IP`. The great advantage is that the IP address behind the hostname target can change later on — without your intervention.
+
+### Naked domains
+
+There are so called "naked"-, "APEX"- or "root"- domains. They have no prefix and look like so: `fortrabbit.com`. On a on a aesthetic level, they are more pleasing than there subdomain counterparts. But they don't play well as primary domains with cloud services like ours. Naked domains can't be routed with `CNAME`, they require an `A`-Record type rooting. 
+
+You could grab the IP of your App and use that as an A-record for your domain. It's technical possible, but than your App will be offline, once we move it to a another Node (as the IP changes).
+
+You could just use CNAME routing for your naked domain. It's theoretically possible, but not recommended by [DNS specs](http://www.ietf.org/rfc/rfc1035.txt) and also would break any e-mail delivery for your domain.
+
+You still should care about your naked domain, as some users might type it in directly in the browser. So you want to forward all requests from your naked domain to your primary canonical subdomain:
+
+
+#### Forwarding a naked domain to www
+
+When you enter a `www.` domain with fortrabbit, we additionally provide you with a forwarding service for your naked domain. You'll get two routing values, the main CNAME routing which targets to your App URL and an additional A-record that points to our forwarding service.
 
 ```plain
 HOSTNAME      TYPE       VALUE
 -------------------------------------------------
+@             A          0.0.0.0 < See Dashboard for actual IP
 www           CNAME      your-chosen-name.frb.io.
-@             A          127.0.0.1 < see Dashboard for correct IP
 ```
 
+That will redirect all requests for the naked domain to the www version. 
 
 
 
+#### Alternative ways to use a naked domain
+
+You don't have to use our free domain forwarding service, here are some alternative options:
+
+##### ALIAS / ANAME routing
+
+In the fortrabbit Dashboard you can add a naked domain. To make this work you need a domain provider that supports so called "ALIAS" or "ANAME" routing. This allows you to have the functionality of CNAME routing (host-name instead of IP) on a naked domain. These domain / DNS providers offer support:
+
+* [DNSimple: ALIAS records](https://support.dnsimple.com/articles/alias-record/)
+* [DNS made easy: ANAME records](http://help.dnsmadeeasy.com/managed-dns/records/aname-records/)
+* [Easy DNS: ANAME records](https://fusion.easydns.com/index.php?/Knowledgebase/Article/View/190/7/aname-records/)
 
 
-## Advanced routing alternatives
+##### Forwarding using your domain provider
 
-The world of DNS is one of its own. Let's dive into it. Understand the backgrounds, explore advanced and alternative settings.
+Some domain providers also support a simple HTTP redirect. Please see your domain providers documentation. Here are some examples:
 
-
-### www and other non-naked subdomains
-
-Back in the days the www. prefix indicated that this is an address to type into the browser. Nowadays the www. prefix indicates a "cloud-enabled" application which can be moved in seconds to another server location. Test it: all big players run on a www. subdomain. The name of the subdomain prefix is not so important, but `www` is the convention for (marketing) entry points. We use `help.fortrabbit.com` for the page you are currently reading and `blog.fortrabbit.com` to publish our thinkings.
-
-The trick is that you can route subdomains using `CNAME` records. With this you tell your DNS provider to send resolve to a `hostname` instead of an `IP`. The great advantage is that the IP address behind the hostname target can change later on — without your intervention.
-
-#### CNAME for naked domains
-
-It is theoretically possible to create a CNAME record for a naked domain. **Just don't do it.** It's not allowed because [the DNS specification says so](http://www.ietf.org/rfc/rfc1035.txt).
-
-The problem is that `CNAME` records do not behave like the other records (`A`, `MX`, `TXT`, …). They are *greedy*. This means: They *overwrite* all other records.
-
-An example: assume you have a domain `domain.tld` and want to receive mails for it. So you create an `MX` record. Say it points to `mail.domain.tld`. If you now would create a `CNAME` record directly for `domain.tld` pointing to `otherdomain.tld`, every lookup of any record for `domain.tld` will be made on `otherdomain.tld` instead (aside from the `CNAME` record itself).
+* [GoDaddy: domain forwarding](https://support.godaddy.com/help/article/422/manually-forwarding-or-masking-your-domain-name)
+* [Gandi: domain forwarding](https://wiki.gandi.net/en/domains/management/domain-as-website/forwarding)
+* [1&1: domain forwarding](http://help.1and1.com/domains-c36931/manage-domains-c79822/domain-destination-c38672redirectforward-your-domain-a594868.html)
 
 
-#### Forwarding a naked domain
+### Using CloudFlare
 
-Ok, let's say that you have your primary domain routed via CNAME to the www domain. Now what should happen when users enter the address without www prefix in the browser? It should redirect to the www version automatically. And here is how to that:
-
-In **fortrabbit Dashboard** you should add the naked domain `yourproject.com` as well as primary domain `www.yourproject.com`.
-
-At your **external domain provider**: forward naked domain `yourproject.com` to subdomain `www.yourproject.com` using ALIAS or ANAME method.
-
-Some domain providers also support a simple HTTP redirect. This basically means: they provide a web server for you and redirect all incoming requests to `http://domain.tld/` to `http://www.domain.tld/`. Alternative names for this feature are "Domain forwarding", "Web forwarding", "Domain masking" and the like.
-
-##### Domain forwarding docs of some domain providers
-
-* [GoDaddy domain forwarding documentation](https://support.godaddy.com/help/article/422/manually-forwarding-or-masking-your-domain-name)
-* [Gandi domain forwarding documentation](https://wiki.gandi.net/en/domains/management/domain-as-website/forwarding)
-* [1&1 domain forwarding documentation](http://help.1and1.com/domains-c36931/manage-domains-c79822/domain-destination-c38672redirectforward-your-domain-a594868.html)
-
-When your external domain service does not support such forwarding methods, you can make use of a free service like [RootDirect](https://www.rootredirect.com/) or [wwwizer](http://wwwizer.com/) for naked domain redirects. It's pretty simple, as they do not even require any registration or setup, you only need to point your naked domain to their IP and they will redirect to your `www.` address. 
+Please see our [CloudFlare article](/cloudlfare) on how to setup and use CloudFlare together with fortrabbit.
 
 
-### Time delays
-
-Most DNS records have a TTL (Time To Live) of 24 hours. This means that all name servers will only look every 24 hours if a domain target has been changed. In some cases it might even take longer. That is actually a good thing as it helps to reduce round trips. Some providers let you set down the TTL, this can be useful when moving domains.
+- - -
 
 
-### Configuring your domain for e-mail
-
-So far we have covered how to route a domain to fortrabbit. To receive and send e-mails from your domain you will configure the MX record of your domain. Please see your e-mail hosting provider for instructions.
-
-
-
-## Troubleshooting domains
+## Troubleshooting DNS
 
 You can use the Terminal (Bash) to see the current DNS settings of your domain. With the `dig` command you can see if there are any CNAME entries and where they are pointing to. Here we lookup `help.fortrabbit.com` and see a CNAME pointing to the App URL: `help-frbit.frb.io`.
 
@@ -132,6 +144,11 @@ help-frbit.eu2.frbit.net.  20    IN  A       52.48.51.144
 ```
 
 Alternately you can use a browser based DNS lookup tool. See [these results](http://lmgtfy.com/?q=dns+lookup).
+
+## Time delays
+
+Most DNS records have a TTL (Time To Live) of 24 hours. This means that all name servers will only look every 24 hours if a domain target has been changed. In some cases it might even take longer. That is actually a good thing as it helps to reduce round trips. Some providers let you set down the TTL, this can be useful when moving domains.
+
 
 
 
@@ -170,7 +187,7 @@ Your local file contains many entries, do not edit those. Just add a new line wi
 
 After your domain has been moved/propagated be sure to remove the entry from your hosts file.
 
-- - -
+
 
 ## Choosing a domain provider
 
@@ -183,4 +200,10 @@ fortrabbit is not offering direct domain registration and management. In classic
 5. Support for forwards with ALIAS or ANAME records — see [below](#toc-forwarding-a-naked-domain) 
 
 Many of our clients are using classical offerings combining domain ordering and e-mail hosting. Others are using separated services for domain registration and e-mail hosting.
+
+
+### Configuring your domain for e-mail
+
+So far we have covered how to route a domain to fortrabbit. To receive and send e-mails from your domain you will configure the MX record of your domain. Please see your e-mail hosting provider for instructions.
+
 

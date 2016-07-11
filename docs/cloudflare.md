@@ -2,11 +2,10 @@
 
 template:         article
 naviTitle:        CloudFlare
-reviewed:         2016-03-03
+reviewed:         2016-07-11
 title:            Using CloudFlare with fortrabbit
-dontList:         true
 
-group:            CDN
+group:            Domains_and_DNS
 section:          Extending_fortrabbit
 
 websiteLink:      https://www.cloudflare.com?utm_source=fortrabbit
@@ -22,13 +21,14 @@ keywords:
      - advanced
      - CDN
      - ddos
+     - ssl
 
 ---
 
 
 ## About CloudFlare
 
-CloudFlare is a multi-purpose website performance & security service. It can be used as a kind of Content Delivery Network and as a protection against Denial Of Service Attacks. It is also popular choice (beside LetsEncrypt) to get an SSL certificate for your domain without costs and hustle.
+CloudFlare is a "magical" multi-purpose website performance & security service, which works on DNS level. It can be used as a kind of Content Delivery Network and as a protection against Denial Of Service Attacks. It is also popular choice to get an SSL certificate for your domain without costs and hustle.
 
 
 ## Pricing
@@ -43,9 +43,8 @@ Go to the [sign up page](https://www.cloudflare.com/a/sign-up?utm_source=fortrab
 
 ## Integrating CloudFlare with fortrabbit
 
-There is not really a technical connection between CloudFlare and fortrabbit at all. You configure CloudFlare with your domain.
+There is no technical connection between CloudFlare and fortrabbit. You basically configure CloudFlare with your [external domain](/about-domains).
 
-<!-- TODO: continue here -->
+Many fortrabbit clients are using CloudFlare to get SSL (https) for their own custom domain without the need to book and setup the [TLS custom](/tls) Component. 
 
-
-
+CloudFlare also offers [domain forwarding](/about-domains#toc-forwarding-a-naked-domain) from naked domains to the www-version.
