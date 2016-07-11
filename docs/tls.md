@@ -29,14 +29,8 @@ tags:
 
 ---
 
-## Problem
-
-The interwebs is full of criminals trying to read your communication.
-
-
-## Solution
-
-All requests should be served using `HTTPS` not `HTTP`.
+**Problem**: The interwebs is full of criminals trying to read your communication.  
+**Solution**: Serve requests over `HTTPS` not just `HTTP`.
 
 
 ### About HTTPS, TLS & SSL
