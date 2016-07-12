@@ -33,7 +33,7 @@ tags:
 **Solution**: Serve requests over `HTTPS` not just `HTTP`.
 
 
-### About HTTPS, TLS & SSL
+## About HTTPS, TLS & SSL
 
 `HTTPS` is **H**yper **T**ext **T**ransfer **P**rotocol over Transport Layer **S**ecurity. It is used to secure the data transport between a client (browser) and a server. **TLS** is the successor to the (still better known) **SSL** (Secure Sockets Layer). Current browsers show a green lock in the address bar if the connection is over HTTPS, the certificate could be verified and if the certificate is still valid.
 
