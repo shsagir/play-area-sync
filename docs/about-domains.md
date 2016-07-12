@@ -40,7 +40,7 @@ seeAlsoLinks:
 
 Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external domain to your App. Your goal here is to have your App running under your own domain.
 
-First off, make sure that the App knows about the domain. Then point the domain to your fortrabbit App with your domain provider. Start the process in the fortrabbit Dashboard like so: 
+First off, make sure that the App knows about the domain. Then point the domain to your fortrabbit App with your domain provider. Start the process in the fortrabbit Dashboard like so:
 
 1. Click Your App > Domains > "Add a new domain"
 2. Choose a domain name
@@ -55,26 +55,26 @@ The world of DNS is one of its own. Let's dive into it – understand the backgr
 
 ### www and other subdomains
 
-Back in the days the www. prefix indicated that this is an address to type into the browser. Nowadays the www. prefix indicates a "cloud-enabled" application which can be moved in seconds to another server location. The name of the subdomain prefix is not so important, but `www` is the convention for (marketing) entry points. We also use `help.fortrabbit.com` for the page you are currently reading and `blog.fortrabbit.com` to publish our thinkings.
+Back in the days the `www.` prefix indicated that this is an address to type into the browser. Nowadays the `www.` prefix indicates a "cloud-enabled" application which can be moved in seconds to another server location. The name of the subdomain prefix is not so important, but `www` is the convention for (marketing) entry points. For example: We use `help.fortrabbit.com` for the page you are currently reading and `blog.fortrabbit.com` to publish our thinkings.
 
-The trick is that you can route subdomains using `CNAME` records. With this you tell your DNS provider to send resolve to a more variable `hostname` instead of a fixed `IP`. The great advantage is that the IP address behind the hostname target can change later on — without your intervention.
+The trick is that you can route subdomains using `CNAME` records. By this you are telling your DNS provider to resolve a `hostname` instead of a fixed `IP` (which would be an `A` record). The great advantage is that the IP address behind the hostname target can change later on — without your intervention.
 
 ### Naked domains
 
-There are so called "naked", "APEX" or "root" domains. They have no prefix and look like so: `fortrabbit.com`. They are aesthetically more pleasing than there subdomain counterparts. But they don't play well as primary domains with cloud services like ours. Naked domains can't be routed with `CNAME`, they require an `A`-Record type rooting. 
+There are so called "naked", "APEX" or "root" domains. They have no prefix and look like so: `fortrabbit.com`. Some think that they are aesthetically more pleasing than their subdomain counterparts. But they don't play well as with cloud services — like ours. Naked domains should not be routed using a `CNAME` record; they should be routed using an `A`-Record.
 
 #### Don't dos
 
-You could grab the IP of your App and use that as an A-record for your domain. It's technical possible, but than your App will be offline, once we move it to a another Node (as the IP changes).
+You could grab the IP of your App and use that as an `A`-record for your domain. It's technical possible, but than your App will be offline, once we move it to a another Node (which changes the IP address).
 
-You could just use CNAME routing for your naked domain. It's theoretically possible, but not recommended by [DNS specs](http://www.ietf.org/rfc/rfc1035.txt) and also would break any e-mail delivery for your domain.
+In some cases you could just use `CNAME` routing for your naked domain. It's theoretically possible, but not recommended by the [DNS specs](http://www.ietf.org/rfc/rfc1035.txt) and also would break any e-mail delivery for your domain.
 
 
 ### Forwarding a naked domain to www
 
-You still should care about your naked domain, as some users might type it in directly in the browser. So you want to forward all requests from your naked domain to your primary canonical subdomain:
+You still should care about your naked domain, as some users might type it in directly in the browser address bar. So you want to forward all requests from your naked domain to your primary canonical subdomain:
 
-When you enter a `www.` domain with fortrabbit, we additionally provide a forwarding service for your naked domain. You'll get two routing values, the main CNAME routing which targets to your App URL and an additional A-record that points to our forwarding service.
+When you register a `www.` domain in the fortrabbit Dashboard, we additionally provide a forwarding service for your naked domain. You'll get two routing values, the main `CNAME` target and an additional `A`-record that points to our forwarding service.
 
 ```plain
 HOSTNAME      TYPE       VALUE
@@ -83,7 +83,7 @@ HOSTNAME      TYPE       VALUE
 www           CNAME      your-chosen-name.frb.io.
 ```
 
-That will redirect all requests for the naked domain to the www version. 
+This will redirect all requests incoming to the naked domain to the `www.` domain.
 
 
 
@@ -93,14 +93,14 @@ You don't have to use our free domain forwarding service, here are some alternat
 
 #### ALIAS / ANAME routing
 
-In the fortrabbit Dashboard you can add a naked domain. To make this work you need a domain provider that supports so called "ALIAS" or "ANAME" routing. This allows you to have the functionality of CNAME routing (host-name instead of IP) on a naked domain. These domain / DNS providers offer support:
+In the fortrabbit Dashboard you can add a naked domain. To make this work you need a domain provider that supports so called "ALIAS" or "ANAME" records. They allow you to have the functionality of CNAME routing (hostname target instead of IP). Following a list of domain / DNS providers who offer these special records:
 
 * [DNSimple: ALIAS records](https://support.dnsimple.com/articles/alias-record/)
 * [DNS made easy: ANAME records](http://help.dnsmadeeasy.com/managed-dns/records/aname-records/)
 * [Easy DNS: ANAME records](https://fusion.easydns.com/index.php?/Knowledgebase/Article/View/190/7/aname-records/)
 
 
-#### Forwarding using your domain provider
+#### Forwarding, using your domain provider
 
 Some domain providers also support a simple HTTP redirect. Please see your domain providers documentation. Here are some examples:
 
@@ -116,15 +116,17 @@ Please see our [CloudFlare article](/cloudlfare) on how to setup and use CloudFl
 
 ### Wildcard domains
 
-You probably want to route all requests for all possible sub-domains to your fortrabbit App like so: `*.mydomain.com` — for instance when the users of your App create spaces within your domain name. That's possible, but for security reasons we'll need to verify your request. Also after you have a setup a wildcard for a domain, all other new requests for custom routings for this domain also need to be verified.
+Do you want to route all requests for all possible subdomains to your fortrabbit App (`*.mydomain.com`)? That is possible, but for security reasons we'll need to verify that you own the domain.
 
 ## Changing the default domain
 
-This is an optional setting. Per default your App URL is the default domain. You can change this so that links and the thumbnail preview generation will work with the new primary domain. We also use the default domain for global monitoring. You can use any of your external domains as the default domain. To change the default domain: In the Dashboard got your App > Domains. There click on the star icon beside the list.
+Per default your App URL is the "default domain". You can change it so that links from the Dashboard and the thumbnail preview generation will uses a custom domain of yours. We also use the default domain for various internal monitoring services.
+
+To change the default domain: In the Dashboard go to your App > Domains. There click on the star icon beside the domain name in the list.
 
 ## Using HTTPS
 
-Domains on fortrabbit can be accessed by `HTTP` and `HTTPS`. Please see the [TLS article](/tls) for informations on secured connections and SSL certificates.
+Domains on fortrabbit can be accessed via `HTTP` and `HTTPS`. Please see the [TLS article](/tls) for informations on secured connections and SSL certificates.
 
 
 - - -
@@ -162,17 +164,12 @@ Alternately you can use a browser based DNS lookup tool. See [these results](htt
 
 ## Time delays
 
-Most DNS records have a TTL (Time To Live) of 24 hours. This means that all name servers will only look every 24 hours if a domain target has been changed. In some cases it might even take longer. That is actually a good thing as it helps to reduce round trips. Some providers let you set down the TTL, this can be useful when moving domains.
-
-
-
+Many DNS providers default the TTL (Time To Live) of all records to 24 hours. This means that all changes will apply with a delay up to 24 hours, because everybody who has looked up the domain caches the result for the TTL duration. Also the TTL is not guaranteed: One badly programmed router on the way, who ignores the TTL or imposes it's own minimal TTL, can change the TTL for everybody "behind it". The caching itself is actually a good thing as it helps to reduce round trips. Some providers let you set down the TTL, which is very useful when moving or changing domains.
 
 
 ## Testing domain routing with your local hosts file
 
-Let's say you have your domain registered with your fortrabbit App and are now ready to point the domain to fortrabbit. Before changing your domain's name-servers, you want to test it. Or you have pointed the domain to fortrabbit but it doesn't really show up yet, so you want to know where the error is.
-
-To test the routing on the fortrabbit side: Tell your local computer to visit a certain IP for a certain domain without looking for official DNS entries. To do so, add your Apps IP address as an entry on your computer's hosts file.
+Let's say you are developing a new App and want to use your custom domain before actually routing it to fortrabbit. Just add the domain to fortrabbit, as you would do with any actually routed domain, then modify your local host file, which let's your local machine now ahead of time that the domain is to be served from your fortrabbit App.
 
 ### hosts file location
 
@@ -183,7 +180,7 @@ The hosts file is a text file (without file type ending). It can be found here:
 
 ### How to get your Apps IP
 
-See the above troubleshooting section to grab the current IP of your App. Mind that this IP might change in the future and that this IP is just for now.
+See the above troubleshooting section to grab the current IP of your App. Mind that this IP will change in the future and that this IP is just for now.
 
 ### Editing your local hosts file
 
@@ -212,7 +209,7 @@ fortrabbit is not offering direct domain registration and management. In classic
 2. Additional SSL certificate ordering
 3. Specialized in advanced DNS configurations
 4. Exotic TLD-endings
-5. Support for forwards with ALIAS or ANAME records — see [below](#toc-forwarding-a-naked-domain) 
+5. Support for forwards with ALIAS or ANAME records — see [below](#toc-forwarding-a-naked-domain)
 
 Many of our clients are using classical offerings combining domain ordering and e-mail hosting. Others are using separated services for domain registration and e-mail hosting.
 
@@ -220,5 +217,3 @@ Many of our clients are using classical offerings combining domain ordering and 
 ### Configuring your domain for e-mail
 
 So far we have covered how to route a domain to fortrabbit. To receive and send e-mails from your domain you will configure the MX record of your domain. Please see your e-mail hosting provider for instructions.
-
-
