@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-05-17
+reviewed:      2016-07-11
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -157,66 +157,31 @@ $filesystem->put('hello', 'world...');
 Offshore files is relatively new concept, but support is growing. Most frameworks and CMS systems are already supporting it via plugins or modules. Here is a short list:
 
 
-#### Laravel
+**Laravel**:  Just use Flysystem, which can easily be installed via Composer. More infos [over here](/install-laravel#toc-). Use at least Laravel 5.1.
 
-Just use Flysystem, which can easily be installed via Composer. More infos [over here](/install-laravel#toc-). Use at least Laravel 5.1.
+<!-- TODO: Clean up tis stub: Laravel 4 flysystem bridge: https://github.com/GrahamCampbell/Laravel-Flysystem/tree/v1.0.0 what's up with this service provider? https://github.com/aws/aws-sdk-php-laravel -->
 
-Laravel 4 flysystem bridge: https://github.com/GrahamCampbell/Laravel-Flysystem/tree/v1.0.0
+**Drupal 8**: There is an [module](https://www.drupal.org/project/flysystem) that adapts Flysystem with Drupal.
 
-  TODO: what's up with this service provider? https://github.com/aws/aws-sdk-php-laravel
+**WordPress**:  You can use [WP Offload S3 Lite](https://wordpress.org/plugins/amazon-s3-and-cloudfront/) to upload and serve files. More infos [here](/install-wordpress).
 
+**Symfony**: Use can either use the [OneUp Flysystem bundle](https://github.com/1up-lab/OneupFlysystemBundle) or the [Gaufrette bundle](https://github.com/KnpLabs/KnpGaufretteBundle). More infos [here](/install-symfony).
 
+**Craft CMS**: There is [something in the works](https://github.com/pixelandtonic/Craft-Release/blob/master/app/assetsourcetypes/S3AssetSourceType.php) for Craft 3.
 
-#### Drupal 8
-
-There is an [module](https://www.drupal.org/project/flysystem) that adapts Flysystem with Drupal. More soon.
-
-
-#### WordPress
-
-You can use [WP Offload S3 Lite](https://wordpress.org/plugins/amazon-s3-and-cloudfront/) to upload and serve files. More infos [here](/install-wordpress).
-
-
-
-#### Symfony
-
-Use can either use the [OneUp Flysystem bundle](https://github.com/1up-lab/OneupFlysystemBundle) or the [Gaufrette bundle](https://github.com/KnpLabs/KnpGaufretteBundle). More infos [here](/install-symfony).
-
-
-
-
-#### Craft CMS
-
-There is [something in the works](https://github.com/pixelandtonic/Craft-Release/blob/master/app/assetsourcetypes/S3AssetSourceType.php) for Craft 3.
-
-
-
-#### Shopware
-
-You might use the [SwagMediaS3](https://github.com/shopwareLabs/SwagMediaS3) Amazon S3 adapter (not tested).
+**Shopware**: You might use the [SwagMediaS3](https://github.com/shopwareLabs/SwagMediaS3) Amazon S3 adapter (not tested).
 
 <!--  TODO/TBD:  endpoint missing? https://github.com/shopwareLabs/SwagMediaS3/blob/master/Bootstrap.php#L96 -->
 
-#### Magento
-
-There is the [Arkade S3 Extension](https://github.com/arkadedigital/magento2-s3) which you might can use (not tested).
+**Magento**: There is the [Arkade S3 Extension](https://github.com/arkadedigital/magento2-s3) which you might can use (not tested).
 
 <!-- TODO/TBD: endpoint not supported? PR  https://github.com/arkadedigital/magento2-s3/blob/master/Model/MediaStorage/File/Storage/S3.php#L59 -->
 
-
-<!-- 
-#### eZ publish
-
-...
-
-  INFO: PR/Patch for S3 on the way
--->
 
 
 #### Custom/plain PHP applications
 
 There is an official [AWS PHP SDK](https://github.com/aws/aws-sdk-php) from Amazon you can use.
-
 
 
 ### 2. Manual upload
