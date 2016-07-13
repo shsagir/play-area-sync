@@ -95,7 +95,7 @@ You don't have to use our free domain forwarding service, here are some alternat
 
 In the fortrabbit Dashboard you can add a naked domain. To make this work you need a domain provider that supports so called "ALIAS" or "ANAME" records. They allow you to have the functionality of CNAME routing (hostname target instead of IP). Following a list of domain / DNS providers who offer these special records:
 
-* [DNSimple: ALIAS records](https://support.dnsimple.com/articles/alias-record/)
+* **[DNSimple: ALIAS records](https://support.dnsimple.com/articles/alias-record/)**
 * [DNS made easy: ANAME records](http://help.dnsmadeeasy.com/managed-dns/records/aname-records/)
 * [Easy DNS: ANAME records](https://fusion.easydns.com/index.php?/Knowledgebase/Article/View/190/7/aname-records/)
 
