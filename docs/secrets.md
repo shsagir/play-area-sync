@@ -90,7 +90,7 @@ $ ssh git@deploy.eu2.frbit.com secrets your-app
 }
 
 # read only MySQL secrets
-$ ssh git@deploy.eu2.frbit.com secrets your-app mysql
+$ ssh git@deploy.eu2.frbit.com secrets your-app MYSQL
 {
     "PASSWORD": "AAAABBBBCCCCDDDDEEEEFFFF",
     "USER": "my-app",
@@ -100,7 +100,7 @@ $ ssh git@deploy.eu2.frbit.com secrets your-app mysql
 }
 
 # read only MySQL password
-$ ssh git@deploy.eu2.frbit.com secrets your-app mysql.password
+$ ssh git@deploy.eu2.frbit.com secrets your-app MYSQL.PASSWORD
 AAAABBBBCCCCDDDDEEEEFFFF
 ```
 

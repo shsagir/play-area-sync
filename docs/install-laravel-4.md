@@ -246,7 +246,7 @@ Create a connection to your local environment database config by opening adding 
 Fetch your current database password using the `secrets` command:
 
 ```bash
-$ ssh git@deploy.eu2.frbit.com secrets your-app mysql.password
+$ ssh git@deploy.eu2.frbit.com secrets your-app MYSQL.PASSWORD
 ```
 
 Now open up a [tunnel](/mysql#toc-shell-tunnel-mysql) and run in another terminal window your migration or seed commands:

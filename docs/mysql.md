@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-06-21
+reviewed:      2016-07-18
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access and configure the most common database on fortrabbit.
@@ -19,6 +19,7 @@ keywords:
      - database
      - innodb
      - myisam
+     - phpmyadmin
 
 seeAlsoLinks:
     - ssh-sftp-old-app
@@ -67,7 +68,9 @@ To access MySQL from remote you still need the MySQL username, password, host an
 
 Sometimes it's handy to manage your MySQL database with a graphical interface. We recommend the official [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows) from Oracle. There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
 
-Most of those clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information. The MySQL hostname will not be `127.0.0.1` or `localhost` — it will be the remote server name which looks something like this `your-app.mysql.eu2.frbit.com`.
+All of those clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information. The MySQL hostname will not be `127.0.0.1` or `localhost` — it will be the remote server name which looks something like this `your-app.mysql.eu2.frbit.com`.
+
+Please do not install phpMyAdmin on your fortrabbit App.
 
 
 ### Shell › Tunnel › MySQL
@@ -81,7 +84,7 @@ ssh -N -L 13306:my-app.mysql.eu2.frbit.com:3306 tunnel@tunnel.eu2.frbit.com
 
 `13306` is an arbitrary port. Choose something in the higher range (10000-65000).
 
-**This command will not reply with any message on success! If nothing shows up: you did right!** *This behavior is how most (all?) SSH clients are implemented and sadly we cannot issue any response message telling you that it worked. So mind: if you see no error, all is good.*
+**This command will not reply with any message on success! If nothing shows up: you did right!** This behavior is how most (all?) SSH clients are implemented and sadly we cannot issue any response message telling you that it worked. So mind: if you see no error, all is good.
 
 Once the tunnel is up, you can connect to your MySQL database with the `mysql` console client **from another terminal**:
 
