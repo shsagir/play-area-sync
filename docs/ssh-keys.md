@@ -1,7 +1,7 @@
 ---
 
 template:       article
-reviewed:       2016-06-20
+reviewed:       2016-07-20
 naviTitle:      SSH keys setup
 title:          Troubleshooting SSH keys setup
 lead:           This article helps solving common issues setting up your SSH keys.
@@ -26,6 +26,7 @@ keywords:
     - OpenSSH
 
 seeAlsoLinks:
+    - access-methods
     - git
     - remote-ssh-execution
     - git-deployment
@@ -41,12 +42,13 @@ tags:
 
 ---
 
-Your public SSH keys are used to authenticate you with a variety of fortrabbit services such as **[deploying via Git](git)**, [accessing live logs](logging) and [remote MySQL access](mysql#toc-remote-mysql-access). So, in other words: No SSH keys installed, no fun with fortrabbit — it's quite crucial to get this part right.
+Beside [password authentication](/access-methods#toc-password-authentication) you can use your public SSH keys to authenticate yourself with a variety of fortrabbit services — such as **[deploying via Git](git)**, [accessing live logs](logging) and [remote MySQL access](mysql#toc-remote-mysql-access). SSH key authentication is more secure and more convenient, once setup. This article will help setting up your SSH keys.
 
-The goals here:
+The goals here are:
 
 1. Create an SSH key pair consisting of public and private key.
 2. Store the keys on the right location, so that your Operating System can make use of them.
+3. Save the public key with your fortrabbit Account
 
 
 ## Is Git installed?
@@ -77,7 +79,7 @@ The procedure to create SSH keys is a bit different on each Operating System.
 
 There are different ways to setup and use Git with Windows, thus there are also different ways setup and store the keys. We recommend to use the official installer form the Git website, together with the Git Bash tool. This tutorial from GitHub is lazer-sharp:
 
-* [Generate a new SSH key & add it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-windows)
+* **[Generate a new SSH key & add it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-windows)**
 
 Have a look at the very detailed [Git and SSH key setup on Windows from Beanstalk](http://guides.beanstalkapp.com/version-control/git-on-windows.html) to learn about alternative ways.
 

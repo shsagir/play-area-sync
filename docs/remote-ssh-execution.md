@@ -66,15 +66,13 @@ $ ssh [[your-app]]@deploy.[[region]].frbit.com ls -lha
 #      the ssh login command               the remote command
 ```
 
-**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are [deployed](/deployment). So if the script, you want to execute, is locally under `vendor/bin/foo` then you'd need to execute `ssh …frbit.com php vendor/bin/foo`. Check out the [directory structure](/directory-structure) for more information.
+**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are deployed. So if the script, you want to execute, is locally under `[[vendor/bin/foo]]` then you'd need to execute `ssh …frbit.com php [[vendor/bin/foo]]`. Check out the [directory structure](/directory-structure) for more information.
 
-**Note II**: You must write the interpreter `php` before all PHP scripts, including CLIs like `artisan` or `app/console`, you want to execute. So `ssh …frbit.com php script.php` works and `ssh …frbit.com script.php` does not.
+**Note II**: You must write the interpreter `php` before all PHP scripts, including CLIs like `artisan` or `app/console`, you want to execute. So `ssh …frbit.com php [[script.php]]` works and `ssh …frbit.com [[script.php]]` does not.
 
 ### Authentication
 
-<!-- TODO: rewrite on password-username launch -->
-
-For remote SSH execution you identify using your public SSH keys. If you get a connection error, please check if your SSH key setup is correct and if in doubt refer to our [SSH key troubleshooting guide](/ssh-keys).
+For remote SSH execution you can identify yourself using your public SSH keys or with your Account password. The examples above show you correct values, when you are logged in to the Dashboard. Please check the [authentication article](/code-access) as well.
 
 
 ### Using CLI tools

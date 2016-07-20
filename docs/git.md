@@ -77,15 +77,14 @@ Good news: you can work it out. The primary problem you have to solve is: which 
 
 
 
-
-## Installing your public SSH keys
-
-BRAVO: You now know how to use Git and you have installed on your machine. There is one more thing: You need to create and then use a SSH key to make it work with fortrabbit. Please see the dedicated article: [SSH key setup help and troubleshooting](/ssh-keys) to get that working.
-
-
 ## Using Git with fortrabbit
 
 Once you have everything setup and working you can have a look at how to use Git with fortrabbit:
+
+### Authentication
+
+You can either authenticate with your Dashboard password or with your [public SSH keys](/ssh-keys). The code examples in these help pages will show you examples that you can copy/paste. Please see our [authentication Article](/code-access) to learn about those methods. 
+
 
 ### Using the remote Git repo as a version control system
 

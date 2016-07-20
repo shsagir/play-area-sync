@@ -66,10 +66,6 @@ In the "Dashboard" > "Your Account" > "Access method" you can "Add a new SSH key
 We have a [dedicated article](ssh-keys) on setting up and troubleshooting your local SSH keys.
 
 
-### How to change from password to SSH key authentication
-
-In the "Dashboard" > "Your Account" > "Access method" you can add an SSH key. Once you have added your first public SSH key, password authentication will be disabled.
-
 
 ### GitHub SSH key import
 
@@ -89,6 +85,9 @@ In certain cases you might want to add code access to an App without the need to
 
 This is the default method when no public SSH keys are installed. Use this, when you just want to check out fortrabbit or when you have trouble setting up your SSH keys locally, help on this is over [here](ssh-keys).
 
+### How to change from password to SSH key authentication
+
+In the "Dashboard" > "Your Account" > "Access method" you can add an SSH key. Once you have added your first public SSH key, password authentication will be disabled and SSH key authentication will be enabled.
 
 
 ### How to change from SSH key to password authentication
