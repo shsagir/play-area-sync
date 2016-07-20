@@ -57,6 +57,8 @@ $ git clone [[ssh-user]]@deploy.[[region]].frbit.com:[[your-app]].git
 
 * With SSH key authentication [[ssh-user]] will be: [[your-app]]
 * With password authentication [[ssh-user]] will be: [[your-app]].[[long-user-string]]
+* With password authentication you will need to enter your fortrabbit Account password (each time)
+* With SSH key authentication your keys will be used
 * [[your-app]] is the name of your App (see Dashboard)
 * [[region]] is `eu2` or `us1`, depending on the location of your App
 

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-02-20
+reviewed:         2015-02-20
 title:            Install WordPress - for Old App
 naviTitle:        WordPress
 lead:             This is how to run WordPress successfully on fortrabbit — maybe.
@@ -10,11 +10,10 @@ oldApp:           true
 group:            Install_guides
 
 otherVersionLinks:
-    - install-wordpress
+    - install-wordpress-4
 
 seeAlsoLinks:
     - app
-    - install-wordpress
 
 keywords:
     - WP

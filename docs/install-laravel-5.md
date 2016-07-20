@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-06-13
+reviewed:         2016-07-20
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -58,7 +58,7 @@ $ composer create-project laravel/laravel --prefer-dist MyApp
 In any case: change into the app directory of your local machine, make sure it is initialized as a Git repo, everything is added and add your App's Git remote:
 
 ```bash
-$ cd ~/Projects/MyApp
+$ cd ~/Projects/[[your-local-folder-for-the-app]]
 $ git init .
 $ git add -A
 $ git commit -m 'Initial'
