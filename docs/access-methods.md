@@ -48,19 +48,24 @@ Of course these operations need to be protected. We need to make sure that only 
 In the "[Dashboard](/dashboard)", go to "Your Account" (upper right). Under "Access method" you can find your current settings. You see which method is currently set.
 
 
+### Access schema
+
+```
+# Git clone example
+$ git clone [[ssh-user]]@deploy.[[region]].frbit.com:[[your-app]].git
+```
+
+* With SSH key authentication [[ssh-user]] will be: [[your-app]]
+* 
+* 
+
+URLs and terminal commands depend on your chosen access method. The above example shows the pattern for SSH key authentication with SSH keys.
+
+
 
 ## SSH key authentication
 
 We recommend to use public SSH key authentication to identify yourself with fortrabbit services. It's more secure than password authentication and also more convenient, once you have set it up. SSH key authentication is commonly used with services like BitBucket and GitHub.
-
-### SSH key access schema
-
-```
-# Git clone example with SSH key auth
-$ git clone [[ssh-user]]@deploy.[[region]].frbit.com:[[your-app]].git
-```
-
-URLs and terminal commands depend on your chosen access method. The above example shows the pattern for SSH key authentication with SSH keys.
 
 
 
@@ -96,13 +101,6 @@ In certain cases you might want to add code access to an App without the need to
 ## Password authentication
 
 This is the default method when no public SSH keys are installed. Use this, when you just want to check out fortrabbit or when you have trouble setting up your SSH keys locally, help on this is over [here](ssh-keys).
-
-### Password access schema
-
-```
-# Git clone example for password authentication
-
-```
 
 
 
