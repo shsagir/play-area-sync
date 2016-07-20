@@ -56,8 +56,9 @@ $ git clone [[ssh-user]]@deploy.[[region]].frbit.com:[[your-app]].git
 ```
 
 * With SSH key authentication [[ssh-user]] will be: [[your-app]]
-* 
-* 
+* With password authentication [[ssh-user]] will be: [[your-app]].[[long-user-string]]
+* [[your-app]] is the name of your App (see Dashboard)
+* [[region]] is `eu2` or `us1`, depending on the location of your App
 
 URLs and terminal commands depend on your chosen access method. The above example shows the pattern for SSH key authentication with SSH keys.
 
