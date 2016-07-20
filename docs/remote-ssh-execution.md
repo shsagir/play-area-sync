@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-06-09
+reviewed:      2016-07-20
 naviTitle:     Remote SSH execution
 title:         Using remote SSH commands
 group:         Kitchen_sink
@@ -47,23 +47,26 @@ Remote SSH execution: run single commands remotely using the SSH remote exec pro
 
 ## Usage
 
-The main difference of the SSH remote exec to a "full SSH environment" is that you can only execute one command at once and that you specify the command to be executed with the SSH login command line. All you need to do is: prefix the command you want to execute remotely with the SSH login command. For example:
+The main difference of the SSH remote exec to a "full SSH environment" is that you can only execute one command at once and that you specify the command to be executed with the SSH login command line. All you need to do is: prefix the command you want to execute remotely with the SSH login command.
+
+### Example
 
 ```
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php script.php
+## This works with your (selected) App:
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com ls -lha
 ```
 
-The general scheme is:
+### Schema
 
 ```
-$ ssh your-app@deploy.eu2.frbit.com php script.php
-# \                               / \             /
-#  --------------|---------------    ------|------
-#                v                         v
-#      the ssh login command       the remote command
+$ ssh [[your-app]]@deploy.[[region]].frbit.com ls -lha
+# \                                          / \      /
+#  --------------|---------------------------   --|---
+#                v                                v
+#      the ssh login command               the remote command
 ```
 
-**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are [deployed](/deployment). So if the script, you want to execute, is locally under `vendor/bin/foo` then you'd need to execute `ssh …frbit.com php vendor/bin/foo`. Check out the [directory structure](/directory-structure) for more information.
+**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{your-app}}/htdocs`, which is also the location to which your files are [deployed](/deployment). So if the script, you want to execute, is locally under `vendor/bin/foo` then you'd need to execute `ssh …frbit.com php vendor/bin/foo`. Check out the [directory structure](/directory-structure) for more information.
 
 **Note II**: You must write the interpreter `php` before all PHP scripts, including CLIs like `artisan` or `app/console`, you want to execute. So `ssh …frbit.com php script.php` works and `ssh …frbit.com script.php` does not.
 
@@ -173,10 +176,10 @@ On Mac and Linux: You can define local "aliases", which reduce the amount typing
 
 ```
 # create the alias
-$ alias artisan-{{app-name}}="ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan"
+$ alias artisan-{{your-app}}="ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan"
 
 # use the alias
-$ artisan-{{app-name}} migrate
+$ artisan-{{your-app}} migrate
 # this actuall calls "ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate"
 ```
 
