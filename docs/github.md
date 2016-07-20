@@ -16,7 +16,7 @@ dataCenters:      n/a
 
 seeAlsoLinks:
     - about-code-collaboration
-    - deployment
+    - git-deployment
     - git
     - git-submodules
     - bitbucket
@@ -55,7 +55,7 @@ Here is how you add your App's Git remote on fortrabbit to your already existing
 
 ```bash
 # add your App's remote and name it "fortrabbit"
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:my-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # now push to the master branch of your App's remote on fortrabbit
 $ git push fortrabbit master

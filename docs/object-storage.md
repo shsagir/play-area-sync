@@ -27,7 +27,7 @@ seeAlsoLinks:
 
 ## Problem
 
-Back in the days you had persistent storage with your local file system on the web server. This allowed you to upload an image - or any other static asset - directly to the server so that it would be served from there linked like so: `uploads/photo.jpg`. With modern cloud 12-factor-app based Infrastructures this is different: 
+Back in the days you had persistent storage with your local file system on the web server. This allowed you to upload an image - or any other static asset - directly to the server so that it would be served from there linked like so: `uploads/photo.jpg`. With modern cloud 12-factor-app based Infrastructures this is different:
 
 fortrabbit Apps have an [ephemeral file system](/new-apps#toc-asset-storage). This means that all changes to the local file system will be undone with each deploy. So, each time you `git push` a completely new package will be deployed, replacing everything else on the Node.
 
@@ -114,12 +114,13 @@ Your App handles user uploads or storing all other created runtime data on the O
 ##### V2
 
 ```php
+$secrets     = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
 $credentials = [
-    'bucket'   => 'your-app',
-    'endpoint' => 'https://objects.eu2.frbit.com', // or 'https://objects.us1.frbit.com'
-    'key'      => 'your-app',
-    'region'   => 'eu-west-1', // use 'us-east-1' for 'us1' region
-    'secret'   => 'your-long-secret',
+    'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
+    'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
+    'key'      => $secrets['OBJECT_STORAGE']['KEY'],
+    'region'   => $secrets['OBJECT_STORAGE']['REGION'],
+    'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
 ];
 $client     = Aws\S3\S3Client::factory($credentials);
 $adapter    = new League\Flysystem\AwsS3v2\AwsS3Adapter($client, $credentials['bucket'], 'flysystem-s3-v2');
@@ -130,14 +131,15 @@ $filesystem->put('hello', 'world...');
 ##### V3
 
 ```php
+$secrets     = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
 $credentials = [
     'credentials' => [
-        'key'    => 'your-app',
-        'secret' => 'your-long-secret',
+        'key'      => $secrets['OBJECT_STORAGE']['KEY'],
+        'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
     ],
-    'region'   => 'eu-west-1', // use 'us-east-1' for 'us1' region
-    'bucket'   => 'your-app',
-    'endpoint' => 'https://objects.eu2.frbit.com', // or 'https://objects.us1.frbit.com' depends on App location
+    'region'   => $secrets['OBJECT_STORAGE']['REGION'],
+    'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
+    'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
     'version'  => 'latest',
 ];
 $client     = Aws\S3\S3Client::factory($credentials);
@@ -199,10 +201,10 @@ In those cases S3 behaves pretty much like your good old friend FTP.
 Once you have uploaded some files, the ultimate goal is of course to serve them to the browser. To that purpose all Apps come with an Object Storage URL in the form:
 
 ``` plain
-https://your-app.objects.frb.io/path/to/file.jpg
+https://{{app-name}}.objects.frb.io/path/to/file.jpg
 ```
 
-Replace `your-app` with the actual name of your [App](app) and `path/to/file.jpg` with the actual path to your file. Note that we recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS.
+Replace `path/to/file.jpg` with the actual path to your file. Note that we recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS.
 
 Most framwork/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
 
@@ -233,9 +235,9 @@ Take care that we don't do cache purging. So when changing the cache duration, o
 
 Caching is great but if you want to make changes appear immediately you need a way around them. One approach would be to set manual caching headers with a low value, but this would just annul the positive effect of caching. So what you want to do is query string versioning, eg like so:
 
-* `https://your-app.assets.frb.io/path/to/file.jpg?2016-05-05.1`
-* `https://your-app.assets.frb.io/path/to/file.jpg?2016-05-05.2`
-* `https://your-app.assets.frb.io/path/to/file.jpg?2016-05-06.1`
+* `https://{{app-name}}.assets.frb.io/path/to/file.jpg?2016-05-05.1`
+* `https://{{app-name}}.assets.frb.io/path/to/file.jpg?2016-05-05.2`
+* `https://{{app-name}}.assets.frb.io/path/to/file.jpg?2016-05-06.1`
 
 Caching works on the whole URL, including the query string. So if you change the query string you are delivering accessing a different item, hence it's not cached. Many frameworks/CMS already do that for you, but it's easy to implement manually as well.
 
@@ -280,18 +282,18 @@ You can automate the process of uploading files with a task runner or build scri
 Example `objects.json`. Mind to replace all value with your own ones. Exclude this file from Git for security reasons.
 ```
 {
-  "key":      "app-name",
-  "secret":   "mgr()242Nd%D/D.T_ww.zO.jx8Zkc6WmlLl.Lsa.Y-pIB.3NCNfTsdsdbM",
-  "bucket":   "app-name",
+  "key":      "{{app-name}}",
+  "secret":   "your-long-object-storage-secret",
+  "bucket":   "{{app-name}}",
   "region":   "eu-west-1",
-  "endpoint": "objects.eu2.frbit.com"
+  "endpoint": "objects.{{region}}.frbit.com"
 }
 ```
 
 Example of a `gulpfile.js`. Reading credentials from the json file then deploying files to the object storage via the S3 protocol.
 ```
 var s3 = require("gulp-s3");
- 
+
 aws = JSON.parse(fs.readFileSync('./objects.json'));
 gulp.src('./dist/**')
     .pipe(s3(aws));
@@ -325,7 +327,7 @@ The Object Storage can only be accessed by HTTP(S) via the standard App name rel
 
 ### Case sensitivity
 
-Same as S3 the Object Storage is case sensitive. So you can upload `file` and `FILE` in the same folder. Also there is a difference between `https://your-app.objects.frb.io/file` and `https://your-app.objects.frb.io/FILE`.
+Same as S3 the Object Storage is case sensitive. So you can upload `file` and `FILE` in the same folder. Also there is a difference between `https://{{app-name}}.objects.frb.io/file` and `https://{{app-name}}.objects.frb.io/FILE`.
 
 
 ## Alternatives

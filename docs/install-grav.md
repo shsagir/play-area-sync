@@ -33,7 +33,7 @@ First [download](http://getgrav.org/downloads) and unpack the latest Grav locall
 ```bash
 $ cd grav
 $ git init .
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
 
 Now, before commiting anything, you should exclude the `vendor/` and the `cache/` folder. Create the file `.gitignore` with the following contents:

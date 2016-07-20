@@ -73,11 +73,11 @@ To obtain a certificate, you first must create a certificate signing request (CS
 Using `openssl` from the the command line:
 
 ```bash
-openssl req -new -nodes -keyout my-app.key -out my-app.csr -newkey rsa:2048
+openssl req -new -nodes -keyout {{app-name}}.key -out {{app-name}}.csr -newkey rsa:2048
 # Generating a 2048 bit RSA private key
 # ..........................................................................................++
 # .............................................+++
-# writing new private key to 'my-app.key'
+# writing new private key to '{{app-name}}.key'
 # -----
 # You are about to be asked to enter information that will be incorporated
 # into your certificate request.
@@ -100,7 +100,7 @@ openssl req -new -nodes -keyout my-app.key -out my-app.csr -newkey rsa:2048
 # An optional company name []
 
 # Update key format
-openssl rsa -in my-app.key -out my-app.rsa.key
+openssl rsa -in {{app-name}}.key -out {{app-name}}.rsa.key
 ```
 
 Do not enter a password! Also: if you plan on using `www.yourdomain.tld`, don't miss the `www.` in the "Common Name"!
@@ -115,7 +115,7 @@ Download the open source software [XCA](https://sourceforge.net/projects/xca/) a
 If you already have a private key and it begins with `----BEGIN PRIVATE KEY----` you need to convert it to the RSA format, using:
 
 ```bash
-openssl rsa -in my-app.key -out my-app.rsa.key
+openssl rsa -in {{app-name}}.key -out {{app-name}}.rsa.key
 # writing RSA key
 ```
 

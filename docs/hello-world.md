@@ -12,7 +12,7 @@ group:         Install_guides
 keywords:
     - tutorial
     - guide
-    - deployment
+    - git-deployment
     - Git
     - terminal
     - shell
@@ -47,13 +47,13 @@ The following code gets executed on your local machine. The lines starting with 
 ```bash
 # Clone the repo from fortrabbit
 # Initialize Git by cloning the empty repo from fortrabbit
-$ git clone git@deploy.eu2.frbit.com:my-app.git
-Cloning into 'my-app'...
+$ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+Cloning into '{{app-name}}'...
 warning: You appear to have cloned an empty repository
 
 # Get in position
 # Change directory to your new local project
-$ cd my-app
+$ cd {{app-name}}
 
 # Make a change
 # Create an index php file with a bold messsage on the fly
@@ -120,7 +120,7 @@ Build & release done in 217ms, now queued for final distribution.
 
 –––––––––––––––––––––––  ∙ƒ  –––––––––––––––––––––––
 
-To git@deploy.eu2.frbit.com:my-app.git
+To {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```

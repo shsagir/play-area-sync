@@ -30,7 +30,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You also need a local Craft installation. 
+We assume you've already created an [App](app) with fortrabbit. You also need a local Craft installation.
 
 If you are starting from scratch then best use the [HappyLager Demo](https://github.com/pixelandtonic/HappyLager) and follow their install guide to run it locally first. If you have a running (production) installation then you need to export its data and set up a local, working "clone" with which you can proceed.
 
@@ -114,7 +114,7 @@ return [
 
 ### Setup Object Storage
 
-Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets. 
+Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets.
 
 We've prepared a Craft plugin that acts as a drop-in replacement for the Amazon S3 asset source. [Download the plugin](https://github.com/fortrabbit/craft-s3-fortrabbit) from GitHub and **follow the setup instructions in the [README.md](https://github.com/fortrabbit/craft-s3-fortrabbit/blob/master/README.md)**. Once that's done, you can create your Object Storage asset source:
 
@@ -122,7 +122,7 @@ We've prepared a Craft plugin that acts as a drop-in replacement for the Amazon 
 2. Click on `New asset source` to create a new `AssetSource`
 3. Give it a name like `Object Storage`
 4. Set the Type to `Amazon S3`
-4. Enter the Access Key ID and Secret Access Key 
+4. Enter the Access Key ID and Secret Access Key
 5. Click on `Refresh`
 5. Select a `Bucket`
 6. Enter a `Subfolder` (use the App name here)
@@ -202,7 +202,7 @@ In case you have a database you want to export/import: Database migration is str
 $ mysqldump database-name > database.sql
 
 # import to fortrabbit using the tunnel
-$ mysql -h127.0.0.1 -P13306 -umy-app -p my-app < database.sql
+$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < database.sql
 ```
 
 
@@ -218,7 +218,7 @@ $ git init .
 Add your App's Git remote to your local repo:
 
 ```
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:my-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
 
 Now open and modify the `.gitignore` file:

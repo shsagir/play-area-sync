@@ -13,7 +13,7 @@ tags:
     - git
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - composer
 
 externalLinks:

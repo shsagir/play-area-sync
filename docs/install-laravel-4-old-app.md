@@ -35,7 +35,7 @@ If you haven't done this already, add your fortrabbit Apps Git repository URL as
 ```bash
 # use your own App name
 # using the fortrabbit remote as master is optional
-git remote add origin git@git1.eu1.frbit.com:my-app.git
+git remote add origin git@git1.eu1.frbit.com:your-app.git
 ```
 
 Add everything, make a commit with the additional `[trigger:composer]` keyword in the message and push to the fortrabbit remote. You need to wait a bit, because composer will install quite a lot of packages.
@@ -85,9 +85,9 @@ return [
     'connections' => [
         'mysql'  => [
             'driver'    => 'mysql',
-            'host'      => 'my-app.mysql.eu1.frbit.com',
-            'database'  => 'my-app',
-            'username'  => 'my-app',
+            'host'      => 'your-app.mysql.eu1.frbit.com',
+            'database'  => 'your-app',
+            'username'  => 'your-app',
             'password'  => 'YOUR-MYSQL-PASSWORD',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',

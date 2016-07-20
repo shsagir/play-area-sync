@@ -14,7 +14,7 @@ seeAlsoLinks:
      - app
      - scaling
      - app-design
-     - deployment
+     - git-deployment
      - terminology
 
 ---
@@ -44,7 +44,7 @@ After that's done make sure to add all the domains to your new fortrabbit App in
 
 Runtime data means all kinds of data, which is created by your App at runtime. Usually these are user uploads or uploads from a CMS or some-such.
 
-fortrabbit Apps are 12-factor apps: They do not have a persistent storage, the storage is ephemeral. So, you can not simply upload files. 
+fortrabbit Apps are 12-factor apps: They do not have a persistent storage, the storage is ephemeral. So, you can not simply upload files.
 
 The [Object Storage](/object-storage) solves this and has some additional benefits. The bottom line is that you use file-system abstraction to offshore static assets to a remote Node and serve them from there. It's similar to AWS S3 and there Composer packages and CMS plugins for that.
 
@@ -63,7 +63,7 @@ Simple `sendmail` won't work, see our [quirks article](/quirks#Mailing) on how t
 
 ## TLS/SSL (optional)
 
-All Apps on fortrabbit can be accessed using a free HTTPS URL (`https://your-app-name.frb.io`). If you want to use a custom domain with a custom certificate we offer the [TLS Component](tls).
+All Apps on fortrabbit can be accessed using a free HTTPS URL (`https://{{app-name}}.frb.io`). If you want to use a custom domain with a custom certificate we offer the [TLS Component](tls).
 
 ## Final switch: DNS
 

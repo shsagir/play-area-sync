@@ -63,7 +63,7 @@ It's up to your preference, you can also work with environment detection to diff
 
 ### Deploy code to the New App
 
-With the New App you can now `git push` to deploy your code base to remote. Composer packages will be downloaded during the first run, which takes longer. From then on it will be much faster than the Old App deployment. Please also see the [deployment article](/deployment) for details on post deploy scripts and suchlike.
+With the New App you can now `git push` to deploy your code base to remote. Composer packages will be downloaded during the first run, which takes longer. From then on it will be much faster than the Old App deployment. Please also see the [deployment article](/git-deployment) for details on post deploy scripts and suchlike.
 
 After your first push you will be able to see your New App in the browser immediately — just visit the App URL of the New App. Most likely it will throw an error, because configuration needs to be adjusted. Don't worry.
 

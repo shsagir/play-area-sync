@@ -37,7 +37,7 @@ This guide explains you how to start locally from scratch:
 $ cd Projects
 
 # clone your fortrabbit app
-$ git clone git@deploy.eu2.frbit.com:your-app YourApp
+$ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}} YourApp
 
 # change into the App directory
 $ cd YourApp
@@ -87,6 +87,4 @@ $ git ci -am 'Initial'
 $ git push -u origin master
 ```
 
-
-
-That's it. You can see the hello-world in the browser: `http://your-app.frb.io/hello/world`.
+That's it. You can see the hello-world in the browser: `http://{{app-name}}.frb.io/hello/world`.

@@ -74,13 +74,13 @@ Besides accessing the secrets programatically - as shown above - you can view al
 
 ```bash
 # read all secrets
-$ ssh git@deploy.eu2.frbit.com secrets your-app
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets
 {
     "MYSQL": {
         "PASSWORD": "AAAABBBBCCCCDDDDEEEEFFFF",
-        "USER": "my-app",
-        "DATABASE": "my-app",
-        "HOST": "my-app.mysql.eu2.frbit.com",
+        "USER": "{{app-name}}",
+        "DATABASE": "{{app-name}}",
+        "HOST": "{{app-name}}.mysql.{{region}}.frbit.com",
         "PORT": "3306",
     },
     "CUSTOM": {
@@ -90,17 +90,17 @@ $ ssh git@deploy.eu2.frbit.com secrets your-app
 }
 
 # read only MySQL secrets
-$ ssh git@deploy.eu2.frbit.com secrets your-app MYSQL
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL
 {
     "PASSWORD": "AAAABBBBCCCCDDDDEEEEFFFF",
-    "USER": "my-app",
-    "DATABASE": "my-app",
-    "HOST": "my-app.mysql.eu2.frbit.com",
+    "USER": "{{app-name}}",
+    "DATABASE": "{{app-name}}",
+    "HOST": "{{app-name}}.mysql.{{region}}.frbit.com",
     "PORT": "3306",
 }
 
 # read only MySQL password
-$ ssh git@deploy.eu2.frbit.com secrets your-app MYSQL.PASSWORD
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
 AAAABBBBCCCCDDDDEEEEFFFF
 ```
 

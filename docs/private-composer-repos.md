@@ -14,7 +14,7 @@ tags:
     - git
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - composer
 
 keywords:
@@ -36,7 +36,7 @@ Modern PHP App development utilizes [Composer](composer) as a dependency manager
 To use your private Composer repo you need to set up authentication so your fortrabbit App can access your external repo (probably hosted on Bitbucket, GitHub etc). For this you need a public and private SSH key-pair. Here is how you generate it for your App:
 
 ```bash
-ssh git@deploy.eu2.frbit.com keygen my-app
+ssh {{ssh-user}}@deploy.{{region}}.frbit.com keygen
 # Generating new SSH key pair
 #   Done 447ms
 # 

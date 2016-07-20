@@ -62,7 +62,7 @@ Each App has a [limited amount](https://www.fortrabbit.com/specs#limits) of loca
 
 So you better not store any runtime data, like user uploads there. Here is what might can happen: You install [WordPress](install-wordpress), you upload images via the wp-admin. Everything works fine, but then you deploy code again and everything you have uploaded is gone. 
 
-During each [deployment](/deployment) the whole local storage gets whipped and replaced. See also our [deployment video](/deployment-architecture-video) to learn about what happens in the background.
+During each [deployment](/git-deployment) the whole local storage gets whipped and replaced. See also our [deployment video](/deployment-architecture-video) to learn about what happens in the background.
 
 But we have a good solution. With the [Object Storage Component](/object-storage) you can offshore your static assets. It's similar to Amazon S3. It's a ver solution that also brings other benefits and speed improvements. You can easily integrate it with a plugin or Composer package and some config, see your framework/CMS guides here as well.
 
@@ -114,9 +114,9 @@ Available locales are:
 
 ### Branch name matters
 
-You can use / create as many [branches](git) as you want and push them to the fortrabbit remote repository. However there are only two branches which will be deployed: the `master` branch and a branch which has the same name as your App. If your App is named `my-app` then a branch named `my-app` will be prefered over the `master` branch.
+You can use / create as many [branches](git) as you want and push them to the fortrabbit remote repository. However there are only two branches which will be deployed: the `master` branch and a branch which has the same name as your App. If your App is named `your-app` then a branch named `your-app` will be prefered over the `master` branch.
 
-This is a feature, not a bug: use other branches as "transport" branches to interchange code with other developers / locations without publishing it to your web space. Once your code is ready to deploy, just merge it in the master (or App-name) branch and push it.
+This is a feature, not a bug: use other branches as "transport" branches to interchange code with other developers / locations without publishing it to your web space. Once your code is ready to deploy, just merge it in the master (or your Apps name like: {{app-name}}) branch and push it.
 
 ### Release package limit
 

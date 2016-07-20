@@ -11,7 +11,7 @@ oldApp:        true
 group:         Kitchen_sink
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - security
 
 ---
@@ -33,7 +33,7 @@ We recommend to [deploy with Git](git) to fortrabbit. But in some cases it's ver
 Please just use your pre-installed public key to [authenticate](security). The SSH username you enter is to identify your App:
 
 ```bash
-ssh u-my-app@ssh1.eu1.frbit.com
+ssh u-your-app@ssh1.eu1.frbit.com
 ```
 
 #### Installed extensions
@@ -88,10 +88,10 @@ Hello Total Commander, you want to deploy like its 1999? Well, you can do that a
 
 ### Rsync
 
-Rsync is a dinosaur but still alive and kickin'. We recommend to use Git as your primary code deployment, but there still are cases in which it makes sense to switch back to good ol' `rsync`. For example, if you need to migrate user generated runtime data. Following is an example on how to sync your local `my-app/upload` folder with the corresponding one in your App:
+Rsync is a dinosaur but still alive and kickin'. We recommend to use Git as your primary code deployment, but there still are cases in which it makes sense to switch back to good ol' `rsync`. For example, if you need to migrate user generated runtime data. Following is an example on how to sync your local `your-app/upload` folder with the corresponding one in your App:
 
 ```bash
-rsync -avp --dry-run --delete --exclude=/.git/ -e ssh my-app/upload/ u-my-app@ssh1.eu1.frbit.com:~/htdocs/upload/
+rsync -avp --dry-run --delete --exclude=/.git/ -e ssh your-app/upload/ u-your-app@ssh1.eu1.frbit.com:~/htdocs/upload/
 ```
 
 WORD: you must remove the `--dry-run` flag to execute the synchronization. With the flag, the above command will give you only a preview on what would be done.

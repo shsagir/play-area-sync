@@ -58,11 +58,11 @@ Let's be honest here. Although SSL is one of the usual business requirements, it
 Your external SSL provider will ask you for those. To create a new SSL key and a certificate signing request (CSR), issue the following commands on the console:
 
 ```bash
-openssl req -new -nodes -keyout my-app.key -out my-app.csr -newkey rsa:2048
+openssl req -new -nodes -keyout your-app.key -out your-app.csr -newkey rsa:2048
 # Generating a 2048 bit RSA private key
 # ..........................................................................................++
 # .............................................+++
-# writing new private key to 'my-app.key'
+# writing new private key to 'your-app.key'
 # -----
 # You are about to be asked to enter information that will be incorporated
 # into your certificate request.
@@ -85,7 +85,7 @@ openssl req -new -nodes -keyout my-app.key -out my-app.csr -newkey rsa:2048
 # An optional company name []
 
 # Update key format
-openssl rsa -in my-app.key -out my-app.rsa.key
+openssl rsa -in your-app.key -out your-app.rsa.key
 ```
 
 Do not enter a password! Also: if you plan on using `www.yourdomain.tld`, don't miss the `www.` in the "Common Name"!
@@ -98,7 +98,7 @@ With the now generated CSR, you can go to an external certificate vendor, which 
 If you already have a private key and it begins with `----BEGIN PRIVATE KEY----` you need to convert it to the RSA format, using:
 
 ```bash
-openssl rsa -in my-app.key -out my-app.rsa.key
+openssl rsa -in your-app.key -out your-app.rsa.key
 # writing RSA key
 ```
 
@@ -113,7 +113,7 @@ Now you are ready to book the SSL component over in the fortrabbit Dashboard. Wh
 
 When you using the SSL component you need to [(re)route all domains and subdomains](domains#toc-route-a-custom-domain) you want to use with HTTPS to your newly generated **App SSL Hostname**. It looks something like:
 
-`ssl.my-app.eu1.frbit.net`
+`ssl.your-app.eu1.frbit.net`
 
 
 ## Common issues

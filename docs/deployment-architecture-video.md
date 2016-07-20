@@ -9,14 +9,14 @@ group:         Videos
 
 keywords:
     - hosting architecture
-    - deployment
+    - git-deployment
     - Git
     - video
     - shell
     - bash
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - dashboard
     - app
 

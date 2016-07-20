@@ -3,7 +3,7 @@
 template:       article
 reviewed:       2016-01-08
 naviTitle:      Code access — Old Apps
-title:          Different code deployment methods compared
+title:          Different code deployment methods compared - Old Apps
 lead:           How you can authenticate to access code on fortrabbit.
 dontList:       true
 oldApp:         true
@@ -12,13 +12,13 @@ group:          Kitchen_sink
 keywords:
     - ssh key
     - git
-    - deployment
+    - git-deployment
     - ssh
     - FTP
     - FTPs
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - ssh-sftp-old-app
     - collaboration
     - directory-structure

@@ -28,7 +28,7 @@ tags:
 seeAlsoLinks:
     - app
     - git
-    - deployment
+    - git-deployment
     - private-composer-repos
 
 ---
@@ -62,10 +62,8 @@ $ cd ~/Projects/MyApp
 $ git init .
 $ git add -A
 $ git commit -m 'Initial'
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
-
-**Note**: Replace `your-app` with the name of your fortrabbit App.
 
 If you haven't already created a key for your Laravel installation, you can do it now by running locally:
 
@@ -404,9 +402,9 @@ Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard 
 You can [execute remote commands via SSH](/remote-ssh-execution), for example:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php artisan migrate
-$ ssh your-app@deploy.eu2.frbit.com php artisan migrate:rollack
-$ ssh your-app@deploy.eu2.frbit.com php artisan tinker
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate:rollack
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan tinker
 ```
 
 #### Using envoy
@@ -414,10 +412,10 @@ $ ssh your-app@deploy.eu2.frbit.com php artisan tinker
 Easy. Here is an `Envoy.blade.php` example:
 
 ```php
-@servers(['fr' => 'your-app@deploy.eu2.frbit.com'])
+@servers(['fr' => '{{ssh-user}}@deploy.{{region}}.frbit.com'])
 
 @task('ls', ['on' => 'fr'])
-    ls -lha htdocs
+    ls -lha
 @endtask
 
 @task('migrate', ['on' => 'fr'])
@@ -431,24 +429,6 @@ Then execute locally:
 $ envoy run ls
 $ envoy run migrate
 ```
-
-<!--
-
-Fetch your current database password using the `secrets` command:
-
-```bash
-$ ssh git@deploy.eu2.frbit.com secrets your-app MYSQL.PASSWORD
-```
-
-Now open up a [tunnel](/mysql#toc-shell-tunnel-mysql) and run in another terminal window your migration or seed commands (yes, you run those locally, it will still work):
-
-```bash
-$ DB_PASSWORD="your database password" php artisan migrate --database=mysql-tunnel
-$ DB_PASSWORD="your database password" php artisan db:seed --database=mysql-tunnel
-```
-
--->
-
 
 
 ### Sending mail

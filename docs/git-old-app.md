@@ -42,7 +42,7 @@ Each fortrabbit App comes with its very own custom Git repo. Register that as a 
 
 ```bash
 # Cloning the (empty) app to register the remote origin master
-git clone git@git1.eu1.frbit.com:app-name.git
+git clone git@git1.eu1.frbit.com:your-app.git
 
 # do stuff
 edit index.php

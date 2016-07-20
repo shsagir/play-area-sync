@@ -100,4 +100,4 @@ When developing you Worker pre or post calls it helps if you are able to execute
 
 To allow using a single git repo with [multiple remotes](multi-staging) you can use an App name based deployment file name.
 
-Assuming you are using two Apps, `my-app-prod` and `my-app-stage`, you can setup two deployment files with named: `fortrabbit.my-app-prod.yml` and `fortrabbit.my-app-stage.yml`. This way, you can have both deployment files in a single repo but which one is to be used is determined by the App you deploy to.
+Assuming you are using two Apps, `your-app-prod` and `your-app-stage`, you can setup two deployment files with named: `fortrabbit.your-app-prod.yml` and `fortrabbit.your-app-stage.yml`. This way, you can have both deployment files in a single repo but which one is to be used is determined by the App you deploy to.

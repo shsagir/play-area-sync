@@ -45,10 +45,8 @@ In any case: change into your local app directory, make sure it is initialized a
 ```bash
 $ cd ~/Projects/MyApp
 $ git init .
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
-
-**Note**: Replace `your-app` with the name of your fortrabbit App.
 
 Now open `composer.json` and modify the `post-install-cmd` under `scripts` by adding `"test -d app/storage || mkdir app/storage"` as the first item:
 
@@ -215,45 +213,6 @@ return [
 You can [execute remote commands via SSH](/ssh), for example:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php artisan migrate
-$ ssh your-app@deploy.eu2.frbit.com php artisan migrate:rollack
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate:rollack
 ```
-
-<!--
-
-Create a connection to your local environment database config by opening adding the following to `app/config/local/database.php`:
-
-```php
-// ..
-'connections' => [
-    // ..
-    'mysql-tunnel' => [
-        'driver'    => 'mysql',
-        'host'      => '127.0.0.1',
-        'port'      => '13306',
-        'database'  => 'your-app-name',
-        'username'  => 'your-app-name',
-        'password'  => env('DB_PASSWORD', ''),
-        'charset'   => 'utf8',
-        'collation' => 'utf8_unicode_ci',
-        'prefix'    => '',
-        'strict'    => false,
-    ],
-    // ..
-],
-```
-
-Fetch your current database password using the `secrets` command:
-
-```bash
-$ ssh git@deploy.eu2.frbit.com secrets your-app MYSQL.PASSWORD
-```
-
-Now open up a [tunnel](/mysql#toc-shell-tunnel-mysql) and run in another terminal window your migration or seed commands:
-
-```bash
-$ DB_PASSWORD="your database password" php artisan migrate --database=mysql-tunnel
-$ DB_PASSWORD="your database password" php artisan db:seed --database=mysql-tunnel
-```
-
--->

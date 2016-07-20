@@ -74,7 +74,7 @@ New Apps don't require you to write a [.htaccess directive](http-auth) any more.
 Only for New Apps: to start with a complete new Git history, you can now reset your repository. This can be done with the `reset` command like so:
 
 ```bash
-ssh git@deploy.eu2.frbit.com reset your-app-name
+ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```
 
 The reset operation is non-destructive, meaning: It does not generate a release. Thereby your live App continues to operate without any interruption. The new release will only be build on the next push (of your new code base). A repository reset also removes any sustained directory (the `vendor` folder, so a following [Composer](composer) install requires to download everything once again).
@@ -85,7 +85,7 @@ The reset operation is non-destructive, meaning: It does not generate a release.
 Old Apps offered a keygen hook to realize access to [private Composer repos](private-composer-repos). With the New Apps you can create a new SSH keypair for your App, using the `keygen` command:
 
 ```bash
-ssh git@deploy.eu2.frbit.com keygen your-app-name
+ssh {{ssh-user}}@deploy.{{region}}.frbit.com keygen
 ```
 
 This will print out a public key, which you can then install with your private repository (on Github, Bitbucket or wherever).
@@ -105,29 +105,29 @@ With the Old Apps you can access the logs via SSH. New Apps don't offer direct f
 
 ```bash
 # Per default all sources are tailed together:
-ssh log@log.eu2.frbit.com tail app-name
+ssh {{ssh-user}}@log.{{region}}.frbit.com tail
 
 # Only Apache access log, all incoming requests with response status, time-stamp, additional headers and the first line of the request:
-ssh log@log.eu2.frbit.com tail app-name source:apache_access
+ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_access
 
 # Only Apache error log, which can be very helpful to debug `.htaccess` files or the like:
-ssh log@log.eu2.frbit.com tail app-name source:apache_error
+ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_error
 
 # Only PHP error logs, which contain whatever your App writes on `error_log()`:
-ssh log@log.eu2.frbit.com tail app-name source:web_php_error
+ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:web_php_error
 
 # Only web standard error output, which containins everything written by your App to `STDERR`:
-ssh log@log.eu2.frbit.com tail app-name source:web_stderr
+ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:web_stderr
 ```
 
 ### Other parameters
 
 ```bash
 # The `source` parameter can be use multiple times:
-ssh log@log.eu2.frbit.com tail app-name source:apache_access source:apache_error
+ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_access source:apache_error
 
 # Use the `mono` parameter to disable output colors:
-ssh log@log.eu2.frbit.com tail app-name mono
+ssh {{ssh-user}}@log.{{region}}.frbit.com tail mono
 ```
 
 ## Further readings

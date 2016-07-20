@@ -12,7 +12,7 @@ keywords:
     - video
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - dashboard
     - app
     - hello-world

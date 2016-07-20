@@ -74,13 +74,13 @@ You have three local branches: **test**, **stage** and **prod**. Each local bran
 
 #### Clone the first App
 
-Assuming you have created three Apps. In this example, let's name them **my-app-test**, **my-app-stage** and **my-app-prod**.
+Assuming you have created three Apps. In this example, let's name them **your-app-test**, **your-app-stage** and **your-app-prod**.
 
 
 ```bash
 cd ~/Projects
-git clone git@git1.eu1.frbit.com:my-app-test.git my-app
-cd my-app
+git clone git@git1.eu1.frbit.com:your-app-test.git your-app
+cd your-app
 ```
 
 The first cloning will create the remote `origin` and clone the `master` branch to you local disk.
@@ -91,8 +91,8 @@ Now let's rename the cloned `origin` remote to `testing` and add the two additio
 
 ```bash
 git remote rename origin testing
-git remote add staging git@git1.eu1.frbit.com:my-app-stage.git
-git remote add production git@git1.eu1.frbit.com:my-app-prod.git
+git remote add staging git@git1.eu1.frbit.com:your-app-stage.git
+git remote add production git@git1.eu1.frbit.com:your-app-prod.git
 ```
 
 
@@ -133,18 +133,18 @@ To verify everything is setup properly, check your `.git/config` file. It should
     bare = false
     logallrefupdates = true
 [remote "testing"]
-    url = git@git1.eu1.frbit.com:my-app-test.git
+    url = git@git1.eu1.frbit.com:your-app-test.git
     fetch = +refs/heads/*:refs/remotes/testing/*
     push = refs/heads/test:refs/heads/master
 [branch "test"]
     remote = testing
     merge = refs/heads/master
 [remote "staging"]
-    url = git@git1.eu1.frbit.com:my-app-stage.git
+    url = git@git1.eu1.frbit.com:your-app-stage.git
     fetch = +refs/heads/*:refs/remotes/staging/*
     push = refs/heads/stage:refs/heads/master
 [remote "production"]
-    url = git@git1.eu1.frbit.com:my-app-prod.git
+    url = git@git1.eu1.frbit.com:your-app-prod.git
     fetch = +refs/heads/*:refs/remotes/production/*
     push = refs/heads/prod:refs/heads/master
 [branch "stage"]

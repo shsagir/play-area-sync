@@ -25,7 +25,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You will also need a local Slim framework installation. [Slim framework](http://www.slimframework.com/) is easy to setup thanks to Composer. 
+We assume you've already created an [App](app) with fortrabbit. You will also need a local Slim framework installation. [Slim framework](http://www.slimframework.com/) is easy to setup thanks to Composer.
 
 ## Install
 
@@ -36,7 +36,7 @@ You can either use an existing or a new one. This guide explains you how to star
 $ cd Projects
 
 # clone your fortrabbit app
-$ git clone git@deploy.eu2.frbit.com:your-app YourApp
+$ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}} YourApp
 
 # change into the App directory
 $ cd YourApp
@@ -86,4 +86,4 @@ $ git ci -am 'Initial'
 $ git push -u origin master
 ```
 
-That's it. You can see the hello-world in the browser: `http://your-app.frb.io/hello/world`.
+That's it. You can see the hello-world in the browser: `http://{{app-name}}.frb.io/hello/world`.

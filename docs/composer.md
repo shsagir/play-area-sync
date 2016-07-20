@@ -11,7 +11,7 @@ otherVersionLinks:
    - composer-old-app
 
 seeAlsoLinks:
-   - deployment
+   - git-deployment
 
 tags:
    - git

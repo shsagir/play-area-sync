@@ -14,7 +14,7 @@ otherVersionLinks:
 group:          Extending_fortrabbit
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - git-submodules
 
 tags:
@@ -48,7 +48,7 @@ It is also possible to create a deployment chain with Git post hooks: You push t
 cd your-project-folder
 
 # add fortrabbit as an additional remote to GitHub/Bitbucket
-git remote add fortrabbit git@git1.eu1.frbit.com:my-app.git
+git remote add fortrabbit git@git1.eu1.frbit.com:your-app.git
 
 # pushing to fortrabbit instead of pushing to master
 git push fortrabbit

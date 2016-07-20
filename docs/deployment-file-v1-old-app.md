@@ -13,7 +13,7 @@ otherVersionLinks:
     - deployment-file-v2
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - composer
     - deployment-file-v2
 
@@ -159,7 +159,7 @@ The "status" has either to be `ok` or `fail`. The "message" can be arbitrary.
 header('Content-type: text/json');
 
 // protect your script with and check against the HTTP_X_FRBIT_TOKEN
-define('MY_SEC_TOKEN', 'the-sec-token-of-my-app');
+define('MY_SEC_TOKEN', 'the-sec-token-of-your-app');
 if (
     !isset($_SERVER['HTTP_X_FRBIT_TOKEN'])
     || $_SERVER['HTTP_X_FRBIT_TOKEN'] !== MY_SEC_TOKEN
@@ -340,11 +340,11 @@ Use the fullsync strategy, but exclude the folders app/storage/, uploads/ and ve
 
 ```bash
 # change to your local project folder, containing the .git/ folder
-cd my-app/
+cd your-app/
 
 # Simulate the sync
 rsync -e ssh -rlcv --dry-run --exclude=.git/ --exclude=app/storage/ --exclude=uploads/ \
-    --exclude=vendor/ --delete-after ./ u-my-app@ssh1.eu1.frbit.com:~/htdocs/
+    --exclude=vendor/ --delete-after ./ u-your-app@ssh1.eu1.frbit.com:~/htdocs/
 ```
 
 
@@ -352,7 +352,7 @@ rsync -e ssh -rlcv --dry-run --exclude=.git/ --exclude=app/storage/ --exclude=up
 
 To allow using a single git repo with [multiple remotes](multi-staging) you can use an App name based deployment file name.
 
-Assuming you are using two Apps, `my-app-prod` and `my-app-stage`, you can setup two deployment files with named: `fortrabbit.my-app-prod.yml` and `fortrabbit.my-app-stage.yml`. This way, you can have both deployment files in a single repo but which one is to be used is determined by the App you deploy to.
+Assuming you are using two Apps, `your-app-prod` and `your-app-stage`, you can setup two deployment files with named: `fortrabbit.your-app-prod.yml` and `fortrabbit.your-app-stage.yml`. This way, you can have both deployment files in a single repo but which one is to be used is determined by the App you deploy to.
 
 ## Full Schema
 

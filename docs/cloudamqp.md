@@ -48,7 +48,7 @@ You can sign up with just your e-mail (double-opt in) or your GitHub/Google acco
 
 ## Booking
 
-Once you're logged click the "+ Create" button on the right side, which will lead you to the new instance screen. We recommend to use `frbit-your-app-name` as the Name. Depending on where your fortrabbit App runs choose the matching data center:
+Once you're logged click the "+ Create" button on the right side, which will lead you to the new instance screen. We recommend to use `frbit-your-app` as the Name. Depending on where your fortrabbit App runs choose the matching data center:
 
 * fortrabbit App in EU: `Amazon Web Service` > `EU-West-1 (Ireland)`
 * fortrabbit App in US: `Amazon Web Service` > `US-East-1 (Northern Virginia)`

@@ -12,7 +12,7 @@ otherVersionLinks:
     - directory-structure-old-app
 
 seeAlsoLinks:
-    - deeployment
+    - git-deployment
     - about-domains
 
 keywords:
@@ -48,7 +48,7 @@ srv
 
 ### appname
 
-The actual name of your App, for example `/srv/app/my-app` and so on.
+The actual name of your App, for example `/srv/app/{{app-name}}` and so on.
 
 ### htdocs
 

@@ -19,7 +19,7 @@ image:            bitbucket-mark.svg
 
 seeAlsoLinks:
     - about-code-collaboration
-    - deployment
+    - git-deployment
     - git-submodules
     - github
 

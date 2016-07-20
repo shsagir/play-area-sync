@@ -28,7 +28,7 @@ seeAlsoLinks:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. 
+We assume you've already created an [App](app) with fortrabbit.
 
 
 ## Install
@@ -44,7 +44,7 @@ $ git clone https://github.com/roots/bedrock MyApp
 
 # add your App's remote, so you can push later on
 $ cd MyApp
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # install all required composer packages
 $ composer install
@@ -77,14 +77,14 @@ The last configuration in the Dashboard is to set the WordPress URLs and environ
 
 ```
 WP_ENV=production
-WP_HOME=http://your-app.eu2.frb.io
-WP_SITEURL=http://your-app.eu2.frb.io/wp
+WP_HOME=http://{{app-name}}.frb.io
+WP_SITEURL=http://{{app-name}}.frb.io/wp
 ```
 
-Replace `your-app.eu2` with the App URL (see Dashboard). You can also use your own domain here of course – just take care to also [route the domain](about-domains) then. The folder `wp` in the WP_SITEURL is Bedrock-specific. You can also use the encrypted `https` protocol. 
+We are using the App URL in this example. In production you can should use your own domain here of course – just take care to also [route the domain](about-domains) then. The folder `wp` in the WP_SITEURL is Bedrock-specific. You can also use the encrypted `https` protocol.
 
 
-### Database setup 
+### Database setup
 
 Now open up the main config file in `config/application.php` and the following at the very top of the file:
 
@@ -224,7 +224,7 @@ $ git commit -am "With Object Storage"
 $ git push
 ```
 
-Once the deployment is done, you can head over to the WordPress Admin, activate all three plugins ("Amazon S3 fortrabbit", "Amazon Web Services" and "WP Offload S3 (Lite)") and then navigate to AWS > "S3 and CloudFront". First choose your bucket (there will be only one with the same name as your App), then enable "CloudFront or Custom Domain" and enter `your-app.objects.frb.io` as a custom domain. Save and done!
+Once the deployment is done, you can head over to the WordPress Admin, activate all three plugins ("Amazon S3 fortrabbit", "Amazon Web Services" and "WP Offload S3 (Lite)") and then navigate to AWS > "S3 and CloudFront". First choose your bucket (there will be only one with the same name as your App), then enable "CloudFront or Custom Domain" and enter `{{app-name}}.objects.frb.io` as a custom domain. Save and done!
 
 
 

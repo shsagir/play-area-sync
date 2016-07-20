@@ -111,8 +111,8 @@ If you use CloudFlare, you solved the problem already, since they only route to 
 
 ```
 # Find out IP on Mac or Linux:
-host my-app.eu1.frbit.net
-# my-app.eu1.frbit.net has address 54.228.198.23
+host your-app.eu1.frbit.net
+# your-app.eu1.frbit.net has address 54.228.198.23
 ```
 
 ### Wildcards

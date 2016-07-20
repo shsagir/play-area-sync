@@ -14,7 +14,7 @@ seeAlsoLinks:
     - app-design
     - old-apps
     - new-apps
-    - deployment
+    - git-deployment
 
 tags:
     - beginner

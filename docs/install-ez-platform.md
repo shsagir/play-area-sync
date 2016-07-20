@@ -272,7 +272,7 @@ That's about it. If your local project director is not already a Git repo, then 
 $ git init .
 
 # connect with your App's remote
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # add all to git and push
 $ git add -A
@@ -287,7 +287,7 @@ $ git push -u fortrabbit master
 The last step is to initialize the database remotely. You can use a [remote SSH execution](/remote-ssh-execution) to do this:
 
 ``` bash
-ssh your-app@deploy.eu2.frbit.com php app/console --env=prod ezplatform:install clean
+ssh {{ssh-user}}@deploy.{{region}}.frbit.com php app/console --env=prod ezplatform:install clean
 ```
 
 **Note**: Using remote SSH execution, you can run all `app/console` commands.

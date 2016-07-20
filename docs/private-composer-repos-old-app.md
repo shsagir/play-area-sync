@@ -16,7 +16,7 @@ tags:
     - git
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - composer
 
 keywords:
@@ -56,18 +56,18 @@ git push
 # remote: Step4: SSH Key-Gen Hook
 # remote:  ->; Generating new SSH key pair
 # remote: ########## Public Key ############
-# remote: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoRG3kKXftyfp9XGTqc8aOVPqJe+UXmNExE651uILGOE3YnKgvRF9jIeBhdw+63MFcNaYcwvIaADCdQdIXykgHymi2K/BLFr+92W2W3UriBjGOsy9rixHlQK3OFY7OeitmMATipAHYm6dNyklhaUQ/B8XZe3kXkdlC6tpIS8eUy1GD+OggtkAXTH9kqeecAdpUpLQg8DgMmjOxgwcGiCU2a5WVVwelIirj419zEVtDh1NUA9T75tp8r5wYHBf6YZzD5SLO/j+3fWPWVMGOZTtsyZOwZx9aJs54c2wn5BO5rDMFHR0RNHBpq3Jbqae8W3Tqzs8LWQRLilCQTlh3We8p my-app
+# remote: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoRG3kKXftyfp9XGTqc8aOVPqJe+UXmNExE651uILGOE3YnKgvRF9jIeBhdw+63MFcNaYcwvIaADCdQdIXykgHymi2K/BLFr+92W2W3UriBjGOsy9rixHlQK3OFY7OeitmMATipAHYm6dNyklhaUQ/B8XZe3kXkdlC6tpIS8eUy1GD+OggtkAXTH9kqeecAdpUpLQg8DgMmjOxgwcGiCU2a5WVVwelIirj419zEVtDh1NUA9T75tp8r5wYHBf6YZzD5SLO/j+3fWPWVMGOZTtsyZOwZx9aJs54c2wn5BO5rDMFHR0RNHBpq3Jbqae8W3Tqzs8LWQRLilCQTlh3We8p your-app
 # remote: ########## Public Key ############
 # remote:  ->; OK (Save the key now! Can only be re-generated!)
 # remote: >; All Done <;
-# To git@git1.eu1.frbit.com:my-app.git
+# To git@git1.eu1.frbit.com:your-app.git
 #   69afcf2..7d0ad38  master ->; master
 ```
 
-The private key will not be displayed (you don't need it either). The public key in the example is starting at `ssh-rsa` and ending at `my-app`:
+The private key will not be displayed (you don't need it either). The public key in the example is starting at `ssh-rsa` and ending at `your-app`:
 
 ```
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoRG3kKXftyfp9XGTqc8aOVPqJe+UXmNExE651uILGOE3YnKgvRF9jIeBhdw+63MFcNaYcwvIaADCdQdIXykgHymi2K/BLFr+92W2W3UriBjGOsy9rixHlQK3OFY7OeitmMATipAHYm6dNyklhaUQ/B8XZe3kXkdlC6tpIS8eUy1GD+OggtkAXTH9kqeecAdpUpLQg8DgMmjOxgwcGiCU2a5WVVwelIirj419zEVtDh1NUA9T75tp8r5wYHBf6YZzD5SLO/j+3fWPWVMGOZTtsyZOwZx9aJs54c2wn5BO5rDMFHR0RNHBpq3Jbqae8W3Tqzs8LWQRLilCQTlh3We8p my-app
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoRG3kKXftyfp9XGTqc8aOVPqJe+UXmNExE651uILGOE3YnKgvRF9jIeBhdw+63MFcNaYcwvIaADCdQdIXykgHymi2K/BLFr+92W2W3UriBjGOsy9rixHlQK3OFY7OeitmMATipAHYm6dNyklhaUQ/B8XZe3kXkdlC6tpIS8eUy1GD+OggtkAXTH9kqeecAdpUpLQg8DgMmjOxgwcGiCU2a5WVVwelIirj419zEVtDh1NUA9T75tp8r5wYHBf6YZzD5SLO/j+3fWPWVMGOZTtsyZOwZx9aJs54c2wn5BO5rDMFHR0RNHBpq3Jbqae8W3Tqzs8LWQRLilCQTlh3We8p your-app
 ```
 
 You can now install the key in your (companies) private Composer repository. You can re-run this hook at any time. However, it will always generate a *new* key-pair and remove the old one.
@@ -78,7 +78,7 @@ You can now install the key in your (companies) private Composer repository. You
 With the New Apps you can create a new SSH keypair for your App, using the `keygen` command.
 
 ```bash
-ssh git@deploy.eu2.frbit.com keygen your-app-name
+ssh git@deploy.eu2.frbit.com keygen your-app
 ```
 
 This will print out a public key, which you can then install with your private repository (on Github, Bitbucket or wherever).

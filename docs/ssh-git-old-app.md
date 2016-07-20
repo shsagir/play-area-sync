@@ -14,7 +14,7 @@ externalLinks:
     - http://git-scm.com/book/en/Customizing-Git-Git-Hooks
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - ssh-sftp-old-app
     - ssh-keys
 
@@ -54,7 +54,7 @@ cd ~/htdocs/some-folder
 git init .
 
 # Now you can clone this folder locally and start doing Git's work:
-git clone u-my-app@ssh1.eu1.frbit.com:~/htdocs/some-folder
+git clone u-your-app@ssh1.eu1.frbit.com:~/htdocs/some-folder
 
 # Go to the folder:
 cd some-folder

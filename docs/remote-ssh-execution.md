@@ -8,7 +8,7 @@ group:         Kitchen_sink
 excerpt:       "How to run Artisan migrate and other useful commands."
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - git
     - ssh-keys
     - logging
@@ -50,6 +50,12 @@ Remote SSH execution: run single commands remotely using the SSH remote exec pro
 The main difference of the SSH remote exec to a "full SSH environment" is that you can only execute one command at once and that you specify the command to be executed with the SSH login command line. All you need to do is: prefix the command you want to execute remotely with the SSH login command. For example:
 
 ```
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php script.php
+```
+
+The general scheme is:
+
+```
 $ ssh your-app@deploy.eu2.frbit.com php script.php
 # \                               / \             /
 #  --------------|---------------    ------|------
@@ -57,7 +63,7 @@ $ ssh your-app@deploy.eu2.frbit.com php script.php
 #      the ssh login command       the remote command
 ```
 
-**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/your-app/htdocs`, which is also the location to which your files are [deployed](/deployment). So if the script, you want to execute, is locally under `vendor/bin/foo` then you'd need to execute `ssh …frbit.com php vendor/bin/foo`. Check out the [directory structure](/directory-structure) for more information.
+**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are [deployed](/deployment). So if the script, you want to execute, is locally under `vendor/bin/foo` then you'd need to execute `ssh …frbit.com php vendor/bin/foo`. Check out the [directory structure](/directory-structure) for more information.
 
 **Note II**: You must write the interpreter `php` before all PHP scripts, including CLIs like `artisan` or `app/console`, you want to execute. So `ssh …frbit.com php script.php` works and `ssh …frbit.com script.php` does not.
 
@@ -93,7 +99,7 @@ One line of code says more than 1000 pages of documentation:
 #### Arbitrary PHP script
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php my-script.php arg1 arg2
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php my-script.php arg1 arg2
 ```
 
 #### Laravel: artisan
@@ -101,7 +107,7 @@ $ ssh your-app@deploy.eu2.frbit.com php my-script.php arg1 arg2
 Execute `some:command` using Laravels's `artisan` CLI:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php artisan some:command
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan some:command
 ```
 
 Check out the [Laravel article](/install-laravel-5#toc-migrate-amp-other-database-commands) for more examples.
@@ -111,7 +117,7 @@ Check out the [Laravel article](/install-laravel-5#toc-migrate-amp-other-databas
 Execute `some:command` using Symfony's `app/console` CLI:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php app/console some:command
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php app/console some:command
 ```
 
 #### Gulp/SSH
@@ -126,9 +132,9 @@ var fs = require('fs'),
   SSH  = require('gulp-ssh');
 
 var config = {
-  host:       'deploy.eu2.frbit.com',
+  host:       'deploy.{{region}}.frbit.com',
   port:       22,
-  username:   'your-app',
+  username:   '{{ssh-user}}',
   privateKey: fs.readFileSync(process.env.HOME + '/.ssh/id_rsa')
 };
 var ssh = new SSH({ignoreErrors: false, sshConfig: config});
@@ -158,7 +164,7 @@ You can execute multiple commands at once by quoting everything and separating t
 
 ```
 # execute three scripts
-$ ssh your-app@deploy.eu2.frbit.com "php foo.php ; php bar.php ; php baz.php"
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com "php foo.php ; php bar.php ; php baz.php"
 ```
 
 ### Aliases
@@ -167,11 +173,11 @@ On Mac and Linux: You can define local "aliases", which reduce the amount typing
 
 ```
 # create the alias
-$ alias artisan-my-app="ssh your-app@deploy.eu2.frbit.com php artisan"
+$ alias artisan-{{app-name}}="ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan"
 
 # use the alias
-$ artisan-my-app migrate
-# this actuall calls "ssh your-app@deploy.eu2.frbit.com php artisan migrate"
+$ artisan-{{app-name}} migrate
+# this actuall calls "ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate"
 ```
 
 To persist those aliases between shell sessions you need to add them to your shell profile file. Usually that is either `~/.profile`, `~/.zshrc` or `~/.bashrc`.

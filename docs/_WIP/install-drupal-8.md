@@ -124,14 +124,14 @@ Now is a good time to export your local database and import it into your App. Be
 
 ```bash
 # Fetch your fortrabbit database credentials
-$ ssh git@deploy.eu2.frbit.com secrets your-app mysql
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL
 
 # export local database
 $ mysqldump -u<your-local-user> -p <your-local-db> > drupal.sql
 
 # import into fortrabbit database
 #   you will be prompted for your fortrabbit database password
-$ mysql -u<your-app> -h127.0.0.1 -P13306 -p <your-app> < drupal.sql
+$ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}} < drupal.sql
 ```
 
 
@@ -162,9 +162,9 @@ Now you are done. Just setup Git, add your App's Git remote and push:
 
 ```bash
 $ git init .
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 $ git add -A
 $ git commit -m 'Initial'
 ```
 
-While the code is being pushed and Composer is executed head over to the [Dashboard](/dashboard) and go to your App > Domains and set the Root path of your domain(s) to `web`. Once the deployment has finished (takes much longer on the first time as all Composer packages need to be installed) you can visit the App URL in your browser: `https://your-app.frb.io/`.
+While the code is being pushed and Composer is executed head over to the [Dashboard](/dashboard) and go to your App > Domains and set the Root path of your domain(s) to `web`. Once the deployment has finished (takes much longer on the first time as all Composer packages need to be installed) you can visit the App URL in your browser: `https://{{app-name}}.frb.io/`.

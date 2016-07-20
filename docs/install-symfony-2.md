@@ -43,10 +43,8 @@ $ cd ~/Projects/MyApp
 $ git init .
 $ git add -A
 $ git commit -m 'Initial'
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
-
-**Note**: Replace `your-app` with the name of your fortrabbit App.
 
 Now setup the env in the [environment variable](/env-vars) in the Dashboard:
 
@@ -73,7 +71,7 @@ The above will give you an up and runnign App. However, to make the most of Symf
 If you want to use the development, you must modify `web/app_dev.php`. A simple example would be to replace the block, responsing with a 403 like so:
 
 ```
-if (isset($_SERVER['APP_NAME']) && $_SERVER['APP_NAME'] === 'my-app-name') {
+if (isset($_SERVER['APP_NAME']) && $_SERVER['APP_NAME'] === '{{app-name}}') {
     // allow
 } elseif (isset($_SERVER['HTTP_CLIENT_IP'])
     || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
@@ -129,33 +127,8 @@ You can safely remove `path` from the `nested` block as well. You can now use th
 You can [execute remote commands via SSH](/remote-ssh-execution), for example:
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php app/console doctrine:migrations:generate
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php app/console doctrine:migrations:generate
 ```
-
-<!--
-
-Create a new file `app/config/tunnel-db.php` and add your App's MySQL credentials:
-
-```php
-return [
-    'driver'            => 'pdo_mysql',
-    'database_host'     => '127.0.0.1',
-    'database_port'     => '13306',
-    'database_name'     => 'your-app',
-    'database_user'     => 'your-app',
-    'database_password' => "Your Database Password"
-];
-```
-
-**Note**: Make sure not to include that file in your Git repo by adding it to `.gitgnore`!
-
-Now open up a [tunnel](/mysql#toc-shell-tunnel-mysql) and run in another terminal window your migration commands using the `--db-configuration` parameter, eg:
-
-```bash
-$ php app/console doctrine:migrations:generate --db-configuration=app/config/tunnel-db.php
-```
-
--->
 
 ### Persistent storage
 

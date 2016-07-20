@@ -29,7 +29,7 @@ tags:
 
 ---
 
-**Problem**: The interwebs is full of criminals trying to read your communication.  
+**Problem**: The interwebs is full of criminals trying to read your communication.
 **Solution**: Serve requests over `HTTPS` not just `HTTP`.
 
 
@@ -45,7 +45,7 @@ As part of [security efforts](/security) our aim is to give you secure, easy-to-
 
 ### Piggyback TLS
 
-You can already access your [App URL](app#toc-app-url) using HTTPS which is provided by us like so. For example: `https://your-app.frb.io`. Use this URL for testing or if a custom domain is not important to you.
+You can already access your [App URL](app#toc-app-url) using HTTPS which is provided by us like so. For example: `https://{{app-name}}.frb.io`. Use this URL for testing or if a custom domain is not important to you.
 
 ### TLS free
 

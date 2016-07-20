@@ -1,10 +1,10 @@
 ---
 
 template:      article
-reviewed:      2016-05-20
-naviTitle:     Git
-title:         Git on fortrabbit
-lead:          A quick intro to Git, how to set it up and how to use it on fortrabbit.
+reviewed:      2016-07-19
+naviTitle:     Get started with Git
+title:         Get started with Git on fortrabbit
+lead:          This is a quick intro to Git, how to set it up and how to use it on fortrabbit.
 group:         Kitchen_sink
 
 keywords:
@@ -21,7 +21,7 @@ keywords:
 
 seeAlsoLinks:
     - ssh-keys
-    - deployment
+    - git-deployment
     - dashboard
     - terminology
     - github

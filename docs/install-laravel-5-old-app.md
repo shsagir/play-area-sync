@@ -72,7 +72,7 @@ When the project creation is done change in your local directory and connect you
 ``` bash
 cd MyApp
 git init .
-git remote add origin git@eu1.frbit.com:my-app.git
+git remote add origin git@eu1.frbit.com:your-app.git
 ```
 
 Since the Laravel comes with a good `.gitignore` file you can now safely add all files and create an initial commit with the [fortrabbit composer trigger](#..). Once that's done, just push to deploy.

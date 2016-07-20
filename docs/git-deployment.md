@@ -1,9 +1,9 @@
 ---
 
 template:      article
-reviewed:      2016-01-22
+reviewed:      2016-07-19
+naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
-naviTitle:     Deployment
 lead:          Get your code up and running with a simple git push, see advanced configuration.
 group:         Kitchen_sink
 
@@ -19,7 +19,7 @@ tags:
 
 seeAlsoLinks:
     - git
-    - deployment
+    - git-deployment
     - ssh-keys
     - deployment-architecture-video
     - git-submodules
@@ -34,7 +34,7 @@ seeAlsoLinks:
 
 ## Get ready
 
-We assume that you have: [Git installed](git) locally and know the basics. We further assume that [your public SSH key saved with your fortrabbit Account](ssh-keys) as authentication to access code is done with these keys.
+We assume that you have: [Git installed](git) locally and know the basics. We further assume that you know about [access methods](/access-methods)  here on fortrabbit, so either have your SSH keys installed or your [Dashboard](/dashboard) password handy.
 
 ## Usage
 
@@ -44,10 +44,10 @@ Each fortrabbit App comes with its very own custom Git repo which you need to se
 
 ```bash
 # Cloning the (empty) app to register the remote origin master
-$ git clone git@deploy.eu2.frbit.com:app-name.git
+$ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # do stuff
-$ edit index.php
+$ echo 'PHPower to the PHPeople' >index.php
 
 # push to deploy
 $ git add index.php
@@ -80,7 +80,7 @@ Your `git push` updates the Git remote on fortrabbit and triggers the build of a
 
 ## The branch name counts
 
-While you can have as many Git branches you want, only changes in certain branches will be deployed. Besides the `master` Branch also any branch named like the App itself - like `my-app`, if that's the name of your App - will be considered. The latter helps when working with [multi staging setups](multi-staging).
+While you can have as many Git branches you want, only changes in certain branches will be deployed. Besides the `master` Branch also any branch named like the App itself - like `your-app`, if that's the name of your App - will be considered. The latter helps when working with [multi staging setups](multi-staging).
 
 ## Deployment file
 

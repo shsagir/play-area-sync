@@ -13,7 +13,7 @@ otherVersionLinks:
   - composer
 
 seeAlsoLinks:
-   - deployment
+   - git-deployment
 
 tags:
    - git

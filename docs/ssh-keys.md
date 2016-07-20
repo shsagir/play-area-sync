@@ -28,7 +28,7 @@ keywords:
 seeAlsoLinks:
     - git
     - remote-ssh-execution
-    - deployment
+    - git-deployment
     - app
     - github
     - bitbucket
@@ -94,14 +94,9 @@ This tutorial from GitHub is lazer-sharp:
 
 After you have set up Git and created your local SSH key and stored it on the correct place, you'll need to tell fortrabbit about that. So that we can securely identify you later on.
 
-While boarding (first time in the Dashboard) to fortrabbit you'll be asked to do this. Later on you can install the public SSH key in the fortrabbit Dashboard under your Account:
+* "Dashboard" > "Your Account" > "Access methods" > "Add a new SSH key"
 
-* Dashboard > Your Account > Add a new SSH key
-
-You might be asked to re-enter your fortrabbit Account password to do this. Then you will see a form with two fields: 
-
-1. an input for title — anything you like, identify the key later on
-2. a textarea for the actual key — paste the key value here
+You might be asked to re-enter your fortrabbit Account password to do this. Then you will see a form with a textarea to copy/paste the actual key in. Most likely this should be the contents of the file `id_rsa.pub` which is stored in `~/.ssh`.
 
 This is what a valid SSH key looks like (don't paste this):
 
@@ -116,10 +111,7 @@ IvP1bffus+WdY75 you@localhost
 
 MIND THE DIFFERNCE BETWEEN PUBLIC AND PRIVATE KEY! The above is multi-line only for readability. Please remove the line breaks from the SSH key when adding it to the Dashboard. The key should start with `ssh-rsa`, `ssh-dss` or `ecdsa-sha2-nistp...` if not, it's probably not a supported version.
 
-
-### Shortcut: GitHub import
-
-Maybe you are using GitHub with SSH keys already? If so, then you can easily import those keys to fortrabbit. You can do this [here](https://dashboard.fortrabbit.com/boarding/keys/github) (login required).
+You can also [import your GitHub keys](/access-methods#toc-github-ssh-key-import).
 
 
 ## Troubleshooting

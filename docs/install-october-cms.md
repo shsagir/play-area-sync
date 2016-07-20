@@ -97,35 +97,6 @@ return [
 ];
 ```
 
-<!--
-
-Now create a database tunnel file, which will be needed later in this guide, under `config/tunnel/database.php` with the following contents:
-
-```php
-return [
-    'default' => 'mysql',
-    'connections' => [
-        'mysql' => [
-            'driver'    => 'mysql',
-            'host'      => '127.0.0.1',
-            'port'      => 13306,
-            'database'  => 'your-app-name',
-            'username'  => 'your-app-name',
-            'password'  => 'your-app-database-password',
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-        ],
-    ],
-];
-```
-
-**Note**: You can get your App's database credentials using the `secrets` command, eg `ssh git@deploy.eu2.frbit.com secrets your-app-name`
-
-**Note**: This file will be later on placed in the `.gitignore` file so it will not be part of your Git history.
-
--->
-
 ### Configure App settings
 
 Create a new file `config/prod/app.php` with the follwing contents:
@@ -278,7 +249,7 @@ Now add everything to Git, make an initial commit, add your App's remote and pus
 ```bash
 $ git add -A
 $ git commit -m 'Initial'
-$ git remote add fortrabbit git@deploy.eu2.frbit.com:your-app.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 $ git push -u fortrabbit master
 ```
 
@@ -289,7 +260,7 @@ $ git push -u fortrabbit master
 Now that your code is pushed and all config files are created the last step is to setup your App's database. You can do so by [executing a remote commands via SSH](/ssh):
 
 ```bash
-$ ssh your-app@deploy.eu2.frbit.com php artisan october:up
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan october:up
 ```
 
 **Note**: Using remote SSH execution, you can run all `artisan` commands.
@@ -307,7 +278,7 @@ You should first install the plugin locally, then in your fortrabbit App:
 php artisan --env=dev plugin:install Vendor.Name
 
 # install on fortrabbit
-ssh your-app@deploy.eu2.frbit.com php artisan plugin:install Vendor.Name
+ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan plugin:install Vendor.Name
 ```
 
 Now add all to Git, commit and push:

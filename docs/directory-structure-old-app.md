@@ -13,7 +13,7 @@ otherVersionLinks:
     - directory-structure
 
 seeAlsoLinks:
-    - deployment
+    - git-deployment
     - about-domains
 
 keywords:
