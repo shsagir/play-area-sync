@@ -58,12 +58,15 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com ls -lha
 
 ### Schema
 
+
+
+
+
 ```
 $ ssh [[your-app]]@deploy.[[region]].frbit.com ls -lha
-# \                                          / \      /
-#  --------------|---------------------------   --|---
-#                v                                v
-#      the ssh login command               the remote command
+# └─────────────────────┬────────────────────┘ └──┬───┘
+#                       ▼                         ▼
+#                ssh login command          remote command
 ```
 
 **Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are deployed. So if the script, you want to execute, is locally under `[[vendor/bin/foo]]` then you'd need to execute `ssh …frbit.com php [[vendor/bin/foo]]`. Check out the [directory structure](/directory-structure) for more information.
