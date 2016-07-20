@@ -116,7 +116,17 @@ Please see our [CloudFlare article](/cloudlfare) on how to setup and use CloudFl
 
 ### Wildcard domains
 
-Do you want to route all requests for all possible subdomains to your fortrabbit App (`*.mydomain.com`)? That is possible, but for security reasons we'll need to verify that you own the domain.
+Do you want to route all requests for all possible subdomains to your fortrabbit App like so `[[*.your-domain.com]]`? That is possible. 
+
+#### Wildcard domain use cases
+
+Some domain providers promote wildcard domains as the save and easy catch-all solution. With fortrabbit you should use a wildcard domain solely for the purpose when there is really any number of addresses that change dynamically. Imagine a social network App where your users will have `[[user]].[[your-domain.com]]` addresses. 
+
+#### Wildcard domain limitations
+
+For security reasons we'll need to verify that you own the domain. You will need to verify an e-mail send to this domain. We do not provide [TLS free](/tls) for wildcard domains, you need to book [TLS custom](/tls-custom) in order to have https on your wildcard domain.
+
+
 
 ## Changing the default domain
 
