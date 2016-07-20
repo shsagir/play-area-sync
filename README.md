@@ -130,6 +130,8 @@ Find the right balance between being general and being precise (aka Captain Obvi
 
 ## fortrabbit owned words and common casing
 
+* **[[ interchangble-value ]]** < something the users will need to modify
+* **[[ your-app ]]** ~~[[ my-app ]]~~, ~~[[ app-name ]]~~
 * **App URL**
 * **Admin** ~~admin~~
 * **App** — ~~app~~, ~~website~~, ~~application~~
