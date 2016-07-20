@@ -52,7 +52,8 @@ $ git commit -m 'Initial'
 $ git push -u fortrabbit master
 ```
 
-Done. Your Grav site is now online and you can visit it in your browser!
+Done. Your Grav site is now online and you can visit it in your browser!  
+[https://{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 Tuning
 ------
@@ -66,7 +67,7 @@ Word: The above guide is just the quickest and most basic way to get things up. 
 Grav supports themes and plugins, which both can be installed with the `bin/gpm` tool. Assuming you followed the [zip package based installation](http://learn.getgrav.org/basics/installation#option-1-install-from-zip-package), as shown above, installing plugins or themes is easy: Find the [theme you like](http://getgrav.org/downloads/themes), then install it as usual. Following an example. Run locally:
 
 ```bash
-$ bin/gpm install soraarticle
+$ bin/gpm install [[soraarticle]]
 ```
 
 Open `user/config/system.yaml` and set `pages/theme` to `soraarticle`. Now commit and push:
@@ -84,7 +85,7 @@ Done.
 Find the [plugin you need](http://getgrav.org/downloads/plugins) then install it as usual (we use download here). Following an an example. Run locally:
 
 ```bash
-$ php bin/gpm install simplesearch
+$ php bin/gpm install [[simplesearch]]
 ```
 
 Then configure the plugin, if needed (usually in `user/plugin/<pluginname>/<pluginname>.yaml`), commit and push:

@@ -48,22 +48,6 @@ Of course these operations need to be protected. We need to make sure that only 
 In the "[Dashboard](/dashboard)", go to "Your Account" (upper right). Under "Access method" you can find your current settings. You see which method is currently set.
 
 
-### Access schema
-
-```
-# Git clone example
-$ git clone [[ssh-user]]@deploy.[[region]].frbit.com:[[your-app]].git
-```
-
-* With SSH key authentication [[ssh-user]] will be: [[your-app]]
-* With password authentication [[ssh-user]] will be: [[your-app]].[[long-user-string]]
-* With password authentication you will need to enter your fortrabbit Account password (each time)
-* With SSH key authentication your keys will be used
-* [[your-app]] is the name of your App (see Dashboard)
-* [[region]] is `eu2` or `us1`, depending on the location of your App
-
-URLs and terminal commands depend on your chosen access method. The above example shows the pattern for SSH key authentication with SSH keys.
-
 
 
 ## SSH key authentication
@@ -110,6 +94,46 @@ This is the default method when no public SSH keys are installed. Use this, when
 ### How to change from SSH key to password authentication
 
 When for some reason SSH key authentication does not work for you, you can downgrade to password like so: In the "Dashboard" > "Your Account" > "Access method" you can click on your public SSH keys, this will bring up a view where you can delete the key. When deleting the last key, password authentication will be re-enabled.
+
+
+## Access schema
+
+URLs and terminal commands depend on your chosen access method. 
+
+```
+# Git clone example
+$ git clone [[ssh-user]]@deploy.[[region]].frbit.com:[[your-app]].git
+```
+
+* [[your-app]] is the name of your App (see Dashboard)
+* [[region]] is `eu2` or `us1`, depending on the location of your App
+
+
+#### With SSH key authentication
+
+* No need to enter passwords, your public key will be used
+* [[ssh-user]] will be: [[your-app]]
+
+#### With password authentication
+
+* You will need to enter your fortrabbit Account password (each time)
+* [[ssh-user]] will be: [[your-app]].[[long-user-string]]
+
+
+#### The code example helper
+
+When you are logged in to the Dashboard, you will see a yellow box on the right side with a select to choose one of your Apps. This helper knows which authentication method your Account uses. It also changes all code examples on the current page according to the selected App. So you can literary copy/paste all code examples here.
+
+##### Try it out yourself
+
+```
+# change the values on the right and see the below change
+SSH user: {{ssh-user}}
+Region:   {{region}}
+Your app: {{app-name}}
+```
+
+
 
 ## Authentication in teams
 
