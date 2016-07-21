@@ -58,10 +58,6 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com ls -lha
 
 ### Schema
 
-
-
-
-
 ```
 $ ssh [[your-app]]@deploy.[[region]].frbit.com ls -lha
 # └─────────────────────┬────────────────────┘ └──┬───┘
