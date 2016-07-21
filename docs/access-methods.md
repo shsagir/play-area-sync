@@ -95,6 +95,11 @@ In the "Dashboard" > "Your Account" > "Access method" you can add an SSH key. On
 When for some reason SSH key authentication does not work for you, you can downgrade to password like so: In the "Dashboard" > "Your Account" > "Access method" you can click on your public SSH keys, this will bring up a view where you can delete the key. When deleting the last key, password authentication will be re-enabled.
 
 
+### When you change your Account password
+
+When you change your Dashboard password, for instance when you [regain access to the Dashboard](/dashboard#toc-regaining-access) in case of a forgotten password, all access to the services will change as well.
+
+
 ## Access schema
 
 URLs and terminal commands depend on your chosen access method. 

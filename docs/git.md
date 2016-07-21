@@ -60,7 +60,7 @@ To successfully use fortrabbit you should be familiar with Git standard operatio
 
 ## Install Git
 
-To use Git, you need to have it installed on your local machine. You might already have Git: open a Terminal window and type `git --version`.
+To use Git, you need to have it installed on your local machine. You might already have Git: open a terminal window and type `git --version`.
 
 
 ### Git on Mac Os & Linux
@@ -98,7 +98,7 @@ On top of storing your code in a different location (local machine + fortrabbit 
 
 ## Git desktop GUIs
 
-Most people probably use Git from the command line (aka bash, terminal). But there are also GUIs (desktop Apps) to manage Git. Those help to get started and to see visually what's going on:
+Most people probably use Git from the command line (aka bash, terminal, shell). But there are also GUIs (desktop Apps) to manage Git. Those help to get started and to see visually what's going on:
 
 * [Git Desktop GUIs list](https://git-scm.com/downloads/guis)
 

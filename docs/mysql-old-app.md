@@ -72,7 +72,7 @@ You can use a graphical interface like the official [MySQL Workbench](http://www
 
 Use phpMyAdmin or Chive locally instead. Once you have setup the [SSH tunnel](#toc-shell-tunnel-mysql) you can connect to the remote database as if it were local.
 
-### Terminal › Tunnel › MySQL
+### terminal › tunnel › MySQL
 
 If you are familiar with the shell then this is no biggie. In essence: open up a tunnel to your App's MySQL database using your Apps SSH account.
 

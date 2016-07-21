@@ -144,7 +144,7 @@ Domains on fortrabbit can be accessed via `HTTP` and `HTTPS`. Please see the [TL
 
 ## Troubleshooting DNS
 
-You can use the Terminal (Bash) to see the current DNS settings of your domain. With the `dig` command you can see if there are any CNAME entries and where they are pointing to. Here we lookup `help.fortrabbit.com` and see a CNAME pointing to the App URL: `help-frbit.frb.io`.
+You can use the terminal to see the current DNS settings of your domain. With the `dig` command you can see if there are any CNAME entries and where they are pointing to. Here we lookup `help.fortrabbit.com` and see a CNAME pointing to the App URL: `help-frbit.frb.io`.
 
 ```
 $ dig ANY help.fortrabbit.com
