@@ -46,7 +46,7 @@ Each fortrabbit App comes with its very own custom Git repo which you need to se
 # Cloning the (empty) app to register the remote origin master
 $ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# go in the folder 
+# go in the folder
 $ cd {{app-name}}
 
 # do stuff
@@ -57,7 +57,7 @@ $ git add index.php
 $ git commit -am 'Intial commit'
 $ git push -u origin master
 ```
-after the deployment is done you can worship your work in the browser:  
+after the deployment is done you can worship your work in the browser:
 [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
@@ -79,7 +79,7 @@ You can also use a graphical interface (Tower, Sourctree, Gitbox … ) or an edi
 | | |
 |-|-|
 | **SSH clone URL** | {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}              |
-| **Git password**  | {{Your [account](/dashboard#toc-accessing-the-dashboard) password}}    |
+| **SSH password**  | {{ssh-password}}    |
 
 [Official list of Git GUIs](https://git-scm.com/downloads/guis)
 
