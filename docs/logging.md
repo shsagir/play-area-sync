@@ -20,8 +20,6 @@ tags:
 
 ---
 
-## Problem
-
 You are developing your App and see the white screen of death. You are getting a 5xx error and don't know why. You write debug logs and need them to trace a problem.
 
 

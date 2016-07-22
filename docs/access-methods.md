@@ -56,10 +56,15 @@ We recommend to use public SSH key authentication to identify yourself with fort
 
 
 
-### How to add and remove SSH keys with your Account
+### How to add public SSH keys
 
-In the "Dashboard" > "Your Account" > "Access method" you can "Add a new SSH key". The **[direct link](https://dashboard.fortrabbit.com/account/keys/new)** can also take you there (login and re-authentication maybe required).
+SSH keys are stored with your Account. In the "Dashboard" > "Your Account" > "Access method" you can add and remove SSH keys.
 
+<div markdown="1" data-user="known">
+
+[Add a new SSH key for your Account](https://dashboard.fortrabbit.com/account/keys/new)
+
+</div>
 
 ### How to create a public SSH key locally
 
@@ -89,7 +94,10 @@ This is the default method when no public SSH keys are installed. Use this, when
 
 In the "Dashboard" > "Your Account" > "Access method" you can add an SSH key. Once you have added your first public SSH key, password authentication will be disabled and SSH key authentication will be enabled.
 
-* **[Add an public SSH key](https://dashboard.fortrabbit.com/account/keys/new)** (login required)
+
+<div markdown="1" data-user="known">
+[Add a new SSH key for your Account](https://dashboard.fortrabbit.com/account/keys/new)
+</div>
 
 
 ### How to change from SSH key to password authentication
@@ -147,7 +155,7 @@ Your app: {{app-name}}
 
 ### Authentication in teams
 
-You manage your access method with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different acess method and that your settings might not work for them.
+You manage your access method with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different acess method and that your settings might not work for them. Also see our [team work article](/collaboration).
 
 - - -
 

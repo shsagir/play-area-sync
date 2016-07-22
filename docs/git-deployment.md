@@ -57,7 +57,7 @@ $ git add index.php
 $ git commit -am 'Intial commit'
 $ git push -u origin master
 ```
-after the deployment is done you can worship your work in the browser:
+after the deployment is done you can worship your work in the browser:  
 [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 

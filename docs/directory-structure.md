@@ -4,7 +4,6 @@ template:      article
 reviewed:      2016-02-18
 title:         Directory structure
 naviTitle:     Directory structure
-lead:          The predefined set of folders for each App you need to know.
 group:         Kitchen_sink
 
 
@@ -23,13 +22,15 @@ keywords:
     - directories
     - linux
     - unix
+    - web root
+    - doc root
+    - document root
 
 tags:
     - beginner
 
 ---
 
-## Your folders
 
 ```nohighlight
 bin
@@ -42,9 +43,10 @@ usr
 srv
   app
     appname
-      htdocs      < default web root
+      htdocs      < default root path
 ```
 
+The predefined set of folders for each App you need to know.
 
 ### appname
 

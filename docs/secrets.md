@@ -32,77 +32,89 @@ In addition: your App will run in at least two environments: locally and on fort
 
 ## Solution
 
-Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file which is only accessible by your App. The location of this JSON file is stored in the environment variable `APP_SECRETS`.
+Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by your App. The location of this JSON file is stored in the environment variable `APP_SECRETS`.
 
-## App secrets in PHP
+## App secrets access
+
+### Using App secrets in PHP with your App
 
 ```php
-// read all secrets
+// read all App secrets from the JSON file, location via ENV var
 $secrets = json_decode(file_get_contents($_SERVER["APP_SECRETS"]), true);
 
-// access a specific secret
-echo $secrets['MYSQL']['HOST'];
+// use a specific secret
+$meaning_of_life = $secrets['CUSTOM']['MEANING_OF_LIFE'];
 ```
 
-The secrets are ordered in a tree structure in the format `["CONTEXT" => ["KEY" => "value"]]`, for example:
+Secrets are ordered in a tree structure `["CONTEXT" => ["KEY" => "value"]]`:
 
 ```php
 $secrets == [
     'MYSQL' => [
-        'PASSWORD' => "Your App's MySQL password",
-        'USER'     => "Your App's MySQL user name",
-        'DATABASE' => "Your App's MySQL database name",
-        'HOST'     => "Your App's MySQL hostname",
-        'PORT'     => "Your App's MySQL port",
+        'PASSWORD' => "{{mysql-password}}",
+        'USER'     => "{{mysql-user}}",
+        'DATABASE' => "{{mysql-database}}",
+        'HOST'     => "{{mysql-host}}",
+        'PORT'     => "{{mysql-port}}",
     ],
     'CUSTOM' => [
-        'YOUR_CUSTOM_SECRET'    => "The custom content",
-        'yourOtherCustomSecret' => "The custom content"
+        'YOUR_CUSTOM_SECRET'    => "{{YOUR_CUSTOM_SECRET}}",
+        'yourOtherCustomSecret' => "{{yourOtherCustomSecret}}"
     ]
 ];
 ```
 
-Which contexts are available depends on which add-ons you have enabled for your App.
+Which contexts are available depends on which Components you have enabled for your App. 
+
+
+### Reading secrets from outside
+
+Besides accessing the secrets programmatically - as shown above - you can view all or a subset of them using a terminal command:
+
+```bash
+# show all App secrets
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets
+# {
+#     "MYSQL": {
+#         "PASSWORD": "{{mysql-password}}",
+#         "USER": "{{app-name}}",
+#         "DATABASE": "{{app-name}}",
+#         "HOST": "{{app-name}}.mysql.{{region}}.frbit.com",
+#         "PORT": "3306",
+#     },
+#     "CUSTOM": {
+#         "YOUR_CUSTOM_SECRET": "The custom content",
+#         "yourOtherCustomSecret": "The custom content"
+#     }
+# }
+
+# show only MySQL secrets
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL
+# {
+#     "PASSWORD": "{{mysql-password}}",
+#     "USER": "{{app-name}}",
+#     "DATABASE": "{{app-name}}",
+#     "HOST": "{{app-name}}.mysql.{{region}}.frbit.com",
+#     "PORT": "3306",
+# }
+
+# show only MySQL password
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
+# {{mysql-password}}
+```
+
 
 ## Adding custom App secrets
 
 You can add or remove custom App secrets in the [Dashboard](dashboard). You'll do so in the settings of your [App](app). The contents of the App secrets cannot be viewed in the Dashboard due to the underlying encryption, which we consider a feature, not a bug.
 
-## Accessing App secrets
+<div markdown="1" data-user="known">
 
-Besides accessing the secrets programatically - as shown above - you can view all or a subset of them using the command line:
+[See App secrets of your App **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/secrets)
+[Add new App secrets for your App **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/secrets/new)
 
-```bash
-# read all secrets
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets
-{
-    "MYSQL": {
-        "PASSWORD": "AAAABBBBCCCCDDDDEEEEFFFF",
-        "USER": "{{app-name}}",
-        "DATABASE": "{{app-name}}",
-        "HOST": "{{app-name}}.mysql.{{region}}.frbit.com",
-        "PORT": "3306",
-    },
-    "CUSTOM": {
-        "YOUR_CUSTOM_SECRET": "The custom content",
-        "yourOtherCustomSecret": "The custom content"
-    }
-}
+</div>
 
-# read only MySQL secrets
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL
-{
-    "PASSWORD": "AAAABBBBCCCCDDDDEEEEFFFF",
-    "USER": "{{app-name}}",
-    "DATABASE": "{{app-name}}",
-    "HOST": "{{app-name}}.mysql.{{region}}.frbit.com",
-    "PORT": "3306",
-}
-
-# read only MySQL password
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
-AAAABBBBCCCCDDDDEEEEFFFF
-```
 
 ## App secrets vs ENV vars
 

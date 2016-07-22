@@ -1,11 +1,11 @@
 ---
 
-template:       article
-reviewed:       2016-07-20
-naviTitle:      SSH keys setup
-title:          Troubleshooting SSH keys setup
-lead:           This article helps solving common issues setting up your SSH keys.
-group:          deployment
+template:      article
+reviewed:      2016-07-20
+naviTitle:     SSH keys setup
+title:         Troubleshooting SSH keys setup
+lead:          This article helps solving common issues setting up your SSH keys.
+group:         getting_started
 
 
 keywords:

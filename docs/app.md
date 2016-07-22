@@ -5,7 +5,7 @@ reviewed:      2016-07-13
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think servers instead. Learn the basic fortrabbit concepts.
-group:         Kitchen_sink
+group:         getting_started
 
 seeAlsoLinks:
     - dashboard
@@ -46,6 +46,11 @@ An App is a virtual container for your web project, website, web application, st
 
 Think of Components as micro services. Some Components are integral — meaning: you can't turn them off — while others are optional. Most Components are available in multiple expansion states (scaling plans). There are presets with common combination of Components.
 
+## Dashboard links
+
+* [Go to your list of Apps](https://dashboard.fortrabbit.com/apps)
+* [Go to your App: {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}})
+
 
 
 ## Settings
@@ -73,6 +78,12 @@ While creating your fortrabbit App you will be asked for an App name. This name 
 
 You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/about-domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard. 
 
+<div markdown="1" class="asdad">
+
+* [Set up a new domain for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)
+
+</div>
+
 
 #### Set a custom root path
 
@@ -96,6 +107,8 @@ You can currently run two different generations of Apps on fortrabbit: classical
 * [Universal specs page](http://www.fortrabbit.com/specs) - detailed informations
 * [When and how to scale](/scaling) - help article about scaling
 * [fortrabbit VS Digital Ocean](http://www.fortrabbit.com/why-not-digitalocean) - marketing article comparing fortrabbit with VPS hosting
+
+- - -
 
 ## FAQ
 
