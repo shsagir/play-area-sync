@@ -32,14 +32,14 @@ In addition: your App will run in at least two environments: locally and on fort
 
 ## Solution
 
-Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by your App. The location of this JSON file is stored in the environment variable `APP_SECRETS`.
+Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by your App. The location of this JSON file is stored in a predefined environment variable called `APP_SECRETS`.
 
 ## App secrets access
 
 ### Using App secrets in PHP with your App
 
 ```php
-// read all App secrets from the JSON file, location via ENV var
+// read all App secrets from the JSON file, get the location via ENV var
 $secrets = json_decode(file_get_contents($_SERVER["APP_SECRETS"]), true);
 
 // use a specific secret
@@ -64,12 +64,12 @@ $secrets == [
 ];
 ```
 
-Which contexts are available depends on which Components you have enabled for your App. 
+Available contexts depend on the Components you have enabled for your App. 
 
 
 ### Reading secrets from outside
 
-Besides accessing the secrets programmatically - as shown above - you can view all or a subset of them using a terminal command:
+Read the secrets from your local machine by using a terminal command:
 
 ```bash
 # show all App secrets
