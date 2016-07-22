@@ -21,11 +21,6 @@ Do you run a 3rd party service or an open source project that can be integrated 
 The folder _WIP contains — as you might can guess — work in progress. All infos in there are subject to major errors. Please contribute!
 
 
-### Logos and brand assets
-
-Place logos for external services and projects in the media folder. They ideally should be svg or either PNG with transparent background. Favor an "image mark" over a "word image mark".
-
-
 
 ### Front Matter syntax
 
@@ -104,6 +99,36 @@ tags:
     - beginner
     - cms
 ```
+
+## Dynamic help
+
+Those values will be replaced by JS when users are logged in:
+
+```
+SSH user: {{ssh-user}}
+Region:   {{region}}
+Your app: {{app-name}}
+```
+
+It will dynamically show the correct code examples and Dashboard links.
+
+
+
+## Dashboard links
+
+You can have certain parts in Markdown available only for Users who are logged in like so:
+
+```
+<div markdown="1" data-user="known">
+
+[Set up a new domain for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)
+
+</div>
+```
+
+This parses markdown inside the DIV. With the data-user attribute it checks if the user is logged in. links to the Dashboard will be styled as buttons — use a verb to start them!
+
+
 
 
 
@@ -233,3 +258,10 @@ When referencing a hypothetical person, such as "a user with a session cookie", 
 ## Corporate identity
 
 There is no fortrabbit logo as graphic file. To create the brand logo just type: "• fortrabbit" — bullet character, a normal space and then name of the company with a f. Use the [Georgia Typeface](http://en.wikipedia.org/wiki/Georgia_(typeface)) in bold and italic. Use lot's of whitespace around the logo, don't put other text nearby the logo. When using the company name within a paragraph of text, write "fortrabbit" with a f, even at the beginning of a sentence. Don't use the bullet or any other typeface here.
+
+
+### Logos and brand assets
+
+Place logos for external services and projects in the media folder. They ideally should be svg or either PNG with transparent background. Favor an "image mark" over a "word image mark".
+
+
