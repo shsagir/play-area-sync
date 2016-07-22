@@ -1,11 +1,11 @@
 ---
 
 template:      article
-reviewed:      2016-07-19
+reviewed:      2016-07-22
 naviTitle:     Access methods
 title:         How to access fortrabbit services
 lead:          Learn about the different authentication methods with fortrabbit.
-group:         Kitchen_sink
+group:         deployment
 
 otherVersionLinks:
     - code-access-old-app
@@ -83,11 +83,13 @@ In certain cases you might want to add code access to an App without the need to
 
 ## Password authentication
 
-This is the default method when no public SSH keys are installed. Use this, when you just want to check out fortrabbit or when you have trouble setting up your SSH keys locally, help on this is over [here](ssh-keys).
+This is the default method when no public SSH keys are installed. Use this, when you just want to check out fortrabbit or when you have trouble setting up your SSH keys locally. **Hobbyists are using Password authentication. Professionals are using SSH key authentication.**
 
 ### How to change from password to SSH key authentication
 
 In the "Dashboard" > "Your Account" > "Access method" you can add an SSH key. Once you have added your first public SSH key, password authentication will be disabled and SSH key authentication will be enabled.
+
+* **[Add an public SSH key](https://dashboard.fortrabbit.com/account/keys/new)** (login required)
 
 
 ### How to change from SSH key to password authentication
@@ -97,10 +99,14 @@ When for some reason SSH key authentication does not work for you, you can downg
 
 ### When you change your Account password
 
-When you change your Dashboard password, for instance when you [regain access to the Dashboard](/dashboard#toc-regaining-access) in case of a forgotten password, all access to the services will change as well.
+When you change your Dashboard password, for instance when you [regain access to the Dashboard](/dashboard#toc-regaining-access) in case of a forgotten password, all access to the services will change as well – the new password will be used.
+
+- - -
 
 
-## Access schema
+## How it works
+
+### Access schema
 
 URLs and terminal commands depend on your chosen access method. 
 
@@ -139,6 +145,55 @@ Your app: {{app-name}}
 
 
 
-## Authentication in teams
+### Authentication in teams
 
 You manage your access method with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different acess method and that your settings might not work for them.
+
+- - -
+
+## Troubleshooting
+
+### Authenticity error
+
+The first time you are connecting to fortrabbit service via SSH, you might get an error and a prompt like this:
+
+```
+The authenticity of host '…' can't be established
+RSA key fingerprint is … 
+Are you sure you want to continue connecting (yes/no)?
+```
+
+Please answer with `yes`. This will add our servers to the known hosts. That should be a one time setup. If you are being asked this every time you deploy, something with your `known_hosts` file is probably wrong. See [this Stack Overflow question](http://stackoverflow.com/questions/9299651/git-says-warning-permanently-added-to-the-list-of-known-hosts).
+
+
+### General connection errors
+
+If you can't establish a connection at all, a corporate or personal firewall might be the cause. This can a protection software on your computer or something in your company. You can fix this by allowing communication on the SSH standard port: `22`.
+
+
+### Authentication errors
+
+Your local machine is maybe trying to use a different authentication method. Please check and correct your SSH configuration like so:
+
+```
+# terminal command to edit your ssh config file
+nano ~/.ssh/config
+```
+
+Within this file change the preferred authentications accordingly:
+
+```
+# when using password authentication use:
+PreferredAuthentications    password,publickey
+
+# when using SSH key authentication use:
+PreferredAuthentications    publickey,password
+```
+
+
+
+
+
+### Problems with SSH keys
+
+Please see our [SSH key trouble shooting guides](/ssh-keys#troubleshooting) to resolve common problems with SSH key authentication.

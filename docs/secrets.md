@@ -1,11 +1,11 @@
 ---
 
 template:    article
-reviewed:    2016-01-22
+reviewed:    2016-07-22
 title:       Using secure App secrets
 naviTitle:   App secrets
 lead:        App secrets provide a secure storage for all the credentials your App needs to run.
-group:       Kitchen_sink
+group:       deployment
 
 keywords:
     - Secrets

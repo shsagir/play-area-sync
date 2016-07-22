@@ -5,7 +5,7 @@ reviewed:      2016-07-19
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
-group:         Kitchen_sink
+group:         deployment
 
 otherVersionLinks:
     - git-old-app

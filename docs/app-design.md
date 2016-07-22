@@ -5,7 +5,6 @@ reviewed:      2015-12-07
 title:         Application design & optimization
 naviTitle:     Application design
 lead:          Best practices: from development to production. from backend to frontend.
-
 group:         Kitchen_sink
 
 seeAlsoLinks:

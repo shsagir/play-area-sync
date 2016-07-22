@@ -5,7 +5,7 @@ reviewed:      2016-05-31
 title:         Advanced Git deployment workflows with fortrabbit.yml
 naviTitle:     Deployment file
 lead:          Enhance your deployment process with the fortrabbit.yml deployment file.
-group:         Kitchen_sink
+group:         deployment
 
 otherVersionLinks:
     - deployment-file-v1-old-app

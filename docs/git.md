@@ -5,7 +5,7 @@ reviewed:      2016-07-19
 naviTitle:     Get started with Git
 title:         Get started with Git on fortrabbit
 lead:          This is a quick intro to Git, how to set it up and how to use it on fortrabbit.
-group:         Kitchen_sink
+group:         deployment
 
 keywords:
     - ssh key
@@ -72,7 +72,7 @@ Good news: you most likely already have it installed.
 
 Good news: you can work it out. The primary problem you have to solve is: which Git distribution are you going to use. There are multiple of those floating around, we recommend to download and install Git from the **[official Git website](https://git-scm.com/downloads)**. This one comes with the "Git Bash".
 
-* [StackOverflow: Difference between Gits for Windows](http://stackoverflow.com/questions/22310007/differences-between-git-scm-msysgit-git-for-windows)
+* [Stack Overflow: Difference between Gits for Windows](http://stackoverflow.com/questions/22310007/differences-between-git-scm-msysgit-git-for-windows)
 * [Beanstalk Git Windows install guides with SSH key setup](http://guides.beanstalkapp.com/version-control/git-on-windows.html#installing-Git)
 
 

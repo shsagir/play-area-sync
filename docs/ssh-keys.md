@@ -5,7 +5,7 @@ reviewed:       2016-07-20
 naviTitle:      SSH keys setup
 title:          Troubleshooting SSH keys setup
 lead:           This article helps solving common issues setting up your SSH keys.
-group:          Kitchen_sink
+group:          deployment
 
 
 keywords:
@@ -115,47 +115,43 @@ MIND THE DIFFERNCE BETWEEN PUBLIC AND PRIVATE KEY! The above is multi-line only 
 
 You can also [import your GitHub keys](/access-methods#toc-github-ssh-key-import).
 
+- - -
+
 
 ## Troubleshooting
 
-### Authenticity error
-
-The first time you are connecting to fortrabbit service via SSH, you might get an error and a prompt like this:
-
-```
-The authenticity of host '…' can't be established
-RSA key fingerprint is … 
-Are you sure you want to continue connecting (yes/no)?
-```
-
-Please answer with `yes`. This will add our servers to the known hosts. That should be a one time setup. 
-
-If you are being asked this every time you deploy, something with your `known_hosts` file is probably wrong. See [this StackOverflow question](http://stackoverflow.com/questions/9299651/git-says-warning-permanently-added-to-the-list-of-known-hosts).
-
-
-### General connection errors
-
-If you can't establish a connection at all, a firewall might be the cause. This can a protection software on your computer or something in your company. You can fix this by allowing communication on the SSH standard port: `22`.
-
+The following section helps you solving SSH key specific connection errors. Please also see the [general connection trouble shooting](/access-methods#toc-troubleshooting) before.
 
 ### Permission denied error
 
-When you get this after a `git push` or `git pull` like so:
+When you get this after a `git push` or `git pull`:
 
 ```
 Permission denied (publickey).
 fatal: Could not read from remote repository.
 ```
 
-A) And you have never deployed to fortrabbit before, chances are that the setup is not yet correct. Please see if you have [Git](git) and SSH keys (see above) correctly installed — on your local machine and on fortrabbit. If you installed your SSH keys on Windows with PuTTY, you either know exactly what you are doing, or you might have followed a Google result and have it not yet correctly. You may also have a look on this StackOverflow question:
-
-* [Windows: where to find my private RSA key](http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key)
+and you have never deployed to fortrabbit before, chances are that the setup is not yet correct. Please see if you have [Git](git) and SSH keys (see above) correctly installed — on your local machine and on fortrabbit. 
 
 
-B) And if you have deployed before, please check if you have changed something, compare your local keys with the remote one, see if any change in collaboration happened. If not, have a look at out [status page](https://status.fortrabbit.com), maybe it's us, not you.
+### SSH keys under Windows with PuTTY
 
-Don't hesitate to contact our support as well.
+We advice not to use PuTTY for this. If you installed your SSH keys on Windows with PuTTY, you either know exactly what you are doing, or you might have followed a Google result and have it not yet correctly. You may also have a look these questions:
 
+* [Stack Overflow: Where to find my private RSA key?](http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key)
+* [superuser: Where does Putty store known_hosts information on Windows?](http://superuser.com/questions/197489/where-does-putty-store-known-hosts-information-on-windows)
+
+
+### When nothing works for you
+
+If you can't get it to work at all: [remove your SSH keys from your fortrabbit Account](access-methods#toc-how-to-change-from-ssh-key-to-password-authentication) to switch back to password authentication.
+
+
+### When it worked before
+
+If you have deployed using SSH keys before and now it doesn't work any more: please check if you have changed something, compare your local keys with the remote one, see if any change in [collaboration](/collaboration) (you are not part of team anymore?) happened. If not, have a look at out [status page](https://status.fortrabbit.com) — maybe it's us, not you. Also, don't hesitate to contact our support as well.
+
+- - -
 
 ## About SSH key authentication
 
@@ -173,7 +169,6 @@ Dive deeper, learn some more about the SSH key integration on fortrabbit.
 ### Account SSH keys
 
 **This is the recommended method:** you store and manage your public SSH keys with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own or you are collaborating with. It also makes managing collaboration easy — add/remove collaborators and code access is handled "automagically".
-
 
 ### App-only SSH keys
 

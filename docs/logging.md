@@ -1,11 +1,11 @@
 ---
 
 template:   article
-reviewed:   2016-01-21
+reviewed:   2016-07-22
 title:      About logs on fortrabbit
 naviTitle:  Logging
 lead:       Accessing live logs of your App is essential for developing. Here is how you can do it on fortrabbit.
-group:       Kitchen_sink
+group:      deployment
 
 seeAlsoLinks:
     - remote-ssh-execution
@@ -24,28 +24,35 @@ tags:
 
 You are developing your App and see the white screen of death. You are getting a 5xx error and don't know why. You write debug logs and need them to trace a problem.
 
-## Solution
 
-Use the SSH logging command of your App to get a live stream of all the logs:
+## Log file access
+
+Use the SSH logging command in the terminal to get a live streams of all the logs for your Apps:
 
 ```bash
-# Per default all sources are tailed together:
+# All sources tailed together:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail
 
-# Only Apache access log, all incoming requests with response status, time-stamp, additional headers and the first line of the request:
+# Only Apache access logs:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_access
+# incoming requests with response status, time-stamp, additional headers & first line of request
 
-# Only Apache error log, which can be very helpful to debug `.htaccess` files or the like:
+# Only Apache error log:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_error
+# helpful to debug `.htaccess` files and alike
 
-# Only PHP error logs, which contain whatever your App writes on `error_log()`:
+# Only PHP error logs:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:web_php_error
+# contains whatever your App writes on `error_log()`
 
-# Only web standard error output, which containins everything written by your App to `STDERR`:
+# Only web standard error output:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:web_stderr
+# contains everything written by your App to `STDERR`
 
-# Only Cron Job or Nonstop Job output
+
+# Only Cron Job or Nonstop Job output:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:worker
+# Worker must be enabled
 ```
 
 **Hint**: Use the `mono` flag to force monochrome output, if your console displays the colors incorrectly: `ssh {{ssh-user}}@log.{{region}}.frbit.com tail {{app-name}} mono`.
