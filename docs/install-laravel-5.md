@@ -55,7 +55,7 @@ If you haven't already — in the fortrabbit Dashboard: [Set the root path](/app
 In the Dashboard: Add this key as a new as an [environment variable](/env-vars) named `APP_KEY` to your App. You can use this:
 
 ```osterei32
-APP_KEY=LongRandomString
+APP_KEY=ClickToGenerate
 ```
 
 <div markdown="1" data-user="known">
@@ -461,5 +461,4 @@ You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provide
 
 ## Add an existing project
 
-If you already have a local Laravel installation, 
-
+If you already have a local Laravel installation,
