@@ -44,10 +44,29 @@ We assume you've already created a New App with fortrabbit. On your local machin
 
 Also, if you haven't already — in the fortrabbit Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
 
+<div markdown="1" data-user="known">
+[Change the root path for App URL of App: {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)
+</div>
 
-## Install
+<!-- TODO: rewrite on Stack-Config helper -->
 
-Execute the following in your local terminal to start a new Laravel on fortrabbit:
+### Add the application key
+
+In the Dashboard: Add this key as a new as an [environment variable](/env-vars) named `APP_KEY` to your App. You can use this:
+
+```osterei32
+APP_KEY=LongRandomString
+```
+
+<div markdown="1" data-user="known">
+[Go to my ENV vars for {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)
+</div>
+
+
+
+## Start a new project
+
+Execute the following in your local terminal to start from scratch with a new Laravel on fortrabbit (see [below](#toc-add-an-existing-project) to add an existing project):
 
 ```bash
 # Use Composer to create a local Laravel project named like your App
@@ -68,6 +87,9 @@ $ git commit -m 'Initial'
 # Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
+# Create a new application key
+$ php artisan key:generate
+
 # Push changes to fortrabbit
 $ git push -u fortrabbit master
 ```
@@ -77,23 +99,12 @@ This first push can take a little while, since all Composer packages will be ins
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
+
+
 ## Tune
 
 Until now this is a vanilla Laravel. It needs some more tinkering to make it yours.
 
-
-### Artisan keys
-
-<!-- TODO: why to create an App key? -->
-
-```
-# Create a new application key
-$ php artisan key:generate
-```
-
-<!-- TODO: explain the following in much more detail -->
-
-This will print out the key and write it to your local `.env` file. You can now either create another key or use that one and set is as an [environment variable](/env-vars) named `APP_KEY` to your App, via the Dashboard.
 
 
 ### MySQL
@@ -446,3 +457,9 @@ $ envoy run migrate
 ### Sending mail
 
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
+
+
+## Add an existing project
+
+If you already have a local Laravel installation, 
+
