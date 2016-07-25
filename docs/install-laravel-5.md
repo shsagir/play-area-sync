@@ -38,6 +38,8 @@ seeAlsoLinks:
 
 We assume you've already created a New App with fortrabbit. You also need a local [Laravel](http://laravel.com/docs/5.1/installation) installation.
 
+
+
 <!-- TODO: rewrite on stack config helper launch -->
 
 ### Set the root path
