@@ -106,7 +106,7 @@ You can currently run two different generations of Apps on fortrabbit: classical
 * [Official pricing page](http://www.fortrabbit.com/pricing) - overview about scaling plans & options
 * [Universal specs page](http://www.fortrabbit.com/specs) - detailed informations
 * [When and how to scale](/scaling) - help article about scaling
-* [fortrabbit VS Digital Ocean](http://www.fortrabbit.com/why-not-digitalocean) - marketing article comparing fortrabbit with VPS hosting
+* [fortrabbit VS Digital Ocean](http://www.fortrabbit.com/why-not-digitalocean) - comparing fortrabbit with VPS hosting
 
 - - -
 

@@ -33,11 +33,13 @@ MySQL is implemented as an Component. It's use is optional and it comes in diffe
 
 ## Access MySQL from your App
 
-Usually you have some kind of configuration file in which you enter those credentials. fortrabbit provides the access credentials for MySQL via the [App secrets](secrets). Here is a generic example on how to access them:
+Usually there is a configuration file which is used from the App to connect to the database. fortrabbit provides access credentials for MySQL via [App secrets](secrets). Here is an example:
 
 ```php
+// read all App secrets from the JSON file, get the location via ENV var
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
 
+// use the secrets without exposing passwords
 return [
     'mysql' => [
         'host'      => $secrets['MYSQL']['HOST'],
@@ -50,14 +52,17 @@ return [
     ]
 ];
 ```
+See our specific examples for [Laravel](install-laravel-5#toc-mysql), Symfony, 
 
+<!--
 PRO TIP: Use environment detection to differ between your local environment and the one on fortrabbit.
+-->
 
-## Remote MySQL access
+## Access MySQL from your local machine
 
 Sometimes you want to run a certain query on your live database. Or you want to dump your database. So you need to access the MySQL database on fortrabbit remotely.
 
-For security reasons you can not connect to the MySQL database from "outside". But you can open a [SSH tunnel](http://en.wikipedia.org/wiki/Tunneling_protocol) and then connect to the MySQL database thru this tunnel.
+For security reasons you can not connect to the MySQL database from "outside" directly. But you can open a [SSH tunnel](http://en.wikipedia.org/wiki/Tunneling_protocol) and then connect to the MySQL database thru this tunnel.
 
 ### Obtain your credentials
 

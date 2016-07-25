@@ -24,7 +24,22 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You also need a local Symfony installation. You can either use an existing one or initialize a new one. We further assume you want to use the environment `prod`.
+We assume you've already created an [App](app) with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course. We further assume you want to use the environment `prod`.
+
+<!-- TODO: rewrite on stack config helper launch -->
+
+### Set the Apps root path
+
+Also, if you haven't already — in the fortrabbit Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to `web`. This applies to all domains, either the App URL or your external domains.
+
+
+### 
+
+Setup the env as in the [environment variable](/env-vars) in the Dashboard:
+
+```
+SYMFONY_ENV=prod
+```
 
 
 ## Install
@@ -32,63 +47,45 @@ We assume you've already created an [App](app) with fortrabbit. You also need a 
 For a new installation execute the following locally:
 
 ```bash
-$ cd ~/Projects
+# Use Composer to create a local Symfony project named like your App
 $ composer create-project symfony/framework-standard-edition MyApp "2.7.*"
-```
 
-Now change into the just created, local App directory (here: `MyApp`), make sure it is initialized as a Git repo, everything is added and add your App's Git remote:
+# Change into the folder
+$ cd {{app-name}}
 
-```bash
-$ cd ~/Projects/MyApp
+# Initialize a local Git repo
 $ git init .
+
+# Add all files
 $ git add -A
+
+# Commit files for the first time
 $ git commit -m 'Initial'
+
+# Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
-```
 
-Now setup the env in the [environment variable](/env-vars) in the Dashboard:
-
-```
-SYMFONY_ENV=prod
-```
-
-Once that is done, you can just push your local repo to the App remote:
-
-```bash
+# Push changes to fortrabbit
 $ git push -u fortrabbit master
 ```
 
-This first push can take a bit, since all the Composer packages need to be installed. While that is happening, change back to the Dashboard and [set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `web`.
+This first push can take a bit, since all the Composer packages need to be installed. When the push is done you can visit your App URL in the browser and see the Symfony welcome screen:
 
-When the push is done you can visit your App URL in the browser and see the Symfony welcome screen! Any subsequent push will be much faster and you can leave you the `-u fortrabbit master`.
+* [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
-## Tuning
 
-The above will give you an up and runnign App. However, to make the most of Symfony on fortabbit, it needs some tuning.
+## Tune
 
-### Use app_dev.php
-
-If you want to use the development, you must modify `web/app_dev.php`. A simple example would be to replace the block, responsing with a 403 like so:
-
-```
-if (isset($_SERVER['APP_NAME']) && $_SERVER['APP_NAME'] === '{{app-name}}') {
-    // allow
-} elseif (isset($_SERVER['HTTP_CLIENT_IP'])
-    || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
-    || !(in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', 'fe80::1', '::1')) || php_sapi_name() === 'cli-server')
-) {
-    header('HTTP/1.0 403 Forbidden');
-    exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
-}
-```
-
-This way you can easily decide per App whether you want to allow the dev mode or not.
+Until now this is a vanilla Symfony. It needs some more tinkering to make it yours.
 
 ### MySQL
 
-You can use the [App secrets](secrets) to attain your database credentials. Create the file `app/config/parameters_prod.php` with the following contents:
+<!-- TODO: environment detection like in Laravel -->
+
+Use [App secrets](secrets) to attain database credentials. Modify the `app/config/parameters_prod.php` like so:
 
 ```php
+// on fortrabbit: construct credentials from App secrets
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
 
 $container->setParameter('database_driver', 'pdo_mysql');
@@ -105,6 +102,29 @@ imports:
     - { resource: config.yml }
     - { resource: parameters_prod.php }
 ```
+
+
+
+### Use app_dev.php
+
+<!-- TODO: what is "the development"?  -->
+
+If you want to use the development, you must modify `web/app_dev.php`. A simple example would be to replace the block, responding with a 403 like so:
+
+```
+if (isset($_SERVER['APP_NAME']) && $_SERVER['APP_NAME'] === '{{app-name}}') {
+    // allow
+} elseif (isset($_SERVER['HTTP_CLIENT_IP'])
+    || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
+    || !(in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', 'fe80::1', '::1')) || php_sapi_name() === 'cli-server')
+) {
+    header('HTTP/1.0 403 Forbidden');
+    exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
+}
+```
+
+This way you can easily decide per App whether you want to allow the dev mode or not.
+
 
 ### Logging
 

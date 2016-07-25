@@ -36,72 +36,146 @@ seeAlsoLinks:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit. You also need a local [Laravel](http://laravel.com/docs/5.1/installation) installation.
+We assume you've already created a New App with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course.
 
 <!-- TODO: rewrite on stack config helper launch -->
 
-### Set the root path
+### Set the Apps root path
 
-In the fortrabbit Dashboard: [Set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
-
+Also, if you haven't already — in the fortrabbit Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
 
 
 ## Install
 
-You can either use an existing code base or initialize a new one. For a new one execute locally:
+Execute the following in your local terminal to start a new Laravel on fortrabbit:
 
 ```bash
-$ cd ~/Projects
-$ composer create-project laravel/laravel --prefer-dist MyApp
-```
+# Use Composer to create a local Laravel project named like your App
+$ composer create-project laravel/laravel --prefer-dist {{app-name}}
 
-In any case: change into the app directory of your local machine, make sure it is initialized as a Git repo, everything is added and add your App's Git remote:
+# Change into the folder
+$ cd {{app-name}}
 
-```bash
-$ cd ~/Projects/[[your-local-folder-for-the-app]]
+# Initialize a local Git repo
 $ git init .
+
+# Add all files
 $ git add -A
+
+# Commit files for the first time
 $ git commit -m 'Initial'
+
+# Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
-```
 
-If you haven't already created a key for your Laravel installation, you can do it now by running locally:
-
-```bash
-$ php artisan key:generate
-```
-
-This will print out the key and write it to your local `.env` file. You can now either create another key or use that one and set is as an [environment variable](/env-vars) named `APP_KEY` to your App, via the Dashboard.
-
-Once that is done, you can just push your local repo to the App remote:
-
-```bash
+# Push changes to fortrabbit
 $ git push -u fortrabbit master
 ```
 
-This first push can take a bit, since all the Composer packages need to be installed.
+This first push can take a little while, since all Composer packages will be installed. When it is done you can visit your App URL in the browser to see the Laravel welcome screen:
 
-When the push is done you can visit your App URL in the browser and see the Laravel welcome screen! Any subsequent push will be much faster and you can leave you the `-u fortrabbit master`.
+* [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
-## Tuning
+## Tune
 
-The above will give you an up and running App. However, to make the most of Laravel on fortabbit, it needs some fine tuning.
+Until now this is a vanilla Laravel. It needs some more tinkering to make it yours.
+
+
+### Artisan keys
+
+<!-- TODO: why to create an App key? -->
+
+```
+# Create a new application key
+$ php artisan key:generate
+```
+
+<!-- TODO: explain the following in much more detail -->
+
+This will print out the key and write it to your local `.env` file. You can now either create another key or use that one and set is as an [environment variable](/env-vars) named `APP_KEY` to your App, via the Dashboard.
+
+
+### MySQL
+
+Use [App secrets](secrets) to attain database credentials. Modify the `config/database.php` like so:
+
+```php
+// locally: use standard settings
+$mysql = [
+    'driver'    => 'mysql',
+    'host'      => env('DB_HOST', 'localhost'),
+    'database'  => env('DB_DATABASE', 'forge'),
+    'username'  => env('DB_USERNAME', 'forge'),
+    'password'  => env('DB_PASSWORD', ''),
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
+    'strict'    => false,
+    'engine'    => null,
+];
+
+// on fortrabbit: construct credentials from App secrets
+if (isset($_SERVER['APP_SECRETS'])) {
+    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+    $mysql = [
+        'driver'    => 'mysql',
+        'host'      => $secrets['MYSQL']['HOST'],
+        'port'      => $secrets['MYSQL']['PORT'],
+        'database'  => $secrets['MYSQL']['DATABASE'],
+        'username'  => $secrets['MYSQL']['USER'],
+        'password'  => $secrets['MYSQL']['PASSWORD'],
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+        'strict'    => false,
+    ];
+}
+
+// other code …
+
+return [
+    // other code …
+    'connections' => [
+        // other code …
+        'mysql' => $mysql,
+        // other code …
+    ],
+    // other code …
+];
+```
+
+This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit.
+
+#### Migrate & other database commands
+
+You can [execute remote commands via SSH](/remote-ssh-execution), for example:
+
+```bash
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate:rollack
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan tinker
+```
+
+
+
 
 ### Setup Object Storage
 
-If you require a storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets). You can also see those with your App in the Dashboard.
+fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets).
 
-To use the credentials open up `config/filesystems.php` and modify it as following:
+To make your App access the Object Storage, open up `config/filesystems.php` and modify it as following:
+
+<!-- TODO: double check: flysystem must not be enabled here? it will work like that? -->
 
 ```php
 // construct credentials from App secrets, when running on fortrabbit in production
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
 
 return [
-    // ..
+    // other code …
     'disks' => [
-        // ..
+        // other code …
         's3' => [
             'driver'   => 's3',
             'key'      => $secrets['OBJECT_STORAGE']['KEY'],
@@ -110,18 +184,18 @@ return [
             'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
             'region'   => $secrets['OBJECT_STORAGE']['REGION']
         ],
-        // ..
+        // other code …
     ],
-    // ..
+    // other code …
 ];
 ```
 
 If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. For example like so:
 
 ```php
-// ...
+// other code ….
 'default' => env('FS_TYPE', 'local'),
-// ..
+// other code …
 ```
 
 Now set `FS_TYPE` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
@@ -144,56 +218,7 @@ $app->configureMonologUsing(function($monolog) {
 });
 ```
 
-You can now use the regular [log access](logging) to view the stream.
-
-### MySQL
-
-Use the [App secrets](secrets) to attain your database credentials. Modify the `config/database.php` like so (contains environment detection):
-
-```php
-
-// construct credentials from App secrets, when running locally
-$mysql = [
-    'driver'    => 'mysql',
-    'host'      => env('DB_HOST', 'localhost'),
-    'database'  => env('DB_DATABASE', 'forge'),
-    'username'  => env('DB_USERNAME', 'forge'),
-    'password'  => env('DB_PASSWORD', ''),
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
-    'strict'    => false,
-    'engine'    => null,
-];
-
-// construct credentials from App secrets, when running on fortrabbit in production
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-    $mysql = [
-        'driver'    => 'mysql',
-        'host'      => $secrets['MYSQL']['HOST'],
-        'port'      => $secrets['MYSQL']['PORT'],
-        'database'  => $secrets['MYSQL']['DATABASE'],
-        'username'  => $secrets['MYSQL']['USER'],
-        'password'  => $secrets['MYSQL']['PASSWORD'],
-        'charset'   => 'utf8',
-        'collation' => 'utf8_unicode_ci',
-        'prefix'    => '',
-        'strict'    => false,
-    ];
-}
-
-// ..
-return [
-    // ..
-    'connections' => [
-        // ..
-        'mysql' => $mysql,
-        // ..
-    ],
-    // ..
-];
-```
+You can now use our regular [log access](logging) to view the stream.
 
 
 #### Setting time zone in Laravel
@@ -202,14 +227,14 @@ As Eloquent uses `PDO`, you can use the `PDO::MYSQL_ATTR_INIT_COMMAND` option. E
 
 ```php
 return [
-    // ..
+    // other code …
     'mysql' => [
-        // ..
+        // other code …
         'options'   => [
             \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET time_zone = \'+02:00\''
         ]
     ],
-    // ..
+    // other code …
 ];
 ```
 
@@ -219,15 +244,14 @@ return [
 Make sure you enabled the [Memcache](memcache) Component. Then you can use the [App Secrets](app-secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
 
 ```php
-
-// construct credentials from App secrets, when running locally
+// locally: use standard settings
 $servers = [[
     'host' => env('MEMCACHED_HOST', '127.0.0.1'),
     'port' => env('MEMCACHED_PORT', 11211),
     'weight' => 100,
 ]];
 
-// construct credentials from App secrets, when running on fortrabbit in production
+// on fortrabbit: construct credentials from App secrets
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
     $servers = [[
@@ -244,18 +268,19 @@ if (isset($_SERVER['APP_SECRETS'])) {
     }
 }
 
-// ..
+// other code …
+
 return [
-    // ..
+    // other code …
     'stores' => [
-        // ..
+        // other code …
         'memcached' => [
             'driver'  => 'memcached',
             'servers' => $servers
         ],
-        // ..
+        // other code …
     ],
-    // ..
+    // other code …
 ];
 ```
 
@@ -267,8 +292,7 @@ In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you
 Redis can be used in Laravel as a cache or a queue or both. First integrate with [Redis Cloud](redis-cloud) then configure the redis database connection in `config/database.php`:
 
 ```php
-
-// construct credentials from .env, when running locally
+// locally: use standards
 $redis = [
     'host'     => env('REDIS_HOST', 'localhost'),
     'password' => env('REDIS_PASSWORD', null),
@@ -276,7 +300,7 @@ $redis = [
     'database' => 0,
 ];
 
-// construct credentials from App secrets, when running on fortrabbit in production
+// on fortrabbit: construct credentials from App secrets
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
     $redis = [
@@ -287,18 +311,16 @@ if (isset($_SERVER['APP_SECRETS'])) {
 }
 
 return [
-    // ...
+    // other code …
     'redis' => [
         'cluster' => false,
         'default' => $redis
     ],
-    // ...
+    // other code …
 ];
 ```
 
-If you plan on using Redis as a cache, then open `config/cache.php` and set `default` to `redis` (or set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard).
-
-For [queue](#toc-queue) usage see below.
+If you plan on using Redis as a cache, then open `config/cache.php` and set `default` to `redis` (or set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For [queue](#toc-queue) usage see below.
 
 ### Queue
 
@@ -314,7 +336,7 @@ CloudAMQP  can be used in Laravel as a queue driver. First integrate with [Cloud
 ```php
 $amqp = [];
 
-// construct credentials from App secrets, when running on fortrabbit in production
+// on fortrabbit: construct credentials from App secrets
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
     $amqp = [
@@ -339,13 +361,13 @@ if (isset($_SERVER['APP_SECRETS'])) {
 }
 
 return [
-    // ...
+    // other code …
     'connections' => [
-        // ...
+        // other code …
         'amqp' => $amqp,
-        // ...
+        // other code …
     ],
-    // ...
+    // other code …
 ];
 ```
 
@@ -358,8 +380,7 @@ Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard 
 IronMQ can be used in Laravel as a queue driver. First integrate with [IronMQ](ironmq) then configure the queue connection in `config/queue.php`:
 
 ```php
-
-// construct credentials from .env, when running locally
+// locally: use standards
 $iron = [
     'driver'  => 'iron',
     'host'    => env('IRON_MQ_HOST'),
@@ -369,7 +390,7 @@ $iron = [
     'encrypt' => true,
 ];
 
-// construct credentials from App secrets, when running on fortrabbit in production
+// on fortrabbit: construct credentials from App secrets
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
     $iron = [
@@ -383,13 +404,13 @@ if (isset($_SERVER['APP_SECRETS'])) {
 }
 
 return [
-    // ...
+    // other code …
     'connections' => [
-        // ...
+        // other code …
         'iron' => $iron,
-        // ...
+        // other code …
     ],
-    // ...
+    // other code …
 ];
 ```
 
@@ -397,15 +418,6 @@ return [
 
 Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `iron`.
 
-### Migrate & other database commands
-
-You can [execute remote commands via SSH](/remote-ssh-execution), for example:
-
-```bash
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate:rollack
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan tinker
-```
 
 #### Using envoy
 

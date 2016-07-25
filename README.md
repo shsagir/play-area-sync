@@ -155,29 +155,30 @@ Find the right balance between being general and being precise (aka Captain Obvi
 
 ## fortrabbit owned words and common casing
 
-* **terminal** ~~Terminal~~, ~~shell~~, ~~bash~~
-* **[[ interchangble-value ]]** < something the users will need to modify
-* **[[ your-app ]]** ~~[[ my-app ]]~~, ~~[[ app-name ]]~~
-* **App URL**
-* **Admin** ~~admin~~
-* **App** — ~~app~~, ~~website~~, ~~application~~
 * **Account** — ~~profile~~, ~~account~~
-* **Billing Contact** ~~bc~~
 * **Activities** ~~history~~, ~~diary~~, ~~log~~
-* **Dashboard** — ~~control panel~~, ~~console~~
-* **Help** — ~~documentation~~, ~~handbook~~, ~~docs~~
-* **Developer** ~~developer~~
+* **Admin** ~~admin~~
+* **App Secrets** — ~~Secrets~~
+* **App URL**
+* **App** — ~~app~~, ~~website~~, ~~application~~
+* **Billing Contact** ~~bc~~
 * **Company** — ~~company~~
-* **User** — ~~member~~, ~~account~~
-* **Owner** ~~owner~~
-* **Workers** — ~~Worker~~
+* **Dashboard** — ~~control panel~~, ~~console~~
+* **Developer** ~~developer~~
+* **fortrabbit scheduler** — ~~scheduler~~
 * **fortrabbit**
 * **fortrabbit.yml** — ~~deployment file~~
-* **fortrabbit scheduler** — ~~scheduler~~
-* **App Secrets** — ~~Secrets~~
-* **HTTPS** — ~~https~~
+* **Help** — ~~documentation~~, ~~handbook~~, ~~docs~~
 * **HTTP** — ~~http~~
+* **HTTPS** — ~~https~~
+* **Owner** ~~owner~~
+* **root path** ~~document root~~, ~~doc root~~
+* **terminal** ~~Terminal~~, ~~shell~~, ~~bash~~
 * **URL** — ~~Url~~, ~~url~~
+* **User** — ~~member~~, ~~account~~
+* **Workers** — ~~Worker~~
+* **{{ interchangble-value }}** < something the users will need to modify
+* **{{ your-app }}** ~~{{ my-app }}~~, ~~{{ app-name }}~~
 
 
 ## Times & dates

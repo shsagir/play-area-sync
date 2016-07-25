@@ -4,7 +4,7 @@ template:    article
 reviewed:    2016-07-22
 title:       Using secure App secrets
 naviTitle:   App secrets
-lead:        App secrets provide a secure storage for all the credentials your App needs to run.
+lead:        App secrets provide a secure storage and access method for all the credentials your App needs to run.
 group:       deployment
 
 keywords:
@@ -24,15 +24,15 @@ tags:
 
 ## Problem
 
-Your App needs confidential credentials to connect to other services (user-names, passwords, API keys or alike). Those credentials can be on fortrabbit like MySQL database access, or externally like the Amazon S3 cloud storage API key.
+Your App needs confidential credentials to connect to other services (user-names, passwords, API keys or alike). Those can be on fortrabbit like the MySQL database access, or externally like an API key for a cloud storage.
 
-You [should not store them within your code base](//blog.fortrabbit.com/how-to-keep-a-secret#not-in-git), since it's controlled by Git - so version controlled. You [should not store them unencrypted in ENV vars](//blog.fortrabbit.com/how-to-keep-a-secret#not-in-an-env-var-either-) either.
+We advise to [not store secrets within your code base](//blog.fortrabbit.com/how-to-keep-a-secret#not-in-git), since it's controlled by Git - so version controlled. You [should not store them unencrypted in ENV vars](//blog.fortrabbit.com/how-to-keep-a-secret#not-in-an-env-var-either-) either.
 
 In addition: your App will run in at least two environments: locally and on fortrabbit. Any solution must address the problems resulting from multiple runtime environments.
 
 ## Solution
 
-Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by your App. The location of this JSON file is stored in a predefined environment variable called `APP_SECRETS`.
+Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by you and your App. The location of this JSON file is stored in a predefined environment variable called `APP_SECRETS`.
 
 ## App secrets access
 
