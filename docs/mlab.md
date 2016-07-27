@@ -88,7 +88,7 @@ MLAB_PASSWORD=your-password
 
 By default all outgoing calls to non-standard ports from your fortrabbit App are blocked for [security](security) reasons. But you can request the fortrabbit team to open up any port for you. That doesn't take long and isn't complicated.
 
-Navigate in the fortrabbit [Dashboard](dashboard) to your App > Settings > Firewall whitelist and request a new custom firewall rule. Write nothing under the optional IP field and insert the port you noted down before in the Port field. As descriptions we suggest "MongoDB on mLab" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new Redis database!
+Navigate in the fortrabbit [Dashboard](dashboard) to your App > Settings > Firewall whitelist and request a new custom firewall rule. Write nothing under the optional IP field and insert the port you noted down before in the Port field. As descriptions we suggest "MongoDB on mLab" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new MongoDB database!
 
 ### 2. Enable the PHP extension
 
