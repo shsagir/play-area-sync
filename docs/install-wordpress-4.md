@@ -239,7 +239,7 @@ Once that's done you can head over your WordPress admin and activate the plugin 
 
 Bedrock recommends to install themes by unpacking them into the `web/app/themes` folder and to use Composer only in [rare cases](https://roots.io/bedrock/docs/composer/#themes).
 
-### Persistent storage
+### Object storage
 
 Since WordPress is a CMS living on editorial provided content you most likely need a persistent storage. That's not so hard: you can use our [Object Storage component](/object-storage). Once you have booked the component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
 

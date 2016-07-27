@@ -25,7 +25,7 @@ You are developing your App and see the white screen of death. You are getting a
 
 ## Log file access
 
-Use the SSH logging command in the terminal to get a live streams of all the logs for your Apps:
+Use the SSH logging [SSH remote command](remote-ssh-execution) in the terminal to get a live streams of all the logs for your Apps:
 
 ```bash
 # All sources tailed together:
@@ -51,8 +51,14 @@ $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:web_stderr
 # Only Cron Job or Nonstop Job output:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:worker
 # Worker must be enabled
+
+# --------------- PRO TIPS ---------------
+
+# Use the mono flag to force monochrome output, if your console displays colors incorrectly:
+$ ssh {{ssh-user}}@log.{{region}}.frbit.com tail {{app-name}} mono
+
+# Use multiple source:name parameters at once:
+$ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:web_stderr source:web_php_error
 ```
 
-**Hint**: Use the `mono` flag to force monochrome output, if your console displays the colors incorrectly: `ssh {{ssh-user}}@log.{{region}}.frbit.com tail {{app-name}} mono`.
 
-**Hint 2**: You can use multiple `source:name` parameters at once.

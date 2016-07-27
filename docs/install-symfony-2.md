@@ -150,7 +150,7 @@ You can [execute remote commands via SSH](/remote-ssh-execution), for example:
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php app/console doctrine:migrations:generate
 ```
 
-### Persistent storage
+### Object Storage
 
 fortrabbit Apps have [ephemeral storage](quirks#toc-ephemeral-storage). If you require a permanent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
 
@@ -159,7 +159,6 @@ fortrabbit Apps have [ephemeral storage](quirks#toc-ephemeral-storage). If you r
 
 Both are well documented. In essence, you should configure your filesystem abstraction so that you use the cloud storage adapter in your prod environment (on fortrabbit) and locally, well, a local adapter.
 
-An alternative to the Object Storage component is Amazon S3 and we have written up a [guide to get your started](new-app-cloud-storage-s3).
 
 ### Memcache sessions
 

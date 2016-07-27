@@ -4,7 +4,7 @@ template:      article
 reviewed:      2016-07-25
 title:         All about MySQL
 naviTitle:     MySQL
-lead:          PHP + MySQL is a classic. Access and configure the most common database on fortrabbit.
+lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
 
 group:         Components
 
@@ -33,7 +33,7 @@ MySQL is implemented as an Component. It's use is optional and it comes in diffe
 
 ## Access MySQL from your App
 
-Usually there is a configuration file which is used from the App to connect to the database. fortrabbit provides access credentials for MySQL via [App secrets](secrets). Here is an example:
+Usually there is a configuration file which is used from the App to connect to the database. fortrabbit provides access credentials for MySQL via [App secrets](secrets). Here is a general example:
 
 ```php
 // read all App secrets from the JSON file, get the location via ENV var
@@ -52,52 +52,88 @@ return [
     ]
 ];
 ```
-See our specific examples for: [Laravel](install-laravel-5#toc-mysql), [Symfony](install-symfony-2#toc-mysql), [WordPress](install-wordpress-4#toc-mysql), [Craft CMS](install-craft-2#toc-mysql), .
+See our specific examples for: [Laravel](install-laravel-5#toc-mysql), [Symfony](install-symfony-2#toc-mysql), [WordPress](install-wordpress-4#toc-mysql), [Craft CMS](install-craft-2#toc-mysql).
 
 <!--
 PRO TIP: Use environment detection to differ between your local environment and the one on fortrabbit.
 -->
 
-## Access MySQL from your local machine
+## Access MySQL from local
 
 Sometimes you want to run a certain query on your live database. Or you want to dump your database. So you need to access the MySQL database on fortrabbit remotely. For security reasons you can not connect to the MySQL database from "outside" directly. But you can open a [SSH tunnel](http://en.wikipedia.org/wiki/Tunneling_protocol) and then connect to the MySQL database thru this tunnel.
 
+#### MySQL access
+
+**MySQL host**:  
+{{app-name}}.mysql.{{region}}.frbit.com
+
+**MySQL database**:  
+{{app-name}}
+
+**MySQL user**:  
+{{app-name}}
+
+**MySQL password**:  
+See [below on how to reclaim](#toc-obtain-the-mysql-password) 
+
+
+#### SSH tunnel for MySQL access
+
+<!--
+Open a tunnel to connect from your local to the remote MySQL:
+-->
+
+**SSH tunnel server**:  
+deploy.{{region}}.frbit.com
+
+**SSH tunnel user**:  
+{{ssh-user}}
+
+**SSH password**:  
+{{ssh-password}}
+
+
+
 ### Obtain the MySQL password
 
-To access MySQL from remote you still need the MySQL username, password, host and so on. You can get those using an [SSH command](secrets#toc-accessing-app-secrets).
+The MySQL password is stored safely with your [App secrets](/secrets). You can get it using a [remote SSH command](secrets#toc-accessing-app-secrets) in your terminal:
 
 ```bash
 # Grab secrets.json to see the MySQL password
-$ ssh {{ ssh-host }}@deploy.{{ region }}.frbit.com secrets MYSQL.PASSWORD
-``
-
-### MySQL GUIs
-
-Sometimes it's handy to manage your MySQL database with a graphical interface. We recommend the official [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows) from Oracle. There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
-
-Most of those clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information. The MySQL hostname will not be `127.0.0.1` or `localhost` — it will be the remote server name which looks like this `{{app-name}}.mysql.{{region}}.frbit.com`.
-
-
-### Shell › Tunnel › MySQL
-
-If you are familiar with the shell then this is no biggie. In essence: Open up a tunnel to your App's MySQL database:
-
-```bash
-# open the tunnel on local port 13306
-ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
 ```
 
-`13306` is an arbitrary port. Choose something in the higher range (10000-65000).
 
-**This command will not reply with any message on success! If nothing shows up: you did right!** *This behavior is how most (all?) SSH clients are implemented and sadly we cannot issue any response message telling you that it worked. So mind: if you see no error, all is good.*
 
-Once the tunnel is up, you can connect to your MySQL database with the `mysql` console client **from another terminal**:
+### MySQL via GUI
+
+Sometimes it's handy to manage your remote MySQL database with a graphical interface. We recommend [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
+
+All clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information. 
+
+The MySQL hostname will not be `127.0.0.1` or `localhost` — it's the remote server:  
+`{{app-name}}.mysql.{{region}}.frbit.com`.
+
+
+### MySQL via terminal
+
+If you are familiar with the shell then this is no biggie. Issue this in your terminal:
 
 ```bash
-mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}}
+# open a tunnel on local port 13306 < arbitrary, choose between 10000-65000
+$ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
 ```
 
-You will be asked for password: enter your MySQL password in this step! Use `127.0.0.1`, not `localhost` as the database host!
+**This command will not reply with any message on success! If nothing shows up: you did right!** This behavior is how SSH clients are implemented and sadly we cannot issue any positive response message.
+
+Once the tunnel is up, you can connect to the remote MySQL database with the `mysql` console client. Open a **new window terminal window** and issue:
+
+```bash
+# connect to the database < use 127.0.0.1, not localhost
+$ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}}
+```
+
+In the next step you will be asked for your [MySQL password](#toc-obtain-the-mysql-password).
 
 
 ##  Export & import
@@ -110,13 +146,13 @@ Using `mysqldump` and `mysql` is the standard approach to migrate a database bet
 
 ```bash
 # on your local machine or on the old server
-mysqldump database-name > database.sql
+$ mysqldump {{database-name}} > database.sql
 ```
 
-Now [create a tunnel](#toc-shell-tunnel-mysql) to your fortrabbit App's MySQL database and import everything:
+Now [create a tunnel](#toc-mysql-via-terminal) to your fortrabbit App's MySQL database and import everything:
 
 ```bash
-mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < database.sql
+$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < database.sql
 ```
 
 ### LOAD DATA
@@ -125,18 +161,16 @@ You can export and import a large, single table with the following example:
 
 ```bash
 # on your local machine or on the old server
-echo 'SELECT * FROM tablename;' | mysql database-name > tablename.sql
-```
+$ echo 'SELECT * FROM tablename;' | mysql database-name > tablename.sql
 
-Now import everything via a tunnel to yourfortrabbit MySQL database and import
-
-```bash
-mysql --local-infile=1 -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}}
+# import everything via a tunnel to yourfortrabbit MySQL database
+$ mysql --local-infile=1 -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}}
 
 # on the mysql shell
-mysql> LOAD DATA LOCAL INFILE '/path/to/tablename.sql' INTO TABLE tablename;
+$ mysql> LOAD DATA LOCAL INFILE '/path/to/tablename.sql' INTO TABLE tablename;
 ```
 
+## Advanced usage
 
 ### Different time zone
 

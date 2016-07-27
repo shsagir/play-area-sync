@@ -164,7 +164,7 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan tinker
 
 
 
-### Setup Object Storage
+### Object Storage
 
 fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets).
 

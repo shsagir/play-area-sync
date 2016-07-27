@@ -46,19 +46,10 @@ In PHP you have two drivers to connect to a memcached server: [Memcache](http://
 
 All PHP production scaling are running on two Nodes. If your App needs to handle session data, you need to keep it consistent across the Nodes. Memcache is also our recommended a solution for this.
 
-
-## Scaling
-
-In the Dashboard, go to your App and click on Memcache under the scaling options. Please also see the [Memcache scaling](scaling#toc-memcache) section.
-
-Using a plan with two Nodes allow you two modes:
-
-1. **Combined**: data is stored only on one of the nodes > twice the memory size
-2. **Redundant**: data is stored on both nodes > one node can fail
-
-The former mode is not recommended. So here is how you enable redundant mode when using the `Memcached` library:
+## Access Memcache from your App
 
 ```php
+// Enable redundant mode when using the `Memcached` library
 $secrets = json_decode(file_get_contents($_SERVER["APP_SECRETS"]), true);
 $mc      = $secrets['MEMCACHE'];
 
@@ -68,8 +59,8 @@ ini_set('memcached.sess_number_of_replicas', 1);
 ini_set('memcached.sess_consistent_hash', 1);
 ini_set('memcached.sess_binary', 1);
 ini_set('session.save_path', implode(", ", [
-	"{$mc['HOST1']}:{$mc['PORT1']}",
-	"{$mc['HOST2']}:{$mc['PORT2']}"
+    "{$mc['HOST1']}:{$mc['PORT1']}",
+    "{$mc['HOST2']}:{$mc['PORT2']}"
 ]));
 
 session_start();
@@ -81,6 +72,15 @@ $m->addServer($mc['HOST2'], $mc['PORT2']);
 $m->set('SomeKey', 123);
 $m->get('SomeKey');
 ```
+
+See also the specific examples for: [Laravel](install-laravel#toc-memcache), [Symfony](install-symfony#toc-memcache), [Craft](install-craft#toc-memcache).
+
+## Scaling
+
+In the Dashboard, go to your App and click on Memcache under the scaling options. Please also see the [Memcache scaling](scaling#toc-memcache) section. Using a plan with two Nodes allow you two modes:
+
+1. **Combined**: data is stored only on one of the nodes > twice the memory size
+2. **Redundant** (recommended): data is stored on both nodes > one node can fail
 
 
 ## Alternatives
