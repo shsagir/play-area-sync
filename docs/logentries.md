@@ -8,11 +8,10 @@ title:            Using Logentries with fortrabbit
 group:            Logging
 section:          Extending_fortrabbit
 
+image:            logentries-logo.svg
 websiteLink:      https://logentries.com?utm_source=fortrabbit
 websiteLinkText:  logentries.com
 category:         logging
-#dataCenters:      US, EU
-#image:            mlab-mark.png
 
 tags:
      - advanced
