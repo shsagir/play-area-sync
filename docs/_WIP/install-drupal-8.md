@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-07-11
+reviewed:         2016-07-27
 title:            Install Drupal 8
 naviTitle:        Drupal
 lead:             Drupal is one of the best known open source PHP CMS. Learn here how to use it with fortrabbit.
@@ -27,27 +27,43 @@ tags:
 
 ---
 
+## Get ready
+
+We assume you've already created a New App with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course.
+
+
+### Set the Apps root path
+
+If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**.
+
+<div markdown="1" data-user="known">
+[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+</div>
+
+
 ## Install
 
-We assume you've already created a New App with fortrabbit. You also need a local Composer based [Drupal 8 installation](https://github.com/drupal-composer/drupal-project) installation. You can either use an existing one or initialize a new one.
+You'll need a local Composer based [Drupal 8 installation](https://github.com/drupal-composer/drupal-project). You can either use an existing one (see [below](#toc-existing-installation)) or initialize a new one like so:
 
 ### New installation
 
-Start out by creating a new Drupal project locally. When asked choose the latest "8.0.x" version, 8.0.5 as of the writing of this article:
+Execute this in the terminal:
 
 ```bash
-$ composer create-project drupal-composer/drupal-project:8.x-dev --stability dev --no-interaction MyApp
-$ cd MyApp
+# Create a new Drupal project locally with Composer:
+$ composer create-project drupal-composer/drupal-project:8.x-dev --stability dev --no-interaction {{app-name}}
 ```
 
-Once that is done, visit your local installation in the browser and proceed with the installation wizard. Once that is also done you can continue with "Existing installation" below.
+<!-- TODO: link to local development setup help article, hint or link for now -->
+
+Once that is done, visit your local installation in the browser and proceed with the installation wizard. Once that is also done you can continue with "Existing installation".
 
 ### Existing installation
 
 Create a new file `web/sites/default/settings_prod.php` with the following contents:
 
 ```php
-// environment detection: Only run on fortrabbit
+// environment detection: Only triggered on fortrabbit
 if (!isset($_SERVER['APP_SECRETS'])) {
     return;
 }
@@ -68,12 +84,12 @@ $databases['default']['default'] = [
 Now open up `web/sites/default/settings.php`. At the bottom of the file include the just created production file:
 
 ```php
-// ..
-
+// other code …
 include __DIR__ . '/settings_prod.php';
 ```
 
-Next create the file `fortrabbit.yml` to make sure that the `web/core` folder, which contains the Drupal core itself, and the `web/modules/config` folder, which contains later installed modules.
+
+Next, create the [deployment file](/deployment-file-v2) `fortrabbit.yml`:
 
 ```yaml
 sustained:
@@ -82,20 +98,15 @@ sustained:
     - web/modules/contrib
 ```
 
-Next up is installing and enabling the Flysystem modules:
+<!-- TODO: correct the following sentence (unclear, wrong english) -->
+Make sure that the `web/core` folder, which contains the Drupal core itself, and the `web/modules/config` folder, which contains later installed modules.
 
-```bash
-# install
-$ composer require drupal/flysystem dev-8.x-1.x
-$ composer require drupal/flysystem_s3 dev-8.x-1.x
 
-# enable (drupal console must be called from the `web/` sub folder)
-$ cd web
-$ php ../vendor/bin/drupal module:install flysystem
-$ php ../vendor/bin/drupal module:install flysystem_s3
-```
+#### Object Storage
 
-Now you need to configure the [Object Storage](/object-storage), which will contain all user generated files. Open up `web/sites/default/settings_prod.php` again and add at the bottom:
+fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets).
+
+Open up `web/sites/default/settings_prod.php` again and add at the bottom:
 
 ``` php
 $schemes = [
@@ -114,13 +125,29 @@ $schemes = [
         'cache' => false,
     ],
 ];
-
 $settings['flysystem'] = $schemes;
 ```
 
-#### Copy local database
+#### Flysystem
 
-Now is a good time to export your local database and import it into your App. Before issuing the following commands you need to open up a [Tunnel to your App's database](/mysql#toc-shell-tunnel-mysql):
+To use the Object Storage, you need file abstration. For this you install and enable the [Flysystem modules](https://www.drupal.org/project/flysystem) by executing this in the terminal:
+
+```bash
+# Install Flysystem
+$ composer require drupal/flysystem dev-8.x-1.x
+$ composer require drupal/flysystem_s3 dev-8.x-1.x
+
+# Enable (drupal console must be called from the `web/` sub folder)
+$ cd web
+$ php ../vendor/bin/drupal module:install flysystem
+$ php ../vendor/bin/drupal module:install flysystem_s3
+```
+
+
+
+#### MySQL
+
+Now is a good time to export your local database and import it into your App. First you'll need to open up a tunnel to your App's MySQL database — [see here](/mysql#toc-mysql-via-terminal). Then you can execute this in the terminal:
 
 ```bash
 # Fetch your fortrabbit database credentials
@@ -130,16 +157,16 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL
 $ mysqldump -u<your-local-user> -p <your-local-db> > drupal.sql
 
 # import into fortrabbit database
-#   you will be prompted for your fortrabbit database password
+# you will be prompted for your fortrabbit database password
 $ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}} < drupal.sql
 ```
 
 
-### Deploy the first time
+### Configure Git
 
-Before you can push your first deploy you need to create the `.gitignore` file, if it does not already exist, on top level:
+Create the `.gitignore` file, if it does not already exist, on top level:
 
-```
+```nohighlight
 # Ignore directories generated by Composer
 drush/contrib
 vendor
@@ -158,13 +185,27 @@ web/sites/default/settings_flysystem.php
 .idea
 ```
 
-Now you are done. Just setup Git, add your App's Git remote and push:
+#### Initialize Git and deploy
+
+Back in the terminal:
 
 ```bash
+# Setup Git (if you haven't already)
 $ git init .
+
+# Add your App's Git remote repo
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+
+# Add all files
 $ git add -A
+
+# Commit files
 $ git commit -m 'Initial'
+
+# Push to deploy
+$ git push -u fortrabbit master
 ```
 
-While the code is being pushed and Composer is executed head over to the [Dashboard](/dashboard) and go to your App > Domains and set the Root path of your domain(s) to `web`. Once the deployment has finished (takes much longer on the first time as all Composer packages need to be installed) you can visit the App URL in your browser: `https://{{app-name}}.frb.io/`.
+Once the deployment has finished (takes much longer on the first time as all Composer packages need to be installed) you can visit the App URL in your browser:
+
+* [https://{{app-name}}.frb.io](https://{{app-name}}.frb.io)

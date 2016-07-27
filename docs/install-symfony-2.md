@@ -24,18 +24,22 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course. We further assume you want to use the environment `prod`.
+We assume you've already created an [App](app) with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course.
 
 <!-- TODO: rewrite on stack config helper launch -->
 
 ### Set the Apps root path
 
-Also, if you haven't already — in the fortrabbit Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to `web`. This applies to all domains, either the App URL or your external domains.
+Also, if you haven't already — in the fortrabbit [Dashboard](/dashboard): [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**. This applies to all domains, either the App URL or your external domains.
+
+<div markdown="1" data-user="known">
+[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+</div>
 
 
 ### Set ENV vars
 
-Setup the ENV as in the [environment variable](/env-vars) in the Dashboard:
+We assume you want to use the environment `prod` - fortrabbit is for production. So setup the ENV as in the [environment variable](/env-vars) in the Dashboard:
 
 ```
 SYMFONY_ENV=prod
@@ -53,7 +57,7 @@ For a new installation execute the following locally:
 
 ```bash
 # Use Composer to create a local Symfony project named like your App
-$ composer create-project symfony/framework-standard-edition MyApp "2.7.*"
+$ composer create-project symfony/framework-standard-edition {{app-name}} "2.7.*"
 
 # Change into the folder
 $ cd {{app-name}}
@@ -87,7 +91,7 @@ Until now this is a vanilla Symfony. It needs some more tinkering to make it you
 
 <!-- TODO: environment detection like in Laravel -->
 
-Use [App secrets](secrets) to attain database credentials. Modify the `app/config/parameters_prod.php` like so:
+Use [App secrets](secrets) to attain database credentials. Modify the `app/config/parameters_prod.php` in your editor like so:
 
 ```php
 // on fortrabbit: construct credentials from App secrets
@@ -100,7 +104,7 @@ $container->setParameter('database_user', $secrets['MYSQL']['USER']);
 $container->setParameter('database_password', $secrets['MYSQL']['PASSWORD']);
 ```
 
-Now make sure you have the above config included, for example in app/config_prod.yml:
+Now make sure you have the above config included, in `app/config_prod.yml:
 
 ```yaml
 imports:
