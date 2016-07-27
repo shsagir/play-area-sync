@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-02-20
+reviewed:         2016-07-25
 title:            Install Slim Framework 3
 naviTitle:        Slim Framework
 group:            Install_guides
@@ -25,22 +25,19 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You also need a local Slim framework installation. Slim framework is extremely easy to setup thanks to our Composer support. You can either use an existing or a new one.
+We assume you've already created an [App](app) with fortrabbit. You also need a local Slim framework installation. Slim framework is extremely easy to setup thanks to our Composer support. You can either use an existing or a new one. This guide explains you how to start locally from scratch. 
 
 
 ## Install
 
-This guide explains you how to start locally from scratch:
+Execute locally in your terminal:
 
 ```bash
-# change into your projects directory
-$ cd Projects
-
 # clone your fortrabbit app
-$ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}} YourApp
+$ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}} {{app-name}}
 
 # change into the App directory
-$ cd YourApp
+$ cd {{app-name}}
 
 # install slim via composer (currently unstalble, hence the @dev)
 $ composer require slim/slim "3.*@dev"
@@ -68,15 +65,14 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
 ```
 
-Create a `.gitignore` file to exclude the `vendor/` folder:
+Back in the terminal: 
 
 ```bash
+# create a `.gitignore` file to exclude the `vendor/` folder:
 $ echo vendor/ > .gitignore
-```
 
-Now deploy everything and you are done:
+# ———— Deploy ————
 
-```bash
 # add everything to git
 $ git add -A
 
@@ -87,4 +83,5 @@ $ git ci -am 'Initial'
 $ git push -u origin master
 ```
 
-That's it. You can see the hello-world in the browser: `http://{{app-name}}.frb.io/hello/world`.
+That's it. You can see the hello-world in the browser:  
+[https://{{app-name}}.frb.io/hello/world](https://{{app-name}}.frb.io/hello/world)

@@ -101,4 +101,4 @@ MongoDB is supported by many PHP frameworks and CMS out of the box. As of now, t
 * [doctrine/mongodb](https://packagist.org/packages/doctrine/mongodb) (works only with PHP 5.6)
 * [mongodb/mongodb](https://packagist.org/packages/mongodb/mongodb)
 
- For specific integrations check out the [install guides](/#install-guides) and find out how to use it with your favorite framework or CMS.
+For specific integrations check out the [install guides](/#install-guides) and find out how to use it with your favorite framework or CMS.
