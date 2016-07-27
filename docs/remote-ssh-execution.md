@@ -52,8 +52,9 @@ The main difference of the SSH remote exec to a "full SSH environment" is that y
 ### Example
 
 ```
-## This works with your (selected) App:
+# Get a directory listing of your Apps htdocs folder:
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com ls -lha
+# Try it out! This works with your (selected) App.
 ```
 
 ### Schema
@@ -65,9 +66,9 @@ $ ssh [[your-app]]@deploy.[[region]].frbit.com ls -lha
 #                ssh login command          remote command
 ```
 
-**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are deployed. So if the script, you want to execute, is locally under `[[vendor/bin/foo]]` then you'd need to execute `ssh …frbit.com php [[vendor/bin/foo]]`. Check out the [directory structure](/directory-structure) for more information.
+**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are deployed. So if the script, you want to execute, is locally under `{{vendor/bin/foo}}` then you'd need to execute `ssh …frbit.com php {{vendor/bin/foo}}`. Check out the [directory structure](/directory-structure) for more information.
 
-**Note II**: You must write the interpreter `php` before all PHP scripts, including CLIs like `artisan` or `app/console`, you want to execute. So `ssh …frbit.com php [[script.php]]` works and `ssh …frbit.com [[script.php]]` does not.
+**Note II**: You must write the interpreter `php` before all PHP scripts, including CLIs like `artisan` or `app/console`, you want to execute. So `ssh …frbit.com php {{script.php}}` works and `ssh …frbit.com {{script.php}}` does not.
 
 ### Authentication
 
@@ -94,31 +95,22 @@ Many modern web development frameworks and CMS come with a programmable command 
 
 ### Examples
 
-One line of code says more than 1000 pages of documentation:
-
-#### Arbitrary PHP script
-
 ```bash
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php my-script.php arg1 arg2
-```
+# Arbitrary PHP script
+# Call a PHP script, passing some arguments
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php {{my-script.php}} {{arg1}} {{arg2}}
 
-#### Laravel: artisan
+# Laravel: artisan
+# Execute `some:command` using Laravels's `artisan` CLI:
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan {{some:command}}
 
-Execute `some:command` using Laravels's `artisan` CLI:
-
-```bash
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan some:command
+# Symfony: console
+# Execute `some:command` using Symfony's `app/console` CLI:
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php app/console {{some:command}}
 ```
 
 Check out the [Laravel article](/install-laravel-5#toc-migrate-amp-other-database-commands) for more examples.
 
-#### Symfony: console
-
-Execute `some:command` using Symfony's `app/console` CLI:
-
-```bash
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php app/console some:command
-```
 
 #### Gulp/SSH
 
@@ -164,7 +156,7 @@ You can execute multiple commands at once by quoting everything and separating t
 
 ```
 # execute three scripts
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com "php foo.php ; php bar.php ; php baz.php"
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com "php {{foo.php}} ; php {{bar.php}} ; php {{baz.php}}"
 ```
 
 ### Aliases

@@ -82,7 +82,7 @@ return [
 ];
 ```
 
-### Database
+### MySQL
 
 Your App needs database access - when working local and on remote. We use environment detection and have both access informations stored. On the fortrabbit remote the actual credentials are getting parsed from the [App secrets](secrets). Open `craft/config/db.php` and modify it like the following:
 
@@ -112,7 +112,7 @@ return [
 
 
 
-### Setup Object Storage
+### Object Storage
 
 Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets.
 
@@ -211,13 +211,10 @@ $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < database.sql
 Now that you have the configuration done, let's get the code up. If your local Craft installation is not under Git version control already, then you do it now:
 
 ```
-$ cd ~/Projects/MyApp
+# Initialize Git
 $ git init .
-```
 
-Add your App's Git remote to your local repo:
-
-```
+# Add your App's Git remote to your local repo:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
 

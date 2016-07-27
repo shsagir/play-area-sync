@@ -13,8 +13,6 @@ category:         framework
 image:            laravel-mark.png
 version:          5.1
 
-linkincontent:    1
-
 otherVersionLinks:
     - install-laravel-5-old-app
     - install-laravel-4
@@ -42,13 +40,11 @@ We assume you've already created a New App with fortrabbit. On your local machin
 
 ### Set the Apps root path
 
-If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
+If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
-[Change the root path for App URL of App: {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)
+[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
 </div>
-
-<!-- TODO: rewrite on Stack-Config helper -->
 
 ### Add the application key
 
@@ -59,38 +55,35 @@ APP_KEY=ClickToGenerate
 ```
 
 <div markdown="1" data-user="known">
-[Go to my ENV vars for {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)
+[Go to my ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
 
 
-## Start a new project
+## Install
 
-Execute the following in your local terminal to start from scratch with a new Laravel on fortrabbit (see [below](#toc-add-an-existing-project) to add an existing project):
+Execute the following in your local terminal to start from scratch with a fresh new Laravel installation on fortrabbit (see [below](#toc-add-an-existing-project) on how to add an existing project):
 
 ```bash
-# Use Composer to create a local Laravel project named like your App
+# 1. Use Composer to create a local Laravel project named like your App
 $ composer create-project laravel/laravel --prefer-dist {{app-name}}
 
-# Change into the folder
+# 2. Change into the folder
 $ cd {{app-name}}
 
-# Initialize a local Git repo
+# 3. Initialize a local Git repo
 $ git init .
 
-# Add all files
+# 4. Add all files
 $ git add -A
 
-# Commit files for the first time
+# 5. Commit files for the first time
 $ git commit -m 'Initial'
 
-# Add fortrabbit as a remote
+# 6. Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# Create a new application key
-$ php artisan key:generate
-
-# Push changes to fortrabbit
+# 7. Push changes to fortrabbit
 $ git push -u fortrabbit master
 ```
 
@@ -103,7 +96,7 @@ This first push can take a little while, since all Composer packages will be ins
 
 ## Tune
 
-Until now this is a vanilla Laravel. It needs some more tinkering to make it yours.
+Until now this is a vanilla Laravel. Now, make it yours.
 
 
 
@@ -461,4 +454,4 @@ You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provide
 
 ## Add an existing project
 
-If you already have a local Laravel installation,
+You can also push your existing Laravel installation to fortrabbit. When you already using Git, you can add fortrabbit as an additional remote, like described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.

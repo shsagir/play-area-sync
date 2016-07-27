@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-06-30
+reviewed:         2016-07-25
 title:            Install WordPress 4
 naviTitle:        WordPress
 lead:             WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
@@ -28,35 +28,19 @@ seeAlsoLinks:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit.
-
-
-## Install
-
-WordPress itself has not really arrived in the new PHP age in terms of using the latest or even recent technologies and paradigms. But do not fear: [Bedrock](https://roots.io/bedrock/) comes to the rescue. Bedrock is a "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure" and allows you to install WordPress easily in a modern infrastructure, such as fortrabbit.
-
-Let's get started by installing Bedrock locally:
-
-```bash
-# create a new App based on bedrock locally
-$ cd ~/Projects
-$ git clone https://github.com/roots/bedrock MyApp
-
-# add your App's remote, so you can push later on
-$ cd MyApp
-$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
-
-# install all required composer packages
-$ composer install
-```
+We assume you've already created an [App](app) with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course.
 
 ### Set the root path
 
-Head over to the [Dashboard](dashboard), [set the root path](/domains#toc-set-a-custom-root-path) of your App's domains to `web`.
+If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**.
 
-### Setup WordPress authentication unique keys and salts
+<div markdown="1" data-user="known">
+[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+</div>
 
-Add the following [App secrets](secrets):
+### Set WordPress authentication unique keys and salts
+
+In the Dashboard, add the following [App secrets](secrets):
 
 ```osterei32
 AUTH_KEY=LongRandomString
@@ -69,11 +53,13 @@ LOGGED_IN_SALT=LongRandomString
 NONCE_SALT=LongRandomString
 ```
 
-It is recommended to use different random strings.
+<div markdown="1" data-user="known">
+[Add secrets for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/secrets/new)
+</div>
 
 ### Set the domain
 
-The last configuration in the Dashboard is to set the WordPress URLs and environment as [environment variables](env-vars). With `Dashboard > App > Settings > ENV vars` you enter the following in the textarea and save.
+In the Dashboard, set the WordPress URLs and environment as [ENV vars](env-vars):
 
 ```
 WP_ENV=production
@@ -81,47 +67,122 @@ WP_HOME=http://{{app-name}}.frb.io
 WP_SITEURL=http://{{app-name}}.frb.io/wp
 ```
 
-We are using the App URL in this example. In production you can should use your own domain here of course – just take care to also [route the domain](about-domains) then. The folder `wp` in the WP_SITEURL is Bedrock-specific. You can also use the encrypted `https` protocol.
+<div markdown="1" data-user="known">
+[Go to my ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
+</div>
+
+We are using the App URL in this example. You can use your own domain here of course – just take care to also [route the domain](about-domains) then. The folder `wp` in the WP_SITEURL is Bedrock-specific. You can also use the encrypted `https` protocol.
 
 
-### Database setup
 
-Now open up the main config file in `config/application.php` and the following at the very top of the file:
 
-```php
-$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+## Install
+
+WordPress itself has not really arrived in the new PHP age in terms of using the latest technologies and paradigms. [Bedrock](https://roots.io/bedrock/) allows you to install WordPress easily in a modern infrastructure, such as fortrabbit.
+
+### Create WordPress locally with Bedrock
+
+Issue the following in your local terminal:
+
+```bash
+# create a new App based on bedrock locally
+$ git clone https://github.com/roots/bedrock {{app-name}}
+
+# add your App's remote, so you can push later on
+$ cd {{app-name}}
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+
+# install all required composer packages
+$ composer install
 ```
 
-In the same file, go to the `DB settings` section and replace the `getenv("DB_*")` calls with access to the MySQL secrets:
+
+
+### MySQL
+
+In your editor, open up the file `config/application.php`
 
 ```php
-define('DB_NAME', $secrets['MYSQL']['DATABASE']);
-define('DB_USER', $secrets['MYSQL']['USER']);
-define('DB_PASSWORD', $secrets['MYSQL']['PASSWORD']);
-define('DB_HOST', $secrets['MYSQL']['HOST']);
+// insert at the top of the file
+// this will parse the the secrets.json file, when on fortrabbit
+if (isset($_SERVER['APP_SECRETS'])) {
+    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+}
+
+// other code …
+
+/**
+ * DB settings
+ */
+if (isset($_SERVER['APP_SECRETS'])) {
+  define('DB_NAME', $secrets['MYSQL']['DATABASE']);
+  define('DB_USER', $secrets['MYSQL']['USER']);
+  define('DB_PASSWORD', $secrets['MYSQL']['PASSWORD']);
+  define('DB_HOST', $secrets['MYSQL']['HOST']);
+} else {
+  define('DB_NAME', env('DB_NAME'));
+  define('DB_USER', env('DB_USER'));
+  define('DB_PASSWORD', env('DB_PASSWORD'));
+  define('DB_HOST', env('DB_HOST') ?: 'localhost');
+}
+define('DB_CHARSET', 'utf8mb4');
+define('DB_COLLATE', '');
+$table_prefix = env('DB_PREFIX') ?: 'wp_';
+
+// other code…
 ```
 
-Then do the same for the `Authentication Unique Keys and Salts` section:
+### Authentication keys & salts
+
+Again your editor, further down in the file `config/application.php`
 
 ```php
-define('AUTH_KEY', $secrets['CUSTOM']['AUTH_KEY']);
-define('SECURE_AUTH_KEY', $secrets['CUSTOM']['SECURE_AUTH_KEY']);
-define('LOGGED_IN_KEY', $secrets['CUSTOM']['LOGGED_IN_KEY']);
-define('NONCE_KEY', $secrets['CUSTOM']['NONCE_KEY']);
-define('AUTH_SALT', $secrets['CUSTOM']['AUTH_SALT']);
-define('SECURE_AUTH_SALT', $secrets['CUSTOM']['SECURE_AUTH_SALT']);
-define('LOGGED_IN_SALT', $secrets['CUSTOM']['LOGGED_IN_SALT']);
-define('NONCE_SALT', $secrets['CUSTOM']['NONCE_SALT']);
+// other code…
+
+/**
+ * Authentication Unique Keys and Salts
+ */
+if (isset($_SERVER['APP_SECRETS'])) {
+  define('AUTH_KEY', $secrets['CUSTOM']['AUTH_KEY']);
+  define('SECURE_AUTH_KEY', $secrets['CUSTOM']['SECURE_AUTH_KEY']);
+  define('LOGGED_IN_KEY', $secrets['CUSTOM']['LOGGED_IN_KEY']);
+  define('NONCE_KEY', $secrets['CUSTOM']['NONCE_KEY']);
+  define('AUTH_SALT', $secrets['CUSTOM']['AUTH_SALT']);
+  define('SECURE_AUTH_SALT', $secrets['CUSTOM']['SECURE_AUTH_SALT']);
+  define('LOGGED_IN_SALT', $secrets['CUSTOM']['LOGGED_IN_SALT']);
+  define('NONCE_SALT', $secrets['CUSTOM']['NONCE_SALT']);
+} else {
+  define('AUTH_KEY', env('AUTH_KEY'));
+  define('SECURE_AUTH_KEY', env('SECURE_AUTH_KEY'));
+  define('LOGGED_IN_KEY', env('LOGGED_IN_KEY'));
+  define('NONCE_KEY', env('NONCE_KEY'));
+  define('AUTH_SALT', env('AUTH_SALT'));
+  define('SECURE_AUTH_SALT', env('SECURE_AUTH_SALT'));
+  define('LOGGED_IN_SALT', env('LOGGED_IN_SALT'));
+  define('NONCE_SALT', env('NONCE_SALT'));
+}
+
+// other code …
 ```
 
-Before visiting your site, git push all the changes:
+### Deploy
+
+Back in terminal, run these commands:
 
 ``` bash
+# Add all changes to Git
+$ $ git add -A
+
+# Commit changes
 $ git commit -am "Initial"
+
+# Push to deploy
 $ git push -u fortrabbit master
 ```
 
-Finally you can visit your App in the browser and follow the WordPress setup. Done.
+Finally you can visit your App in the browser and follow the WordPress setup:
+
+* [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
 ## Tuning
@@ -147,7 +208,7 @@ Now you should enable the Plugin via the WordPress admin. Not all plugins are, a
 If the plugin is not (yet) available via WordPress Packagist, you can still use the "old way" to install plugins. Following an example to install the WooCommerce plugin:
 
 ```bash
-$ cd ~/Projects/MyApp/web/app/plugins
+$ cd {{app-name}}/web/app/plugins
 $ wget http://downloads.wordpress.org/plugin/woocommerce.zip
 $ unzip woocommerce.zip
 $ rm woocommerce.zip
@@ -156,17 +217,17 @@ $ rm woocommerce.zip
 Now make sure that the WooCommerce plugin directory is excluded from the `.gitignore` (aka: un-ignored) by opening `~/Projects/MyApp/.gitignore` and adding a new line immediately after `!web/app/plugins/.gitkeep`:
 
 ```
-# ...
+# other code …
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 !web/app/plugins/woocommerce
-# ...
+# other code …
 ```
 
 Now you can add everything to Git and push it online:
 
 ```bash
-$ cd ~/Projects/MyApp
+$ cd {{app-name}}
 $ git add -A
 $ git commit -m "With WooCommerce"
 $ git push
@@ -210,11 +271,11 @@ add_filter('aws_get_client_args', function($args) use ($secrets) {
 To make sure the plugin becomes part of the Git repo you need to open the `.gitignore` file and edit it like so:
 
 ```
-# ...
+# other code …
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 !web/app/plugins/amazon-s3-fortrabbit.php
-# ...
+# other code …
 ```
 
 Now commit everything and push it online:
@@ -225,8 +286,6 @@ $ git push
 ```
 
 Once the deployment is done, you can head over to the WordPress Admin, activate all three plugins ("Amazon S3 fortrabbit", "Amazon Web Services" and "WP Offload S3 (Lite)") and then navigate to AWS > "S3 and CloudFront". First choose your bucket (there will be only one with the same name as your App), then enable "CloudFront or Custom Domain" and enter `{{app-name}}.objects.frb.io` as a custom domain. Save and done!
-
-
 
 
 

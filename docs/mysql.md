@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-06-21
+reviewed:      2016-07-25
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access and configure the most common database on fortrabbit.
@@ -52,7 +52,7 @@ return [
     ]
 ];
 ```
-See our specific examples for [Laravel](install-laravel-5#toc-mysql), Symfony, 
+See our specific examples for: [Laravel](install-laravel-5#toc-mysql), [Symfony](install-symfony-2#toc-mysql), [WordPress](install-wordpress-4#toc-mysql), [Craft CMS](install-craft-2#toc-mysql), .
 
 <!--
 PRO TIP: Use environment detection to differ between your local environment and the one on fortrabbit.
@@ -60,13 +60,16 @@ PRO TIP: Use environment detection to differ between your local environment and 
 
 ## Access MySQL from your local machine
 
-Sometimes you want to run a certain query on your live database. Or you want to dump your database. So you need to access the MySQL database on fortrabbit remotely.
+Sometimes you want to run a certain query on your live database. Or you want to dump your database. So you need to access the MySQL database on fortrabbit remotely. For security reasons you can not connect to the MySQL database from "outside" directly. But you can open a [SSH tunnel](http://en.wikipedia.org/wiki/Tunneling_protocol) and then connect to the MySQL database thru this tunnel.
 
-For security reasons you can not connect to the MySQL database from "outside" directly. But you can open a [SSH tunnel](http://en.wikipedia.org/wiki/Tunneling_protocol) and then connect to the MySQL database thru this tunnel.
-
-### Obtain your credentials
+### Obtain the MySQL password
 
 To access MySQL from remote you still need the MySQL username, password, host and so on. You can get those using an [SSH command](secrets#toc-accessing-app-secrets).
+
+```bash
+# Grab secrets.json to see the MySQL password
+$ ssh {{ ssh-host }}@deploy.{{ region }}.frbit.com secrets MYSQL.PASSWORD
+``
 
 ### MySQL GUIs
 

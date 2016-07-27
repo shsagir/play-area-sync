@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-16
+reviewed:      2016-07-25
 naviTitle:     Multi-staging
 title:         Multi stage App life cycles
 lead:          Learn about development/production environments and how to run them on fortrabbit.
@@ -49,18 +49,14 @@ Git supports multiple, named branches of your code. Per default, it comes with a
 
 ### Sample setup
 
-Assuming you use a 3-stage layout: testing, staging and production. You start by creating three Apps. Let's name them: `your-app-test`, `your-app-stage` and `your-app-prod`.
-
-Now you can map those App names with local branch names. Here is how:
+Assuming you use a 3-stage layout: testing, staging and production. You start by creating three Apps. Let's name them: `your-app-test`, `your-app-stage` and `your-app-prod`. Now you can map those App names with local branch names. Here is how:
 
 #### Clone the first App
 
-Let's start by cloning the testing App into a local folder named `your-app`:
-
 ```bash
-cd ~/Projects
-git clone git@deploy.eu2.frbit.com:your-app-test.git your-app
-cd your-app
+# Let's start by cloning the testing App:
+$ git clone git@deploy.eu2.frbit.com:your-app-test.git {{your-app}}
+$ cd {{your-app}}
 ```
 
 This first cloning will create the remote `origin` and clone the `master` branch to you local disk.
@@ -70,9 +66,9 @@ This first cloning will create the remote `origin` and clone the `master` branch
 First you should rename the cloned `origin` remote to `testing`. Then you can add the two additional staging and production Apps:
 
 ```bash
-git remote rename origin testing
-git remote add staging git@deploy.eu2.frbit.com:your-app-stage.git
-git remote add production git@deploy.eu2.frbit.com:your-app-prod.git
+$ git remote rename origin testing
+$ git remote add staging {{ssh user}}@deploy.{{region}}.frbit.com:{{your-app-stage}}.git
+$ git remote add production {{ssh user}}@deploy.{{region}}.frbit.com:{{your-app-prod}}.git
 ```
 
 #### Mapping branches for New Apps
@@ -80,58 +76,55 @@ git remote add production git@deploy.eu2.frbit.com:your-app-prod.git
 Again, start out with the testing App by creating a new local branch named as the testing App. Then you can push it to the remote using the `-u` flag, which will create a "link" between the local and the remote branch:
 
 ```bash
-git checkout -b your-app-test
-git push -u testing your-app-test
-```
+# Map branches to Apps
+$ git checkout -b {{your-app-test}}
+$ git push -u testing {{your-app-test}}
+$ git checkout -b {{your-app-stage}}
+$ git push -u stating {{your-app-stage}}
+$ git checkout -b {{your-app-prod}}
+$ git push -u stating {{your-app-prod}}
 
-Now repeat this with the two other Apps:
 
-```bash
-git checkout -b your-app-stage
-git push -u stating your-app-stage
-git checkout -b your-app-prod
-git push -u stating your-app-prod
-```
+# Verify settings
+$ nano .git/config
+# contents should look something like this:
 
-To verify everything is setup properly, check your `.git/config` file. It should look similar to this:
-
-```
-[core]
-    repositoryformatversion = 0
-    filemode = true
-    bare = false
-    logallrefupdates = true
-[remote "testing"]
-    url = git@deploy.eu2.frbit.com:your-app-test.git
-    fetch = +refs/heads/*:refs/remotes/testing/*
-[remote "staging"]
-    url = git@deploy.eu2.frbit.com:your-app-stage.git
-    fetch = +refs/heads/*:refs/remotes/staging/*
-[remote "production"]
-    url = git@deploy.eu2.frbit.com:your-app-prod.git
-    fetch = +refs/heads/*:refs/remotes/production/*
-[branch "your-app-test"]
-    remote = testing
-    merge = refs/heads/your-app-test
-[branch "your-app-stage"]
-    remote = staging
-    merge = refs/heads/your-app-stage
-[branch "your-app-prod"]
-    remote = production
-    merge = refs/heads/your-app-prod
+# [core]
+#     repositoryformatversion = 0
+#     filemode = true
+#     bare = false
+#     logallrefupdates = true
+# [remote "testing"]
+#     url = git@deploy.eu2.frbit.com:your-app-test.git
+#     fetch = +refs/heads/*:refs/remotes/testing/*
+# [remote "staging"]
+#     url = git@deploy.eu2.frbit.com:your-app-stage.git
+#     fetch = +refs/heads/*:refs/remotes/staging/*
+# [remote "production"]
+#     url = git@deploy.eu2.frbit.com:your-app-prod.git
+#     fetch = +refs/heads/*:refs/remotes/production/*
+# [branch "your-app-test"]
+#     remote = testing
+#     merge = refs/heads/your-app-test
+# [branch "your-app-stage"]
+#     remote = staging
+#     merge = refs/heads/your-app-stage
+# [branch "your-app-prod"]
+#     remote = production
+#     merge = refs/heads/your-app-prod
 ```
 
 #### Commit to testing
 
-Let's play thru a commit cycle. Code away, build something great.
+Let's play do a commit cycle. Code away, build something great.
 
 ```bash
 # go to testing branch
-git checkout your-app-test
+$ git checkout {{your-app-test}}
 # make changes..
-git commit -am 'My changeset'
-# the push will automatically push to the testing App, since the branch was linked to it
-git push
+$ git commit -am 'My changeset'
+# this will automatically push to the testing App, since the branch is linked
+$ git push
 ```
 
 #### Merge upwards to staging
@@ -140,11 +133,11 @@ When everything works out as planned and your codes reaches a sufficient level o
 
 ```bash
 # go to staging branch
-git checkout your-app-stage
+$ git checkout {{your-app-stage}}
 # merge changes from testing
-git merge your-app-test
-# the push will automatically push to the staging App, since the branch was linked to it
-git push
+$ git merge {{your-app-test}}
+# this will automatically push to the staging App, since the branch is linked
+$ git push
 ```
 
 #### Merge upwards to production
@@ -153,10 +146,10 @@ Now everything should have been thoroughly tested and is ready for production.
 
 ```bash
 # go to production branch
-git checkout your-app-prod
+$ git checkout {{your-app-prod}}
 # merge changes from staging
-git merge your-app-stage
-# the push will automatically push to the production App, since the branch was linked to it
+$ git merge {{your-app-stage}}
+# this will automatically push to the production App, since the branch is linked
 git push
 ```
 

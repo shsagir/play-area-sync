@@ -188,13 +188,17 @@ There is an official [AWS PHP SDK](https://github.com/aws/aws-sdk-php) from Amaz
 
 ### 2. Manual upload
 
-In some use-cases you want to upload files manually. Also you might want to manually review the existing files in your Object Storage. We recommend the following software clients:
+In some use-cases you want to upload and modify (CRUD) files manually. Also you might want to manually review the existing files in your Object Storage. You can use any S3 compatible client to upload files to the Object Storage. We recommend the following software clients:
 
 * **[Cyberduck](https://cyberduck.io/)**, a free cross platform GUI client
 * [Transmit](https://panic.com/transmit/), a GUI client for MacOs X
 * [s3cmd](http://s3tools.org/s3cmd), a cross platform command line tool written in Python
 
 In those cases S3 behaves pretty much like your good old friend FTP.
+
+
+
+
 
 ### HTTP(S) access
 

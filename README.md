@@ -129,6 +129,32 @@ You can have certain parts in Markdown available only for Users who are logged i
 This parses markdown inside the DIV. With the data-user attribute it checks if the user is logged in. links to the Dashboard will be styled as buttons — use a verb to start them!
 
 
+## Code examples
+
+* try to keep code examples together in one block, don't mix paragraphs and code blocks
+* 
+
+### Bash
+
+* each command should have 
+* show output only when necessary
+* output should be a comment
+* `$` to start a command
+
+
+### PHP
+
+* when there is code between use: `other code …`
+
+
+## Install guide concept
+
+* Dashboard settings first
+* Mini guide in the middle > time to WOW
+* Tuning after that
+
+
+
 
 
 

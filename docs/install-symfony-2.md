@@ -33,7 +33,7 @@ We assume you've already created an [App](app) with fortrabbit. On your local ma
 Also, if you haven't already — in the fortrabbit Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to `web`. This applies to all domains, either the App URL or your external domains.
 
 
-### 
+### Set ENV vars
 
 Setup the env as in the [environment variable](/env-vars) in the Dashboard:
 

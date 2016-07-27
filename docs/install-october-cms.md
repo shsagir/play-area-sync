@@ -41,8 +41,7 @@ We assume you've already created a New App with fortrabbit which has the [MySQL]
 If you have a running local installation you can skip this step. Otherwise continue by executing locally:
 
 ```bash
-$ cd ~/Projects
-$ composer create-project october/october --prefer-dist MyApp dev-master
+$ composer create-project october/october --prefer-dist {{app-name}} dev-master
 ```
 
 Create a new file `config/dev/database.php` with the following contents:
@@ -71,6 +70,9 @@ To create the local database contents finish with:
 ```bash
 $ php artisan october:up --env=dev
 ```
+
+<!-- TODO: ENV detection -->
+
 
 ### Configure database settings
 
