@@ -35,11 +35,16 @@ Also, if you haven't already — in the fortrabbit Dashboard: [Set the root path
 
 ### Set ENV vars
 
-Setup the env as in the [environment variable](/env-vars) in the Dashboard:
+Setup the ENV as in the [environment variable](/env-vars) in the Dashboard:
 
 ```
 SYMFONY_ENV=prod
 ```
+
+<div markdown="1" data-user="known">
+[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
+</div>
+
 
 
 ## Install
