@@ -38,6 +38,8 @@ seeAlsoLinks:
 
 We assume you've already created a New App with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course.
 
+
+
 <!-- TODO: rewrite on stack config helper launch -->
 
 ### Set the Apps root path
