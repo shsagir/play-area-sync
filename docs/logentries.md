@@ -60,6 +60,13 @@ Logentries needs the ports 10000 and 20000 to be open. By default all outgoing c
 
 Navigate in the fortrabbit [Dashboard](dashboard) to your App > Settings > Firewall whitelist and request new custom firewall rules - one for each of the ports. Write nothing under the optional IP field. As descriptions we suggest "Logentries" for port 10000 and "Logentries (TLS)" for port 20000 - or the like. Once your request has been approved, which usually takes not very long, you are ready to use Logentries with your App!
 
+<div markdown="1" data-user="known">
+
+[Request a new firewall whitelist for {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/firewall/request)
+
+</div>
+
+
 ## Using Logentries
 
 There are various PHP libraries which you can use to send your logs to Logentries. Here are the two most interesting contenders:
