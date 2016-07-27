@@ -8,7 +8,7 @@ title:            Using Logentries with fortrabbit
 group:            Logging
 section:          Extending_fortrabbit
 
-image:            logentries-logo.svg
+image:            logentries-mark.svg
 websiteLink:      https://logentries.com?utm_source=fortrabbit
 websiteLinkText:  logentries.com
 category:         logging
@@ -54,7 +54,7 @@ Stash the just created token in your App's [secrets](app-secrets). Go to the for
 LOGENTRIES_TOKEN=the-token-you-just-got
 ```
 
-### 1. Request a firewall white-listing
+### Request a firewall white-listing
 
 Logentries needs the ports 10000 and 20000 to be open. By default all outgoing calls to non-standard ports from your fortrabbit App are blocked for [security](security) reasons. But you can request the fortrabbit team to open up any port for you. That doesn't take long and isn't complicated.
 
