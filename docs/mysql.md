@@ -84,7 +84,7 @@ Open a tunnel to connect from your local to the remote MySQL:
 -->
 
 **SSH tunnel server**:  
-deploy.{{region}}.frbit.com
+tunnel.{{region}}.frbit.com
 
 **SSH tunnel user**:  
 {{ssh-user}}

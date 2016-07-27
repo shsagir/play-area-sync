@@ -55,7 +55,7 @@ APP_KEY=ClickToGenerate
 ```
 
 <div markdown="1" data-user="known">
-[Go to my ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
+[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
 
@@ -102,7 +102,7 @@ Until now this is a vanilla Laravel. Now, make it yours.
 
 ### MySQL
 
-Use [App secrets](secrets) to attain database credentials. Modify the `config/database.php` like so:
+Use [App secrets](secrets) to attain database credentials. Modify the `config/database.php` in your editor like so:
 
 ```php
 // locally: use standard settings
@@ -149,7 +149,7 @@ return [
 ];
 ```
 
-This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit.
+This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit. Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to access the database remotely from your local machine.
 
 #### Migrate & other database commands
 

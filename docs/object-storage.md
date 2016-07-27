@@ -108,7 +108,7 @@ $ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 
 Your App handles user uploads or storing all other created runtime data on the Object Storage. To that purpose most modern Apps come with file system abstractions. Those allow you to easily switch out the storage layer by changing your App's configuration. How that is done depends on your framework/CMS.
 
-See our specific guides for: [Laravel](install-laravel#toc-object-storage), [Symfony](install-symfony#toc-object-storage), [WordPress](install-wordpress#toc-object-storage),
+See our specific guides for: [Laravel](install-laravel#toc-object-storage), [Symfony](install-symfony#toc-object-storage), [WordPress](install-wordpress#toc-object-storage), [Craft CMS](install-craft#toc-object-storage)
 
 Since we live in the Composer age most of those abstraction libraries use the AWS S3 SDK, with which our Object Storage is compatible. The most commonly used libraries are:
 
