@@ -131,6 +131,9 @@ You should choose a MySQL plan which has at least as many connections as your PH
 
 All Production and Dedicated MySQL scaling are replicated. This means: they run on two MySQL Nodes at the same time. One of those Nodes is called "master", the other "slave". The master Node is the active Nodes, to which your App automatically connects to. If the master fails then the slave takes automatically over and your App keeps running.
 
+Also see the quirk when [scaling MySQL with persistent connections](quirks#toc-mysql-with-persistent-connections-during-upgrade).
+
+
 ### Memcache
 
 [Memcache](/memcache) is a Component which can be booked optionally. Memcache is recommended in addition to all PHP production scalings to store session data across Nodes.
