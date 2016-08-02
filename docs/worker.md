@@ -88,14 +88,14 @@ Nonstop Jobs are continuous running PHP processes. They are meant to run forever
 
 Cron Jobs are time scheduled PHP executions. They run at defined times, independent of visits to the web application.
 
-**Example: Database maintenance**: say the web application cumulates data which needs to be transformed and/or wiped periodically. A Cron Job allows you to make sure the `bin/console db:cleanup` - or whatever - script executes hourly, daily, weekly or whenever your want.
+**Example: Database maintenance**: say the web application cumulates data which needs to be transformed and/or wiped periodically. A Cron Job allows you to make sure the `app/console db:cleanup` - or whatever - script executes hourly, daily, weekly or whenever your want.
 
 **Example: Cache clearing**: say the web application has a news site, which homepage must be rebuilt every ten minutes or so. With a Cron Job you can schedule a cleanup of the homepage every one, ten, thirty or whatever minutes required.
 
 #### Dashboard configurations
 
 * **Name**: A unique name, so the job can be identified later on in the logs or statistics.
-* **Command**: The PHP command which shall be executed, eg `bin/console db:cleanup` or `path/to/my-script.php`
+* **Command**: The PHP command which shall be executed, eg `app/console db:cleanup` or `path/to/my-script.php`
 * **Interval**: The interval at which you want to execute the job.
 * **Status**: You can temporary disable jobs
 

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-05-30
+reviewed:         2016-08-02
 title:            Install Symfony 2
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 on fortrabbit.
@@ -53,7 +53,7 @@ SYMFONY_ENV=prod
 
 ## Install
 
-For a new installation execute the following locally:
+For a new Symfony installation execute the commands following in your local terminal:
 
 ```bash
 # Use Composer to create a local Symfony project named like your App
@@ -156,7 +156,7 @@ You can safely remove `path` from the `nested` block as well. You can now use th
 You can [execute remote commands via SSH](/remote-ssh-execution), for example:
 
 ```bash
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php app/console doctrine:migrations:generate
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php bin/console doctrine:migrations:generate
 ```
 
 ### Object Storage
@@ -169,7 +169,7 @@ fortrabbit Apps have [ephemeral storage](quirks#toc-ephemeral-storage). If you r
 Both are well documented. In essence, you should configure your filesystem abstraction so that you use the cloud storage adapter in your prod environment (on fortrabbit) and locally, well, a local adapter.
 
 
-### Memcache sessions
+### Memcache
 
 If you are using a PHP production plan, then your App is distributed over multiple nodes. This means you need a network capable caching: [Memcache](memcache).
 

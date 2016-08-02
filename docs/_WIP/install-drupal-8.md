@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-07-27
+reviewed:         2016-08-02
 title:            Install Drupal 8
 naviTitle:        Drupal
 lead:             Drupal is one of the best known open source PHP CMS. Learn here how to use it with fortrabbit.
@@ -29,7 +29,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course.
+We assume you've already created a New App with fortrabbit. On your local machine you should have installed: [Git](/git), Composer, PHP, MySQL and Apache.
 
 
 ### Set the Apps root path
@@ -43,22 +43,20 @@ If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-
 
 ## Install
 
-You'll need a local Composer based [Drupal 8 installation](https://github.com/drupal-composer/drupal-project). You can either use an existing one (see [below](#toc-existing-installation)) or initialize a new one like so:
-
-### New installation
-
-Execute this in the terminal:
+You'll need a local Composer based [Drupal 8 installation](https://github.com/drupal-composer/drupal-project). Execute this in the following in your local terminal to initialize a new Drupal:
 
 ```bash
 # Create a new Drupal project locally with Composer:
 $ composer create-project drupal-composer/drupal-project:8.x-dev --stability dev --no-interaction {{app-name}}
 ```
 
+
+### Local setup in the browser
+
 <!-- TODO: link to local development setup help article, hint or link for now -->
+Visit your local installation in the browser (localhost) and proceed with the installation wizard. 
 
-Once that is done, visit your local installation in the browser and proceed with the installation wizard. Once that is also done you can continue with "Existing installation".
-
-### Existing installation
+### Configure fortrabbit environment
 
 Create a new file `web/sites/default/settings_prod.php` with the following contents:
 
@@ -88,8 +86,9 @@ Now open up `web/sites/default/settings.php`. At the bottom of the file include 
 include __DIR__ . '/settings_prod.php';
 ```
 
+### Configure deployment
 
-Next, create the [deployment file](/deployment-file-v2) `fortrabbit.yml`:
+Next, create the [deployment file](/deployment-file-v2) `fortrabbit.yml` in the top level folder of your Drupal project with the following contents:
 
 ```yaml
 sustained:
