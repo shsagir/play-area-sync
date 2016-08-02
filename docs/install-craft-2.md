@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-06-20
+reviewed:         2016-08-02
 title:            Install Craft CMS 2 on fortrabbit
 naviTitle:        Craft CMS
 lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
@@ -30,23 +30,15 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You also need a local Craft installation.
-
-If you are starting from scratch then best use the [HappyLager Demo](https://github.com/pixelandtonic/HappyLager) and follow their install guide to run it locally first. If you have a running (production) installation then you need to export its data and set up a local, working "clone" with which you can proceed.
+We assume you've already created an [App](app) with fortrabbit. You should also have PHP, Git, Composer, Apache and MySQL running locally.
 
 ### Set the root path
 
 In the fortrabbit Dashboard: [Set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
 
+### Set ENV vars
 
-
-## Configuration
-
-Craft's native multi-environment configuration (also see our [multi-staging article](multi-staging)) options allow you to define configuration options based on the domain name. This is great, but there is a potential security flaw (when using Git based deployments) you should be aware of: You're hard-coding the configuration details of your production environment into your code, which means you will have sensitive information in your Git version history. Do not fear, that's easily solved:
-
-### General config
-
-Login the fortrabbit Dashboard and set the following [environment variables](env-vars):
+If you haven't already: login the fortrabbit Dashboard and set the following [environment variables](env-vars):
 
 ```
 CRAFT_DEBUG=0
@@ -54,15 +46,28 @@ CRAFT_CACHE=memcache
 CRAFT_UPDATES=0
 ```
 
+### Set App secrets
+
 Then, still in the fortrabbit Dashboard, head over to the [App secrets](secrets) and add a validation key (long random string):
 
 ```osterei32
 CRAFT_KEY=LongRandomString
 ```
 
-Now open up `craft/config/general.php` and change it like so:
+
+## Install
+
+If you are just testing then best use the [HappyLager Demo](https://github.com/pixelandtonic/HappyLager) and follow their [install guide](https://github.com/pixelandtonic/HappyLager#installation) to run it locally first. If you have a running (production) installation then you need to export its data and set up a local, working "clone" with which you can proceed.
+
+
+## Configure the fortrabbit environment
+
+Craft's native multi-environment configuration (also see our [multi-staging article](multi-staging)) options allow you to define configuration options based on the domain name. This is great, but there is a potential security flaw (when using Git based deployments) you should be aware of: You're hard-coding the configuration details of your production environment into your code, which means you will have sensitive information in your Git version history. Let's solve this.
+
+Open up `craft/config/general.php` and change it like so:
 
 ```php
+// Only triggered on fortrabbit
 $validationKey = false;
 if ($file = getenv('APP_SECRETS')) {
     $secrets = json_decode(file_get_contents($file), true);
@@ -82,12 +87,12 @@ return [
 ];
 ```
 
-### MySQL
+## MySQL
 
-Your App needs database access - when working local and on remote. We use environment detection and have both access informations stored. On the fortrabbit remote the actual credentials are getting parsed from the [App secrets](secrets). Open `craft/config/db.php` and modify it like the following:
+Your App needs database access - when working local and on remote. We use environment detection to store both access informations. On fortrabbit the actual credentials are getting parsed from the [App secrets](secrets). Open `craft/config/db.php` in your editor and modify it like the following:
 
 ```php
-// remote (production) environment at fortrabbit
+// Connnect to MySQL on fortrabbit
 if ($file = getenv('APP_SECRETS')) {
     $secrets = json_decode(file_get_contents($file), true);
     return [
@@ -100,7 +105,7 @@ if ($file = getenv('APP_SECRETS')) {
     ];
 }
 
-// development environment (local)
+// Connect to MySQL from local development environment
 return [
     'server'      => '127.0.0.1',
     'user'        => 'your-local-db-user',
@@ -110,9 +115,13 @@ return [
 ];
 ```
 
+### MySQL access from local
+
+Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to access the database remotely from your computer.
 
 
-### Object Storage
+
+## Object Storage
 
 Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets.
 

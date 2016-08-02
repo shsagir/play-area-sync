@@ -89,8 +89,6 @@ Until now this is a vanilla Symfony. It needs some more tinkering to make it you
 
 ### MySQL
 
-<!-- TODO: environment detection like in Laravel -->
-
 Use [App secrets](secrets) to attain database credentials. Modify the `app/config/parameters_prod.php` in your editor like so:
 
 ```php

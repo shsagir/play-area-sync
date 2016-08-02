@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-07-25
+reviewed:         2016-08-02
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -36,9 +36,6 @@ seeAlsoLinks:
 
 We assume you've already created a New App with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course.
 
-
-
-<!-- TODO: rewrite on stack config helper launch -->
 
 ### Set the Apps root path
 
