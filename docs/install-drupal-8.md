@@ -43,7 +43,9 @@ If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-
 
 ## Install
 
-Execute the following in your local terminal to initialize a new [composer-based Drupal](https://github.com/drupal-composer/drupal-project):
+**By the time of this writing, Drupal 8 will only work with the latest DEV release 8.1**
+
+Execute the following in your local terminal to initialize a new [composer-based Drupal](https://github.com/drupal-composer/drupal-project). 
 
 ```bash
 # 1. Create a new Drupal project locally with Composer:
@@ -233,4 +235,4 @@ Once everything is pushed and online — login to the Drupal admin [{{app-name}}
 
 Rinse and repeat for all structure elements, for which you want to upload files.
 
-This is it, you now running Drupal 8 on fortrabbit.
+This is it, you are now running Drupal 8 on fortrabbit.
