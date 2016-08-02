@@ -132,6 +132,9 @@ $table_prefix = env('DB_PREFIX') ?: 'wp_';
 // other code…
 ```
 
+Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to access the database remotely from your computer.
+
+
 ### Authentication keys & salts
 
 Again your editor, further down in the file `config/application.php`
@@ -214,7 +217,7 @@ $ unzip woocommerce.zip
 $ rm woocommerce.zip
 ```
 
-Now make sure that the WooCommerce plugin directory is excluded from the `.gitignore` (aka: un-ignored) by opening `~/Projects/MyApp/.gitignore` and adding a new line immediately after `!web/app/plugins/.gitkeep`:
+Now make sure that the WooCommerce plugin directory is excluded from the `.gitignore` (aka: un-ignored) by opening `{{app-name}}/.gitignore` and adding a new line immediately after `!web/app/plugins/.gitkeep`:
 
 ```
 # other code …

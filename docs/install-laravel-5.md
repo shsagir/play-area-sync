@@ -151,7 +151,11 @@ return [
 ];
 ```
 
-This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit. Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to access the database remotely from your local machine.
+This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit. 
+
+#### MySQL access from local
+
+Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to access the database remotely from your computer.
 
 #### Migrate & other database commands
 

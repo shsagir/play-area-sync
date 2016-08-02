@@ -176,6 +176,10 @@ $ mysqldump -u{{your-local-user}} -p {{your-local-db}} > drupal.sql
 $ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}} < drupal.sql
 ```
 
+#### MySQL access from local
+
+Please see the [MySQL article](mysql#toc-access-mysql-from-local) on other ways to access the database remotely from your computer.
+
 
 ### Configure Git
 

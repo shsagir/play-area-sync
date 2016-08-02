@@ -17,7 +17,7 @@ seeAlsoLinks:
 
 ---
 
-We have two generations of Apps here on fortrabbit: Old Apps (2013 - mid 2016) and [New Apps](new-apps) (from 2015 on). The Old Apps are a bit different to the New Apps. This article lists resources to work with the Old Apps.
+We have two generations of Apps here on fortrabbit: Old Apps (2013 - ~2017?) and [New Apps](new-apps) (from 2015 on). The Old Apps are a bit different to the New Apps. This article lists resources to work with the Old Apps.
 
 
 ## Deprecation warning
