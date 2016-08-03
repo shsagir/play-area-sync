@@ -26,7 +26,7 @@ seeAlsoLinks:
 
 ## Problem
 
-fortrabbit [Apps](app) are made for production (live) or staging (review). They are not well suited for online development. The deployment is fast but still takes too long when developing CSS or other rapid changing aspects of your App. Also, it is never a good idea to have your live application display errors and debugging informations.
+fortrabbit [Apps](app) are made for production (live) or staging (review). They are not well suited for online development. The deployment is fast but still takes too long when developing rapid changing aspects of your App. Also, it is never a good idea to have your live application display errors and debugging informations.
 
 
 ## Solution
@@ -44,12 +44,14 @@ Set up a local PHP development environment so that your Apps can run on your loc
 
 There are multiple ways to get your local development stack up and running: You can use a prepared solution stack, bundled up and controlled by a user friendly GUI (best for beginners), you can set up what you need manually or you can box everything neatly into a [virtual machine](#toc-virtualization).
 
-### Solution stacks
+### GUIs
 
-Solution stacks are not only controlled by a GUI, they also try interfere with the rest of your system as little as possible. This means that they come with their own PHP version, their own Apache version and so on. You can still have your custom PHP installed on your local box, it (mostly) won't interfere with your development stack. The most commonly used solutions here are:
+These solution stacks are easy to handle through a graphical interface and they interfere with the rest of your system as little as possible. The most commonly used here are:
 
 * [XAAMP](https://www.apachefriends.org/index.html) GUI for Windows, Mac OS, Linux
 * [MAMP](https://www.mamp.info/) GUI for Mac OS and Windows
+
+Those don't include [Git](git) and [Composer](#toc-composer).
 
 ### Manual setup
 
@@ -66,6 +68,8 @@ Utilizing virtualization for development allows you better replication of your l
 There are two primary virtualization approaches for development: [Desktop virtualization](https://en.wikipedia.org/wiki/Desktop_virtualization), for example [VirtualBox](https://www.virtualbox.org/) or [VMware](http://www.vmware.com/) or [container virtualization](https://en.wikipedia.org/wiki/Operating-system-level_virtualization), which means primarily [Docker](http://www.docker.com/) these days. There are a lot of fundamental difference between both approaches, but when considering development it boils down to: Desktop virtualization is easier to setup but eats up more resources - container virtualization is harder to setup, but once done easier to use and is very economical in terms of resource usage.
 
 Many developers today use VirtualBox controlled by [Vagrant](https://www.vagrantup.com/), which helps a lot when setting up reproducible development environments from scratch - or rather from config file. Many Laravel developers use [Homestead](https://laravel.com/docs/5.2/homestead), which builds upon Vagrant and simplifies Laravel development even further.
+
+Have a look at [Docker for Mac](https://docs.docker.com/docker-for-mac/) or [… for Windows](https://docs.docker.com/docker-for-windows/), it's on the rise.
 
 ### Other solutions
 
@@ -89,3 +93,13 @@ Our code examples in the [install guides](/#install-guides) always include check
 ### Multi-staging
 
 You might want to have a dedicated remote testing environment with pubic access? Head over to our advanced [multi-staging article](multi-staging).
+
+
+### Apache instead of NginX
+
+Some might prefer a NginX web-server over Apache as it is easier to configure. Mind that fortrabbit is using Apache, some features might not be compatible. You will find `.htaccess` examples in these articles which only work with Apache.
+
+
+### Virtual hosts
+
+You might set up multiple vhosts - not just `localhost` or `127.0.0.1` - to serve multiple websites from one machine.
