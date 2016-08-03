@@ -25,7 +25,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You also need a local Slim framework installation. Slim framework is extremely easy to setup thanks to our Composer support. You can either use an existing or a new one. This guide explains you how to start locally from scratch. 
+We assume you've already created an [App](app) with fortrabbit. You might also have a [PHP development environment](/local-development) running on your local machine. You also need a local Slim framework installation. Slim framework is extremely easy to setup thanks to our Composer support. You can either use an existing or a new one. This guide explains you how to start locally from scratch. 
 
 
 ## Install

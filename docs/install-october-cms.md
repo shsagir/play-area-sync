@@ -33,11 +33,9 @@ tags:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit which has the [MySQL](mysql), [Memcache](memcache) components enabled - optionally also the [Worker](worker) component. On your local machine you should have installed: [Git](/git), Composer and PHP of course.
+We assume you've already created a New App with fortrabbit which has the [MySQL](mysql), [Memcache](memcache) components enabled - optionally also the [Worker](worker) Component. You should also have a [PHP development environment](/local-development) running on your local machine. You also need a local [October](https://octobercms.com/docs/console/commands#console-install) installation. You can either use an existing one or start from scratch.
 
-You also need a local [October](https://octobercms.com/docs/console/commands#console-install) installation. You can either use an existing one or start from scratch.
-
-#### Root path
+### Root path
 
 In the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
 
@@ -46,7 +44,7 @@ In the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your A
 </div>
 
 
-#### ENV var
+### ENV var
 
 In the Dashboard: create this new environment variable:
 
@@ -59,8 +57,7 @@ APP_ENV=prod
 </div>
 
 
-
-#### App secrets
+### App secrets
 
 In the Dashboard: add this [App secret](/secrets):
 
