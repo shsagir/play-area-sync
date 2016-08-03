@@ -60,7 +60,7 @@ $ php vendor/bin/drupal site:install --root=web
 # to use the configuration wizard
 ```
 
-### Configure fortrabbit as production environment 
+### MySQL
 
 Create a new file `web/sites/default/settings_prod.php` with the following contents:
 
@@ -93,6 +93,10 @@ Now open up `web/sites/default/settings.php`. At the bottom of the file include 
 include __DIR__ . '/settings_prod.php';
 ```
 
+See [below](#toc-mysql-import) on how to export/import your MySQL database.
+
+
+### Configure deployment on fortrabbit
 
 Next, create the [deployment file](/deployment-file-v2) `fortrabbit.yml` with the following contents and place it top level of your local project.
 
@@ -104,9 +108,6 @@ sustained:
     - web/themes/contrib
     - web/profiles/contrib
 ```
-
-<!-- TODO: correct the following sentence (unclear, wrong english) -->
-Make sure that the `web/core` folder, which contains the Drupal core itself, and the `web/modules/config` folder, which contains later installed modules.
 
 
 ### Object Storage
@@ -157,7 +158,7 @@ $ php vendor/bin/drupal module:install flysystem_s3 --root=web
 ```
 
 
-### MySQL
+### MySQL import
 
 Now is a good time to export your local database and import it into your App. First you'll need to open up a tunnel to your App's MySQL database — [see here](/mysql#toc-mysql-via-terminal). Then you can execute this in the terminal:
 
