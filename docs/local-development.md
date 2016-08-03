@@ -56,7 +56,7 @@ There are multiple ways to this. You can use a GUI (best suited for beginners), 
 
 ### Composer
 
-A key aspect of multi-staging is that environments are nearly identical environments of production and development. A Mac with MAMP for example is for sure a bit different to the fortrabbit environment. Virtualization is a way to make your local environment behave more like the one in production. The PHP dependency manager Composer also helps with this like so:
+Environments differ. A Mac with MAMP for example is for sure a bit different to the LINUX fortrabbit environment. Virtualization is a way to make your local environment behave more like the one in production. The PHP dependency manager Composer also helps with this like so:
 
 #### Installing Composer
 
