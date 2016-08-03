@@ -7,6 +7,7 @@ naviTitle:    Worker
 lead:         Offshore long running and compute intensive tasks with background jobs — that's what the Worker Component is for.
 group:        Components
 
+
 otherVersionLinks:
     - workers-old-app
 

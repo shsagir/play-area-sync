@@ -34,9 +34,8 @@ tags:
 Let's have a quick check-up before we get started here:
 
 1. You have already [signed up to fortrabbit](https//dashboard.fortrabbit.com/signup)
-2. You have your public [SSH key](ssh-keys) installed with your fortrabbit Account
 3. You should have created a plain vanilla [App](app) (free trial)
-4. You are a familiar using the shell and Git
+3. You should have a [PHP development environment](/local-development) or at least [Git](/git) running on your local machine
 
 
 
@@ -131,4 +130,4 @@ That's it. You now visit your App URL in the browser:
 
 ### Further readings
 
-Don't miss our install guides for [Laravel](install-laravel), [WordPress](install-wordpress), [Symfony](install-symfony), [Craft CMS](install-craft).
+This was just a simple example. Don't miss our install guides for [Laravel](install-laravel), [WordPress](install-wordpress), [Symfony](install-symfony), [Craft CMS](install-craft), [Drupal 8](install-drupal-8) …

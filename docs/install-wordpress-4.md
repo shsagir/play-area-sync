@@ -28,7 +28,7 @@ seeAlsoLinks:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. On your local machine you should have installed: [Git](/git), Composer and PHP of course.
+We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
 
 ### Set the root path
 

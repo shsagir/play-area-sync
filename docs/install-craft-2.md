@@ -30,7 +30,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You should also have PHP, Git, Composer, Apache and MySQL running locally.
+We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
 
 ### Set the root path
 

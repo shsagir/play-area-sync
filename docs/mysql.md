@@ -23,6 +23,7 @@ keywords:
 seeAlsoLinks:
     - ssh-sftp-old-app
     - scaling
+    - local-development
 
 ---
 
@@ -54,9 +55,6 @@ return [
 ```
 See our specific examples for: [Laravel](install-laravel-5#toc-mysql), [Symfony](install-symfony-2#toc-mysql), [WordPress](install-wordpress-4#toc-mysql), [Craft CMS](install-craft-2#toc-mysql).
 
-<!--
-PRO TIP: Use environment detection to differ between your local environment and the one on fortrabbit.
--->
 
 ## Access MySQL from local
 
@@ -169,6 +167,12 @@ $ mysql --local-infile=1 -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}}
 # on the mysql shell
 $ mysql> LOAD DATA LOCAL INFILE '/path/to/tablename.sql' INTO TABLE tablename;
 ```
+
+## Local MySQL
+
+This article describes how to deal with the fortrabbit remote MySQL database. You might a local one as well. Please see our [local development article](/local-development).
+
+- - -
 
 ## Advanced usage
 

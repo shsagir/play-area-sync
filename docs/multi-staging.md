@@ -34,11 +34,7 @@ otherVersionLinks:
 
 ### Differences to local development
 
-Most likely you are developing with a local PHP environment on your machine. So your laptop is already a of kind of **staging** while the actual App at fortrabbit is **production**.
-
-A key aspect of multi-staging is that environments are nearly identical environments of production and development. A Mac with MAMP for example is for sure a bit different to the fortrabbit environment.
-
-Virtualization is a way to make your local environment behave more like the one in production. [Vagrant](https://www.vagrantup.com/) is an open source tool to "create and configure lightweight, reproducible, and portable development environments".
+Most likely you are developing with a local PHP environment on your machine. So your laptop is already a of kind of **staging** while the actual App at fortrabbit is **production**. Please also see our [local development article](local-development).
 
 
 ## Multi-staging on fortrabbit

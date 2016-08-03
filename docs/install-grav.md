@@ -22,7 +22,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You also need a local Grav installation. You can either use an existing or a new one. This guide explains you how to start from scratch:
+We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine. You also need a local Grav installation. You can either use an existing or a new one. This guide explains you how to start from scratch:
 
 ## Install
 
