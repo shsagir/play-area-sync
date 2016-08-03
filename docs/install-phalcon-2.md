@@ -39,13 +39,13 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit.
+We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
 
-## Set Phalcon document root
+### Set Phalcon root path
 
 Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashboard under your Apps Domains settings.
 
-## Enable Phalcon extension
+### Enable Phalcon extension
 
 As Phalcon is a C Extension, you need to enable it in the Dashboard under your Apps PHP Extensions.
 
