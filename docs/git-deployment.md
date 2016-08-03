@@ -63,11 +63,14 @@ after the deployment is done you can worship your work in the browser:
 Also see our specdifc install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
 
 
-### Other Git commands
+### Adding fortrabbit as a remote
 
 ```
 # Using Git already? Add fortrabbit as additional remote:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+
+
+### Resetting the remote repo
 
 # Reset the remote repo (delete remote Git repo & vendor folder):
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git reset
