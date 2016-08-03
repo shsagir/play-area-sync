@@ -210,6 +210,63 @@ Now set `FS_TYPE` in your local `.env` file to the value `local` and the [enviro
 An alternative to our Object Storage Component is Amazon S3 and we have written up a [guide to get your started](https://blog.fortrabbit.com/new-app-cloud-storage-s3).
 
 
+#### Elixir
+
+You can use Elixir locally - not on fortrabbit as there is no Node on remote. You extend the Elixir with a publish task to export your minified assets to the [Object Storage](object-storage). This is how it works. To start, execute in your terminal:
+
+```bash
+# Get your Object Storage credentials
+$ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
+```
+
+Then extend your existing `gulpfile.js`:
+
+```javascript
+// extend import by "gulp" and "awspublish"
+var elixir = require('laravel-elixir'),
+    awspublish  = require('gulp-awspublish'),
+    gulp        = require('gulp');
+
+// create publish task
+elixir.extend("publish", function(path) {
+    gulp.task('publish', function() {
+
+        var publisher = awspublish.create({
+            region: '{{your-object-storage-region}}',
+            params: {
+                Bucket: '{{app-name}}'
+            },
+            signatureVersion: 'v2',
+            endpoint: 'objects.{{region}}.frbit.com',
+            accessKeyId: '{{app-name}}',
+            secretAccessKey: '{{your-object-storage-key}}'
+        });
+
+        return gulp.src('./public/build/*')
+            .pipe(publisher.publish())
+            .pipe(publisher.sync('subfolder'))
+            .pipe(awspublish.reporter());
+
+    });
+});
+// other code …
+```
+
+Back in your terminal you now can:
+
+```bash
+# Install package via NPM
+$ npm install --save-dev gulp-awspublish
+
+# Run the publish task
+$ gulp publish
+```
+
+Please mind that your `gulpfile.js` now contains sensitive data. You can exclude it from Git by adding it to your `.gitignore` file or you can read the credentials from an external json file which then also should be excluded.
+
+Also mind that you need to tell your source code to look for the minified CCS & JS files on the offshore Object Storage.
+
+
 
 ### Logging
 
