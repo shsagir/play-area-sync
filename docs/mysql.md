@@ -19,6 +19,7 @@ keywords:
      - database
      - innodb
      - myisam
+     - phpmyadmin
 
 seeAlsoLinks:
     - ssh-sftp-old-app
@@ -111,6 +112,10 @@ All clients have connection presets that help you to establish the SSH tunnel an
 
 The MySQL hostname will not be `127.0.0.1` or `localhost` — it's the remote server:  
 `{{app-name}}.mysql.{{region}}.frbit.com`.
+
+#### phpMyAdmin
+
+You can also manage the remote MySQL with your **local phpMyAdmin installation** - [see this tutorial](https://degreesofzero.com/article/manage-remote-mysql-servers-with-local-phpmyadmin.html). Please don't try to install phpMyAdmin on your fortrabbit App - for security and practical reasons. 
 
 
 ### MySQL via terminal
