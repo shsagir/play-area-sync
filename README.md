@@ -132,11 +132,11 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 ## Code examples
 
 * try to keep code examples together in one block, don't mix paragraphs and code blocks
-* 
+*
 
 ### Bash
 
-* each command should have 
+* each command should have
 * show output only when necessary
 * output should be a comment
 * `$` to start a command
@@ -257,6 +257,7 @@ Find the right balance between being general and being precise (aka Captain Obvi
 * **SSL cert** — ~~SSL certificate~~
 * **web storage** — ~~webspace~~
 * **Composer** — ~~composer~~
+* **Mac OS** — ~~macOS~~ (https://en.wikipedia.org/wiki/Mac_OS)
 
 
 ## Avoid words list
@@ -290,5 +291,3 @@ There is no fortrabbit logo as graphic file. To create the brand logo just type:
 ### Logos and brand assets
 
 Place logos for external services and projects in the media folder. They ideally should be svg or either PNG with transparent background. Favor an "image mark" over a "word image mark".
-
-
