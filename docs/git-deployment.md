@@ -43,16 +43,16 @@ Each fortrabbit App comes with its very own custom Git repo which you need to se
 ### Simple Git deployment workflow
 
 ```bash
-# Cloning the (empty) app to register the remote origin master
+# 1. Clone the (empty) app to register the remote origin master
 $ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# go in the folder
+# 2. Go in the folder
 $ cd {{app-name}}
 
-# do stuff
+# 3. Do stuff
 $ echo '<?php echo "PHPower to the PHPeople";' >index.php
 
-# push to deploy
+# 4. Push to deploy
 $ git add index.php
 $ git commit -am 'Intial commit'
 $ git push -u origin master
