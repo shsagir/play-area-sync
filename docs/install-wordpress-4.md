@@ -85,14 +85,14 @@ WordPress itself has not really arrived in the new PHP age in terms of using the
 Issue the following in your local terminal:
 
 ```bash
-# create a new App based on bedrock locally
+# 1. Create a new App based on bedrock locally
 $ git clone https://github.com/roots/bedrock {{app-name}}
 
-# add your App's remote, so you can push later on
+# 2. Add your App's remote, so you can push later on
 $ cd {{app-name}}
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# install all required composer packages
+# 3. Install all required composer packages
 $ composer install
 ```
 
@@ -168,18 +168,18 @@ if (isset($_SERVER['APP_SECRETS'])) {
 // other code …
 ```
 
-### Deploy
+### Deploy with Git
 
-Back in terminal, run these commands:
+After you have [initialized and configured WordPress](#toc-create-wordpress-locally-with-bedrock) you can run these commands in the terminal to deploy:
 
 ``` bash
-# Add all changes to Git
+# 4. Add all changes to Git
 $ $ git add -A
 
-# Commit changes
+# 5. Commit changes
 $ git commit -am "Initial"
 
-# Push to deploy
+# 6. Push to deploy
 $ git push -u fortrabbit master
 ```
 

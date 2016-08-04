@@ -44,11 +44,14 @@ tags:
 
 ## Accessing the Dashboard
 
-| | |
-|-|-|
-| **Dashboard login URL** | [dashboard.fortrabbit.com](https://dashboard.fortrabbit.com)       |
-| **E-mail**              | The e-mail address you have signed up with                        |
-| **Password**            | Your fortrabbit Account password, first chosen while signing up   |
+**Dashboard login URL** 
+[dashboard.fortrabbit.com](https://dashboard.fortrabbit.com)
+
+**E-mail**  
+The e-mail address you have signed up with
+
+**Password**  
+Your fortrabbit Account password, first chosen while signing up
 
 
 ## Regaining access

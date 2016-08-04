@@ -160,32 +160,10 @@ $filesystem->put('hello', 'world...');
 [Gaufrette](https://github.com/KnpLabs/Gaufrette) is an alternative file system abstraction by KnpLabs, a bit older, but also actively maintained.
 
 
-<!-- 
 
-#### Frameworks & CMS
+#### Custom PHP applications
 
-**Laravel**:  Just use Flysystem, which can easily be installed via Composer. More infos [over here](/install-laravel#toc-). Use at least Laravel 5.1.
-
-**Drupal 8**: There is an [module](https://www.drupal.org/project/flysystem) that adapts Flysystem with Drupal.
-
-**WordPress**:  You can use [WP Offload S3 Lite](https://wordpress.org/plugins/amazon-s3-and-cloudfront/) to upload and serve files. More infos [here](/install-wordpress).
-
-**Symfony**: Use can either use the [OneUp Flysystem bundle](https://github.com/1up-lab/OneupFlysystemBundle) or the [Gaufrette bundle](https://github.com/KnpLabs/KnpGaufretteBundle). More infos [here](/install-symfony).
-
-**Craft CMS**: There is [something in the works](https://github.com/pixelandtonic/Craft-Release/blob/master/app/assetsourcetypes/S3AssetSourceType.php) for Craft 3.
-
-**Shopware**: You might use the [SwagMediaS3](https://github.com/shopwareLabs/SwagMediaS3) Amazon S3 adapter (not tested).
-
-
-**Magento**: There is the [Arkade S3 Extension](https://github.com/arkadedigital/magento2-s3) which you might can use (not tested).
-
--->
-
-
-
-#### Custom/plain PHP applications
-
-There is an official [AWS PHP SDK](https://github.com/aws/aws-sdk-php) from Amazon you can use.
+There is an official [AWS PHP SDK](https://github.com/aws/aws-sdk-php) from Amazon you can use for your plain PHP application.
 
 
 ### Manual upload
@@ -206,8 +184,7 @@ In those cases S3 behaves pretty much like your good old friend FTP.
 
 Once you have uploaded some files, the ultimate goal is of course to serve them to the browser. To that purpose all Apps come with an Object Storage URL in the form:
 
-* [https://{{app-name}}.objects.frb.io/README.md](https://{{app-name}}.objects.frb.io/README.md)
-
+* [{{app-name}}.objects.frb.io/README.md](https://{{app-name}}.objects.frb.io/README.md) < works when Object Storage is booked
 
 We recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS. Most framwork/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
 

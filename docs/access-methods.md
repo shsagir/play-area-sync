@@ -140,7 +140,7 @@ $ git clone [[ssh-user]]@deploy.[[region]].frbit.com:[[your-app]].git
 
 #### The code example helper
 
-When you are logged in to the Dashboard, you will see a yellow box on the right side with a select to choose one of your Apps. This helper knows which authentication method your Account uses. It also changes all code examples on the current page according to the selected App. So you can literary copy/paste all code examples here.
+When you are currently logged in to the Dashboard (a cookie is stored), you will see a yellow box on the right side here - with a select to choose one of your Apps. This helper knows which authentication method your Account uses. It also changes all code examples on the current page according to the selected App. So you can literary copy/paste all code examples here.
 
 ##### Try it out yourself
 
@@ -150,6 +150,8 @@ SSH user: {{ssh-user}}
 Region:   {{region}}
 Your app: {{app-name}}
 ```
+
+
 
 
 
