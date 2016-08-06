@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-07-22
+reviewed:    2016-08-04
 title:       Using secure App secrets
 naviTitle:   App secrets
 lead:        App secrets provide a secure storage and access method for all the credentials your App needs to run.
@@ -34,9 +34,10 @@ In addition: your App will run in at least two environments: locally and on fort
 
 Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by you and your App. The location of this JSON file is stored in a predefined environment variable called `APP_SECRETS`.
 
-## App secrets access
 
-### Using App secrets in PHP with your App
+## App secrets in your App
+
+Access App secrets from inside your App via PHP like so:
 
 ```php
 // read all App secrets from the JSON file, get the location via ENV var
@@ -46,9 +47,8 @@ $secrets = json_decode(file_get_contents($_SERVER["APP_SECRETS"]), true);
 $meaning_of_life = $secrets['CUSTOM']['MEANING_OF_LIFE'];
 ```
 
-Secrets are ordered in a tree structure `["CONTEXT" => ["KEY" => "value"]]`:
-
 ```php
+// App secrets are ordered in a tree structure:
 $secrets == [
     'MYSQL' => [
         'PASSWORD' => "{{mysql-password}}",
@@ -64,12 +64,12 @@ $secrets == [
 ];
 ```
 
-Available contexts depend on the Components you have enabled for your App. 
+See examples to use the App secrets to connect to MySQL for: [Laravel](install-laravel#toc-mysql), [Symfony](install-symfony#toc-mysql), [WordPress](install-wordpress#toc-mysql), [Craft CMS](install-craft-2#toc-mysql), [Drupal](install-drupal-8#toc-mysql).
 
 
-### Reading secrets from outside
+## App secrets from local
 
-Read the secrets from your local machine by using a terminal command:
+Read App secrets from your local machine by using an [SSH remote exec](/remote-ssh-execution) command in your terminal:
 
 ```bash
 # show all App secrets
