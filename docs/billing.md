@@ -150,12 +150,29 @@ Sorry, as there are no upfront payments, this is not possible.
 
 You can like so: Dashboard > Your Account > Your Company Name > Billing Contact / Current costs. This overview shows you what will be printed on the next invoice. Please mind that it will show the current costs of the day of the month so far. 
 
+
+
+### How can I create a new Company?
+
+In the Dashboard > Companies > {{your-company}} > "Add a new Company" > Follow the steps. You will be asked for an invoice address and a payment method. This will give you an empty Company, no costs, as long as you don't assign an App to the Company. You will be Owner of that Company, hence you created it.
+
+Do this when you want certain Apps to have a different team and probably different billing.
+
+
 ### How can I create a new Billing Contact?
 
-In the Dashboard > Companies > {{your-company}} > "Add a new Billing Contact" > Follow the steps. You will be asked for an invoice address and a payment method. This will give you an empty Billing Contact, no costs, as long as you don't assign an App to the Billing Contact.
+In the Dashboard > Companies > {{your-company}} > "Add a new Billing Contact" > Follow the steps. You will be asked for an invoice address and a payment method. This will give you an empty Billing Contact, no costs, as long as you don't assign an App to the Billing Contact. You must be Owner of the Company for this.
 
+Do this when you want certain Apps to be charged from a different credit card but want to keep team and access settings for the App.
 
 ### How can I change the Billing Contact of an App?
 
-In the [Dashboard](dashboard), go to your [App](app) and hit the "Change ownership" button. Here you can change the Company (and the [team](collaboration)), as well as the Billing Contact (only affects billing).
+In the [Dashboard](dashboard), go to your [App](app) and hit the "Change ownership" button. Here you can change the Company (and the [team](collaboration)), as well as the Billing Contact (only affects billing). You must be Owner of the Company for this.
+
+
+### How can I edit the Billing Contact?
+
+When you only have one App or you want to have all your Apps under the same Billing Contact and you want to change that, you can also edit the Billing Contact. In the Dashboard > Companies > {{your-company}} > either edit the Payment method or the Invoice address.
+
+
 
