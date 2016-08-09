@@ -151,6 +151,27 @@ If you can't get it to work at all: [remove your SSH keys from your fortrabbit A
 
 If you have deployed using SSH keys before and now it doesn't work any more: please check if you have changed something, compare your local keys with the remote one, see if any change in [collaboration](/collaboration) (you are not part of team anymore?) happened. If not, have a look at out [status page](https://status.fortrabbit.com) — maybe it's us, not you. Also, don't hesitate to contact our support as well.
 
+### When you've got global SSH Agent Forwarding running
+
+```
+A B O R T E D
+!! Unsupported request type "auth-agent-req@openssh.com"
+
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights and the repository exists.
+```
+
+It could be that you've inadvertently got SSH Agent Forwarding enabled, [this is probably not what you want](https://heipei.github.io/2015/02/26/SSH-Agent-Forwarding-considered-harmful/).
+
+The quick solution would be to disable globally SSH agent forwarding by adding `ForwardAgent no` at the top of the file `~/.ssh/config`, although this could break some other SSH connections.
+
+If you only want to disable it for fortrabbit, then add the following to your `~/.ssh/config` file.
+
+```
+Host deploy.*.frbit.com
+  ForwardAgent no
+```
+
 - - -
 
 ## About SSH key authentication
