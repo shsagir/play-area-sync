@@ -64,7 +64,7 @@ So you better not store any runtime data, like user uploads there. Here is what 
 
 During each [deployment](/git-deployment) the whole local storage gets whipped and replaced. See also our [deployment video](/deployment-architecture-video) to learn about what happens in the background.
 
-But we have a good solution. With the [Object Storage Component](/object-storage) you can offshore your static assets. It's similar to Amazon S3. It's a ver solution that also brings other benefits and speed improvements. You can easily integrate it with a plugin or Composer package and some config, see your framework/CMS guides here as well.
+But we have a good solution. With the [Object Storage Component](/object-storage) you can offshore your static assets. It's similar to Amazon S3. It's a very scalable solution that also brings other benefits and speed improvements. You can easily integrate it with a plugin or Composer package and some config, see your framework/CMS guides here as well.
 
 
 ## PHP

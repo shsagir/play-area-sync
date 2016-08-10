@@ -151,11 +151,32 @@ If you can't get it to work at all: [remove your SSH keys from your fortrabbit A
 
 If you have deployed using SSH keys before and now it doesn't work any more: please check if you have changed something, compare your local keys with the remote one, see if any change in [collaboration](/collaboration) (you are not part of team anymore?) happened. If not, have a look at out [status page](https://status.fortrabbit.com) — maybe it's us, not you. Also, don't hesitate to contact our support as well.
 
+### When you've got global SSH Agent Forwarding running
+
+```
+A B O R T E D
+!! Unsupported request type "auth-agent-req@openssh.com"
+
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights and the repository exists.
+```
+
+It could be that you've inadvertently got SSH Agent Forwarding enabled, [this is probably not what you want](https://heipei.github.io/2015/02/26/SSH-Agent-Forwarding-considered-harmful/).
+
+The quick solution would be to disable globally SSH agent forwarding by adding `ForwardAgent no` at the top of the file `~/.ssh/config`, although this could break some other SSH connections.
+
+If you only want to disable it for fortrabbit, then add the following to your `~/.ssh/config` file.
+
+```
+Host deploy.*.frbit.com
+  ForwardAgent no
+```
+
 - - -
 
 ## About SSH key authentication
 
-In case you haven't worked with SSH keys before — you'll might be interested to understand how it works. The bottom line is that SSH key authentication is a bit nerdy, but actually both: convenient and secure. "SSH keys are a way to identify trusted computers, without involving passwords." That's from GitHub and probably the shortest way to explain what it is about and the most crucial benefit.
+In case you haven't worked with SSH keys before — you might be interested to understand how it works. The bottom line is that SSH key authentication is a bit nerdy, but actually both: convenient and secure. "SSH keys are a way to identify trusted computers, without involving passwords." That's from GitHub and probably the shortest way to explain what it is about and the most crucial benefit.
 
 In public key authentication you have a key pair that consists of a public (eg `id_rsa.pub`) and a private key (eg `id_rsa`). What is encrypted with one (eg the public key) can be decrypted by the other (then: the private key). Further, having only the public key [does not allow you to derive the private key](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics). Hence you can safely "give out" your public key.
 
