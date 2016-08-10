@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-08-04
+reviewed:      2016-08-10
 title:         All about billing, pricing, payments, invoices & taxes
 naviTitle:     Billing
 lead:          Our consumption based pricing model explained.
@@ -174,5 +174,8 @@ In the [Dashboard](dashboard), go to your [App](app) and hit the "Change ownersh
 
 When you only have one App or you want to have all your Apps under the same Billing Contact and you want to change that, you can also edit the Billing Contact. In the Dashboard > Companies > {{your-company}} > either edit the Payment method or the Invoice address.
 
+### How can I change the currency?
+
+Sorry, you can not change the currency of your Billing Contact. But you can: create a new Billing Contact with a different currency and then move Apps there. Please mind that customers from the EU have to pay in EUR. 
 
 
