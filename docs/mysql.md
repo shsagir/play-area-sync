@@ -120,7 +120,7 @@ Please don't try to install phpMyAdmin on your fortrabbit App - for security and
 ```
 $cfg['Servers'][$i]['verbose']       = '{{app-name}}';
 $cfg['Servers'][$i]['host']          = '127.0.0.1';
-$cfg['Servers'][$i]['port']          = '13306'; // like specified in the tunnel command (see wblow)
+$cfg['Servers'][$i]['port']          = '13306'; // like specified in the tunnel command (see below)
 $cfg['Servers'][$i]['connect_type']  = 'tcp';
 $cfg['Servers'][$i]['extension']     = 'mysqli';
 $cfg['Servers'][$i]['compress']      = FALSE;
@@ -128,8 +128,7 @@ $cfg['Servers'][$i]['auth_type']     = 'cookie';
 $i++;
 ```
 
-Then open a [tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user and password. See also [this tutorial](https://degreesofzero.com/article/manage-remote-mysql-servers-with-local-phpmyadmin.html).
-
+Then open a [tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). 
 
 
 
