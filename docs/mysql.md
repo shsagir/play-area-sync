@@ -128,7 +128,7 @@ $cfg['Servers'][$i]['auth_type']     = 'cookie';
 $i++;
 ```
 
-Then open a [tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. See also [this tutorial](https://degreesofzero.com/article/manage-remote-mysql-servers-with-local-phpmyadmin.html).
+Then open a [tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user and password. See also [this tutorial](https://degreesofzero.com/article/manage-remote-mysql-servers-with-local-phpmyadmin.html).
 
 
 

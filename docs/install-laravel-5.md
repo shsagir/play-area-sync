@@ -66,6 +66,7 @@ Execute the following in your local terminal to start from scratch with a fresh 
 ```bash
 # 1. Use Composer to create a local Laravel project named like your App
 $ composer create-project laravel/laravel --prefer-dist {{app-name}}
+# this installs Laravel locally and will take a while
 
 # 2. Change into the folder
 $ cd {{app-name}}
@@ -84,9 +85,11 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 
 # 7. Push changes to fortrabbit
 $ git push -u fortrabbit master
+# this will install Laravel on remote and take another while
+# the next deployments will be much faster
 ```
 
-This first push can take a little while, since all Composer packages will be installed. When it is done you can visit your App URL in the browser to see the Laravel welcome screen:
+When it is done you can visit your App URL in the browser to see the Laravel welcome screen:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
@@ -101,9 +104,10 @@ Until now this is a vanilla Laravel. Now, make it yours.
 
 ### MySQL
 
-Use [App secrets](secrets) to attain database credentials. Modify the `config/database.php` in your editor like so:
+Use [App secrets](secrets) to attain database credentials. Replace all contents from `config/database.php` in your editor like so:
 
 ```php
+<?php
 // locally: use standard settings
 $mysql = [
     'driver'    => 'mysql',
@@ -117,6 +121,7 @@ $mysql = [
     'strict'    => false,
     'engine'    => null,
 ];
+
 
 // on fortrabbit: construct credentials from App secrets
 if (isset($_SERVER['APP_SECRETS'])) {
@@ -135,16 +140,14 @@ if (isset($_SERVER['APP_SECRETS'])) {
     ];
 }
 
-// other code …
-
 return [
-    // other code …
-    'connections' => [
-        // other code …
+    'fetch'         => PDO::FETCH_CLASS,
+    'default'       => env('DB_CONNECTION', 'mysql'),
+    'connections'   => [
         'mysql' => $mysql,
-        // other code …
     ],
-    // other code …
+    'migrations' => 'migrations'
+    // possible other code …
 ];
 ```
 
@@ -270,7 +273,7 @@ Also mind that you need to tell your source code to look for the minified CCS & 
 
 ### Logging
 
-Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead. That's easily done: open `boostrap/app.php` and add the following just before the `return $app` statement at the bottom:
+Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead. That's easily done: open `boostrap/app.php` and add the following **just before the** `return $app` statement at the bottom:
 
 ```php
 $app->configureMonologUsing(function($monolog) {

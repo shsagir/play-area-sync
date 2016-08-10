@@ -64,9 +64,10 @@ If you are just testing then best use the [HappyLager Demo](https://github.com/p
 
 Craft's native multi-environment configuration (also see our [multi-staging article](multi-staging)) options allow you to define configuration options based on the domain name. This is great, but there is a potential security flaw (when using Git based deployments) you should be aware of: You're hard-coding the configuration details of your production environment into your code, which means you will have sensitive information in your Git version history. Let's solve this.
 
-Open up `craft/config/general.php` and change it like so:
+Open up `craft/config/general.php` and replace all contents it like so:
 
 ```php
+<?php
 // Only triggered on fortrabbit
 $validationKey = false;
 if ($file = getenv('APP_SECRETS')) {
