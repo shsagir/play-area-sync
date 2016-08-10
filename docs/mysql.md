@@ -115,7 +115,22 @@ The MySQL hostname will not be `127.0.0.1` or `localhost` — it's the remote se
 
 #### phpMyAdmin
 
-You can also manage the remote MySQL with your **local phpMyAdmin installation** - [see this tutorial](https://degreesofzero.com/article/manage-remote-mysql-servers-with-local-phpmyadmin.html). Please don't try to install phpMyAdmin on your fortrabbit App - for security and practical reasons. 
+Please don't try to install phpMyAdmin on your fortrabbit App - for security and practical reasons. But you can also manage the remote MySQL with your **local phpMyAdmin installation**. Add an additional server configuration to your local phpMyAdmin `config.inc.php` file like so:
+
+```
+$cfg['Servers'][$i]['verbose']       = '{{app-name}}';
+$cfg['Servers'][$i]['host']          = '127.0.0.1';
+$cfg['Servers'][$i]['port']          = '13306'; // like specified in the tunnel command (see wblow)
+$cfg['Servers'][$i]['connect_type']  = 'tcp';
+$cfg['Servers'][$i]['extension']     = 'mysqli';
+$cfg['Servers'][$i]['compress']      = FALSE;
+$cfg['Servers'][$i]['auth_type']     = 'cookie';
+$i++;
+```
+
+Then open a [tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. See also [this tutorial](https://degreesofzero.com/article/manage-remote-mysql-servers-with-local-phpmyadmin.html).
+
+
 
 
 ### MySQL via terminal
