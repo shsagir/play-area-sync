@@ -1,13 +1,14 @@
 ---
 
-template:   article
-reviewed:   2016-01-21
-title:      Install Laravel 4 - for Old App
-naviTitle:  Laravel
-lead:       Deploy Laravel 4 with Composer to fortrabbit.
-dontList:   true
-oldApp:     true
-group:      Install_guides
+template:    article
+reviewed:    2016-01-21
+title:       Install Laravel 4 - for Old App
+naviTitle:   Laravel
+lead:        Deploy Laravel 4 with Composer to fortrabbit.
+dontList:    true
+dontIndex:   true
+oldApp:      true
+group:       Install_guides
 
 otherVersionLinks:
   - install-laravel

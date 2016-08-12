@@ -6,6 +6,7 @@ title:         Install Laravel 5 - for Old App
 naviTitle:     Laravel
 lead:          Learn how to deploy Laravel 5 with Composer to fortrabbit.
 dontList:      true
+dontIndex:     true
 oldApp:        true
 group:         Install_guides
 

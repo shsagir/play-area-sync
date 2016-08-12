@@ -11,6 +11,7 @@ category:         framework
 image:            laravel-mark.png
 version:          4
 dontList:         true
+dontIndex:        true
 group:            Install_guides
 
 otherVersionLinks:
