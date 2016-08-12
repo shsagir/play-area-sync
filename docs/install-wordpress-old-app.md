@@ -7,6 +7,7 @@ naviTitle:        WordPress
 lead:             This is how to run WordPress successfully on fortrabbit — maybe.
 dontList:         true
 oldApp:           true
+dontIndex:        true
 group:            Install_guides
 
 otherVersionLinks:
