@@ -68,7 +68,7 @@ Also see our specdifc install guides for [Laravel](/install-laravel), [Symfony](
 ```
 # Using Git already? Add fortrabbit as additional remote:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
-
+```
 
 ### Resetting the remote repo
 
