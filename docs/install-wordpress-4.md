@@ -103,7 +103,7 @@ $ composer install
 In your editor, open up the file `config/application.php`
 
 ```php
-// insert at the top of the file
+// insert at the top of the file after "<?php"
 // this will parse the the secrets.json file, when on fortrabbit
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
@@ -187,11 +187,53 @@ Finally you can visit your App in the browser and follow the WordPress setup:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
+### Permalinks
+
+WordPress creates an `.htaccess` file during setup on the fly. With [ephemeral storage](quirks#toc-ephemeral-storage) this will be destroyed during each deployment. We'll make the `.htaccess` permanent. To do so, open the hidden `.gitignore` file on top level and remove the .htaccess file from being ignored from Git by deleting or commenting the line like so:
+
+```
+# other code …
+
+# WordPress
+web/wp
+#web/.htaccess
+# the line above is no longer in use
+
+# other code …
+```
+
+Next, create an `.htaccess` file with following contents and also place it on top level.
+
+```
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+```
+
+Then again in the terminal, deploy the changes:
+
+```
+# 7. Add .htaccess & modified .gitignore to Git
+$ git add -A
+
+# 8. Commit changes
+$ git commit -am "Added htaccess"
+
+# 9. Push to deploy htaccess
+$ git push
+```
 
 ## Tuning
 
 ### Installing plugins
-
+  
 [Bedrock allows](https://roots.io/bedrock/docs/composer/#plugins) two ways to install plugins:  Use Composer to install plugins from [WordPress Packagist](http://wpackagist.org/); Just download and unpack the plugins into `web/app/plugins`
 
 #### With Composer
@@ -246,7 +288,7 @@ Bedrock recommends to install themes by unpacking them into the `web/app/themes`
 
 Since WordPress is a CMS living on editorial provided content you most likely need a persistent storage. That's not so hard: you can use our [Object Storage component](/object-storage). Once you have booked the component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
 
-Now you need to install two plugins. Best do it with composer:
+Now you need to install two plugins. Best do it with Composer in your local terminal:
 
 ```bash
 $ composer require wpackagist-plugin/amazon-web-services
