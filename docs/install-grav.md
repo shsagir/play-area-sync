@@ -1,17 +1,17 @@
 ---
 
 template:         article
-reviewed:         2016-02-20
+reviewed:         2016-08-22
 title:            Install Grav
 naviTitle:        Grav
-lead:             Grav is a new PHP CMS based on Twig & Markdown. Learn how to install and tune Grav on fortrabbit.
+lead:             Grav is a popular free file based CMS based on Twig & Markdown. Learn here how to install and tune Grav on fortrabbit.
 group:            Install_guides
 
 websiteLink:      https://getgrav.org?utm_source=fortrabbit
 websiteLinkText:  getgrav.org
 category:         CMS
 image:            grav-symbol.png
-version:          1.0.10
+version:          1.1.3
 
 
 tags:
@@ -26,41 +26,38 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ## Install
 
-[Grav](http://getgrav.org) runs pretty much out of the box, as long as you use the [zip package installation](http://learn.getgrav.org/basics/installation#option-1-install-from-zip-package) installation method and not the [GitHub installation](http://learn.getgrav.org/basics/installation#option-2-install-from-github) method.
-
-First [download](http://getgrav.org/downloads) and unpack the latest Grav locally. It unpacks in the subfolder `grav`. When it's done, change into that folder and set it up with your Git remote on fortrabbit
+Open a local terminal session and execute:
 
 ```bash
-$ cd grav
+# 1. Use Composer to install Grav in a folder named like your App
+$ composer create-project getgrav/grav {{app-name}}
+
+# 2. Move into the folder
+$ cd {{app-name}}
+
+# 3. Initialize Git
 $ git init .
+
+# 4. Add fortrabbit as a Git remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
-```
 
-Now, before commiting anything, you should exclude the `vendor/` and the `cache/` folder. Create the file `.gitignore` with the following contents:
-
-```
-vendor
-cache/*
-!cache/.gitkeep
-```
-
-Now you can add everything and push everything to your App:
-
-```bash
+# 5. Add all files to Git
 $ git add -A
+
+# 6. Commit changes
 $ git commit -m 'Initial'
+
+# 7. Push to deploy
 $ git push -u fortrabbit master
 ```
 
 Done. Your Grav site is now online and you can visit it in your browser!  
 [https://{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
-Tuning
-------
 
-Word: The above guide is just the quickest and most basic way to get things up. Please mind that there are various ways to install and manage Grav. Apart from downloading you can: use Composer, clone the Git repo directly and also use the Grav CLI. Advanced users might also consider to have separated repos for the Grav core, Plugins, Themes and the actual content in pages.
+Apart from the above shown Composer installation you can also [download a zip package](https://learn.getgrav.org/basics/installation#option-1-install-from-zip-package) or [clone the Git repo](https://learn.getgrav.org/basics/installation#option-3-install-from-github). Advanced users might also consider to have separated repos for the Grav core, Plugins, Themes and the actual content in pages.
 
-
+## Tuning
 
 ### Install theme
 
