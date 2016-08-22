@@ -49,6 +49,8 @@ Your business, no matter how small or large, is always represented as a Company 
 
 Each User can be part or own multiple Companies on fortrabbit. That is useful for example when you use fortrabbit privately for your week-end projects and for business. Or if you as a freelancer collaborate with various digital agencies.
 
+Please also see the [billing FAQ](/billing#toc-faq).
+
 ## User roles
 
 It also works around the other way, not only you can take part in multiple Companies, each Company can have multiple Users associated with it. With permission based access roles we make sure only the boss can really mess up. Every User has an associated within each Company:
@@ -88,7 +90,7 @@ Sometimes you have different billing preferences within one Company. That's what
 * A billing address
 * A billing e-mail address
 
-Each App (expect trials) has to be associated with a Billing Contact. Each Billing Contact has its own invoice archive.
+Each App (expect trials) has to be associated with a Billing Contact. Each Billing Contact has its own invoice archive. Please also see the [billing FAQ](/billing#toc-faq).
 
 
 ## How to use it
@@ -99,3 +101,32 @@ Don't fear. It's not as complicated as it may sounds. All team features are opti
 
 * [Introduction post on medium](https://medium.com/@frank_laemmer/our-multi-client-model-3b965d2f1060)
 
+## FAQ
+
+### How can I work on behalf of my non-techie client?
+
+<!--  TODO: rewrite on passive owner launch -->
+
+We expect all Users to be involved in web development — this is true for agency- and startup-workflows. So the Dashboard boarding is designed for developers. In some real live business relationships the "client" is not a techie at all and just a passive business owner. 
+
+There are two ways to do this this:
+
+
+#### 1. The client signs up and invites the developer
+
+1. The client creates a free Account: [sign up](https://dashboard.fortrabbit.com/signup)
+2. After e-mail confirmation the client skips the App setup by clicking "Your Account
+3. The client clicks "[Set up a new Company](https://dashboard.fortrabbit.com//account/company/new)" and follows the steps
+4. The client clicks on "Invite someone" and invites the developer as an Admin
+5. The developer accepts the invitation and is now Admin for the Company
+
+This clean workflow maps the real world relationship closely. The client is the business owner, while the developer is an Admin in the Company. It requires the client to interact with the fortrabbit Dashboard.
+
+
+#### 2. The developer manages the clients business
+
+1. The developer clicks "[Set up a new Company](https://dashboard.fortrabbit.com//account/company/new)" and follows the steps
+2. The developer uses the billing informations provided by his client
+3. The developer changes the "Invoice e-mail" address to the client
+
+This workflow is faster and does not involve interaction from the client at all. It is however not so clean as the the developer needs to have access to confidential credit card informations.

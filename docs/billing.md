@@ -95,6 +95,8 @@ We recommend to enter your VAT-IN with your Billing Contact. This way you save u
 
 The above illustrates the hierarchy/structure of billing and collaboration features. Your Company owns the Apps. The Company can have multiple users (employees) to collaborate on the Apps. The Company also have multiple Billing Contacts. Each App must be associated to one Billing Contact.
 
+Please also see our [collaboration article](collaboration).
+
 
 ##  FAQ
 
