@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-07-25
+reviewed:         2016-08-22
 title:            Install WordPress 4
 naviTitle:        WordPress
 lead:             WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
@@ -11,7 +11,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          4.4
+version:          4.6
 
 otherVersionLinks:
     - install-wordpress-old-app
@@ -174,7 +174,7 @@ After you have [initialized and configured WordPress](#toc-create-wordpress-loca
 
 ``` bash
 # 4. Add all changes to Git
-$ $ git add -A
+$ git add -A
 
 # 5. Commit changes
 $ git commit -am "Initial"
