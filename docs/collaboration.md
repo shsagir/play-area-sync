@@ -107,9 +107,7 @@ Don't fear. It's not as complicated as it may sounds. All team features are opti
 
 <!--  TODO: rewrite on passive owner launch -->
 
-We expect all Users to be involved in web development — this is true for agency- and startup-workflows. So the Dashboard boarding is designed for developers. In some real live business relationships the "client" is not a techie at all and just a passive business owner. 
-
-There are two ways to do this this:
+In general, we expect all Users to be involved in web development — this is true for agency- and startup-workflows. So the Dashboard boarding is designed for developers. In some real live business relationships the "client" is not a techie at all and just a passive business owner. There are two ways to do this this now (we have plans for something better):
 
 
 #### 1. The client signs up and invites the developer
@@ -130,3 +128,5 @@ This clean workflow maps the real world relationship closely. The client is the 
 3. The developer changes the "Invoice e-mail" address to the client
 
 This workflow is faster and does not involve interaction from the client at all. It is however not so clean as the the developer needs to have access to confidential credit card informations.
+
+
