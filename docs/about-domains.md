@@ -111,7 +111,7 @@ Some domain providers also support a simple HTTP redirect. Please see your domai
 
 ### Using CloudFlare
 
-Please see our [CloudFlare article](/cloudlfare) on how to setup and use CloudFlare together with fortrabbit.
+Please see our [CloudFlare article](/cloudfare) on how to setup and use CloudFlare together with fortrabbit.
 
 
 ### Wildcard domains
