@@ -40,7 +40,24 @@ $ git init .
 
 # 4. Add fortrabbit as a Git remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+```
 
+Before creating your first commit open up `composer.json` and modify the `scripts` block by adding a couple of `post-install-cmd`:
+
+```json
+"scripts": {
+    // ... keep above unchanged
+    "post-install-cmd": [
+        "[ ! -f user/plugins/.inited ] && touch user/plugins/.inited && rm -rf user/plugins/*",
+        "[ ! -f user/themes/.inited ] && touch user/themes/.inited && rm -rf user/themes/*",
+        "[ ! -f .inited ] && touch .inited && php bin/grav install"
+    ]
+},
+```
+
+Now continue in your terminal session:
+
+```
 # 5. Add all files to Git
 $ git add -A
 
@@ -51,7 +68,7 @@ $ git commit -m 'Initial'
 $ git push -u fortrabbit master
 ```
 
-Done. Your Grav site is now online and you can visit it in your browser!  
+Done. Your Grav site is now online and you can visit it in your browser!
 [https://{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
