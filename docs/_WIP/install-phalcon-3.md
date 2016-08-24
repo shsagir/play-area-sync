@@ -12,7 +12,7 @@ websiteLink:      https://phalconphp.com/en/?utm_source=fortrabbit
 websiteLinkText:  phalconphp.com
 category:         framework
 image:            phalcon-mark.png
-version:          2
+version:          3.0.1
 
 otherVersionLinks:
     - install-phalcon-2
