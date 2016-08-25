@@ -59,7 +59,7 @@ Execute the following in your local terminal to start from scratch with a fresh 
 
 ```bash
 # 1. Change into your local phalcon folder
-$ cd your-local-phalcon-folder
+$ cd {{app-name}}
 
 # 2. Initialize local Git repo
 $ git init .
@@ -71,13 +71,13 @@ $ touch cache/.gitkeep
 $ git add -A
 
 # 5. Commit files for the first time
-git commit -m 'Initial'
+$ git commit -m 'Initial'
 
 # 6. Add fortrabbit as a remote
-git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
 # 7. Push to fortrabbit
-git push -u fortrabbit master
+$ git push -u fortrabbit master
 ```
 
 When it is done you can visit your App URL in the browser to see the Phalcon welcome screen:
