@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2016-07-22
+reviewed:   2016-08-26
 title:      About logs on fortrabbit
 naviTitle:  Logging
 lead:       Accessing live logs of your App is essential for developing. Here is how you can do it on fortrabbit.
@@ -38,6 +38,10 @@ $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_access
 # Only Apache error log:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:apache_error
 # helpful to debug `.htaccess` files and alike
+
+# Only Object Storage access log:
+$ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:objects_access
+# See requests when and from whom
 
 # Only PHP error logs:
 $ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:web_php_error

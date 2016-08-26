@@ -190,8 +190,13 @@ We recommend to use a secured connection via `HTTPS` but that it is not required
 
 ### Log access
 
-As with all fortrabbit components you can use the [logging](help.fortrabbit.com/logging) service to tail live logs.
+You can use the [logging](/logging) service to tail live logs from the Object Storage.
 
+```bash
+# Only Object Storage access log:
+$ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:objects_access
+# See requests when and from whom
+```
 
 ## Advanced usage, troubleshooting & quirks
 
