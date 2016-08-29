@@ -168,6 +168,7 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate:rollack
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan tinker
 ```
 
+If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
 
 
 
