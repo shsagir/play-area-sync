@@ -34,7 +34,7 @@ We assume you've already created a New App with fortrabbit. You should also have
 
 ### Set the Apps root path
 
-If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**.
+If you haven't already (the stack chooser does that for you) — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
@@ -218,7 +218,7 @@ $ git commit -m 'Initial'
 $ git push -u fortrabbit master
 ```
 
-Once the deployment has finished (takes much longer on the first time as all Composer packages need to be installed) you can visit the App URL in your browser:
+**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool! Once the deployment has finished (takes much longer on the first time as all Composer packages need to be installed) you can visit the App URL in your browser:
 
 * [https://{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 

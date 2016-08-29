@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-08-02
+reviewed:         2016-08-29
 title:            Install Symfony 2
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 on fortrabbit.
@@ -26,11 +26,11 @@ tags:
 
 We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
 
-<!-- TODO: rewrite on stack config helper launch -->
 
 ### Set the Apps root path
 
-Also, if you haven't already — in the fortrabbit [Dashboard](/dashboard): [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**. This applies to all domains, either the App URL or your external domains.
+
+Also, if you haven't already (the stack chooser does that for you) — in the fortrabbit [Dashboard](/dashboard): [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**. This applies to all domains, either the App URL or your external domains.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
@@ -78,7 +78,7 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 $ git push -u fortrabbit master
 ```
 
-This first push can take a bit, since all the Composer packages need to be installed. When the push is done you can visit your App URL in the browser and see the Symfony welcome screen:
+**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool! This first push can take a bit, since all the Composer packages need to be installed. When the push is done you can visit your App URL in the browser and see the Symfony welcome screen:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 

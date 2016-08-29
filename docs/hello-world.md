@@ -44,30 +44,24 @@ Let's have a quick check-up before we get started here:
 The following code gets executed on your local machine in your terminal application. The lines starting with a `$` are the ones you execute. The following code examples include the Git clone URL from your App: **{{app-name}}**.
 
 ```bash
-# Clone the repo from fortrabbit
-# Initialize Git by cloning the empty repo from fortrabbit
+# 1. Clone the repo — Initialize Git by cloning the empty repo from fortrabbit
 $ git clone {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 # Cloning into '{{app-name}}'...
 # warning: You appear to have cloned an empty repository
 
-# Get in position
-# Change directory to your new local project
+# 2. Change directory to your new local project
 $ cd {{app-name}}
 
-# Make a change
-# Create an index php file with a bold messsage on the fly
+# 3. Create an index php file with a bold messsage on the fly
 $ echo '<?php echo "PHPower to the PHPeople";' > index.php
 
-# Thanks for the add
-# Add the change in the working directory to the staging area
+# 4. Add the change in the working directory to the staging area
 $ git add index.php
 
-# You did it, commit it
-# Commit the staged snapshot to the project history
+# 5. Commit the staged snapshot to the project history
 $ git commit -am 'initial commit'
 
-# Le grand final
-# Just push to deploy
+# 6. Just push to deploy
 $ git push -u origin master
 # Counting objects: 3, done.
 # Writing objects: 100% (3/3), 251 bytes | 0 bytes/s, done.
@@ -123,8 +117,7 @@ $ git push -u origin master
 #  * [new branch]      master -> master
 # Branch master set up to track remote branch master from origin.
 ```
-
-That's it. You now visit your App URL in the browser:
+**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool! That's it. You now visit your App URL in the browser:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
