@@ -76,15 +76,11 @@ Sometimes you want to run a certain query on your live database. Or you want to 
 See [below on how to reclaim](#toc-obtain-the-mysql-password) 
 
 **MySQL port**:  
-Leave empty (standard settings)
+3306
 
 
 
 #### SSH tunnel for MySQL access
-
-<!--
-Open a tunnel to connect from your local to the remote MySQL:
--->
 
 **SSH tunnel server**:  
 tunnel.{{region}}.frbit.com
@@ -96,7 +92,7 @@ tunnel.{{region}}.frbit.com
 {{ssh-password}}
 
 **SSH port**:  
-Leave empty (standard settings)
+22
 
 
 
