@@ -56,25 +56,25 @@ SYMFONY_ENV=prod
 For a new Symfony installation execute the commands following in your local terminal:
 
 ```bash
-# Use Composer to create a local Symfony project named like your App
+# 1. Use Composer to create a local Symfony project named like your App
 $ composer create-project symfony/framework-standard-edition {{app-name}} "2.7.*"
 
-# Change into the folder
+# 2. Change into the folder
 $ cd {{app-name}}
 
-# Initialize a local Git repo
+# 3. Initialize a local Git repo
 $ git init .
 
-# Add all files
+# 4. Add all files
 $ git add -A
 
-# Commit files for the first time
+# 5. Commit files for the first time
 $ git commit -m 'Initial'
 
-# Add fortrabbit as a remote
+# 6. Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# Push changes to fortrabbit
+# 7. Push changes to fortrabbit
 $ git push -u fortrabbit master
 ```
 
