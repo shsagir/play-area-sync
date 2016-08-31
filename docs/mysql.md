@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-07-25
+reviewed:      2016-08-31
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -75,6 +75,10 @@ Sometimes you want to run a certain query on your live database. Or you want to 
 **MySQL password**:  
 See [below on how to reclaim](#toc-obtain-the-mysql-password) 
 
+**MySQL port**:  
+Leave empty (standard settings)
+
+
 
 #### SSH tunnel for MySQL access
 
@@ -90,6 +94,9 @@ tunnel.{{region}}.frbit.com
 
 **SSH password**:  
 {{ssh-password}}
+
+**SSH port**:  
+Leave empty (standard settings)
 
 
 
