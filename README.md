@@ -257,7 +257,7 @@ Find the right balance between being general and being precise (aka Captain Obvi
 * **SSL cert** — ~~SSL certificate~~
 * **web storage** — ~~webspace~~
 * **Composer** — ~~composer~~
-* **Mac OS** — ~~macOS~~ (https://en.wikipedia.org/wiki/Mac_OS)
+* **macOS** — ~~Mac OS X~~ (https://en.wikipedia.org/wiki/Mac_OS)
 
 
 ## Avoid words list

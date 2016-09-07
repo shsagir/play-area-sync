@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-07-27
+reviewed:      2016-09-02
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -190,8 +190,13 @@ We recommend to use a secured connection via `HTTPS` but that it is not required
 
 ### Log access
 
-As with all fortrabbit components you can use the [logging](help.fortrabbit.com/logging) service to tail live logs.
+You can use the [logging](/logging) service to tail live logs from the Object Storage.
 
+```bash
+# Only Object Storage access log:
+$ ssh {{ssh-user}}@log.{{region}}.frbit.com tail source:objects_access
+# See requests when and from whom
+```
 
 ## Advanced usage, troubleshooting & quirks
 
@@ -216,20 +221,20 @@ Take care that we don't do cache purging. So when changing the cache duration, o
 Caching is great but if you want to make changes appear immediately you need a way around them. One approach would be to set manual caching headers with a low value, but this would just annul the positive effect of caching. So what you want to do is query string versioning, like so:
 
 ```nohighlight
-https://{{app-name}}.assets.frb.io/path/to/file.jpg?2016-05-05.1
-https://{{app-name}}.assets.frb.io/path/to/file.jpg?2016-05-05.2
-https://{{app-name}}.assets.frb.io/path/to/file.jpg?2016-05-06.1
+https://{{app-name}}.objects.frb.io/path/to/file.jpg?2016-05-05.1
+https://{{app-name}}.objects.frb.io/path/to/file.jpg?2016-05-05.2
+https://{{app-name}}.objects.frb.io/path/to/file.jpg?2016-05-06.1
 ```
 
 Caching works on the whole URL, including the query string. So if you change the query string you are delivering accessing a different item, hence it's not cached. Many frameworks/CMS already do that for you, but it's easy to implement manually as well.
 
 ### Resetting the secret key
 
-If you need to change the secret key of your Object Storage: Login to the Dashboard > App > Settimgs > Object Storage and click on "Reset Object Storage".
+If you need to change the secret key of your Object Storage: Login to the Dashboard > App > Settings > Object Storage and click on "Reset Object Storage".
 
 <div markdown="1" data-user="known">
 
-[Reset the Object Storage for the App **[{{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)**
+[Reset the Object Storage for the App **[{{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/access/object-storage/secret)**
 
 </div>
 

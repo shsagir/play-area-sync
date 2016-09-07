@@ -39,9 +39,9 @@ tags:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
+We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine. You can skip the following two parts when you have chosen Phalcon in the Stack Chooser when creating your App.
 
-### Set Phalcon root path
+### Set the root path
 
 Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashboard under your Apps Domains settings.
 
@@ -51,33 +51,43 @@ Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashbo
 
 ### Enable Phalcon extension
 
-As Phalcon is a C Extension, you need to enable it in the Dashboard under your Apps PHP Extensions.
+As Phalcon is a C Extension, it needs to be enabled in the Dashboard under your Apps PHP Extensions.
+
+<div markdown="1" data-user="known">
+[Edit the PHP settings for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/apps/{{app-name}}/settings)
+</div>
+
+Please mind that this is what makes Phalcon a bot special. See the [Phalcon help pages](https://docs.phalconphp.com/en/latest/reference/install.html) on how to set up the extension for your local environment. 
+
 
 ## Install
 
 Execute the following in your local terminal to start from scratch with a fresh new Phalcon installation on fortrabbit:
 
 ```bash
-# 1. Change into your local phalcon folder
-$ cd your-local-phalcon-folder
+# 1. Create a local folder called like your App
+$ mkdir {{app-name}}
 
-# 2. Initialize local Git repo
+# 2. Change into that folder
+$ cd {{app-name}}
+
+# 3. Initialize local Git repo
 $ git init .
 
-# 3. Make sure to keep the cache folder in Git
+# 4. Make sure to keep the cache folder in Git
 $ touch cache/.gitkeep
 
-# 4. Add all files
+# 5. Add all files
 $ git add -A
 
-# 5. Commit files for the first time
-git commit -m 'Initial'
+# 6. Commit files for the first time
+$ git commit -m 'Initial'
 
-# 6. Add fortrabbit as a remote
-git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+# 7. Add fortrabbit as a remote
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 7. Push to fortrabbit
-git push -u fortrabbit master
+# 8. Push to fortrabbit
+$ git push -u fortrabbit master
 ```
 
 When it is done you can visit your App URL in the browser to see the Phalcon welcome screen:
@@ -87,7 +97,12 @@ When it is done you can visit your App URL in the browser to see the Phalcon wel
 
 ## Tune
 
-Until now this is a vanilla Phalcon. Now, make it yours.
+Until now this is a very vanilla Phalcon. Now, make it yours.
+
+### Creating a project
+
+Now you might want some stuff to happen there. See official guides to [get started with a Phalcon project](https://docs.phalconphp.com/en/latest/reference/tutorial.html#creating-a-project). 
+
 
 ### MySQL
 

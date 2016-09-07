@@ -32,7 +32,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ### Set the root path
 
-If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**.
+If you haven't already (the stack chooser does that for you) — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
@@ -40,7 +40,7 @@ If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-
 
 ### Set WordPress authentication unique keys and salts
 
-In the Dashboard, add the following [App secrets](secrets):
+If you haven't already (the stack chooser does that for you) — in the Dashboard, add the following [App secrets](secrets):
 
 ```osterei32
 AUTH_KEY=LongRandomString
@@ -183,7 +183,7 @@ $ git commit -am "Initial"
 $ git push -u fortrabbit master
 ```
 
-Finally you can visit your App in the browser and follow the WordPress setup:
+**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, finally you can visit your App in the browser and follow the WordPress setup:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
@@ -286,7 +286,7 @@ Bedrock recommends to install themes by unpacking them into the `web/app/themes`
 
 ### Object storage
 
-Since WordPress is a CMS living on editorial provided content you most likely need a persistent storage. That's not so hard: you can use our [Object Storage component](/object-storage). Once you have booked the component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
+Since WordPress is a CMS living on editorial provided content you most likely need a persistent storage — but fortrabbit App have [ephemeral storage](/quirks#toc-ephemeral-storage). That's not a breaker: Use our [Object Storage](/object-storage). Once you have booked the Component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
 
 Now you need to install two plugins. Best do it with Composer in your local terminal:
 

@@ -34,11 +34,11 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ### Set the root path
 
-In the fortrabbit Dashboard: [Set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
+If you haven't already (the stack chooser does that for you) - in the Dashboard: [Set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
 
 ### Set ENV vars
 
-If you haven't already: login the fortrabbit Dashboard and set the following [environment variables](env-vars):
+If you haven't already (the stack chooser does that for you) - in the Dashboard set the following [environment variables](env-vars):
 
 ```
 CRAFT_DEBUG=0
@@ -258,12 +258,20 @@ node_modules
 You're almost done with the basic setup. Last step is to deploy your code:
 
 ```
+# Add changes to Git
 $ git add -A
+
+# Commit changes
 $ git commit -m 'Init'
+
+# Push to deploy to fortrabbit
 $ git push -u fortrabbit master
 ```
 
-**Done! Your Craft App is online!**
+**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, when this is done, you can visit your App URL in the browser:
+
+* [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
+
 
 ## Tuning
 

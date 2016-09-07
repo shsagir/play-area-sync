@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-08-02
+reviewed:         2016-08-29
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -39,7 +39,8 @@ We assume you've already created a New App with fortrabbit. You should also have
 
 ### Set the Apps root path
 
-If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
+
+If you haven't already (the stack chooser does that for you) - in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
@@ -47,7 +48,7 @@ If you haven't already — in the Dashboard: [Set the root path](/app#toc-set-a-
 
 ### Add the application key
 
-If you haven't already —  in the Dashboard: Add an application key as a new as an [environment variable](/env-vars) named `APP_KEY` to your App. You can use this:
+If you haven't already (the stack chooser does that for you) - in the Dashboard: Add an application key as a new as an [environment variable](/env-vars) named `APP_KEY` to your App. You can use this:
 
 ```osterei32
 APP_KEY=ClickToGenerate
@@ -89,7 +90,7 @@ $ git push -u fortrabbit master
 # the next deployments will be much faster
 ```
 
-When it is done you can visit your App URL in the browser to see the Laravel welcome screen:
+**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, when this is done, you can visit your App URL in the browser to see the Laravel welcome screen:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
@@ -167,6 +168,7 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate:rollack
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan tinker
 ```
 
+If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
 
 
 
