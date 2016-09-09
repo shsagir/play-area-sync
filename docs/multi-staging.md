@@ -63,8 +63,8 @@ First you should rename the cloned `origin` remote to `testing`. Then you can ad
 
 ```bash
 $ git remote rename origin testing
-$ git remote add staging {{ssh user}}@deploy.{{region}}.frbit.com:{{your-app-stage}}.git
-$ git remote add production {{ssh user}}@deploy.{{region}}.frbit.com:{{your-app-prod}}.git
+$ git remote add staging {{ssh-user}}@deploy.{{region}}.frbit.com:{{your-app-stage}}.git
+$ git remote add production {{ssh-user}}@deploy.{{region}}.frbit.com:{{your-app-prod}}.git
 ```
 
 #### Mapping branches for New Apps
@@ -76,9 +76,9 @@ Again, start out with the testing App by creating a new local branch named as th
 $ git checkout -b {{your-app-test}}
 $ git push -u testing {{your-app-test}}
 $ git checkout -b {{your-app-stage}}
-$ git push -u stating {{your-app-stage}}
+$ git push -u staging {{your-app-stage}}
 $ git checkout -b {{your-app-prod}}
-$ git push -u stating {{your-app-prod}}
+$ git push -u staging {{your-app-prod}}
 
 
 # Verify settings
