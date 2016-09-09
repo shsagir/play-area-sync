@@ -51,8 +51,8 @@ Assuming you use a 3-stage layout: testing, staging and production. You start by
 
 ```bash
 # Let's start by cloning the testing App:
-$ git clone git@deploy.eu2.frbit.com:your-app-test.git {{your-app}}
-$ cd {{your-app}}
+$ git clone {{ssh-user-of-your-app-test}}@deploy.eu2.frbit.com:your-app-test.git {{your-app-test}}
+$ cd {{your-app-test}}
 ```
 
 This first cloning will create the remote `origin` and clone the `master` branch to you local disk.
@@ -63,8 +63,8 @@ First you should rename the cloned `origin` remote to `testing`. Then you can ad
 
 ```bash
 $ git remote rename origin testing
-$ git remote add staging {{ssh-user}}@deploy.{{region}}.frbit.com:{{your-app-stage}}.git
-$ git remote add production {{ssh-user}}@deploy.{{region}}.frbit.com:{{your-app-prod}}.git
+$ git remote add staging {{ssh-user-of-your-app-stage}}@deploy.{{region}}.frbit.com:{{your-app-stage}}.git
+$ git remote add production {{ssh-user-your-app-prod}}@deploy.{{region}}.frbit.com:{{your-app-prod}}.git
 ```
 
 #### Mapping branches for New Apps
