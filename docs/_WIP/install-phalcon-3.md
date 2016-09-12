@@ -68,10 +68,10 @@ Phalcon is unlike any other framework. You first need to get Phalcon running loc
 
 1. [Install the C-extension](https://docs.phalconphp.com/en/latest/reference/install.html)
 2. [Download the Phalcon developer tools](https://docs.phalconphp.com/en/latest/reference/tools.html)
-3. [Create a Phalcon project](https://docs.phalconphp.com/en/latest/reference/tools.html#generating-a-project-skeleton)
+3. [Create a Phalcon project](https://docs.phalconphp.com/en/latest/reference/tools.html#generating-a-project-skeleton) (skeleton)
 4. [Check the installation](https://docs.phalconphp.com/en/latest/reference/tutorial.html#checking-your-installation)
 
-Once that gives you a green light, continue like so.
+Once that gives you a green light, continue like so:
 
 ### Setup Git & deploy to fortrabbit
 
@@ -111,10 +111,6 @@ When it is done you can visit your App URL in the browser to see the Phalcon wel
 ## Tune
 
 Until now this is a very vanilla Phalcon. Now, make it yours.
-
-### Creating a project
-
-Now you might want some stuff to happen there. See official guides to [get started with a Phalcon project](https://docs.phalconphp.com/en/latest/reference/tutorial.html#creating-a-project).
 
 
 ### MySQL
