@@ -57,7 +57,7 @@ As Phalcon is a C Extension, it needs to be enabled in the Dashboard under your 
 [Edit the PHP settings for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/apps/{{app-name}}/settings)
 </div>
 
-Please mind that this is what makes Phalcon a bot special. See the [Phalcon help pages](https://docs.phalconphp.com/en/latest/reference/install.html) on how to set up the extension for your local environment. 
+Please mind that this is what makes Phalcon a bot special. See the [Phalcon help pages](https://docs.phalconphp.com/en/latest/reference/install.html) on how to set up the extension for your local environment.
 
 
 ## Install
@@ -101,7 +101,7 @@ Until now this is a very vanilla Phalcon. Now, make it yours.
 
 ### Creating a project
 
-Now you might want some stuff to happen there. See official guides to [get started with a Phalcon project](https://docs.phalconphp.com/en/latest/reference/tutorial.html#creating-a-project). 
+Now you might want some stuff to happen there. See official guides to [get started with a Phalcon project](https://docs.phalconphp.com/en/latest/reference/tutorial.html#creating-a-project).
 
 
 ### MySQL
@@ -190,7 +190,7 @@ $di->setShared('session', function () {
                 \Memcached::OPT_HASH      => \Memcached::HASH_MD5,
                 \Memcached::OPT_PREFIX_KEY => 'prefix.',
             ],
-            'prefix'     => 'my_'
+            'prefix'     => 'sessions_'
         ]);
     }
 
@@ -229,10 +229,13 @@ $di->setShared('backend-cache', function () {
     if ($servers = $this->get('memcache-servers')) {
         $cache = new \Phalcon\Cache\Backend\Libmemcached($frontendCache, [
             'uniqueId'   => 'my-private-app',
+            'servers'    => $servers,
+            'lifetime'   => 3600,
             'client'     => [
                 \Memcached::OPT_HASH      => \Memcached::HASH_MD5,
                 \Memcached::OPT_PREFIX_KEY => 'prefix.',
             ],
+            'prefix'     => 'cache_'
         ]);
     }
 
