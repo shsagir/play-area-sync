@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-08-24
+reviewed:         2016-09-14
 title:            Install Phalcon 3
 naviTitle:        Phalcon
 lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C extension providing high performance and low resource consumption. Here you learn how to best getting started with Phalcon 3 on fortrabbit.
@@ -57,10 +57,23 @@ As Phalcon is a C Extension, it needs to be enabled in the Dashboard under your 
 [Edit the PHP settings for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/apps/{{app-name}}/settings)
 </div>
 
-Please mind that this is what makes Phalcon a bot special. See the [Phalcon help pages](https://docs.phalconphp.com/en/latest/reference/install.html) on how to set up the extension for your local environment.
+
 
 
 ## Install
+
+### Setup Phalcon locally
+
+Phalcon is unlike any other framework. You first need to get Phalcon running locally. That's the hard part:
+
+1. [Install the C-extension](https://docs.phalconphp.com/en/latest/reference/install.html)
+2. [Download the Phalcon developer tools](https://docs.phalconphp.com/en/latest/reference/tools.html)
+3. [Create a Phalcon project](https://docs.phalconphp.com/en/latest/reference/tools.html#generating-a-project-skeleton)
+4. [Check the installation](https://docs.phalconphp.com/en/latest/reference/tutorial.html#checking-your-installation)
+
+Once that gives you a green light, continue like so.
+
+### Setup Git & deploy to fortrabbit
 
 Execute the following in your local terminal to start from scratch with a fresh new Phalcon installation on fortrabbit:
 
