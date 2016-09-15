@@ -1,12 +1,13 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-09-15
 title:         Meaning of life
 lead:          The universe, and everything.
 naviTitle:     Life
 noToc:         1
 group:         Kitchen_sink
+stack:         all
 
 keywords:
     - 42

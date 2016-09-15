@@ -1,11 +1,12 @@
 ---
 
 template:     article
-reviewed:     2016-01-10
+reviewed:     2016-09-15
 title:        Integrating CI with fortrabbit
 naviTitle:    Continuous Integration
 lead:         Automated testing, builds, special deploy scripts and other actions on fortrabbit.
 group:        Kitchen_sink
+stack:        all
 
 otherVersionLinks:
     - continuous-integration-old-app
@@ -83,33 +84,38 @@ The general concepts of our [multi staging](articles/multi-staging) apply, just 
 For example, if you have three environments: `testing`, `staging` and `production` and if you use Bitbucket as your repository, you would create three local branches: `test`, `stage` and `prod`. All three local branches would map directly to branches of the same name on Bitbucket. On Bitbucket, you would now set up your deployment hook, which tells your CI provider.
 
 ```bash
-git clone git@bitbucket.org:your-username/your-repo-name.git
-cd your-repo-name
+# 1. clone the repo from BitBucket (or Github) example
+$ git clone git@bitbucket.org:your-username/your-repo-name.git
 
-# rename master branch to test branch, if you haven't already
-git branch -m master test
+# 2. Go to into that folder
+$ cd your-repo-name
 
-# create stage and prod branch, if you haven't already
-git branch stage
-git branch prod
+# 3. rename master branch to test branch, if you haven't already
+$ git branch -m master test
 
-# do some stuff in the test branch
+# 4. create stage and prod branch, if you haven't already
+$ git branch stage
+$ git branch prod
+
+# 5. do some stuff in the test branch
 git checkout test
 # .. code
-git commit -am 'My changes'
 
-# on first push to your bitbucket remote, make sure use the "-u" switch
-git push -u origin test
+# 6. Commit changes
+$ git commit -am 'My changes'
 
-# merge test into stage
-git checkout stage
-git merge test
-git push -u origin stage
+# 7. on first push to your bitbucket remote, make sure use the "-u" switch
+$ git push -u origin test
 
-# merge stage into prod
-git merge stage
-git checkout prod
-git push -u origin prod
+# 8. Merge test into stage
+$ git checkout stage
+$ git merge test
+$ git push -u origin stage
+
+# 9. merge stage into prod
+$ git merge stage
+$ git checkout prod
+$ git push -u origin prod
 ```
 
 

@@ -1,9 +1,9 @@
 ---
 
 template:      article
-reviewed:      2016-07-24
-naviTitle:     Hello world
-title:         Deploy some code to fortrabbit
+reviewed:      2016-09-15
+naviTitle:     Git deploy in 5 minutes 
+title:         Deploy some code to fortrabbit with Git
 lead:          This is the famous 5 minute tutorial to get started with fortrabbit. See how fast and easy you can get your code up and running.
 
 group:         Install_guides
@@ -26,7 +26,6 @@ seeAlsoLinks:
 tags:
     - beginner
     - install
-
 ---
 
 ## Get ready
@@ -34,7 +33,7 @@ tags:
 Let's have a quick check-up before we get started here:
 
 1. You have already [signed up to fortrabbit](https//dashboard.fortrabbit.com/signup)
-3. You should have created a plain vanilla [App](app) (free trial)
+2. You should have created a plain vanilla [App](app) (free trial)
 3. You should have a [PHP development environment](/local-development) or at least [Git](/git) running on your local machine
 
 
@@ -117,7 +116,8 @@ $ git push -u origin master
 #  * [new branch]      master -> master
 # Branch master set up to track remote branch master from origin.
 ```
-**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool! That's it. You now visit your App URL in the browser:
+**Got an error?** Please see [access troubleshooting](/access-methods#toc-troubleshooting) and [Git troubleshooting](/git).  
+**Did it work?** Cool! That's it. You now visit your App URL in the browser:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 

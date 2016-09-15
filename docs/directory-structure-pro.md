@@ -5,6 +5,7 @@ reviewed:      2016-02-18
 title:         Directory structure
 naviTitle:     Directory structure
 group:         Kitchen_sink
+stack:         pro
 
 
 otherVersionLinks:

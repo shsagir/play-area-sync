@@ -5,6 +5,8 @@ reviewed:         2016-06-24
 naviTitle:        eZ Platform
 title:            Install eZ Platform on fortrabbit
 lead:             Learn how to install and tune the eZ Platform on fortrabbit.
+stack:            pro
+dontList:         true
 
 websiteLink:      http://ez.no/
 websiteLinkText:  ez.no
@@ -13,7 +15,6 @@ image:            ez-mark.png
 version:          1.3
 group:            Install_guides
 
-dontList:   true
 
 seeAlsoLinks:
     - app
@@ -37,7 +38,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit which has the [MySQL](mysql) and [Memcache](memcache) components enabled. You also need a local [EZ Platform](https://github.com/ezsystems/ezplatform/blob/master/INSTALL.md) installation.
+We assume you've already created an App with fortrabbit which has the [MySQL](mysql) and [Memcache](memcache) components enabled. You also need a local [EZ Platform](https://github.com/ezsystems/ezplatform/blob/master/INSTALL.md) installation.
 
 
 ## Install
@@ -45,9 +46,8 @@ We assume you've already created a New App with fortrabbit which has the [MySQL]
 If you don't have one, you can setup a new one locally:
 
 ```bash
-$ cd ~/Projects
-$ composer create-project --prefer-dist --no-dev ezsystems/ezplatform MyApp "~1.4@dev"
-$ cd MyApp
+$ composer create-project --prefer-dist --no-dev ezsystems/ezplatform {{app-name}} "~1.4@dev"
+$ cd {{app-name}}
 ```
 
 **Note**: The `@dev` is required, since 1.4 is still in development. The ezPublish Kernel package [had a bug](https://github.com/ezsystems/ezpublish-kernel/commit/5c754a346bad15435e9a29431fbb2d14f2419623) making it impossible to use S3 or S3 compatible storages before recently. This has been fixed in 1.4.

@@ -1,11 +1,12 @@
----
+s---
 
 template:    article
-reviewed:    2016-01-22
+reviewed:    2016-09-15
 title:       Some words on security
 naviTitle:   Security
 lead:        fortrabbit security concepts and how you can help.
 group:       Kitchen_sink
+stack:       all
 
 keywords:
     - beginner
@@ -93,6 +94,8 @@ Please revisit your list of SSH keys from time to time and keep it as short as p
 
 We save all passwords encrypted. That's why we can't read your passwords. So when you lost a password, eg for MySQL, you can only set a new one. All those passwords are randomly generated strings with high entropy.
 
+
+<!--  TODO: define stack -->
 
 ## Firewalling
 

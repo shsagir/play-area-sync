@@ -1,10 +1,11 @@
 ---
 
 template:      article
-reviewed:      2016-03-10
+reviewed:      2016-09-14
 title:         Profiling PHP on fortrabbit
 naviTitle:     Profiling
 lead:          What you can do to find performance bottlenecks in your PHP application.
+stack:         all
 
 tags:
     - beginner

@@ -4,6 +4,7 @@ template:         article
 naviTitle:        ElephantSQL
 reviewed:         2016-02-25
 title:            Using ElephantSQL with fortrabbit
+stack:            all
 
 group:            Databases
 section:          Extending_fortrabbit

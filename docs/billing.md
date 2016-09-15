@@ -1,11 +1,12 @@
 ---
 
 template:      article
-reviewed:      2016-08-10
+reviewed:      2016-09-15
 title:         All about billing, pricing, payments, invoices & taxes
 naviTitle:     Billing
 lead:          Our consumption based pricing model explained.
 group:         Kitchen_sink
+stack:         all
 
 seeAlsoLinks:
     - collaboration
@@ -54,7 +55,7 @@ Log in to the Dashboard > Billing Contact. There you'll find a cost preview for 
 You can pay by **credit card** (Visa & Master, no debit cards) or **SEPA direct debit** (EU clients only). For "enterprise clients" (large volume) we also offer to pay by **bill** (on account, after invoice).
 
 
-## Billing mail address
+## Billing e-mail address
 
 You can setup a different e-mail address for each Billing Contact.
 

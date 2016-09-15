@@ -2,8 +2,9 @@
 
 template:         article
 naviTitle:        About code collaboration
-reviewed:         2016-03-10
+reviewed:         2016-09-15
 title:            Using code collaboration with fortrabbit
+stack:            all
 
 section:          Extending_fortrabbit
 groupList:        code-collaboration

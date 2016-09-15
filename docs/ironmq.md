@@ -2,8 +2,9 @@
 
 template:         article
 naviTitle:        IronMQ
-reviewed:         2016-02-23
+reviewed:         2016-09-15
 title:            Using IronMQ with fortrabbit
+stack:            all
 
 group:            Queues
 section:          Extending_fortrabbit
@@ -23,6 +24,7 @@ keywords:
 
 
 <!-- TODO: Delay until https://github.com/LaravelCollective/iron-queue uses IronMQ PHP SDK v4, which is required to use current IronMQ v3 -->
+
 
 
 ## About queues

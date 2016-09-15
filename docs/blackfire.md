@@ -1,9 +1,10 @@
 ---
 
 template:         article
-reviewed:         2016-02-20
+reviewed:         2016-09-15
 title:            Using Blackfire with fortrabbit
 naviTitle:        Blackfire
+stack:            all
 
 group:            Profiling
 section:          Extending_fortrabbit
@@ -29,6 +30,9 @@ seeAlsoLinks:
   - new-relic
 
 ---
+
+
+<!-- TODO: what about hobby app, when not enabled?   -->
 
 ## About Blackfire
 

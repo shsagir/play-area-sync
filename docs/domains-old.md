@@ -8,6 +8,7 @@ lead:          The world of App URLs, domains and DNS.
 dontList:      true
 oldApp:        true
 group:         Kitchen_sink
+stack:         old
 
 otherVersionLinks:
     - about-domains

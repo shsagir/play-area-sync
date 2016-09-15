@@ -2,8 +2,9 @@
 
 template:         article
 naviTitle:        Logentries
-reviewed:         2016-07-27
+reviewed:         2016-09-15
 title:            Using Logentries with fortrabbit
+stack:            all
 
 group:            Logging
 section:          Extending_fortrabbit
@@ -60,6 +61,7 @@ LOGENTRIES_TOKEN={{the-token-you-just-got}}
 </div>
 
 
+<!-- TODO: define stack -->
 
 ## Request a firewall white-listing
 

@@ -1,11 +1,12 @@
 ---
 
 template:   article
-reviewed:   2016-08-26
+reviewed:   2016-09-15
 title:      About logs on fortrabbit
 naviTitle:  Logging
 lead:       Accessing live logs of your App is essential for developing. Here is how you can do it on fortrabbit.
 group:      deployment
+stack:      pro
 
 seeAlsoLinks:
     - remote-ssh-execution
@@ -20,7 +21,7 @@ tags:
 
 ---
 
-You are developing your App and see the white screen of death. You are getting a 5xx error and don't know why. You write debug logs and need them to trace a problem.
+You are developing your App and see the "white screen of death". You are getting a 5xx error and don't know why. You write debug logs and need them to trace a problem.
 
 
 ## Log file access

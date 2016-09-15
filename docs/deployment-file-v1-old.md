@@ -8,6 +8,7 @@ lead:          Enhance your deployment process with the fortrabbit.yml deploymen
 dontList:      true
 oldApp:        true
 group:         Kitchen_sink
+stack:         old
 
 otherVersionLinks:
     - deployment-file-v2

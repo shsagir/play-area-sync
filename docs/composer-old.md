@@ -8,6 +8,7 @@ lead:          Learn how to integrate Composer into your development workflow wi
 dontList:      true
 oldApp:        true
 group:         Kitchen_sink
+stack:         old
 
 otherVersionLinks:
   - composer

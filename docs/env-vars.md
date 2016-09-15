@@ -1,19 +1,16 @@
 ---
 
 template:   article
-reviewed:   2014-01-21
+reviewed:   2016-09-25
 title:      Using environment variables in PHP
 naviTitle:  Environment variables
 lead:       ENV vars help to create and shape the environment of where the code runs.
 group:      Kitchen_sink
+stack:      all
 
 keywords:
     - ENV vars
     - Environment variables
-
-seeAlsoLinks:
-    - secrets
-    - multi-staging
 
 tags:
     - php
@@ -42,8 +39,6 @@ echo $_SERVER["MY_ENV_VAR"];
 You can enter ENV vars on fortrabbit in the [Dashboard](dashboard). You'll do so in the settings of your [App](app). You can edit ENV vars one by one or import multiple at once.
 
 ## ENV vars vs security
-
-**Note**: Before diving into how to securely use ENV vars, please check out the [App secrets](secrets), which provide already an out-of-the-box solution.
 
 Storing credentials (passwords, secrets, ..) in environment variables is not without risk. They can be exposed, due to programming errors or oversights. Please read an BLOG[in-depth discussion in our Blog](how-to-keep-a-secret).
 

@@ -1,11 +1,12 @@
 ---
 
 template:      article
-reviewed:      2016-06-10
+reviewed:      2016-09-15
 title:         Scaling
 naviTitle:     Scaling
 lead:          When and how to grow and shrink your Apps resources.
 group:         Kitchen_sink
+stack:         pro
 
 seeAlsoLinks:
     - app-design
@@ -14,7 +15,6 @@ seeAlsoLinks:
 
 keywords:
     - app-design
-
 
 ---
 

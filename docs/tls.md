@@ -1,12 +1,13 @@
 ---
 
 template:      article
-reviewed:      2016-07-11
+reviewed:      2016-09-15
 dontList:      false
 title:         Using TLS with fortrabbit
 naviTitle:     TLS
 lead:          "How to make use of HTTPS on fortrabbit. Learn about the three options."
 group:         Kitchen_sink
+stack:         all
 
 otherVersionLinks:
     - ssl-old-app

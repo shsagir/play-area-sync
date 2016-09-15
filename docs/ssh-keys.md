@@ -1,11 +1,12 @@
 ---
 
 template:      article
-reviewed:      2016-07-20
+reviewed:      2016-09-15
 naviTitle:     SSH keys setup
 title:         Troubleshooting SSH keys setup
 lead:          This article helps solving common issues setting up your SSH keys.
 group:         getting_started
+stack:         all
 
 
 keywords:
@@ -190,6 +191,8 @@ Dive deeper, learn some more about the SSH key integration on fortrabbit.
 ### Account SSH keys
 
 **This is the recommended method:** you store and manage your public SSH keys with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own or you are collaborating with. It also makes managing collaboration easy — add/remove collaborators and code access is handled "automagically".
+
+<!-- TODO: which Stacks here? -->
 
 ### App-only SSH keys
 

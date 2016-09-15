@@ -1,13 +1,14 @@
 ---
 
-template:     article
-reviewed:     2016-01-10
-title:        Workers — for Old Apps
-naviTitle:    Workers
-lead:         Offshore long running and compute intensive tasks with background jobs — that's what Workers are for.
+template:      article
+reviewed:      2016-01-10
+title:         Workers — for Old Apps
+naviTitle:     Workers
+lead:          Offshore long running and compute intensive tasks with background jobs — that's what Workers are for.
 dontList:      true
 oldApp:        true
 group:         Components
+stack:         old
 
 otherVersionLinks:
     - workers

@@ -1,11 +1,12 @@
 ---
 
 template:      article
-reviewed:      2016-07-19
+reviewed:      2016-09-15
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
 group:         deployment
+stack:         all
 
 otherVersionLinks:
     - git-old-app
@@ -34,7 +35,7 @@ seeAlsoLinks:
 
 ## Git ready
 
-**There is no FTP here.** We assume that you have: [Git installed](git) locally and know the basics. We further assume that you know about [access methods](/access-methods) here on fortrabbit, so either have your SSH keys installed or your [Dashboard](/dashboard) password handy.
+We assume that you have: [Git installed](git) locally and know the basics. We further assume that you know about [access methods](/access-methods) here on fortrabbit, so either have your SSH keys installed or your [Dashboard](/dashboard) password handy.
 
 ## Usage
 

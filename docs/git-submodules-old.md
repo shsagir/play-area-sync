@@ -6,7 +6,8 @@ title:        Using Git submodules
 naviTitle:    Git submodules
 lead:         Leverage Git submodules on fortrabbit.
 dontList:     true
-group:       Kitchen_sink
+group:        Kitchen_sink
+stack:        old
 
 tags:
     - advanced

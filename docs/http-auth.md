@@ -1,11 +1,12 @@
 ---
 
 template:    article
-reviewed:    2016-01-22
+reviewed:    2016-09-15
 title:       Using Basic access authentication aka HTTP Auth on fortrabbit
 naviTitle:   HTTP Auth
 lead:        How to set up your App in a way that the browser prompts for username/password.
 group:       Kitchen_sink
+stack:       all
 
 keywords:
     - HTTP Auth

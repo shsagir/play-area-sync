@@ -38,13 +38,13 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ## Install WordPress with SFTP
 
-The most straight forward and simple way to install WordPress is by downloading it to your local machine and then upload it to your fortrabbit App:
+The most straight forward way to install WordPress is by downloading it to your local machine and then upload it to your fortrabbit App:
 
 1. Download [the latest](https://wordpress.org/latest.zip) archive
 2. Unpack the archive locally
 3. Open an SFTP client
 4. Connect to your fortrabbit App (access credentials)
-3. Upload the contents of `wordpress` to the `htdocs` folder
+3. Upload the **contents** of the local `wordpress` to the remote `htdocs` folder
 
 ### Configure in the browser
 
@@ -67,9 +67,9 @@ After that you should be done for now, you can visit:
 
 Don't stop with a plain vanilla installation. Make it yours!
 
-### Install themes
+### Install themes & plugins
 
-This is pretty standard operations. You can download themes directly from 
+This is pretty standard operations. You can download and update themes directly from the WordPress admin. Or you can create your own, test them locally, then upload them to your remote themes folder. The same applies to plugins.
 
 ### Send mails
 

@@ -1,10 +1,11 @@
 ---
 
 template:      article
-reviewed:      2016-03-10
+reviewed:      2016-09-14
 title:         Logging on fortrabbit
 naviTitle:     Logging
 lead:          Access your historic logs of your fortrabbit App.
+stack:         all
 
 tags:
     - advanced

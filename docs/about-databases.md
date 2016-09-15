@@ -2,8 +2,9 @@
 
 template:         article
 naviTitle:        About databases
-reviewed:         2016-02-25
+reviewed:         2016-09-15
 title:            Using external databases with fortrabbit
+stack:            all
 
 section:          Extending_fortrabbit
 groupList:        databases

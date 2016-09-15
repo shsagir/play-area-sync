@@ -8,6 +8,7 @@ lead:          Automated testing, builds, special deploy scripts and other actio
 dontList:      true
 oldApp:        true
 group:         Extending_fortrabbit
+stack:         old
 
 otherVersionLinks:
     - continuous-integration

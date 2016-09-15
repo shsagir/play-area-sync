@@ -88,11 +88,7 @@ You can register your App to accept requests from any external domain you route 
 
 #### Set a custom root path
 
-Per default the domains of the App will route to the `~/htdocs` [folder](directory-structure). In some cases, you need to set a different document root or want to route different domains to different folder. [Laravel](/install-laravel), for examples, requires you to use `~/htdocs/public` per default.
-
-You can set a custom root path by writing the relative path to the sub-folder (all folders below the htdocs folder are allowed). You can do so for each domain (including App URL) you have registered within the Dashboard.
-
-For example, if you want to use the folder `~/htdocs/web`, just enter `web` in the input. If you want to use the folder `~/htdocs/app/webbroot`, just enter `app/webroot`.
+Per default the domains of the App will route to the `~/htdocs` [folder](directory-structure). In some cases, you need to set a different document root or want to route different domains to different folder. [Laravel](/install-laravel), for examples, requires you to use `~/htdocs/public` per default. You can set a custom root path by writing the relative path to the sub-folder (all folders below the htdocs folder are allowed). 
 
 
 - - -

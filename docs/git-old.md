@@ -8,6 +8,7 @@ lead:        Learn how to deploy with Git and see advanced configuration.
 dontList:    true
 oldApp:      true
 group:       Kitchen_sink
+stack:       old
 
 otherVersionLinks:
     - git
