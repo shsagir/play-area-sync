@@ -1,11 +1,12 @@
 ---
 
 template:      article
-reviewed:      2016-07-13
+reviewed:      2016-09-15
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think servers instead. Learn the basic fortrabbit concepts.
 group:         getting_started
+stack:         all
 
 seeAlsoLinks:
     - dashboard
@@ -93,20 +94,6 @@ You can set a custom root path by writing the relative path to the sub-folder (a
 
 For example, if you want to use the folder `~/htdocs/web`, just enter `web` in the input. If you want to use the folder `~/htdocs/app/webbroot`, just enter `app/webroot`.
 
-
-
-
-
-## Old and New Apps
-
-You can currently run two different generations of Apps on fortrabbit: classical [Old Apps](old-apps) and [New Apps](new-apps). Old Apps were introduced 2013 andwill end ~~at around mid 2016~~ start of 2017, until then all Old Apps have to be migrated to the new ones. New Apps have been introduced in August 2015. 
-
-## Further readings
-
-* [Official pricing page](http://www.fortrabbit.com/pricing) - overview about scaling plans & options
-* [Universal specs page](http://www.fortrabbit.com/specs) - detailed informations
-* [When and how to scale](/scaling) - help article about scaling
-* [fortrabbit VS Digital Ocean](http://www.fortrabbit.com/why-not-digitalocean) - comparing fortrabbit with VPS hosting
 
 - - -
 
