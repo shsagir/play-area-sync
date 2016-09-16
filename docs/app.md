@@ -46,7 +46,7 @@ An App is a virtual container for your web project, website, web application, st
 
 ### One website per App
 
-With classical server hosting you rent out a machine to host multiple websites. While this seems to make economic sense — it's not professional. Just think about these scenarios:
+With classical server hosting you rent out a machine to host multiple websites. While this seems to make economic sense — it's not smart. Just think about these scenarios:
 
 * "website A" needs runtime version y, while "website B" requires an version x
 * "website C" has a nasty bug and crashes the whole server
@@ -54,13 +54,14 @@ With classical server hosting you rent out a machine to host multiple websites. 
 * "website E" get's popular and receives lot's of traffic, slowing other websites down
 * Your fellow web developer colleague "accidentally" removed all files on the server
 
-That's why we think that Apps are much better servers_
+Apps are better:
 
+* Apps start a friction of a server but can be scaled across multiple servers
 * Each App has it's own settings
 * Apps are isolated from each other
-* Apps can be scaled individually
 
-So fortrabbit Apps are designed to host one website:
+
+So, a fortrabbit App is designed to host one website:
 
 * There is only one MySQL database per App
 * Each App has only one Git repo
