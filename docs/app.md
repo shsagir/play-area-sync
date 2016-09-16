@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-09-16
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think servers instead. Learn the basic fortrabbit concepts.
@@ -21,10 +21,9 @@ seeAlsoLinks:
 tags: 
     - beginner
     - platform
-
 ---
 
-## General concept
+## Concept
 
 ```nohighlight
 # simplified App topology
@@ -43,9 +42,33 @@ tags:
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
-An App is a virtual container for your web project, website, web application, staging branch, project or whatever you do. It consists of multiple Components like the PHP runtime or a MySQL database. 
+An App is a virtual container for your web project, website, web application, staging branch, project or whatever you do.
 
-Think of Components as micro services. Some Components are integral — meaning: you can't turn them off — while others are optional. Most Components are available in multiple expansion states (scaling plans). There are presets with common combination of Components.
+### One website per App
+
+With classical server hosting you rent out a machine to host multiple websites. While this seems to make economic sense — it's not professional. Just think about these scenarios:
+
+* "website A" needs runtime version y, while "website B" requires an version x
+* "website C" has a nasty bug and crashes the whole server
+* "website D" has a security vulnerability, the whole server get's hacked
+* "website E" get's popular and receives lot's of traffic, slowing other websites down
+* Your fellow web developer colleague "accidentally" removed all files on the server
+
+That's why we think that Apps are much better servers_
+
+* Each App has it's own settings
+* Apps are isolated from each other
+* Apps can be scaled individually
+
+So fortrabbit Apps are designed to host one website:
+
+* There is only one MySQL database per App
+* Each App has only one Git repo
+* Each App has it's own collaboration rules
+* Each App has it's own perfomance metrics
+
+
+
 
 ## Dashboard links
 
