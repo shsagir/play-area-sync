@@ -7,6 +7,7 @@ naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
 
 group:         Components
+stack:         pro
 
 keywords:
     - S3

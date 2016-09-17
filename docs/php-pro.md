@@ -6,6 +6,7 @@ title:         Using and scaling PHP
 naviTitle:     PHP
 lead:          PHP is — as you are probably aware — a popular web programming language. It's also the core Component here on fortrabbit. See here how to use and scale PHP.
 group:         Components
+stack:         pro
 
 seeAlsoLinks:
     - scaling
@@ -19,6 +20,7 @@ keywords:
 ---
 
 
+<!-- TODO: merge (maybe partly) with scaling-pro article (to similar topics) -->
 
 ## Booking PHP
 

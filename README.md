@@ -203,6 +203,8 @@ Find the right balance between being general and being precise (aka Captain Obvi
 * **URL** — ~~Url~~, ~~url~~
 * **User** — ~~member~~, ~~account~~
 * **Workers** — ~~Worker~~
+* **Professional Stack** — ~~Pro Stack~~, ~~Professional stack~~
+* **Hobby Stack** — ~~Hobby stack~~, ~~hobby stack~~
 * **{{ interchangble-value }}** < something the users will need to modify
 * **{{ your-app }}** ~~{{ my-app }}~~, ~~{{ app-name }}~~
 

@@ -18,6 +18,9 @@ keywords:
 
 ---
 
+<!-- TODO: merge with PHP article (so all infos are together) -->
+
+
 One of the fortrabbit platform fundamentals is scalability – handle nearly any amount of visitors. Start with low resources and grow wild at any time, increase or decrease computing resources on demand. Each App on fortrabbit has multiple Components which can be scaled individually.
 
 ## Understanding vertical & horizontal scaling

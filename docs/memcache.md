@@ -6,6 +6,7 @@ title:       All about Memcache
 naviTitle:   Memcache
 lead:        Speed speed speed. Why and how to do caching with Memcache on fortrabbit.
 group:       Components
+stack:       pro
 
 otherVersionLinks:
    - memcache-old-app

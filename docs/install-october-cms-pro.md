@@ -33,7 +33,7 @@ tags:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit which has the [MySQL](mysql), [Memcache](memcache) components enabled - optionally also the [Worker](worker) Component. You should also have a [PHP development environment](/local-development) running on your local machine. You also need a local [October](https://octobercms.com/docs/console/commands#console-install) installation. You can either use an existing one or start from scratch.
+We assume you've already created a New App with fortrabbit which has the [MySQL](mysql), [Memcache](memcache) Components enabled - optionally also the [Worker](worker) Component. You should also have a [PHP development environment](/local-development) running on your local machine. You also need a local [October](https://octobercms.com/docs/console/commands#console-install) installation. You can either use an existing one or start from scratch.
 
 ### Root path
 
