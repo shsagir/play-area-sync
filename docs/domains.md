@@ -1,15 +1,12 @@
 ---
 
 template:      article
-reviewed:      2016-07-11
+reviewed:      2016-09-15
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
 group:         Kitchen_sink
 stack:         all
-
-otherVersionLinks:
-    - domains-old-app
 
 tags:
     - beginner

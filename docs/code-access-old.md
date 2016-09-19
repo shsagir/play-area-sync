@@ -47,4 +47,4 @@ In certain cases you might want to add code access to an App without the need to
 
 ## Legacy SSH & SFTP access
 
-Old Apps can also access the Apps via [SSH/SFTP](ssh-sftp-old-app).
+Old Apps can also access the Apps via [SSH/SFTP](ssh-sftp-old).
