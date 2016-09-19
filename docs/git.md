@@ -2,10 +2,10 @@
 
 template:      article
 reviewed:      2016-09-15
-naviTitle:     Get started with Git
-title:         Get started with Git on fortrabbit
+naviTitle:     Getting started with Git
+title:         Getting started with Git on fortrabbit
 lead:          This is a quick intro to Git, how to set it up and how to use it on fortrabbit.
-group:         getting_started
+group:         deployment
 stack:         all
 
 keywords:

@@ -5,7 +5,7 @@ reviewed:     2016-08-03
 title:        Local development
 naviTitle:    Local development
 lead:         Why and how to set a local PHP development environment.
-group:        getting_started
+group:        deployment
 
 keywords:
      - LAMP

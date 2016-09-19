@@ -7,7 +7,7 @@ naviTitle:     Composer
 lead:          Learn how to integrate Composer into your development workflow with fortrabbit.
 dontList:      true
 oldApp:        true
-group:         Kitchen_sink
+group:         platform
 stack:         old
 
 otherVersionLinks:

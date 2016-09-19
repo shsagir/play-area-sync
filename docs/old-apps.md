@@ -2,11 +2,12 @@
 
 oldApp:        1
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-09-19
 title:         How to still work with the Old Apps
 naviTitle:     Old Apps 
 lead:          New Apps are the new standard. During sunset you can still use the Old Apps, this article helps finding your way.
-group:         Kitchen_sink
+group:         platform
+dontList:      true
 
 seeAlsoLinks:
      - app
@@ -17,7 +18,15 @@ seeAlsoLinks:
 
 ---
 
-We have two generations of Apps here on fortrabbit: Old Apps (2013 - ~2017?) and [New Apps](new-apps) (from 2015 on). The Old Apps are a bit different to the New Apps. This article lists resources to work with the Old Apps.
+<!-- TODO: recheck! -->
+
+We have three generations of Apps/Stacks here on fortrabbit: 
+
+* Old Apps (2013 - ~2017?)
+* Professional Stack (from 2015 on) < formaly known as New App
+* Hobby Stack (from 2016 on)
+
+This article lists resources to still work with the Old Apps.
 
 
 ## Deprecation warning

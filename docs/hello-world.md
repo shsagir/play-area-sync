@@ -2,7 +2,7 @@
 
 template:      article
 reviewed:      2016-09-15
-naviTitle:     Git deploy in 5 minutes 
+naviTitle:     No CMS/framework
 title:         Deploy some code to fortrabbit with Git
 lead:          This is the famous 5 minute tutorial to get started with fortrabbit. See how fast and easy you can get your code up and running.
 

@@ -7,7 +7,7 @@ naviTitle:     SSL
 lead:          https and SSL for the rest of us.
 dontList:      true
 oldApp:        true
-group:         Kitchen_sink
+group:         platform
 
 keywords:
     - ssl

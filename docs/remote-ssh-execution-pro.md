@@ -4,9 +4,9 @@ template:      article
 reviewed:      2016-09-15
 naviTitle:     Remote SSH execution
 title:         Using remote SSH commands
-group:         Kitchen_sink
 excerpt:       "How to run Artisan migrate and other useful commands."
 stack:         pro
+group:         deployment
 
 seeAlsoLinks:
     - git-deployment

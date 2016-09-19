@@ -8,7 +8,7 @@ naviTitle:     SSH
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
 dontList:      true
 oldApp:        true
-group:         Kitchen_sink
+group:         platform
 
 seeAlsoLinks:
     - git-deployment

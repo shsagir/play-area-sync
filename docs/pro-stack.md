@@ -1,11 +1,11 @@
 ---
 
 template:      article
-reviewed:      2016-09-02
-title:         How to work with the New Apps
-naviTitle:     New Apps
-lead:          Learn how the New Apps differ from the Old Apps in practical use.
-group:         Kitchen_sink
+reviewed:      2016-09-15
+title:         Working with the Professional Stack
+naviTitle:     Professional Stack
+lead:          Learn how practical use.
+group:         platform
 
 seeAlsoLinks:
      - migrating-old-new-app
@@ -15,11 +15,7 @@ seeAlsoLinks:
 
 ---
 
-We have two generations of Apps here on fortrabbit: [Old Apps](old-apps) (est 2013) and New Apps (est 2015). The New Apps are a bit different to the Old Apps and not fully backwards compatible. This article here is a look on what changes in practical day by day usage in contrast to Old Apps.
-
-Please mind that Old Apps are in sunset phase, they will be supported at least until **December 2016**. See our [Old Apps > New App migration guide](migrating-old-new-app) to bring your App over.
-
-New Apps are more advanced, much faster and even more affordable. Here are high level concepts as well as some details — of the technical changes:
+<!-- TODO: harmonize with stacks article -->
 
 
 ## File system access

@@ -6,7 +6,7 @@ dontList:      false
 title:         Using TLS with fortrabbit
 naviTitle:     TLS
 lead:          "How to make use of HTTPS on fortrabbit. Learn about the three options."
-group:         Kitchen_sink
+group:         platform
 stack:         all
 
 otherVersionLinks:

@@ -5,7 +5,7 @@ reviewed:      2016-07-25
 naviTitle:     Multi-staging
 title:         Multi stage App life cycles
 lead:          Learn about development/production environments and how to run them on fortrabbit.
-group:         Kitchen_sink
+group:         platform
 tags:
      - advanced
 

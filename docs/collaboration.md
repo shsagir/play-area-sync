@@ -5,7 +5,7 @@ reviewed:      2016-07-22
 title:         Teamwork on fortrabbit
 naviTitle:     Collaboration
 lead:          Mapping real world team relationships in a hosting env.
-group:         Kitchen_sink
+group:         platform
 
 tags:
     - beginner

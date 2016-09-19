@@ -5,7 +5,7 @@ title:         "Hobby & Professional Stack — which one to choose"
 reviewed:      2016-09-15
 naviTitle:     Hobby & Professional Stack
 lead:          "With each App you create, you can choose between two technology stacks. This article helps you to decide."
-group:         Kitchen_sink
+group:         platform
 stack:         all
 
 ---

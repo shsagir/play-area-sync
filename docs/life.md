@@ -6,7 +6,7 @@ title:         Meaning of life
 lead:          The universe, and everything.
 naviTitle:     Life
 noToc:         1
-group:         Kitchen_sink
+group:         platform
 stack:         all
 
 keywords:

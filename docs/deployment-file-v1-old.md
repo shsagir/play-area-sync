@@ -7,7 +7,7 @@ naviTitle:     Deployment file v1
 lead:          Enhance your deployment process with the fortrabbit.yml deployment file.
 dontList:      true
 oldApp:        true
-group:         Kitchen_sink
+group:         platform
 stack:         old
 
 otherVersionLinks:

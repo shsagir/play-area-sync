@@ -5,7 +5,7 @@ reviewed:      2016-02-18
 title:         Leveraging Composer
 naviTitle:     Composer
 lead:          Learn how to integrate Composer into your development workflow with fortrabbit.
-group:         Kitchen_sink
+group:         deployment
 stack:         pro
 
 otherVersionLinks:

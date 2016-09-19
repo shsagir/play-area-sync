@@ -5,7 +5,7 @@ reviewed:      2016-05-16
 title:         Migrating from Old App to New App
 naviTitle:     Migrate: Old App > New App
 lead:          Learn how to move your Old App to a New App.
-group:         Kitchen_sink
+group:         platform
 
 seeAlsoLinks:
      - app

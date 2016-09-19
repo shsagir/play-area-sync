@@ -5,7 +5,7 @@ reviewed:      2016-02-16
 naviTitle:     Terminology
 title:         What is what on fortrabbit?
 lead:          You'll find many capitalized words here in this documentation here. These words refer to fortrabbit "creations". This list shall give you an overview:
-group:         Kitchen_sink
+group:         platform
 
 seeAlsoLinks:
     - dashboard

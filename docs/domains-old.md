@@ -7,7 +7,7 @@ naviTitle:     Domains - Old App
 lead:          The world of App URLs, domains and DNS.
 dontList:      true
 oldApp:        true
-group:         Kitchen_sink
+group:         platform
 stack:         old
 
 otherVersionLinks:

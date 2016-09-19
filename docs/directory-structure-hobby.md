@@ -4,7 +4,7 @@ template:      article
 reviewed:      2016-09-15
 title:         Directory structure
 naviTitle:     Directory structure
-group:         Kitchen_sink
+group:         platform
 stack:         hobby
 
 

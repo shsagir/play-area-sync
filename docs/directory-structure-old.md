@@ -7,7 +7,7 @@ naviTitle:     Directory structure - Old App
 lead:          The predefined set of folders for each App you need to know for the Old App.
 dontList:      true
 oldApp:        true
-group:         Kitchen_sink
+group:         platform
 
 otherVersionLinks:
     - directory-structure

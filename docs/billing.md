@@ -5,7 +5,7 @@ reviewed:      2016-09-15
 title:         All about billing, pricing, payments, invoices & taxes
 naviTitle:     Billing
 lead:          Our consumption based pricing model explained.
-group:         Kitchen_sink
+group:         platform
 stack:         all
 
 seeAlsoLinks:

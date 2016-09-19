@@ -7,7 +7,7 @@ naviTitle:     SSH + Git
 lead:          How to use Git from the shell on fortrabbit — advanced worflow, special case.
 dontList:      1
 oldApp:        true
-group:         Kitchen_sink
+group:         platform
 
 externalLinks:
     - http://git-scm.com/book/en/Git-Tools-Submodules
