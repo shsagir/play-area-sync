@@ -8,11 +8,6 @@ lead:          When and how to grow and shrink your Apps resources.
 group:         platform
 stack:         pro
 
-seeAlsoLinks:
-    - app-design
-    - app
-    - terminology
-
 keywords:
     - app-design
 

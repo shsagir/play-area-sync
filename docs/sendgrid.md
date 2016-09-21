@@ -20,9 +20,6 @@ keywords:
 tags:
     - advanced
 
-seeAlsoLinks:
-    - about-transactional-e-mail
-
 ---
 
 

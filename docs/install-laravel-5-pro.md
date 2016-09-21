@@ -24,12 +24,6 @@ tags:
     - install
     - laravel
 
-seeAlsoLinks:
-    - app
-    - git
-    - git-deployment
-    - private-composer-repos
-
 ---
 
 

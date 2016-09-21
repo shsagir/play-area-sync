@@ -8,10 +8,6 @@ lead:       Accessing live logs of your App is essential for developing. Here is
 group:      deployment
 stack:      pro
 
-seeAlsoLinks:
-    - remote-ssh-execution
-
-
 keywords:
     - Logging
     - Logs

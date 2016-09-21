@@ -8,11 +8,6 @@ lead:          Our consumption based pricing model explained.
 group:         platform
 stack:         all
 
-seeAlsoLinks:
-    - collaboration
-    - scaling
-    - terminology
-
 tags:
     - beginner
 

@@ -22,11 +22,6 @@ keywords:
      - myisam
      - phpmyadmin
 
-seeAlsoLinks:
-    - ssh-sftp-old-app
-    - scaling
-    - local-development
-
 ---
 
 ## Booking & scaling

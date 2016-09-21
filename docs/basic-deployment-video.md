@@ -11,12 +11,6 @@ keywords:
     - Git
     - video
 
-seeAlsoLinks:
-    - git-deployment
-    - dashboard
-    - app
-    - hello-world
-
 ---
 
 The most simple `Git` push to deploy demo, without [Composer](/composer) or any other fanciness.

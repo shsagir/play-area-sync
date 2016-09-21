@@ -16,10 +16,6 @@ keywords:
    - memcached
    - memcache
 
-seeAlsoLinks:
-   - app-design
-
-
 tags:
    - cache
 

@@ -22,9 +22,6 @@ keywords:
     - registration
     - ordering
 
-seeAlsoLinks:
-    - directory-structure
-
 ---
 
 Each fortrabbit App has its own, unique App URL. Additionally you can route any external domain to your App. Learn all about DNS and domains settings on fortrabbit.

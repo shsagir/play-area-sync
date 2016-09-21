@@ -17,9 +17,6 @@ keywords:
     - naked
     - subdomain
 
-seeAlsoLinks:
-    - about-domains
-
 tags:
     - DNS
 

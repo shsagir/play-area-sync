@@ -28,12 +28,6 @@ keywords:
     - ns
     - lookup
 
-seeAlsoLinks:
-    - tls
-    - app
-    - directory-structure
-    - iwantmyname
-
 ---
 
 Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external domain to your App. Your goal here is to have your App running under your own domain.

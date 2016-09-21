@@ -22,9 +22,6 @@ keywords:
      - log
      - logs
 
-seeAlsoLinks:
-    - about-databases
-
 ---
 
 

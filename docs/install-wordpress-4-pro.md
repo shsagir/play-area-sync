@@ -14,15 +14,12 @@ image:            wordpress-mark.png
 version:          4.6
 
 otherVersionLinks:
-    - install-wordpress-old-app
+    - install-wordpress-old
 
 tags:
     - php
     - install
     - wordpress
-
-seeAlsoLinks:
-    - app
 
 ---
 

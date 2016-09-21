@@ -11,10 +11,6 @@ stack:         pro
 otherVersionLinks:
     - directory-structure-old
 
-seeAlsoLinks:
-    - git-deployment
-    - about-domains
-
 keywords:
     - create directory
     - create

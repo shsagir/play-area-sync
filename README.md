@@ -83,11 +83,6 @@ otherVersionLinks:
     - install-laravel-6
     - install-laravel-7
 
-# names (=filename without .md) of linked articles related
-seeAlsoLinks:
-    - app
-    - composer
-
 # additional keywords for document search to help users find this article
 keywords:
     - foo

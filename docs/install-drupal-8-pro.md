@@ -14,9 +14,6 @@ category:         CMS
 image:            drupal8-mark.png
 version:          8.1 (dev)
 
-seeAlsoLinks:
-    - app
-
 keywords:
     - drupal
     - install

@@ -17,13 +17,6 @@ category:         Code collaboration
 dataCenters:      n/a
 image:            bitbucket-mark.svg
 
-
-seeAlsoLinks:
-    - about-code-collaboration
-    - git-deployment
-    - git-submodules
-    - github
-
 tags:
     - advanced
 

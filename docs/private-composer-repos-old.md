@@ -15,10 +15,6 @@ otherVersionLinks:
 tags:
     - git
 
-seeAlsoLinks:
-    - git-deployment
-    - composer
-
 keywords:
     - Composer
     - Git
@@ -26,10 +22,6 @@ keywords:
     - GitHub
     - Bitbucket
     - Hooks
-
-externalLinks:
-    - http://getcomposer.org/doc/05-repositories.md#using-private-repositories
-    - http://getcomposer.org/doc/05-repositories.md#hosting-your-own
 
 ---
 

@@ -7,11 +7,6 @@ naviTitle:     Application design
 lead:          Best practices: from development to production. from backend to frontend.
 group:         platform
 
-seeAlsoLinks:
-    - scaling
-    - app
-    - about-profiling
-
 tags:
    - advanced
    - platform

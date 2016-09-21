@@ -26,17 +26,6 @@ keywords:
     - SSH-2 RSA
     - OpenSSH
 
-seeAlsoLinks:
-    - access-methods
-    - git
-    - remote-ssh-execution
-    - git-deployment
-    - app
-    - github
-    - bitbucket
-    - security
-    - collaboration
-
 tags:
     - beginner
     - git

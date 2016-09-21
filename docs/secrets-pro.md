@@ -13,9 +13,6 @@ keywords:
     - ENV vars
     - Environment variables
 
-seeAlsoLinks:
-   - env-vars
-
 tags:
   - php
   - beginner

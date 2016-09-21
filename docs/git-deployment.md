@@ -18,19 +18,6 @@ keywords:
 tags:
      - git
 
-seeAlsoLinks:
-    - git
-    - git-deployment
-    - ssh-keys
-    - deployment-architecture-video
-    - git-submodules
-    - deployment-file-v2
-    - directory-structure
-    - ssh-sftp-old
-    - security
-    - quirks
-
-
 ---
 
 ## Git ready

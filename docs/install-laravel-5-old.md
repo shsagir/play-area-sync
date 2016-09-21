@@ -13,16 +13,13 @@ group:         Install_guides
 otherVersionLinks:
     - /install-laravel-5
     - /install-laravel-4
-    - /install-laravel-4-old-app
+    - /install-laravel-4-old
 
 
 tags:
     - php
     - install
     - laravel
-
-seeAlsoLinks:
-    - install-laravel-4-old-app
 
 ---
 

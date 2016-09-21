@@ -23,9 +23,6 @@ keywords:
      - DBaaS
      - ORM
 
-seeAlsoLinks:
-    - about-databases
-
 ---
 
 

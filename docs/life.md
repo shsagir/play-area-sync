@@ -19,9 +19,6 @@ keywords:
 tags:
     - advanced
 
-externalLinks:
-    - http://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy
-
 ---
 
 ```php

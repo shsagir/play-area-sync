@@ -7,12 +7,6 @@ naviTitle:     Professional Stack
 lead:          Learn how practical use.
 group:         platform
 
-seeAlsoLinks:
-     - migrating-old-new-app
-     - object-storage
-     - app
-     - new-apps
-
 ---
 
 <!-- TODO: harmonize with stacks article -->

@@ -20,16 +20,6 @@ keywords:
     - Git Bash
 
 
-seeAlsoLinks:
-    - ssh-keys
-    - git-deployment
-    - dashboard
-    - terminology
-    - github
-    - bitbucket
-    - app
-
-
 tags:
     - beginner
 

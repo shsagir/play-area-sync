@@ -1,10 +1,10 @@
 ---
 
 template:      article
-title:         "Hobby & Professional Stack — which one to choose"
+title:         "Which Stack to choose"
 reviewed:      2016-09-15
 naviTitle:     Hobby & Professional Stack
-lead:          "With each App you create, you can choose between two technology stacks. This article helps you to decide."
+lead:          "With each App you create, you can choose between two technology stacks: Hobby Stack & Professional Stack. This article helps you to decide."
 group:         platform
 stack:         all
 

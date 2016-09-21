@@ -18,11 +18,6 @@ keywords:
     - shell
     - bash
 
-seeAlsoLinks:
-    - dashboard
-    - app
-    - app-design
-
 tags:
     - beginner
     - install

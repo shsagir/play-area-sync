@@ -11,14 +11,6 @@ stack:        all
 otherVersionLinks:
     - continuous-integration-old
 
-seeAlsoLinks:
-    - multi-staging
-
-externalLinks:
-    - http://en.wikipedia.org/wiki/Continuous_integration
-    - http://born2code.net/blog/2013/08/26/Deploying-from-wercker-to-fortrabbit/
-    - http://blog.fortrabbit.com/integrating-codeship-with-fortrabbit/
-
 keywords:
     - ci
     - continuous-integration

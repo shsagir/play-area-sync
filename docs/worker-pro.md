@@ -241,7 +241,7 @@ If you don't know what that is: never mind. If you do know: don't detach. To gua
 
 ## Developing your worker
 
-When developing you Worker script/command it helps if you are able to execute it once and see what it does. To that end you can use [remote SSH commands](/remote-ssh-execution).
+When developing you Worker script/command it helps if you are able to execute it once and see what it does. To that end you can use [remote SSH commands](/remote-ssh-execution-pro).
 
 
 ## Alternatives to the Worker

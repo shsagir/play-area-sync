@@ -12,12 +12,6 @@ keywords:
     - HTTP Auth
     - password for website
 
-externalLinks:
-    - http://en.wikipedia.org/wiki/Basic_access_authentication
-
-seeAlsoLinks:
-    - quirks
-
 tags:
     - php
 

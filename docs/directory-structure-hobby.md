@@ -12,10 +12,6 @@ otherVersionLinks:
     - directory-structure-old
     - directory-structure-pro
 
-seeAlsoLinks:
-    - git-deployment
-    - about-domains
-
 keywords:
     - create directory
     - create

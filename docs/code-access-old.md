@@ -17,14 +17,6 @@ keywords:
     - FTP
     - FTPs
 
-seeAlsoLinks:
-    - git-deployment
-    - ssh-sftp-old
-    - collaboration
-    - directory-structure
-    - app
-    - private-composer-repos
-
 tags:
     - beginner
 

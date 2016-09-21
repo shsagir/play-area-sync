@@ -13,10 +13,6 @@ otherVersionLinks:
 
 group:          Extending_fortrabbit
 
-seeAlsoLinks:
-    - git-deployment
-    - git-submodules
-
 tags:
     - advanced
 

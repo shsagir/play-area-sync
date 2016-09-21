@@ -16,13 +16,6 @@ keywords:
 tags:
     - php
 
-seeAlsoLinks:
-    - quirks
-
-externalLinks:
-    - http://www.php.net/manual/en/function.ini-set.php
-    - http://www.php.net/manual/en/function.mysql-set-charset.php
-
 ---
 
 

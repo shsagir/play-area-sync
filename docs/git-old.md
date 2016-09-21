@@ -20,16 +20,6 @@ keywords:
 tags:
      - git
 
-seeAlsoLinks:
-     - git-submodules
-     - deployment-file-v1-old-app
-     - directory-structure
-     - ssh-sftp-old-app
-     - security
-     - quirks
-     - ssh-keys
-
-
 ---
 
 We assume that you have: [Git installed](http://git-scm.com/) locally; your [local SSH keys in place](https://help.github.com/articles/generating-ssh-keys/) and [your public SSH key saved with your fortrabbit Account](ssh-keys). Authentication to access code is done with your public SSH keys.
@@ -85,7 +75,7 @@ While you can have as many Git branches you want, only changes to the master bra
 
 Fine tune deployment configurations with the `fortrabbit.yml` deployment file: control the way Composer runs, define pre- & post-deploy scripts and more.
 
-* [deployment file Version 1](deployment-file-v1-old-app) for Old Apps
+* [deployment file Version 1](deployment-file-v1-old) for Old Apps
 * [deployment file Version 2](deployment-file-v2) for New Apps
 
 

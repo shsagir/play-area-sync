@@ -19,12 +19,6 @@ keywords:
     - Ajenti
     - master control panel
 
-seeAlsoLinks:
-    - collaboration
-    - app-design
-    - app
-    - terminology
-
 tags:
     - beginner
 

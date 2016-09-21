@@ -10,10 +10,6 @@ dontList:      true
 oldApp:        true
 group:         platform
 
-seeAlsoLinks:
-    - git-deployment
-    - security
-
 ---
 
 We recommend to [deploy with Git](git) to fortrabbit. But in some cases it's very helpful to access your App thru SSH (and maybe even SFTP).

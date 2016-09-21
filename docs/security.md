@@ -1,4 +1,4 @@
-s---
+---
 
 template:    article
 reviewed:    2016-09-15
@@ -11,10 +11,6 @@ stack:       all
 keywords:
     - beginner
     - dashboard
-
-seeAlsoLinks:
-    - collaboration
-    - app
 
 tags:
     - beginner

@@ -10,7 +10,7 @@ tags:
      - advanced
 
 otherVersionLinks:
-   - multi-staging-old-app
+   - multi-staging-old
 
 ---
 

@@ -14,10 +14,6 @@ websiteLinkText:  octobercms.com
 category:         CMS
 image:            october-cms-mark.png
 
-seeAlsoLinks:
-    - app
-    - install-laravel-5
-
 keywords:
     - cms
     - install

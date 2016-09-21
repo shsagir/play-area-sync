@@ -19,10 +19,6 @@ keywords:
      - mysql
      - database
 
-seeAlsoLinks:
-    - ssh-sftp-old-app
-    - scaling
-
 ---
 
 

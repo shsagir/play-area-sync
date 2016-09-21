@@ -9,13 +9,6 @@ lead:          New Apps are the new standard. During sunset you can still use th
 group:         platform
 dontList:      true
 
-seeAlsoLinks:
-     - app
-     - new-apps
-     - old-apps
-     - app-design
-     - migrating-old-new-app
-
 ---
 
 <!-- TODO: recheck! -->

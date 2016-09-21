@@ -10,12 +10,6 @@ oldApp:           true
 dontIndex:        true
 group:            Install_guides
 
-otherVersionLinks:
-    - install-wordpress-4
-
-seeAlsoLinks:
-    - app
-
 keywords:
     - WP
     - wpadmin

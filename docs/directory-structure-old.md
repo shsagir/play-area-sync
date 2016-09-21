@@ -12,10 +12,6 @@ group:         platform
 otherVersionLinks:
     - directory-structure
 
-seeAlsoLinks:
-    - git-deployment
-    - about-domains
-
 keywords:
     - create directory
     - create

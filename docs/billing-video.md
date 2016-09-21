@@ -13,10 +13,6 @@ keywords:
     - Git
     - video
 
-seeAlsoLinks:
-    - billing
-    - dashboard
-
 ---
 
 Pay as you grow — why and how the fortrabbit billing is so fair.

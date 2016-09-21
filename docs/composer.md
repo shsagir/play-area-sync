@@ -11,9 +11,6 @@ stack:         pro
 otherVersionLinks:
    - composer-old
 
-seeAlsoLinks:
-   - git-deployment
-
 tags:
    - git
 

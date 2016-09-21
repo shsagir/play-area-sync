@@ -15,13 +15,6 @@ websiteLinkText:  github.com
 image:            github-octocat.png
 dataCenters:      n/a
 
-seeAlsoLinks:
-    - about-code-collaboration
-    - git-deployment
-    - git
-    - git-submodules
-    - bitbucket
-
 tags:
     - advanced
 

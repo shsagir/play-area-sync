@@ -20,10 +20,6 @@ keywords:
     - IAM
     - Google Cloud
 
-seeAlsoLinks:
-    - ssh-sftp-old-app
-    - scaling
-
 ---
 
 ## Problem

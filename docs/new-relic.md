@@ -14,9 +14,6 @@ websiteLink:      https://www.newrelic.com?utm_source=fortrabbit
 websiteLinkText:  newrelic.com
 dataCenters:      n/a
 
-seeAlsoLinks:
-    - blackfire
-
 ---
 
 <!-- TODO: what about hobby app, when not enabled?   -->

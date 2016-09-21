@@ -8,16 +8,6 @@ lead:          Forget servers. Think servers instead. Learn the basic fortrabbit
 group:         platform
 stack:         all
 
-seeAlsoLinks:
-    - dashboard
-    - migrating
-    - scaling
-    - app-design
-    - old-apps
-    - new-apps
-    - git-deployment
-    - terminology
-
 tags: 
     - beginner
     - platform

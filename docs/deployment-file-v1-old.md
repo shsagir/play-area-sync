@@ -13,11 +13,6 @@ stack:         old
 otherVersionLinks:
     - deployment-file-v2
 
-seeAlsoLinks:
-    - git-deployment
-    - composer
-    - deployment-file-v2
-
 tags:
    - advanced
    - git

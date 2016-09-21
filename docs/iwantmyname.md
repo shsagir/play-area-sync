@@ -14,9 +14,6 @@ category:         queues
 dataCenters:      n/a
 image:            iwantmyname-logo.png
 
-seeAlsoLinks:
-     - about-domains
-
 keywords:
      - domain
      - beginner

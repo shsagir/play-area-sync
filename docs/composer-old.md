@@ -13,9 +13,6 @@ stack:         old
 otherVersionLinks:
   - composer
 
-seeAlsoLinks:
-   - git-deployment
-
 tags:
    - git
 
@@ -37,7 +34,7 @@ For [Old Apps](new-apps) you can trigger Composer with a special keyword in your
 
 ### Composer via the deployment file
 
-You can fine tune your deployment behavior and aspects of Composer in the deployment file. [V1 for Old Apps](/deployment-file-v1-old-app),
+You can fine tune your deployment behavior and aspects of Composer in the deployment file. [V1 for Old Apps](/deployment-file-v1-old),
 
 ### Composer hook trigger (only Old Apps)
 

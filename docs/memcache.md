@@ -9,16 +9,12 @@ group:       Components
 stack:       pro
 
 otherVersionLinks:
-   - memcache-old-app
+   - memcache-old
 
 
 keywords:
    - memcached
    - memcache
-
-seeAlsoLinks:
-   - app-design
-
 
 tags:
    - cache

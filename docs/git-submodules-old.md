@@ -13,15 +13,6 @@ tags:
     - advanced
     - git
 
-seeAlsoLinks:
-    - git-deployment
-    - composer
-
-externalLinks:
-    - http://git-scm.com/book/en/Git-Tools-Submodules
-    - http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating
-    - http://joncairns.com/2011/10/how-to-use-git-submodules/
-
 ---
 
 
@@ -32,7 +23,7 @@ This article only applies to [Old Apps](old-apps), Git Submodules are not availa
 
 ## Usage
 
-You can use our official [Git deployment](deployment), but Git is also installed in your [Apps SSH account](ssh-sftp-old-app). Git submodules can be used from there. Depending on your App directory structure, your Git submodules and your "root" Git repository (using those submodules) can be anywhere in the directory structure. In this example it is assumed that the submodules are used relative to `~/htdocs`.
+You can use our official [Git deployment](deployment), but Git is also installed in your [Apps SSH account](ssh-sftp-old). Git submodules can be used from there. Depending on your App directory structure, your Git submodules and your "root" Git repository (using those submodules) can be anywhere in the directory structure. In this example it is assumed that the submodules are used relative to `~/htdocs`.
 
 ### Generate SSH Key
 

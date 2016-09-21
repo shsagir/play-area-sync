@@ -8,15 +8,8 @@ excerpt:       "How to run Artisan migrate and other useful commands."
 stack:         pro
 group:         deployment
 
-seeAlsoLinks:
-    - git-deployment
-    - git
-    - ssh-keys
-    - logging
-    - new-apps
-
 otherVersionLinks:
-    - ssh-sftp-old-app
+    - ssh-sftp-old
 
 tags:
     - git

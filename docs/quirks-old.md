@@ -11,13 +11,6 @@ group:       Kitchen_sink
 otherVersionLinks:
     - quirks
 
-seeAlsoLinks:
-    - app
-    - dashboard
-    - app
-    - encoding
-    - http-auth
-
 tags:
     - beginner
 

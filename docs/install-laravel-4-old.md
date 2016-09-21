@@ -19,11 +19,6 @@ tags:
     - deploy
     - laravel
 
-seeAlsoLinks:
-    - install-laravel-5-old-app
-    - app
-    - deployment-architecture-video
-
 ---
 
 We assume you have [Laravel](http://laravel.com/docs/4.2/installation) installed with [Composer](https://getcomposer.org/doc/00-intro.md) locally. Also you should have set up a plain vanilla new fortrabbit App on fortrabbit.

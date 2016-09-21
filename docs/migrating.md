@@ -10,13 +10,6 @@ group:       platform
 tags:
      - beginner
 
-seeAlsoLinks:
-     - app
-     - scaling
-     - app-design
-     - git-deployment
-     - terminology
-
 ---
 
 

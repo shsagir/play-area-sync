@@ -9,15 +9,6 @@ dontList:      1
 oldApp:        true
 group:         platform
 
-externalLinks:
-    - http://git-scm.com/book/en/Git-Tools-Submodules
-    - http://git-scm.com/book/en/Customizing-Git-Git-Hooks
-
-seeAlsoLinks:
-    - git-deployment
-    - ssh-sftp-old-app
-    - ssh-keys
-
 tags:
     - git
     - advanced

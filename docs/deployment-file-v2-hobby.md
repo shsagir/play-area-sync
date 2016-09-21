@@ -11,10 +11,6 @@ stack:         hobby
 otherVersionLinks:
     - deployment-file-v1-old
 
-seeAlsoLinks:
-    - git
-    - composer
-
 tags:
    - advanced
    - git
@@ -95,7 +91,7 @@ post:
 
 ## Developing pre or post calls
 
-When developing you Worker pre or post calls it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution).
+When developing you Worker pre or post calls it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution-pro).
 
 ## Multi staging use case
 

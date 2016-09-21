@@ -15,9 +15,6 @@ keywords:
     - VPS
     - virtual server
 
-seeAlsoLinks:
-    - app
-
 ---
 
 Servers have overhead and they don't scale — we think fortrabbit is a better way to host PHP applications.

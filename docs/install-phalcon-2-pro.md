@@ -23,7 +23,7 @@ otherVersionLinks:
 
 
 otherVersionLinks: 
-    - install-phalcon-old-app
+    - install-phalcon-old
 
 keywords:
     - phalconphp

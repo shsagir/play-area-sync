@@ -8,12 +8,6 @@ lead:          PHP is — as you are probably aware — a popular web programmin
 group:         Components
 stack:         pro
 
-seeAlsoLinks:
-    - scaling
-    - app-design
-    - app
-    - terminology
-
 keywords:
     - app-design
 

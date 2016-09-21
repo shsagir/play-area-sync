@@ -6,13 +6,7 @@ title:         Migrating from Old App to New App
 naviTitle:     Migrate: Old App > New App
 lead:          Learn how to move your Old App to a New App.
 group:         platform
-
-seeAlsoLinks:
-     - app
-     - new-apps
-     - old-apps
-     - app-design
-     - migrating
+stack:         old
 
 ---
 
