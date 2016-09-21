@@ -5,6 +5,7 @@ naviTitle:     fortrabbit vs VPS
 title:         fortrabbit vs VPS
 videoid:       uT0gaTWhLfE
 group:         Videos
+dontList:      true
 
 
 keywords:

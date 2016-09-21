@@ -5,8 +5,8 @@ reviewed:      2015-12-10
 naviTitle:     App architecture
 title:         Video: App architecture
 videoid:       SKMaiJhoPJw
-
 group:         Videos
+dontList:      true
 
 keywords:
     - hosting pricing

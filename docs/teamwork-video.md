@@ -5,6 +5,7 @@ naviTitle:     Teamwork video
 title:         Video: Teamwork & collaboration
 videoid:       8itq2IzpWKA
 group:         Videos
+dontList:      true
 
 
 keywords:

@@ -5,6 +5,7 @@ naviTitle:     Billing video
 title:         Video: Usage based billing
 videoid:       bHGYAwKAJUg
 group:         Videos
+dontList:      true
 
 
 keywords:
