@@ -8,6 +8,7 @@ naviTitle:     Life
 noToc:         1
 group:         platform
 stack:         all
+hideExamples:  yes
 
 keywords:
     - 42

@@ -12,6 +12,8 @@ websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
 version:          4.6
+stack:            pro
+hobbylink:        install-wordpress-4-hobby
 
 otherVersionLinks:
     - install-wordpress-old

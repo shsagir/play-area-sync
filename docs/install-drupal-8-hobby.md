@@ -7,6 +7,7 @@ naviTitle:        Drupal 8
 lead:             Drupal 8 is one of the best known open source PHP CMS. Learn here how to use it with fortrabbit.
 group:            Install_guides
 stack:            hobby
+prolink:          install-drupal-8-pro
 
 websiteLink:      https://www.drupal.org/?utm_source=fortrabbit
 websiteLinkText:  drupal.org

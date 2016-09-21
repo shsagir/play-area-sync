@@ -7,6 +7,7 @@ naviTitle:     WordPress
 lead:          "WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit."
 group:         Install_guides
 stack:         hobby
+prolink:       install-wordpress-4-pro
 deprecated:    0
 
 websiteLink:      http://wordpress.org/?utm_source=fortrabbit
