@@ -9,7 +9,7 @@ group:        Kitchen_sink
 stack:        all
 
 otherVersionLinks:
-    - continuous-integration-old-app
+    - continuous-integration-old
 
 seeAlsoLinks:
     - multi-staging

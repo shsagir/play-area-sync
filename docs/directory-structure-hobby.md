@@ -9,7 +9,7 @@ stack:         hobby
 
 
 otherVersionLinks:
-    - directory-structure-old-app
+    - directory-structure-old
     - directory-structure-pro
 
 seeAlsoLinks:

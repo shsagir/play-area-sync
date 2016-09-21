@@ -9,7 +9,7 @@ stack:         pro
 
 
 otherVersionLinks:
-    - directory-structure-old-app
+    - directory-structure-old
 
 seeAlsoLinks:
     - git-deployment

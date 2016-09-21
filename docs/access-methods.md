@@ -8,7 +8,7 @@ lead:          Learn about the different authentication methods with fortrabbit.
 group:         deployment
 
 otherVersionLinks:
-    - code-access-old-app
+    - code-access-old
 
 keywords:
      - ssh key

@@ -2,11 +2,10 @@
 
 template:      article
 reviewed:      2016-09-15
-title:         Install WordPress 4 (Hobby)
+title:         Install WordPress 4
 naviTitle:     WordPress
 lead:          "WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit."
 group:         Install_guides
-dontList:      true
 stack:         hobby
 
 websiteLink:      http://wordpress.org/?utm_source=fortrabbit
@@ -16,7 +15,7 @@ image:            wordpress-mark.png
 version:          4.6
 
 otherVersionLinks:
-    - install-wordpress-professional
+    - install-wordpress-4-pro
 
 tags:
     - php

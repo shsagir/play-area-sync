@@ -9,7 +9,7 @@ group:         deployment
 stack:         hobby
 
 otherVersionLinks:
-    - deployment-file-v1-old-app
+    - deployment-file-v1-old
 
 seeAlsoLinks:
     - git

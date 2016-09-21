@@ -12,6 +12,7 @@ websiteLinkText:  getgrav.org
 category:         CMS
 image:            grav-symbol.png
 version:          1.1.3
+stack:            pro
 
 
 tags:

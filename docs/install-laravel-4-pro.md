@@ -2,7 +2,7 @@
 
 template:         article
 reviewed:         2016-05-30
-title:            Install Laravel 4
+title:            Install Laravel 4 — Pro Stack
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 4 on fortrabbit.
 websiteLink:      http://laravel.com?utm_source=fortrabbit
@@ -13,11 +13,12 @@ version:          4
 dontList:         true
 dontIndex:        true
 group:            Install_guides
+stack:            pro
 
 otherVersionLinks:
-    - install-laravel-5
-    - install-laravel-5-old-app
-    - install-laravel-4-old-app
+    - install-laravel-5-pro
+    - install-laravel-5-old
+    - install-laravel-4-old
 
 tags:
     - php

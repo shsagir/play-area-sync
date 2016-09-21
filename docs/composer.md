@@ -9,7 +9,7 @@ group:         deployment
 stack:         pro
 
 otherVersionLinks:
-   - composer-old-app
+   - composer-old
 
 seeAlsoLinks:
    - git-deployment

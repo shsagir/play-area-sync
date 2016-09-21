@@ -9,7 +9,7 @@ group:         deployment
 stack:         all
 
 otherVersionLinks:
-    - git-old-app
+    - git-old
 
 keywords:
     - beginner
@@ -26,7 +26,7 @@ seeAlsoLinks:
     - git-submodules
     - deployment-file-v2
     - directory-structure
-    - ssh-sftp-old-app
+    - ssh-sftp-old
     - security
     - quirks
 

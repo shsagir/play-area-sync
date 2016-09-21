@@ -19,7 +19,7 @@ keywords:
 
 seeAlsoLinks:
     - git-deployment
-    - ssh-sftp-old-app
+    - ssh-sftp-old
     - collaboration
     - directory-structure
     - app

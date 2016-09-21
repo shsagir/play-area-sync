@@ -1,7 +1,10 @@
 ---
 
 template:         article
-reviewed:         2016-05-17
+dontList:         true
+
+
+reviewed:         2016-09-16
 title:            Install Phalcon 2
 naviTitle:        Phalcon
 lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C extension providing high performance and low resource consumption. Here you learn how to best getting started with Phalcon 2 on fortrabbit.
@@ -13,9 +16,10 @@ websiteLinkText:  phalconphp.com
 category:         framework
 image:            phalcon-mark.png
 version:          2
+stack:            pro
 
 otherVersionLinks:
-    - install-slim-framework-2
+    - install-phalcon-3-pro
 
 
 otherVersionLinks: 

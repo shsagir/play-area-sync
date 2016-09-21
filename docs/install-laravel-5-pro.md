@@ -12,11 +12,12 @@ websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
 version:          5.1
+stack:            pro
 
 otherVersionLinks:
-    - install-laravel-5-old-app
-    - install-laravel-4
-    - install-laravel-4-old-app
+    - install-laravel-5-old
+    - install-laravel-4-pro
+    - install-laravel-4-old
 
 tags:
     - php
