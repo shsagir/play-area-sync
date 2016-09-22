@@ -14,9 +14,6 @@ category:         databases
 dataCenters:      US, EU
 image:            mlab-mark.png
 
-tags:
-     - advanced
-
 keywords:
      - advanced
      - mongodb

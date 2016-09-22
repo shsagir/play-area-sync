@@ -82,11 +82,6 @@ keywords:
     - foo
     - bar
 
-# tag article to filter
-# (currently not in use)
-tags:
-    - beginner
-    - cms
 ```
 
 ## Dynamic help

@@ -13,9 +13,6 @@ keywords:
     - iso-8895-15
     - UTF8
 
-tags:
-    - php
-
 ---
 
 

@@ -1,19 +1,15 @@
 ---
 
 template:      article
+naviTitle:     Voucher codes
 reviewed:      2016-02-22
+title:         Using fortrabbit voucher codes
 dontList:      true
 dontIndex:     true
-
-naviTitle:     Voucher codes
-title:         Using fortrabbit voucher codes
-
+dontList:      true
 lead:          The best things in life are free. Hosting is never really free. At least there are promotions and free give aways. On fortrabbit we have voucher codes.
 
-dontList:      true
 
-tags:
-    - beginner
 
 keywords:
     - promo code

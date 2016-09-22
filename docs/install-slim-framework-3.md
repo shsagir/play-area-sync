@@ -13,13 +13,6 @@ category:         micro framework
 image:            slim-logo.png
 version:          3
 
-otherVersionLinks:
-    - install-slim-framework-2
-
-tags:
-    - php
-    - install
-
 ---
 
 

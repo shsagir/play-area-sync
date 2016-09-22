@@ -10,8 +10,7 @@ dontIndex:   true
 stack:       old
 group:       Install_guides
 
-
-tags:
+keywords:
     - php
     - install
     - deploy

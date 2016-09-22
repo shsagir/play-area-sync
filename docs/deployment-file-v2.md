@@ -9,7 +9,7 @@ group:         deployment
 stack:         pro
 oldLink:       deployment-file-v1-old
 
-tags:
+keywords:
    - advanced
    - git
 

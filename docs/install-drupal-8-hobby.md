@@ -19,11 +19,6 @@ keywords:
     - drupal
     - install
 
-tags:
-    - beginner
-    - php
-    - install
-
 ---
 
 ## Get ready

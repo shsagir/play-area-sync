@@ -19,10 +19,6 @@ keywords:
     - Windows
     - Git Bash
 
-
-tags:
-    - beginner
-
 ---
 
 ## About Git

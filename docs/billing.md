@@ -8,9 +8,6 @@ lead:          Our consumption based pricing model explained.
 group:         platform
 stack:         all
 
-tags:
-    - beginner
-
 ---
 
 ## Free trial

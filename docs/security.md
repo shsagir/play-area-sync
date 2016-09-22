@@ -12,9 +12,6 @@ keywords:
     - beginner
     - dashboard
 
-tags:
-    - beginner
-
 ---
 
 

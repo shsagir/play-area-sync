@@ -10,11 +10,7 @@ group:       Kitchen_sink
 deprecated:  yes
 allLink:     quirks
 
-tags:
-    - beginner
-
 ---
-
 
 ## General
 

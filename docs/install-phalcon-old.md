@@ -18,11 +18,6 @@ keywords:
     - c extension
     - hhvm
 
-
-tags:
-    - php
-    - install
-
 ---
 
 [Phalcon](http://phalconphp.com/en/) is a web framework delivered as C extension providing high performance and low resource consumption.

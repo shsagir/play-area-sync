@@ -20,9 +20,6 @@ keywords:
     - linux
     - unix
 
-tags:
-    - beginner
-
 ---
 
 ## Your folders

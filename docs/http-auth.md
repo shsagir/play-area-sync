@@ -11,8 +11,6 @@ stack:       all
 keywords:
     - HTTP Auth
     - password for website
-
-tags:
     - php
 
 ---

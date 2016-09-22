@@ -18,13 +18,11 @@ dataCenters:      n/a
 keywords:
     - profiler
     - performance
-
-tags:
-  - php
-  - advanced
-  - profiling
-  - performance
-  - testing
+    - php
+    - advanced
+    - profiling
+    - performance
+    - testing
 
 ---
 

@@ -11,10 +11,6 @@ hideExamples:   yes
 group:          Extending_fortrabbit
 allLink:        github
 
-
-tags:
-    - advanced
-
 keywords:
     - addon
     - add-on

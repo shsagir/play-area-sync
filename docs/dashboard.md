@@ -18,8 +18,6 @@ keywords:
     - ISPmanager
     - Ajenti
     - master control panel
-
-tags:
     - beginner
 
 ---

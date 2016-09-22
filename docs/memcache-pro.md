@@ -12,8 +12,6 @@ oldLink:     memcache-old
 keywords:
    - memcached
    - memcache
-
-tags:
    - cache
 
 ---

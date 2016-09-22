@@ -10,10 +10,6 @@ stack:         old
 group:         platform
 allLink:       multi-staging
 
-tags:
-    - advanced
-
-
 ---
 
 

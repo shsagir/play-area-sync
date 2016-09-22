@@ -17,11 +17,6 @@ keywords:
     - WP
     - wpadmin
 
-tags:
-    - beginner
-    - php
-    - install
-
 ---
 
 

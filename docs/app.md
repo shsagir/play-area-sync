@@ -8,9 +8,6 @@ lead:          Forget servers. Think servers instead. Learn the basic fortrabbit
 group:         platform
 stack:         all
 
-tags: 
-    - beginner
-    - platform
 ---
 
 ## Concept

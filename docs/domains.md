@@ -8,9 +8,6 @@ naviTitle:     Domains
 group:         platform
 stack:         all
 
-tags:
-    - beginner
-
 keywords:
     - TLD
     - Top Level Domain

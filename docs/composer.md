@@ -9,11 +9,9 @@ group:         deployment
 stack:         all
 oldLink:       composer-old
 
-tags:
-   - git
-
 keywords:
   - composerphp
+   - git
   - getcomposer
   - Dependency Manager
 

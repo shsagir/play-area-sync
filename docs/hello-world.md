@@ -18,9 +18,6 @@ keywords:
     - shell
     - bash
 
-tags:
-    - beginner
-    - install
 ---
 
 ## Get ready

@@ -10,10 +10,8 @@ stack:         old
 group:         platform
 allLink:       composer
 
-tags:
-   - git
-
 keywords:
+   - git
   - composerphp
   - getcomposer
   - Dependency Manager

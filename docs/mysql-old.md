@@ -9,9 +9,6 @@ dontList:      true
 stack:        old
 group:         Components
 
-otherVersionLinks:
-     - mysql
-
 keywords:
      - localhost
      - mysqldump

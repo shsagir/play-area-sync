@@ -9,9 +9,6 @@ group:         platform
 stack:         all
 hideExamples:  yes
 
-tags:
-    - beginner
-
 ---
 
 <!--  TODO: update/extend or trash —> Frank -->

@@ -9,10 +9,6 @@ group:         platform
 oldLink:       multi-staging-old
 stack:         all
 
-tags:
-     - advanced
-
-
 ---
 
 <!-- TODO: recheck for Hobby, include dynamic code example when possible -->

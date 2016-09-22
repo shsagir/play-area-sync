@@ -26,10 +26,6 @@ keywords:
     - SSH-2 RSA
     - OpenSSH
 
-tags:
-    - beginner
-    - git
-
 ---
 
 Beside [password authentication](/access-methods#toc-password-authentication) you can use your public SSH keys to authenticate yourself with a variety of fortrabbit services — such as **[deploying via Git](git)**, [accessing live logs](logging) and [remote MySQL access](mysql#toc-remote-mysql-access). SSH key authentication is more secure and more convenient, once setup. This article will help setting up your SSH keys.

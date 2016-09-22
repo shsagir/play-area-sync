@@ -11,8 +11,6 @@ stack:      all
 keywords:
     - ENV vars
     - Environment variables
-
-tags:
     - php
     - beginner
 

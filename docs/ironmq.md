@@ -14,9 +14,6 @@ websiteLinkText:  iron.io/platform/ironmq
 dataCenters:      n/a
 image:            iron-mq-mark.png
 
-tags:
-     - advanced
-
 keywords:
      - advanced
 

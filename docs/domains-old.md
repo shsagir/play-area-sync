@@ -10,9 +10,6 @@ group:         platform
 stack:         old
 allLink:       domains
 
-tags:
-    - beginner
-
 keywords:
     - TLD
     - Top Level Domain

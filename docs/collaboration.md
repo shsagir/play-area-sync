@@ -7,12 +7,10 @@ naviTitle:     Collaboration
 lead:          Mapping real world team relationships in a hosting env.
 group:         platform
 
-tags:
-    - beginner
-    - platform
-
 keywords:
     - collaboration
+    - beginner
+    - platform
     - teamwork
     - sharing
     - permissions

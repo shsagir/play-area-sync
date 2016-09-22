@@ -14,9 +14,6 @@ keywords:
      - localhost
      - 127.0.0.1
 
-tags:
-    - beginner
-
 ---
 
 ## Problem

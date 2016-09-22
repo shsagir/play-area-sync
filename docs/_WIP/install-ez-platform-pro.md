@@ -25,11 +25,6 @@ keywords:
     - cms
     - install
 
-tags:
-    - advanced
-    - php
-    - install
-
 ---
 
 <!-- TODO: PUBLISH THIS MAN -->

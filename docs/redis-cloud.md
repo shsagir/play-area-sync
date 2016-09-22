@@ -13,9 +13,6 @@ websiteLinkText:  redislabs.com/redis-cloud
 dataCenters:      US, EU
 image:            redis-cloud-logo.png
 
-tags:
-     - advanced
-
 ---
 
 ## About Redis

@@ -9,10 +9,6 @@ dontList:      1
 stack:        old
 group:         platform
 
-tags:
-    - git
-    - advanced
-
 ---
 
 This workflow is for advanced developers to solve special cases. It is based on your SSH account and Git, which is installed on the shell. WARNING: Do not confuse this workflow with the regular [Git workflow](git)! This workflow should be used for solving edge cases, only!

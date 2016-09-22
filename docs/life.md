@@ -17,9 +17,6 @@ keywords:
     - Galaxy
     - Guide
 
-tags:
-    - advanced
-
 ---
 
 ```php

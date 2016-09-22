@@ -21,11 +21,6 @@ keywords:
     - setup
     - install-guide
 
-tags:
-    - advanced
-    - php
-    - install
-
 ---
 
 

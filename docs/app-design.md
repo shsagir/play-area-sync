@@ -8,10 +8,6 @@ lead:          Best practices: from development to production. from backend to f
 group:         platform
 stack:         all
 
-tags:
-   - advanced
-   - platform
-
 ---
 
 <!-- TODO: artikel ist grösstenteils allgemein > teilweise aber zu wenig bezogen auf unsere Plattform  -->

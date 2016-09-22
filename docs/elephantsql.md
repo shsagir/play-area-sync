@@ -16,9 +16,6 @@ dataCenters:      US, EU
 company:          84codes AB
 image:            elephantsql-mark.png
 
-tags:
-     - advanced
-
 keywords:
      - PostgreSQL-as-a-Service
      - RDBMS

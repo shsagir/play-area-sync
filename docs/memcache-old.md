@@ -10,15 +10,9 @@ stack:      old
 proLink:    memcache-pro
 group:      Components
 
-otherVersionLinks:
-   - memcache
-
 keywords:
    - memcached
    - memcache
-
-tags:
-   - cache
 
 ---
 

@@ -14,9 +14,6 @@ category:         CDN
 dataCenters:      n/a
 image:            cloudflare-mark.png
 
-tags:
-     - advanced
-
 keywords:
      - advanced
      - CDN

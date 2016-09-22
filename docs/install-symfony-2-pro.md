@@ -14,11 +14,6 @@ category:         framework
 image:            symfony-mark.png
 version:          2
 
-tags:
-    - php
-    - install
-    - symfony
-
 ---
 
 

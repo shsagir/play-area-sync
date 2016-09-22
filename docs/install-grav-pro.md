@@ -14,10 +14,6 @@ image:            grav-symbol.png
 version:          1.1.3
 stack:            pro
 
-
-tags:
-    - php
-    - install
 ---
 
 ## Get ready

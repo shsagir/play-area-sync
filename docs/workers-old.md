@@ -9,12 +9,6 @@ dontList:      true
 stack:         old
 group:         Components
 
-otherVersionLinks:
-    - workers
-
-tags:
-    - advanced
-
 ---
 
 

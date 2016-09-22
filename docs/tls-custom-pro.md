@@ -18,9 +18,6 @@ keywords:
     - CA
     - SNI
 
-tags:
-    - DNS
-
 ---
 
 <!-- TODO: define is this Hobby + Pro stack? write articles -->

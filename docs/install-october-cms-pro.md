@@ -19,11 +19,6 @@ keywords:
     - install
     - laravel
 
-tags:
-    - advanced
-    - php
-    - install
-
 ---
 
 

@@ -22,9 +22,6 @@ keywords:
     - doc root
     - document root
 
-tags:
-    - beginner
-
 ---
 
 

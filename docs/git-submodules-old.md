@@ -9,12 +9,9 @@ dontList:     true
 group:        Kitchen_sink
 stack:        old
 
-tags:
-    - advanced
-    - git
-
 ---
 
+<!-- TODO: was ist mit Hobby hier?  -->
 
 ## Word!
 

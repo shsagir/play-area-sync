@@ -15,9 +15,6 @@ websiteLinkText:  github.com
 image:            github-octocat.png
 dataCenters:      n/a
 
-tags:
-    - advanced
-
 keywords:
     - git-hub
     - addon

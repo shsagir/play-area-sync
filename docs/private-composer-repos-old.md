@@ -10,9 +10,6 @@ stack:       old
 allLink:     private-composer-repos
 group:       Kitchen_sink
 
-tags:
-    - git
-
 keywords:
     - Composer
     - Git

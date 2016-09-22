@@ -11,10 +11,12 @@ stack:         old
 group:         Install_guides
 proLink:       install-laravel-5-pro
 
-tags:
+keywords:
     - php
     - install
     - laravel
+    - laravel-4
+    - laravel-5
 
 ---
 

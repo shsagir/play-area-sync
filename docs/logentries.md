@@ -14,9 +14,6 @@ websiteLink:      https://logentries.com?utm_source=fortrabbit
 websiteLinkText:  logentries.com
 category:         logging
 
-tags:
-     - advanced
-
 keywords:
      - logging
      - log

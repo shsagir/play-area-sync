@@ -7,6 +7,7 @@ title:         Video: App architecture
 videoid:       SKMaiJhoPJw
 group:         Videos
 dontList:      true
+stack:         pro
 
 keywords:
     - hosting pricing

@@ -18,9 +18,6 @@ keywords:
     - FTP
     - FTPs
 
-tags:
-    - beginner
-
 ---
 
 

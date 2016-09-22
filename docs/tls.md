@@ -19,9 +19,6 @@ keywords:
     - port 443
     - port 80
 
-tags:
-    - DNS
-
 ---
 
 **Problem**: The interwebs is full of criminals trying to read your communication.

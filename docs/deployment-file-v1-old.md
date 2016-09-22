@@ -10,7 +10,7 @@ group:         platform
 stack:         old
 allLink:       deployment-file-v2
 
-tags:
+keywords:
    - advanced
    - git
 

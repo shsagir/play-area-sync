@@ -16,11 +16,6 @@ stack:            pro
 hobbyLink:        install-wordpress-4-hobby
 oldLink:          install-wordpress-old
 
-tags:
-    - php
-    - install
-    - wordpress
-
 ---
 
 ## Get ready

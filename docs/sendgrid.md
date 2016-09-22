@@ -16,9 +16,6 @@ image:            sendgrid-mark.svg
 keywords:
     - "transactional mail"
 
-tags:
-    - advanced
-
 ---
 
 

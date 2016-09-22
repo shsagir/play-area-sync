@@ -7,9 +7,6 @@ naviTitle:   Migrating to fortrabbit
 lead:        How to transfer an application to fortrabbit.
 group:       platform
 
-tags:
-     - beginner
-
 ---
 
 

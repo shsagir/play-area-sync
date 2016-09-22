@@ -15,9 +15,6 @@ dataCenters:      US, EU
 company:          84codes AB
 image:            cloudamqp-mark.png
 
-tags:
-     - advanced
-
 keywords:
      - advanced
 
