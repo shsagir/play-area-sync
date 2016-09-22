@@ -1,11 +1,9 @@
 # fortrabbit help pages
 
-
-Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, with a little frontmatter meta-data on top. We include this repo as a Git subtree and publish it on: http://help.fortrabbit.com
+Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, with a little frontmatter meta-data on top. We include this repo as a Git subtree and publish it on: https://help.fortrabbit.com
 
 This repo lives under (clone URL):
 
-* https://github.com/fortrabbit/help.git
 * git@github.com:fortrabbit/help.git
 
 
@@ -19,7 +17,6 @@ Do you run a 3rd party service or an open source project that can be integrated 
 ### _WIP
 
 The folder _WIP contains — as you might can guess — work in progress. All infos in there are subject to major errors. Please contribute!
-
 
 
 ### Front Matter syntax
@@ -36,15 +33,14 @@ naviTitle: About Apps
 # title shown in article header on display
 title: What is an App anyways?
 
-# When the article was last checked? required, must be checked every year.
+# When the article was last checked?
 # Don't forget to edit this each time you have reviewed a page
 # pages older than one year will be marked outdated
 reviewed: 2016-02-22
 
-# under which headline the content will be shown on home
+# Under which headline the content will be shown on home
 # (use underscore instead of space)
 group: Extending_fortrabbit
-
 
 # don't show in list on homepage
 dontList: true
@@ -52,11 +48,12 @@ dontList: true
 # do not include in search, don't show in search results
 dontIndex: true
 
-# The actual link you will send people to
-websiteLink: https://www.abcdefg.com?utm_source=fortrabbit
+
+# The actual link you will send people to (for external services)
+websiteLink: https://www.wordpress.org?utm_source=fortrabbit
 
 # A human readable version of that same link, exclude clutter!
-websiteLinkText: abcdefg.com
+websiteLinkText: www.wordpress.org
 
 # set for latency relevant 3rd party services, otherwise use nor acceptable
 dataCenters: n/a
@@ -72,7 +69,6 @@ noToc: true
 
 # logo shown for 3rd party service or open source
 image: myfunkyimage.png
-
 
 # type, for CMS/framework
 type:  CMS
@@ -95,7 +91,6 @@ Your app: {{app-name}}
 ```
 
 It will dynamically show the correct code examples and Dashboard links.
-
 
 
 ## Dashboard links
@@ -136,9 +131,6 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 * Dashboard settings first
 * Mini guide in the middle > time to WOW
 * Tuning after that
-
-
-
 
 
 
