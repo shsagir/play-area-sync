@@ -17,14 +17,6 @@ category:         CMS
 image:            wordpress-mark.png
 version:          4.6
 
-otherVersionLinks:
-    - install-wordpress-4-pro
-
-tags:
-    - php
-    - install
-    - wordpress
-
 keywords:
     - wp-admin
 
