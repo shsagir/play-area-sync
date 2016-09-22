@@ -11,7 +11,7 @@ oldLink:       composer-old
 
 keywords:
   - composerphp
-   - git
+  - git
   - getcomposer
   - Dependency Manager
 

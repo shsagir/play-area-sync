@@ -11,7 +11,7 @@ group:         platform
 allLink:       composer
 
 keywords:
-   - git
+  - git
   - composerphp
   - getcomposer
   - Dependency Manager

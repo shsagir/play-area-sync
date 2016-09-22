@@ -1,14 +1,17 @@
 ---
 
-template:    article
-reviewed:    2016-01-21
-title:       Install Laravel 4
-naviTitle:   Laravel
-lead:        Deploy Laravel 4 with Composer to fortrabbit.
-dontList:    true
-dontIndex:   true
-stack:       old
-group:       Install_guides
+template:         article
+reviewed:         2016-01-21
+title:            Install Laravel 4
+naviTitle:        Laravel
+lead:             Deploy Laravel 4 with Composer to fortrabbit.
+dontList:         true
+dontIndex:        true
+stack:            old
+proLink:          install-laravel-4-pro
+group:            Install_guides
+deprecated:       yes
+version:          4
 
 keywords:
     - php
