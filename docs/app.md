@@ -91,7 +91,7 @@ While creating your fortrabbit App you will be asked for an App name. This name 
 
 #### Set up a custom domain
 
-You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/about-domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard. 
+You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard. 
 
 <div markdown="1" class="asdad">
 

@@ -43,8 +43,8 @@ Go to the [sign up page](https://www.cloudflare.com/a/sign-up?utm_source=fortrab
 
 ## Integrating CloudFlare with fortrabbit
 
-There is no technical connection between CloudFlare and fortrabbit. You basically configure CloudFlare with your [external domain](/about-domains).
+There is no technical connection between CloudFlare and fortrabbit. You basically configure CloudFlare with your [external domain](/domains).
 
 Many fortrabbit clients are using CloudFlare to get SSL (https) for their own custom domain without the need to book and setup the [TLS custom](/tls) Component. 
 
-CloudFlare also offers [domain forwarding](/about-domains#toc-forwarding-a-naked-domain) from naked domains to the www-version.
+CloudFlare also offers [domain forwarding](/domains#toc-forwarding-a-naked-domain) from naked domains to the www-version.

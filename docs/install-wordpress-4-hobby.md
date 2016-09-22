@@ -81,7 +81,7 @@ Please mind that it is [your responsibility](/security) to keep your WordPress s
 
 ### Add your own domain
 
-Your App URL {{app-name}}.frb.io is the first address your WordPress can be reached. Later on, when you go live, you will add your own custom external domains. Please see our [domain article](/about-domains) on how to register a domain in the Dashboard.
+Your App URL {{app-name}}.frb.io is the first address your WordPress can be reached. Later on, when you go live, you will add your own custom external domains. Please see our [domain article](/domains) on how to register a domain in the Dashboard.
 
 In the WordPress admin you will also Site URL from your App URL to that URL. More advanced help regarding domains in the Wordpress help:
 

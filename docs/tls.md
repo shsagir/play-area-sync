@@ -44,7 +44,7 @@ You can already access your [App URL](app#toc-app-url) using HTTPS which is prov
 
 ### TLS free
 
-This is the default free and zero-config option which makes use of the external [Let's Encrypt](https://letsencrypt.org/) service. There is nothing to setup or configure. Certificates will be created installed and renewed automatically for each [custom domain](/about-domains) you are adding to fortrabbit.
+This is the default free and zero-config option which makes use of the external [Let's Encrypt](https://letsencrypt.org/) service. There is nothing to setup or configure. Certificates will be created installed and renewed automatically for each [custom domain](/domains) you are adding to fortrabbit.
 
 * [TLS free introduction blog post](https://blog.fortrabbit.com/tls-free-launched)
 

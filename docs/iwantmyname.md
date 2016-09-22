@@ -27,7 +27,7 @@ keywords:
 ---
 
 
-With fortrabbit you can configure how your [App handles domain requests](/app#toc-domains). fortrabbit does not offer domain ordering — see our [comprehensive domain article](/about-domains).
+With fortrabbit you can configure how your [App handles domain requests](/app#toc-domains). fortrabbit does not offer domain ordering — see our [comprehensive domain article](/domains).
 
 
 ## About iwantmyname
