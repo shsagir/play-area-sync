@@ -85,7 +85,7 @@ Your App URL {{app-name}}.frb.io is the first address your WordPress can be reac
 
 In the WordPress admin you will also Site URL from your App URL to that URL. More advanced help regarding domains in the Wordpress help:
 
-* https://codex.wordpress.org/Changing_The_Site_URL
+* [Changing The Site URL](https://codex.wordpress.org/Changing_The_Site_URL)
 
 - - -
 
