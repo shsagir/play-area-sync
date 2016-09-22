@@ -6,12 +6,9 @@ title:         Integrating CI with fortrabbit
 naviTitle:     Continuous Integration
 lead:          Automated testing, builds, special deploy scripts and other actions on fortrabbit.
 dontList:      true
-oldApp:        true
 group:         Extending_fortrabbit
 stack:         old
-
-otherVersionLinks:
-    - continuous-integration
+allLink:       continuous-integration
 
 keywords:
     - ci

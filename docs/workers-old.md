@@ -6,9 +6,8 @@ title:         Workers — for Old Apps
 naviTitle:     Workers
 lead:          Offshore long running and compute intensive tasks with background jobs — that's what Workers are for.
 dontList:      true
-oldApp:        true
-group:         Components
 stack:         old
+group:         Components
 
 otherVersionLinks:
     - workers

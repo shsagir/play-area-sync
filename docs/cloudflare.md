@@ -4,9 +4,9 @@ template:         article
 naviTitle:        CloudFlare
 reviewed:         2016-07-11
 title:            Using CloudFlare with fortrabbit
-
 group:            Domains_and_DNS
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://www.cloudflare.com?utm_source=fortrabbit
 websiteLinkText:  cloudflare.com

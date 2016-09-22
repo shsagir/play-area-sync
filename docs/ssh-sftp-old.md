@@ -7,7 +7,7 @@ title:         Using SSH - for Old App
 naviTitle:     SSH
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
 dontList:      true
-oldApp:        true
+stack:         old
 group:         platform
 
 ---

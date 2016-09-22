@@ -10,13 +10,10 @@ stack:        pro
 
 
 otherVersionLinks:
-    - workers-old-app
+    - workers-old
 
 tags:
     - advanced
-
-seeAlsoLinks:
-    - about-queuing
 
 ---
 

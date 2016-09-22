@@ -79,7 +79,7 @@ Please check out our [install guide](/#install-guides), which give you framework
 
 Only applies if your App makes use of a [MySQL database](mysql), of course:
 
-**Export the database**: Connect to your Old Apps database using the SSH tunnel – [see here](/mysql-old-app#toc-remote-mysql-access). To dump the database you can either use the `mysqldump` console client from your local machine or download it with a MySQL GUI.
+**Export the database**: Connect to your Old Apps database using the SSH tunnel – [see here](/mysql-old#toc-remote-mysql-access). To dump the database you can either use the `mysqldump` console client from your local machine or download it with a MySQL GUI.
 
 **Import the database**: Connect to your New Apps database — [see here](/mysql#toc-remote-mysql-access). Import the previously exported dump. Again: Either with the `mysql` console client or with a MySQL GUI. Mind that you can get your credentials using the SSH command mentioned above.
 

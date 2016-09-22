@@ -8,9 +8,7 @@ naviTitle:     TLS custom
 lead:          "How to setup HTTPS with your own certificate."
 group:         Components
 stack:         pro
-
-otherVersionLinks:
-    - ssl-old-app
+oldLink:       ssl-old
 
 keywords:
     - ssl
@@ -20,16 +18,12 @@ keywords:
     - CA
     - SNI
 
-seeAlsoLinks:
-    - tls
-    - about-domains
-
 tags:
     - DNS
 
 ---
 
-<!-- TODO: define is this Hobby + Pro stack?  -->
+<!-- TODO: define is this Hobby + Pro stack? write articles -->
 
 We assume that your are familiar with the basic concepts of TLS and the [general TLS implementation on fortrabbit](/tls). In this article you can learn why and how to use "TLS custom" instead of it's free counterpart.
 

@@ -2,11 +2,12 @@
 
 template:   article
 reviewed:   2016-01-21
-title:      Memcache on fortrabbit - old App
+title:      Memcache on fortrabbit
 naviTitle:  Memcache
-lead:       Speed speed speed - caching on fortrabbit.
+lead:       Caching with memcached on fortrabbit for Old Apps.
 dontList:   true
-oldApp:     true
+stack:      old
+proLink:    memcache-pro
 group:      Components
 
 otherVersionLinks:

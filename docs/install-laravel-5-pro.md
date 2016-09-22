@@ -13,13 +13,10 @@ category:         framework
 image:            laravel-mark.png
 version:          5.1
 stack:            pro
+oldLink:          install-laravel-5-old
+hobbyLink:        install-laravel-5-hobby
 
-otherVersionLinks:
-    - install-laravel-5-old
-    - install-laravel-4-pro
-    - install-laravel-4-old
-
-tags:
+keywords:
     - php
     - install
     - laravel
@@ -33,7 +30,6 @@ We assume you've already created a New App with fortrabbit. You should also have
 
 
 ### Set the Apps root path
-
 
 If you haven't already (the stack chooser does that for you) - in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
 

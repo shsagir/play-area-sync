@@ -6,7 +6,7 @@ title:         All about MySQL — old App
 naviTitle:     MySQL
 lead:          Access and configure the database.
 dontList:      true
-oldApp:        true
+stack:        old
 group:         Components
 
 otherVersionLinks:

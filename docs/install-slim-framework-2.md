@@ -7,19 +7,14 @@ naviTitle:        Slim Framework
 group:            Install_guides
 dontList:         true
 lead:             Slim is a PHP micro framework that helps you write simple web applications and APIs quickly. Learn how to install and tune Slim v2 on fortrabbit.
+deprecated:       yes
+stack:            old
 
 websiteLink:      http://www.slimframework.com/?utm_source=fortrabbit
 websiteLinkText:  slimframework.com
 category:         micro framework
 image:            slim-logo.png
 version:          2
-
-otherVersionLinks:
-    - install-slim-framework-3
-
-tags:
-    - php
-    - install
 
 ---
 

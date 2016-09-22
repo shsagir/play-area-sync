@@ -1,16 +1,13 @@
 ---
 
 template:    article
-reviewed:    2016-01-22
+reviewed:    2016-09-10
 title:       All about Memcache
 naviTitle:   Memcache
 lead:        Speed speed speed. Why and how to do caching with Memcache on fortrabbit.
 group:       Components
 stack:       pro
-
-otherVersionLinks:
-   - memcache-old
-
+oldLink:     memcache-old
 
 keywords:
    - memcached

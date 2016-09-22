@@ -2,11 +2,12 @@
 
 template:       article
 reviewed:       2016-01-08
-naviTitle:      Code access — Old Apps
-title:          Different code deployment methods compared - Old Apps
+naviTitle:      Code access
+title:          Different code deployment methods compare
 lead:           How you can authenticate to access code on fortrabbit.
 dontList:       true
-oldApp:         true
+stack:          old
+allLink:        access-methods
 group:          Kitchen_sink
 
 keywords:

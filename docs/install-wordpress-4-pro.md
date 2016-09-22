@@ -13,10 +13,8 @@ category:         CMS
 image:            wordpress-mark.png
 version:          4.6
 stack:            pro
-hobbylink:        install-wordpress-4-hobby
-
-otherVersionLinks:
-    - install-wordpress-old
+hobbyLink:        install-wordpress-4-hobby
+oldLink:          install-wordpress-old
 
 tags:
     - php

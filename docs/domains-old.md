@@ -2,16 +2,13 @@
 
 template:      article
 reviewed:      2016-02-18
-title:         All about Domains & DNS - Old App
+title:         All about Domains & DNS
 naviTitle:     Domains - Old App
 lead:          The world of App URLs, domains and DNS.
 dontList:      true
-oldApp:        true
 group:         platform
 stack:         old
-
-otherVersionLinks:
-    - about-domains
+allLink:       domains
 
 tags:
     - beginner

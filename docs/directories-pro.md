@@ -1,16 +1,14 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-02-18
 title:         Directory structure
 naviTitle:     Directory structure
 group:         platform
-stack:         hobby
+stack:         pro
+hobbyLink:     directories-pro
+oldLink:       directories-old
 
-
-otherVersionLinks:
-    - directory-structure-old
-    - directory-structure-pro
 
 keywords:
     - create directory
@@ -29,8 +27,6 @@ tags:
 
 ---
 
-
-<!-- TODO: what is different with Hobby App here? -->
 
 ```nohighlight
 bin

@@ -7,14 +7,9 @@ naviTitle:     Laravel
 lead:          Learn how to deploy Laravel 5 with Composer to fortrabbit.
 dontList:      true
 dontIndex:     true
-oldApp:        true
+stack:         old
 group:         Install_guides
-
-otherVersionLinks:
-    - /install-laravel-5
-    - /install-laravel-4
-    - /install-laravel-4-old
-
+proLink:       install-laravel-5-pro
 
 tags:
     - php

@@ -8,7 +8,7 @@ lead:          "Limits, restrictions, permissions there are some — aren't ther
 stack:         all
 
 otherVersionLinks:
-    - quirks-old-app
+    - quirks-old
 
 group:       Kitchen_sink
 

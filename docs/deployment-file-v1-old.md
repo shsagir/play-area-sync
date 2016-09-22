@@ -6,12 +6,9 @@ title:         Advanced Git deployment workflows with fortrabbit.yml — version
 naviTitle:     Deployment file v1
 lead:          Enhance your deployment process with the fortrabbit.yml deployment file.
 dontList:      true
-oldApp:        true
 group:         platform
 stack:         old
-
-otherVersionLinks:
-    - deployment-file-v2
+allLink:       deployment-file-v2
 
 tags:
    - advanced

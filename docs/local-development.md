@@ -6,6 +6,7 @@ title:        Local development
 naviTitle:    Local development
 lead:         Why and how to set a local PHP development environment.
 group:        deployment
+stack:        all
 
 keywords:
      - LAMP

@@ -2,13 +2,16 @@
 
 template:         article
 reviewed:         2015-02-20
-title:            Install WordPress - for Old App
+title:            Install WordPress
 naviTitle:        WordPress
-lead:             This is how to run WordPress successfully on fortrabbit — maybe.
+lead:             We all love it, we all hate it: our good ol' friend WordPress. This is how to run WordPress successfully on fortrabbit — maybe. For Old Apps.
 dontList:         true
-oldApp:           true
+stack:            old
 dontIndex:        true
+hobbyLink:        install-wordpress-4-hobby
+proLink:          install-wordpress-4-pro
 group:            Install_guides
+version:          4.1
 
 keywords:
     - WP
@@ -21,7 +24,7 @@ tags:
 
 ---
 
-We all love it, we all hate it: our good ol' friend WordPress.
+
 
 ### Problem
 
@@ -36,7 +39,7 @@ Wait! (https://github.com/roots/bedrock) looks promising,  but we haven't tried 
 
 #### Just use SFTP
 
-For "persistent Apps" (current App version) we offer [SFTP access](ssh-sftp-old-app#toc-sftp) — so you can "upload" your code. It works. MIND: this workflow migt change in the future.
+For "persistent Apps" (current App version) we offer [SFTP access](ssh-sftp-old#toc-sftp) — so you can "upload" your code. It works. MIND: this workflow migt change in the future.
 
 #### Just put everything in Git
 

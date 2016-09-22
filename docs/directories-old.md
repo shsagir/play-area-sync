@@ -3,14 +3,13 @@
 template:      article
 reviewed:      2016-02-18
 title:         Directory structure
-naviTitle:     Directory structure - Old App
+naviTitle:     Directory structure
 lead:          The predefined set of folders for each App you need to know for the Old App.
 dontList:      true
-oldApp:        true
+stack:         old
 group:         platform
-
-otherVersionLinks:
-    - directory-structure
+hobbyLink:     directories-hobby
+proLink:       directories-pro
 
 keywords:
     - create directory
@@ -51,7 +50,7 @@ var
 
 ### appname
 
-The default entry point for [SSH](ssh-sftp-old-app), move downwards and upwards from there on. Please mind that only [Old Apps](new-apps) offer direct file access.
+The default entry point for [SSH](ssh-sftp-old), move downwards and upwards from there on. Please mind that only Old Apps offer direct file access.
 
 ### htdocs
 

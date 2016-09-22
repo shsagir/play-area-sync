@@ -77,12 +77,6 @@ image: myfunkyimage.png
 # type, for CMS/framework
 type:  CMS
 
-# Other versions of this article (=filename without .md)
-otherVersionLinks:
-    - install-laravel-4
-    - install-laravel-6
-    - install-laravel-7
-
 # additional keywords for document search to help users find this article
 keywords:
     - foo

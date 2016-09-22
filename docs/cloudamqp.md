@@ -2,11 +2,11 @@
 
 template:         article
 naviTitle:        CloudAMQP
-reviewed:         2016-02-25
+reviewed:         2016-09-15
 title:            Using CloudAMQP with fortrabbit
-
 group:            Queues
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://www.cloudamqp.com/
 websiteLinkText:  cloudamqp.com

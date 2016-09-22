@@ -6,7 +6,8 @@ title:         Using the SSL component - Old App
 naviTitle:     SSL
 lead:          https and SSL for the rest of us.
 dontList:      true
-oldApp:        true
+stack:         old
+allLink:       tls
 group:         platform
 
 keywords:

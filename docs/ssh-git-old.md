@@ -6,7 +6,7 @@ title:         SSH + Git deployment workflow
 naviTitle:     SSH + Git
 lead:          How to use Git from the shell on fortrabbit — advanced worflow, special case.
 dontList:      1
-oldApp:        true
+stack:        old
 group:         platform
 
 tags:

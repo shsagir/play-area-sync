@@ -2,28 +2,20 @@
 
 template:         article
 dontList:         true
-
-
 reviewed:         2016-09-16
 title:            Install Phalcon 2
 naviTitle:        Phalcon
 lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C extension providing high performance and low resource consumption. Here you learn how to best getting started with Phalcon 2 on fortrabbit.
-
 group:            Install_guides
+stack:            pro
+oldLink:          install-phalcon-old
+deprecated:       yes
 
 websiteLink:      https://phalconphp.com/en/?utm_source=fortrabbit
 websiteLinkText:  phalconphp.com
 category:         framework
 image:            phalcon-mark.png
 version:          2
-stack:            pro
-
-otherVersionLinks:
-    - install-phalcon-3-pro
-
-
-otherVersionLinks: 
-    - install-phalcon-old
 
 keywords:
     - phalconphp
@@ -31,12 +23,6 @@ keywords:
     - php extension
     - c extension
     - hhvm
-
-
-tags:
-    - php
-    - install
-
 
 ---
 

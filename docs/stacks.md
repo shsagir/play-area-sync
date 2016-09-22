@@ -14,9 +14,15 @@ stack:         all
 
 Hobby Stack Apps are made for general purpose PHP web development — websites and web applications. It's design is a mix of legacy support with good backward compatibility — while also supporting modern web development.
 
-### From xs to m
+### Scaling from xs to m
 
+The Hobby Stack isn't really scalable. In fact the PHP memory for the different 
 
+### Target audience
+
+Hobby apps are made for both
+
+### Application types
 
 ### Persistent storage
 
@@ -30,11 +36,15 @@ Professional Stack Apps are strictly made for modern PHP development — web app
 
 ### From xxs to xxl
 
+The Professional App is made 
 
 
 ### Target audience
 
 To master the advanced features you need to be aware of modern patterns and workflows like file system abstraction, caching, Git, Composer, SSH usage.
+
+### Application types
+
 
 
 ### Plans & prices

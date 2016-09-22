@@ -1,14 +1,13 @@
 ---
 
 template:    article
-reviewed:    2016-01-22
+reviewed:    2016-04-22
 title:       How to use private Composer repos with SSH keygen
 naviTitle:   Private Composer repos
 lead:        Generate a unique SSH key-pair for your App on fortrabbit to use private Composer repos.
 group:       Kitchen_sink
-
-otherVersionLinks:
-    - private-composer-repos-old
+stack:       all
+oldLink:     private-composer-repos-old
 
 tags:
     - git
@@ -22,6 +21,8 @@ keywords:
     - Hooks
 
 ---
+
+<!-- TODO: recheck - is it up to date for Hobby? -->
 
 Modern PHP App development utilizes [Composer](composer) as a dependency manager. There are many great open source packages [out there](http://packagist.org). But your company code is probably not intended to be released to public. That's when you use private Composer repositories — protected by SSH public key authentication.
 

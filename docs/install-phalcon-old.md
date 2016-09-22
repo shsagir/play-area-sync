@@ -6,11 +6,10 @@ title:        Install Phalcon - for Old App
 naviTitle:    Phalcon
 lead:         sPHPeeeeed! Here you learn how to best getting started with Phalcon on fortrabbit.
 dontList:     true
-oldApp:       true
+stack:        old
 group:        Install_guides
-
-otherVersionLinks:
-    - install-phalcon
+version:      2
+proLink:      install-phalcon-2-pro
 
 keywords:
     - phalconphp
@@ -23,7 +22,6 @@ keywords:
 tags:
     - php
     - install
-
 
 ---
 

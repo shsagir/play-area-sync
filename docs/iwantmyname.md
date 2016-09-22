@@ -2,11 +2,11 @@
 
 template:         article
 naviTitle:        iwantmyname
-reviewed:         2016-03-10
+reviewed:         2016-09-20
 title:            Using iwantmyname with fortrabbit
-
 group:            Domains_and_DNS
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://iwantmyname.com/
 websiteLinkText:  iwantmyname.com

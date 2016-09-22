@@ -25,7 +25,7 @@ We provide an additional Component to store uploads, static assets and any kind 
 
 ## Only Git, no SSH/SFTP
 
-The Old Apps offered [Git](git) and [SSH](ssh-sftp-old-app) deployment. With the New Apps you only deploy with Git. That means you have no longer direct file access to the actual "webspace" of your App.
+The Old Apps offered [Git](git) and [SSH](ssh-sftp-old) deployment. With the New Apps you only deploy with Git. That means you have no longer direct file access to the actual "webspace" of your App.
 
 
 
@@ -45,7 +45,7 @@ With Old Apps you had to trigger the dependency manager [Composer](composer). No
 
 ## New deployment file version
 
-You can fine-tune your build with additional scripts and variables by creating a file called `fortrabbit.yml` on top-level of your repository. Old Apps are using the [deployment file version 1](deployment-file-v1-old-app), New Apps are using [deployment file version 2](deployment-file-v2).
+You can fine-tune your build with additional scripts and variables by creating a file called `fortrabbit.yml` on top-level of your repository. Old Apps are using the [deployment file version 1](deployment-file-v1-old), New Apps are using [deployment file version 2](deployment-file-v2).
 
 
 

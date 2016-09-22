@@ -8,9 +8,7 @@ naviTitle:     TLS
 lead:          "How to make use of HTTPS on fortrabbit. Learn about the three options."
 group:         platform
 stack:         all
-
-otherVersionLinks:
-    - ssl-old-app
+oldLink:       ssl-old
 
 keywords:
     - ssl
@@ -20,10 +18,6 @@ keywords:
     - Certificate Authority
     - port 443
     - port 80
-
-seeAlsoLinks:
-    - tls-custom
-    - about-domains
 
 tags:
     - DNS

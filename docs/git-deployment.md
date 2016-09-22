@@ -7,16 +7,11 @@ title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
 group:         deployment
 stack:         all
-
-otherVersionLinks:
-    - git-old
+oldLink:       git-old
 
 keywords:
     - beginner
     - dashboard
-
-tags:
-     - git
 
 ---
 

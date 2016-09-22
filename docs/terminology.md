@@ -6,20 +6,14 @@ naviTitle:     Terminology
 title:         What is what on fortrabbit?
 lead:          You'll find many capitalized words here in this documentation here. These words refer to fortrabbit "creations". This list shall give you an overview:
 group:         platform
-
-seeAlsoLinks:
-    - dashboard
-    - scaling
-    - app
-    - app-design
-    - old-apps
-    - new-apps
-    - git-deployment
+stack:         all
 
 tags:
     - beginner
 
 ---
+
+<!--  TODO: update/extend or trash —> Frank -->
 
 * **[App](app)**: a virtual instance for your PHP application
 * **[App Secrets](secrets)**: a way to store confidential credentials
@@ -29,7 +23,7 @@ tags:
 * **Activities**: a history log in the Dashboard
 * **Billing Contact**: payment and billing group for Apps
 * **Company**: [collaboration](collaboration) group
-* **Component**: a service that can individually be booked and scaled to any App
+* **Component**: a service that can individually be booked and scaled to any Professional App
 * **[Dashboard](dashboard)**: the master control panel: [dashboard.fortrabbit.com](https://dashboard.fortrabbit.com)
 * **Developer**: a [team member](collaboration) role within the Dashboard
 * **Node**: a lightweight virtual container for a specific service

@@ -15,10 +15,6 @@ image:            ez-mark.png
 version:          1.3
 group:            Install_guides
 
-
-seeAlsoLinks:
-    - app
-
 keywords:
     - ez
     - ezplatform
@@ -35,6 +31,8 @@ tags:
     - install
 
 ---
+
+<!-- TODO: PUBLISH THIS MAN -->
 
 ## Get ready
 

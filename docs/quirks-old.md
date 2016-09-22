@@ -1,15 +1,14 @@
 ---
 
 template:    article
-reviewed:    2016-01-22
-title:       "Quirks & constraints — old Apps"
+reviewed:    2016-05-22
+title:       "Quirks & constraints"
 lead:        Limits, restrictions, permissions there are some — aren't there always?
 dontList:    true
-oldApp:      true
+stack:       old
 group:       Kitchen_sink
-
-otherVersionLinks:
-    - quirks
+deprecated:  yes
+allLink:     quirks
 
 tags:
     - beginner
@@ -134,7 +133,7 @@ If you want to manage your binary files with Git as well, we recommend to setup 
 
 ### Resource limits
 
-To guarantee a high quality of service for everybody the purpose of the standard [SSH account](ssh-sftp-old-app) is limited to use (framework) CLIs and do administration operations (packing, unpacking, rsyncing). If you want to run long running scripts like workers tasks please have a look at our [Worker Nodes component](workers).
+To guarantee a high quality of service for everybody the purpose of the standard [SSH account](ssh-sftp-old) is limited to use (framework) CLIs and do administration operations (packing, unpacking, rsyncing). If you want to run long running scripts like workers tasks please have a look at our [Worker Nodes component](workers).
 
 
 ####  Limitations of standard SSH

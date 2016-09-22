@@ -14,25 +14,12 @@ category:         framework
 image:            phalcon-mark.png
 version:          3.0.1
 
-otherVersionLinks:
-    - install-phalcon-2-pro
-
-
-otherVersionLinks:
-    - install-phalcon-old
-
 keywords:
     - phalconphp
     - framework
     - php extension
     - c extension
     - hhvm
-
-
-tags:
-    - php
-    - install
-
 
 ---
 

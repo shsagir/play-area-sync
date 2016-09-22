@@ -14,13 +14,9 @@ dontList:         true
 dontIndex:        true
 group:            Install_guides
 stack:            pro
+oldLink:          install-laravel-4-old
 
-otherVersionLinks:
-    - install-laravel-5-pro
-    - install-laravel-5-old
-    - install-laravel-4-old
-
-tags:
+keywords:
     - php
     - install
     - laravel

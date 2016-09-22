@@ -2,16 +2,13 @@
 
 template:      article
 reviewed:      2016-02-18
-title:         Leveraging Composer - for Old Apps
+title:         Leveraging Composer
 naviTitle:     Composer
-lead:          Learn how to integrate Composer into your development workflow with fortrabbit.
+lead:          Learn how to integrate Composer into your development work-flow with fortrabbit Old Apps.
 dontList:      true
-oldApp:        true
-group:         platform
 stack:         old
-
-otherVersionLinks:
-  - composer
+group:         platform
+allLink:       composer
 
 tags:
    - git

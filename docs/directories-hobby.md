@@ -1,15 +1,14 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
-title:         Directory structure
+reviewed:      2016-09-15
+title:         Learn about your Apps directory structure
 naviTitle:     Directory structure
 group:         platform
-stack:         pro
-
-
-otherVersionLinks:
-    - directory-structure-old
+stack:         hobby
+oldLink:       directories-old
+hobbyLink:     directories-pro
+hideExamples:  yes
 
 keywords:
     - create directory
@@ -28,6 +27,8 @@ tags:
 
 ---
 
+
+<!-- TODO: WRITE what is different with Hobby App here? -->
 
 ```nohighlight
 bin

@@ -6,9 +6,8 @@ naviTitle:     Access methods
 title:         How to access fortrabbit services
 lead:          Learn about the different authentication methods with fortrabbit.
 group:         deployment
-
-otherVersionLinks:
-    - code-access-old
+stack:         all
+oldLink:       code-access-old
 
 keywords:
      - ssh key

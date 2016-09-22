@@ -6,12 +6,15 @@ title:         Application design & optimization
 naviTitle:     Application design
 lead:          Best practices: from development to production. from backend to frontend.
 group:         platform
+stack:         all
 
 tags:
    - advanced
    - platform
 
 ---
+
+<!-- TODO: artikel ist grösstenteils allgemein > teilweise aber zu wenig bezogen auf unsere Plattform  -->
 
 Of course: in case of a performance problem we can always throw more hardware on your App, but that won't always help when the problem is in the code somewhere. We want you to encourage to **design for performance** and scalability. And that is all about thinking a bit ahead.
 
@@ -23,6 +26,8 @@ Steve Jobs
 
 The performance of a modern web application depends on the hosting environment AND the application design. In short: we are in this together! We — fortrabbit — as your hosting vendor, are responsible to provide a great, scalable and [secure](security) infrastructure. You, as the developer, are responsible to leverage this infrastructure by good application design.
 
+
+<!-- TODO: Redis & Memcache are both not available for Hobby App.  -->
 
 ### Prepare to cache
 

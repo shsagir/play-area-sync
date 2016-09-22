@@ -7,9 +7,8 @@ naviTitle:    Continuous Integration
 lead:         Automated testing, builds, special deploy scripts and other actions on fortrabbit.
 group:        Kitchen_sink
 stack:        all
+oldLink:      continuous-integration-old
 
-otherVersionLinks:
-    - continuous-integration-old
 
 keywords:
     - ci

@@ -1,19 +1,21 @@
 ---
 
 template:      article
-reviewed:      2016-07-25
+reviewed:      2016-03-10
 naviTitle:     Multi-staging
 title:         Multi stage App life cycles
 lead:          Learn about development/production environments and how to run them on fortrabbit.
 group:         platform
+oldLink:       multi-staging-old
+stack:         all
+
 tags:
      - advanced
 
-otherVersionLinks:
-   - multi-staging-old
 
 ---
 
+<!-- TODO: recheck for Hobby, include dynamic code example when possible -->
 
 ## Goal
 
@@ -50,9 +52,11 @@ Assuming you use a 3-stage layout: testing, staging and production. You start by
 #### Clone the first App
 
 ```bash
-# Let's start by cloning the testing App:
-$ git clone {{your-app-test}}@deploy.eu2.frbit.com:your-app-test.git {{your-app-test}} {{your-project-dir}}
-$ cd {{your-project-dir}}
+# Clone the testing App:
+$ git clone {{app-name}}@deploy.eu2.frbit.com:your-app-test.git {{your-app-test}} {{app-name}}
+
+# Go into the folder
+$ cd {{app-name}}
 ```
 
 This first cloning will create the remote `origin` and clone the `master` branch to you local disk.

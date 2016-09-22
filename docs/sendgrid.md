@@ -4,10 +4,9 @@ template:         article
 naviTitle:        SendGrid
 reviewed:         2016-09-15
 title:            Using SendGrid with fortrabbit
-stack:            all
-
 group:            Transactional_e-mail
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://sendgrid.com?utm_source=fortrabbit
 websiteLinkText:  sendgrid.com

@@ -4,9 +4,9 @@ template:         article
 naviTitle:        mLab
 reviewed:         2016-03-10
 title:            Using mLab with fortrabbit
-
 group:            Databases
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://mlab.com?utm_source=fortrabbit
 websiteLinkText:  mlab.com

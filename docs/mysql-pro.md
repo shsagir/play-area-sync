@@ -7,10 +7,8 @@ naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
 group:         Components
 stack:         pro
-
-otherVersionLinks:
-     - mysql-old-app
-     - mysql-old-hobby
+oldLink:       mysql-old
+hobbyLink:     mysql-hobby
 
 keywords:
      - localhost
