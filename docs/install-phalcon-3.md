@@ -5,7 +5,6 @@ reviewed:         2016-09-14
 title:            Install Phalcon 3
 naviTitle:        Phalcon
 lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C extension providing high performance and low resource consumption. Here you learn how to best getting started with Phalcon 3 on fortrabbit.
-dontList:         true
 group:            Install_guides
 
 websiteLink:      https://phalconphp.com/en/?utm_source=fortrabbit
