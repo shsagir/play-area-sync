@@ -11,7 +11,7 @@ websiteLink:      http://laravel.com?utm_source=fortrabbit
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
-version:          5.1
+version:          5.3
 
 otherVersionLinks:
     - install-laravel-5-old-app
@@ -142,7 +142,7 @@ if (isset($_SERVER['APP_SECRETS'])) {
 }
 
 return [
-    'fetch'         => PDO::FETCH_CLASS,
+    'fetch'         => PDO::FETCH_OBJ,
     'default'       => env('DB_CONNECTION', 'mysql'),
     'connections'   => [
         'mysql' => $mysql,
@@ -170,6 +170,29 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan tinker
 
 If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
 
+#### Database Session
+
+Using the `database` driver is the easiest way to persist sessions cross multiple PHP nodes. Since it requires a migration it is a good exercise.
+
+```bash
+# Create the session table via artisan command locally
+$ php artisan session:table
+
+# Add, commit and push the migration file
+$ git add .
+$ git commit -m "session migration"
+$ git push
+
+# Run the migration
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate --force
+  
+```
+
+Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to make use of the database sessions.
+
+<div markdown="1" data-user="known">
+[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
+</div>
 
 
 ### Object Storage
@@ -397,19 +420,22 @@ Laravel supports multiple queue drivers. One which can be used with fortrabbit o
 
 Once you've decided the queue you want to use just open `config/queue.php` and set `default` to either `redis`, `database`, `iron` or `amqp` - or even better: set the `QUEUE_DRIVER` [environment variable](env-vars) accordingly in the Dashboard.
 
+To run `php artisan queue:work` in the background, spin up a new [Worker](worker) and define the artisan command as a **Nonstop Job**.
 
-#### CloudAMQP
 
-CloudAMQP  can be used in Laravel as a queue driver. First integrate with [CloudAMQP](cloudamqp), install the composer package `fhteam/laravel-amqp` then configure the queue connection in `config/queue.php`:
+#### CloudAMQP (RabbitMQ)
+
+CloudAMQP  can be used in Laravel as a queue driver. First integrate with [CloudAMQP](cloudamqp), install the composer package `vladimir-yuldashev/laravel-queue-rabbitmq:5.3`, then configure the queue connection in `config/queue.php`:
+
 
 ```php
-$amqp = [];
+$rabbitmq = [];
 
 // on fortrabbit: construct credentials from App secrets
 if (isset($_SERVER['APP_SECRETS'])) {
     $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-    $amqp = [
-        'driver'         => 'amqp',
+    $rabbitmq = [
+        'driver'         => 'rabbitmq',
         'host'           => $secrets['CUSTOM']['CLOUD_AMQP_HOST'],
         'port'           => $secrets['CUSTOM']['CLOUD_AMQP_PORT'],
         'user'           => $secrets['CUSTOM']['CLOUD_AMQP_USER'],
@@ -433,17 +459,20 @@ return [
     // other code …
     'connections' => [
         // other code …
-        'amqp' => $amqp,
+        'rabbitmq' => $rabbitmq,
         // other code …
     ],
     // other code …
 ];
 ```
 
-Make sure you have added `Forumhouse\LaravelAmqp\ServiceProvider\LaravelAmqpServiceProvider::class` to `providers` in `config/app.php`.
 
-Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `amqp`.
 
+Make sure you have added `VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRabbitMQServiceProvider::class` to `providers` in `config/app.php`.
+
+Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `rabbitmq `.
+
+<!--
 #### IronMQ
 
 IronMQ can be used in Laravel as a queue driver. First integrate with [IronMQ](ironmq) then configure the queue connection in `config/queue.php`:
@@ -483,10 +512,10 @@ return [
 ];
 ```
 
-**Note for Laravel 5.2:** The `iron`-block does not exist and needs to be created. Also the `laravelcollective/iron-queue` composer package must be installed manually (mind adding `Collective\IronQueue\IronQueueServiceProvider::class` into `providers` in `app.php`).
+**Note for Laravel 5.2 and higher:** The `iron`-block does not exist and needs to be created. Also the `laravelcollective/iron-queue` composer package must be installed manually (mind adding `Collective\IronQueue\IronQueueServiceProvider::class` into `providers` in `app.php`).
 
 Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `iron`.
-
+-->
 
 #### Using envoy
 
