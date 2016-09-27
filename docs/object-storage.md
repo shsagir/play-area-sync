@@ -231,7 +231,7 @@ If you need to change the secret key of your Object Storage: Login to the Dashbo
 
 <div markdown="1" data-user="known">
 
-[Reset the Object Storage for the App **[{{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/access/object-storage/secret)**
+[Reset the Object Storage for the App **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/access/object-storage/secret)
 
 </div>
 
