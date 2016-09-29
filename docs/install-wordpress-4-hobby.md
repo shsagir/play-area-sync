@@ -22,6 +22,15 @@ keywords:
 
 ---
 
+<!--
+
+TODO:
+
+* security advice: enable automatic plugins
+
+-->
+
+
 ## Get ready
 
 We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
