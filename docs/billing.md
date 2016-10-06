@@ -114,6 +114,18 @@ And yes, if you cancel the service while still having open invoices with us, the
 We do a debit test on your credit card, when you enter the informations with us. This should not show up on your credit card statements, as it just a test. We have heard from clients that it sometimes shows up. Please don't worry, it will not be processed.
 
 
+### Where can I download previous invoices?
+
+**Option 1**: Scan your e-mail inbox for mails with the subject "fortrabbit invoice" for the monthly invoices we have sent you. Each e-mail contains a secret link to the invoice. From there you can print/download.
+
+**Option 2**: "Download/print" invoices from the [Dashboard](/dashboard): Login to the Dashboard > Your Account > Companies (Your Company) > Billing Contact > Invoice archive > Invoice > print. 
+
+Invoices are shown as HTML > you can use print from the browser to generate and download a nicely styled PDF.
+
+### Where can I change the billing e-mail?
+
+Within the Dashboard > Your Account > Companies (Your Company) > Billing Contact > "Invoice e-mail".
+
 
 ### What if my credit card has not enough credits?
 
