@@ -58,11 +58,23 @@ noToc: true
 
 
 
-
-# General meta data
+# Stack meta
 
 # where to show this: hobby, pro old REQUIRED
 stack:  hobby
+
+# link to the Old App version
+oldLink:   mysql-old
+
+# link to the Hobby App verison
+hobbyLink: mysql-hobby
+
+# link to the professional version
+proLink:   mysql-pro
+
+
+
+# General meta data
 
 # When the article was last checked?
 # Don't forget to edit this each time you have reviewed a page

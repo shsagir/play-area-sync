@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-10-10
 title:         Install WordPress 4
 naviTitle:     WordPress
 lead:          "WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit."
@@ -15,20 +15,12 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          4.6
+version:          4.6.1
 
 keywords:
     - wp-admin
 
 ---
-
-<!--
-
-TODO:
-
-* security advice: enable automatic plugins
-
--->
 
 
 ## Get ready
@@ -46,22 +38,37 @@ The most straight forward way to install WordPress is by downloading it to your 
 4. Connect to your fortrabbit App (access credentials)
 3. Upload the **contents** of the local `wordpress` to the remote `htdocs` folder
 
-### Configure in the browser
+## Configure in the browser
 
-Now visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in the browser and commence with the guided web installation. In the database form enter:
+Now visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in the browser and commence with the guided web installation:
+
+### MySQL
 
 * **Database Name**: `{{app-name}}`
 * **Username**: `{{app-name}}`
 * **Password**: `{{your-database-password}}`
 * **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com`
-* **Database Prefix**: keep `wp_` or your choice
+* **Table Prefix**: keep `wp_` or your choice
 
-Following enter your site name, admin user, e-mail and password.
+### Site title & admin user
 
-After that you should be done for now, you can visit:
+<!-- TODO: explain this, App-Name not helpful in long run, see below for routing domains  -->
+<!-- TODO: Note: e-mails will never arrive? — the web installer tries to send an e-mail! -->
+
+* **Site Title**: — you can change this later on
+* **Username**: set a an admin user name
+* **Password**: use the suggested password or role your own
+* **Your Email**: set an e-mail
+
+
+## Test it!
+
+After that you should be done for now, you should be redirected to login the WordPress admin. Your WordPress is now life under:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) < WordPress installation
 * [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) < WordPress admin
+
+- - -
 
 ## Tune
 
@@ -115,6 +122,69 @@ $ rm -r wordpress latest.tar.gz
 Now please proceed as [above](#toc-configure-in-the-browser).
 
 
+## Keep WordPress secure
+
+Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check this article:
+
+* [WordPress help: Configuring Automatic Background Updates](https://codex.wordpress.org/Configuring_Automatic_Background_Updates)
+
+and take care that your WordPress core, plugins and even the themes are always up-to-date.
+
+
+
 ## Install WordPress with Git
 
 WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called Bedrock. Please see our WordPress install guide on how to set it up — it best works for our Professional stack but can also be used on the Hobby stack.
+
+
+## Database configuration with wp-config
+
+A freshly downloaded WordPress contains a `wp-config-example.php` file on root level. you can make a copy and rename that to `wp-config.php` so that it will be used. This is what the MySQL database part must look like to work with your fortrabbit App:
+
+
+```
+// other code …
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', '{{app-name}}');
+
+/** MySQL database username */
+define('DB_USER', '{{app-name}}');
+
+/** MySQL database password */
+define('DB_PASSWORD', '{{your-database-password}}');
+
+/** MySQL hostname */
+define('DB_HOST', '{{app-name}}.mysql.{{region}}.frbit.com');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
+
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
+
+// other code …
+```
+
+
+
+<!-- TODO:
+
+## Sending e-mails from WordPres
+
+BLA BLA BLA
+
+
+
+## Local development
+
+BLA BLA BLA … environment detection
+
+
+
+## Routing your own domains
+
+BLA BLA … "home_url" "site_url" …
+
+-->
