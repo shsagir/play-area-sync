@@ -20,37 +20,30 @@ keywords:
      - innodb
      - myisam
      - phpmyadmin
+     - heidisql
+     - workbench
+     - sequel-pro
+     - nosql
 
 ---
 
 
 ## Access MySQL from your App
 
-Usually there is a configuration file which is used from the App to connect to the database. fortrabbit provides access credentials for MySQL via [App secrets](secrets). Here is a general example:
+Usually there is a configuration file which is used from the App to connect to the database. This is what you need to fill in there:
 
-```php
-// read all App secrets from the JSON file, get the location via ENV var
-$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+* **Database Name**: `{{app-name}}`
+* **Username**: `{{app-name}}`
+* **Password**: `{{your-database-password}}`
+* **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com` _< not localhost_
 
-// use the secrets without exposing passwords
-return [
-    'mysql' => [
-        'host'      => $secrets['MYSQL']['HOST'],
-        'database'  => $secrets['MYSQL']['DATABASE'],
-        'username'  => $secrets['MYSQL']['USER'],
-        'password'  => $secrets['MYSQL']['PASSWORD'],
-        'driver'    => 'mysql',
-        'charset'   => 'utf8',
-        'collation' => 'utf8'
-    ]
-];
-```
-See our specific examples for: [Laravel](install-laravel-5#toc-mysql), [Symfony](install-symfony-2#toc-mysql), [WordPress](install-wordpress-4#toc-mysql), [Craft CMS](install-craft-2#toc-mysql).
+See our specific examples for: [Laravel](install-laravel-hobby#toc-mysql), [Symfony](install-symfony-hobby#toc-mysql), [WordPress](install-wordpress-hobby#toc-mysql), [Craft CMS](install-craft-hobby#toc-mysql).
 
 
 ## Access MySQL from local
 
 Sometimes you want to run a certain query on your live database. Or you want to dump your database. So you need to access the MySQL database on fortrabbit remotely. For security reasons you can not connect to the MySQL database from "outside" directly. But you can open a [SSH tunnel](http://en.wikipedia.org/wiki/Tunneling_protocol) and then connect to the MySQL database thru this tunnel.
+
 
 #### MySQL access
 
@@ -68,7 +61,6 @@ See [below on how to reclaim](#toc-obtain-the-mysql-password)
 
 **MySQL port**:  
 3306
-
 
 
 #### SSH tunnel for MySQL access
@@ -89,12 +81,50 @@ tunnel.{{region}}.frbit.com
 
 ### Obtain the MySQL password
 
-The MySQL password is stored safely with your [App secrets](/secrets). You can get it using a [remote SSH command](secrets#toc-accessing-app-secrets) in your terminal:
+The MySQL database password is stored encrypted security reasons. So, we can't show it in the Dashboard afterwards. But there are several ways to get and reclaim your database password:
+
+
+
+#### 1. Save the database password when first shown
+
+<!-- TODO: this is needs to be confirmed -->
+
+When you create an App, the database password will be shown to you once. Copy/paste and keep this info savely and handy.
+
+
+#### 2. Access via SFTP
+
+<!-- TODO: this is needs to be confirmed, link to how login via SFTP -->
+
+Login to your fortrabbit App via [SFTP](/sftp). Move up one from HOME folder (htdocs) and find 
+
+
+
+#### 3. SSH command
+
+You can also get the MySQL by triggering this remote SSH command in your terminal:
 
 ```bash
 # Grab secrets.json to see the MySQL password
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
 ```
+
+
+#### 4. Peek the password in your configuraion file
+
+<!-- TODO: TMI? -->
+
+When your App can already connect to the database and you now want to 
+
+
+#### 5. Reset the MySQL password
+
+Instead of reclaiming you can also set a new MySQL password. Please mind that this can have some consequences: 
+
+* Your App will can't connect any more — you'll need to update the Apps config then
+* Your coworkers won't be able to connect afterwards
+
+<!-- TODO: the coworker case is invalid! When coworker is out https://trello.com/c/hNfjMSCE/411-coworker-leave-definieren -->
 
 
 
@@ -123,6 +153,7 @@ $i++;
 ```
 
 Then open a [tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). 
+
 
 
 

@@ -34,14 +34,14 @@ Each markdown file requires a yaml block at the top. See here which attributes a
 ```yaml
 # Rendering
 
-# which template to use - "article", if in doubt REQUIRED
+# which template to use - "article", if in doubt — REQUIRED
 template: article
 
 
 
 # Headline & display
 
-# title shown in navigation -> short but descriptive REQUIRED
+# title shown in navigation -> short but descriptive — REQUIRED
 naviTitle: About Apps
 
 # title shown in article header on display
@@ -60,7 +60,7 @@ noToc: true
 
 # Stack meta
 
-# where to show this: hobby, pro old REQUIRED
+# where to show this: hobby, pro old — REQUIRED
 stack:  hobby
 
 # link to the Old App version
@@ -80,6 +80,10 @@ proLink:   mysql-pro
 # Don't forget to edit this each time you have reviewed a page
 # pages older than one year will be marked outdated
 reviewed: 2016-10-22
+
+# set a warning that this article is outdated, no matter the date
+deprecated: 1
+
 
 # Under which headline the content will be shown on home
 # (use underscore instead of space)
@@ -115,6 +119,12 @@ image: myfunkyimage.png
 type:  CMS
 
 ```
+
+
+## Horizontal rulers
+
+* `---` don't use
+* `- - -` use this
 
 
 ## Dynamic help
@@ -304,3 +314,5 @@ There is no fortrabbit logo as graphic file. To create the brand logo just type:
 ### Logos and brand assets
 
 Place logos for external services and projects in the media folder. They ideally should be svg or either PNG with transparent background. Favor an "image mark" over a "word image mark".
+
+

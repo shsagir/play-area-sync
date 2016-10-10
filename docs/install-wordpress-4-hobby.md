@@ -46,8 +46,8 @@ Now visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in the browser and 
 
 * **Database Name**: `{{app-name}}`
 * **Username**: `{{app-name}}`
-* **Password**: `{{your-database-password}}`
-* **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com`
+* **Password**: `{{app-database-password}}` _[< how to recover](/mysql-hobby#toc-obtain-the-mysql-password)_
+* **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com` _< not localhost_
 * **Table Prefix**: keep `wp_` or your choice
 
 ### Site title & admin user
