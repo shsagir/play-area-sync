@@ -19,24 +19,55 @@ Do you run a 3rd party service or an open source project that can be integrated 
 The folder _WIP contains — as you might can guess — work in progress. All infos in there are subject to major errors. Please contribute!
 
 
+
+### Naming conventions
+
+* use dashes instead of spaces
+* `-hobby`, `-pro`, `-old` on the end for different stacks
+
+
+
 ### Front Matter syntax
 
 Each markdown file requires a yaml block at the top. See here which attributes are available, how and when to use them.
 
 ```yaml
-# which template to use - "article", if in doubt
+# Rendering
+
+# which template to use - "article", if in doubt REQUIRED
 template: article
 
-# title shown in navigation -> short but descriptive
+
+
+# Headline & display
+
+# title shown in navigation -> short but descriptive REQUIRED
 naviTitle: About Apps
 
 # title shown in article header on display
 title: What is an App anyways?
 
+# lead text for article detail view -> what to expect from content
+lead: Forget servers. Think services instead. Learn the basic fortrabbit concepts.
+
+# alternative to lead text. when lead is intro & excerpt is overview or lead is not available
+excerpt: Get to know about the basic concepts.
+
+# disable TOC generation for this article
+noToc: true
+
+
+
+
+# General meta data
+
+# where to show this: hobby, pro old REQUIRED
+stack:  hobby
+
 # When the article was last checked?
 # Don't forget to edit this each time you have reviewed a page
 # pages older than one year will be marked outdated
-reviewed: 2016-02-22
+reviewed: 2016-10-22
 
 # Under which headline the content will be shown on home
 # (use underscore instead of space)
@@ -48,6 +79,13 @@ dontList: true
 # do not include in search, don't show in search results
 dontIndex: true
 
+# additional keywords for document search to help users find this article
+keywords:
+    - foo
+    - bar
+
+
+# Extended meta data
 
 # The actual link you will send people to (for external services)
 websiteLink: https://www.wordpress.org?utm_source=fortrabbit
@@ -58,27 +96,14 @@ websiteLinkText: www.wordpress.org
 # set for latency relevant 3rd party services, otherwise use nor acceptable
 dataCenters: n/a
 
-# lead text for article detail view -> what to expect from content
-lead: Forget servers. Think services instead. Learn the basic fortrabbit concepts.
-
-# alternative to lead text. when lead is intro & excerpt is overview or lead is not available
-excerpt: Get to know about the basic concepts.
-
-# disable TOC generation for this article
-noToc: true
-
 # logo shown for 3rd party service or open source
 image: myfunkyimage.png
 
 # type, for CMS/framework
 type:  CMS
 
-# additional keywords for document search to help users find this article
-keywords:
-    - foo
-    - bar
-
 ```
+
 
 ## Dynamic help
 
@@ -110,8 +135,7 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 
 ## Code examples
 
-* try to keep code examples together in one block, don't mix paragraphs and code blocks
-*
+* try to keep code examples together in one block, avoid mixing paragraphs and code blocks
 
 ### Bash
 
@@ -120,18 +144,17 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 * output should be a comment
 * `$` to start a command
 
-
 ### PHP
 
 * when there is code between use: `other code …`
 
 
-## Install guide concept
+## Install guide skeleton
 
+* file name: `install-wordpress-hobby`
 * Dashboard settings first
 * Mini guide in the middle > time to WOW
 * Tuning after that
-
 
 
 ## Writing help & blog articles
