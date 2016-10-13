@@ -34,7 +34,7 @@ Usually there is a configuration file which is used from the App to connect to t
 
 * **Database Name**: `{{app-name}}`
 * **Username**: `{{app-name}}`
-* **Password**: `{{your-database-password}}`
+* **Password**: `{{app-database-password}}` _[< how to recover](/#toc-obtain-the-mysql-password)_
 * **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com` _< not localhost_
 
 See our specific examples for: [Laravel](install-laravel-hobby#toc-mysql), [Symfony](install-symfony-hobby#toc-mysql), [WordPress](install-wordpress-hobby#toc-mysql), [Craft CMS](install-craft-hobby#toc-mysql).
@@ -96,7 +96,7 @@ When you create an App, the database password will be shown to you once. Copy/pa
 
 <!-- TODO: this is needs to be confirmed, link to how login via SFTP -->
 
-Login to your fortrabbit App via [SFTP](/sftp). Move up one from HOME folder (htdocs) and find 
+Login to your fortrabbit App via [SFTP](/sftp). Move up one from HOME folder (htdocs) and find and open the `mysqlpassword.txt` file, which contains the MySQL password.
 
 
 
@@ -110,11 +110,11 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
 ```
 
 
-#### 4. Peek the password in your configuraion file
+#### 4. Peek the password in your configuration file
 
 <!-- TODO: TMI? -->
 
-When your App can already connect to the database and you now want to 
+When your App can already connect to the database you may can find the MySQL password in your database configuration. 
 
 
 #### 5. Reset the MySQL password
