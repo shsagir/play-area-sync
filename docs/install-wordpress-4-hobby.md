@@ -98,8 +98,6 @@ Your App URL `{{app-name}}.frb.io` is the first address your WordPress can be re
 2. Tell the fortrabbit App that requests for a new domain will come in
 3. Tell WordPress to use the new domain as well:
 
-
-
 In the WordPress admin (https://{{app-name}}.frb.io/wp-admin) you will change the Site URL from your App URL to that new domain. You'll find this setting in wp-admin under Settings > General: "WordPress Address (URL)" and "Site Address (URL)" should be changed to your new domain. More advanced help regarding domains in the Wordpress help can be found here:
 
 * [Changing The Site URL](https://codex.wordpress.org/Changing_The_Site_URL)
@@ -113,6 +111,8 @@ There are two reasons to install wordpress not in the `htdocs` but in a sub dire
 
 You can achieve the first option by putting WordPress in a folder and by changing the "Site Address URL" parameter (see above).
 
+
+* [Giving WordPress Its Own Directory](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory)
 
 
 ### Keep WordPress secure
