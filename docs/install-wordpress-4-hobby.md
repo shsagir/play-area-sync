@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-10-10
+reviewed:      2016-10-14
 title:         Install WordPress 4
 naviTitle:     WordPress
 lead:          "WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit."
@@ -21,6 +21,8 @@ keywords:
     - wp-admin
 
 ---
+
+<!-- TODO: restructure -->
 
 
 ## Get ready
@@ -78,9 +80,10 @@ Don't stop with a plain vanilla installation. Make it yours!
 
 This is pretty standard operations. You can download and update themes directly from the WordPress admin. Or you can create your own, test them locally, then upload them to your remote themes folder. The same applies to plugins.
 
-### Send mails
+### Send e-mails
 
-You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use a SMTP plugin like [WP SMTP](http://wordpress.org/plugins/wp-smtp/) or [MAIL SMTP](http://wordpress.org/plugins/wp-mail-smtp/) to enable SMTP support for your `wp_mail()` function:
+You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use a SMTP plugin like [WP SMTP](http://wordpress.org/plugins/wp-smtp/) or [MAIL SMTP](http://wordpress.org/plugins/wp-mail-smtp/) to enable SMTP support for the `wp_mail()` function.
+
 
 ### Secure WordPress
 
@@ -89,13 +92,36 @@ Please mind that it is [your responsibility](/security) to keep your WordPress s
 
 ### Add your own domain
 
-Your App URL {{app-name}}.frb.io is the first address your WordPress can be reached. Later on, when you go live, you will add your own custom external domains. Please see our [domain article](/domains) on how to register a domain in the Dashboard.
+Your App URL `{{app-name}}.frb.io` is the first address your WordPress can be reached. Later on, when you go live, you will add your own custom external domains. Here is the basic setup:
 
-In the WordPress admin you will also Site URL from your App URL to that URL. More advanced help regarding domains in the Wordpress help:
+1. Register and point the domain to the fortrabbit App < see [domain article](/domains)
+2. Tell the fortrabbit App that requests for a new domain will come in
+3. Tell WordPress to use the new domain as well:
+
+
+
+In the WordPress admin (https://{{app-name}}.frb.io/wp-admin) you will change the Site URL from your App URL to that new domain. You'll find this setting in wp-admin under Settings > General: "WordPress Address (URL)" and "Site Address (URL)" should be changed to your new domain. More advanced help regarding domains in the Wordpress help can be found here:
 
 * [Changing The Site URL](https://codex.wordpress.org/Changing_The_Site_URL)
 
-- - -
+### Run WordPress in a sub folder
+
+There are two reasons to install wordpress not in the `htdocs` but in a sub directory:
+
+1. WordPress is just the blog-part of the website: `mydomain.com/blog`
+2. You want to run multiple WordPress in one App. [Please don't.](/apps)
+
+You can achieve the first option by putting WordPress in a folder and by changing the "Site Address URL" parameter (see above).
+
+
+
+### Keep WordPress secure
+
+Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check this article:
+
+* [WordPress help: Configuring Automatic Background Updates](https://codex.wordpress.org/Configuring_Automatic_Background_Updates)
+
+and take care that your WordPress core, plugins and even the themes are always up-to-date.
 
 
 ## Install WordPress with SSH
@@ -122,20 +148,9 @@ $ rm -r wordpress latest.tar.gz
 Now please proceed as [above](#toc-configure-in-the-browser).
 
 
-## Keep WordPress secure
-
-Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check this article:
-
-* [WordPress help: Configuring Automatic Background Updates](https://codex.wordpress.org/Configuring_Automatic_Background_Updates)
-
-and take care that your WordPress core, plugins and even the themes are always up-to-date.
-
-
-
 ## Install WordPress with Git
 
 WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called Bedrock. Please see our WordPress install guide on how to set it up — it best works for our Professional stack but can also be used on the Hobby stack.
-
 
 ## Database configuration with wp-config
 
@@ -170,11 +185,6 @@ define('DB_COLLATE', '');
 
 
 <!-- TODO:
-
-## Sending e-mails from WordPres
-
-BLA BLA BLA
-
 
 
 ## Local development
