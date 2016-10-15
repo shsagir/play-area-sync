@@ -216,7 +216,7 @@ $ mv wordpress/* .
 $ rm -r wordpress latest.tar.gz
 ```
 
-Now please proceed as [above](#toc-configure-in-the-browser).
+Now please proceed with the web installer as shown above.
 
 
 ### Install WordPress with Git
