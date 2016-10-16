@@ -50,7 +50,7 @@ Open an SFTP client ([Cyberduck](https://cyberduck.io/), WinSCP …) and connect
 
 * **Server**: `deploy.{{region}}.frbit.com`
 * **User Name**: `{{ssh-user}}`
-* **Password**: `{{ssh-password}}
+* **Password**: `{{ssh-password}}`
 
 When successfull, you will see the yet empty `htdocs` folder of your fortrabbit App. If you can't connect: check the [access methods article](/access-methods) to troubleshoot.
 
