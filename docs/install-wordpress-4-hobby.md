@@ -68,7 +68,7 @@ When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.fr
 
 * **Database Name**: `{{app-name}}`
 * **Username**: `{{app-name}}`
-* **Password**: `{{app-database-password}}` _[< how to recover](/mysql-hobby#toc-obtain-the-mysql-password)_
+* **Password**: [Lookup in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql)
 * **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com` _< not localhost_
 * **Table Prefix**: keep `wp_` or your choice
 
@@ -86,10 +86,10 @@ After that you will be directed to login to the WordPress admin. Use the Usernam
 
 ### 6. Done
 
-Got it? You can start WordPressing. Your WordPress is now life under:
+Got it? Your WordPress is now life under:
 
-* [{{app-name}}.frb.io](https://{{app-name}}.frb.io) < WordPress installation
-* [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) < WordPress admin
+* [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< WordPress installation_
+* [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) _< WordPress admin_
 
 - - -
 

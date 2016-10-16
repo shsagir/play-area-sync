@@ -50,65 +50,39 @@ Sometimes you want to run a certain query on your live database. Or you want to 
 * **MySQL host**: `{{app-name}}.mysql.{{region}}.frbit.com` < not localhost
 * **MySQL database**: `{{app-name}}`
 * **MySQL user**: {{app-name}}
-* **MySQL password**: [Lookup in the Dashboard](https://dashboard.fortrabbit.com/{{app-name}}#mysql)
+* **MySQL password**: [Lookup in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql)
 * **MySQL port**: `3306` < usually not required
+
+<!-- TODO: make password link work in Dashboard -->
 
 
 #### SSH tunnel for MySQL access
 
-* **SSH tunnel server**: tunnel.{{region}}.frbit.com
-* **SSH tunnel user**:  {{ssh-user}}
-* **SSH password**: {{ssh-password}}
-* **SSH port**:   22
-
+* **SSH tunnel server**: `tunnel.{{region}}.frbit.com`
+* **SSH tunnel user**: `{{ssh-user}}`
+* **SSH password**: `{{ssh-password}}`
+* **SSH port**: `22` < usually not required
 
 
 ### Obtain the MySQL password
 
-The MySQL database password is stored encrypted security reasons. So, we can't show it in the Dashboard afterwards. But there are several ways to get and reclaim your database password:
+You can lookup the MySQL in the Dashboard with your App. To pickup 
+
+<!-- TODO: in Dashboard, the tabs need to react on the anchor tag -->
+
+* https://dashboard.fortrabbit.com/apps/{{app-name}}
 
 
 
-#### 1. Save the database password when first shown
-
-<!-- TODO: this is needs to be confirmed -->
-
-When you create an App, the database password will be shown to you once. Copy/paste and keep this info savely and handy.
 
 
-#### 2. Access via SFTP
-
-<!-- TODO: this is needs to be confirmed, link to how login via SFTP -->
-
-Login to your fortrabbit App via [SFTP](/sftp). Move up one from HOME folder (htdocs) and find and open the `mysqlpassword.txt` file, which contains the MySQL password.
-
-
-
-#### 3. SSH command
-
-You can also get the MySQL by triggering this remote SSH command in your terminal:
-
-```bash
-# Grab secrets.json to see the MySQL password
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
-```
-
-
-#### 4. Peek the password in your configuration file
-
-<!-- TODO: TMI? -->
-
-When your App can already connect to the database you may can find the MySQL password in your database configuration. 
-
-
-#### 5. Reset the MySQL password
+### Resetting the MySQL password
 
 Instead of reclaiming you can also set a new MySQL password. Please mind that this can have some consequences: 
 
 * Your App will can't connect any more — you'll need to update the Apps config then
 * Your coworkers won't be able to connect afterwards
 
-<!-- TODO: the coworker case is invalid! When coworker is out https://trello.com/c/hNfjMSCE/411-coworker-leave-definieren -->
 
 
 
