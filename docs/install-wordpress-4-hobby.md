@@ -38,9 +38,11 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ## Quick start
 
+
 ### 1. Download & unpack
 
 Download the [latest.zip](https://wordpress.org/latest.zip) from the WordPress website and unpack the archive locally. You will see a `wordpress folder.
+
 
 ### 2. Connect to your fortrabbit App via SFTP
 
@@ -72,12 +74,9 @@ When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.fr
 
 #### Site title & admin user
 
-<!-- TODO: explain this, App-Name not helpful in long run, see below for routing domains  -->
-<!-- TODO: Note: e-mails will never arrive? — the web installer tries to send an e-mail! -->
-
-* **Site Title**: — you can change this later on
-* **Username**: set a an admin user name
-* **Password**: use the suggested secure password or choose a custom one
+* **Site Title**: What your site is about, you can this change this later
+* **Username**: set a user name for the admin
+* **Password**: use the suggested password or choose a custom one
 * **Your Email**: set an e-mail for the admin
 
 

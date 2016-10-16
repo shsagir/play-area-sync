@@ -47,35 +47,19 @@ Sometimes you want to run a certain query on your live database. Or you want to 
 
 #### MySQL access
 
-**MySQL host**:  
-{{app-name}}.mysql.{{region}}.frbit.com
-
-**MySQL database**:  
-{{app-name}}
-
-**MySQL user**:  
-{{app-name}}
-
-**MySQL password**:  
-See [below on how to reclaim](#toc-obtain-the-mysql-password) 
-
-**MySQL port**:  
-3306
+* **MySQL host**: `{{app-name}}.mysql.{{region}}.frbit.com` < not localhost
+* **MySQL database**: `{{app-name}}`
+* **MySQL user**: {{app-name}}
+* **MySQL password**: [Lookup in the Dashboard](https://dashboard.fortrabbit.com/{{app-name}}#mysql)
+* **MySQL port**: `3306` < usually not required
 
 
 #### SSH tunnel for MySQL access
 
-**SSH tunnel server**:  
-tunnel.{{region}}.frbit.com
-
-**SSH tunnel user**:  
-{{ssh-user}}
-
-**SSH password**:  
-{{ssh-password}}
-
-**SSH port**:  
-22
+* **SSH tunnel server**: tunnel.{{region}}.frbit.com
+* **SSH tunnel user**:  {{ssh-user}}
+* **SSH password**: {{ssh-password}}
+* **SSH port**:   22
 
 
 
