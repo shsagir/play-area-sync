@@ -4,7 +4,7 @@ template:      article
 reviewed:      2016-07-13
 naviTitle:     About Apps
 title:         What is an App?
-lead:          Forget servers. Think servers instead. Learn the basic fortrabbit concepts.
+lead:          Forget servers. Think apps instead. Learn the basic fortrabbit concepts.
 group:         getting_started
 
 seeAlsoLinks:
