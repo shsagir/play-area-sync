@@ -20,7 +20,7 @@ New Apps have an **ephemeral storage**: all files will be replaced on each Git d
 
 You'll need some efforts from your side to have uploads working (again).
 
-We provide an additional Component to store uploads, static assets and any kind of runtime data offshore. It's called [Object Storage](/object-storage) and comes with some more benefits. It's mostly compatible to AWS S3 and therefore, so you'll find easy to integrate it to your CMS and framework. File-system abstraction is the key. Please see our [Object Storage article](/object-storage) for more.
+We provide an additional Component to store uploads, static assets and any kind of runtime data offshore. It's called [Object Storage](/object-storage) and comes with some more benefits. It's mostly compatible to AWS S3, so you'll find easy to integrate it to your CMS and framework. File-system abstraction is the key. Please see our [Object Storage article](/object-storage) for more.
 
 
 ## Only Git, no SSH/SFTP
