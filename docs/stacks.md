@@ -10,7 +10,13 @@ stack:         all
 
 ---
 
-## Hobby Stack
+|                   | Universal Stack              | Professional Stack  |
+| ----------------- | ---------------------------- | ------------------- |
+| Price per App     | Three fixed prices: 3, 6, 12 | Components: 8 - 600 |
+| Scalability       | xxs - s                      | xxs - xxxl          |
+| Application types | websites & web applications  | web application     |
+
+## Universal Stack
 
 Hobby Stack Apps are made for general purpose PHP web development — websites and web applications. It's design is a mix of legacy support with good backward compatibility — while also supporting modern web development.
 

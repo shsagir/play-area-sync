@@ -49,7 +49,7 @@ Sometimes you want to run a certain query on your live database. Or you want to 
 
 * **MySQL host**: `{{app-name}}.mysql.{{region}}.frbit.com` < not localhost
 * **MySQL database**: `{{app-name}}`
-* **MySQL user**: {{app-name}}
+* **MySQL user**: `{{app-name}}`
 * **MySQL password**: [Lookup in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql)
 * **MySQL port**: `3306` < usually not required
 
