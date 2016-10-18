@@ -30,9 +30,9 @@ Instead of making use of Let's Encrypt in the free version, you can bring your o
 
 ## Why use TLS custom
 
-* You want to use a [higher trusted](https://en.wikipedia.org/wiki/Extended_Validation_Certificate) commercial certificate
-* You need a wildcard certificate
-* You don't trust freebies
+1. You want to use a [higher trusted](https://en.wikipedia.org/wiki/Extended_Validation_Certificate) commercial certificate
+2. You need a wildcard certificate, including all subdomains `*.yourdomain`
+3. You don't trust freebies
 
 ## Why not to use TLS custom
 
