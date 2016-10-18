@@ -17,7 +17,7 @@ keywords:
 
 ---
 
-<!-- TODO: need to differintiate Hobby / Pro -->
+<!-- TODO: need to differintiate Uni / Pro -->
 
 No need to explain this anymore: [Composer](http://getcomposer.org) is the defacto standard to handle PHP application dependencies, as well as providing mechanisms to keep them up2date.
 

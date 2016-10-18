@@ -23,7 +23,7 @@ The folder _WIP contains — as you might can guess — work in progress. All in
 ### Naming conventions
 
 * use dashes instead of spaces
-* `-hobby`, `-pro`, `-old` on the end for different stacks
+* `-universal`, `-pro`, `-old` on the end for different stacks
 
 
 
@@ -60,14 +60,14 @@ noToc: true
 
 # Stack meta
 
-# where to show this: hobby, pro old — REQUIRED
-stack:  hobby
+# where to show this: universal, pro old — REQUIRED
+stack:  universal
 
 # link to the Old App version
 oldLink:   mysql-old
 
-# link to the Hobby App verison
-hobbyLink: mysql-hobby
+# link to the Universal App verison
+universalLink: mysql-universal
 
 # link to the professional version
 proLink:   mysql-pro
@@ -173,7 +173,7 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 
 ## Install guide skeleton
 
-* file name: `install-wordpress-hobby`
+* file name: `install-wordpress-univesal`
 * Dashboard settings first
 * Mini guide in the middle > time to WOW
 * Tuning after that
@@ -225,7 +225,7 @@ Find the right balance between being general and being precise (aka Captain Obvi
 * **User** — ~~member~~, ~~account~~
 * **Workers** — ~~Worker~~
 * **Professional Stack** — ~~Pro Stack~~, ~~Professional stack~~
-* **Hobby Stack** — ~~Hobby stack~~, ~~hobby stack~~
+* **Universal Stack** — ~~Hobby stack~~, ~~hobby stack~~
 * **{{ interchangble-value }}** < something the users will need to modify
 * **{{ your-app }}** ~~{{ my-app }}~~, ~~{{ app-name }}~~
 

@@ -6,7 +6,7 @@ title:         Directory structure
 naviTitle:     Directory structure
 group:         platform
 stack:         pro
-hobbyLink:     directories-pro
+universalLink:     directories-pro
 oldLink:       directories-old
 
 

@@ -23,7 +23,7 @@ Steve Jobs
 The performance of a modern web application depends on the hosting environment AND the application design. In short: we are in this together! We — fortrabbit — as your hosting vendor, are responsible to provide a great, scalable and [secure](security) infrastructure. You, as the developer, are responsible to leverage this infrastructure by good application design.
 
 
-<!-- TODO: Redis & Memcache are both not available for Hobby App.  -->
+<!-- TODO: Redis & Memcache are both not available for Universal App.  -->
 
 ### Prepare to cache
 

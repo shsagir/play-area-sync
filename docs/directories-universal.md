@@ -5,9 +5,9 @@ reviewed:      2016-09-15
 title:         Learn about your Apps directory structure
 naviTitle:     Directory structure
 group:         platform
-stack:         hobby
+stack:         universal
 oldLink:       directories-old
-hobbyLink:     directories-pro
+universalLink:     directories-pro
 hideExamples:  yes
 
 keywords:
@@ -25,7 +25,7 @@ keywords:
 ---
 
 
-<!-- TODO: WRITE what is different with Hobby App here? -->
+<!-- TODO: WRITE what is different with Uni App here? -->
 
 ```nohighlight
 bin

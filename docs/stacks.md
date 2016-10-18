@@ -1,20 +1,31 @@
 ---
 
 template:      article
-title:         "Which Stack to choose"
-reviewed:      2016-09-15
-naviTitle:     Hobby & Professional Stack
-lead:          "With each App you create, you can choose between two technology stacks: Hobby Stack & Professional Stack. This article helps you to decide."
+naviTitle:     Universal & Professional stacks
+title:         "About the Universal & Professional stacks"
+reviewed:      2016-10-15
+lead:          "With each App you create, you can choose between two technology stack. This article helps you to understand why there are two stacks and how to decide decide."
 group:         platform
 stack:         all
 
 ---
 
-|                   | Universal Stack              | Professional Stack  |
-| ----------------- | ---------------------------- | ------------------- |
-| Price per App     | Three fixed prices: 3, 6, 12 | Components: 8 - 600 |
-| Scalability       | xxs - s                      | xxs - xxxl          |
-| Application types | websites & web applications  | web application     |
+|                             | Universal Stack                | Professional Stack                                |
+| --------------------------- | ------------------------------ | ------------------------------------------------- |
+| Websites per App            | 1 [Why?](/app)                 | 1 [Why?](/app)                                    |
+| Pricing model               | Fixed plans                    | Components: 8 - 600                               |
+| Price per App (EUR / USD)   | 3, 6, 12                       | 8 - 600                                           |
+| Traffic                     | xxs - s                        | xxs - xxxl                                        |
+| Scalability                 | xxs - s                        | xxs - xxxl                                        |
+| Local storage               | persistent                     | ephemeral storage                                 |
+| Primarly Application type   | websites                       | web applications                                  |
+| Secondary Application type  | web applications               | websites                                          |
+| Architecture                | 12-factor                      | Classical + magical extras                        |
+| Required skill level        | beginner                       | sophisticated                                     |
+| Deployment protocols        | SFTP, Git, SSH                 | Git                                               |
+| Composer intergration       | after Git push                 | after Git push                                    |
+| SSH integration             | standard                       | [remote SSH execution](/remote-ssh-execution-pro) |
+
 
 ## Universal Stack
 

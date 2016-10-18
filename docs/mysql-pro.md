@@ -8,7 +8,7 @@ lead:          PHP + MySQL is a classic. Access & configure the common database 
 group:         Components
 stack:         pro
 oldLink:       mysql-old
-hobbyLink:     mysql-hobby
+universalLink:     mysql-hobby
 
 keywords:
      - localhost
@@ -83,7 +83,7 @@ tunnel.{{region}}.frbit.com
 {{ssh-user}}
 
 **SSH password**:  
-{{ssh-password}}
+<!-- {{ssh-password}} -->
 
 **SSH port**:  
 22
