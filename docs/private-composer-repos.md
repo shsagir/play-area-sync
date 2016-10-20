@@ -19,7 +19,7 @@ keywords:
 
 ---
 
-<!-- TODO: recheck - is it up to date for Hobby? -->
+<!-- TODO: recheck - is it up to date for Universal? -->
 
 Modern PHP App development utilizes [Composer](composer) as a dependency manager. There are many great open source packages [out there](http://packagist.org). But your company code is probably not intended to be released to public. That's when you use private Composer repositories — protected by SSH public key authentication.
 

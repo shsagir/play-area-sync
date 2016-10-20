@@ -4,10 +4,10 @@ template:      article
 reviewed:      2016-10-10
 title:         All about MySQL
 naviTitle:     MySQL
-lead:          Each Hobby App comes with a pre-installed MySQL database. Learn how to access & configure the common database on fortrabbit.
+lead:          Each App comes with a pre-installed MySQL database. Learn how to access & configure the common database on fortrabbit.
 group:         platform
 
-stack:         hobby
+stack:         universal
 oldLink:       mysql-old
 proLink:       mysql-pro
 
@@ -37,7 +37,7 @@ Usually there is a configuration file which is used from the App to connect to t
 * **Password**: `{{app-database-password}}` _[< how to recover](/#toc-obtain-the-mysql-password)_
 * **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com` _< not localhost_
 
-See our specific examples for: [Laravel](install-laravel-hobby#toc-mysql), [Symfony](install-symfony-hobby#toc-mysql), [WordPress](install-wordpress-hobby#toc-mysql), [Craft CMS](install-craft-hobby#toc-mysql).
+See our specific examples for: [Laravel](install-laravel-universal#toc-mysql), [Symfony](install-symfony-universal#toc-mysql), [WordPress](install-wordpress-universal#toc-mysql), [Craft CMS](install-craft-universal#toc-mysql).
 
 
 ## Access MySQL from local

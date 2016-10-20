@@ -17,7 +17,7 @@ We have three generations of Apps/Stacks here on fortrabbit:
 
 * Old Apps (2013 - ~2017?)
 * Professional Stack (from 2015 on) < formaly known as New App
-* Hobby Stack (from 2016 on)
+* Universal Stack (from 2016 on)
 
 This article lists resources to still work with the Old Apps.
 

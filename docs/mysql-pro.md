@@ -1,14 +1,14 @@
 ---
 
-template:      article
-reviewed:      2016-08-31
-title:         All about MySQL
-naviTitle:     MySQL
-lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
-group:         Components
-stack:         pro
-oldLink:       mysql-old
-universalLink:     mysql-hobby
+template:          article
+reviewed:          2016-08-31
+title:             All about MySQL
+naviTitle:         MySQL
+lead:              PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
+group:             Components
+stack:             pro
+oldLink:           mysql-old
+universalLink:     mysql-universal
 
 keywords:
      - localhost

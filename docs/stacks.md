@@ -1,27 +1,30 @@
 ---
 
 template:      article
-naviTitle:     Universal & Professional stacks
-title:         "About the Universal & Professional stacks"
+naviTitle:     "About the Stacks"
+title:         "About the Stacks"
 reviewed:      2016-10-15
-lead:          "With each App you create, you can choose between two technology stack. This article helps you to understand why there are two stacks and how to decide decide."
+lead:          "With each App you create, you can choose between two technology stacks. This article helps you to understand why there are two stacks and how to decide decide."
 group:         platform
 stack:         all
 
 ---
+
+## The facts table
 
 |                             | Universal Stack                | Professional Stack                                |
 | --------------------------- | ------------------------------ | ------------------------------------------------- |
 | Websites per App            | 1 [Why?](/app)                 | 1 [Why?](/app)                                    |
 | Pricing model               | Fixed plans                    | Components: 8 - 600                               |
 | Price per App (EUR / USD)   | 3, 6, 12                       | 8 - 600                                           |
-| Traffic                     | xxs - s                        | xxs - xxxl                                        |
+| Traffic                     | low, medium                    | low - very high                                   |
 | Scalability                 | xxs - s                        | xxs - xxxl                                        |
-| Local storage               | persistent                     | ephemeral storage                                 |
+| High Availability           | no                             | optional                                          |
+| Local storage               | persistent                     | [ephemeral](#toc-ephemeral-storage)               |
 | Primarly Application type   | websites                       | web applications                                  |
 | Secondary Application type  | web applications               | websites                                          |
 | Architecture                | 12-factor                      | Classical + magical extras                        |
-| Required skill level        | beginner                       | sophisticated                                     |
+| Required skill level        | Ok for beginners               | sophisticated                                     |
 | Deployment protocols        | SFTP, Git, SSH                 | Git                                               |
 | Composer intergration       | after Git push                 | after Git push                                    |
 | SSH integration             | standard                       | [remote SSH execution](/remote-ssh-execution-pro) |
@@ -29,17 +32,19 @@ stack:         all
 
 ## Universal Stack
 
-Hobby Stack Apps are made for general purpose PHP web development — websites and web applications. It's design is a mix of legacy support with good backward compatibility — while also supporting modern web development.
+Universal Stack Apps are made for general purpose PHP web development — websites and web applications. It's design is a mix of legacy support with good backward compatibility — while also supporting modern web development.
 
 ### Scaling from xs to m
 
-The Hobby Stack isn't really scalable. In fact the PHP memory for the different 
+The Unniversal Stack isn't really scalable. In fact the PHP memory for the different 
 
 ### Target audience
 
-Hobby apps are made for both
+The Universal Stack is, well universal. It's a good choice for noobs to get started with cloud hosting, it also suits 
 
 ### Application types
+
+
 
 ### Persistent storage
 

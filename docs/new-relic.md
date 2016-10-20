@@ -16,7 +16,7 @@ dataCenters:      n/a
 
 ---
 
-<!-- TODO: what about hobby app, when not enabled?   -->
+<!-- TODO: what about uni app, when not enabled?   -->
 
 ## About New Relic
 

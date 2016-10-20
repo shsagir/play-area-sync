@@ -5,7 +5,7 @@ reviewed:      2016-10-15
 title:         Install WordPress 4
 naviTitle:     WordPress
 group:         Install_guides
-stack:         hobby
+stack:         universal
 lead:          Learn how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
 proLink:       install-wordpress-4-pro
 oldLink:       install-wordpress-4-old
@@ -220,7 +220,7 @@ Now please proceed with the web installer as shown above.
 
 ### Install WordPress with Git
 
-WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called Bedrock. Please see our WordPress install guide on how to set it up — it best works for our Professional stack but can also be used on the Hobby stack.
+WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called Bedrock. Please see our WordPress install guide on how to set it up — it best works for our Professional Stack but can also be used on the Universal Stack.
 
 
 ### Database configuration with wp-config
