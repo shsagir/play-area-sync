@@ -128,8 +128,65 @@ To change the default domain: In the Dashboard go to your App > Domains. There c
 Domains on fortrabbit can be accessed via `HTTP` and `HTTPS`. Please see the [TLS article](/tls) for informations on secured connections and SSL certificates.
 
 
+
 - - -
 
+
+## Choosing a domain provider
+
+fortrabbit is not offering direct domain registration and management. In classical hosting, domain registration & e-mail hosting where bundled in packages. Today you can find specialized domain services. There are various offerings, so you should consider upfront what you'll need:
+
+1. Additional IMAP/POP3 e-mail hosting
+2. Additional SSL certificate ordering
+3. Specialized in advanced DNS configurations
+4. Exotic TLD-endings
+4. General domain forwarding
+5. Support for forwards with ALIAS or ANAME records
+
+Many of our clients are using classical offerings combining domain ordering and e-mail hosting. Others are using separated services for domain registration and e-mail hosting.
+
+
+## Multiple domains on one App
+
+There some reasons why to point more than one domain to your fortrabbit App:
+
+### Host multiple websites in your App
+
+You probably want to host more than one website on your App like so:
+
+1. `your-first-domain.com` resovles in `htdocs/your-first-domain/public`
+2. `your-other-domain.com` resovles in `htdocs/your-other-domain/public`
+3 …
+
+**Please don't do this!** It's the way VPS hosting works, but's it's really not a good design pattern. Your App is NOT a server, there are good reasons to only host one project, website or application in one App. Please see our [App help article](/app#toc-one-website-per-app) to learn more.
+
+### Forwarding other domains to your App
+
+Let's say you have `your-domain.com` pointed to your App already. Now that other TLD, the domain `your-domain.co.uk` is  registered as well. So, of course, you want your App to show up under this domain as well. Now there are two main ways how this can be implemented:
+
+1. `your-domain.co.uk/pricing` will forward to `your-domain.com/pricing`
+2. `your-domain.co.uk/pricing` and `your-domain.co.uk/pricing` will both show the same content
+
+What you want, in most scenarios, is the first one: forwarding. Serving the same content under multiple domains is confusing — not only for humans bur also for bots: The SEO spider bot might downrank your content as a duplicate. You want a primary domain — one canonical name.
+
+### Forwarding other domains with your domain provider
+
+This should be preffered. You can forward one domain to another domain without any involement of fortrabbit at all.
+
+Please check your domain provider if forwarding is allowed. The configuration should be dead simple. You point one domain to another and that's it. 
+
+* Do: forward using a HTTP 301 code (moved permanently).
+* Don't: a "masked forward" where the other domain is loaded into an iframe
+
+
+### Forwarding other domains within your App
+
+This is only recommened when your domain provider does not support domain forwarding. You might do the forwarding programmtically within your App. The most common approach here is to work with `.htaccess` rules to redirect all requests to that other domain. You register each domain within the fortrabbit Dahboard and then catch all the requests in the App.
+
+<!-- TODO: insert example here -->
+
+
+- - -
 
 ## Troubleshooting DNS
 
@@ -161,27 +218,27 @@ help-frbit.eu2.frbit.net.  20    IN  A       52.48.51.144
 
 Alternately you can use a browser based DNS lookup tool. See [these results](http://lmgtfy.com/?q=dns+lookup).
 
-## Time delays
+### Time delays
 
 Many DNS providers default the TTL (Time To Live) of all records to 24 hours. This means that all changes will apply with a delay up to 24 hours, because everybody who has looked up the domain caches the result for the TTL duration. Also the TTL is not guaranteed: One badly programmed router on the way, who ignores the TTL or imposes it's own minimal TTL, can change the TTL for everybody "behind it". The caching itself is actually a good thing as it helps to reduce round trips. Some providers let you set down the TTL, which is very useful when moving or changing domains.
 
 
-## Testing domain routing with your local hosts file
+### Testing domain routing with your local hosts file
 
 Let's say you are developing a new App and want to use your custom domain before actually routing it to fortrabbit. Just add the domain to fortrabbit, as you would do with any actually routed domain, then modify your local host file, which let's your local machine now ahead of time that the domain is to be served from your fortrabbit App.
 
-### hosts file location
+#### hosts file location
 
 The hosts file is a text file (without file type ending). It can be found here:
 
 * Windows: `c:\windows\system32\drivers\etc\hosts`
 * MacOS & Linux: `/etc/hosts`
 
-### How to get your Apps IP
+#### How to get your Apps IP
 
 See the above troubleshooting section to grab the current IP of your App. Mind that this IP will change in the future and that this IP is just for now.
 
-### Editing your local hosts file
+#### Editing your local hosts file
 
 Your local file contains many entries, do not edit those. Just add a new line with the IP of your App and the domain you want to see routed there like so:
 
@@ -198,19 +255,6 @@ Your local file contains many entries, do not edit those. Just add a new line wi
 
 After your domain has been moved/propagated be sure to remove the entry from your hosts file.
 
-
-
-## Choosing a domain provider
-
-fortrabbit is not offering direct domain registration and management. In classical hosting, domain registration & e-mail hosting where bundled in packages. Today you can find specialized domain services. There are various offerings, so you should consider upfront what you'll need:
-
-1. Additional IMAP/POP3 e-mail hosting
-2. Additional SSL certificate ordering
-3. Specialized in advanced DNS configurations
-4. Exotic TLD-endings
-5. Support for forwards with ALIAS or ANAME records — see [below](#toc-forwarding-a-naked-domain)
-
-Many of our clients are using classical offerings combining domain ordering and e-mail hosting. Others are using separated services for domain registration and e-mail hosting.
 
 
 ### Configuring your domain for e-mail

@@ -80,7 +80,7 @@ Most of it can be viewed and edited in the [Dashboard](/dashboard).
 
 ### Domains
 
-There are various settings to control the routing of domains:
+There are various settings to control the routing of domains. Please also see the [domains help article](/domains).
 
 #### App URL
 
