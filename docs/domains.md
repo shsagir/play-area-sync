@@ -31,6 +31,8 @@ Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Add
 
 First off, make sure that the App knows about the domain. Then point the domain to your fortrabbit App with your domain provider. Start the process in the fortrabbit Dashboard like so:
 
+## Connect your domain to fortrabbit
+
 1. Click Your App > Domains > "Add a new domain"
 2. Choose a domain name
 3. Set the [root path](/app#toc-set-a-custom-root-path)
@@ -105,11 +107,11 @@ Please see our [CloudFlare article](/cloudfare) on how to setup and use CloudFla
 
 ### Wildcard domains
 
-Do you want to route all requests for all possible subdomains to your fortrabbit App like so `[[*.your-domain.com]]`? That is possible. 
+Do you want to route all requests for all possible subdomains to your fortrabbit App like so `[[*.your-domain.com]]`? That is possible.
 
 #### Wildcard domain use cases
 
-Some domain providers promote wildcard domains as the save and easy catch-all solution. With fortrabbit you should use a wildcard domain solely for the purpose when there is really any number of addresses that change dynamically. Imagine a social network App where your users will have `[[user]].[[your-domain.com]]` addresses. 
+Some domain providers promote wildcard domains as the save and easy catch-all solution. With fortrabbit you should use a wildcard domain solely for the purpose when there is really any number of addresses that change dynamically. Imagine a social network App where your users will have `[[user]].[[your-domain.com]]` addresses.
 
 #### Wildcard domain limitations
 
@@ -173,7 +175,7 @@ What you want, in most scenarios, is the first one: forwarding. Serving the same
 
 This should be preffered. You can forward one domain to another domain without any involement of fortrabbit at all.
 
-Please check your domain provider if forwarding is allowed. The configuration should be dead simple. You point one domain to another and that's it. 
+Please check your domain provider if forwarding is allowed. The configuration should be dead simple. You point one domain to another and that's it.
 
 * Do: forward using a HTTP 301 code (moved permanently).
 * Don't: a "masked forward" where the other domain is loaded into an iframe
