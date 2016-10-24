@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-10-15
+reviewed:      2016-10-24
 title:         Install WordPress 4
 naviTitle:     WordPress
 group:         Install_guides
@@ -38,6 +38,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ## Quick start
 
+This is the fast way to start with a fresh installation, please look below for [migrating WordPress](migration).
 
 ### 1. Download & unpack
 
@@ -45,6 +46,8 @@ Download the [latest.zip](https://wordpress.org/latest.zip) from the WordPress w
 
 
 ### 2. Connect to your fortrabbit App via SFTP
+
+<!--  TBD: maybe just link to the SFTP connection article here? TMI -->
 
 Open an SFTP client ([Cyberduck](https://cyberduck.io/), WinSCP …) and connect to your fortrabbit App via SFTP (not FTP) like so:
 
@@ -57,7 +60,9 @@ When successful, you will find yourself in the empty `htdocs` folder of your App
 
 ### 3. Upload
 
-Now copy the contents (not the folder itself) from your local `wordpress` folder to your remote App. This can take some time as there are a lot of files.
+Now copy the contents (not the folder itself) from your local `wordpress` folder to your remote App. This can take some time as there are a lot of files, usually around 7 minutes. 
+
+PSSST: You can also use [wget with SSH](#toc-install-wordpress-with-ssh) here to speed up this to 30 seconds.
 
 
 ### 4. Use the web installer
@@ -94,11 +99,11 @@ Got it? Your WordPress is now live under:
 
 ## Migration
 
-Don't stop with a plain vanilla installation. Make it yours! If you have an existing WordPress installation or if you would like to setup WordPress so that you can run in a local dev environment as well as in your fortrabbit App:
+Don't stop with a plain vanilla installation. Make it yours! Please check out the following topics if you have an existing WordPress installation or if you would like to setup WordPress so that you can run in a local development environment as well as in your fortrabbit App:
 
 ### Configuring environment configuration
 
-We use [environment detection](local-development#toc-environment-detection) to realize different behaviour locally then on remote, most importantly, the local WordPress should connect to the local database.
+We use [environment detection](local-development#toc-environment-detection) to realize different behaviours based on the location: locally or on remote. Most importantly: the local WordPress should connect to the local database. To do so, we add different configurations for local development and remote production and add a switch so that WordPress can detect where it is currently running.
 
 Check if the file `wp-config.php` exists on top level in your local WordPress installation. If it doesn't: create it by making a copy of `wp-config-sample.php` and name it `wp-config.php`. Now open `wp-config.php` in an editor and modify it using [environment variables](/env-vars) as following:
 
@@ -171,6 +176,8 @@ WordPress consists of it's files, the code and the uploads and of course the [My
 TODO, TODO, TODO …
 
 #### Database migration in the terminal
+
+<!-- TODO: which direction is this? up and down or just down, what about the other way? -->
 
 Create a dump of your existing database, eg using `mysqldump` from the command line:
 
@@ -279,7 +286,7 @@ You can achieve the first option by putting WordPress in a folder and by changin
 * [Giving WordPress Its Own Directory](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory)
 
 
-### Install WordPress from SSH
+### Install WordPress with SSH
 
 This is an alternative much quicker and more advanced way to install WordPress via shell commands. Issue the following in your local terminal:
 
