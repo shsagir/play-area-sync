@@ -1,15 +1,15 @@
 ---
 
-template:      article
-reviewed:      2016-10-24
-title:         Install WordPress 4
-naviTitle:     WordPress
-group:         Install_guides
-stack:         uni
-lead:          Learn how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
-proLink:       install-wordpress-4-pro
-oldLink:       install-wordpress-4-old
-deprecated:    0
+template:         article
+reviewed:         2016-10-24
+title:            Install WordPress 4
+naviTitle:        WordPress
+group:            Install_guides
+stack:            uni
+lead:             Learn how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
+proLink:          install-wordpress-4-pro
+oldLink:          install-wordpress-4-old
+deprecated:       0
 
 websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
@@ -38,7 +38,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ## Quick start
 
-This is the fast way to start with a fresh installation, please look below for [migrating WordPress](migration).
+This is the fast way to start with a fresh installation, please look below for [migrating WordPress](#toc-migration).
 
 ### 1. Download & unpack
 
@@ -60,9 +60,7 @@ When successful, you will find yourself in the empty `htdocs` folder of your App
 
 ### 3. Upload
 
-Now copy the contents (not the folder itself) from your local `wordpress` folder to your remote App. This can take some time as there are a lot of files, usually around 7 minutes. 
-
-PSSST: You can also use [wget with SSH](#toc-install-wordpress-with-ssh) here to speed up this to 30 seconds.
+Now copy the contents (not the folder itself) from your local `wordpress` folder to your remote App. This can take some time as there are a lot of files, usually around 7 minutes. PSSST: You can also use [wget with SSH](#toc-installing-wordpress-with-ssh) here to speed up this to 30 seconds.
 
 
 ### 4. Use the web installer
@@ -89,9 +87,9 @@ When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.fr
 
 After this you will be redirected to the WordPress admin login form. Use the previously chosen Username and Password to login.
 
-### 6. Done
+### 6. Done 
 
-Got it? Your WordPress is now live under:
+😋 Your WordPress is now live under:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< WordPress installation_
 * [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) _< WordPress admin_
@@ -99,7 +97,7 @@ Got it? Your WordPress is now live under:
 
 ## Migration
 
-Don't stop with a plain vanilla installation. Make it yours! Please check out the following topics if you have an existing WordPress installation or if you would like to setup WordPress so that you can run in a local development environment as well as in your fortrabbit App:
+**Don't stop with a plain vanilla installation. Make it yours!** Check out the following topics if you have an existing WordPress installation or if you would like to setup WordPress so that you can run in a local development environment as well as in your fortrabbit App:
 
 ### Configuring environment configuration
 
@@ -163,7 +161,7 @@ When successful, you will find yourself in the empty `htdocs` folder of your App
 
 -->
 
-### Migrating the database
+### Database migration
 
 WordPress consists of it's files, the code and the uploads and of course the [MySQL database](/mysql-uni), were most contents are stored. There are various use cases to import and export the database:
 
@@ -171,11 +169,11 @@ WordPress consists of it's files, the code and the uploads and of course the [My
 * export your local database to import it to the fortrabbit database
 * download the remote database on fortrabbit to bring your local installation up-to-date
 
-#### Database migration with a GUI
+#### Migrating the database with a GUI
 
 TODO, TODO, TODO …
 
-#### Database migration in the terminal
+#### Migrating the database in the terminal
 
 <!-- TODO: which direction is this? up and down or just down, what about the other way? -->
 
@@ -191,7 +189,8 @@ Now either open up your [MySQL GUI](/mysql-uni#toc-mysql-via-gui), connect your 
 # open a tunnel
 $ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
 
-# in a new terminal: import the dump
+# !!! in a new terminal window !!!
+# import the dump
 $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 ```
 
@@ -236,7 +235,7 @@ $ rsync -az --delete custom-plugin/ {{app-name}}@deploy.{{region}}.frbit.com:~/w
 
 The above command must be executed from within the `plugins` folder of your local WordPress installation. It assures that the remote folder `custom-plugin` contains exactly what your local folder of the same name contains. Mind that you can omit the `--delete` flag, which then makes sure no files in the remote folder will be deleted - even if they do not exist (anymore).
 
-#### Deployng WordPress with Git
+#### Deploying WordPress with Git
 
 WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called Bedrock. Please see our [WordPress install guide for the Profressional stack](/install-wordpress-4-pro) on how to set it up — it best works with the Professional Stack, but can also be used on the Universal Stack.
 
@@ -254,12 +253,12 @@ In the WordPress admin change the Site URL from your App URL to that new domain.
 * [Changing The Site URL](https://codex.wordpress.org/Changing_The_Site_URL)
 
 
-### Install themes & plugins
+### Installing themes & plugins
 
 This is pretty standard operations. You can download and update themes directly from the WordPress admin. Or you can create your own, test them locally, then upload them to your remote themes folder. The same applies to plugins.
 
 
-### Keep WordPress secure
+### Keeping WordPress secure
 
 Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check this article:
 
@@ -268,12 +267,12 @@ Urgent security advice: WordPress is popular with hackers. You are responsible t
 and take care that your WordPress core, plugins and even the themes are always up-to-date.
 
 
-### Send e-mails
+### Sendinge-mails
 
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use a SMTP plugin like [WP SMTP](http://wordpress.org/plugins/wp-smtp/) or [MAIL SMTP](http://wordpress.org/plugins/wp-mail-smtp/) to enable SMTP support for the `wp_mail()` function.
 
 
-### Run WordPress in a sub folder
+### Runing WordPress in a sub folder
 
 There are two reasons to install wordpress not in the `htdocs` but in a sub directory:
 
@@ -286,7 +285,7 @@ You can achieve the first option by putting WordPress in a folder and by changin
 * [Giving WordPress Its Own Directory](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory)
 
 
-### Install WordPress with SSH
+### Installing WordPress with SSH
 
 This is an alternative much quicker and more advanced way to install WordPress via shell commands. Issue the following in your local terminal:
 
