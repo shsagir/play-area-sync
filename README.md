@@ -20,10 +20,10 @@ The folder _WIP contains — as you might can guess — work in progress. All in
 
 
 
-### Naming conventions
+### File name conventions
 
-* use dashes instead of spaces
-* `-uni`, `-pro`, `-old` on the end for different stacks
+* use dashes instead of spaces or lowdashes for filen ames
+* use the short versions: `-uni`, `-pro`, `-old` on the end for different stacks
 
 
 
@@ -60,14 +60,14 @@ noToc: true
 
 # Stack meta
 
-# where to show this: universal, pro old — REQUIRED
-stack:  universal
+# where to show this: uni, pro old, all — REQUIRED when required
+stack:     univ
 
 # link to the Old App version
 oldLink:   mysql-old
 
 # link to the Universal App verison
-uniLink: mysql-uni
+uniLink:   mysql-uni
 
 # link to the professional version
 proLink:   mysql-pro
@@ -123,7 +123,7 @@ type:  CMS
 
 ## Horizontal rulers
 
-* `---` don't use
+* `---` don't use this, otherwise the whole help page won't be rendered
 * `- - -` use this
 
 
@@ -173,10 +173,10 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 
 ## Install guide skeleton
 
-* file name: `install-wordpress-univesal`
+* file name: `install-wordpress-uni`
 * Dashboard settings first
 * Mini guide in the middle > time to WOW
-* Tuning after that
+* Migration/Tuning after that
 
 
 ## Writing help & blog articles

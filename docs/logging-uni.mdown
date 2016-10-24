@@ -6,7 +6,7 @@ title:      About logs on fortrabbit
 naviTitle:  Logging
 lead:       Accessing logs of your App is essential for developing. Here is how you can do it on fortrabbit.
 group:      deployment
-stack:      universal
+stack:      uni
 
 keywords:
     - Logging

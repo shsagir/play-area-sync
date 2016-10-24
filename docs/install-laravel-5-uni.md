@@ -12,7 +12,7 @@ websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
 version:          5.1
-stack:            universal
+stack:            uni
 oldLink:          install-laravel-5-old
 proLink:          install-laravel-5-pro
 

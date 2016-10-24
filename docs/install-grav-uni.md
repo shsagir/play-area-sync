@@ -12,7 +12,7 @@ websiteLinkText:  getgrav.org
 category:         CMS
 image:            grav-symbol.png
 version:          1.1.5
-stack:            universal
+stack:            uni
 
 ---
 

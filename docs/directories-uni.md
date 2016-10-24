@@ -5,7 +5,7 @@ reviewed:      2016-09-15
 title:         Learn about your Apps directory structure
 naviTitle:     Directory structure
 group:         platform
-stack:         universal
+stack:         uni
 oldLink:       directories-old
 uniLink:       directories-uni
 hideExamples:  yes

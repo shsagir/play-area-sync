@@ -6,7 +6,7 @@ title:            Install October CMS on fortrabbit
 naviTitle:        October CMS
 lead:             October is a free, open-source, self-hosted CMS based on the Laravel PHP framework. Learn how to install and use it on fortrabbit.
 group:            Install_guides
-stack:            universal
+stack:            uni
 proLink:          install-october-cms-pro
 
 websiteLink:      https://octobercms.com/?utm_source=fortrabbit

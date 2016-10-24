@@ -7,7 +7,7 @@ naviTitle:     MySQL
 lead:          Each App comes with a pre-installed MySQL database. Learn how to access & configure the common database on fortrabbit.
 group:         platform
 
-stack:         universal
+stack:         uni
 oldLink:       mysql-old
 proLink:       mysql-pro
 
