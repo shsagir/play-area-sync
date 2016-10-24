@@ -94,7 +94,7 @@ Got it? Your WordPress is now live under:
 
 ## Migration
 
-If you have an existing WordPress or if you would like to setup WordPress so that you can run in a local dev environment as well as in your fortrabbit App:
+Don't stop with a plain vanilla installation. Make it yours! If you have an existing WordPress installation or if you would like to setup WordPress so that you can run in a local dev environment as well as in your fortrabbit App:
 
 ### Configure
 
@@ -148,6 +148,11 @@ if ( !defined('ABSPATH') )
 require_once(ABSPATH . 'wp-settings.php');
 ```
 
+<!--
+
+TBD: that's tooooo redundant and clear at this place, also this here is not step by step, more like loose topics.
+
+
 ### Upload WordPress to your fortrabbit App
 
 Open an SFTP client ([Cyberduck](https://cyberduck.io/), WinSCP …) and connect to your fortrabbit App via SFTP (not FTP) like so:
@@ -157,6 +162,8 @@ Open an SFTP client ([Cyberduck](https://cyberduck.io/), WinSCP …) and connect
 * **Password**: `{{ssh-password}}`
 
 When successful, you will find yourself in the empty `htdocs` folder of your App. If you can't connect: check the [access methods article](/access-methods) for troubleshooting.
+
+-->
 
 ### Database migration
 
@@ -178,12 +185,18 @@ $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 
 **Note**: You will be asked to enter your [App's database password, which you can find in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql).
 
+<!--
+
+TBD: again redundant
+
 ### Test
 
 Your are good to go. Your WordPress is now live under:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< WordPress installation_
 * [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) _< WordPress admin_
+
+-->
 
 ### Development
 
