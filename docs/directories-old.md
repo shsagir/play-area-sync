@@ -8,7 +8,7 @@ lead:          The predefined set of folders for each App you need to know for t
 dontList:      true
 stack:         old
 group:         platform
-universalLink:     directories-universal
+uniLink:       directories-uni
 proLink:       directories-pro
 
 keywords:

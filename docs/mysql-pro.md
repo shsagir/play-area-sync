@@ -8,7 +8,7 @@ lead:              PHP + MySQL is a classic. Access & configure the common datab
 group:             Components
 stack:             pro
 oldLink:           mysql-old
-universalLink:     mysql-universal
+uniLink:           mysql-uni
 
 keywords:
      - localhost

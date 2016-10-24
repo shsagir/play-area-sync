@@ -23,7 +23,7 @@ The folder _WIP contains — as you might can guess — work in progress. All in
 ### Naming conventions
 
 * use dashes instead of spaces
-* `-universal`, `-pro`, `-old` on the end for different stacks
+* `-uni`, `-pro`, `-old` on the end for different stacks
 
 
 
@@ -67,7 +67,7 @@ stack:  universal
 oldLink:   mysql-old
 
 # link to the Universal App verison
-universalLink: mysql-universal
+uniLink: mysql-uni
 
 # link to the professional version
 proLink:   mysql-pro

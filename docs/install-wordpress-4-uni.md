@@ -1,15 +1,15 @@
 ---
 
-template:         article
-reviewed:         2016-10-24
-title:            Install WordPress 4
-naviTitle:        WordPress
-group:            Install_guides
-stack:            universal
-lead:             Learn how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
-proLink:          install-wordpress-4-pro
-oldLink:          install-wordpress-4-old
-deprecated:       0
+template:      article
+reviewed:      2016-10-24
+title:         Install WordPress 4
+naviTitle:     WordPress
+group:         Install_guides
+stack:         universal
+lead:          Learn how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
+proLink:       install-wordpress-4-pro
+oldLink:       install-wordpress-4-old
+deprecated:    0
 
 websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org

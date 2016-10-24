@@ -8,7 +8,7 @@ lead:             We all love it, we all hate it: our good ol' friend WordPress.
 dontList:         true
 stack:            old
 dontIndex:        true
-universalLink:    install-wordpress-4-universal
+uniLink:          install-wordpress-4-uni
 proLink:          install-wordpress-4-pro
 group:            Install_guides
 version:          4.1

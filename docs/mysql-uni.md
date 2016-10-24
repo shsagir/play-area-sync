@@ -37,7 +37,7 @@ Usually there is a configuration file which is used from the App to connect to t
 * **Password**: `{{app-database-password}}` _[< how to recover](/#toc-obtain-the-mysql-password)_
 * **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com` _< not localhost_
 
-See our specific examples for: [Laravel](install-laravel-universal#toc-mysql), [Symfony](install-symfony-universal#toc-mysql), [WordPress](install-wordpress-universal#toc-mysql), [Craft CMS](install-craft-universal#toc-mysql).
+See our specific examples for: [Laravel](install-laravel-uni#toc-mysql), [Symfony](install-symfony-uni#toc-mysql), [WordPress](install-wordpress-uni#toc-mysql), [Craft CMS](install-craft-uni#toc-mysql).
 
 
 ## Access MySQL from local

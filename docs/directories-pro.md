@@ -6,7 +6,7 @@ title:         Directory structure
 naviTitle:     Directory structure
 group:         platform
 stack:         pro
-universalLink:     directories-pro
+uniLink:       directories-uni
 oldLink:       directories-old
 
 
@@ -39,6 +39,14 @@ srv
     appname
       htdocs      < default root path
 ```
+
+
+<!-- 
+
+TODO: those directoris are not accessible in professional apps write something abozt it?
+
+-->
+
 
 The predefined set of folders for each App you need to know.
 

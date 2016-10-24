@@ -7,7 +7,7 @@ naviTitle:     Directory structure
 group:         platform
 stack:         universal
 oldLink:       directories-old
-universalLink:     directories-pro
+uniLink:       directories-uni
 hideExamples:  yes
 
 keywords:

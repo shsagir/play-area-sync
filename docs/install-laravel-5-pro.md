@@ -14,7 +14,7 @@ image:            laravel-mark.png
 version:          5.1
 stack:            pro
 oldLink:          install-laravel-5-old
-universalLink:        install-laravel-5-universal
+uniLink:          install-laravel-5-uni
 
 keywords:
     - php

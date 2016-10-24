@@ -13,7 +13,7 @@ category:         CMS
 image:            wordpress-mark.png
 version:          4.6
 stack:            pro
-universalLink:    install-wordpress-4-universal
+uniLink:          install-wordpress-4-uni
 oldLink:          install-wordpress-4-old
 
 ---
