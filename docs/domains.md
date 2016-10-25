@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-10-25
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -158,7 +158,7 @@ You probably want to host more than one website on your App like so:
 
 1. `your-first-domain.com` resovles in `htdocs/your-first-domain/public`
 2. `your-other-domain.com` resovles in `htdocs/your-other-domain/public`
-3 …
+3. …
 
 **Please don't do this!** It's the way VPS hosting works, but's it's really not a good design pattern. Your App is NOT a server, there are good reasons to only host one project, website or application in one App. Please see our [App help article](/app#toc-one-website-per-app) to learn more.
 
@@ -173,17 +173,17 @@ What you want, in most scenarios, is the first one: forwarding. Serving the same
 
 ### Forwarding other domains with your domain provider
 
-This should be preffered. You can forward one domain to another domain without any involement of fortrabbit at all.
-
-Please check your domain provider if forwarding is allowed. The configuration should be dead simple. You point one domain to another and that's it.
+This should be preffered. You can forward one domain to another domain without any involement of fortrabbit at all. Please check your domain provider if forwarding is allowed. The configuration should be dead simple. You point one domain to another and that's it.
 
 * Do: forward using a HTTP 301 code (moved permanently).
 * Don't: a "masked forward" where the other domain is loaded into an iframe
 
+Please keep an eye on HTTPS when forwarding. SSL will most likely not be enabled for the first domain, that will forwared then. the final domain has HTTPS. In most cases this is not issue.
+
 
 ### Forwarding other domains within your App
 
-This is only recommened when your domain provider does not support domain forwarding. You might do the forwarding programmtically within your App. The most common approach here is to work with `.htaccess` rules to redirect all requests to that other domain. You register each domain within the fortrabbit Dahboard and then catch all the requests in the App.
+You might also do the forwarding programmtically within your App. The most common approach here is to work with `.htaccess` rules to redirect all requests to that other domain. You register each domain within the fortrabbit Dahboard and then catch all the requests in the App.
 
 <!-- TODO: insert example here -->
 
@@ -252,10 +252,14 @@ Your local file contains many entries, do not edit those. Just add a new line wi
 12.0.0.1 mydomain.com www.mydomain.com
 ```
 
+#### hosts file VS CNAME records
 
-### Undo changes to your hosts file
+Please mind that you'll only check the routing with the IP of the App not the actua CNAME routing here. CNAME entries are not allowed in the hosts file.
+
+#### Undo changes to your hosts file
 
 After your domain has been moved/propagated be sure to remove the entry from your hosts file.
+
 
 
 
