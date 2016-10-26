@@ -227,7 +227,7 @@ Many DNS providers default the TTL (Time To Live) of all records to 24 hours. Th
 
 ### Testing domain routing with your local hosts file
 
-Let's say you are developing a new App and want to use your custom domain before actually routing it to fortrabbit. Just add the domain to fortrabbit, as you would do with any actually routed domain, then modify your local host file, which let's your local machine now ahead of time that the domain is to be served from your fortrabbit App.
+Let's say you are developing a new    App and want to use your custom domain before actually routing it to fortrabbit. Just add the domain to fortrabbit, as you would do with any actually routed domain, then modify your local host file, which let's your local machine now ahead of time that the domain is to be served from your fortrabbit App.
 
 #### hosts file location
 

@@ -225,13 +225,16 @@ This SFTP syncing might also be possible with your code editor of choice: Coda a
 
 SFTP syncing is not perfect and not fast, but it works well in most cases.
 
-#### Syncing code with RSync
+#### Syncing code with rsync
 
-The command line tool `rsync` grants a fast and reliable way to upload your code changes. As the name implies, `rsync` is made to synchronize (two) data sets and that is exactly what it does. Following an example showcasing development on a custom plugin in the `wp-content/plugins` folder:
+The command line tool `rsync` grants a fast and reliable way to upload your code changes. As the name implies, `rsync` is made to synchronize (two) data sets and that is exactly what it does. Following an example showcasing development on `custom-plugin in the `wp-content/plugins` folder:
 
 ```shell
 $ rsync -az --delete custom-plugin/ {{app-name}}@deploy.{{region}}.frbit.com:~/wp-content/plugins/custom-plugin/
 ```
+
+<!-- TBD: why delete flag? Git deploy is also overwrite not delete -->
+<!-- TODO: explain how the other direction would work! -->
 
 The above command must be executed from within the `plugins` folder of your local WordPress installation. It assures that the remote folder `custom-plugin` contains exactly what your local folder of the same name contains. Mind that you can omit the `--delete` flag, which then makes sure no files in the remote folder will be deleted - even if they do not exist (anymore).
 
