@@ -27,81 +27,43 @@ keywords:
 
 ## Get ready
 
-You should have already created an [App](app). You can do so in the [fortrabbit Dashboard](/dashboard).
-
-<!-- TODO:
-
-We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
-
--->
-
+We assume you've already created an [App](app). If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
 ## Quick start
 
-This is the fast way to start with a fresh installation, please look below for [migrating WordPress](#toc-migration).
+Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-migration).
 
-### 1. Download & unpack
-
-Download the [latest.zip](https://wordpress.org/latest.zip) from the WordPress website and unpack the archive locally. It will extract into the folder `wordpress`.
-
-
-### 2. Connect to your fortrabbit App via SFTP
-
-<!--  TBD: maybe just link to the SFTP connection article here? TMI -->
-
-Open an SFTP client ([Cyberduck](https://cyberduck.io/), WinSCP …) and connect to your fortrabbit App via SFTP (not FTP) like so:
+Start by downloading the [latest WordPress archive](https://wordpress.org/latest.zip) from the WordPress website and unpack it locally. It will extract into the folder `wordpress`. Now copy the **contents** of the local `wordpress` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 
 * **Server**: `deploy.{{region}}.frbit.com`
-* **User Name**: `{{ssh-user}}`
+* **User name**: `{{ssh-user}}`
 * **Password**: `{{ssh-password}}`
 
-When successful, you will find yourself in the empty `htdocs` folder of your App. If you can't connect: check the [access methods article](/access-methods) for troubleshooting.
+The upload will take around 7 minutes. A quicker method is shown [below](#toc-installing-wordpress-with-ssh).
 
+When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in your browser and commence with the guided web installation to finish the setup. You will need MySQL access, which is:
 
-### 3. Upload
+* **Database name**: `{{app-name}}`
+* **User name**: `{{app-name}}`
+* **Password**: [Look up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql)
+* **Database host**: `{{app-name}}.mysql.{{region}}.frbit.com` _< not localhost_
+* **Table prefix**: keep `wp_` or your choice
 
-Now copy the contents (not the folder itself) from your local `wordpress` folder to your remote App. This can take some time as there are a lot of files, usually around 7 minutes. PSSST: You can also use [wget with SSH](#toc-installing-wordpress-with-ssh) here to speed up this to 30 seconds.
+The installer will also ask you for your WordPress site's **Site title**, **User name**, **Password**, **Your email** and so on.
 
-
-### 4. Use the web installer
-
-When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in your browser and commence with the guided web installation to finish the setup:
-
-#### MySQL
-
-* **Database Name**: `{{app-name}}`
-* **Username**: `{{app-name}}`
-* **Password**: [Lookup in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql)
-* **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com` _< not localhost_
-* **Table Prefix**: keep `wp_` or your choice
-
-#### Site title & admin user
-
-* **Site Title**: What your site is about, you can this change this later
-* **Username**: set a user name for the admin
-* **Password**: use the suggested password or choose a custom one
-* **Your Email**: set an e-mail for the admin
-
-
-### 5. Login to wp-admin
-
-After this you will be redirected to the WordPress admin login form. Use the previously chosen Username and Password to login.
-
-### 6. Done 
-
-😋 Your WordPress is now live under:
+After the guided web setup is done, you will be automatically redirected to the WordPress admin login form. Use the previously chosen Username and Password to login. Your WordPress is now live under 😋:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< WordPress installation_
 * [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) _< WordPress admin_
 
 
-## Migration
+## Advanced setup and migration
 
 **Don't stop with a plain vanilla installation. Make it yours!** Check out the following topics if you have an existing WordPress installation or if you would like to setup WordPress so that you can run in a local development environment as well as in your fortrabbit App:
 
-### Configuring environment configuration
+### Setup environment configuration
 
-We use [environment detection](local-development#toc-environment-detection) to realize different behaviours based on the location: locally or on remote. Most importantly: the local WordPress should connect to the local database. To do so, we add different configurations for local development and remote production and add a switch so that WordPress can detect where it is currently running.
+Using [environment variables](env-vars) in your `wp-config.php` instead of hard coded credentials allows you to leverage [environment detection](local-development#toc-environment-detection): run your WordPress locally and remote without code or configuration file changes.
 
 Check if the file `wp-config.php` exists on top level in your local WordPress installation. If it doesn't: create it by making a copy of `wp-config-sample.php` and name it `wp-config.php`. Now open `wp-config.php` in an editor and modify it using [environment variables](/env-vars) as following:
 
@@ -144,49 +106,69 @@ if ( !defined('ABSPATH') )
 require_once(ABSPATH . 'wp-settings.php');
 ```
 
-<!--
-
-TBD: that's tooooo redundant and clear at this place, also this here is not step by step, more like loose topics.
-
-
-### Upload WordPress to your fortrabbit App
-
-Open an SFTP client ([Cyberduck](https://cyberduck.io/), WinSCP …) and connect to your fortrabbit App via SFTP (not FTP) like so:
-
-* **Server**: `deploy.{{region}}.frbit.com`
-* **User Name**: `{{ssh-user}}`
-* **Password**: `{{ssh-password}}`
-
-When successful, you will find yourself in the empty `htdocs` folder of your App. If you can't connect: check the [access methods article](/access-methods) for troubleshooting.
-
--->
+Once that's done you can upload WordPress via SFTP as described above.
 
 ### Database migration
 
-WordPress consists of it's files, the code and the uploads and of course the [MySQL database](/mysql-uni), were most contents are stored. There are various use cases to import and export the database:
+WordPress consists of code files, the user generated uploads and of course the [MySQL database](/mysql-uni), in which most contents are stored. There are various use cases to export and import the database:
 
-* export the database from your old webhosting
-* export your local database to import it to the fortrabbit database
-* download the remote database on fortrabbit to bring your local installation up-to-date
+1. Export the database from your old webhosting
+2. Export your local database to import it to the fortrabbit database
+3. Export the remote database from fortrabbit to bring your local installation up-to-date
 
 #### Migrating the database with a GUI
 
-TODO, TODO, TODO …
+<!-- TODO/TBD: This should be in the general MySQL article and only linked -->
+
+There are [various MySQL GUIs](mysql-uni#toc-mysql-via-gui). Here is how you migrate your local database using [MySQL Workbench](http://www.mysql.com/products/workbench/) (which is available for free for all major OS) to your fortrabbit App's database.
+
+**Export from local**:
+
+1. Open Workbench
+2. Setup your local database connection
+3. Open your local database connection
+4. Choose: Server > Data Export from the menu
+5. Select your local database name
+6. Make sure to "Dump Structure and Data" (select below the database name listing)
+7. Choose a local destination file
+8. Start the export
+
+
+**Import to fortrabbit**:
+
+1. Open Workbench
+2. Create a new connection with *Connection Method*: `Standard TCP/IP over SSH`
+3. Enter the connection credentials as shown below
+3. Open the newly created remote database connection
+4. Choose: Server > Data Import from the menu
+5. Choose your previously generated dump file
+6. Make sure to select your App name in the *Default Target Schema*
+7. Start the import
+
+MySQL access credentials:
+
+* **SSH Hostname**: `deploy.{{region}}.frbit.com`
+* **SSH Username**: `{{ssh-user}}`
+* **SSH Password**: `{{ssh-password}}`
+* **SSH Keyfile**: <code data-with-password>No need</code><code data-without-password>Your local SSH private key</code>
+* **MySQL Hostname**: `{{app-name}}.mysql.{{region}}.frbit.com`
+* **MySQL Server Port**: `3306`
+* **Username**: `{{app-name}}`
+* **Password**: [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql)
+* **Default Schema**: `{{app-name}}`
 
 #### Migrating the database in the terminal
 
-<!-- TODO: which direction is this? up and down or just down, what about the other way? -->
-
-Create a dump of your existing database, eg using `mysqldump` from the command line:
+Here is how you migrate your local database using the shell. Start by creating a dump of your existing, local database:
 
 ```shell
 $ mysqldump -uyour-local-db-user -pyour-local-db-password your-local-db-name > dump.sql
 ```
 
-Now either open up your [MySQL GUI](/mysql-uni#toc-mysql-via-gui), connect your App's database and import the just created dump or open up a tunnel from the shell then import the dump from another shell terminal:
+Now you need to open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import.
 
 ```shell
-# open a tunnel
+# open the tunnel
 $ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
 
 # !!! in a new terminal window !!!
@@ -194,20 +176,7 @@ $ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunn
 $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 ```
 
-**Note**: You will be asked to enter your [App's database password, which you can find in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql).
-
-<!--
-
-TBD: again redundant
-
-### Test
-
-Your are good to go. Your WordPress is now live under:
-
-* [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< WordPress installation_
-* [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) _< WordPress admin_
-
--->
+**Note**: You will be asked to enter your App's database password. [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql).
 
 ### Developing WordPress
 
@@ -215,32 +184,27 @@ Continuous development of a WordPress site has different requirements than first
 
 You can use SFTP to upload your code modifications simple enough and does not need further explanation: Just upload your changed files. The advantage is that it's easy as pie. The disadvantage is that it's slow and one can get confused about which changes are online and and which are not.
 
-Instead of manually uploading code files changes one by one, you can also: 
+Instead of manually uploading code files changes one by one, you can also:
+
+<!-- TODO/TBD: This should be migrated into a dedicated article? Exactly the same for any non-Git workflow.. -->
 
 #### Syncing code with SFTP
 
-Most SFTP clients are featuring a file synchronization mode. You can choose your local folder and sync that up or down against the remote one (on fortrabbit). All files get compared and newer ones get uploaded or downloaded, depending on the direction you choose.
-
-This SFTP syncing might also be possible with your code editor of choice: Coda and Dreamweaver are supporting this out of the box, for Sublime Text you can find plugins.
-
-SFTP syncing is not perfect and not fast, but it works well in most cases.
+Most SFTP clients feature a file synchronization mode. You can choose your local folder and sync it to the remote folder on fortrabbit. All files will be compared and only newer ones will be uploaded. This works in the other direction as well, of course. Many modern editors or IDEs also feature synchronization tools or are extendible by plugins to that end.
 
 #### Syncing code with rsync
 
-The command line tool `rsync` grants a fast and reliable way to upload your code changes. As the name implies, `rsync` is made to synchronize (two) data sets and that is exactly what it does. Following an example showcasing development on `custom-plugin in the `wp-content/plugins` folder:
+The command line tool `rsync` grants a fast and reliable way to upload your code changes. As the name implies, `rsync` is made to synchronize (two) data sets. Following an example showcasing development on a custom plugin in the `wp-content/plugins` folder:
 
 ```shell
-$ rsync -az --delete custom-plugin/ {{app-name}}@deploy.{{region}}.frbit.com:~/wp-content/plugins/custom-plugin/
+$ rsync -az --delete custom-plugin/ {{ssh-user}}@deploy.{{region}}.frbit.com:~/wp-content/plugins/custom-plugin/
 ```
 
-<!-- TBD: why delete flag? Git deploy is also overwrite not delete -->
-<!-- TODO: explain how the other direction would work! -->
-
-The above command must be executed from within the `plugins` folder of your local WordPress installation. It assures that the remote folder `custom-plugin` contains exactly what your local folder of the same name contains. Mind that you can omit the `--delete` flag, which then makes sure no files in the remote folder will be deleted - even if they do not exist (anymore).
+The above command must be executed from within the `plugins` folder of your local WordPress installation. It assures that the remote folder `custom-plugin` contains exactly what your local folder of the same name contains. Mind that you can omit the `--delete` flag, which then makes sure no files in the remote folder will be deleted - even if they do not exist locally anymore.
 
 #### Deploying WordPress with Git
 
-WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called Bedrock. Please see our [WordPress install guide for the Profressional stack](/install-wordpress-4-pro) on how to set it up — it best works with the Professional Stack, but can also be used on the Universal Stack.
+WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called [Bedrock](https://roots.io/bedrock/). Please see our [WordPress install guide for the Professional stack](/install-wordpress-4-pro) on how to set it up. It works best with the Professional Stack, but can also be used on the Universal Stack.
 
 
 ### Add a custom domain
@@ -251,9 +215,7 @@ Your App URL `{{app-name}}.frb.io` is the first address your WordPress can be re
 2. [Connect the domain to your fortrabbit App](/domains#toc-connect-your-domain-to-fortrabbit), so that requests for a new domain will be delegated to your App
 3. Once, the domain is routed, tell WordPress to use the new domain as well:
 
-In the WordPress admin change the Site URL from your App URL to that new domain. Find this setting in wp-admin under Settings > General: "WordPress Address (URL)" and "Site Address (URL)". Change this to your new domain. More advanced help regarding domains and the vars `home_url` and `site_url` can be found in the Wordpress help here:
-
-* [Changing The Site URL](https://codex.wordpress.org/Changing_The_Site_URL)
+In the WordPress admin change the Site URL from your App URL to that new domain. Find this setting in wp-admin under Settings > General: "WordPress Address (URL)" and "Site Address (URL)". Change this to your new domain. More advanced help regarding domains and the vars `home_url` and `site_url` can be found in the Wordpress codex article on [changing the Site URL](https://codex.wordpress.org/Changing_The_Site_URL).
 
 
 ### Installing themes & plugins
@@ -263,11 +225,7 @@ This is pretty standard operations. You can download and update themes directly 
 
 ### Keeping WordPress secure
 
-Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check this article:
-
-* [WordPress help: Configuring Automatic Background Updates](https://codex.wordpress.org/Configuring_Automatic_Background_Updates)
-
-and take care that your WordPress core, plugins and even the themes are always up-to-date.
+Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check the article from the offical WordPress codex on how to [configure automatic background updates](https://codex.wordpress.org/Configuring_Automatic_Background_Updates) and take care that your WordPress core, plugins and even the themes are always up-to-date.
 
 
 ### Sendinge-mails
@@ -282,10 +240,7 @@ There are two reasons to install wordpress not in the `htdocs` but in a sub dire
 1. WordPress is just the blog-part of the website: `mydomain.com/blog`
 2. You want to run multiple WordPress in one App. [Please don't.](/apps)
 
-You can achieve the first option by putting WordPress in a folder and by changing the "Site Address URL" parameter (see above).
-
-
-* [Giving WordPress Its Own Directory](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory)
+You can achieve the first option by putting WordPress in a folder and by changing the "Site Address URL" parameter (see above). Also see the official WordPress codex on how to [give WordPress it's own directory](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory).
 
 
 ### Installing WordPress with SSH
@@ -310,4 +265,3 @@ $ rm -r wordpress latest.tar.gz
 ```
 
 Now proceed with the web installer as shown above.
-
