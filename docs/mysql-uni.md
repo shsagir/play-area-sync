@@ -66,7 +66,7 @@ Sometimes you want to run a certain query on your live database. Or you want to 
 
 ### Obtain the MySQL password
 
-You can lookup the MySQL in the Dashboard with your App. To pickup 
+You can lookup the MySQL in the Dashboard with your App. To pickup
 
 <!-- TODO: in Dashboard, the tabs need to react on the anchor tag -->
 
@@ -78,7 +78,7 @@ You can lookup the MySQL in the Dashboard with your App. To pickup
 
 ### Resetting the MySQL password
 
-Instead of reclaiming you can also set a new MySQL password. Please mind that this can have some consequences: 
+Instead of reclaiming you can also set a new MySQL password. Please mind that this can have some consequences:
 
 * Your App will can't connect any more — you'll need to update the Apps config then
 * Your coworkers won't be able to connect afterwards
@@ -88,11 +88,11 @@ Instead of reclaiming you can also set a new MySQL password. Please mind that th
 
 ### MySQL via GUI
 
-Sometimes it's handy to manage your remote MySQL database with a graphical interface. We recommend [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
+Sometimes it's handy to manage your remote MySQL database with a graphical interface. We recommend the free [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
 
-All clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information. 
+All clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information.
 
-The MySQL hostname will not be `127.0.0.1` or `localhost` — it's the remote server:  
+The MySQL hostname will not be `127.0.0.1` or `localhost` — it's the remote server:
 `{{app-name}}.mysql.{{region}}.frbit.com`.
 
 #### phpMyAdmin
@@ -110,7 +110,7 @@ $cfg['Servers'][$i]['auth_type']     = 'cookie';
 $i++;
 ```
 
-Then open a [tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). 
+Then open a [tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password).
 
 
 
@@ -138,21 +138,63 @@ In the next step you will be asked for your [MySQL password](#toc-obtain-the-mys
 
 ##  Export & import
 
-A common task is to move your MySQL data around, e.g. if you are migrating to fortrabbit or you are about to set up a staging environment. GUIs have easy to use export/import wizards, in the terminal you can do this like so:
+A common task is to move your MySQL data around, e.g. if you are migrating to fortrabbit or you are about to set up a staging environment. All following examples show you how to export data from your local machine and import it into your App's database on fortrabbit. It works the same, with swapped login details, for the other way around.
 
-### mysqldump & mysql
+### Using MySQL Workbench (GUI)
 
-Using `mysqldump` and `mysql` is the standard approach to migrate a database between two MySQL servers. First of start by exporting your data from your old database (example):
+**Export from local**:
+
+1. Open Workbench
+2. Setup your local database connection
+3. Open your local database connection
+4. Choose: Server > Data Export from the menu
+5. Select your local database name
+6. Make sure to "Dump Structure and Data" (select below the database name listing)
+7. Choose a local destination file
+8. Start the export
+
+
+**Import to fortrabbit**:
+
+1. Open Workbench
+2. Create a new connection with *Connection Method* set to `Standard TCP/IP over SSH`
+3. Enter the login details as shown below
+3. Open the newly created remote database connection
+4. Choose: Server > Data Import from the menu
+5. Choose your previously generated dump file
+6. Make sure to select your App name in the *Default Target Schema*
+7. Start the import
+
+MySQL login details:
+
+* **SSH Hostname**: `deploy.{{region}}.frbit.com`
+* **SSH Username**: `{{ssh-user}}`
+* **SSH Password**: `{{ssh-password}}`
+* **SSH Keyfile**: <code data-with-password>No need</code><code data-without-password>Your local SSH private key</code>
+* **MySQL Hostname**: `{{app-name}}.mysql.{{region}}.frbit.com`
+* **MySQL Server Port**: `3306`
+* **Username**: `{{app-name}}`
+* **Password**: [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql)
+* **Default Schema**: `{{app-name}}`
+
+### Using the terminal
+
+Using `mysqldump` and `mysql` is the standard approach to migrate a database between two MySQL servers from the shell. First of start by exporting your data from your local database:
 
 ```bash
 # on your local machine or on the old server
-$ mysqldump {{database-name}} > database.sql
+$ mysqldump -uyour-local-db-user -pyour-local-db-password your-local-db-name > dump.sql
 ```
 
-Now [create a tunnel](#toc-mysql-via-terminal) to your fortrabbit App's MySQL database and import everything:
+Now you need to open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import.
 
 ```bash
-$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < database.sql
+# open the tunnel
+$ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
+
+# !!! in a new terminal window !!!
+# import the dump
+$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 ```
 
 ### LOAD DATA
@@ -170,9 +212,11 @@ $ mysql --local-infile=1 -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}}
 $ mysql> LOAD DATA LOCAL INFILE '/path/to/tablename.sql' INTO TABLE tablename;
 ```
 
+**Note**: You will be asked to enter your App's database password. [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql).
+
 ## Local MySQL
 
-This article describes how to deal with the fortrabbit remote MySQL database. You might a local one as well. Please see our [local development article](/local-development).
+This article describes how to deal with the fortrabbit remote MySQL database. You might want to have a local one as well. Please see our [local development article](/local-development).
 
 - - -
 

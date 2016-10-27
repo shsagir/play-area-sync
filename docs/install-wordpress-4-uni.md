@@ -27,11 +27,11 @@ keywords:
 
 ## Get ready
 
-We assume you've already created an [App](app). If not: You can do so in the [fortrabbit Dashboard](/dashboard).
+We assume you've already created an [App](app) and chose WordPress in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
 ## Quick start
 
-Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-migration).
+Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-advanced-setup-and-migration).
 
 Start by downloading the [latest WordPress archive](https://wordpress.org/latest.zip) from the WordPress website and unpack it locally. It will extract into the folder `wordpress`. Now copy the **contents** of the local `wordpress` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 
@@ -118,65 +118,11 @@ WordPress consists of code files, the user generated uploads and of course the [
 
 #### Migrating the database with a GUI
 
-<!-- TODO/TBD: This should be in the general MySQL article and only linked -->
-
-There are [various MySQL GUIs](mysql-uni#toc-mysql-via-gui). Here is how you migrate your local database using [MySQL Workbench](http://www.mysql.com/products/workbench/) (which is available for free for all major OS) to your fortrabbit App's database.
-
-**Export from local**:
-
-1. Open Workbench
-2. Setup your local database connection
-3. Open your local database connection
-4. Choose: Server > Data Export from the menu
-5. Select your local database name
-6. Make sure to "Dump Structure and Data" (select below the database name listing)
-7. Choose a local destination file
-8. Start the export
-
-
-**Import to fortrabbit**:
-
-1. Open Workbench
-2. Create a new connection with *Connection Method*: `Standard TCP/IP over SSH`
-3. Enter the connection credentials as shown below
-3. Open the newly created remote database connection
-4. Choose: Server > Data Import from the menu
-5. Choose your previously generated dump file
-6. Make sure to select your App name in the *Default Target Schema*
-7. Start the import
-
-MySQL access credentials:
-
-* **SSH Hostname**: `deploy.{{region}}.frbit.com`
-* **SSH Username**: `{{ssh-user}}`
-* **SSH Password**: `{{ssh-password}}`
-* **SSH Keyfile**: <code data-with-password>No need</code><code data-without-password>Your local SSH private key</code>
-* **MySQL Hostname**: `{{app-name}}.mysql.{{region}}.frbit.com`
-* **MySQL Server Port**: `3306`
-* **Username**: `{{app-name}}`
-* **Password**: [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql)
-* **Default Schema**: `{{app-name}}`
+Read on in the [MySQL Article: Export & import > Using MySQL Workbench (GUI)](mysql-uni#toc-using-mysql-workbench-gui-).
 
 #### Migrating the database in the terminal
 
-Here is how you migrate your local database using the shell. Start by creating a dump of your existing, local database:
-
-```shell
-$ mysqldump -uyour-local-db-user -pyour-local-db-password your-local-db-name > dump.sql
-```
-
-Now you need to open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import.
-
-```shell
-# open the tunnel
-$ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
-
-# !!! in a new terminal window !!!
-# import the dump
-$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
-```
-
-**Note**: You will be asked to enter your App's database password. [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql).
+Read on in the [MySQL Article: Export & import > Using the terminal](mysql-uni#toc-using-the-terminal).
 
 ### Developing WordPress
 

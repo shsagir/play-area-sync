@@ -26,20 +26,21 @@ keywords:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
+We assume you've already created a New App and chose Laravel in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine.
 
+If you haven't choosen Laravel stack, please set the following:
 
-### Set the Apps root path
+### Root path
 
-If you haven't already (the stack chooser does that for you) - in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
+Go to the Dashboard and [set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
 </div>
 
-### Add the application key
+### Application key
 
-If you haven't already (the stack chooser does that for you) - in the Dashboard: Add an application key as a new as an [environment variable](/env-vars) named `APP_KEY` to your App. You can use this:
+Go to the Dashboard and add an application key as a new as an [environment variable](/env-vars) named `APP_KEY` to your App. You can use this:
 
 ```osterei32
 APP_KEY=ClickToGenerate
@@ -49,17 +50,9 @@ APP_KEY=ClickToGenerate
 [Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
-
-
 ## Quick start
 
-<!--
-
-TBD: Contrary to CMS, there is no diff between Quick Start and "Migration" .. need to find a struct as well
-
--->
-
-Execute the following in your local terminal to start from scratch with a fresh new Laravel installation on fortrabbit (see [below](#toc-add-an-existing-project) on how to add an existing project):
+Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-advanced-setup-and-migration).
 
 ```bash
 # 1. Use Composer to create a local Laravel project named like your App
@@ -92,17 +85,47 @@ $ git push -u fortrabbit master
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
+## Advanced setup and migration
 
+**Don't stop with a plain vanilla installation. Make it yours!** Check out the following topics if you have an existing Laravel installation or if you would like to setup Laravel so that you can run in a local development environment as well as in your fortrabbit App:
 
-## Tune
+### Setup Git
 
-Until now this is a vanilla Laravel. Now, make it yours.
+If you used the above Quick start guide, Git is already setup and you can safely skip this topic.
 
+Unless your local Laravel installation is already under Git version control, you need to enable it now:
 
+```bash
+# Change to your local directory, where you Laravel is
+$ cd {{app-name}}
 
-### MySQL
+# Initialize a local Git repo
+$ git init .
 
-Use [App secrets](secrets) to attain database credentials. Replace all contents from `config/database.php` in your editor like so:
+# Add all files
+$ git add -A
+
+# Commit files for the first time
+$ git commit -m 'Initial'
+```
+
+Now you need to connect your local installation with your App's remote:
+
+```bash
+# Add fortrabbit as a remote
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+
+# Push changes to fortrabbit
+$ git push -u fortrabbit master
+# this will install Laravel on remote and take another while
+# the next deployments will be much faster
+```
+
+### MySQL configuration
+
+If you have choosen Laravel in the stack chooser when creating your App, we will automatically populate the "right" environment variables for Laravel's MySQL connection for you. If you haven't, or your use-case requires you to access the MySQL login details, then we recommend to use [App secrets](secrets).
+
+Following an example on how to modify `config/database.php`:
 
 ```php
 <?php
@@ -139,11 +162,17 @@ if (isset($_SERVER['APP_SECRETS'])) {
 }
 
 return [
+    // possible other code …
     'fetch'         => PDO::FETCH_CLASS,
+    // possible other code …
     'default'       => env('DB_CONNECTION', 'mysql'),
+    // possible other code …
     'connections'   => [
+        // possible other code …
         'mysql' => $mysql,
+        // possible other code …
     ],
+    // possible other code …
     'migrations' => 'migrations'
     // possible other code …
 ];
@@ -151,11 +180,33 @@ return [
 
 This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit.
 
+
+
+### Database migration
+
+This is about migrating your existing MySQL data set, not running `artisan migrate`, which is described [below](#toc-migrate-amp-other-artisan-commands).
+
+There are various use cases to export and import the database:
+
+1. Export the database from your old webhosting
+2. Export your local database to import it to the fortrabbit database
+3. Export the remote database from fortrabbit to bring your local installation up-to-date
+
+#### Migrating the database with a GUI
+
+Read on in the [MySQL Article: Export & import > Using MySQL Workbench (GUI)](mysql-uni#toc-using-mysql-workbench-gui-).
+
+#### Migrating the database in the terminal
+
+Read on in the [MySQL Article: Export & import > Using the terminal](mysql-uni#toc-using-the-terminal).
+
 #### MySQL access from local
 
-Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to access the database remotely from your computer.
+Please see the [MySQL article](mysql-uni#toc-access-mysql-from-local) on how to access the database remotely from your computer.
 
-#### Migrate & other database commands
+
+
+### Migrate & other artisan commands
 
 You can [execute remote commands via SSH](/remote-ssh-execution), for example:
 
@@ -169,123 +220,17 @@ If `APP_ENV` is set to `production` - which is the default - then Laravel expect
 
 
 
-### Object Storage
-
-fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If you require a persistent storage, for user uploads or any other runtime data your App creates, you can use our [Object Storage Component](/object-storage). Once you have booked the Component in the Dashboard the credentials will become available via the [App secrets](/secrets).
-
-To make your App access the Object Storage, open up `config/filesystems.php` and modify it as following:
-
-<!-- TODO: double check: flysystem must not be enabled here? it will work like that? -->
-
-```php
-// construct credentials from App secrets, when running on fortrabbit in production
-$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-
-return [
-    // other code …
-    'disks' => [
-        // other code …
-        's3' => [
-            'driver'   => 's3',
-            'key'      => $secrets['OBJECT_STORAGE']['KEY'],
-            'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
-            'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
-            'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
-            'region'   => $secrets['OBJECT_STORAGE']['REGION']
-        ],
-        // other code …
-    ],
-    // other code …
-];
-```
-
-If you want to use the Object Storage with your fortrabbit App and a local storage with your local development setup then replace the "default" value in `filesystems.php` as well. For example like so:
-
-```php
-// other code ….
-'default' => env('FS_TYPE', 'local'),
-// other code …
-```
-
-Now set `FS_TYPE` in your local `.env` file to the value `local` and the [environment variables](/env-vars) in the Dashboard to the value `s3`.
-
-An alternative to our Object Storage Component is Amazon S3 and we have written up a [guide to get your started](https://blog.fortrabbit.com/new-app-cloud-storage-s3).
-
-
-#### Elixir
-
-You can use Elixir locally - not on fortrabbit as there is no Node on remote. You extend the Elixir with a publish task to export your minified assets to the [Object Storage](object-storage). This is how it works. To start, execute in your terminal:
-
-```bash
-# Get your Object Storage credentials
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
-```
-
-Then extend your existing `gulpfile.js`:
-
-```javascript
-// extend import by "gulp" and "awspublish"
-var elixir = require('laravel-elixir'),
-    awspublish  = require('gulp-awspublish'),
-    gulp        = require('gulp');
-
-// create publish task
-elixir.extend("publish", function(path) {
-    gulp.task('publish', function() {
-
-        var publisher = awspublish.create({
-            region: '{{your-object-storage-region}}',
-            params: {
-                Bucket: '{{app-name}}'
-            },
-            signatureVersion: 'v2',
-            endpoint: 'objects.{{region}}.frbit.com',
-            accessKeyId: '{{app-name}}',
-            secretAccessKey: '{{your-object-storage-key}}'
-        });
-
-        return gulp.src('./public/build/*')
-            .pipe(publisher.publish())
-            .pipe(publisher.sync('subfolder'))
-            .pipe(awspublish.reporter());
-
-    });
-});
-// other code …
-```
-
-Back in your terminal you now can:
-
-```bash
-# Install package via NPM
-$ npm install --save-dev gulp-awspublish
-
-# Run the publish task
-$ gulp publish
-```
-
-Please mind that your `gulpfile.js` now contains sensitive data. You can exclude it from Git by adding it to your `.gitignore` file or you can read the credentials from an external json file which then also should be excluded.
-
-Also mind that you need to tell your source code to look for the minified CCS & JS files on the offshore Object Storage.
-
-
-
 ### Logging
 
-Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead. That's easily done: open `boostrap/app.php` and add the following **just before the** `return $app` statement at the bottom:
+You can access your logs via SSH or SFTP. Larval, per default, stores it's log files in `storage/logs`. You can download them via SFTP from that folder. If you need to "tail" your logs live, you can:
 
-```php
-$app->configureMonologUsing(function($monolog) {
-    // chose the error_log handler
-    $handler = new \Monolog\Handler\ErrorLogHandler();
-    // time will already be logged -> change default format
-    $handler->setFormatter(new \Monolog\Formatter\LineFormatter('%channel%.%level_name%: %message% %context% %extra%'));
-    $monolog->pushHandler($handler);
-});
+```bash
+# login via SSH
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
+
+# tail the logs (they contain the current date, per default)
+$ tail -f storage/logs/laravel-2016-10-27.log
 ```
-
-You can now use our regular [log access](logging) to view the stream.
-
 
 #### Setting time zone in Laravel
 
@@ -304,53 +249,6 @@ return [
 ];
 ```
 
-
-### Memcache
-
-Make sure you enabled the [Memcache](memcache) Component. Then you can use the [App Secrets](app-secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
-
-```php
-// locally: use standard settings
-$servers = [[
-    'host' => env('MEMCACHED_HOST', '127.0.0.1'),
-    'port' => env('MEMCACHED_PORT', 11211),
-    'weight' => 100,
-]];
-
-// on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-    $servers = [[
-        'host' => $secrets['MEMCACHE']['HOST1'],
-        'port' => $secrets['MEMCACHE']['PORT1'],
-        'weight' => 100
-    ]];
-    if ($secrets['MEMCACHE']['COUNT'] > 1) {
-        $servers []= [
-            'host' => $secrets['MEMCACHE']['HOST2'],
-            'port' => $secrets['MEMCACHE']['PORT2'],
-            'weight' => 100
-        ];
-    }
-}
-
-// other code …
-
-return [
-    // other code …
-    'stores' => [
-        // other code …
-        'memcached' => [
-            'driver'  => 'memcached',
-            'servers' => $servers
-        ],
-        // other code …
-    ],
-    // other code …
-];
-```
-
-In addition, set the `CACHE_DRIVER` [environment variable](env-vars) so that you can use `memcached` in your production App on fortrabbit and `apc` or `array` on your local machine, via `.env` file.
 
 
 ### Redis
