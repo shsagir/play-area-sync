@@ -1,11 +1,12 @@
 ---
 
 template:      article
-reviewed:      2016-07-22
+reviewed:      2016-10-28
 title:         Teamwork on fortrabbit
 naviTitle:     Collaboration
-lead:          Mapping real world team relationships in a hosting env.
+lead:          Learn about the powerful collaboration features and how to map your real world team relationships on fortrabbit.
 group:         platform
+stack:         all
 
 keywords:
     - collaboration
@@ -17,32 +18,126 @@ keywords:
     - roles
     - organization
     - access
+    - multi-client capability
+    - multitenancy
+    - tenant
+    - client
+    - epmloyees
+    - developer
+    - collaborator
+    - administrator
+    - platform design
 
 ---
 
 
-## Problem
+## About Account access
+
+```
+┌────────────────┐                     ┌──────────────────────────┐
+│                │                     │                          │
+│    Account1    ├───personal access───▶                          │
+│                │                     │                          │
+└────────────────┘                     │           App            │
+┌────────────────┐                     │                          │
+│                │                     │                          │
+│    Account2    ├───personal access───▶                          │
+│                │                     │                          │
+└────────────────┘                     └──────────────────────────┘
+```
+
+In classical hosting you have one set of server access credentials for SFTP/SSH which you then have to share. With fortrabbit this is different: each Account has it's own personal access to each App.
+
+So instead of sending an e-mail with the FTP password, you are sending an invitation to create a free Account and to get instant personal access on your Apps. This is more secure, more transparent and easier to handle.
+
+Also see the [access methods article](/access-methods) to learn about the different ways (SSH key or password) to access code.
+
+
+
+
+## Levels of collaboration
+
+```
+┌────────────────────────────────────────────────────────┐                               
+│                                                        │                               
+│                                                        │  ****                         
+│                                                        │     *                         
+│                        Company                         │     *                         
+│                                                        │     *                         
+│                                                        │     *                         
+│                                                        │     *  Advanaced              
+└─────▲─────────┬─────────────┬────────────┬────────▲────┘     *  Company level          
+      │                                             │          *  team cooperation       
+    Owner       │             │            │      Admin        *  where Owners & Admins  
+      │                                             │          *  delegate on behalf     
+┌─────┴──────┐  │             │            │ ┌──────┴─────┐    *  of the Company         
+│            │                               │            │    *                         
+│  Account1  ├──┼────────┐    │    ┌───────┼─┤  Account3  │    *                         
+│            │           │         │         │            │    *                         
+└─────┬──────┘  │        │    │    │       │ └──────┬─────┘    *                         
+      │                  │         │                │          *                         
+      │         │        │    │    │       │        │          *                         
+      │                  │         │                │          *                         
+┌─────▼─────────▼─┐  ┌───▼────▼────▼───┐ ┌─▼────────▼──────┐   *                         
+│                 │  │                 │ │                 │ ***                         
+│      App1       │  │      App1       │ │      App1       │                             
+│                 │  │                 │ │                 │ ***                         
+└─────────────────┘  └────────▲────────┘ └─────────────────┘   *  Simple                 
+                              │                                *  App level              
+                              │                                *  collaboration          
+                       ┌──────┴─────┐                          *  where an Account       
+                       │            │                          *  has access to a        
+                       │  Account2  │                          *  single App             
+                       │            │                          *                         
+                       └────────────┘                       ****                         
+```
+
+To best map real world scenarios to collaborate on your projects two level of collaboration are available: 
+
+1. [Basic App level collaboration](#toc-basic-app-level-collaboration) to quickly work with other developers on per-App basis
+2. [Company level teams](#toc-company-level-collaboration) delegate your crew members to act on behalf of the Company
+
+Both levels work side by side and can be combined.
+
+
+
+## Basic App level collaboration
+
+This is 
+
+* Limted App collaborators for Universal stack Apps (see [pricing](https://www.fortrabbit.com/pricing) for details)
+* Unlimted App collaborators for Professional stack Apps
+
+
+
+
+
+
+## Company level collaboration
 
 Most of our clients run multiple Apps on fortrabbit. But here is the thing: Life is complicated and professional life even more so. Say we have [[App X]], which was once part of [[Project A]] but is now not anymore. And actually you don't want to pay it, but your client [[Acme Inc]] should. And not to mention: [[Kevin Flynn]], the guy your client hired for code review, also should have code access.
 
 Well, you just could set up a new Account for each App and be done with it. But the more Apps you have, the more of a mess you will end up with: no bird's eye view about what is going on, logout/login to switch to another App, manage all kind of stuff twice, ...
 
-## Solution
 
-A multi client model that maps to your real world in nearly any context: freelancer, startup, digital agency. Here are the building blocks:
+The solution is a multi client model that maps to your real world in nearly any context: freelancer, startup, digital agency.
+
+
+### Understanding Account & Company
+
+
+
+An Account in fortrabbit represents a person — You. An Account can login to the Dashboard, manage Apps and Companies. An Account can own or be part of multiple Companies. That is useful for example when you use fortrabbit privately for your week-end projects and for business. Or if you as a freelancer collaborate with various digital agencies.
+
+A Company within the fortrabbit platform represents your businesses. It has at one Billing Contact (see below) and one User (see above) associated with. It can, of course, own multiple Apps. Please also see the [billing FAQ](/billing#toc-faq).
+
+
+
 
 ## User
 
 When you sign up with fortrabbit you'll be asked for your first and your last name. You see, we expect that a user account represents a human being, not your company, not even when you are the one-man-army. Don't share your fortrabbit user account, it's your "private" one. Here you'll deposit YOUR own [public SSH keys](/ssh-keys), that's your very own access to the [Dashboard](/dashboard).
 
-
-## Company
-
-Your business, no matter how small or large, is always represented as a Company within the fortrabbit platform. A Company has to have at least one Billing Contact (see below) and one User (see above) associated with. It can, of course, own multiple Apps.
-
-Each User can be part or own multiple Companies on fortrabbit. That is useful for example when you use fortrabbit privately for your week-end projects and for business. Or if you as a freelancer collaborate with various digital agencies.
-
-Please also see the [billing FAQ](/billing#toc-faq).
 
 ## User roles
 
@@ -93,6 +188,8 @@ Don't fear. It's not as complicated as it may sounds. All team features are opti
 ## Further readings
 
 * [Introduction post on medium](https://medium.com/@frank_laemmer/our-multi-client-model-3b965d2f1060)
+
+- - -
 
 ## FAQ
 
