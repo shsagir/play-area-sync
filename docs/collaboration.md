@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-10-28
+reviewed:      2016-10-31
 title:         Collaborating on fortrabbit
 naviTitle:     Collaboration
 lead:          Learn about the powerful teamwork features and how to map your real world business relationships on your favorite hosting platform — fortrabbit.
@@ -107,10 +107,14 @@ This is the easy and straight forward way to give someone code access. Just invi
 * Limted App collaborators for Universal stack Apps (see [pricing](https://www.fortrabbit.com/pricing) for details)
 * Unlimted App collaborators for Professional stack Apps
 
+
+
 ### App collaboration use cases
 
+* Simple App sharing to get started with collaboration
 * Sharing the wekend project code with colleague to help debugging
 * Freelancer coworker get's access on one project
+* Contract worker to help out with a project
 * …
 
 
@@ -126,49 +130,24 @@ This will send an invitation e-mail. Your colleague can then deny or accept the 
 
 ### Removing an App collaborator
 
-In the Dashboard: Navigate to the Company the Collaborator is part of, Under App collaborators, click on the collaborators access role.
+You can reach the User App colllaborator access form in two ways:
 
-<!--
+1. **From the Company:**  In the Dashboard: Navigate to the Company the Collaborator is part of, under App collaborators, click on the collaborators access role.
+2. **From the App:** In the Dashboard: Navigate to the App the Collaborator is part of, under Team access click on the collaborators access role. 
 
-TODO:
-To be defined: Im moment kann ich bei der App meine Collabs nicht sehen? Bug?! Irgendwie müsste man vom App team aus schnell zum Revoke eines Collaborators kommen. wie?  und dann beschreiben, weil wenn man jemand über die App eingeladen hat, will man ihn auch da loswerden.
-
-TODO:
-was passiert, wenn ich einen "Company collaboration plan" habe und downgraden will?
-
-1. es wird durchgezählt, ob nach App plan alles klargeht und man kriegt dann gesagt, dass man erst leute entfernen muss, um zu downgraden
-2. es werden irgendwelche leute nach irgendwelchen regeln rausgeschmissen
-3. ???
-
-das zählen von real team members ist ja relativ einfach und verständlich, aber das zählen der Collaborators auf App Basis ist vielleicht programmierteschnisch leicht zu lösen, aber in der kommunikation sehe ich da probleme.
-
--->
+Within this form you can add or remove Apps for this Collaborator.
 
 
 ### Promoting an App collaborator
 
-When you already have a Company collaboration you can promote a Collaborator to become Admin or Owner. In the Dasboard: Navigate to the Company the App is part of. Under App collaborators, click on the collaborators access role. This will open a form where you can change the role.
+When you already have a Company collaboration you can promote a Collaborator to become Admin or Owner. In the Dashboard: Navigate to the Company the App is part of. Under App collaborators, click on the collaborators access role. This will open a form where you can change the role.
 
 
 ### Assigning more Apps to the same Collaborator
 
-You can of course also give the same Account collaborating on App level access to multiple of your Apps. In the Dashboard: Navigate to the Company the Collaborator is part of, Under App collaborators, click on the collaborators access role. There you can select all Apps 
+You can of course also give the same Account collaborating on App level access to multiple of your Apps. In the Dashboard: Navigate to the Company the Collaborator is part of, under App collaborators, click on the collaborators access role. There you can select all Apps 
 
 
-<!--
-
-TODO:
-Im Dashboard: wie können wir in dem dialog wo man die rolle des Members bearbeitet auch noch darstellen, welche Apps noch wieviel Collabs frei haben? sicher möglich, aber eng und nicht leicht verständlich, alternative ideen?
-
-TODO:
-was ist, wenn man den anderen weg geht und den gleichen typen von der app aus nochmal einlädt? da im ersten weg, über die company die erneute einladung zu sen anderen Apps wegfällt, ist das hier auch nicht der fall? was passiert also:
-
-1. einladung geht raus > ist aber obsolete, weil zugriff dann schon da
-2. "Meldung": dieser user ist schon teil der company und hat damit schon zugriff (+ notiz e-mail geht raus an wen? technischer ansprechpartner, eingeladener?)
-3. ???
-
-
--->
 
 ### App collabortors permissions
 
@@ -180,6 +159,12 @@ was ist, wenn man den anderen weg geht und den gleichen typen von der app aus no
 * CAN NOT delete an App
 * CAN NOT change settings of an App in the Dashboard
 
+
+<!--
+
+TODO: fertig schreiben
+
+-->
 
 
 ## Company level collaboration
