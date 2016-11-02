@@ -18,7 +18,7 @@ keywords:
 
 ## Problem
 
-You probably run at least two deployments of your App: a local one for development and one in the cloud (here on fortrabbit) for production. Both instances probably have access to a database. Your local MySQL has of course different credentials as the remote one. Your config file storing this information is under Git version control. So how to deal with different environment-specific configurations of one App?
+You probably run at least two deployments of your App: a local one for development and one in the cloud (here on fortrabbit) for production. Both instances probably have access to a database. Your local MySQL has of course different credentials than the remote one. Your config file, storing this information, is under Git version control. So how to deal with different environment-specific configurations of one App?
 
 ## Solution
 
@@ -26,25 +26,65 @@ Use environment variables to keep local configurations out of the main code base
 
 ## ENV vars in PHP
 
-There are two global variables called `$_SERVER` and `$_ENV` which contain environment variables that are available through the operating system and the PHP server. Within fortrabbit you should use `$_SERVER`, eg:
+You can access your ENV vars from PHP either using the global variable `$_SERVER` or the function `getenv()`:
 
 ```php
 echo $_SERVER["MY_ENV_VAR"];
+# or
+echo getenv("MY_ENV_VAR");
 ```
 
 ## Adding ENV vars
 
-You can enter ENV vars on fortrabbit in the [Dashboard](dashboard). You'll do so in the settings of your [App](app). You can edit ENV vars one by one or import multiple at once.
+You can add ENV vars to your App in the [Dashboard](dashboard) > Your App > Settings > ENV Vars. The input supports the dotenv format and allows you to create or update multiple variables at once.
+
+<div markdown="1" data-user="known">
+[Add ENV vars to your App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
+</div>
+
+## Default ENV vars
+
+Besides your custom ENV vars there are two sets of default ENV vars which are available to your App at runtime:
+
+### Generic App ENV vars
+
+* `APP_NAME` contains the name of your App
+* `APP_SECRETS` contains the path to a JSON encoded file containing [App Secrets](secrets)
+
+### Access details ENV vars
+
+If you have enabled *"Populate App Secrets in ENV vars automatically"* in the Dashboard (which is the default for new Apps), then all your access details for services like MySQL will become available as ENV vars:
+
+**MySQL**
+
+* `MYSQL_DATABASE`: Contains the App's database name
+* `MYSQL_HOST`: Contains the App's database hostname
+* `MYSQL_PASSWORD`: Contains the App's database password
+* `MYSQL_USER`: Contains the App's database user
+
+**Object Storage**
+
+* `OBJECT_STORAGE_BUCKET`: Contains the App's bucket name
+* `OBJECT_STORAGE_KEY`: Contains the App's bucket access key
+* `OBJECT_STORAGE_REGION`: Contains the App's bucket region
+* `OBJECT_STORAGE_SECRET`: Contains the App's bucket access secret
+* `OBJECT_STORAGE_SERVER`: Contains the App's Object Storage API server
+
+**Memcache**
+
+* `MEMCACHE_HOST1`: Contains the first Memcache node hostname
+* `MEMCACHE_PORT1`: Contains the first Memcache node port
+* `MEMCACHE_HOST2`: Contains the second Memcache node hostname (if using a Production plan)
+* `MEMCACHE_PORT2`: Contains the second Memcache node port (if using a Production plan)
 
 ## ENV vars vs security
 
-Storing credentials (passwords, secrets, ..) in environment variables is not without risk. They can be exposed, due to programming errors or oversights. Please read an BLOG[in-depth discussion in our Blog](how-to-keep-a-secret).
+Storing credentials (passwords, secrets, ..) in environment variables is not without risk. They can be exposed, due to programming errors or oversights. Please read an BLOG[in-depth discussion in our Blog](how-to-keep-a-secret). We offer a convenient solution for this problem with our [App secrets](secrets).
 
-Our proposed solution is to encrypt environment variables when storing them in the Dashboard and decrypting them whenever accessed. This way accidentally exposed environment variable contents do not pose a risk nor does your code (in the Git history) contain any credentials or a method to derive them.
 
-Solutions for specific frameworks or CMS can be found in their respective [installer guides](/#install). A generic approach would be to PHP's `mcrypt` extension as following:
+### ENV var encryption
 
-### Generic ENV var encryption
+If you prefer not to use [App secrets](secrets), but want to secure your ENV vars we recommend to store them encrypted and encoded in the Dashboard. You then decode and decrypt them later on in your App. Following a generic example:
 
 Create a secret key and use the `mcrypt_encrypt()` function to encrypt and then base64 encode your variables. An exemplary PHP script doing that can be [downloaded from this Gist](https://gist.github.com/ukautz/3573878af39e81c009fa) and then executed locally.
 

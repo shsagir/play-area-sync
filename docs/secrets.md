@@ -6,7 +6,7 @@ title:       Using secure App secrets
 naviTitle:   App secrets
 lead:        App secrets provide a secure storage and access method for all the credentials your App needs to run.
 group:       deployment
-stack:       pro
+stack:       all
 
 keywords:
     - Secrets
@@ -28,6 +28,9 @@ In addition: your App will run in at least two environments: locally and on fort
 
 Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by you and your App. The location of this JSON file is stored in a predefined environment variable called `APP_SECRETS`.
 
+## App secrets vs ENV vars
+
+App secrets are closely related to ENV vars insofar that they are both available to your App at runtime. The big difference between them is that App secrets are stored highly secured and they are not automatically dumped out by debug tools - such as `phpinfo()` or your favorite debug toolbar.
 
 ## App secrets in your App
 
@@ -58,7 +61,7 @@ $secrets == [
 ];
 ```
 
-See examples to use the App secrets to connect to MySQL for: [Laravel](install-laravel#toc-mysql), [Symfony](install-symfony#toc-mysql), [WordPress](install-wordpress#toc-mysql), [Craft CMS](install-craft-2#toc-mysql), [Drupal](install-drupal-8#toc-mysql).
+See examples to use the App secrets to connect to MySQL for: [Laravel](install-laravel-pro#toc-mysql), [Symfony](install-symfony-pro#toc-mysql), [WordPress](install-wordpress-pro#toc-mysql), [Craft CMS](install-craft-pro#toc-mysql), [Drupal](install-drupal-pro#toc-mysql).
 
 
 ## App secrets from local
@@ -109,12 +112,6 @@ You can add or remove custom App secrets in the [Dashboard](dashboard). You'll d
 
 </div>
 
-
-## App secrets vs ENV vars
-
-App secrets are closely related to ENV vars insofar that they are both available to your App at runtime. The big difference between them is that App secrets are stored highly secured and they are not automatically dumped out by debug tools - such as `phpinfo()` or your favorite debug toolbar.
-
-To achieve a level of security approaching the App secrets with ENV vars you can encrypt them, as described in [the ENV var article](env-vars#toc-env-vars-vs-security).
 
 ## App secrets vs local environment
 

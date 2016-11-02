@@ -83,7 +83,7 @@ The Object Storage is sized in reasonable packages. Traffic is cumulated togethe
 
 ## Object Storage access
 
-To upload files to the Object Storage you have two options: 
+To upload files to the Object Storage you have two options:
 
 1. [Programmatic](#toc-programmatic-upload) — from within the App
 2. [Manual](#toc-manual-upload) — using a client
@@ -91,15 +91,46 @@ To upload files to the Object Storage you have two options:
 Once you have something up, you can view the files via [HTTP in your browser](#toc-http-access).
 
 
-### Obtaining upload credentials
+### Obtaining credentials
 
-The Apps Object Storage credentials consist of: a bucket name, a server (aka: endpoint), a key and a secret. As all credentials those are stored with the [App secrets](/secrets). Issue this in your local terminal to get them:
+The Apps Object Storage access details consist of: a bucket name, a server (aka: endpoint), a key and a secret. As all credentials those are stored with the [App secrets](/secrets). Issue this in your local terminal to get them:
 
 ```bash
 # Read the secrets.json, show access for the App {{app-name}}
-$ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 ```
 
+### Access credentials from code
+
+You have two options:
+
+#### Access credentials using secrets file
+
+```php
+$secrets     = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+$credentials = [
+    'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
+    'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
+    'key'      => $secrets['OBJECT_STORAGE']['KEY'],
+    'region'   => $secrets['OBJECT_STORAGE']['REGION'],
+    'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
+];
+```
+
+#### Access credentials using mapped ENV vars
+
+If you enable "Populate App Secrets in ENV vars automatically" <!-- TODO: Wording -->
+
+```php
+$secrets     = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+$credentials = [
+    'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
+    'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
+    'key'      => $secrets['OBJECT_STORAGE']['KEY'],
+    'region'   => $secrets['OBJECT_STORAGE']['REGION'],
+    'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
+];
+```
 
 ### Programmatic upload
 
