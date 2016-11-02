@@ -123,7 +123,7 @@ $ git push -u fortrabbit master
 
 ### MySQL configuration
 
-If you have choosen Laravel in the stack chooser when creating your App, we will automatically populate the "right" environment variables for Laravel's MySQL connection for you. So the good news is: Just keep the laravel defaults in `config/database.php`:
+If you have choosen Laravel in the stack chooser when creating your App, we will automatically populate the "right" environment variables for Laravel's MySQL connection for you. So, you don't need to change a thing, just keep `config/database.php` as is:
 
 ```php
 <?php
