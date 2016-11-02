@@ -123,63 +123,67 @@ $ git push -u fortrabbit master
 
 ### MySQL configuration
 
-If you have choosen Laravel in the stack chooser when creating your App, we will automatically populate the "right" environment variables for Laravel's MySQL connection for you. If you haven't, or your use-case requires you to access the MySQL login details, then we recommend to use [App secrets](secrets).
-
-Following an example on how to modify `config/database.php`:
+If you have choosen Laravel in the stack chooser when creating your App, we will automatically populate the "right" environment variables for Laravel's MySQL connection for you. So the good news is: Just keep the laravel defaults in `config/database.php`:
 
 ```php
 <?php
-// locally: use standard settings
-$mysql = [
-    'driver'    => 'mysql',
-    'host'      => env('DB_HOST', 'localhost'),
-    'database'  => env('DB_DATABASE', 'forge'),
-    'username'  => env('DB_USERNAME', 'forge'),
-    'password'  => env('DB_PASSWORD', ''),
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
-    'strict'    => false,
-    'engine'    => null,
-];
-
-
-// on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-    $mysql = [
-        'driver'    => 'mysql',
-        'host'      => $secrets['MYSQL']['HOST'],
-        'port'      => $secrets['MYSQL']['PORT'],
-        'database'  => $secrets['MYSQL']['DATABASE'],
-        'username'  => $secrets['MYSQL']['USER'],
-        'password'  => $secrets['MYSQL']['PASSWORD'],
-        'charset'   => 'utf8',
-        'collation' => 'utf8_unicode_ci',
-        'prefix'    => '',
-        'strict'    => false,
-    ];
-}
-
 return [
-    // possible other code …
-    'fetch'         => PDO::FETCH_CLASS,
-    // possible other code …
-    'default'       => env('DB_CONNECTION', 'mysql'),
-    // possible other code …
+    // keep above
     'connections'   => [
-        // possible other code …
-        'mysql' => $mysql,
-        // possible other code …
+        // keep above
+        'mysql' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+        // keep below
     ],
-    // possible other code …
-    'migrations' => 'migrations'
-    // possible other code …
+    // keep below
 ];
 ```
 
-This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit.
+If you have not chosen the Laravel stack when creating the App you need to use different ENV vars:
 
+* The ENV var `DB_HOST` becomes the ENV var `MYSQL_HOST`
+* The ENV var `DB_PORT` becomes static `3306`
+* The ENV var `DB_DATABASE` becomes the ENV var `MYSQL_DATABASE`
+* The ENV var `DB_USERNAME` becomes the ENV var `MYSQL_USER`
+* The ENV var `DB_PASSWORD` becomes the ENV var `MYSQL_PASSWORD`
+
+To make sure you still can use your Laravel installation in your local environment, you can "double wrap" the ENV var access like so:
+
+```php
+<?php
+return [
+    // keep above
+    'connections'   => [
+        // keep above
+        'mysql' => [
+            'driver' => 'mysql',
+            'host' => env('MYSQL_HOST', env('DB_HOST', 'localhost')),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('MYSQL_DATABASE', env('DB_DATABASE', 'forge')),
+            'username' => env('MYSQL_USER', env('DB_USERNAME', 'forge')),
+            'password' => env('MYSQL_PASSWORD', env('DB_PASSWORD', '')),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+        // keep below
+    ],
+    // keep below
+];
+```
 
 
 ### Database migration
@@ -250,138 +254,9 @@ return [
 ```
 
 
+### Queues & Redis
 
-### Redis
-
-Redis can be used in Laravel as a cache or a queue or both. First integrate with [Redis Cloud](redis-cloud) then configure the redis database connection in `config/database.php`:
-
-```php
-// locally: use standards
-$redis = [
-    'host'     => env('REDIS_HOST', 'localhost'),
-    'password' => env('REDIS_PASSWORD', null),
-    'port'     => env('REDIS_PORT', 6379),
-    'database' => 0,
-];
-
-// on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-    $redis = [
-        'host'     => $secrets['CUSTOM']['REDIS_HOST'],
-        'port'     => $secrets['CUSTOM']['REDIS_PORT'],
-        'password' => $secrets['CUSTOM']['REDIS_PASSWORD']
-    ];
-}
-
-return [
-    // other code …
-    'redis' => [
-        'cluster' => false,
-        'default' => $redis
-    ],
-    // other code …
-];
-```
-
-If you plan on using Redis as a cache, then open `config/cache.php` and set `default` to `redis` (or set the `CACHE_DRIVER` [environment variable](env-vars) to `redis` in the Dashboard). For [queue](#toc-queue) usage see below.
-
-### Queue
-
-Laravel supports multiple queue drivers. One which can be used with fortrabbit out of the box is `database`, which simple uses your database connection as a queue. That's great for small use-cases and tinkering, but if your App handles very many queue messages you should consider [Redis](#toc-redis).
-
-Once you've decided the queue you want to use just open `config/queue.php` and set `default` to either `redis`, `database`, `iron` or `amqp` - or even better: set the `QUEUE_DRIVER` [environment variable](env-vars) accordingly in the Dashboard.
-
-
-#### CloudAMQP
-
-CloudAMQP  can be used in Laravel as a queue driver. First integrate with [CloudAMQP](cloudamqp), install the composer package `fhteam/laravel-amqp` then configure the queue connection in `config/queue.php`:
-
-```php
-$amqp = [];
-
-// on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-    $amqp = [
-        'driver'         => 'amqp',
-        'host'           => $secrets['CUSTOM']['CLOUD_AMQP_HOST'],
-        'port'           => $secrets['CUSTOM']['CLOUD_AMQP_PORT'],
-        'user'           => $secrets['CUSTOM']['CLOUD_AMQP_USER'],
-        'password'       => $secrets['CUSTOM']['CLOUD_AMQP_PASSWORD'],
-        'vhost'          => $secrets['CUSTOM']['CLOUD_AMQP_VHOST'],
-        'queue'          => null,
-        'channel_id'     => null,
-        'exchange_name'  => null,
-        'exchange_type'  => null,
-        'exchange_flags' => null,
-
-         //Durable queue (survives server crash)
-        'queue_flags'=> ['durable' => true, 'routing_key' => null],
-
-        //Persistent messages (survives server crash)
-        'message_properties' => ['delivery_mode' => 2],
-    ];
-}
-
-return [
-    // other code …
-    'connections' => [
-        // other code …
-        'amqp' => $amqp,
-        // other code …
-    ],
-    // other code …
-];
-```
-
-Make sure you have added `Forumhouse\LaravelAmqp\ServiceProvider\LaravelAmqpServiceProvider::class` to `providers` in `config/app.php`.
-
-Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `amqp`.
-
-#### IronMQ
-
-IronMQ can be used in Laravel as a queue driver. First integrate with [IronMQ](ironmq) then configure the queue connection in `config/queue.php`:
-
-```php
-// locally: use standards
-$iron = [
-    'driver'  => 'iron',
-    'host'    => env('IRON_MQ_HOST'),
-    'token'   => env('IRON_MQ_TOKEN'),
-    'project' => env('IRON_MQ_PROJECT_ID'),
-    'queue'   => env('IRON_MQ_QUEUE'),
-    'encrypt' => true,
-];
-
-// on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-    $iron = [
-        'driver'  => 'iron',
-        'host'    => $secrets['CUSTOM']['IRON_MQ_HOST'],
-        'token'   => $secrets['CUSTOM']['IRON_MQ_TOKEN'],
-        'project' => $secrets['CUSTOM']['IRON_MQ_PROJECT_ID'],
-        'queue'   => $secrets['CUSTOM']['IRON_MQ_QUEUE'],
-        'encrypt' => true,
-    ];
-}
-
-return [
-    // other code …
-    'connections' => [
-        // other code …
-        'iron' => $iron,
-        // other code …
-    ],
-    // other code …
-];
-```
-
-**Note for Laravel 5.2:** The `iron`-block does not exist and needs to be created. Also the `laravelcollective/iron-queue` composer package must be installed manually (mind adding `Collective\IronQueue\IronQueueServiceProvider::class` into `providers` in `app.php`).
-
-Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `iron`.
-
+Laravel supports multiple queue and cache drivers. Please check out the [Laravel 5 Profession article](install-laravel-5-pro#toc-queue) on how to integrate those.
 
 #### Using envoy
 
