@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-10-31
+reviewed:      2016-11-03
 title:         Collaborating on fortrabbit
 naviTitle:     Collaboration
 lead:          Learn about the powerful teamwork features and how to map your real world business relationships on your favorite hosting platform — fortrabbit.
@@ -30,8 +30,20 @@ keywords:
 
 ---
 
+Most of our clients are running three and more Apps on fortrabbit. Say we have [[App X]], which was once part of [[Project A]] but is now not anymore. And actually you don't want to pay it, but your client [[Acme Inc]] should. And not to mention: [[Kevin Flynn]], the guy your client hired for code review, also should have code access.
 
-## About Account access
+Well, you just could set up a new Account for each App and be done with it. But the more Apps you have, the more of a mess you will end up with: no bird's eye view about what is going on, logout/login to switch to another App, manage all kind of stuff twice, ...
+
+You want to easily add new members to all of your team’s projects. The solution is a multi client model that maps to your real world in nearly any context: freelancer, startup, digital agency.
+
+
+## Understanding the Account
+
+When you sign up with fortrabbit you'll be asked for your first and your last name. We expect that an Account represents a human being, not a Company. An Account is a person who can login to the Dashboard, manage Apps and Companies. An Account can own or be part of multiple Companies. That is useful for example when you use fortrabbit privately for your week-end projects and for business. Or if you as a freelancer collaborate with various digital agencies.
+
+Don't share your fortrabbit Account, it's your "private" one. Here you'll deposit YOUR own [public SSH keys](/ssh-keys), that's your very own access to the [Dashboard](/dashboard).
+
+### Personal Account access to Apps
 
 In classical hosting you have one set of server access credentials for SFTP/SSH which you then have to share. With fortrabbit this is different: each Account has it's own personal access to each App.
 ```
@@ -52,6 +64,9 @@ In classical hosting you have one set of server access credentials for SFTP/SSH 
 So instead of sending an e-mail with the FTP password, you are sending an invitation to create a free Account and to get instant personal access on all Apps. This is more secure, more transparent and easier to handle. Also see the [access methods article](/access-methods) to learn about the different ways (SSH key or password) to access code.
 
 
+## Understanding Companies
+
+A Company within the fortrabbit platform represents your businesses. It has at one Billing Contact (see below) and one User (see above) associated with. It can, of course, own multiple Apps. Please also see the [billing FAQ](/billing#toc-faq).
 
 
 ## Levels of collaboration
@@ -100,14 +115,24 @@ Both levels work side by side and can be combined. Also check out our [fancy exp
 
 
 
+
+
+
 ## App level collaboration
 
-This is the easy and straight forward way to give someone code access. Just invite your coworker to on App. This feature is partly free depending on the type of your App:
+Give someone code access — quickly. Just invite your coworker/colleague to a single App. 
 
-* Limted App collaborators for Universal stack Apps (see [pricing](https://www.fortrabbit.com/pricing) for details)
-* Unlimted App collaborators for Professional stack Apps
+### App collabortors permissions
 
+This is what App collaborators can do:
 
+* CAN access code via Git, SSH and SFTP
+* CAN see the App in the Dashboard (settings, scaling, collaboration)
+* CAN see the Company the App belongs to
+* CAN NOT invite other collaborators
+* CAN NOT scale an App
+* CAN NOT delete an App
+* CAN NOT change settings of an App in the Dashboard
 
 ### App collaboration use cases
 
@@ -115,17 +140,20 @@ This is the easy and straight forward way to give someone code access. Just invi
 * Sharing the wekend project code with colleague to help debugging
 * Freelancer coworker get's access on one project
 * Contract worker to help out with a project
-* …
 
 
 
 ### Inviting an App collaborator
 
-1. In the [Dashboard](/dashboard), navigate to the App you are about to share.
-2. Click the "Invite someone" button
-3. Enter a name and an e-mail
+1. In the [Dashboard](/dashboard) overview: Click the "Invite someone" button
+2. First enter name and e-mail of your colleague
+3. When you are part of multiple Companies, you will be asked for the Company to invite to
+4. Next you will be asked, which kind Level of Collaboration you want, choose "App collaboration" here now
+5. In the last step you can choose between Apps you want your colleague to be invited to
 
-This will send an invitation e-mail. Your colleague can then deny or accept the invitation by logging in or signing up.
+This will send an invitation e-mail. Your colleague can then deny by just ignoring the e-mail or accept the invitation by logging in or signing up.
+
+You can start this procedure also from your Company or from your App. This will shorten the steps, as you have already made a selection by chosing a start for it.
 
 
 ### Removing an App collaborator
@@ -140,92 +168,93 @@ Within this form you can add or remove Apps for this Collaborator.
 
 ### Promoting an App collaborator
 
-When you already have a Company collaboration you can promote a Collaborator to become Admin or Owner. In the Dashboard: Navigate to the Company the App is part of. Under App collaborators, click on the collaborators access role. This will open a form where you can change the role.
+When you already have a Company collaboration going on you can promote a Collaborator to become Admin or Owner. In the Dashboard: Navigate to the Company the App is part of. Under App collaborators, click on the collaborators access role. This will open a form where you can change the role.
+
+You can also reach the Collaborators profile page from your App overview.
 
 
-### Assigning more Apps to the same Collaborator
+### Assigning more Apps to the same App collaborator
 
-You can of course also give the same Account collaborating on App level access to multiple of your Apps. In the Dashboard: Navigate to the Company the Collaborator is part of, under App collaborators, click on the collaborators access role. There you can select all Apps 
-
-
-
-### App collabortors permissions
-
-* CAN access code via Git, SSH and SFTP
-* CAN see the App in the Dashboard (settings, scaling, collaboration)
-* CAN see the Company the App belongs to
-* CAN NOT invite other collaborators
-* CAN NOT scale an App
-* CAN NOT delete an App
-* CAN NOT change settings of an App in the Dashboard
+You can of course also give the same Account collaborating on App level access to multiple of your Apps. In the Dashboard: Navigate to the Company the Collaborator is part of, under App collaborators, click on the collaborators access role. There you can select all Apps with enabled collboration for this collaborator.
 
 
-<!--
+### App collaboration availability
 
-TODO: fertig schreiben
+App collaboration may or may not be available for your App:
 
--->
+* limited App collaborators for different Universal stack Apps, see [specs page](https://www.fortrabbit.com/specs).
+* unlimited App collaborators for all Professional stack Apps
+* unlimited App collaborators for all Apps when a Company level plan is booked
+
+
 
 
 ## Company level collaboration
 
-Most of our clients run multiple Apps on fortrabbit. But here is the thing: Life is complicated and professional life even more so. Say we have [[App X]], which was once part of [[Project A]] but is now not anymore. And actually you don't want to pay it, but your client [[Acme Inc]] should. And not to mention: [[Kevin Flynn]], the guy your client hired for code review, also should have code access.
+Life is complicated and professional life even more so. [Above](#toc-app-collaboration) we have seen how App collaboration helps to collaborate on per-App-basis. Collaboration on company level goes a step further. 
 
+Just like in real live the owners have full access, full control, full responsability and need to take care about the financials. While the admins have all the fun and can act on behalf of the Company. 
 
-Easily add new members to all of your team’s projects.
+### Use cases
 
-Well, you just could set up a new Account for each App and be done with it. But the more Apps you have, the more of a mess you will end up with: no bird's eye view about what is going on, logout/login to switch to another App, manage all kind of stuff twice, ...
-
-
-The solution is a multi client model that maps to your real world in nearly any context: freelancer, startup, digital agency.
-
-
-### Understanding Account & Company
-
-An Account in fortrabbit represents a person. An Account can login to the Dashboard, manage Apps and Companies. An Account can own or be part of multiple Companies. That is useful for example when you use fortrabbit privately for your week-end projects and for business. Or if you as a freelancer collaborate with various digital agencies.
-
-A Company within the fortrabbit platform represents your businesses. It has at one Billing Contact (see below) and one User (see above) associated with. It can, of course, own multiple Apps. Please also see the [billing FAQ](/billing#toc-faq).
+* Map real world business relationships
+* Project based workflows with delegation
+* Multi-cient capable workflows
 
 
 
 
-## User
 
-When you sign up with fortrabbit you'll be asked for your first and your last name. You see, we expect that a user account represents a human being, not your company, not even when you are the one-man-army. Don't share your fortrabbit user account, it's your "private" one. Here you'll deposit YOUR own [public SSH keys](/ssh-keys), that's your very own access to the [Dashboard](/dashboard).
+### Roles
 
+Each Company can have multiple Accounts associated with it:
 
-## User roles
+#### Owner
 
-It also works around the other way, not only you can take part in multiple Companies, each Company can have multiple Users associated with it. With permission based access roles we make sure only the boss can really mess up. Every User has an associated within each Company:
+The Owner role can NOT be modified by someone else, multiple Owners per Company are possible. Accounts with this role within a Company can:
 
-### Owner
+* create, delete, configure & scale all Apps of the Company
+* code access to all Apps of the Company
+* delete, create, change Billing Contacts for the Company
+* manage all roles (but other Owners) of the Company
+* invite new Users for any role to the Company
+* leave the Company (if other owners are present)
 
-The Owner role can NOT be modified by someone else, multiple Owners per Company are possible:
+#### Admin
 
-* create, delete, configure & scale all Apps of the Company;
-* code access to all Apps of the Company;
-* delete, create, change Billing Contacts for the Company;
-* manage all roles (but other Owners) of the Company;
-* invite new Users for any role to the Company;
-* leave the Company (if other owners are present).
-
-### Admin
-
-The Admin role can be modified by Owners, hir can:
+The Admin role can be modified by Owners. Accounts with this role within a Company can:
 
 * create, delete, configure & scale all Apps of the Company;
 * code access to all Apps of the Company;
 * invite new Admins or Developers to the Company;
 * leave the Company.
 
-### Developer
+### Collaborator
 
-The Developer role can be modified by Owners and Admins, hir can:
+The Collaborator role can be modified by Owners and Admins. It's the same as with App collaboration and has the same permissions (see [above](#toc-app-collabortors-permissions)).
 
-* configure certain Apps of the Company;
-* code access certain Apps of the Company.
+When a Company collaboration plan is booked, all 
+
+
+### Booking a Company collaboration plan
+
+<!-- TODO -->
+
+
+### Downgrading a Company level plan
+
+<!-- TODO -->
+
+
+### Company collaboratorion in the Dashboard
+
+<!--  TODO: steps to invite and edit roles are the same as decribed above -->
+
+
 
 ## Billing Contact
+
+<!-- TODO: more details  -->
 
 Sometimes you have different billing preferences within one Company. That's what Billing Contacts are for. Billing Contacts are managed by the Company Owners, they consist of:
 
@@ -236,13 +265,33 @@ Sometimes you have different billing preferences within one Company. That's what
 Each App (expect trials) has to be associated with a Billing Contact. Each Billing Contact has its own invoice archive. Please also see the [billing FAQ](/billing#toc-faq).
 
 
-## How to use it
 
-Don't fear. It's not as complicated as it may sounds. All team features are optional, the [Dashboard](dahsboard) makes managing all this easy. See our [teamwork video](teamwork-video)!
+## App alerts
 
-## Further readings
+<!-- TODO -->
 
-* [Introduction post on medium](https://medium.com/@frank_laemmer/our-multi-client-model-3b965d2f1060)
+
+
+## Advanced usage
+
+### Working with the same person in different Companies
+
+When you have multiple Companies and you want to collaborate with same person across them: Invite them to each Company. The same person then will have access to all Companies under one Account.
+
+### When people leave
+
+<!--  TODO: 
+
+* two ways to leave: self-initiated, by higher hierachy
+* remind of concept: a user leaves access is gone automatically
+* hint & link to service password reset for extra security
+
+-->
+
+
+<!--  TODO: more advanced topics here -->
+
+
 
 - - -
 
