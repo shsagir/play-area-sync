@@ -30,6 +30,13 @@ keywords:
 
 ---
 
+<!--
+
+TODO: this article is toooo long. It is not ment to be read from top to down, more like a reference, still it might be possible to break it up in various other articles — a dedicated Company Article for example
+
+-->
+
+
 Most of our clients are running three and more Apps on fortrabbit. Say we have [[App X]], which was once part of [[Project A]] but is now not anymore. And actually you don't want to pay it, but your client [[Acme Inc]] should. And not to mention: [[Kevin Flynn]], the guy your client hired for code review, also should have code access.
 
 Well, you just could set up a new Account for each App and be done with it. But the more Apps you have, the more of a mess you will end up with: no bird's eye view about what is going on, logout/login to switch to another App, manage all kind of stuff twice, ...
