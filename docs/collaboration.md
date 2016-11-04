@@ -37,11 +37,11 @@ TODO: this article is toooo long. It is not ment to be read from top to down, mo
 -->
 
 
-Most of our clients are running three and more Apps on fortrabbit. Say we have [[App X]], which was once part of [[Project A]] but is now not anymore. And actually you don't want to pay it, but your client [[Acme Inc]] should. And not to mention: [[Kevin Flynn]], the guy your client hired for code review, also should have code access.
+**Usual business scenario**: Most of our clients are running three and more Apps on fortrabbit. And not only that: They want this App to be paid from that card, and the other App from that other card — while still be able to share access with coworkers.
 
-Well, you just could set up a new Account for each App and be done with it. But the more Apps you have, the more of a mess you will end up with: no bird's eye view about what is going on, logout/login to switch to another App, manage all kind of stuff twice, ...
+**The natural reflex is**: to just could set up a new Account for each App and share the login to the Dashboard across the team. But the more Apps you have, the more of a mess you will end up with: no bird's eye view about what is going on, you need to logout and login again to switch to another App, manage all kind of stuff twice, send passwords by e-mail, reset passwords when someone leaves …
 
-You want to easily add new members to all of your team’s projects. The solution is a multi client model that maps to your real world in nearly any context: freelancer, startup, digital agency.
+**What you really want is**: Easily add new members to all of your team’s projects. The solution is a multi client model that maps to your real world in nearly any context: freelancer, startup, digital agency.
 
 
 ## Understanding the Account
