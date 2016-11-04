@@ -47,6 +47,7 @@ DB_DATABASE=${MYSQL_DATABASE}
 DB_HOST=${MYSQL_HOST}
 DB_USER=${MYSQL_USER}
 DB_PASSWORD=${MYSQL_PASSWORD}
+DB_PORT=${MYSQL_PORT}
 DB_USERNAME=${MYSQL_USER}
 ```
 
@@ -126,7 +127,7 @@ return [
 ];
 ```
 
-If you have not chosen the Laravel, then please make sure to [set the ENV vars as described above](#toc-env-vars).
+If you have not chosen the Laravel in the stack chooser on App creation, then please make sure to [set the ENV vars as described above](#toc-env-vars).
 
 
 ### Database migration

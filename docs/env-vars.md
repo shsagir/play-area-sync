@@ -80,6 +80,7 @@ Following a list of available dynamic ENV vars, which are available, assuming yo
 * `MYSQL_DATABASE`: Contains the App's database name
 * `MYSQL_HOST`: Contains the App's database hostname
 * `MYSQL_PASSWORD`: Contains the App's database password
+* `MYSQL_PORT`: Contains the App's database port
 * `MYSQL_USER`: Contains the App's database user
 
 **Object Storage**
