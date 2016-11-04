@@ -42,18 +42,38 @@ You can add ENV vars to your App in the [Dashboard](dashboard) > Your App > Sett
 [Add ENV vars to your App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
-## Default ENV vars
+## ENV var types
 
-Besides your custom ENV vars there are two sets of default ENV vars which are available to your App at runtime:
+There are four different kinds of ENV vars which are available to your App at runtime.
 
-### Generic App ENV vars
+
+### Custom ENV vars
+
+Those are the ones you add yourself in the Dashboard.
+
+
+### App ENV vars
+
+Generic ENV vars cannot be overwritten by you. They are always available.
 
 * `APP_NAME` contains the name of your App
 * `APP_SECRETS` contains the path to a JSON encoded file containing [App Secrets](secrets)
 
-### Access details ENV vars
 
-If you have enabled *"Populate App Secrets in ENV vars automatically"* in the Dashboard (which is the default for new Apps), then all your access details for services like MySQL will become available as ENV vars:
+### Stack ENV vars
+
+Depending on which Stack you have chosen when creating your App, additional ENV vars will be pre-created (seeded) for you. For example: When choosing Laravel the ENV var `APP_KEY` with a random, 32 char long string will created (among others).
+
+You can replace or remove those Stack ENV vars after App creation the same way you can replace or remove your manually created ENV vars.
+
+
+### Dynamic ENV vars
+
+Dynamic ENV vars become available if you have enabled *"Populate App Secrets in ENV vars automatically"* in the Dashboard, which is the default for new Apps. They contain access details for services offered by fortrabbit.
+
+They will never overwrite existing, manually created ENV vars. This means: if you manually create an ENV var, we guarantee that we won't replace it's value by a dynamically generated ENV var.
+
+Following a list of available dynamic ENV vars, which are available, assuming your App supports the service: <!-- TODO: We cannot say component here, cause Universal Apps don't have components .. idea? -->
 
 **MySQL**
 
@@ -76,6 +96,27 @@ If you have enabled *"Populate App Secrets in ENV vars automatically"* in the Da
 * `MEMCACHE_PORT1`: Contains the first Memcache node port
 * `MEMCACHE_HOST2`: Contains the second Memcache node hostname (if using a Production plan)
 * `MEMCACHE_PORT2`: Contains the second Memcache node port (if using a Production plan)
+
+
+
+## Nested variables
+
+You can use simple, [nested variables](https://github.com/vlucas/phpdotenv#nesting-variables) in your custom ENV vars. Simple means, that you can set variables which reference other variables, which contain a value, for example:
+
+```plain
+# will work:
+MY_VAR=${OTHER_VAR}
+OTHER_VAR=something
+```
+
+We do not support multiple levels of interpolation, which means that you cannot use variables, which reference other variables, which again reference other variables, for example:
+
+```plain
+# will not work:
+MY_VAR=${OTHER_VAR}
+OTHER_VAR=${ANOTHER_VAR}
+ANOTHER_VAR=something
+```
 
 ## ENV vars vs security
 

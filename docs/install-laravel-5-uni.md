@@ -36,12 +36,18 @@ Go to the Dashboard and [set the root path](/app#toc-set-a-custom-root-path) of 
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
 </div>
 
-### Application key
+### ENV vars
 
-Go to the Dashboard and add an application key as a new as an [environment variable](/env-vars) named `APP_KEY` to your App. You can use this:
+Go to the Dashboard and add the following [environment variables](/env-vars) to your App:
 
 ```osterei32
 APP_KEY=ClickToGenerate
+APP_ENV=production
+DB_DATABASE=${MYSQL_DATABASE}
+DB_HOST=${MYSQL_HOST}
+DB_USER=${MYSQL_USER}
+DB_PASSWORD=${MYSQL_PASSWORD}
+DB_USERNAME=${MYSQL_USER}
 ```
 
 <div markdown="1" data-user="known">
@@ -89,33 +95,7 @@ $ git push -u fortrabbit master
 
 ### Setup Git
 
-If you used the above Quick start guide, Git is already setup and you can safely skip this topic. Unless your local Laravel installation is already under Git version control, you need to enable it now:
-
-```bash
-# Change to your local directory, where you Laravel is
-$ cd {{app-name}}
-
-# Initialize a local Git repo
-$ git init .
-
-# Add all files
-$ git add -A
-
-# Commit files for the first time
-$ git commit -m 'Initial'
-```
-
-Now you need to connect your local installation with your App's remote:
-
-```bash
-# Add fortrabbit as a remote
-$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
-
-# Push changes to fortrabbit
-$ git push -u fortrabbit master
-# this will install Laravel on remote and take another while
-# the next deployments will be much faster
-```
+If you used the above Quick start guide, Git is already setup and you can safely skip this topic. If you havent, then you need follow steps 3 to 6 from above, to initialize a local Git repo and add your fortrabbit remote.
 
 ### MySQL configuration
 
@@ -146,40 +126,7 @@ return [
 ];
 ```
 
-If you have not chosen the Laravel stack when creating the App you need to use different ENV vars:
-
-* The ENV var `DB_HOST` becomes the ENV var `MYSQL_HOST`
-* The ENV var `DB_PORT` becomes static `3306`
-* The ENV var `DB_DATABASE` becomes the ENV var `MYSQL_DATABASE`
-* The ENV var `DB_USERNAME` becomes the ENV var `MYSQL_USER`
-* The ENV var `DB_PASSWORD` becomes the ENV var `MYSQL_PASSWORD`
-
-To make sure you still can use your Laravel installation in your local environment, you can "double wrap" the ENV var access like so:
-
-```php
-<?php
-return [
-    // keep above
-    'connections'   => [
-        // keep above
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('MYSQL_HOST', env('DB_HOST', 'localhost')),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('MYSQL_DATABASE', env('DB_DATABASE', 'forge')),
-            'username' => env('MYSQL_USER', env('DB_USERNAME', 'forge')),
-            'password' => env('MYSQL_PASSWORD', env('DB_PASSWORD', '')),
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
-            'engine' => null,
-        ],
-        // keep below
-    ],
-    // keep below
-];
-```
+If you have not chosen the Laravel, then please make sure to [set the ENV vars as described above](#toc-env-vars).
 
 
 ### Database migration
