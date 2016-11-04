@@ -26,9 +26,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created a New App and chose Laravel in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine.
-
-If you haven't choosen Laravel stack, please set the following:
+We assume you've already created a New App and chose Laravel in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine. If you haven't chosen Laravel stack when creating the App in the Dashboard at first, please set the following:
 
 ### Root path
 
@@ -52,7 +50,7 @@ APP_KEY=ClickToGenerate
 
 ## Quick start
 
-Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-advanced-setup-and-migration).
+Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-advanced-setup-and-migration). Execute the following in your terminal:
 
 ```bash
 # 1. Use Composer to create a local Laravel project named like your App
@@ -91,9 +89,7 @@ $ git push -u fortrabbit master
 
 ### Setup Git
 
-If you used the above Quick start guide, Git is already setup and you can safely skip this topic.
-
-Unless your local Laravel installation is already under Git version control, you need to enable it now:
+If you used the above Quick start guide, Git is already setup and you can safely skip this topic. Unless your local Laravel installation is already under Git version control, you need to enable it now:
 
 ```bash
 # Change to your local directory, where you Laravel is
