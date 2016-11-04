@@ -138,7 +138,7 @@ Both levels work side by side and can be combined. Also check out our [fancy exp
 
 Give someone code access — quickly. Just invite your coworker/colleague to a single App. 
 
-### App collabortors permissions
+### App collaborators permissions
 
 This is what App collaborators can do:
 
@@ -243,9 +243,7 @@ Company collaboration is a paid feature, see our [fancy marketing page](https://
 
 Collaboration plans — like [professional support plans](https://www.fortrabbit.com/collaboration) — are optional and mapped to a Company. Like any other resource with fortrabbit, they are billed on a precise daily settlement. 
 
-To book a Company collaboration plan: In the Dashboard > navigate to your Account > Companies > {{ Your Company }} > and there to "Company collaboration", this will show you a screen to book a plan.
-
-This way you can also upgrade and [downgrade](#toc-downgrading-a-company-level-plan) the Company collaboration plan.
+To book a Company collaboration plan: In the Dashboard > navigate to your Account > Companies > {{ Your Company }} > and there to "Company collaboration", this will show you a screen to book a plan. This way you can also upgrade and [downgrade](#toc-downgrading-a-company-level-plan) the Company collaboration plan.
 
 
 ### Roles
@@ -261,7 +259,7 @@ The Owner role can NOT be modified by someone else, multiple Owners per Company 
 * delete, create, change Billing Contacts for the Company
 * manage all roles (but other Owners) of the Company
 * invite new Users for any role to the Company
-* leave the Company (if other owners are present)
+* leave the Company (if other Owners are present)
 
 Each Company must have at least one Owner.
 
@@ -269,10 +267,10 @@ Each Company must have at least one Owner.
 
 The Admin role can be modified by Owners. Accounts with this role within a Company can:
 
-* create, delete, configure & scale all Apps of the Company;
-* code access to all Apps of the Company;
-* invite new Admins or Developers to the Company;
-* leave the Company.
+* create, delete, configure & scale all Apps of the Company
+* code access to all Apps of the Company
+* invite new Admins or Collaborators to the Company
+* leave the Company
 
 ### Collaborator
 
@@ -281,7 +279,7 @@ The Collaborator role can be modified by Owners and Admins. It's the same as wit
 
 ### Downgrading a Company level plan
 
-To disable Company collaboration, visit the Company collaboration booking page (see [above](#toc-booking-a-company collaboration-plan)) again and disable it. This will have the following consequences: 
+To disable Company collaboration, visit the Company collaboration booking page (see [above](#toc-booking-a-company-collaboration-plan)) again and disable it. This will have the following consequences: 
 
 * All Owners except the one who has created the Company or the one who has been the longest time in the Company will immediatly loose access
 * All Admins will immdediatly loose accees
@@ -411,7 +409,6 @@ Please mind that only a higher role can make a lower role leave:
 Please mind that the person who has left still might hold local code copies and have other senstive data. We advice to reset service passwords. Please see the [security article](security#password-reset) for more.
 
 <!-- TODO: make link to security section above work  -->
-
 
 
 
