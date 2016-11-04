@@ -222,14 +222,28 @@ Just like in real live the owners have full access, full control, full responsab
 * Multi-cient capable workflows
 * Agency and startup style collaboration
 
+### Creating a Company
+
+You can create as many Comapanies you want — free of charge. In the the Dashboard > Your Account > Companies > "Create a Company" button.
+
+In the following steps you will create a Company with a first Billing Contact. Each Company needs at least one Owner, you are the one at first.
+
+* [dashboard.fortrabbit.com//account/company/new](https://dashboard.fortrabbit.com//account/company/new) < direct link
+
+
+### Deleting a Company
+
+As an Owner you can also decide to delete a Company. This is a huge step, as all Apps owned by the Company will be deleted and all the team will loose access. To do so: In the Dashboard > Your Account > Companies > {{ Your Company }} > Hit the "Delete Company" button and follow the instructions.
+
+
 
 ### Booking a Company collaboration plan
 
-Company collaboration is a paid feature, see our [fancy marketing page](https://www.fortrabbit.com/collaboration) for features, plans and prices.
+Company collaboration is a paid feature, see our [fancy marketing page](https://www.fortrabbit.com/collaboration) for plans and prices.
 
-Collaboration plans — like [professional support plans](https://www.fortrabbit.com/collaboration) — are optional and mapped to a Company. Like any other resource with fortrabbit, they are billed with a precise daily settlement. 
+Collaboration plans — like [professional support plans](https://www.fortrabbit.com/collaboration) — are optional and mapped to a Company. Like any other resource with fortrabbit, they are billed on a precise daily settlement. 
 
-To book a Company collaboration plan: In the Dashboard > navigate to your Account > to your Company > and there to "Company collaboration", this will show you a screen to book a plan.
+To book a Company collaboration plan: In the Dashboard > navigate to your Account > Companies > {{ Your Company }} > and there to "Company collaboration", this will show you a screen to book a plan.
 
 This way you can also upgrade and [downgrade](#toc-downgrading-a-company-level-plan) the Company collaboration plan.
 
@@ -293,6 +307,14 @@ Sometimes you have different billing preferences within one Company. That's what
 
 Each App (expect trials) has to be associated with a Billing Contact. Each Billing Contact has its own invoice archive. Please also see the [billing FAQ](/billing#toc-faq).
 
+### Creating a Billing Contact
+
+You can create any number of Billing Contact you want free of charge: In the Dashboard > Your Account > Companies > {{ Your Company }} > "New Billing Contact" button
+
+### Deleting a Billing Contact
+
+Sorry, it is not possible to delete a Billing Contact. You can of course delete or move all Apps away from the Billing Contact so that it get's intactive and no more bills willl be sent to it. But as the Billing Contact also contains the invoice archive you should always access to that, it's not a good idea to delete the Billing Contact.
+
 
 ## App alerts
 
@@ -313,47 +335,85 @@ You will see those perfomance metrics with the App overview in the Dashboard. Wh
 
 The technical contact(s) will get an e-mail, once a metric is about to exceed or already exceeded it's limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
 
-
-
+<!-- TODO: resources, App overwrites … -->
 
 
 
 
 ## Advanced collaboration usage
 
+Still reading? Cool go on to dive even deeper.
+
 ### Working with the same person in different Companies
 
 When you have multiple Companies and you want to collaborate with same person across them: Invite them to each Company. The same person then will have access to all Companies under one Account.
 
+### Moving an App from one Billing Contact to another
+
+In case you want the App to be billed from another credit card or bank account but still want to keep the team of the App the same: You simply change the Billing Contact of the App. You first need to have at least two Billing Contacts with your Company. 
+
+<!-- TODO: link on how to create a Billing Contact above/below/billing —— alternative inline verison: In the Dashboard > Your Account > Companies > {{ Company }} > New Billing Contact. This will open a multi-step form to create a Billing Contact. -->
+
+To change the Billing Contact of an App:
+
+2. Go to the App in the Dashboard, click the "Change ownership" button
+3. This will open a form, where you choose a different Billing Contact
+
+This action can only be done by an Owner of a Company. The App will then be billed on the old Billing Contact until that day and from the next day on from the new Billing Contact.
+
 
 ### Moving an App from one Company to another
 
-<!-- -->
+In some cases you might want to move the App to a different Company. This will change billing AND team. Of course you first need to be at least Admin in two Companies.
 
+To change the Billing Contact of an App:
 
+2. Go to the App in the Dashboard, click the "Change ownership" button
+3. This will open a form, where you choose a different Company (and Billing Contact)
 
-### Moving an App from one Billing Contact to another
-
-<!-- -->
+<!--  TODO: Confirm/test this: is it REALLY only possible to move an App to another Company, when I am only Collab in the other Compnay?  -->
 
 
 ### Moving a Company member to another Company
 
-<!-- -->
+Well, that's not what you do, actually. What you'll do is: invite the same person again to the another Company. The Account will then be able to see and access Apps from both Companies under one login. The Account or yourself revoke any access from the first Company.
 
 
 ### When people leave
 
-<!--  TODO: 
+The Account who leaves a Comoany will loose the ability to see and edit the App in the Dashboard and also will loose all personal code access to the App. There are two directions of leaving a Company: 
 
-* two ways to leave: self-initiated, by higher hierachy
-* remind of concept: a user leaves access is gone automatically
-* hint & link to service password reset for extra security
+#### Active: An Account leaves a Company
 
--->
+You might want to leave the Company when the project you have collaborated on has ended or you are actually leaving the Company in real live as well. Each Account can leave a Company at any time. To activly leave a Company:
+
+In the Dashboard > Your Account > Companies > {{ Company Name }} > "Leave Company" button
+
+There is one special case in which you can not leave a Company and that is when you are the last Owner. A Company must have at least one Owner.
 
 
-<!--  TODO: more advanced topics here -->
+#### Passive: An Owner or Admin terminates Company access from another Account
+
+Let's say a project phase has ended, so that an App Collaborator does not need have access any more. You as an Owner or Admin can now revoke access like so:
+
+<!-- TODO. write about how to revoke access  -->
+
+Please mind that only a higher role can make a lower role leave:
+
+* An Owner can make Admins and App collaboratores leave
+* An Admin can make App collaborators leave
+* An App Collaborator can make nobody leave
+* No one can make an Owner leave
+
+
+### A note on security when people leave
+
+Please mind that the person who has left still might hold local code copies and have other senstive data. We advice to reset service passwords. Please see the [security article](security#password-reset) for more.
+
+<!-- TODO: make link to security section above work  -->
+
+
+
 
 
 
