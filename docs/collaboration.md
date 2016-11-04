@@ -66,10 +66,26 @@ So instead of sending an e-mail with the FTP password, you are sending an invita
 
 ## Understanding Companies
 
-A Company within the fortrabbit platform represents your businesses. It has at one Billing Contact (see below) and one User (see above) associated with. It can, of course, own multiple Apps. Please also see the [billing FAQ](/billing#toc-faq).
+A Company within the fortrabbit platform represents your business. When your business is very small you won't even notice the difference between your Account and your Company. So when you have one App and you are working solely on that or with an App collabartor your Account and the Company are nearly the same. 
+
+But when your business get's bigger you'll be happy to learn that a Company on fortrabbit can do much more for you. Manage the team 
+
+### Team features
+
+Within your Company you can manage your team — invite and remove collaborators, change the role of Company members and add or remove Apps from App collaborators.
 
 
-## Levels of collaboration
+### Billing features
+
+A Company within fortrabbit also is a container to manage billing aspects. Within one Company you can distribute the Apps across any number of Billing Contacts (see [below](#toc-billing-contact)). This enables you to separate the billing of Apps while keeping the same team.
+
+
+### Working with multiple Companies
+
+Any-to-many relation: Just like in real life, you can create or join any number of Companies with your Account. So one Account can own multiple Companies while also be envolved in other Companies in different other roles. This way you can collaborate with different teams.
+
+
+## Levels of team collaboration
 
 ```
 ┌────────────────────────────────────────────────────────┐                               
@@ -189,9 +205,13 @@ App collaboration may or may not be available for your App:
 
 
 
+
+
+
+
 ## Company level collaboration
 
-Life is complicated and professional life even more so. [Above](#toc-app-collaboration) we have seen how App collaboration helps to collaborate on per-App-basis. Collaboration on company level goes a step further. 
+Life is complicated and professional life even more so. [Above](#toc-app-collaboration) we have seen how App collaboration helps to collaborate on per-App-basis. Collaboration on Company level goes a step further. 
 
 Just like in real live the owners have full access, full control, full responsability and need to take care about the financials. While the admins have all the fun and can act on behalf of the Company. 
 
@@ -200,14 +220,23 @@ Just like in real live the owners have full access, full control, full responsab
 * Map real world business relationships
 * Project based workflows with delegation
 * Multi-cient capable workflows
+* Agency and startup style collaboration
 
 
+### Booking a Company collaboration plan
 
+Company collaboration is a paid feature, see our [fancy marketing page](https://www.fortrabbit.com/collaboration) for features, plans and prices.
+
+Collaboration plans — like [professional support plans](https://www.fortrabbit.com/collaboration) — are optional and mapped to a Company. Like any other resource with fortrabbit, they are billed with a precise daily settlement. 
+
+To book a Company collaboration plan: In the Dashboard > navigate to your Account > to your Company > and there to "Company collaboration", this will show you a screen to book a plan.
+
+This way you can also upgrade and [downgrade](#toc-downgrading-a-company-level-plan) the Company collaboration plan.
 
 
 ### Roles
 
-Each Company can have multiple Accounts associated with it:
+A unique selling point with Company collaboration are role based permissions. Delegation is the key. Only with Company collaboration members with the according roles will get automatic access to newly created Apps and members with according rights can create Apps on behalf of the Company. Each Company can have multiple Accounts associated with it:
 
 #### Owner
 
@@ -220,6 +249,8 @@ The Owner role can NOT be modified by someone else, multiple Owners per Company 
 * invite new Users for any role to the Company
 * leave the Company (if other owners are present)
 
+Each Company must have at least one Owner.
+
 #### Admin
 
 The Admin role can be modified by Owners. Accounts with this role within a Company can:
@@ -231,52 +262,85 @@ The Admin role can be modified by Owners. Accounts with this role within a Compa
 
 ### Collaborator
 
-The Collaborator role can be modified by Owners and Admins. It's the same as with App collaboration and has the same permissions (see [above](#toc-app-collabortors-permissions)).
-
-When a Company collaboration plan is booked, all 
-
-
-### Booking a Company collaboration plan
-
-<!-- TODO -->
+The Collaborator role can be modified by Owners and Admins. It's the same as with App collaboration and has the same permissions (see [above](#toc-app-collabortors-permissions)). But when a Company collaboration plan is booked, all Universal stack Apps have unlimited App collaborators.
 
 
 ### Downgrading a Company level plan
 
-<!-- TODO -->
+To disable Company collaboration, visit the Company collaboration booking page (see [above](#toc-booking-a-company collaboration-plan)) again and disable it. This will have the following consequences: 
+
+* All Owners except the one who has created the Company or the one who has been the longest time in the Company will immediatly loose access
+* All Admins will immdediatly loose accees
+* All App collaborators that are not part of the included App collaboratoes in the standard App plans will loose access. The order of loosing access here again is by join date, so when an App includes three App collaborators by App plan, and four App collaborators are part of the App, the App collaborator who has joined last will loose access.
+
 
 
 ### Company collaboratorion in the Dashboard
 
-<!--  TODO: steps to invite and edit roles are the same as decribed above -->
+The steps to invite a Company collaborator are the same as described [above](#toc-inviting-an-app-collaborator). The difference now is: you can also choose a role.
 
 
 
 ## Billing Contact
 
-<!-- TODO: more details  -->
+<!-- TODO: check with billing article: how much infos should be displayed here? -->
 
 Sometimes you have different billing preferences within one Company. That's what Billing Contacts are for. Billing Contacts are managed by the Company Owners, they consist of:
 
-* A payment method
-* A billing address
-* A billing e-mail address
+* A payment method < credit card or SEPA direct debit
+* A billing address < written on the invoice
+* A billing e-mail address < where the invoices should be send to
 
 Each App (expect trials) has to be associated with a Billing Contact. Each Billing Contact has its own invoice archive. Please also see the [billing FAQ](/billing#toc-faq).
 
 
-
 ## App alerts
 
-<!-- TODO -->
+Each Company can has one or many technical contacts which will be used for automatic alerting when App resources are about to exceed and in special cases like where we to interact manually need to contact you personally quickly — for instance when we detect abnormal patterns.
+
+
+### Setting a technical contact
+
+In the Dashboard under your Account > Companies > {{ Company }} > App alerts you can set one or more contacts. This can be any Account associated with the Company or any e-mail address you'll like.
+
+### Automatic resource consumption alerts
+
+Each App with fortrabbit has limited resources, most of them are scalable or extendable. We advice to start small and only scale when needed. Some resources scale by usage, when your App has users who are uploading images, the web space or the Object Storage space will get fuller and fuller.
+
+You will see those perfomance metrics with the App overview in the Dashboard. When a resource is about to exceed, it will be shown in a yellow color to alert you. But of course nobody is monitoiring it's Apps in the Dashboard all the time. That's where the App alert e-mails come in.
+
+<!--  TODO: decide what about Play App plan, which originally does not include Performance Metrics at all - does that really makes sense? If really yes, describe here that not all Apps include Performance metrics. -->
+
+The technical contact(s) will get an e-mail, once a metric is about to exceed or already exceeded it's limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
 
 
 
-## Advanced usage
+
+
+
+
+## Advanced collaboration usage
 
 ### Working with the same person in different Companies
 
 When you have multiple Companies and you want to collaborate with same person across them: Invite them to each Company. The same person then will have access to all Companies under one Account.
+
+
+### Moving an App from one Company to another
+
+<!-- -->
+
+
+
+### Moving an App from one Billing Contact to another
+
+<!-- -->
+
+
+### Moving a Company member to another Company
+
+<!-- -->
+
 
 ### When people leave
 
