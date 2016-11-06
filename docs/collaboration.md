@@ -37,16 +37,19 @@ TODO: this article is toooo long. It is not ment to be read from top to down, mo
 -->
 
 
+## The pitch
+
 **Usual business scenario**: Most of our clients are running three and more Apps on fortrabbit. And not only that: They want this App to be paid from that card, and the other App from that other card — while still be able to share access with coworkers.
 
-**The natural reflex is**: to just could set up a new Account for each App and share the login to the Dashboard across the team. But the more Apps you have, the more of a mess you will end up with: no bird's eye view about what is going on, you need to logout and login again to switch to another App, manage all kind of stuff twice, send passwords by e-mail, reset passwords when someone leaves …
+**The natural reflex**: is to just could set up a new Account for each App and share the login to the Dashboard across the team. But the more Apps you have, the more of a mess you will end up with: no bird's eye view about what is going on, you need to logout and login again to switch to another App, manage all kind of stuff twice, send passwords by e-mail, reset passwords when someone leaves …
 
-**What you really want is**: Easily add new members to all of your team’s projects. The solution is a multi client model that maps to your real world in nearly any context: freelancer, startup, digital agency.
+**What you really want**: Easily add new members to all of your team’s projects. The solution is a multi client model that maps to your real world in nearly any context: freelancer, startup, digital agency.
+
 
 
 ## Understanding the Account
 
-When you sign up with fortrabbit you'll be asked for your first and your last name. We expect that an Account represents a human being, not a Company. An Account is a person who can login to the Dashboard, manage Apps and Companies. An Account can own or be part of multiple Companies. That is useful for example when you use fortrabbit privately for your week-end projects and for business. Or if you as a freelancer collaborate with various digital agencies.
+When signing up with fortrabbit you'll be asked for your first and your last name. We expect that an Account represents a human being, not a Company. An Account is a person who can login to the Dashboard, manage Apps and Companies. An Account can own or be part of multiple Companies. That is useful for example when you use fortrabbit privately for your week-end projects and for business. Or if you as a freelancer collaborate with various digital agencies.
 
 Don't share your fortrabbit Account, it's your "private" one. Here you'll deposit YOUR own [public SSH keys](/ssh-keys), that's your very own access to the [Dashboard](/dashboard).
 
@@ -71,62 +74,41 @@ In classical hosting you have one set of server access credentials for SFTP/SSH 
 So instead of sending an e-mail with the FTP password, you are sending an invitation to create a free Account and to get instant personal access on all Apps. This is more secure, more transparent and easier to handle. Also see the [access methods article](/access-methods) to learn about the different ways (SSH key or password) to access code.
 
 
-## Understanding Companies
-
-A Company within the fortrabbit platform represents your business. When your business is very small you won't even notice the difference between your Account and your Company. So when you have one App and you are working solely on that or with an App collabartor your Account and the Company are nearly the same. 
-
-But when your business get's bigger you'll be happy to learn that a Company on fortrabbit can do much more for you. Manage the team 
-
-### Team features
-
-Within your Company you can manage your team — invite and remove collaborators, change the role of Company members and add or remove Apps from App collaborators.
-
-
-### Billing features
-
-A Company within fortrabbit also is a container to manage billing aspects. Within one Company you can distribute the Apps across any number of Billing Contacts (see [below](#toc-billing-contact)). This enables you to separate the billing of Apps while keeping the same team.
-
-
-### Working with multiple Companies
-
-Any-to-many relation: Just like in real life, you can create or join any number of Companies with your Account. So one Account can own multiple Companies while also be envolved in other Companies in different other roles. This way you can collaborate with different teams.
-
-
 ## Levels of team collaboration
 
 ```
-┌────────────────────────────────────────────────────────┐                               
-│                                                        │                               
-│                                                        │  ****                         
-│                                                        │     *                         
-│                        Company                         │     *                         
-│                                                        │     *                         
-│                                                        │     *  Level 2
-│                                                        │     *  Advanaced              
-└─────▲─────────┬─────────────┬────────────┬────────▲────┘     *  Company level          
-      │                                             │          *  team cooperation       
-    Owner       │             │            │      Admin        *  where Owners & Admins  
-      │                                             │          *  delegate on behalf     
-┌─────┴──────┐  │             │            │ ┌──────┴─────┐    *  of the Company         
-│            │                               │            │    *                         
-│  Account1  ├──┼────────┐    │    ┌───────┼─┤  Account3  │    *                         
-│            │           │         │         │            │    *                         
-└─────┬──────┘  │        │    │    │       │ └──────┬─────┘    *                         
-      │                  │         │                │          *                         
-      │         │        │    │    │       │        │          *                         
-      │                  │         │                │          *                         
-┌─────▼─────────▼─┐  ┌───▼────▼────▼───┐ ┌─▼────────▼──────┐   *                         
-│                 │  │                 │ │                 │ ***                         
+┌────────────────────────────────────────────────────────┐    •                          
+│                                                        │    •                          
+│                                                        │    •                         
+│                                                        │    •                         
+│                        Company                         │    •                         
+│                                                        │    •                         
+│                                                        │    •  Level 2
+│                                                        │    •  Advanaced              
+└─────▲─────────┬─────────────┬────────────┬────────▲────┘    •  Company level          
+      │                                             │         •  team cooperation       
+    Owner       │             │            │      Admin       •  where Owners & Admins  
+      │                                             │         •  delegate on behalf     
+┌─────┴──────┐  │             │            │ ┌──────┴─────┐   •  of the Company         
+│            │                               │            │   •                         
+│  Account1  ├──┼────────┐    │    ┌───────┼─┤  Account3  │   •                         
+│            │           │         │         │            │   •                         
+└─────┬──────┘  │        │    │    │       │ └──────┬─────┘   •                         
+      │                  │         │                │         •                         
+      │         │        │    │    │       │        │         •                         
+      │                  │         │                │         •                         
+┌─────▼─────────▼─┐  ┌───▼────▼────▼───┐ ┌─▼────────▼──────┐  •                         
+│                 │  │                 │ │                 │  •                         
 │      App1       │  │      App1       │ │      App1       │                             
-│                 │  │                 │ │                 │ ***  
-└─────────────────┘  └────────▲────────┘ └─────────────────┘   *  Level 1                 
-                              │                                *  Simple              
-                              │                                *  App level          
-                       ┌──────┴─────┐                          *  collaboration       
-                       │            │                          *  where an Account        
-                       │  Account2  │                          *  has access to a
-                       │            │                          *  single App
-                       └────────────┘                       ****                         
+│                 │  │                 │ │                 │  °  
+└─────────────────┘  └────────▲────────┘ └─────────────────┘  °  Level 1                 
+                              │                               °  Simple              
+                              │                               °  App level          
+                       ┌──────┴─────┐                         °  collaboration       
+                       │            │                         °  where an Account        
+                       │  Account2  │                         °  has access to a
+                       │            │                         °  single App
+                       └────────────┘                         °                         
 ```
 
 There are two levels of teamwork:
@@ -205,6 +187,7 @@ You can of course also give the same Account collaborating on App level access t
 
 App collaboration may or may not be available for your App:
 
+* no App collaboration during trial
 * limited App collaborators for different Universal stack Apps, see [specs page](https://www.fortrabbit.com/specs).
 * unlimited App collaborators for all Professional stack Apps
 * unlimited App collaborators for all Apps when a Company level plan is booked
@@ -213,14 +196,14 @@ App collaboration may or may not be available for your App:
 
 
 
-
-
-
 ## Company level collaboration
 
-Life is complicated and professional life even more so. [Above](#toc-app-collaboration) we have seen how App collaboration helps to collaborate on per-App-basis. Collaboration on Company level goes a step further. 
+Life is complicated and professional life even more so. [Above](#toc-app-collaboration) we have seen how App collaboration helps to collaborate on per-App-basis. Collaboration on Company level goes a step further.
 
-Just like in real live the owners have full access, full control, full responsability and need to take care about the financials. While the admins have all the fun and can act on behalf of the Company. 
+A Company within the fortrabbit platform represents your business. When your business is very small you won't even notice the difference between your Account and your Company. So when you have one App and you are working solely on that or with an App collabartor your Account and the Company are nearly the same. 
+
+Within your Company you can manage your team — invite and remove collaborators, change the role of Company members and add or remove Apps from App collaborators. Just like in real live the owners have full access, full control, full responsability and need to take care about the financials. While the Admins have all the fun and can act on behalf of the Company. 
+
 
 ### Use cases
 
@@ -228,6 +211,9 @@ Just like in real live the owners have full access, full control, full responsab
 * Project based workflows with delegation
 * Multi-cient capable workflows
 * Agency and startup style collaboration
+
+
+
 
 ### Creating a Company
 
@@ -284,7 +270,7 @@ The Admin role can be modified by Owners. Accounts with this role within a Compa
 The Collaborator role can be modified by Owners and Admins. It's the same as with App collaboration and has the same permissions (see [above](#toc-app-collabortors-permissions)). But when a Company collaboration plan is booked, all Universal stack Apps have unlimited App collaborators.
 
 
-### Downgrading a Company level plan
+### Downgrading a Company collaboration plan
 
 To disable Company collaboration, visit the Company collaboration booking page (see [above](#toc-booking-a-company-collaboration-plan)) again and disable it. This will have the following consequences: 
 
@@ -296,13 +282,15 @@ To disable Company collaboration, visit the Company collaboration booking page (
 
 ### Company collaboratorion in the Dashboard
 
-The steps to invite a Company collaborator are the same as described [above](#toc-inviting-an-app-collaborator). The difference now is: you can also choose a role.
+The steps to invite a Company collaborator are the same as described [above](#toc-inviting-an-app-collaborator): Invite people from the Dashboard, using the "Invite someone" that can be found on the Dashboard home page, on the Company page and on the Apps overview. With Company collaboration you can now also set rules.
 
 
 
 ## Billing Contact
 
 <!-- TODO: check with billing article: how much infos should be displayed here? -->
+
+A Company within fortrabbit also is a container to manage billing aspects. Within one Company you can distribute the Apps across any number of Billing Contacts (see [below](#toc-billing-contact)). This enables you to separate the billing of Apps while keeping the same team.
 
 Sometimes you have different billing preferences within one Company. That's what Billing Contacts are for. Billing Contacts are managed by the Company Owners, they consist of:
 
@@ -319,6 +307,9 @@ You can create any number of Billing Contact you want free of charge: In the Das
 ### Deleting a Billing Contact
 
 Sorry, it is not possible to delete a Billing Contact. You can of course delete or move all Apps away from the Billing Contact so that it get's intactive and no more bills willl be sent to it. But as the Billing Contact also contains the invoice archive you should always access to that, it's not a good idea to delete the Billing Contact.
+
+
+
 
 
 ## App alerts
@@ -348,6 +339,12 @@ The technical contact(s) will get an e-mail, once a metric is about to exceed or
 ## Advanced collaboration usage
 
 Still reading? Cool go on to dive even deeper.
+
+### Working with multiple Companies
+
+Just like in real life, you can create or join any number of Companies with your Account. So one Account can own multiple Companies while also be envolved in other Companies in different other roles. This way you can collaborate with different teams.
+
+
 
 ### Working with the same person in different Companies
 
