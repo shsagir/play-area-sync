@@ -32,7 +32,7 @@ keywords:
 
 <!--
 
-TODO: this article is toooo long. It is not ment to be read from top to down, more like a reference, still it might be possible to break it up in various other articles — a dedicated Company Article for example
+TODO: this article is veryyyyyyy long. It is not ment to be read from top to down, more like a reference, still it might be possible to break it up in various other articles — a dedicated Company Article for example …
 
 -->
 
@@ -316,22 +316,32 @@ Sorry, it is not possible to delete a Billing Contact. You can of course delete 
 
 Each Company can has one or many technical contacts which will be used for automatic alerting when App resources are about to exceed and in special cases like where we to interact manually need to contact you personally quickly — for instance when we detect abnormal patterns.
 
+<!--
+
+TODO: uncomment and extend when Technical Contact feature launches
 
 ### Setting a technical contact
 
-In the Dashboard under your Account > Companies > {{ Company }} > App alerts you can set one or more contacts. This can be any Account associated with the Company or any e-mail address you'll like.
+When you have a Company collaboration booked, all Owners and Admins of the Company can change the technical contact.  
+
+In the Dashboard under "Your Account" > "Companies" > {{ Company }} > "Technical contact" you can set one or more contacts. This can be any Account associated with the Company or any e-mail address you'll like.
+
+You can define the services you want to receive alerts for. By default all services are enabled. Further on you can tune the settings to include or exclude certain Apps to trigger those alerts. You can also overwrite those settings on App level.
+
+Individual Accounts can opt-out of receiving those alerts by deselecting this from their Accounts notification settngs.
+
+-->
 
 ### Automatic resource consumption alerts
 
-Each App with fortrabbit has limited resources, most of them are scalable or extendable. We advice to start small and only scale when needed. Some resources scale by usage, when your App has users who are uploading images, the web space or the Object Storage space will get fuller and fuller.
+Each App with fortrabbit has limited resources, most of them are scalable or extendible. We advice to start small and only scale when needed. Some resources scale by usage. For example, when your App has users who are uploading images, the web space or the Object Storage space will get fuller and fuller by time.
 
-You will see those perfomance metrics with the App overview in the Dashboard. When a resource is about to exceed, it will be shown in a yellow color to alert you. But of course nobody is monitoiring it's Apps in the Dashboard all the time. That's where the App alert e-mails come in.
+All collaborators on the App will see those usage metrics with the App overview in the Dashboard. When a resource is about to exceed, it will be shown in a yellow color to alert you. In addition App alert e-mails will be send once a resource limit is about to exceed.
 
-<!--  TODO: decide what about Play App plan, which originally does not include Performance Metrics at all - does that really makes sense? If really yes, describe here that not all Apps include Performance metrics. -->
 
-The technical contact(s) will get an e-mail, once a metric is about to exceed or already exceeded it's limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
+<!--  TODO: decide what about Play App plan, which originally does not include metrics at all - see tikcet -->
 
-<!-- TODO: resources, App overwrites … -->
+All owners of the App will get an e-mail, once a usage metric is about to exceed or already exceeded it's limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
 
 
 
@@ -345,7 +355,6 @@ Still reading? Cool go on to dive even deeper.
 Just like in real life, you can create or join any number of Companies with your Account. So one Account can own multiple Companies while also be envolved in other Companies in different other roles. This way you can collaborate with different teams.
 
 
-
 ### Working with the same person in different Companies
 
 When you have multiple Companies and you want to collaborate with same person across them: Invite them to each Company. The same person then will have access to all Companies under one Account.
@@ -354,12 +363,10 @@ When you have multiple Companies and you want to collaborate with same person ac
 
 In case you want the App to be billed from another credit card or bank account but still want to keep the team of the App the same: You simply change the Billing Contact of the App. You first need to have at least two Billing Contacts with your Company. 
 
-<!-- TODO: link on how to create a Billing Contact above/below/billing —— alternative inline verison: In the Dashboard > Your Account > Companies > {{ Company }} > New Billing Contact. This will open a multi-step form to create a Billing Contact. -->
+#### Changing the Billing Contact of an App
 
-To change the Billing Contact of an App:
-
-2. Go to the App in the Dashboard, click the "Change ownership" button
-3. This will open a form, where you choose a different Billing Contact
+1. Go to the App in the Dashboard, click the "Change ownership" button
+2. This will open a form, where you choose a different Billing Contact
 
 This action can only be done by an Owner of a Company. The App will then be billed on the old Billing Contact until that day and from the next day on from the new Billing Contact.
 
@@ -368,10 +375,12 @@ This action can only be done by an Owner of a Company. The App will then be bill
 
 In some cases you might want to move the App to a different Company. This will change billing AND team. Of course you first need to be at least Admin in two Companies.
 
-To change the Billing Contact of an App:
+#### Changing the Company of an App
 
 2. Go to the App in the Dashboard, click the "Change ownership" button
 3. This will open a form, where you choose a different Company (and Billing Contact)
+
+This action can only be done by Owners of the App.
 
 <!--  TODO: Confirm/test this: is it REALLY only possible to move an App to another Company, when I am only Collab in the other Compnay?  -->
 
@@ -381,34 +390,73 @@ To change the Billing Contact of an App:
 Well, that's not what you do, actually. What you'll do is: invite the same person again to the another Company. The Account will then be able to see and access Apps from both Companies under one login. The Account or yourself revoke any access from the first Company.
 
 
+
+
+### Promoting and demoting people
+
+Just like in real life the roles of Accounts inside a Company can change like so:
+
+* Accounts can not downgrade or upgrade themselves to another role
+* Admins can promote App collaborators to become Admins
+* Owners can promote App collaboratios to become Admins
+* Owners can promote App collaboratios or Admins to become Owners
+* Owners can demote Admins to become App collaboratoes
+
+Role changes have immidiate effect, they do not require another confirmation by the affected Account.
+
+<!-- TODO: maybe confirmation for promoting? when a BAD owner want's to leave he just promotes an empty DEV and is out  -->
+
+#### Change the role of a collaborator
+
+When Company collaboration is active and you are either Owner or Admin, you can promote and demote other people like so: Visit the Company the Account is part of, click on the role of Account. This will open a form in which you can change the role of the Account.
+
+#### Job change confirmation
+
+
+
+
+
+
+
 ### When people leave
 
 The Account who leaves a Comoany will loose the ability to see and edit the App in the Dashboard and also will loose all personal code access to the App. There are two directions of leaving a Company: 
 
 #### Active: An Account leaves a Company
 
-You might want to leave the Company when the project you have collaborated on has ended or you are actually leaving the Company in real live as well. Each Account can leave a Company at any time. To activly leave a Company:
+You might want to leave the Company when the project you have collaborated on has ended or you are actually leaving the Company in real live as well. Each Account can leave a Company at any time.
 
-In the Dashboard > Your Account > Companies > {{ Company Name }} > "Leave Company" button
+##### Activly leave a Company
+
+In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > "Leave Company" button
 
 There is one special case in which you can not leave a Company and that is when you are the last Owner. A Company must have at least one Owner.
 
 
 #### Passive: An Owner or Admin terminates Company access from another Account
 
-Let's say a project phase has ended, so that an App Collaborator does not need have access any more. You as an Owner or Admin can now revoke access like so:
-
-<!-- TODO. write about how to revoke access  -->
-
-Please mind that only a higher role can make a lower role leave:
+Let's say a project phase has ended, so that an App Collaborator does not need have access any more. Who can can fire whom:
 
 * An Owner can make Admins and App collaboratores leave
 * An Admin can make App collaborators leave
 * An App Collaborator can make nobody leave
 * No one can make an Owner leave
 
+##### How to fire people
 
-### A note on security when people leave
+In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > Under Collaborators > Click the role of the Account you would like to fire. This will bring up a form where you can choose to completly revoke access.
+
+<!-- TOOD: recheck this when Dashboard is done  -->
+
+
+#### Confirmation on cancellations
+
+To make the process of leaving transparent, all involved parties will get a confirmation mail about the action. All Owners of the Company will be informed about someone leaving. The person who left or was left will also get a confirmation.
+
+<!-- TODO: be more specfic about demotion and promotion as well here, who will get a mail on promotion and demotion? -->
+
+
+#### A note on security when people leave
 
 Please mind that the person who has left still might hold local code copies and have other senstive data. We advice to reset service passwords. Please see the [security article](security#password-reset) for more.
 
