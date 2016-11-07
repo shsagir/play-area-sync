@@ -132,21 +132,9 @@ You can use SFTP to upload your code modifications simple enough and does not ne
 
 Instead of manually uploading code files changes one by one, you can also:
 
-<!-- TODO/TBD: This should be migrated into a dedicated article? Exactly the same for any non-Git workflow.. -->
-
 #### Syncing code with SFTP
 
-Most SFTP clients feature a file synchronization mode. You can choose your local folder and sync it to the remote folder on fortrabbit. All files will be compared and only newer ones will be uploaded. This works in the other direction as well, of course. Many modern editors or IDEs also feature synchronization tools or are extendible by plugins to that end.
-
-#### Syncing code with rsync
-
-The command line tool `rsync` grants a fast and reliable way to upload your code changes. As the name implies, `rsync` is made to synchronize (two) data sets. Following an example showcasing development on a custom plugin in the `wp-content/plugins` folder:
-
-```shell
-$ rsync -az --delete custom-plugin/ {{ssh-user}}@deploy.{{region}}.frbit.com:~/wp-content/plugins/custom-plugin/
-```
-
-The above command must be executed from within the `plugins` folder of your local WordPress installation. It assures that the remote folder `custom-plugin` contains exactly what your local folder of the same name contains. Mind that you can omit the `--delete` flag, which then makes sure no files in the remote folder will be deleted - even if they do not exist locally anymore.
+Read on in the [SSH/SFTP article](ssh-sftp-uni#toc-file-synchronization)
 
 #### Deploying WordPress with Git
 

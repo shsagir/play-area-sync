@@ -12,6 +12,7 @@ oldLink:       git-old
 keywords:
     - beginner
     - dashboard
+    - deployment
 
 ---
 
@@ -40,7 +41,7 @@ $ git add index.php
 $ git commit -am 'Intial commit'
 $ git push -u origin master
 ```
-after the deployment is done you can worship your work in the browser:  
+after the deployment is done you can worship your work in the browser:
 [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 Also see our specdifc install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
@@ -65,10 +66,10 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 
 You can also use a graphical interface like Tower, Sourctree, Gitbox - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an editor (PhpStorm …) to manage Git. You'll need these access credentials:
 
-**SSH clone URL**:  
+**SSH clone URL**:
 {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}
 
-**SSH password**:  
+**SSH password**:
 {{ssh-password}}
 
 
