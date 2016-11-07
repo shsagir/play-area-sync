@@ -327,6 +327,8 @@ Each App with fortrabbit has limited resources, most of them are scalable or ext
 
 You will see those perfomance metrics with the App overview in the Dashboard. When a resource is about to exceed, it will be shown in a yellow color to alert you. But of course nobody is monitoiring it's Apps in the Dashboard all the time. That's where the App alert e-mails come in.
 
+
+
 <!--  TODO: decide what about Play App plan, which originally does not include Performance Metrics at all - does that really makes sense? If really yes, describe here that not all Apps include Performance metrics. -->
 
 The technical contact(s) will get an e-mail, once a metric is about to exceed or already exceeded it's limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
