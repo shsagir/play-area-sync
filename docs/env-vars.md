@@ -124,6 +124,8 @@ ANOTHER_VAR=something
 Storing credentials (passwords, secrets, ..) in environment variables is not without risk. They can be exposed, due to programming errors or oversights. Please read an BLOG[in-depth discussion in our Blog](how-to-keep-a-secret). We offer a convenient solution for this problem with our [App secrets](secrets).
 
 
+<!--
+
 ### ENV var encryption
 
 If you prefer not to use [App secrets](secrets), but want to secure your ENV vars we recommend to store them encrypted and encoded in the Dashboard. You then decode and decrypt them later on in your App. Following a generic example:
@@ -162,3 +164,5 @@ $dbUser = secEnv("DB_USER");
 $dbPass = secEnv("DB_PASS");
 // ..
 ```
+
+-->
