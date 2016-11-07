@@ -18,11 +18,7 @@ keywords:
 
 ## Problem
 
-Your App needs confidential credentials to connect to other services (user-names, passwords, API keys or alike). Those can be on fortrabbit like the MySQL database access, or externally like an API key for a cloud storage.
-
-We advise to [not store secrets within your code base](//blog.fortrabbit.com/how-to-keep-a-secret#not-in-git), since it's controlled by Git - so version controlled. You [should not store them unencrypted in ENV vars](//blog.fortrabbit.com/how-to-keep-a-secret#not-in-an-env-var-either-) either.
-
-In addition: your App will run in at least two environments: locally and on fortrabbit. Any solution must address the problems resulting from multiple runtime environments.
+Your App needs confidential access details to connect to other services (user-names, passwords, API keys or alike). Those can be on fortrabbit like the MySQL database access, or externally like an API key for a queue or something. You are as paraniod [as we are](//blog.fortrabbit.com/how-to-keep-a-secret), regarding storing those details in ENV vars.
 
 ## Solution
 

@@ -15,7 +15,7 @@ keywords:
 ---
 
 
-»We take security very serious.« Isn't that what everybody is saying? It's our business to keep your business online. Our clients trust us with that. We know what we do and we are doing hosting for over ten years now. Make yourself a picture, have a look at our: [history](http://www.fortrabbit.com/about), [blog](http://blog.fortrabbit.com/), [tweets](https://twitter.com/fortrabbit), [past incidents](http://status.fortrabbit.com) or ask our customers directly. 
+»We take security very serious.« Isn't that what everybody is saying? It's our business to keep your business online. Our clients trust us with that. We know what we do and we are doing hosting for over ten years now. Make yourself a picture, have a look at our: [history](http://www.fortrabbit.com/about), [blog](http://blog.fortrabbit.com/), [tweets](https://twitter.com/fortrabbit), [past incidents](http://status.fortrabbit.com) or ask our customers directly.
 
 ## Our responsibilities
 
@@ -43,7 +43,7 @@ We use Wirecard — a PCI Level 1 compliant provider — for processing credit c
 
 ## Your responsibilities
 
-We are in it together! You are responsible for the code you write and even the one you are using. 
+We are in it together! You are responsible for the code you write and even the one you are using.
 
 ### Check your code
 
