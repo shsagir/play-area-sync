@@ -66,7 +66,9 @@ If you want to execute PHP scripts, including `artisan` and it's like, make sure
 ```bash
 # will work
 $ php artisan some:command
+$ php some-script.php
 
 # will _not_ work:
 $ ./artisan some:command
+$ ./some-script.php
 ```
