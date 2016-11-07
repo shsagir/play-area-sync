@@ -75,7 +75,7 @@ They will never overwrite existing, manually created ENV vars. This means: if yo
 
 Following a list of available dynamic ENV vars, which are available, assuming your App supports the service: <!-- TODO: We cannot say component here, cause Universal Apps don't have components .. idea? -->
 
-**MySQL**
+**MySQL** (All Universal Apps or Professional App Component)
 
 * `MYSQL_DATABASE`: Contains the App's database name
 * `MYSQL_HOST`: Contains the App's database hostname
@@ -83,7 +83,7 @@ Following a list of available dynamic ENV vars, which are available, assuming yo
 * `MYSQL_PORT`: Contains the App's database port
 * `MYSQL_USER`: Contains the App's database user
 
-**Object Storage**
+**Object Storage** (Professional App Component)
 
 * `OBJECT_STORAGE_BUCKET`: Contains the App's bucket name
 * `OBJECT_STORAGE_KEY`: Contains the App's bucket access key
@@ -91,8 +91,9 @@ Following a list of available dynamic ENV vars, which are available, assuming yo
 * `OBJECT_STORAGE_SECRET`: Contains the App's bucket access secret
 * `OBJECT_STORAGE_SERVER`: Contains the App's Object Storage API server
 
-**Memcache**
+**Memcache** (Professional App Component)
 
+* `MEMCACHE_COUNT`: Contains amount of available memcache hosts (Production plan: 2, otherwise: 1)
 * `MEMCACHE_HOST1`: Contains the first Memcache node hostname
 * `MEMCACHE_PORT1`: Contains the first Memcache node port
 * `MEMCACHE_HOST2`: Contains the second Memcache node hostname (if using a Production plan)
