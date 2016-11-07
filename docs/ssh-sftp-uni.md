@@ -72,3 +72,12 @@ $ php some-script.php
 $ ./artisan some:command
 $ ./some-script.php
 ```
+
+### Pre-installed CLIs
+
+We pre-installed various CLI tools for you:
+
+* [Composer](https://getcomposer.org/): eg `composer install`
+* [WP-CLI](http://wp-cli.org/): eg `wp theme ...`
+* [Drush](http://www.drush.org/en/master/): eg `drush topic`
+* [Drupal Console](https://www.drupal.org/project/console): eg `drupal check`
