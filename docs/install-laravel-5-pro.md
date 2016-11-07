@@ -143,7 +143,7 @@ return [
 ];
 ```
 
-This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit. 
+This example contains environment detection, so the App can run on your local machine with your local database, as well as with the one on fortrabbit.
 
 #### MySQL access from local
 

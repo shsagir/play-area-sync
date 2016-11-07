@@ -36,3 +36,12 @@ You can fine tune your deployment behavior and aspects of Composer in the deploy
 ### Use Private repositories in Composer
 
 You need to add the private repositories into your `composer.json` file? Read on [here](private-composer-repos).
+
+### Composer from SSH
+
+Universal Apps only: You can execute Composer from [SSH](ssh-sftp-uni). It is installed per default and all you need to do is execute it:
+
+```bash
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
+$ composer install
+```

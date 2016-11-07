@@ -62,19 +62,3 @@ An even better approach is set your `user/config/system.yaml` as restrictive as 
 debugger:
   enabled: true
 ```
-
-
-
-<!--
-
-## Tuning
-
-### Install theme
-
-TODO: recommend SSH + execute or admin interface - or not mention it?
-
-### Install plugin
-
-TODO: recommend SSH + execute or admin interface - or not mention it
-
--->

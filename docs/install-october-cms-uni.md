@@ -21,6 +21,8 @@ keywords:
 
 ---
 
+<!-- TODO: Cannot do, web installer still broken -->
+
 
 ## Get ready
 
@@ -31,7 +33,20 @@ We assume you've already created a New App with fortrabbit. You should also have
 In the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
-[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+[Change the root path for App URL of the App **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+</div>
+
+### Environment variables
+
+Go to the Dashboard and add the following [environment variables](/env-vars) to your App:
+
+```osterei32
+APP_ENV=prod
+APP_KEY=ClickToGenerate
+```
+
+<div markdown="1" data-user="known">
+[Change ENV vars of the App **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
 ## Install October CMS with SFTP
@@ -54,36 +69,6 @@ Now visit [{{app-name}}.frb.io/install.php](https://{{app-name}}.frb.io/install.
 * **Database Name**: `{{app-name}}`
 * **MySQL Login**: `{{app-name}}`
 * **MySQL Password**: `{{your-database-password}}`
-
-VVVVVVVVVVVVVV OBSOLETE? VVVVVVVVVVVVVVVVVVV
-
-
-### ENV var
-
-In the Dashboard: create this new environment variable:
-
-```
-APP_ENV=prod
-```
-
-<div markdown="1" data-user="known">
-[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
-</div>
-
-
-### App secrets
-
-In the Dashboard: add this [App secret](/secrets):
-
-```osterei32
-APP_KEY=32CharLongRandomString
-```
-
-<div markdown="1" data-user="known">
-[Go to App secrets vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/secrets)
-</div>
-
-
 
 
 

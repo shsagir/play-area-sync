@@ -73,7 +73,7 @@ Dynamic ENV vars become available if you have enabled *"Populate App Secrets in 
 
 They will never overwrite existing, manually created ENV vars. This means: if you manually create an ENV var, we guarantee that we won't replace it's value by a dynamically generated ENV var.
 
-Following a list of available dynamic ENV vars, which are available, assuming your App supports the service: <!-- TODO: We cannot say component here, cause Universal Apps don't have components .. idea? -->
+Following a list of available dynamic ENV vars: 
 
 **MySQL** (All Universal Apps or Professional App Component)
 

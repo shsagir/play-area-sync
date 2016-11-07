@@ -51,6 +51,8 @@ The actual name of your App, for example `/srv/app/{{app-name}}` and so on.
 
 The default web root (aka document root) of your App. Directory that forms the main directory tree visible from the web. You can change the [routing point](domains#toc-set-a-custom-root-path), to any folder below the `htdocs` directory. The [Git deployment](git) syncs to the `htdocs` folder as well.
 
+The `htdocs` folder is also your "login folder", i.e. the folder you are in when logging in via SSH/SFTP.
+
 ### tmp
 
 Temporary folder; limited to 2GB of storage. Files older than 15 days will be automatically purged. Typical use cases are the default PHP session file folder or a temp destination for file uploads via PHP (before `move_uploaded_file()` is called).

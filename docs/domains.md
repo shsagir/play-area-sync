@@ -185,8 +185,12 @@ Please keep an eye on HTTPS when forwarding. SSL will most likely not be enabled
 
 You might also do the forwarding programmtically within your App. The most common approach here is to work with `.htaccess` rules to redirect all requests to that other domain. You register each domain within the fortrabbit Dahboard and then catch all the requests in the App.
 
-<!-- TODO: insert example here -->
+Following an example, which always redirects to a domain `www.some-domain.tld`
 
+```
+RewriteCond %{HTTP_HOST} !^www\.some-domain\.tld [NC]
+RewriteRule (.*) https://www.some-domain.tld/$1 [R=301,L]
+```
 
 - - -
 

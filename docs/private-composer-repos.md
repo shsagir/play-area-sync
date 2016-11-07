@@ -19,17 +19,15 @@ keywords:
 
 ---
 
-<!-- TODO: recheck - is it up to date for Universal? -->
-
 Modern PHP App development utilizes [Composer](composer) as a dependency manager. There are many great open source packages [out there](http://packagist.org). But your company code is probably not intended to be released to public. That's when you use private Composer repositories — protected by SSH public key authentication.
 
-To use your private Composer repo you need to set up authentication so your fortrabbit App can access your external repo (probably hosted on Bitbucket, GitHub etc). For this you need a public and private SSH key-pair. Here is how you generate it for your App:
+To use your private Composer repo in [Git deployment](git-deployment) you need to set up authentication so your fortrabbit App can access your external repo (probably hosted on Bitbucket, GitHub etc). For this you need a public and private SSH key-pair. Here is how you generate it for your App:
 
 ```bash
 ssh {{ssh-user}}@deploy.{{region}}.frbit.com keygen
 # Generating new SSH key pair
 #   Done 447ms
-# 
+#
 # Your SSH public key:
 # ssh-rsa AAAAB3NzaC1yc2EAA...ixx47pDIa1xtMV4odTimp
 ```
