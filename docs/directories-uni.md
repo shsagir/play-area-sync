@@ -35,16 +35,19 @@ tmp               < 2GB temporaray files
 usr
 srv
   app
-    appname
+    {{app-name}}
       htdocs      < default root path
 ```
 
 <!-- TODO: Re-unite this article with "directories-pro" article -->
 
-When you login with SFTP or SSH to your App.
-The predefined set of folders for each App you need to know.
 
-### appname
+
+When you login with [SFTP](/sftp-uni) or [SSH](ssh-uni) to your [Universal App](app-uni) you can travel up in the file directory structure. In this article you can learn the predefined set of folders for each App and what they are for.
+
+### {{app-name}} folder
+
+<!-- TODO: why write about this folder? maybe just write about a folder, when a user can do something with it? it's obvious that this is the App name.  -->
 
 The actual name of your App, for example `/srv/app/{{app-name}}` and so on.
 
