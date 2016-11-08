@@ -22,7 +22,7 @@ keywords:
 
 <!-- 
 
-TODO: define is this Hobby + Pro stack? write articles. Current status: custom TLS is available for the highest plan of Universal Apps, but we don't hard code this here, we link to the Specs.
+TODO: define is this Hobby + Pro stack? write different articles or make this THE one (maybe better). Current status: custom TLS is available for the highest plan of Universal Apps, but we don't hard code this here, we link to the Specs.
 
 So TLS custom is a Component for Professional Apps and a Setting for Universal Apps.
 

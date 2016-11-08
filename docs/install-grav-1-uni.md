@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-09-30
+reviewed:         2016-11-08
 title:            Install Grav
 naviTitle:        Grav
 lead:             Grav is a popular, free, file based CMS based on Twig & Markdown. Learn here how to install and tune Grav on fortrabbit.
@@ -11,7 +11,7 @@ websiteLink:      https://getgrav.org?utm_source=fortrabbit
 websiteLinkText:  getgrav.org
 category:         CMS
 image:            grav-symbol.png
-version:          1.1.5
+version:          1.1.8
 stack:            uni
 
 ---
@@ -24,7 +24,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ## Install Grav with SFTP and SSH
 
-[Grav](http://getgrav.org) runs pretty much out of the box.
+[Grav](http://getgrav.org) runs pretty much out of the box. We assume you want to use the handy admin panel:
 
 1. Visit the **[Grav download page](http://getgrav.org/downloads)**
 2. Download the latest "Grav core + admin plugin"
@@ -43,7 +43,7 @@ Now visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in the browser and 
 
 ### Install plugins & themes
 
-All the regular ways are support: Use the Grav admin, use the command line or just unpack the plugins and themes to the appropriate directories.
+All the regular ways are supported: Use the Grav admin, use the command line or just unpack the plugins and themes to the appropriate directories.
 
 ### Environment configuration
 
@@ -62,3 +62,6 @@ An even better approach is set your `user/config/system.yaml` as restrictive as 
 debugger:
   enabled: true
 ```
+
+
+<!-- TODO: write something on how to keep GRAV up date with local dev … link SYNC section of SFTP article -->

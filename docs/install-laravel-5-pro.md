@@ -169,8 +169,6 @@ fortrabbit Apps have an [ephemeral storage](/quirks#toc-ephemeral-storage). If y
 
 To make your App access the Object Storage, open up `config/filesystems.php` and modify it as following:
 
-<!-- TODO: double check: flysystem must not be enabled here? it will work like that? -->
-
 ```php
 // construct credentials from App secrets, when running on fortrabbit in production
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);

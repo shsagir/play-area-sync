@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-10-25
+reviewed:      2016-11-08
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -35,11 +35,10 @@ First off, make sure that the App knows about the domain. Then point the domain 
 
 1. Click Your App > Domains > "Add a new domain"
 2. Choose a domain name
-3. Set the [root path](/app#toc-set-a-custom-root-path)
-4. Use the provided informations to route the domain with your domain provider
+3. Use the provided informations to route the domain with your domain provider
 
 
-## Advanced routing options
+## Routing options
 
 The world of DNS is one of its own. Let's dive into it – understand the backgrounds, explore advanced and alternative settings.
 
@@ -129,6 +128,12 @@ To change the default domain: In the Dashboard go to your App > Domains. There c
 
 Domains on fortrabbit can be accessed via `HTTP` and `HTTPS`. Please see the [TLS article](/tls) for informations on secured connections and SSL certificates.
 
+
+## Setting a custom root path for a domain
+
+A root path is a folder in the [file system](/directory-structure) of the App where the domain will end. Per default all domains will have the same 
+
+The [root path](/app#toc-set-a-custom-root-path) of your App 
 
 
 - - -

@@ -11,7 +11,6 @@ stack:        old
 
 ---
 
-<!-- TODO: was ist mit Uni hier?  -->
 
 ## Word!
 

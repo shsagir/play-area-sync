@@ -41,6 +41,8 @@ srv
 ```
 
 
+<!-- TODO: re-unite with the other more up-to-date directories article for universal App  -->
+
 Professional stack Apps only have [Git deployment](git-deployment) and [SSH remote execution](remote-ssh-execution-pro). So you will actually not be able to 'see' those folders. But it might be good to know  the predefined set of folders for each App:
 
 ### appname

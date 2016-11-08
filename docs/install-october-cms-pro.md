@@ -100,7 +100,7 @@ To create the local database contents finish with:
 $ php artisan october:up --env=dev
 ```
 
-<!-- TODO: ENV detection -->
+<!-- TODO: ENV detection > Prep ENV vars -->
 
 
 ### MySQL
