@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-09-15
+reviewed:    2016-11-07
 title:       Some words on security
 naviTitle:   Security
 lead:        fortrabbit security concepts and how you can help.
@@ -85,10 +85,13 @@ Please revisit your list of SSH keys from time to time and keep it as short as p
 
 ### Passwords in the Dashboard
 
+<!--  TODO: the following part only works for Universal Apps, now we can write something for the Universal Apps too.  -->
+
 We save all passwords encrypted. That's why we can't read your passwords. So when you lost a password, eg for MySQL, you can only set a new one. All those passwords are randomly generated strings with high entropy.
 
+<!--  TODO: write something about password "reset" why to do it: Only when someone levaes. But when someone leaves it is adviced to do it … -->
 
-<!--  TODO: define stack -->
+
 
 ## Firewalling
 
