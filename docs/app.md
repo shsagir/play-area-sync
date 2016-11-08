@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-16
+reviewed:      2016-11-08
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think servers instead. Learn the basic fortrabbit concepts.
@@ -90,16 +90,37 @@ While creating your fortrabbit App you will be asked for an App name. This name 
 
 You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard. 
 
-<div markdown="1" class="asdad">
+<div markdown="1" data-user="known">
 
 * [Set up a new domain for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)
 
 </div>
 
 
-#### Set a custom root path
+#### Root path
 
-Per default the domains of the App will route to the `~/htdocs` [folder](directory-structure). In some cases, you need to set a different document root or want to route different domains to different folder. [Laravel](/install-laravel), for examples, requires you to use `~/htdocs/public` per default. You can set a custom root path by writing the relative path to the sub-folder (all folders below the htdocs folder are allowed). 
+<!-- TODO: check if this correct according to latest specs for the whole root path thing -->
+<!-- TODO: is TILDE the way you enter this in the Dashboard? I guess not, maybe remove TILDE to make this more obvious here -->
+
+Per default all the [domains](/domains) of the App will route to the same root path. When you have chosen [Laravel](/install-laravel) when creating the App `~/htdocs/public` will be used.
+
+When no framework or CMS has been chosen while creating the App, the root path [folder](directory-structure) is `~/htdocs`. You can change this setting with your App in the Dashboard.
+
+<!-- TODO: check link, just guessed the URL --> 
+
+<div markdown="1" data-user="known">
+
+* [Change the root path for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/root-path)
+
+</div>
+
+##### Different root paths for different domains
+
+In some cases, you might want to route different domains to different folders. Please mind that there are limited use cases for this and don't use one App to host multiple website (see [here](/app#toc-one-website-per-app) as well).
+
+When visiting the root path settings form with a [Professional stack Apps](/app-pro) you will find a switch to change from a global path for all domains to custom root paths for each domain.
+
+<!-- TODO: write something about HTACCESS solution to rewrite URLS for everyone. maybe just a hint without example.  -->
 
 
 - - -
