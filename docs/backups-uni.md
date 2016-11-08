@@ -2,7 +2,7 @@
 
 template:      article
 reviewed:      2016-09-16
-naviTitle:     About Apps
+naviTitle:     Backups
 title:         Backups
 lead:          Be safe... TODO
 group:         platform
