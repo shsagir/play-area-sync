@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-11-08
 title:         Learn about your Apps directory structure
 naviTitle:     Directory structure
 group:         platform
@@ -25,8 +25,6 @@ keywords:
 ---
 
 
-<!-- TODO: WRITE what is different with Uni App here? -->
-
 ```nohighlight
 bin
 dev
@@ -41,6 +39,9 @@ srv
       htdocs      < default root path
 ```
 
+<!-- TODO: Re-unite this article with "directories-pro" article -->
+
+When you login with SFTP or SSH to your App.
 The predefined set of folders for each App you need to know.
 
 ### appname
