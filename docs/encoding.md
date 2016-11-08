@@ -5,7 +5,7 @@ reviewed:   2016-09-15
 title:      Encoding/charset other than UTF-8
 naviTitle:  Encodings
 lead:       UTF-8 is assumed as the default encoding. You can set a different encoding manually — if you really want. This is on how to change the character encodings with fortrabbit.
-group:      Kitchen_sink
+group:      platform
 stack:      all
 
 keywords:
@@ -15,6 +15,7 @@ keywords:
 
 ---
 
+<!--  TODO: check for up-to-date-ness and (don't forget to set a date) and Universal App -->
 
 
 ### PHP
