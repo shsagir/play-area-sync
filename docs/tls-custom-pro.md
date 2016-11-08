@@ -20,7 +20,15 @@ keywords:
 
 ---
 
-<!-- TODO: define is this Hobby + Pro stack? write articles -->
+<!-- 
+
+TODO: define is this Hobby + Pro stack? write articles. Current status: custom TLS is available for the highest plan of Universal Apps, but we don't hard code this here, we link to the Specs.
+
+So TLS custom is a Component for Professional Apps and a Setting for Universal Apps.
+
+So: either this is an article for all (remove -uni title and front-matter stack to all) or two different articles.
+
+-->
 
 We assume that your are familiar with the basic concepts of TLS and the [general TLS implementation on fortrabbit](/tls). In this article you can learn why and how to use "TLS custom" instead of it's free counterpart.
 
