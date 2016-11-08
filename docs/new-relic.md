@@ -16,9 +16,11 @@ dataCenters:      n/a
 
 ---
 
-<!-- TODO: what about uni app, when not enabled?   -->
+
 
 ## About New Relic
+
+New Relic is integreated for some fortrabbit Apps. Please see the [specs page](/https://www.fortrabbit.com/specs) for availabilty with plans.
 
 [New Relic](https://www.newrelic.com) is a suite of professional software analysis tools. It offers analytics and deep insights on your Apps' performance and possible bottle necks. New Relic integrates as a PHP extension, which is installed (but not enabled) on all fortrabbit Apps.
 
