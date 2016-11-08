@@ -5,7 +5,7 @@ reviewed:     2016-09-15
 title:        Integrating CI with fortrabbit
 naviTitle:    Continuous Integration
 lead:         Automated testing, builds, special deploy scripts and other actions on fortrabbit.
-group:        Kitchen_sink
+group:        platform
 stack:        all
 oldLink:      continuous-integration-old
 
@@ -20,6 +20,8 @@ keywords:
     - hudson
 
 ---
+
+<!-- TODO: Check for universal App and general up-to-date-ness -->
 
 So, you want to use continuous integration? Deploy only if your tests succeed? This article gives you the big picture about how to do just that on fortrabbit.
 
