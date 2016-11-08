@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        CloudAMQP
-reviewed:         2016-09-15
+reviewed:         2016-11-08
 title:            Using CloudAMQP with fortrabbit
 group:            Queues
 section:          Extending_fortrabbit
@@ -21,7 +21,6 @@ keywords:
 ---
 
 
-<!--  TODO: review one more time! -->
 
 ## About queues
 
@@ -79,8 +78,6 @@ By default all outgoing calls from your fortrabbit App are blocked for [security
 Login to the fortrabbit Dashboard, navigate to your App > Firewall whitelist and request a custom firewall rule. Write nothing under the optional IP field and insert the port `5672` in the Port field. As descriptions we suggest "CloudAMQP" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new queue!
 
 
-
-<!-- TODO: extend usage with more examples -->
 
 ## Using CloudAMQP
 

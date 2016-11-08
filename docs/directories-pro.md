@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-11-08
 title:         Directory structure
 naviTitle:     Directory structure
 group:         platform
@@ -41,14 +41,7 @@ srv
 ```
 
 
-<!-- 
-
-TODO: those directoris are not accessible in professional apps write something abozt it?
-
--->
-
-
-The predefined set of folders for each App you need to know.
+Professional stack Apps only have [Git deployment](git-deployment) and [SSH remote execution](remote-ssh-execution-pro). So you will actually not be able to 'see' those folders. But it might be good to know  the predefined set of folders for each App:
 
 ### appname
 
@@ -62,7 +55,7 @@ The default web root (aka document root) of your App. Directory that forms the m
 
 Temporary folder; limited to 2GB of storage. Files older than 15 days will be automatically purged. Typical use cases are the default PHP session file folder or a temp destination for file uploads via PHP (before `move_uploaded_file()` is called).
 
-For multi node plans: The `tmp` folder is not shared. Meaning that each node has "their own" temporary folder.
+For multi Node plans: The `tmp` folder is not shared. Meaning that each node has "their own" temporary folder.
 
 ## Other folders
 
