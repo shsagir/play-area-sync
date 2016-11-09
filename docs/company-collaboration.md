@@ -1,9 +1,9 @@
 ---
 
 template:      article
-reviewed:      2016-11-03
-title:         Company Collaboration on fortrabbit
-naviTitle:     Company Collaboration
+reviewed:      2016-11-09
+title:         Company collaboration on fortrabbit
+naviTitle:     Company collaboration
 lead:          Leverage Company level collaboration to map your real world structures back to fortrabbit.
 group:         platform
 stack:         all
@@ -37,9 +37,7 @@ In the real world, you are working with a team. The members of this team have di
 
 ## Solution
 
-A [Company](company), within the fortrabbit platform, represents your business and Company collaboration allows you to map your business setup to fortrabbit.
-
-To name a few use cases:
+A [Company](company), within the fortrabbit platform, represents your business and Company collaboration allows you to map your business setup to fortrabbit. To name a few use cases:
 
 * Designate a responsible Admin to handle maintenance tasks, such as scaling and monitoring metrics
 * Let your project managers handle their projects by themselves, by granting them rights to invite and manage App level collaborators
@@ -53,33 +51,22 @@ Company collaboration is a paid feature, see our [fancy marketing page](https://
 To book a Company collaboration plan: In the Dashboard > navigate to your Account > Companies > {{ Your Company }} > and there to "Company collaboration", this will show you a screen to book a plan. This way you can also upgrade and downgrade the Company collaboration plan.
 
 
-## Downgrading a Company collaboration plan
-
-Downgrading from one paid Company collaboration plan to another paid Company collaboration plan is always possible: Visit the booking page as described above and select the new, smaller plan, as you need.
-
-If you want to downgrade a paid Company collaboration plan to the free Company collaboration plan, then you need first to make sure, that:
-
-* Only one Owner exists
-* No Admins exist
-* No App has more App collaborators then the App allows (Professional unlimited, Universal are limited, see [specs page](//www.fortrabbit.com/specs#limits))
-
-
 ## Roles
 
 A unique quality of Company collaboration are the role based permissions. Delegation is the key motivation. Only with Company collaboration members with the according roles will get automatic access to newly created Apps and members with according rights can create Apps on behalf of the Company. Each Company can have multiple Accounts associated with it:
 
 ### Owner
 
-The Owner role can NOT be modified by someone else, multiple Owners per Company are possible. Accounts with this role within a Company can:
+The Owner role can NOT be modified by someone else, multiple Owners per Company are possible. Each Company must have at least one Owner. Accounts with this role within a Company can:
 
 * create, delete, configure & scale all Apps of the Company
-* code access to all Apps of the Company
+* access code to all Apps of the Company
 * delete, create, change Billing Contacts for the Company
 * manage all roles (but other Owners) of the Company
 * invite new Users for any role to the Company
 * leave the Company (if other Owners are present)
+* delete the Company
 
-Each Company must have at least one Owner.
 
 ### Admin
 
@@ -119,7 +106,7 @@ When you have multiple Companies and you want to collaborate with same person on
 
 In case you want the App to be billed from another credit card or bank account but still want to keep the team of the App the same: You simply change the Billing Contact of the App. You first need to have at least two Billing Contacts with your Company.
 
-#### Changing the Billing Contact of an App
+### Changing the Billing Contact of an App
 
 1. Go to the App in the Dashboard, click the "Change ownership" button
 2. This will open a form, where you choose a different Billing Contact
@@ -131,7 +118,7 @@ This action can only be executed by Owners or Admins of a Company. The App will 
 
 In some cases you might want to move the App to a different Company. This will change billing AND team. Of course you first need to be at least Admin in two Companies.
 
-#### Changing the Company of an App
+### Changing the Company of an App
 
 2. Go to the App in the Dashboard, click the "Change ownership" button
 3. This will open a form, where you choose a different Company (and Billing Contact)
@@ -144,6 +131,15 @@ This action can only be done by Accounts who have Owner or Admin privileges on b
 ### Moving a Company member to another Company
 
 Well, that's not what you do, actually. What you'll do is: invite the same person again to the another Company. The Account will then be able to see and access Apps from both Companies under one login. The Account itself or you (as the Admin or Owner) can then revoke access to the first Company.
+
+### Downgrading a Company collaboration plan
+
+Visit the booking page as described above and select the new, smaller plan or no plan, as needed. If you want to downgrade a paid Company collaboration plan to the free Company collaboration plan, then you need first to make sure, that:
+
+* Only one Owner exists
+* No Admins exist
+* No App has more App collaborators then the App allows (Professional unlimited, Universal are limited, see [specs page](//www.fortrabbit.com/specs#limits))
+
 
 
 
@@ -159,17 +155,10 @@ Just like in real life the roles of Accounts inside a Company can change like so
 
 Role changes have immediate effect, they do not require another confirmation by the affected Account.
 
-<!-- TODO: maybe confirmation for promoting? when a BAD owner want's to leave he just promotes an empty DEV and is out  -->
 
-#### Change the role of a collaborator
+#### Changing the role of a collaborator
 
 When Company collaboration is active and you are either Owner or Admin, you can promote and demote other people like so: Visit the Company the Account is part of, click on the role of Account. This will open a form in which you can change the role of the Account.
-
-#### Job change confirmation
-
-
-
-
 
 
 
@@ -181,7 +170,7 @@ The Account who leaves a Comoany will loose the ability to see and edit the App 
 
 You might want to leave the Company when the project you have collaborated on has ended or you are actually leaving the Company in real live as well. Each Account can leave a Company at any time.
 
-##### Activly leave a Company
+##### How to activly leave a Company
 
 In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > "Leave Company" button
 
@@ -201,8 +190,6 @@ Let's say a project phase has ended, so that an App Collaborator does not need h
 
 In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > Under Collaborators > Click the role of the Account you would like to fire. This will bring up a form where you can choose to completly revoke access.
 
-<!-- TOOD: recheck this when Dashboard is done  -->
-
 
 #### Confirmation on cancellations
 
@@ -216,8 +203,6 @@ To make the process of leaving transparent, all involved parties will get a conf
 Please mind that the person who has left still might hold local code copies and have other senstive data. We advice to reset service passwords. Please see the [security article](security#password-reset) for more.
 
 <!-- TODO: make link to security section above work  -->
-
-
 
 
 
