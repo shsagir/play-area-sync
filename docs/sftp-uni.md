@@ -13,73 +13,45 @@ group:         platform
 keywords:
     - beginner
     - deployment
+    - dreamweaver
+    - 
 
 ---
 
-## Problem
+Albeit [deploying with Git](git-deployment) has many advantages, sometimes it's more of a burden then it helps. Especially when working with CMS. These systems are often not designed for Git-workflows and write on the file system when installing plugins and upgrading versions. Those changes can not be back-ported to the version control. Stuff get's out of control.
 
-Albeit [deploying with Git](git-deployment) has many advantages, sometimes it's more of a burden then it helps. Especially when working with CMS, which support plugin installation, version upgrades and other functions, which make it hard to use version control independently.
+All Universal Stack Apps come with SFTP access out-of-the-box to legacy applications and workflows.
 
-## Solution
 
-All Universal Apps come with SSH and SFTP access out-of-the-box.
-
-## Authentication
-
-fortrabbit supports username + password and public key authentication. The latter is recommend, but, especially when using Windows, sometimes password is the only faeasible option. Please read on in a dedicated article on how to utilize and setup [public key](access-methods#toc-ssh-key-authentication) or plain old [password](access-methods#toc-password-authentication) authentication.
-
-## Access SFTP
+## Accessing SFTP
 
 There are various GUIs out there, which make your life easier. We recommend [Cyberduck](https://cyberduck.io/) (Mac, Windows).
 
-<!-- TODO: Describe configuration of Cyberduck connection -->
+<!-- TODO: Describe configuration of Cyberduck connection with example -->
+
+Many modern editors or IDEs also feature SFTP integrations by plugin.
+
+* **Mode**: SFTP (not regular FTP)
+* **Host**: deploy.{{region}}.frbit.com
+* **Port**: 22
+* **Username**: {{ssh-user}}
+* **Password**: Your Account password OR public SSH key
+
 
 ## File synchronization
 
-Most SFTP clients feature a file synchronization mode. You can choose your local folder and sync it to the remote folder on fortrabbit. All files will be compared and only changed ones will be uploaded. This works in the other direction as well, of course. Many modern editors or IDEs also feature synchronization tools or are extendible by plugins to that end.
+Most SFTP clients feature a file synchronization mode. You can choose your local folder and sync it to the remote folder on fortrabbit. All files will be compared and only changed ones will be uploaded. This works in the other direction as well, of course.
 
 <!-- TODO: for Frank, describe file exclution patterns maybe example with Transmit -->
 
-### Syncing code with rsync
+## Troubleshooting authentication
 
-The command line tool `rsync` grants a fast and reliable way to upload your code changes. As the name implies, `rsync` is made to synchronize (two) data sets. Following an example showcasing the synchronization of a WordPress plugin from local to fortrabbit:
+Got an error when trying to login? fortrabbit supports username + password and public key authentication. Please continue here to troubleshoot access:
 
-```shell
-# change to the folder above your plugin folder locally
-$ cd local-app-folder/wp-content/plugins
-
-# execute synchronization
-$ rsync -az --delete custom-plugin/ {{ssh-user}}@deploy.{{region}}.frbit.com:~/wp-content/plugins/custom-plugin/
-```
-
-The above command assures that the remote folder `custom-plugin` contains exactly what your local folder of the same name contains. The exemplified `--delete` flag will remove all remove files, which do not exist locally anymore. You can safely omit it, if that you just want to update changed files, but do not remove any file.
+* [See the access methods article](/access-methods)
 
 
-## Access SSH
+## About SFTP
 
-It's as simple as that:
+SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH]([SSH](ssh-uni)) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really makes a difference.
 
-```bash
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
-```
-
-If you want to execute PHP scripts, including `artisan` and it's like, make sure to specifcy the PHP interpreter explicity:
-
-```bash
-# will work
-$ php artisan some:command
-$ php some-script.php
-
-# will _not_ work:
-$ ./artisan some:command
-$ ./some-script.php
-```
-
-### Pre-installed CLIs
-
-We pre-installed various CLI tools for you:
-
-* [Composer](https://getcomposer.org/): eg `composer install`
-* [WP-CLI](http://wp-cli.org/): eg `wp theme ...`
-* [Drush](http://www.drush.org/en/master/): eg `drush topic`
-* [Drupal Console](https://www.drupal.org/project/console): eg `drupal check`
