@@ -2,8 +2,8 @@
 
 template:      article
 reviewed:      2016-11-07
-title:         SSH/SFTP
-naviTitle:     SSH/SFTP
+title:         SFTP
+naviTitle:     SFTP
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
 
 stack:         uni
@@ -37,6 +37,8 @@ There are various GUIs out there, which make your life easier. We recommend [Cyb
 ## File synchronization
 
 Most SFTP clients feature a file synchronization mode. You can choose your local folder and sync it to the remote folder on fortrabbit. All files will be compared and only changed ones will be uploaded. This works in the other direction as well, of course. Many modern editors or IDEs also feature synchronization tools or are extendible by plugins to that end.
+
+<!-- TODO: for Frank, describe file exclution patterns maybe example with Transmit -->
 
 ### Syncing code with rsync
 
