@@ -20,20 +20,41 @@ keywords:
 
 [Git deployment](git-deployment) is fancy, but sometimes you also want a little more control. That's where the Secure shell comes in. SSH is the big brother of [SFTP](sftp-uni).
 
-## Access SSH
+## Accessing SSH
 
 Execute the following in your terminal:
 
 ```bash
 # Login to your App by SSH like so:
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
-# You might be asked for your Account password in the next step
-# Please see below for
+# You might be asked for your Account password then
 ```
+
+When it worked, you will see a welcome screen. 
+
+<!-- TODO: dump example of SSH screen (this is marketing) -->
+
+You are now logged in to your App by SSH. See [below](#toc-troubleshooting-authentication) when you got an error.
 
 ## Things to do with SSH
 
-## Executing PHP
+Now this is what you can do:
+
+<!-- TODO: some more examples here please!  "wget and unpack example" with links to CMSs, what about logs? -->
+
+
+### Using CLIs
+
+We pre-installed various CLIs for you:
+
+<!-- TODO: what about Artisan CLI? -->
+
+* [WP-CLI](http://wp-cli.org/): eg `wp theme ...`
+* [Drush](http://www.drush.org/en/master/): eg `drush topic`
+* [Drupal Console](https://www.drupal.org/project/console): eg `drupal check`
+
+
+### Executing PHP
 
 If you want to execute PHP scripts, including `artisan` and it's like, make sure to specifcy the PHP interpreter explicity:
 
@@ -46,7 +67,6 @@ $ php some-script.php
 $ ./artisan some:command
 $ ./some-script.php
 ```
-
 
 ### Syncing code with rsync
 
@@ -63,16 +83,23 @@ $ rsync -az --delete custom-plugin/ {{ssh-user}}@deploy.{{region}}.frbit.com:~/w
 The above command assures that the remote folder `custom-plugin` contains exactly what your local folder of the same name contains. The exemplified `--delete` flag will remove all remove files, which do not exist locally anymore. You can safely omit it, if that you just want to update changed files, but do not remove any file.
 
 
-### Pre-installed CLIs
+### Using Composer on remote
 
-We pre-installed various CLI tools for you:
+<!-- TODO: write some more about Composer here and the alternative way to trigger Composer via Git … -->
 
-* [Composer](https://getcomposer.org/): eg `composer install`
-* [WP-CLI](http://wp-cli.org/): eg `wp theme ...`
-* [Drush](http://www.drush.org/en/master/): eg `drush topic`
-* [Drupal Console](https://www.drupal.org/project/console): eg `drupal check`
+You can also use `composer install` directly via SSH. 
+
+<!-- TODO: 
+
+## Limits
+
+write something about limits and modules that are not installed or that one can not install software and link to specs article for execution time and otther possible limits 
+
+-->
 
 
 ## Troubleshooting authentication
 
-fortrabbit supports username + password and public key authentication. The latter is recommend, but, especially when using Windows, sometimes password is the only feasible option. Please read on in a dedicated article on how to utilize and setup [public key](access-methods#toc-ssh-key-authentication) or plain old [password](access-methods#toc-password-authentication) authentication.
+Got an error when trying to login? fortrabbit supports username + password and public key authentication. The latter is recommend, but, especially when using Windows, sometimes password is the only feasible option. Please go on here:
+
+* [See the access methods article](access-methods)
