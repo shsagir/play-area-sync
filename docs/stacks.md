@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "About the Stacks"
 title:         "About the Stacks"
-reviewed:      2016-10-15
+reviewed:      2016-11-09
 lead:          "With each App you create, you can choose between two technology stacks. This article helps you to understand why there are two stacks and how to decide decide."
 group:         platform
 stack:         all
@@ -26,8 +26,8 @@ stack:         all
 | Architecture                | Classical + magical extras     | 12-factor                                         |
 | Required skill level        | Ok for beginners               | sophisticated                                     |
 | Deployment protocols        | SFTP, Git, SSH                 | Git                                               |
-| Composer intergration       | after Git push, via SSH        | after Git push                                    |
-| SSH integration             | standard                       | [remote SSH execution](/remote-ssh-execution-pro) |
+| Composer intergration       | after Git push + via SSH       | after Git push                                    |
+| SSH integration             | [standard SSH](ssh-uni)        | [remote SSH execution](/remote-ssh-execution-pro) |
 
 
 ## Universal Stack

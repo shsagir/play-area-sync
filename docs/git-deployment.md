@@ -73,15 +73,7 @@ You can also use a graphical interface like Tower, Sourctree, Gitbox - see the [
 {{ssh-password}}
 
 
-<!--
-| | |
-|-|-|
-| **SSH clone URL** | {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}              |
-| **SSH password**  | {{ssh-password}}    |
--->
-
-
-
+<!-- TODO: discuss differents between Professional & Universal implementation! Overwrite not delete VS full package, why does Git pull does not show my uploads? -->
 
 
 ## Advanced usage
