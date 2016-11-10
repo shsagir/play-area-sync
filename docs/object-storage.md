@@ -26,7 +26,7 @@ keywords:
 
 Back in the days you had persistent storage with your local file system on the web server. This allowed you to upload an image - or any other static asset - directly to the server so that it would be served from there linked like so: `uploads/photo.jpg`. With modern cloud 12-factor-app based Infrastructures this is different:
 
-fortrabbit Apps have an [ephemeral file system](/new-apps#toc-asset-storage). This means that all changes to the local file system will be undone with each deploy. So, each time you `git push` a completely new package will be deployed, replacing everything else on the Node.
+fortrabbit Apps have an [ephemeral file system](/app-pro#toc-ephemeral-storage). This means that all changes to the local file system will be undone with each deploy. So, each time you `git push` a completely new package will be deployed, replacing everything else on the Node.
 
 Imagine you have a CMS and you are uploading images. Next time you push some changes, those images will be gone.
 

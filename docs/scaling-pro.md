@@ -147,7 +147,7 @@ All worker plans run only on a single Node. In case one of those Nodes fails the
 
 ### Object Storage
 
-[fortrabbit (New) Apps](new-apps) have an ephemeral local storage, which means that all files on the server will be wiped on each deploy or change of configuration, also on maintenance. 
+Professional Apps have an [ephemeral local storage](app-pro#toc-ephemeral-storage), which means that all files on the server will be wiped on each deploy or change of configuration, also on maintenance. 
 
 Content driven websites usually make use of the local file system to store assets. If you have a "media website" or an social community focused on image or videos for example, the storage needs to be able to scale as well. For those use cases we recommend to use our [Object Storage](object-storage) component. It's easy to setup, supports best practices and reduces load on the PHP Nodes.
 
