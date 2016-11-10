@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-10-24
+reviewed:         2016-11-10
 title:            Install WordPress 4
 naviTitle:        WordPress
 group:            Install_guides
