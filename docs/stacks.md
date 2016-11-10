@@ -14,19 +14,18 @@ stack:         all
 
 |                             | Universal Stack                         | Professional Stack                                |
 | --------------------------- | --------------------------------------- | ------------------------------------------------- |
-| Websites per App            | 1 [Why?](/app#toc-one-website-per-app)  | 1 [Why?](/app#toc-one-website-per-app)            |
+| Websites per App            | 1 [‹ why?](/app#toc-one-website-per-app)| 1 [‹ Why?](/app#toc-one-website-per-app)          |
 | Pricing model               | fixed plans                             | flexible Components                               |
-| Price per App               | 3, 6, 12 (EUR / USD)                    | 8 - 3000 (EUR / USD)                              |
 | Traffic                     | low, medium                             | low - very high                                   |
 | Scalability                 | xxs - s                                 | xxs - xxxl                                        |
-| High Availability           | no                                      | yes, except Development plans                     |
+| High Availability           | no                                      | yes, except Tinkering                             |
 | Local storage               | persistent                              | [ephemeral](#toc-ephemeral-storage)               |
-| Primary Application type    | websites                                | web applications                                  |
-| Secondary Application type  | web applications                        | websites                                          |
+| Primary application type    | websites                                | web applications                                  |
+| Secondary application type  | web applications                        | websites                                          |
 | Architecture                | single webserver + db server            | distributed containers                            |
 | Required skill level        | beginner                                | sophisticated                                     |
 | Deployment protocols        | SFTP, Git, SSH                          | Git                                               |
-| Composer integration        | after Git push, via SSH                 | after Git push                                    |
+| Composer integration        | after Git push + via SSH                | after Git push                                    |
 | SSH integration             | standard                                | [remote SSH execution](/remote-ssh-execution-pro) |
 
 
