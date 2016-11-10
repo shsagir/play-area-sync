@@ -7,11 +7,9 @@ title:         Multi stage App life cycles
 lead:          Learn about development/production environments and how to run them on fortrabbit.
 group:         platform
 oldLink:       multi-staging-old
-stack:         all
+stack:         pro
 
 ---
-
-<!-- TODO: recheck for Hobby, include dynamic code example when possible -->
 
 ## Goal
 
@@ -155,4 +153,4 @@ The biggest problem introduced with multi stage environments is runtime data: da
 
 ## Further reading
 
-We have also written a [blog post](http://blog.fortrabbit.com/multi-stage-deployment-for-website-development) about this. 
+We have also written a [blog post](http://blog.fortrabbit.com/multi-stage-deployment-for-website-development) about this.
