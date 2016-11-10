@@ -15,15 +15,15 @@ stack:         all
 |                             | Universal Stack                         | Professional Stack                                |
 | --------------------------- | --------------------------------------- | ------------------------------------------------- |
 | Websites per App            | 1 [Why?](/app#toc-one-website-per-app)  | 1 [Why?](/app#toc-one-website-per-app)            |
-| Pricing model               | fixed plans                             | Components: 8 - 600                               |
-| Price per App (EUR / USD)   | 3, 6, 12                                | 8 - 600                                           |
+| Pricing model               | fixed plans                             | flexible Components                               |
+| Price per App               | 3, 6, 12 (EUR / USD)                    | 8 - 3000 (EUR / USD)                              |
 | Traffic                     | low, medium                             | low - very high                                   |
 | Scalability                 | xxs - s                                 | xxs - xxxl                                        |
-| High Availability           | no                                      | optional                                          |
+| High Availability           | no                                      | yes, except Development plans                     |
 | Local storage               | persistent                              | [ephemeral](#toc-ephemeral-storage)               |
 | Primary Application type    | websites                                | web applications                                  |
 | Secondary Application type  | web applications                        | websites                                          |
-| Architecture                | classical + magical extras              | 12-factor                                         |
+| Architecture                | single webserver + db server            | distributed containers                            |
 | Required skill level        | beginner                                | sophisticated                                     |
 | Deployment protocols        | SFTP, Git, SSH                          | Git                                               |
 | Composer integration        | after Git push, via SSH                 | after Git push                                    |
@@ -80,10 +80,10 @@ To work with Professional Apps, you need to be familiar with modern patterns and
 
 It's less a question of application type and more a question of underlying frameworks/CMS. Not all are up2date in terms of modern PHP development. Some do not support storage abstraction, others are hard to combine with Git-only deployment. Either way: Most maintained frameworks/CMS are moving towards support of 12-factor environments, so that developers using them can leverage truly scalable infrastructures as well. To name a few of those framework/CMS which are easily usable:
 
-* Laravel (since 4)
-* Symfony (since 2)
+* Laravel (since 5.0)
+* Symfony (since 2.3)
 * Drupal (since 8.2)
-* Craft (since 2)
+* Craft (since 2.5)
 
 ### Ephemeral storage
 
@@ -104,4 +104,4 @@ As a result of the horizontal scalable resources and the ephemeral storage, [log
 
 ### High availability
 
-Most plans are available as Tinkering and Production. All Production plans, and those which are not grouped into both, are highly available.
+Most plans are available as Development and Production. All Production plans, and those which are not grouped into both, are highly available.

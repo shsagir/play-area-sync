@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-07
+reviewed:      2016-11-10
 title:         SSH
 naviTitle:     SSH
 lead:          Learn what you can do on the command line with fortrabbit Apps.
@@ -17,8 +17,8 @@ keywords:
 
 ---
 
+Using our [Git deployment](git-deployment) is great, but sometimes need a little more control. That's where the Secure shell comes in. SSH is the big brother of [SFTP](sftp-uni) and allows you to directly interact with your App's code.
 
-[Git deployment](git-deployment) is fancy, but sometimes you also want a little more control. That's where the Secure shell comes in. SSH is the big brother of [SFTP](sftp-uni).
 
 ## Accessing SSH
 
@@ -27,10 +27,10 @@ Execute the following in your terminal:
 ```bash
 # Login to your App by SSH like so:
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
-# You might be asked for your Account password then
+# Unless you are using public key: You will be asked for your Account password
 ```
 
-When it worked, you will see a welcome screen. 
+When it worked, you will see a welcome screen.
 
 <!-- TODO: dump example of SSH screen (this is marketing) -->
 
@@ -38,23 +38,35 @@ You are now logged in to your App by SSH. See [below](#toc-troubleshooting-authe
 
 ## Things to do with SSH
 
-Now this is what you can do:
+Following a few simple examples, just to give you some ideas:
 
-<!-- TODO: some more examples here please!  "wget and unpack example" with links to CMSs, what about logs? -->
+```bash
+# Download & unpack wordpress
+$ curl https://wordpress.org/latest.tar.gz | tar zx
+
+# Stream your Apache access logs
+$ tail -f ../logs/apache_access.log
+
+# Search for 50x responses in apache access
+$ grep -E ' 50[0-9] ' ../logs/apache_access.log
+```
+
+Also checkout:
+
+* [WordPress install from SSH](install-wordpress-4-uni#toc-installing-wordpress-with-ssh)
+* [Execute Laravel's artisan](install-laravel-5-uni#toc-migrate-amp-other-artisan-commands)
 
 
 ### Using CLIs
 
 We pre-installed various CLIs for you:
 
-<!-- TODO: what about Artisan CLI? -->
-
 * [WP-CLI](http://wp-cli.org/): eg `wp theme ...`
 * [Drush](http://www.drush.org/en/master/): eg `drush topic`
 * [Drupal Console](https://www.drupal.org/project/console): eg `drupal check`
 
 
-### Executing PHP
+### Executing PHP scripts
 
 If you want to execute PHP scripts, including `artisan` and it's like, make sure to specifcy the PHP interpreter explicity:
 
@@ -83,19 +95,20 @@ $ rsync -az --delete custom-plugin/ {{ssh-user}}@deploy.{{region}}.frbit.com:~/w
 The above command assures that the remote folder `custom-plugin` contains exactly what your local folder of the same name contains. The exemplified `--delete` flag will remove all remove files, which do not exist locally anymore. You can safely omit it, if that you just want to update changed files, but do not remove any file.
 
 
-### Using Composer on remote
+### Using Composer
 
 <!-- TODO: write some more about Composer here and the alternative way to trigger Composer via Git … -->
 
-You can also use `composer install` directly via SSH. 
+Using [Git deployment](git-deployment) will trigger Composer automatically. If you need to run Composer manually, just execute the following when logged in via SSH:
 
-<!-- TODO: 
+```bash
+$ composer install
+```
 
-## Limits
+## Limitations
 
-write something about limits and modules that are not installed or that one can not install software and link to specs article for execution time and otther possible limits 
-
--->
+* This is not a root shell, so you can't install or remove software packages.
+* Mind that you are using the same runtime as your web application: resource intensive operations will drain memory and CPU from the web execution
 
 
 ## Troubleshooting authentication

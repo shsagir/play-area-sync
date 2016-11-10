@@ -156,15 +156,18 @@ Please see the [MySQL article](mysql-uni#toc-access-mysql-from-local) on how to 
 
 ### Migrate & other artisan commands
 
-You can [execute remote commands via SSH](/remote-ssh-execution), for example:
+You can either login to [SSH](ssh-uni) and execute `artsian` or utilize [execute remote commands via SSH](/remote-ssh-execution), for example:
 
 ```bash
+# remote execution
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate:rollack
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan tinker
+
+# login and execute
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
+$ php artisan migrate
 ```
 
-If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
+**Note**: If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
 
 
 
