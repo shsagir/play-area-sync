@@ -173,7 +173,7 @@ $ php artisan migrate
 
 ### Logging
 
-You can access your logs via SSH or SFTP. Larval, per default, stores it's log files in `storage/logs`. You can download them via SFTP from that folder. If you need to "tail" your logs live, you can:
+You can access your logs via SSH or SFTP. Laravel, per default, stores it's log files in `storage/logs`. You can download them via SFTP from that folder. If you need to "tail" your logs live, you can:
 
 ```bash
 # login via SSH
@@ -203,7 +203,7 @@ return [
 
 ### Queues & Redis
 
-Laravel supports multiple queue and cache drivers. Please check out the [Laravel 5 Profession article](install-laravel-5-pro#toc-queue) on how to integrate those.
+Laravel supports multiple queue and cache drivers. Please check out the [Laravel 5 Professional article](install-laravel-5-pro#toc-queue) on how to integrate those.
 
 #### Using envoy
 
