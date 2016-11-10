@@ -8,7 +8,7 @@ lead:          Learn about the classical way to deploy and access your App on fo
 
 stack:         uni
 oldLink:       ssh-sftp-old
-group:         platform
+group:         deployment
 
 keywords:
     - beginner
