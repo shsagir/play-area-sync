@@ -6,6 +6,7 @@ title:       How to move your App to fortrabbit
 naviTitle:   Migrating to fortrabbit
 lead:        How to transfer an application to fortrabbit.
 group:       platform
+stack:       all
 
 ---
 
