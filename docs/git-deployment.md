@@ -62,6 +62,15 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```
 
 
+### Git deployment vs Universal Apps
+
+Universal Apps have persistent storage, which you can access via [SSH](ssh-uni) or [SFTP](sftp-uni). It further means, that runtime data, like user uploads, are persistent and *will not be removed* upon Git push.
+
+To make sure nothing is deleted, all git deployments to Universal Apps follow an **overwrite but not delete** strategy. This means:
+
+* Contents which are not in your Git repository will not be touched
+* Contents which are in your Git repository will be overwritten
+
 ### Git with a GUI or IDE
 
 You can also use a graphical interface like Tower, Sourctree, Gitbox - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an editor (PhpStorm …) to manage Git. You'll need these access credentials:
