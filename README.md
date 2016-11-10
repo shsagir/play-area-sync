@@ -197,7 +197,7 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 
 ## Maintainability
 
-Find the right balance between being general and being precise (aka Captain Obvious). Very detailed step-by-step articles are easy to follow but get outdated very quickly.
+Find the right balance between being general and being precise (aka Captain Obvious). Very detailed step-by-step articles are easy to follow but get outdated very quickly. Don't "bury" numbers (like prices and limits) in articles. All those numbers must be managed in the "pricing" and the "specs" page.
 
 
 ## fortrabbit owned words and common casing
