@@ -13,6 +13,8 @@ stack:         all
 
 The goal of this article is to help you migrate your Universal App to a Professional App. On the way, you will learn how to configure and modify your new App, so that it becomes easily scalable in the future. So scalable indeed, that you only need to click a button in the Dashboard to scale resources whenever you need more performance.
 
+For the purposes of this article, we recommend to chose the newly created Professional App in the App chooser on the right side - this way, this article will show you copy&paste-able code examples.
+
 ## Preparation
 
 Before we show you how to migrate your existing Universal App to a Professional App, you first need make sure that the following applies. Mind that it only needs to apply if your App requires it (eg you don't need cache abstraction, if you don't use caches):
@@ -27,7 +29,6 @@ Before we show you how to migrate your existing Universal App to a Professional 
 
 First you need to create a new Professional App. Once all is migrated, you can remove the old Universal App, but that's for later.
 
-For the purposes of this article, we recommend to chose the newly created Professional App in the App chooser on the right side - this way, this article will show you copy&paste-able code examples.
 
 ### Copy settings
 
