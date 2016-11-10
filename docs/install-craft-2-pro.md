@@ -7,6 +7,7 @@ naviTitle:        Craft CMS
 lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
 group:            Install_guides
 stack:            pro
+uniLink:          install-craft-2-uni
 
 websiteLink:      https://craftcms.com/?utm_source=fortrabbit
 websiteLinkText:  craftcms.com
