@@ -10,6 +10,7 @@ lead:             Learn how to install and tune the popular blogging and CMS eng
 proLink:          install-wordpress-4-pro
 oldLink:          install-wordpress-4-old
 deprecated:       0
+stack:            uni
 
 websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
