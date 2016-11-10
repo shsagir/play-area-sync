@@ -22,8 +22,6 @@ keywords:
 
 ---
 
-<!-- TODO: restructure -->
-
 
 ## Get ready
 
