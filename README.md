@@ -221,6 +221,7 @@ Find the right balance between being general and being precise (aka Captain Obvi
 * **Owner** ~~owner~~
 * **root path** ~~document root~~, ~~doc root~~
 * **terminal** ~~Terminal~~, ~~shell~~, ~~bash~~
+* **Tinkering plans** ~~Development plans~~ (single Node App plans on Professional stack)
 * **URL** — ~~Url~~, ~~url~~
 * **User** — ~~member~~, ~~account~~
 * **Workers** — ~~Worker~~
