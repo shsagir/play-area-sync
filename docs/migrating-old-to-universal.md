@@ -69,7 +69,7 @@ Clone your Old App's repo now, if you haven't a current local clone available:
 
 ```bash
 $ cd your-project-folder
-$ git clone {{old-app-name}}@git.eu1.frbit.net {{old-app-name}}
+$ git clone {{old-app-name}}@git.eu1.frbit.com {{old-app-name}}
 $ cd {{old-app-name}}
 ```
 
@@ -105,13 +105,13 @@ You need change all those hard coded App specific configurations. Depending on y
 #### MySQL configuration
 
 * **OLD**:
-  * *Hostname:* `{{old-app-name}}.mysql.eu1.frbit.net`
+  * *Hostname:* `{{old-app-name}}.mysql.eu1.frbit.com`
   * *Port:* `3306`
   * *Database:* `{{old-app-name}}`
   * *Username:* `{{old-app-name}}`
   * *Password:* your Old Apps MySQL password
 * **NEW**
-  * *Hostname:* `{{app-name}}.mysql.{{region}}.frbit.net`
+  * *Hostname:* `{{app-name}}.mysql.{{region}}.frbit.com`
   * *Port:* `3306`
   * *Database:* `{{app-name}}`
   * *Username:* `{{app-name}}`
