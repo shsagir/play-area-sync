@@ -31,7 +31,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ### Root path
 
-Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashboard under your Apps Domains settings.
+Go to the Dashboard and [set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
@@ -39,7 +39,7 @@ Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashbo
 
 ### Phalcon extension
 
-As Phalcon is a C Extension, it needs to be enabled in the Dashboard under your Apps PHP Extensions.
+Go to the Dashboard and enable the **phalcon** PHP extension.
 
 <div markdown="1" data-user="known">
 [Edit the PHP settings for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/apps/{{app-name}}/settings)
