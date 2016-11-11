@@ -33,7 +33,7 @@ Start by downloading the [latest Grav Core + Admin archive](https://www.drupal.o
 When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in your browser and commence with the guided web installation to finish the setup. When that is done, your Grav installation is completed and you can visited it in the browser:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< Grav installation_
-* [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) _< Grav admin_
+* [{{app-name}}.frb.io/admin](https://{{app-name}}.frb.io/admin) _< Grav admin_
 
 
 ## Advanced setup and migration
