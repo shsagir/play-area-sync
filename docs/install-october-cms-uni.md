@@ -53,4 +53,4 @@ After the guided web setup is done, you should first clean up the installer file
 Now you can proceed to your freshly installed October CMS. It is now live under:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< October CMS installation_
-* [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/backend) _< October CMS admin_
+* [{{app-name}}.frb.io/backend](https://{{app-name}}.frb.io/backend) _< October CMS admin_
