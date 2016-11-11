@@ -101,7 +101,7 @@ Now you might want some stuff to happen there. See official guides to [get start
 
 ### MySQL
 
-Use App [env-vars](env-vars) to attain database login details at runtime. Open configuration file `app/config/config.php` and modify it directly after the `defined` statements like so:
+Use App [environment variables](env-vars) to attain database login details at runtime. Open configuration file `app/config/config.php` and modify it directly after the `defined` statements like so:
 
 ```php
 // ^^^ defined statements
