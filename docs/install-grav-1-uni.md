@@ -22,7 +22,7 @@ proLink:          install-grav-1-pro
 We assume you've already created an [App](app) and chose WordPress in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
 
-## Install Grav with SFTP and SSH
+## Quick start
 
 Start by downloading the [latest Grav Core + Admin archive](https://www.drupal.org/8) from the Grav website and unpack it locally. It will extract into a folder named `grav-admin`. Now copy the **contents** of the local `grav-admin` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 
