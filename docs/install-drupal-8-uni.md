@@ -34,12 +34,7 @@ Start by downloading the [latest Drupal archive](https://www.drupal.org/8) from 
 * **User name**: `{{ssh-user}}`
 * **Password**: `{{ssh-password}}`
 
-When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in your browser and commence with the guided web installation to finish the setup. You will need MySQL access, which is:
-
-**Note**: If Drupal complains about missing OPcache: You can safely ignore this warning and continue anyway.
-
-
-In the "Database configuration" form make sure the "advanced options" are opened, then enter:
+When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in your browser and commence with the guided web installation to finish the setup. In the "Database configuration" form make sure the "advanced options" are opened, then enter:
 
 * **Database type**: `MySQL, MariaDB, Percona Server, or equivalent`
 * **Database name**: `{{app-name}}`
