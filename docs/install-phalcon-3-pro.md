@@ -1,12 +1,13 @@
 ---
 
 template:         article
-reviewed:         2016-09-14
+reviewed:         2016-11-11
 title:            Install Phalcon 3
 naviTitle:        Phalcon
 lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C extension providing high performance and low resource consumption. Here you learn how to best getting started with Phalcon 3 on fortrabbit.
 group:            Install_guides
 stack:            pro
+uniLink:          install-phalcon-3-uni
 
 websiteLink:      https://phalconphp.com/en/?utm_source=fortrabbit
 websiteLinkText:  phalconphp.com
@@ -28,7 +29,7 @@ keywords:
 
 We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine. You can skip the following two parts when you have chosen Phalcon in the Stack Chooser when creating your App.
 
-### Set the root path
+### Root path
 
 Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashboard under your Apps Domains settings.
 
@@ -36,7 +37,7 @@ Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashbo
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
 </div>
 
-### Enable Phalcon extension
+### Phalcon extension
 
 As Phalcon is a C Extension, it needs to be enabled in the Dashboard under your Apps PHP Extensions.
 
@@ -47,7 +48,7 @@ As Phalcon is a C Extension, it needs to be enabled in the Dashboard under your 
 
 
 
-## Install
+## Quick start
 
 ### Setup Phalcon locally
 
@@ -58,7 +59,7 @@ Phalcon is unlike any other framework. You first need to get Phalcon running loc
 3. [Create a Phalcon project](https://docs.phalconphp.com/en/latest/reference/tools.html#generating-a-project-skeleton)
 4. [Check the installation](https://docs.phalconphp.com/en/latest/reference/tutorial.html#checking-your-installation)
 
-Once that gives you a green light, continue like so.
+Once that gives you a green light, continue as following:
 
 ### Setup Git & deploy to fortrabbit
 
@@ -95,7 +96,7 @@ When it is done you can visit your App URL in the browser to see the Phalcon wel
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
-## Tune
+## Advanced setup and migration
 
 Until now this is a very vanilla Phalcon. Now, make it yours.
 
