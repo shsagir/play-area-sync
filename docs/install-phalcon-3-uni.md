@@ -48,9 +48,7 @@ As Phalcon is a C Extension, it needs to be enabled in the Dashboard under your 
 
 
 
-## Install
-
-### Setup Phalcon locally
+## Quick start
 
 Phalcon is unlike any other framework. You first need to get Phalcon running locally. That's the hard part:
 
@@ -59,11 +57,7 @@ Phalcon is unlike any other framework. You first need to get Phalcon running loc
 3. [Create a Phalcon project](https://docs.phalconphp.com/en/latest/reference/tools.html#generating-a-project-skeleton)
 4. [Check the installation](https://docs.phalconphp.com/en/latest/reference/tutorial.html#checking-your-installation)
 
-Once that gives you a green light, continue as following:
-
-### Setup Git & deploy to fortrabbit
-
-Execute the following in your local terminal to start from scratch with a fresh new Phalcon installation on fortrabbit:
+Once that gives you a green light, continue by executing the following in your local terminal to start from scratch with a fresh new Phalcon installation on fortrabbit:
 
 ```bash
 # 1. Create a local folder called like your App
