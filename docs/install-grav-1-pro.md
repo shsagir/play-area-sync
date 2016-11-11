@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-08-22
+reviewed:         2016-11-11
 title:            Install Grav
 naviTitle:        Grav
 lead:             Grav is a popular free file based CMS based on Twig & Markdown. Learn here how to install and tune Grav on fortrabbit.
@@ -13,6 +13,7 @@ category:         CMS
 image:            grav-symbol.png
 version:          1.1.3
 stack:            pro
+uniLink:          install-grav-1-uni
 
 ---
 
@@ -24,7 +25,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ## Install
 
-[Grav](http://getgrav.org) runs pretty much out of the box, as long as you use the [zip package installation](http://learn.getgrav.org/basics/installation#option-1-install-from-zip-package) installation method. 
+[Grav](http://getgrav.org) runs pretty much out of the box, as long as you use the [zip package installation](http://learn.getgrav.org/basics/installation#option-1-install-from-zip-package) installation method.
 
 ### Download
 
@@ -64,7 +65,7 @@ $ git commit -m 'Initial'
 $ git push -u fortrabbit master
 ```
 
-Done. Your Grav site is now online and you can visit it in your browser!  
+Done. Your Grav site is now online and you can visit it in your browser!
 [https://{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 ## Tuning

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-11-08
+reviewed:         2016-11-11
 title:            Install Grav
 naviTitle:        Grav
 lead:             Grav is a popular, free, file based CMS based on Twig & Markdown. Learn here how to install and tune Grav on fortrabbit.
@@ -13,29 +13,28 @@ category:         CMS
 image:            grav-symbol.png
 version:          1.1.8
 stack:            uni
+proLink:          install-grav-1-pro
 
 ---
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine. You also need a local Grav installation. You can either use an existing or a new one. This guide explains you how to start from scratch:
-
+We assume you've already created an [App](app) and chose WordPress in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
 
 ## Install Grav with SFTP and SSH
 
-[Grav](http://getgrav.org) runs pretty much out of the box. We assume you want to use the handy admin panel:
+Start by downloading the [latest Grav Core + Admin archive](https://www.drupal.org/8) from the Grav website and unpack it locally. It will extract into a folder named `grav-admin`. Now copy the **contents** of the local `grav-admin` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 
-1. Visit the **[Grav download page](http://getgrav.org/downloads)**
-2. Download the latest "Grav core + admin plugin"
-3. Unpack the archive locally (it will extract into the sub-folder `grav-admin`)
-4. Open an SFTP client
-5. Connect to your fortrabbit App (access credentials)
-6. Copy contents of the local `grav-admin` into the remote `htdocs` folder
+* **Server**: `deploy.{{region}}.frbit.com`
+* **User name**: `{{ssh-user}}`
+* **Password**: `{{ssh-password}}`
 
-### Configure in the browser
+When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in your browser and commence with the guided web installation to finish the setup. When that is done, your Grav installation is completed and you can visited it in the browser:
 
-Now visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in the browser and commence with the guided web installation which will ask you to create an administrative user.
+* [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< Grav installation_
+* [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) _< Grav admin_
+
 
 ## Advanced setup and migration
 
