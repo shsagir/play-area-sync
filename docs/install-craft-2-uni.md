@@ -38,21 +38,6 @@ Go to the Dashboard and [set the root path](/app#toc-set-a-custom-root-path) of 
 </div>
 
 
-### Set ENV vars
-
-Go to the Dashboard and add the following [environment variables](/env-vars) to your App:
-
-```osterei32
-CRAFT_KEY=ClickToGenerate
-CRAFT_DEBUG=0
-CRAFT_UPDATES=1
-```
-
-<div markdown="1" data-user="known">
-[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
-</div>
-
-
 ## Quick start
 
 Start by [downloading the latest Craft release](https://craftcms.com/) from the Craft CMS website and unpack it locally. It will extract into multiple folders, so make sure that you unpack it in an empty parent directory. Now open the just extracted `craft/config/db.php` and change it as following:
@@ -67,9 +52,9 @@ return [
 ];
 ```
 
-Before you can upload everything: Rename the file `htaccess` in the extracted folder `public` to `.htaccess` (with a `.` in the beginning). If your operating system makes that hard for you (hello Mac), you can first upload (following) and then rename the file only on fortrabbit.
+Before you upload anything: Rename the file `htaccess` in the extracted folder `public` to `.htaccess` (with a `.` in the beginning). If your operating system makes that hard for you (hello Mac), you can first upload and then rename the file directly on fortrabbit via SFTP.
 
-Now you can copy everything you just extracted, including the changed `db.php` file and the renamed `.htaccess` file, via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
+Copy everything you just extracted, including the changed `db.php` file and the renamed `.htaccess` file, via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 
 * **Server**: `deploy.{{region}}.frbit.com`
 * **User name**: `{{ssh-user}}`
@@ -77,7 +62,7 @@ Now you can copy everything you just extracted, including the changed `db.php` f
 
 When the upload is finished, visit [{{app-name}}.frb.io/admin](https://{{app-name}}.frb.io/admin) in your browser and commence with the guided web installation to finish the setup.
 
-After the guided web setup is done, you will be automatically redirected to the Craft CMS admin login form. Use the previously chosen Username and Password to login. Your WordPress is now live under 😋:
+After the guided web setup is done, you will be automatically redirected to the Craft CMS admin login form. Use the previously chosen Username and Password to login. Your Craft CMS is now live under 😋:
 
-* [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< WordPress installation_
-* [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) _< WordPress admin_
+* [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< Craft CMS installation_
+* [{{app-name}}.frb.io/admin](https://{{app-name}}.frb.io/admin) _< Craft CMS admin_
