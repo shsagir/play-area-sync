@@ -30,12 +30,6 @@ keywords:
 
 ---
 
-<!--
-
-TODO: this article is veryyyyyyy long. It is not ment to be read from top to down, more like a reference, still it might be possible to break it up in various other articles — a dedicated Company Article for example …
-
--->
-
 ## Problem
 
 You want to give another developer access to your App, so that the developer can modify the code or change App configurations on your behalf. You don't want to give them your personal access details nor allow them to take actions which result in additional costs for you.

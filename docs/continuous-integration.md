@@ -21,8 +21,6 @@ keywords:
 
 ---
 
-<!-- TODO: Check for universal App and general up-to-date-ness -->
-
 So, you want to use continuous integration? Deploy only if your tests succeed? This article gives you the big picture about how to do just that on fortrabbit.
 
 ## Problem
@@ -41,7 +39,7 @@ Continuous Integration to the rescue — first making things even more complicat
     '--------- repeat ---------'
 ```
 
-You can **code** on your local machine and **deploy** to fortrabbit. For the **testing** part you must either: run tests locally before each `git push` or integrate an external CI provider in your deployment and automate the whole process. 
+You can **code** on your local machine and **deploy** to fortrabbit. For the **testing** part you must either: run tests locally before each `git push` or integrate an external CI provider in your deployment and automate the whole process.
 
 
 
@@ -50,12 +48,12 @@ This article helps you to integrate an external CI provider in your workflow.
 
 ## Usage
 
-```nohighlight 
- #####                      
+```nohighlight
+ #####
 # + + #     +———————————+  +—————————+  +————+  +————————————+
 # ––– #———> | Git local |->| GitHub… |->| CI |->| fortrabbit |
  #####      +———————————+  +—————————+  +————+  +————————————+
-  you                       
+  you
 ```
 
 Most, if not all, of the CI providers assume that you host your code on a public available version control (Git) repository. This does not mean your repository publicly accessible without authentication, just that it's not on your local host. You can use [GitHub](https://github.com) or [Bitbucket](http://bitbucket.org/) and any other VCS provider to host a (private) public repositories.
@@ -110,5 +108,3 @@ $ git merge stage
 $ git checkout prod
 $ git push -u origin prod
 ```
-
-

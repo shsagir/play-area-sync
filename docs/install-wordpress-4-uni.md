@@ -23,8 +23,6 @@ keywords:
 
 ---
 
-<!-- TODO: restructure -->
-
 
 ## Get ready
 
@@ -55,7 +53,7 @@ The installer will also ask you for your WordPress site's **Site title**, **User
 After the guided web setup is done, you will be automatically redirected to the WordPress admin login form. Use the previously chosen Username and Password to login. Your WordPress is now live under 😋:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< WordPress installation_
-* [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/admin) _< WordPress admin_
+* [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/wp-admin) _< WordPress admin_
 
 
 ## Advanced setup and migration
