@@ -1,16 +1,15 @@
 ---
 
 template:      article
-reviewed:      2016-09-16
+reviewed:      2016-11-11
 naviTitle:     Backups
-title:         Backups
-lead:          Be safe... TODO
+title:         Working fortrabbit backups
+lead:          
 group:         platform
 stack:         uni
 
 ---
 
-<!--  TDOD: always ste the current date, write a IDE plugin or make it a habit -->
 
 ## Problem
 
@@ -20,9 +19,25 @@ Data loss is something, which can happen to everybody: be it an unpatched securi
 
 Automatic, out-of-the box, off-site, encrypted daily backups, without configuration and without hassle.
 
+<!-- TODO: link to marketing page when ready -->
+
+
+## Availabilty
+
+Please mind that backups are not included with all App plans. See our [pricing page](https://www.fortrabbit.com/pricing) for more.
+
+
+
 ## Access backups
 
-You can find your App's backups in the Dashboard > Your App > Backups. We automatically generate two backup files per day: One of your App's web storage and one of your App's MySQL storage.
+When your App has backups: Find them in the Dashboard > Your Apps overview > Backups. We automatically generate two backup files per day: One of your App's web storage and one of your App's MySQL storage.
+
+<!-- TODO: write something that you can download and unpack the backups  -->
+
+
+<!--
+
+TOOD: exclude this to the specs page:
 
 ### Backup availability
 
@@ -31,13 +46,16 @@ Depending on the region your App runs in, the daily backups will become availabl
 * **EU**: 05:00h GMT (05:00h UTC)
 * **US**: 05:00h EST (10:00h UTC)
 
+
 All backups are generated from snapshots, which are taken at 02:00h in the respective time zone.
 
-If you need backups available for a longer time period than the retention time allows (see [Specs](https://www.fortrabbit.com/specs)), then we recommend to periodically download the backups from the dashboard and store them locally.
+-->
+
+If you need backups available for a longer time period than the retention time allows (see [specs page](https://www.fortrabbit.com/specs)), then we recommend to periodically download the backups from the dashboard and store them locally.
 
 ## Recover from backups
 
-As mentioned above, there are two types of backups: MySQL and Web storage. Here is how you recover from either:
+As mentioned above, there are two types of backups: MySQL and web storage. Here is how you recover from either:
 
 ### Recover from MySQL backups
 
