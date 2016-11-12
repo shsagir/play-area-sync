@@ -190,12 +190,7 @@ Please mind that the person who has left still might hold local code copies and 
 <!-- TODO: make link to security section above work  -->
 
 
-
-- - -
-
-## FAQ
-
-### How can I work on behalf of my non-techie client?
+### How to work with a non-techie client
 
 <!--  TODO: rewrite on passive owner launch -->
 

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-03
+reviewed:      2016-11-11
 title:         Companies on fortrabbit
 naviTitle:     Company
 lead:          How to work with Companies on fortrabbit
@@ -119,3 +119,5 @@ All collaborators on the App will see those usage metrics with the App overview 
 <!--  TODO: decide what about Play App plan, which originally does not include metrics at all - see tikcet -->
 
 All owners of the App will get an e-mail, once a usage metric is about to exceed or already exceeded it's limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
+
+
