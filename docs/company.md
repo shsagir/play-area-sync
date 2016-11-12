@@ -48,10 +48,10 @@ In the following steps you will create a Company with a first Billing Contact. E
 
 ## Collaboration
 
-fortrabbit supports two levels of collaboration:
+There are two levels of collaboration:
 
 1. [App level collaboration](app-collaboration): Grant code access on a per-App basis
-2. [Company level collaboration](company-collaboration): Grant company-wide access to all Apps and the Companies themselves
+2. **[Company level collaboration](company-collaboration)**: Grant company-wide access to all Apps and the Companies themselves
 
 ## Support
 
