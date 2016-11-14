@@ -8,13 +8,13 @@ lead:             Symfony has been around for some while — but it doesn't look
 
 group:            Install_guides
 stack:            uni
-proLink:          install-symfony-2-pro
+proLink:          install-symfony-3-pro
 
 websiteLink:      http://symfony.com/?utm_source=fortrabbit
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
-version:          2.8, 3.2
+version:          2.8, 3.1
 
 ---
 
