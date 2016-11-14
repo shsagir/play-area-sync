@@ -4,7 +4,7 @@ template:      article
 naviTitle:     "Professional Stack"
 title:         "About the Professional Stack"
 reviewed:      2016-10-15
-lead:          'With each App you create, you can choose between two technology <a href="/stacks">stacks</a>. This article helps you to understand the Professional Stack.'
+lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Professional Stack.'
 group:         platform
 stack:         pro
 
