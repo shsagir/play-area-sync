@@ -1,8 +1,8 @@
 ---
 
 template:         article
-reviewed:         2016-08-29
-title:            Install Symfony 2
+reviewed:         2016-11-14
+title:            Install Symfony
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 on fortrabbit.
 
@@ -12,7 +12,7 @@ websiteLink:      http://symfony.com/?utm_source=fortrabbit
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
-version:          2
+version:          2.8, 3.1
 
 ---
 
@@ -52,7 +52,7 @@ For a new Symfony installation execute the commands following in your local term
 
 ```bash
 # 1. Use Composer to create a local Symfony project named like your App
-$ composer create-project symfony/framework-standard-edition {{app-name}} "2.7.*"
+$ composer create-project symfony/framework-standard-edition {{app-name}} "3.1.*"
 
 # 2. Change into the folder
 $ cd {{app-name}}
