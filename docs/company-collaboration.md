@@ -10,21 +10,6 @@ stack:         all
 
 keywords:
     - collaboration
-    - beginner
-    - platform
-    - teamwork
-    - sharing
-    - permissions
-    - roles
-    - organization
-    - access
-    - multi-client capability
-    - multitenancy
-    - tenant
-    - client
-    - epmloyees
-    - developer
-    - collaborator
     - administrator
     - platform design
 
@@ -37,7 +22,7 @@ In the real world, you are working with a team. The members of this team have di
 
 ## Solution
 
-A [Company](company), within the fortrabbit platform, represents your business and Company collaboration allows you to map your business setup to fortrabbit. To name a few use cases:
+A [Company](/company), within the fortrabbit platform, represents your business and Company collaboration allows you to map your business setup to fortrabbit. To name a few use cases:
 
 * Designate a responsible Admin to handle maintenance tasks, such as scaling and monitoring metrics
 * Let your project managers handle their projects by themselves, by granting them rights to invite and manage App level collaborators
@@ -205,12 +190,7 @@ Please mind that the person who has left still might hold local code copies and 
 <!-- TODO: make link to security section above work  -->
 
 
-
-- - -
-
-## FAQ
-
-### How can I work on behalf of my non-techie client?
+### How to work with a non-techie client
 
 <!--  TODO: rewrite on passive owner launch -->
 

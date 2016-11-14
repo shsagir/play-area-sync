@@ -1,57 +1,38 @@
 ---
 
 template:      article
-reviewed:      2016-11-03
+reviewed:      2016-11-11
 title:         Companies on fortrabbit
 naviTitle:     Company
-lead:          How to work with multiple Companies on fortrabbit
+lead:          How to work with Companies on fortrabbit
 group:         platform
 stack:         all
 
 keywords:
-    - collaboration
     - beginner
     - platform
     - teamwork
     - sharing
-    - permissions
     - roles
     - organization
     - access
-    - multi-client capability
-    - multitenancy
     - tenant
     - client
     - epmloyees
-    - developer
-    - collaborator
-    - administrator
-    - platform design
 
 ---
 
-If you only have one or a few Apps and want to pay them directly from the same credit card, you are wrong here: All is good, no need to get into the details. Now, if that is not sufficient for you and you need to manage Apps within multiple Companies, paid by the same or multiple different entities while using the same Account to do all of that: You are right here. Let us show you how it works.
+<!-- TODO: maybe remove this intro? "you are wrong here" = negative tone?!
 
-## Account vs Company
+If you only have one or a few Apps and want to pay them directly from the same credit card, you are wrong here: All is good, no need to get into the details. 
 
-When signing up with fortrabbit you'll be asked for your first and your last name. We expect that an Account represents a human being, not a Company. An Account is a person who can login to the Dashboard, manage Apps and Companies. An Account can own a single or multiple Companies or be otherwise part of multiple Companies.
+Now, if that is not sufficient for you and you need to manage Apps within multiple Companies, paid by the same or multiple different entities while using the same Account to do all of that: You are right here. Let us show you how it works.
 
-Accounts have unique access details for all Apps they are allowed to access. Those access details can be added or removed by adding or removing an Account to or from a Company. In classical hosting you have one set of server access credentials for SFTP/SSH which you then have to share. With fortrabbit it's better: each Account has it's own personal access to each App:
+-->
 
-```
-# Personal code access with fortrabbit
-┌────────────────┐                     ┌──────────────────────────┐
-│                │                     │                          │
-│    Account1    ├───personal access───▶                          │
-│                │                     │                          │
-└────────────────┘                     │           App            │
-┌────────────────┐                     │                          │
-│                │                     │                          │
-│    Account2    ├───personal access───▶                          │
-│                │                     │                          │
-└────────────────┘                     └──────────────────────────┘
-```
+## Compaines on fortrabbit
 
+Your fortrabbit Account represents YOU and is your personal login and path to access Apps. A Company on fortrabbit helps you to structure and manage team and billing aspects for your Apps. A Company can have one team and multiple Billing Contacts.
 
 ## Creating a Company
 
@@ -59,70 +40,27 @@ You can create as many Companies you need — free of charge. In the the Dashboa
 
 In the following steps you will create a Company with a first Billing Contact. Each Company needs at least one Owner, you are the one at first.
 
-* [dashboard.fortrabbit.com//account/company/new](https://dashboard.fortrabbit.com//account/company/new) < direct link
+<div data-markdown="1" data-user="known">
 
+* [Create a new Company](https://dashboard.fortrabbit.com/account/company/new) (login required)
 
-## Deleting a Company
-
-As an Owner you can also decide to delete a Company. This is a huge step, as all Apps owned by the Company will be deleted and all team members will loose access. To do so: In the Dashboard > Your Account > Companies > {{ Your Company }} > Click the "Delete Company" button and follow the instructions.
-
+</div>
 
 ## Collaboration
 
-fortrabbit supports two levels of collaboration:
+There are two levels of collaboration:
 
 1. [App level collaboration](app-collaboration): Grant code access on a per-App basis
-2. [Company level collaboration](company-collaboration): Grant company-wide access to all Apps and the Companies themselves
+2. **[Company level collaboration](company-collaboration)**: Grant company-wide access to all Apps and the Companies themselves
 
-Either merits an article of their own, so please follow the above links for more details. The big picture looks as following:
+## Support
 
-```
-┌────────────────────────────────────────────────────────┐    •
-│                                                        │    •
-│                                                        │    •
-│                                                        │    •
-│                        Company                         │    •
-│                                                        │    •
-│                                                        │    •  (2) COMPANY LEVEL
-│                                                        │    •  Advanaced
-└─────▲─────────┬─────────────┬────────────┬────────▲────┘    •  Company level
-      │                                             │         •  team cooperation
-    Owner       │             │            │      Admin       •  where Owners & Admins
-      │                                             │         •  delegate on behalf
-┌─────┴──────┐  │             │            │ ┌──────┴─────┐   •  of the Company
-│            │                               │            │   •
-│  Account1  ├──┼────────┐    │    ┌───────┼─┤  Account3  │   •
-│            │           │         │         │            │   •
-└─────┬──────┘  │        │    │    │       │ └──────┬─────┘   •
-      │                  │         │                │         •
-      │         │        │    │    │       │        │         •
-      │                  │         │                │         •
-┌─────▼─────────▼─┐  ┌───▼────▼────▼───┐ ┌─▼────────▼──────┐  •
-│                 │  │                 │ │                 │  •
-│      App1       │  │      App1       │ │      App1       │
-│                 │  │                 │ │                 │  °
-└─────────────────┘  └────────▲────────┘ └─────────────────┘  °  (1) APP LEVEL
-                              │                               °  Simple
-                              │                               °  App level
-                       ┌──────┴─────┐                         °  collaboration
-                       │            │                         °  where an Account
-                       │  Account2  │                         °  has access to a
-                       │            │                         °  single App
-                       └────────────┘                         °
-```
+<!-- TODO: write about how to book support -->
+
+[Support](//www.fortrabbit.com/support): Get help from us, when needed
 
 
-## Upgrading Companies
-
-fortrabbit offers two Company products:
-
-1. [Company teams](company-collaboration): Get access to Company level collaboration
-2. [Support](//www.fortrabbit.com/support): Get help from us, when needed
-
-Both can be booked in the Dashboard > Your Company > TODO
-
-
-## Billing Contact
+## Billing Contacts
 
 <!-- TODO: check with billing article: how much infos should be displayed here? -->
 
@@ -145,6 +83,9 @@ You can create any number of Billing Contact free of charge in the Dashboard > Y
 You cannot, because they are bound to previously created invoices and are needed for our accounting. You can, of course, delete or move all Apps away from a Billing Contact so that it becomes inactive and no more bills will be created for it. As the Billing Contact also contains an archive of previously issued invoices, you can always access your old invoices.
 
 
+### Deleting a Company
+
+As an Owner you can also decide to delete a Company. This is a huge step, as all Apps owned by the Company will be deleted and all the team will loose access. To do so: In the Dashboard > Your Account > Companies > {{ Your Company }} > Hit the "Delete Company" button and follow the instructions.
 
 
 
@@ -178,3 +119,5 @@ All collaborators on the App will see those usage metrics with the App overview 
 <!--  TODO: decide what about Play App plan, which originally does not include metrics at all - see tikcet -->
 
 All owners of the App will get an e-mail, once a usage metric is about to exceed or already exceeded it's limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
+
+

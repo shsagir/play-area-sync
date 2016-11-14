@@ -27,11 +27,11 @@ keywords:
 
 ## Get ready
 
-We assume you've already created a New App and chose Craft CMS in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). If you haven't chosen Craft CMS stack when creating the App in the Dashboard, please set the following:
+We assume you've already created a New App and chose Craft CMS in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
 ### Root path
 
-Go to the Dashboard and [set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
+If you haven't chosen Craft CMS stack when creating the App in the Dashboard, please set the following: Go to the Dashboard and [set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
@@ -66,3 +66,6 @@ After the guided web setup is done, you will be automatically redirected to the 
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< Craft CMS installation_
 * [{{app-name}}.frb.io/admin](https://{{app-name}}.frb.io/admin) _< Craft CMS admin_
+
+<!-- TODO: write on how to customize it -->
+<!-- TODO: hint or example to install with wget via SSH  -->

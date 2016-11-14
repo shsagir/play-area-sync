@@ -24,7 +24,7 @@ No need to explain this anymore: [Composer](http://getcomposer.org) is the defac
 
 On fortrabbit you [(of course) exclude](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md) the vendor folder from Git. This directory is created by Composer within in your project locally and contains all the modules you are using. This way only your own code — not the dependencies — is included into Git. During deployment Composer runs on the remote Node of your App as well.
 
-For [Old Apps](new-apps) you can trigger Composer with a special keyword in your commit message. For [New Apps](new-apps) Composer will always run.
+For [Old Apps](app-old) you can trigger Composer with a special keyword in your commit message. For [Professional Apps](app-pro) and [Universal Apps](app-uni) Composer will always run.
 
 
 ### Composer via the deployment file
@@ -33,7 +33,7 @@ You can fine tune your deployment behavior and aspects of Composer in the deploy
 
 ### Composer hook trigger (only Old Apps)
 
-Besides the recommended deployment file, you can trigger Composer on a per-commit basis for [Old Apps](new-apps). All you need to do is add `[trigger:composer:install]` to your commit message and push the commit. For example:
+Besides the recommended deployment file, you can trigger Composer on a per-commit basis for [Old Apps](app-old). All you need to do is add `[trigger:composer:install]` to your commit message and push the commit. For example:
 
 ```bash
 git commit -am 'Comments about code [trigger:composer:install]'

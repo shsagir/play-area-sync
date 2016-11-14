@@ -88,9 +88,9 @@ git remote add production git@git1.eu1.frbit.com:your-app-prod.git
 ```
 
 
-#### Mapping branches for New Apps
+#### Mapping branches for Professional Apps
 
-For [New Apps](new-apps) you can name your local branch like your App name and push it to remote. Your fortrabbit will prefer a branch named like the App over the master branch.
+For [Professional Apps](app-pro) you can name your local branch like your App name and push it to remote. Your fortrabbit will prefer a branch named like the App over the master branch.
 
 #### Setup and map all the branches for Old Apps
 

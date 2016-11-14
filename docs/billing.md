@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-10-10
 title:         All about billing, pricing, payments, invoices & taxes
 naviTitle:     Billing
 lead:          Our consumption based pricing model explained.
@@ -9,6 +9,8 @@ group:         platform
 stack:         all
 
 ---
+
+<!-- TODO: compare with Company article -->
 
 ## Free trial
 

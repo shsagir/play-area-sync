@@ -53,16 +53,16 @@ Your `git push` updates the Git remote repo. But that's not the code you see exe
 
 ### Overwrite but not delete default for Old Apps
 
-For [Old Apps](new-apps): The old files will be overwritten with the ones that have been updated thru Git. However, Git deployment will not delete anything. So when you delete a file from your Git repo it will be still there in the webspace. This is the safe default to deal with "runtime contents". When you implement something like an image upload form, you will upload additional contents to your webspace. Those files are generated on the webspace directly. So they are not part of Git repo. But most likely you don't want these to be deleted whenever you push code changes. You can change this in the [deployment file](#toc-deployment-file).
+For [Old Apps](app-old): The old files will be overwritten with the ones that have been updated thru Git. However, Git deployment will not delete anything. So when you delete a file from your Git repo it will be still there in the webspace. This is the safe default to deal with "runtime contents". When you implement something like an image upload form, you will upload additional contents to your webspace. Those files are generated on the webspace directly. So they are not part of Git repo. But most likely you don't want these to be deleted whenever you push code changes. You can change this in the [deployment file](#toc-deployment-file).
 
 ### Full sync strategy for New Apps
 
-For [New Apps](new-apps): All files in the webspace will be replaced with the current release package.
+For [Professional Apps](app-pro): All files in the webspace will be replaced with the current release package.
 
 
 ### The master branch counts
 
-While you can have as many Git branches you want, only changes to the master branch will be synchronized into the webspace. Currently there is no way to change which branch shall be deployed to an App. However you can match your local branches to master branches of different Apps to create a [development/production setup](multi-staging). [New Apps](new-apps) also accept and prefer a branch called like the App name.
+While you can have as many Git branches you want, only changes to the master branch will be synchronized into the webspace. Currently there is no way to change which branch shall be deployed to an App. However you can match your local branches to master branches of different Apps to create a [development/production setup](multi-staging). [Professional Apps](app-pro) also accept and prefer a branch called like the App name.
 
 
 ## Deployment file
@@ -75,7 +75,7 @@ Fine tune deployment configurations with the `fortrabbit.yml` deployment file: c
 
 ### Composer
 
-New Apps will always run an [Composer](composer) install after a successful `git push`. With the [Old Apps](new-apps) you can use a special formated commit message to [trigger Composer](composer) `install` or `update` on the fortrabbit remote after you pushed some code.
+New Apps will always run an [Composer](composer) install after a successful `git push`. With the [Old Apps](app-old) you can use a special formated commit message to [trigger Composer](composer) `install` or `update` on the fortrabbit remote after you pushed some code.
 
 
 ### Private Git/Composer repos

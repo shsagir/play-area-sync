@@ -25,7 +25,7 @@ Modern PHP App development utilizes [Composer](composer) as a dependency manager
 
 ### Generating a public key for an Old App
 
-To generate a SSH key-pair for an [Old App](new-apps), send a `sshkeygen` trigger in a commit message. This can either be a commit containing changes, or an empty one, just for the key generation. Here you go:
+To generate a SSH key-pair for an [Old App](app-old), send a `sshkeygen` trigger in a commit message. This can either be a commit containing changes, or an empty one, just for the key generation. Here you go:
 
 ```bash
 git commit --allow-empty -m 'Generate SSH Key [trigger:sshkeygen]'

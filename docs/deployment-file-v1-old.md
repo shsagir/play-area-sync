@@ -17,7 +17,7 @@ keywords:
 ---
 
 
-This article is about the deployment file version 1, which is used by [Old Apps](old-apps). [Version 2](deployment-file-v2) is used by the New Apps.
+This article is about the deployment file version 1, which is used by [Old Apps](app-old). [Version 2](deployment-file-v2) is used by the New Apps.
 
 [Git push to deploy](git) is nice and easy to get your code up and running quickly. But deployment is not deployment — there is a huge variety of use cases and preferred workflows. The `fortrabbit.yml` is an optional helper to support your habits. With the deployment file version 1 you can change the synchronization mode, add post- or pre-deploy scripts and control how Composer behaves.
 
