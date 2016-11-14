@@ -6,8 +6,9 @@ title:            Install October CMS on fortrabbit
 naviTitle:        October CMS
 lead:             October is a free, open-source, self-hosted CMS based on the Laravel PHP framework. Learn how to install and use it on fortrabbit.
 
-
 group:            Install_guides
+stack:            pro
+uniLink:          install-october-cms-uni
 
 websiteLink:      https://octobercms.com/?utm_source=fortrabbit
 websiteLinkText:  octobercms.com
@@ -329,7 +330,7 @@ If you plan on using scheduled jobs then you can configure a new Cron Job in the
 * **Command:** `artisan schedule:run`
 * **Interval:** `every minute`
 
-For this, you need to book the [Worker Component](/worker) for your App. 
+For this, you need to book the [Worker Component](/worker) for your App.
 
 ## Troubleshooting
 
