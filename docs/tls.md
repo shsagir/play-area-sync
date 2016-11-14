@@ -39,16 +39,29 @@ As part of [security efforts](/security) our aim is to give you secure, easy-to-
 
 You can already access your [App URL](app#toc-app-url) using HTTPS which is provided by us like so. For example: `https://{{app-name}}.frb.io`. Use this URL for testing or if a custom domain is not important to you.
 
-### TLS free
+
+### Professional App
+
+#### TLS free
 
 This is the default free and zero-config option which makes use of the external [Let's Encrypt](https://letsencrypt.org/) service. There is nothing to setup or configure. Certificates will be created installed and renewed automatically for each [custom domain](/domains) you are adding to fortrabbit.
 
 * [TLS free introduction blog post](https://blog.fortrabbit.com/tls-free-launched)
 
-### TLS custom
+#### TLS custom
 
 Bring your own certificate for even more security and advanced options for your custom domains. See the [TLS custom help article](/tls-custom) for why and how.
 
+<!--
+
+TODO: write about SSL & TLS for Universal Apps
+
+### Universal App
+
+Universal Apps 
+
+
+-->
 
 
 ## General usage
