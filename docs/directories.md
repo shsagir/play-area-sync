@@ -5,9 +5,8 @@ reviewed:      2016-11-08
 title:         Learn about your Apps directory structure
 naviTitle:     Directory structure
 group:         platform
-stack:         uni
+stack:         all
 oldLink:       directories-old
-uniLink:       directories-uni
 hideExamples:  yes
 
 keywords:
@@ -45,12 +44,6 @@ srv
 
 When you login with [SFTP](/sftp-uni) or [SSH](ssh-uni) to your [Universal App](app-uni) you can travel up in the file directory structure. In this article you can learn the predefined set of folders for each App and what they are for.
 
-### {{app-name}} folder
-
-<!-- TODO: why write about this folder? maybe just write about a folder, when a user can do something with it? it's obvious that this is the App name.  -->
-
-The actual name of your App, for example `/srv/app/{{app-name}}` and so on.
-
 ### htdocs
 
 The default web root (aka document root) of your App. Directory that forms the main directory tree visible from the web. You can change the [routing point](domains#toc-set-a-custom-root-path), to any folder below the `htdocs` directory. The [Git deployment](git) syncs to the `htdocs` folder as well.
@@ -65,4 +58,4 @@ For multi node plans: The `tmp` folder is not shared. Meaning that each node has
 
 ## Other folders
 
-The rest of the folders (and files which are not shown here) are part of the standard Linux distribution. All this stuff is handled by us for you. So you don't have access privileges. You can't change things outside the above outlined context.
+The rest of the folders (and files which are not shown here) are part of the standard Linux distribution. All this stuff is handled by us for you. So you don't need to care about them. You can't change things outside the above outlined context.
