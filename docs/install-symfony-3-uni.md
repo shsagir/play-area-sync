@@ -58,7 +58,7 @@ For a new Symfony installation execute the commands following in your local term
 
 ```bash
 # 1. Use Composer to create a local Symfony project named like your App
-$ composer create-project symfony/framework-standard-edition {{app-name}} "3.2.*"
+$ composer create-project symfony/framework-standard-edition {{app-name}} "3.1.*"
 
 # 2. Change into the folder
 $ cd {{app-name}}
