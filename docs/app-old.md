@@ -13,7 +13,7 @@ stack:         old
 
 We have three generations of Apps/Stacks here on fortrabbit: 
 
-* **Old Apps Stack** (2013 - ~2017?) this here
+* **Old Apps Stack** (2013 - 2017) this here
 * [Professional Stack](app-pro) (from 2015 on) < formaly known as New App
 * [Universal Stack](app-uni) (from 2016 on)
 
@@ -24,8 +24,8 @@ Please be warned that the Old Apps are currently phasing out. We recommend not c
 
 Unfortunatly, we can not switch the App for you. Apps have to be migrated manually. You can choose how you would like to migrate your Old App:
 
-1. **[Migrate Old App to Universal Stack](/migrating-old-to-uni)** < most commonly used
-2. [Migrate Old App to Professional Stack](/migrating-old-to-pro)
+1. **[Migrate Old App to Universal Stack](/migrate-old-to-uni)** < most commonly used
+2. [Migrate Old App to Professional Stack](/migrate-old-to-pro)
 
 c
 ## Finding articles for Old Apps

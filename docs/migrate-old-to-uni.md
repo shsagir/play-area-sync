@@ -1,19 +1,26 @@
 ---
 
 template:      article
-naviTitle:     Migrate Old to Universal App
-title:         Migrate Old to Universal App
+naviTitle:     Migrate Old App > Universal
+title:         Migrate Old App to Universal
 reviewed:      2016-11-10
-lead:          "The Old Stack is sunsetting. Here is how you manually migrate an Old Stack App to the new Universal Stack."
+lead:          "Here is how you manually migrate an Old App to the new Universal Stack."
 group:         platform
 stack:         all
 
 ---
 
 
-Depending on the MySQL and web storage size of your App, the whole migration process should take you between a couple of minutes and an hour.
+## Motivational intro
+
+The [Old App](/app-old) is sunsetting. This guide helps you to migrate an Old App to a [Universal Stack App](app-uni). It is recommened for all legacy website kind of projects with low - medium traffic.
+
+The Universal Stack is pretty much like the Old App stack in terms of backward compability and ease of use. It's faster and more affordable. Also see our [stacks article](/stacks).
+
 
 ## Preparation
+
+Depending on the MySQL and web storage size of your App, the whole migration process should take you between a couple of minutes and an hour.
 
 First you need to decide which Universal App plan fit's your needs. Start by checking your current Old App metrics in the Dashboard > Your App > Metrics. Find out:
 
@@ -26,7 +33,9 @@ Now make sure the following applies to your App:
 1. Your App doesn't use "PHP l" or "PHP xl" (which are multi-node plans) or your App currently uses either of them but doesn't need as much resources
 2. Your App doesn't use [Memcache](memcache-old), which is not available for single-node Universal Apps
 
-If you are unsure about (1), then check the App metrics: If your PHP requests are below 1000 per hour on average, you are, most likely, good and can proceed. If either of the above applies an cannot be changed, then we strongly recommend to use a [Professional App plan](TODO) instead.
+If you are unsure about (1), then check the App metrics: If your PHP requests are below 1000 per hour on average, you are, most likely, good and can proceed. 
+
+If either of the above applies an cannot be changed, then we strongly recommend to use a [Professional App](app-pro) instead.
 
 
 ### Create a new Universal App

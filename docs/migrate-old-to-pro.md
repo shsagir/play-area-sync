@@ -2,11 +2,11 @@
 
 template:      article
 reviewed:      2016-11-10
-title:         Migrating from Old App to Professional Stack App
-naviTitle:     Migrate: Old App > Professional Stack App
+title:         Migrate Old App to Professional
+naviTitle:     Migrate Old App > Professional
 lead:          Learn how to move your Old App to a Professional App.
 group:         platform
-stack:         old
+stack:         all
 
 ---
 
