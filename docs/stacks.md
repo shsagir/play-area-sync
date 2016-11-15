@@ -31,7 +31,7 @@ stack:         all
 | Required skill level        | beginner                                | sophisticated                                     |
 | Deployment protocols        | SFTP, Git, SSH                          | Git                                               |
 | Composer integration        | after Git push + via SSH                | after Git push                                    |
-| SSH integration             | standard                                | [remote SSH execution](/remote-ssh-execution-pro) |
+| SSH integration             | [full](ssh-uni)                         | [remote SSH execution](/remote-ssh-execution-pro) |
 
 ## More infos on the stacks
 

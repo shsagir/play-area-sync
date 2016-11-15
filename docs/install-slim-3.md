@@ -21,6 +21,8 @@ version:          3.1
 
 We assume you've already created a new App. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
+### Root path
+
 Go to the Dashboard and [set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
