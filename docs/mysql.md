@@ -9,7 +9,6 @@ group:         platform
 
 stack:         all
 oldLink:       mysql-old
-proLink:       mysql-pro
 
 keywords:
      - localhost
@@ -27,10 +26,6 @@ keywords:
 
 ---
 
-
-## Professional vs Universal
-
-All Universal Apps automatically come with a MySQL database. For Professional Apps, MySQL is an optional Component. You can [scale](scaling#toc-mysql) it up and down any time without downtimes in the Dashboard.
 
 ## Obtain the MySQL password
 
@@ -267,3 +262,9 @@ $pdo = new PDO(
     )
 );
 ```
+
+
+### Differences between Professional and Universal
+
+All [Universal Apps](/app-uni) automatically come with a MySQL database. For [Professional Apps](app-pro), MySQL is an optional Component. There you can [scale](scaling#toc-mysql) it up and down individually.
+
