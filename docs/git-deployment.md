@@ -56,10 +56,16 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 
 ### Resetting the remote repo
 
+To start with a complete new Git history, you can now reset your repository. This can be done with the `reset` command like so:
+
 ```
 # Reset the remote repo (delete remote Git repo & vendor folder):
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```
+
+
+The reset operation is non-destructive, meaning: It does not generate a release. Thereby your live App continues to operate without any interruption. The new release will only be build on the next push (of your new code base). A repository reset also removes any sustained directory (the `vendor` folder, so a following [Composer](composer) install requires to download everything once again).
+
 
 ### Git with a GUI or IDE
 
@@ -104,7 +110,13 @@ Your `git push` updates the Git remote on fortrabbit and triggers the build of a
 
 ### The branch name counts
 
-While you can have as many Git branches you want, only changes in certain branches will be deployed. Besides the `master` Branch also any branch named like the App itself - `{{app-name}}`, if that's the name of your App - will be considered. The latter helps when working with [multi staging setups](multi-staging).
+While you can have as many Git branches you want, only changes in certain branches will be deployed. The `master` branch us the default one.
+
+
+### Branching for multi-staging setups
+
+Usually, only the remote Git `master` branch will be deployed. With the Professional Apps you can also create a branch with the same name as your App, which will be preferred over the master branch. That way it is easier to set up a [multi-staging environment](multi-staging).
+
 
 ### Deployment file
 
@@ -137,3 +149,8 @@ $ ls -lh {{app-name}}.tar.gz
 ### Integrating with GitHub & Bitbucket
 
 We don't have any fancy GitHub/Bitbucket integrations (yet). But it is easily possible to combine your fortrabbit repo with [GitHub](github) and [Bitbucket](bitbucket).
+
+
+## Don't use Git submodules
+
+Git submodules are not supporte. We recommend to use Git subtrees instead. See [this post from Atlassian](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/).

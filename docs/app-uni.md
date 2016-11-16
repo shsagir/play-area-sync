@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2016-11-10
+reviewed:      2016-11-16
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         platform
 stack:         uni
@@ -11,7 +11,7 @@ stack:         uni
 ---
 
 
-The Universal Stack is made for general purpose PHP web development — websites and web applications. It's design unifies legacy development workflows with modern web development paradigms. Everyone should be able to use the Universal stack out-of-the-box.
+The Universal Stack (see our [stack article](/stacks) to lean more about the options) is made for general purpose PHP web development — websites and web applications. It's design unifies legacy development workflows with modern web development paradigms. Everyone should be able to use the Universal stack out-of-the-box.
 
 ## Specs & limits
 

@@ -134,6 +134,17 @@ $ gulp run-script
 ```
 
 
+## Private repositories
+
+[Old Apps](app-old) offered a keygen hook to realize access to private Composer repos. With the Professional Apps you can create a new SSH keypair for your App, using the `keygen` command:
+
+```bash
+ssh {{ssh-user}}@deploy.{{region}}.frbit.com keygen
+```
+
+This will print out a public key, which you can then install with your private repository (on Github, Bitbucket or wherever).
+
+
 ## Advanced usage
 
 Still reading, go ahead, dive deeper!
@@ -161,3 +172,4 @@ $ artisan-{{app-name}} migrate
 ```
 
 To persist those aliases between shell sessions you need to add them to your shell profile file. Usually that is either `~/.profile`, `~/.zshrc` or `~/.bashrc`.
+

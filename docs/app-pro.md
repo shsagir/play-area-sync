@@ -4,13 +4,19 @@ template:      article
 naviTitle:     "Professional Stack"
 title:         "About the Professional Stack"
 reviewed:      2016-11-16
-lead:          'With each App you create, you can choose between two technology <a href="/stacks">stacks</a>. This article helps you to understand the Professional Stack.'
+lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Professional Stack.'
 group:         platform
 stack:         pro
 
 ---
 
-The Professional Stack is made for modern PHP development workflows building modern web applications. It subscribes to the 12-factor design paradigms.
+The Professional Stack (formaly known as New App) is made for modern PHP development workflows building modern web applications. It subscribes to the 12-factor design paradigms.
+
+
+## Specs & limits
+
+Please visit our [specs page](https://www.fortrabbit.com/specs-pro) to see some hard numbers.
+
 
 ### Scaling
 
