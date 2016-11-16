@@ -32,7 +32,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created an App with fortrabbit which has the [MySQL](mysql) and [Memcache](memcache) components enabled. You also need a local [EZ Platform](https://github.com/ezsystems/ezplatform/blob/master/INSTALL.md) installation.
+We assume you've already created an App with fortrabbit which has the [MySQL](mysql) and [Memcache](memcache-pro) components enabled. You also need a local [EZ Platform](https://github.com/ezsystems/ezplatform/blob/master/INSTALL.md) installation.
 
 
 ## Install
@@ -278,7 +278,7 @@ $ git push -u fortrabbit master
 
 ### Initialize database on fortrabbit
 
-The last step is to initialize the database remotely. You can use a [remote SSH execution](/remote-ssh-execution) to do this:
+The last step is to initialize the database remotely. You can use a [remote SSH execution](/remote-ssh-execution-pro) to do this:
 
 ``` bash
 ssh {{ssh-user}}@deploy.{{region}}.frbit.com php app/console --env=prod ezplatform:install clean
