@@ -58,6 +58,11 @@ Please keep in mind, that the Git repo is not the web storage. After you Git pus
 
 You can not `pull` the changes from the web storage back into your Git repo. While this might looks odd at first: this design keeps your Git repo clean of temporary, binary and other blob. Use Git only for code deployment, not to manage all of your Apps runtime data.
 
+### Git overwrite but not deletes
+
+The old files will be overwritten with the ones that have been updated thru Git. However, Git deployment will not delete anything. So when you delete a file from your Git repo it will be still there in the webspace. This is the safe default to deal with "runtime contents". When you implement something like an image upload form, you will upload additional contents to your web storage. Those files are generated on the webspace directly. So they are not part of Git repo.
+
+
 ### Not all applications work well with Git
 
 Git deployment is great when your App skeleton has clean folder structure with exclude patterns and [Composer](/composer) support. [Laravel](/install-laravel) and [Symfony](/install-symfony) are poster childs for good Git support. [WordPress](/install-wordpress) and other CMS are not Git compatible, out-of-the-box (while good [hacks](install-wordpress-pro) are available).

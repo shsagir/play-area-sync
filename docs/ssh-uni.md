@@ -99,9 +99,7 @@ The above command assures that the remote folder `custom-plugin` contains exactl
 
 ### Using Composer
 
-<!-- TODO: write some more about Composer here and the alternative way to trigger Composer via Git … -->
-
-Using [Git deployment](git-deployment) will trigger Composer automatically. If you need to run Composer manually, just execute the following when logged in via SSH:
+Using [Git deployment](git-deployment) will trigger [Composer](composer) automatically. If you need to run Composer manually, just execute the following when logged in via SSH:
 
 ```bash
 $ composer install
@@ -109,7 +107,7 @@ $ composer install
 
 ## Limitations
 
-* This is not a root shell, so you can't install or remove software packages.
+* This is not a root shell, so you can't install or remove software packages
 * Mind that you are using the same runtime as your web application: resource intensive operations will drain memory and CPU from the web execution
 
 

@@ -51,13 +51,9 @@ git push -u origin master
 Your `git push` updates the Git remote repo. But that's not the code you see executed in the browser. After the fortrabbit Git remote repo got updated, it gets packed and synchronized into the actual Node containing your App (read webspace).
 
 
-### Overwrite but not delete default for Old Apps
+### Overwrite but not delete
 
-For [Old Apps](app-old): The old files will be overwritten with the ones that have been updated thru Git. However, Git deployment will not delete anything. So when you delete a file from your Git repo it will be still there in the webspace. This is the safe default to deal with "runtime contents". When you implement something like an image upload form, you will upload additional contents to your webspace. Those files are generated on the webspace directly. So they are not part of Git repo. But most likely you don't want these to be deleted whenever you push code changes. You can change this in the [deployment file](#toc-deployment-file).
-
-### Full sync strategy for New Apps
-
-For [Professional Apps](app-pro): All files in the webspace will be replaced with the current release package.
+The old files will be overwritten with the ones that have been updated thru Git. However, Git deployment will not delete anything. So when you delete a file from your Git repo it will be still there in the webspace. This is the safe default to deal with "runtime contents". When you implement something like an image upload form, you will upload additional contents to your webspace. Those files are generated on the webspace directly. So they are not part of Git repo. But most likely you don't want these to be deleted whenever you push code changes. You can change this in the [deployment file](#toc-deployment-file).
 
 
 ### The master branch counts
