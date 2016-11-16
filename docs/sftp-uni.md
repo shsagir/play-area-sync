@@ -42,7 +42,18 @@ Many modern editors or IDEs also feature SFTP integrations by plugin.
 
 Most SFTP clients feature a file synchronization mode. You can choose your local folder and sync it to the remote folder on fortrabbit. All files will be compared and only changed ones will be uploaded. This works in the other direction as well, of course.
 
-<!-- TODO: for Frank, describe file exclution patterns maybe example with Transmit -->
+### Setting up SFTP file
+
+This example shows how to configure your SFTP client to quickly sync code:
+
+1. Create a bookmark (favorite) that stores the access informations to connect with one click
+2. Set a local directory to be synced with the online directory in the bookmark
+3. Set rules for exclude patterns (a huge time saver!)
+4. Run simulation first, the first run will take longer, results will be cached, execution will be fast
+5. First sync down, then sync up
+
+The workflow has been tested with (macOS commercial) SFTP client Transmit from Panic. 
+
 
 ## Troubleshooting authentication
 
@@ -54,4 +65,10 @@ Got an error when trying to login? fortrabbit supports username + password and p
 ## About SFTP
 
 SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH]([SSH](ssh-uni)) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really makes a difference.
+
+## Mixing deployment methods
+
+Please see our [deployment methods article](deployment-methods-uni) to learn how the diffrent ways to deploy code work side by side.
+
+
 
