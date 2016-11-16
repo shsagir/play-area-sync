@@ -30,9 +30,11 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
 # Unless you are using public key: You will be asked for your Account password
 ```
 
-When it worked, you will see a welcome screen.
+When it worked, you will see small a welcome screen:
 
-<!-- TODO: dump example of SSH screen (this is marketing) -->
+```
+–––––––––––––––––––––––  ∙ƒ  –––––––––––––––––––––––
+```
 
 You are now logged in to your App by SSH. See [below](#toc-troubleshooting-authentication) when you got an error.
 
