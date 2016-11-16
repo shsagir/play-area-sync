@@ -151,7 +151,7 @@ Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to acce
 
 #### Migrate & other database commands
 
-You can [execute remote commands via SSH](/remote-ssh-execution), for example:
+You can [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
 
 ```bash
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate

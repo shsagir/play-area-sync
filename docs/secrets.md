@@ -62,7 +62,7 @@ See examples to use the App secrets to connect to MySQL for: [Laravel](install-l
 
 ## App secrets from local
 
-Read App secrets from your local machine by using an [SSH remote exec](/remote-ssh-execution) command in your terminal:
+Read App secrets from your local machine by using an [SSH remote exec](/remote-ssh-execution-pro) command in your terminal:
 
 ```bash
 # show all App secrets

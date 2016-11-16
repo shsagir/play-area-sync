@@ -282,7 +282,7 @@ Your first deploy takes a long time, because all composer packages need to be in
 
 ## Setup database
 
-Now that your code is pushed and all config files are created the last step is to setup your App's database. You can do so by executing a [SSH remote command](/remote-ssh-execution):
+Now that your code is pushed and all config files are created the last step is to setup your App's database. You can do so by executing a [SSH remote command](/remote-ssh-execution-pro):
 
 ```bash
 # Run artisan command via SSH remote execution:

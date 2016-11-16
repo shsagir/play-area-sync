@@ -148,7 +148,7 @@ You can safely remove `path` from the `nested` block as well. You can now use th
 
 ### Migrate & other database commands
 
-You can [execute remote commands via SSH](/remote-ssh-execution), for example:
+You can [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
 
 ```bash
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php bin/console doctrine:migrations:generate

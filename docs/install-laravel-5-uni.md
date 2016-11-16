@@ -156,7 +156,7 @@ Please see the [MySQL article](mysql-uni#toc-access-mysql-from-local) on how to 
 
 ### Migrate & other artisan commands
 
-You can either login to [SSH](ssh-uni) and execute `artsian` or utilize [execute remote commands via SSH](/remote-ssh-execution), for example:
+You can either login to [SSH](ssh-uni) and execute `artsian` or utilize [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
 
 ```bash
 # remote execution
