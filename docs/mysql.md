@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-10-10
+reviewed:      2016-11-10
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -36,14 +36,6 @@ You can look up the MySQL password in the Dashboard > Your App > Deployment & co
 <div markdown="1" data-user="known">
 [Look up the MySQL password for **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
 </div>
-
-
-### Resetting the MySQL password
-
-Instead of looking up the existing password, you can also reset it. Please mind that this comes with consequences:
-
-* Unless your are using [env vars](env-vars): You'll need to change the password in your App's configuration files
-* Your coworkers need to change their password in their locally configured remote access tools (see below)
 
 
 ## Access MySQL from your App
@@ -125,7 +117,7 @@ $cfg['Servers'][$i]['auth_type']     = 'cookie';
 $i++;
 ```
 
-Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password).
+Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). Usinf a local phpMyAdmin with your remote database requires you to always open a tunnel first - a [MySQL GUI](#toc-mysql-via-gui) might be the better choice.
 
 
 
@@ -262,6 +254,14 @@ $pdo = new PDO(
     )
 );
 ```
+
+### Resetting the MySQL password
+
+Instead of [looking up the existing MySQL password](#toc-obtain-the-mysql-password), you can also reset it. Do so in the Dashboard > Your App > Access > MySQL. Please mind that this comes with consequences:
+
+* Unless your are using [env vars](env-vars): You'll need to change the password in your App's configuration files
+* Your coworkers need to change their password in their locally configured remote access tools (see below)
+
 
 
 ### Differences between Professional and Universal
