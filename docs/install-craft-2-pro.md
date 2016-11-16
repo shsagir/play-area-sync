@@ -31,7 +31,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ### Set the root path
 
-If you haven't already (the stack chooser does that for you) - in the Dashboard: [Set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
+If you haven't already (the stack chooser does that for you) - in the Dashboard: [Set the document root](/domains#toc-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
 
 ### Set ENV vars
 

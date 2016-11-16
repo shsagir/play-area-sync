@@ -29,7 +29,7 @@ We assume you've already created a New App with fortrabbit which has the [MySQL]
 
 ### Root path
 
-In the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
+In the Dashboard: [Set the root path](/app#toc-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)

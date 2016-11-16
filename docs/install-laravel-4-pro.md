@@ -72,7 +72,7 @@ $ git commit -m 'Initial'
 $ git push -u fortrabbit master
 ```
 
-This first push can take a bit, since all the Composer packages need to be installed. While that is happening, change back to the Dashboard and [set the document root](/domains#toc-set-a-custom-root-path) of your App's domains to `public`.
+This first push can take a bit, since all the Composer packages need to be installed. While that is happening, change back to the Dashboard and [set the document root](/domains#toc-root-path) of your App's domains to `public`.
 
 When the push is done you can visit your App URL in the browser and see the Laravel welcome screen! Any subsequent push will be much faster and you can leave you the `-u fortrabbit master`.
 

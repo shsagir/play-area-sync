@@ -50,7 +50,7 @@ The default entry point for [SSH](ssh-sftp-old), move downwards and upwards from
 
 ### htdocs
 
-The default web root (aka document root) of your App, everything is online in here. When you create a new App you will find that `index.php` file that prints out the "It works!" message. You can change the [routing point](domains#toc-set-a-custom-root-path), but only below the `htdocs` folder. The [Git deployment](git) syncs to this folder. The `htdocs` folder is part of your App's available storage contingent.
+The default web root (aka document root) of your App, everything is online in here. When you create a new App you will find that `index.php` file that prints out the "It works!" message. You can change the [routing point](domains#toc-root-path), but only below the `htdocs` folder. The [Git deployment](git) syncs to this folder. The `htdocs` folder is part of your App's available storage contingent.
 
 ### data
 

@@ -31,7 +31,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ### Root path
 
-Go to the Dashboard and [set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **public**.
+Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)

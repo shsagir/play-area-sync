@@ -24,7 +24,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ### Set the root path
 
-If you haven't already (the stack chooser does that for you) — in the Dashboard: [Set the root path](/app#toc-set-a-custom-root-path) of your App's domains to **web**.
+If you haven't already (the stack chooser does that for you) — in the Dashboard: [Set the root path](/app#toc-root-path) of your App's domains to **web**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)

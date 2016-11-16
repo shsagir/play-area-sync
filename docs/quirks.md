@@ -61,11 +61,9 @@ RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
 ### pecl_http
 
-The PHP extension `HTTP` from PECL is enabled by default. The classes `HttpRequest`, `HttpR`sponse` and `HttpMessage` are very handy replacement for curl and alike. The downside: it breaks CakePHP in some cases. You can disable the extension in your Settings -> Extensions tab of your App.
+The PHP extension `HTTP` from PECL is enabled by default. The classes `HttpRequest`, `HttpRsponse` and `HttpMessage` are very handy replacement for curl and alike. The downside: it breaks CakePHP in some cases. You can disable the extension in your Settings -> Extensions tab of your App.
 
-### Locales
-
-Available locales are:
+### Available locales
 
 <pre><code class="plain" id="locales"></code></pre>
 

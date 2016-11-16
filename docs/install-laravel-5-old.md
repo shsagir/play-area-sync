@@ -57,7 +57,7 @@ Application key [asdasdasdasd] set successfully.
 Document root configuration
 ---------------------------
 
-While the above project is locally created, you should change the document root of your App. In the Dashboard you can configure the App to [route all requests](domains#toc-set-a-custom-root-path) to Laravel's `public` folder, which Laravel requires.
+While the above project is locally created, you should change the document root of your App. In the Dashboard you can configure the App to [route all requests](app#toc-root-path) to Laravel's `public` folder, which Laravel requires.
 
 Initialize the Git repository
 -----------------------------

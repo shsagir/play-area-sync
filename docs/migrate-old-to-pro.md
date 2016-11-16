@@ -39,7 +39,7 @@ If you are using TLS you should also enable the [TLS](/tls) component for the Pr
 
 The Old App should stay untouched until Professional App is up and running.
 
-**Copy Dashboard settings**: Check your Old Apps settings within the Dashboard and match your Professional App to those. Choose the same [root path](app#toc-set-a-custom-root-path) as you have with the Old App. Enable the same PHP extensions. Consider using PHP 7 from now on — it's a lot faster and we recommend to give it at least a try. If you were using PHP 5.5 before then 5.6 will very likely work without any problems. Also do not forget to copy any custom environment variables you might have.
+**Copy Dashboard settings**: Check your Old Apps settings within the Dashboard and match your Professional App to those. Choose the same [root path](app#toc-root-path) as you have with the Old App. Enable the same PHP extensions. Consider using PHP 7 from now on — it's a lot faster and we recommend to give it at least a try. If you were using PHP 5.5 before then 5.6 will very likely work without any problems. Also do not forget to copy any custom environment variables you might have.
 
 
 ### Setup Git

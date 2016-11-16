@@ -53,10 +53,7 @@ $ tail -f ../logs/apache_access.log
 $ grep -E ' 50[0-9] ' ../logs/apache_access.log
 ```
 
-Also checkout:
-
-* [WordPress install from SSH](install-wordpress-4-uni#toc-installing-wordpress-with-ssh)
-* [Execute Laravel's artisan](install-laravel-5-uni#toc-migrate-amp-other-artisan-commands)
+Also checkout: [WordPress install from SSH](install-wordpress-4-uni#toc-installing-wordpress-with-ssh), [Execute Laravel's artisan](install-laravel-5-uni#toc-migrate-amp-other-artisan-commands).
 
 
 ### Using CLIs

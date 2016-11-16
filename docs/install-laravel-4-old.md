@@ -46,7 +46,7 @@ That's basically deploying. The next runs will be much faster.
 
 ## Root path configuration
 
-Laravel is installed into the `htdocs` [folder](directory-structure) of your App. In the Dashboard you tell the App to [route all requests](domains#toc-set-a-custom-root-path) to Laravels `public` folder.
+Laravel is installed into the `htdocs` [folder](directory-structure) of your App. In the Dashboard you tell the App to [route all requests](domains#toc-root-path) to Laravels `public` folder.
 
 ## Environment detection
 
