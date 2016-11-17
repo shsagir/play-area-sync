@@ -18,7 +18,7 @@ For the purposes of this article, we recommend to chose the newly created Profes
 
 ## Preparation
 
-Make sure your code is ready to scale and you are using up-to-date design patterns. Have a look at our [app design article](/app-design-pro) to learn how to structure your code in a way that it can scale for this.
+Make sure your code is ready to scale and you are using up-to-date design patterns. Have a look at our [app design article](/app-design-pro) to learn how to structure your code in a way that it can scale for this. Also have a look at our [general migration guide](/migrating).
 
 Before we show you how to migrate your existing Universal App to a Professional App, you first need make sure that the following applies. Mind that it only needs to apply if your App requires it (eg you don't need cache abstraction, if you don't use caches):
 
@@ -72,7 +72,7 @@ Many frameworks/CMS support a "global" configuration setting, which allows you t
 
 Since Professional Apps only support Git deployment, and you don't want your access details to any service stored plain text in a Git version history, we strongly recommend to use [environment variables](env-vars) (or [secrets](secrets)) to store all your access details (eg MySQL access, 3rd party service access and so on).
 
-### Setup git repo
+### Setup Git repo
 
 If the App's code on your local machine is not already under Git version control, then it's now time to make it so. The general approach is to first define all folders and files which are to be excluded in a `.gitignore` file, then initialize your local App folder as a git repository and finally `git push` to your new Professional App.
 
@@ -118,4 +118,6 @@ Once the first deployment is done, it's time to review your new App: are any of 
 
 ## Finish up: Migrate domains
 
-Once your new Professional App is working as expected, you can safely migrate all domains from the old Universal App to the new Professional App. Mind that you also keep the same root path, when doing so.
+<!-- TODO: write some more on how to this, first delete the domain with the other App, then add it to the new App, in between change the CNAME … : or link to topic in domain article (check with general mifrate article)  -->
+
+Once your new Professional App is working as expected, you can safely migrate all domains from the old Universal App to the new Professional App. Mind that you also keep the same root path, when doing so. 
