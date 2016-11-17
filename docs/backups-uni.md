@@ -4,7 +4,7 @@ template:      article
 reviewed:      2016-11-11
 naviTitle:     Backups
 title:         Working fortrabbit backups
-lead:          
+lead:
 group:         platform
 stack:         uni
 
@@ -30,10 +30,7 @@ Please mind that backups are not included with all App plans. See our [pricing p
 
 ## Access backups
 
-When your App has backups: Find them in the Dashboard > Your Apps overview > Backups. We automatically generate two backup files per day: One of your App's web storage and one of your App's MySQL storage.
-
-<!-- TODO: write something that you can download and unpack the backups  -->
-
+If your App has backups: Find them in the Dashboard > Your Apps overview > Backups. We automatically generate two backup files per day: One of your App's web storage and one of your App's MySQL storage. The web storage backup file is a `tar` archive of all the contents of the `htdocs` folder of your App. The MySQL storage files is a plain `sql` file, containing the result of a `mysqldump` of your App's database.
 
 <!--
 
