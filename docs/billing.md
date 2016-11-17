@@ -10,7 +10,7 @@ stack:         all
 
 ---
 
-This article is about the concepts of billing, pricing, payments, invoices & taxes. Please also check out the [Billing Contact](company#toc-billing-contacts) section of the Company article to learn about practical usage.
+This article is all about the concepts of billing, pricing, payments, invoices & taxes. Please also check out the [Billing Contact](company#toc-billing-contacts) section of the Company article to learn about practical usage in the Dashboard.
 
 
 ### Free trial
