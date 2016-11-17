@@ -18,7 +18,7 @@ For the purposes of this article, we recommend to chose the newly created Profes
 
 ## Preparation
 
-Have a look at our [app design article](/app-design-pro) to learn how to structure your code in a way that it can scale.
+Make sure your code is ready to scale and you are using up-to-date design patterns. Have a look at our [app design article](/app-design-pro) to learn how to structure your code in a way that it can scale for this.
 
 Before we show you how to migrate your existing Universal App to a Professional App, you first need make sure that the following applies. Mind that it only needs to apply if your App requires it (eg you don't need cache abstraction, if you don't use caches):
 
@@ -28,18 +28,23 @@ Before we show you how to migrate your existing Universal App to a Professional 
 * You are familiar with Git
 * You are no fiend of the shell
 
-### Create new App
+### Check the install guides
 
-First you need to create a new Professional App. Once all is migrated, you can remove the old Universal App, but that's for later.
+We have written install guides for all popular frameworks and CMS. Have a look at our [all articles list](all-articles) and see if your framework/CMS is available as an install guide for the Professional Stack. Read the article to learn how to deal with it. The following examples focus on general steps to migrate.
+
+
+### Create a new Professional App
+
+First you need to create a new Professional App in the Dashboard. Choose "Create a new App" on the Dashboard Home > choose a professional Stack App, start with the smallest preset, you can add everything else later on. Later on when all is migrated, you can remove the old Universal App, but that's for later.
 
 
 ### Copy settings
 
-Start by aligning all the settings of the new App with those of the old. Here is you check list:
+Start by aligning all the settings of the new App with those of the old. Here is your check list:
 
-* [ ] PHP Settings
-* [ ] [Environment variables](env-vars), if any
-* [ ] [App secets](secrets), if any
+* PHP Settings
+* [Environment variables](env-vars), if any
+* [App secets](secrets), if any
 
 
 ## Migration
@@ -52,11 +57,11 @@ Assuming you are using MySQL, you need to [import and export](mysql#toc-export-a
 
 ### Migrate runtime data
 
-If you are having any kind of run-time data, such as user uploads or content editor uploads, then you need to copy them from the old App to the new App. We recommend to use a GUI like [Cyberduck](https://cyberduck.io/) or [Transmit](https://panic.com/transmit/) to download all runtime data of the old App to your local machine and then upload it back to the Object Storage of your new App.
+If you are having any kind of run-time data, such as user uploads or content editor uploads, then you need to copy them from the old App to the new App. We recommend to use a GUI like [Cyberduck](https://cyberduck.io/) or [Transmit](https://panic.com/transmit/) to download all runtime data of the old App to your local machine and then upload it back to the [Object Storage](/object-storage) of your new App.
 
 #### Changed URLs
 
-Since the runtime data is now stored in the Object Storage component of your App, all URLs referencing it must change accordingly. To give you a simple example, assuming there was file `image.png` in a folder `uploads` in the old App:
+Since the runtime data is now stored in the Object Storage Component of your App, all URLs referencing it must change accordingly. To give you a simple example, assuming there was file `image.png` in a folder `uploads` in the old App:
 
 * Old URL: `http://domain.tld/uploads/image.png`
 * New URL: `http://{{app-name}}.objects.frb.io/uploads/image.png`
