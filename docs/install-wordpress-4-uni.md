@@ -109,7 +109,7 @@ Once that's done you can upload WordPress via SFTP as described above.
 
 ### Database migration
 
-WordPress consists of code files, the user generated uploads and of course the [MySQL database](/mysql-uni), in which most contents are stored. There are various use cases to export and import the database:
+WordPress consists of code files, the user generated uploads and of course the [MySQL database](/mysql), in which most contents are stored. There are various use cases to export and import the database:
 
 1. Export the database from your old webhosting
 2. Export your local database to import it to the fortrabbit database
