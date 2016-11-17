@@ -7,6 +7,7 @@ reviewed:      2016-11-16
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Professional Stack.'
 group:         platform
 stack:         pro
+showAlways:    true
 
 ---
 
@@ -54,11 +55,11 @@ Universal Apps offer [Git](git-deployment), [SSH](ssh-uni) and [SFTP](sftp-uni) 
 
 ### File system access
 
-[Old Apps](app-old) and [Universal Apps](app-uni) have a **persistent storage**: you have access via SSH and the App can permanently write on the file system. You can upload files and they will stay there.
+[Old Apps](app-old) and [Universal Apps](app-uni) have a **persistent storage**: you have access via SSH and any changes the App writes to the file system are permanent. Hence: You can use web based uploads and those uploaded files will stay there until you remove them.
 
-With **ephemeral storage**: all files will be replaced on each Git deployment. There is no place for runtime data. In other words: your App should not write any relevant data (user uploads) you might want to reuse later on the local file system. You'll need some efforts from your side to have uploads working (again).
+With **ephemeral storage** it's different: On each Git deployment, all files of your App will be replaced with the files of the deployment. Files which are not part of the deployment will be removed. In other words: your App can, but should not write any relevant data (user uploads) you might want to reuse later to the local file system. Instead, you need a different solution:
 
-We provide an additional Component to store uploads, static assets and any kind of runtime data offshore. It's called [Object Storage](/object-storage) and comes with some more benefits. It's mostly compatible to AWS S3, so you'll find easy to integrate it to your CMS and framework. File-system abstraction is the key. Please see our [Object Storage article](/object-storage) for more.
+We provide an additional Component to store user uploads, static assets and any other kind of runtime data offshore. It's called [Object Storage](/object-storage) and comes with additional benefits. It's mostly compatible to AWS S3, so you'll find easy to integrate it to your CMS and framework. File-system abstraction is the key. Please see our [Object Storage article](/object-storage) for more.
 
 
 
@@ -69,11 +70,11 @@ As a result of the horizontal scalable resources and the ephemeral storage, [log
 
 ### High availability
 
-Most plans are available as Development and Production. All Production plans, and those which are not grouped into both, are highly available.
+Most plans are available as Development and Production. All Production plans, and those which are not grouped into either, are highly available.
 
 
 ### Atomic deployment
 
-Universal Apps offer a synchronization Git deployment mode: the Git repo contents gets rsynced file by file. Per default this is non-destructive, new files and changes would replace old files, but no files will be deleted (overwrite but not delete).
+Universal Apps offer a synchronization Git deployment mode: the Git repo contents gets rsynced file by file. Per default this is non-destructive, new files will be created and changes files will overwrite existing files, but no files will be deleted (overwrite but not delete).
 
 The Professional Apps deployment is [atomic](http://blog.fortrabbit.com/new-apps-are-here). That means that a completely new release package will substitute the old one on every deploy. We have made a [behind the scenes video](deployment-architecture-video) showcasing what is happening in the background. The atomic deployment also features a more robust build process: your code will only be released if all scripts (composer install, optional pre- and post-deploy scripts) succeed.

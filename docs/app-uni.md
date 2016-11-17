@@ -7,6 +7,7 @@ reviewed:      2016-11-16
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         platform
 stack:         uni
+showAlways:    true
 
 ---
 
