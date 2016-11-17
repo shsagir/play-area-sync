@@ -218,7 +218,7 @@ We recommend to use a secured connection via `HTTPS` but that it is not required
 
 ### Log access
 
-You can use the [logging](/logging) service to tail live logs from the Object Storage.
+You can use the [logging](/logging-pro) service to tail live logs from the Object Storage.
 
 ```bash
 # Only Object Storage access log:

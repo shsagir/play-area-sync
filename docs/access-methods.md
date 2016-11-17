@@ -27,7 +27,7 @@ So far so good: You are using your Account e-mail address and your Account passw
 * Accessing the [Object Storage](/object-storage#toc-accessing-the-object-storage)
 * Deploying code with [Git](/git-deployment#toc-usage)
 * Execution [SSH Remote commands](/remote-ssh-execution-pro#toc-usage)
-* Viewing [log files](/logging)
+* Viewing [log files](/logging-uni)
 
 Of course these operations need to be protected. We need to make sure that only you and your team have access. You can choose between two authentication methods: "[password](#toc-password-authentication)" and "[public SSH key](#toc-ssh-key-authentication)".
 

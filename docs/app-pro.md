@@ -10,7 +10,7 @@ stack:         pro
 
 ---
 
-The Professional Stack (formaly known as New App) is made for modern PHP development workflows building modern web applications. It subscribes to the 12-factor design paradigms.
+The Professional Stack (formaly known as New App) is made for modern PHP development workflows building modern web applications. It subscribes to the 12-factor design paradigms. Also see our [stacks article](/stacks) for more options.
 
 
 ## Specs & limits

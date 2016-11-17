@@ -247,7 +247,7 @@ $di->setShared('backend-cache', function () {
 
 ### Logging
 
-To use the fortrabbit [log access](/logging) the App needs to write all logs either to `STDERR` or use `error_log`. Phalcon supports the former. Open `app/config/services.php` and add a new logging service:
+To use the fortrabbit [log access](/logging-pro) the App needs to write all logs either to `STDERR` or use `error_log`. Phalcon supports the former. Open `app/config/services.php` and add a new logging service:
 
 ```php
 /**

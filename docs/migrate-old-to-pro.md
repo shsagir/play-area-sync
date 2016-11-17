@@ -90,7 +90,7 @@ After modifying the configuration and possibly migrating your MySQL database you
 
 ### Debugging errors
 
-Don't panic when it still throws you an error now. This can have multiple causes and it's probably an individual problem. You might see a white screen, or a 500 error or some template error. There is a good chance that you can find the root of the problem in the [logs](/logging). Stream the logs and see if you can find a hint. If you don't see any error output, then check back with our [install guide](/#install-guides) again and find out how to enable logging in your specific CMS or framework. And of course, don't hesitate to ping us.
+Don't panic when it still throws you an error now. This can have multiple causes and it's probably an individual problem. You might see a white screen, or a 500 error or some template error. There is a good chance that you can find the root of the problem in the [logs](/logging-pro). Stream the logs and see if you can find a hint. If you don't see any error output, then check back with our [install guide](/#install-guides) again and find out how to enable logging in your specific CMS or framework. And of course, don't hesitate to ping us.
 
 
 ### Setup the Object Storage

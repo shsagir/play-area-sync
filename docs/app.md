@@ -104,7 +104,7 @@ You can register your App to accept requests from any external domain you route 
 
 Per default all the [domains](/domains) of the App will route to the same root path. When you have chosen [Laravel](/install-laravel) when creating the App `~/htdocs/public` will be used.
 
-When no framework or CMS has been chosen while creating the App, the root path [folder](directory-structure) is `~/htdocs`. You can change this setting with your App in the Dashboard.
+When no framework or CMS has been chosen while creating the App, the root path [folder](directory-structure-uni) is `~/htdocs`. You can change this setting with your App in the Dashboard.
 
 <!-- TODO: check link, just guessed the URL --> 
 
