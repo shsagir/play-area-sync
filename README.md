@@ -199,6 +199,16 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 
 Find the right balance between being general and being precise (aka Captain Obvious). Very detailed step-by-step articles are easy to follow but get outdated very quickly. Don't "bury" numbers (like prices and limits) in articles. All those numbers must be managed in the "pricing" and the "specs" page.
 
+## Link checking
+
+This example shows how to use the linkcheck command line tool (not included here) for macOS:
+
+```
+$ mv linkcheck.mac /usr/local/bin
+$ chmod +x linkcheck.mac
+$ linkcheck.mac --url http://help.fortrabbit.dev
+```
+
 
 ## fortrabbit owned words and common casing
 
