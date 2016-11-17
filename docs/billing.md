@@ -28,7 +28,7 @@ We get a few e-mails each month after invoicing. People are confused why they st
 
 **You can always quit**. Scale down or kill certain Apps or even cancel your Account completely.
 
-We will delete all your Account data. But it is required by law to keep your billing related data, that is basically the invoices and infos around it. The same applies to your credit card informations, but those are stored with our credit card service vendor — not with us. <!-- See https://trello.com/c/GPwtgrVV/445-3-billing-artikel-erweitern: And yes, if you cancel the service while still having open invoices with us, they stay open and we might take further legal steps to finally get that money.  -->
+We will delete all your Account data. But it is required by law to keep your billing related data, that is basically the invoices and infos around it. The same applies to your credit card informations, but those are stored with our credit card service vendor — not with us.
 
 
 ### Monthly invoices

@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-11-11
+reviewed:    2016-11-17
 title:       Using secure App secrets
 naviTitle:   App secrets
 lead:        App secrets provide a secure storage and access method for all the credentials your App needs to run.
@@ -18,7 +18,7 @@ keywords:
 
 ## Problem
 
-Your App needs confidential access details to connect to other services (user-names, passwords, API keys or alike). Those can be on fortrabbit like the MySQL database access, or externally like an API key for a queue or something. You are as paraniod [as we are](//blog.fortrabbit.com/how-to-keep-a-secret), regarding storing those details in ENV vars.
+Your App needs confidential access details to connect to other services (user-names, passwords, API keys or alike). Those can be on fortrabbit like the MySQL database access, or externally like an API key for a queue or something. You are as paraniod [as we are](//blog.fortrabbit.com/how-to-keep-a-secret), regarding storing those details in [ENV vars](/env-vars).
 
 ## Solution
 
