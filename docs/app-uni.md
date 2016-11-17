@@ -21,6 +21,8 @@ Please visit our [specs page](https://www.fortrabbit.com/specs) to see some hard
 
 The purpose of the Universal Stack is not to be very scalable in terms of performance. The various plans differ in amount of available storage (Web and MySQL), but not in "PHP power". This means: your site can grow over time with bigger databases and more user uploaded contents, but it won't deliver vastly more performance in higher plans then in lower ones.
 
+If you need more horese power and options, please see how you can: [Migrate from Universal App to Professional App](/migrate-uni-to-pro).
+
 ## Target audience
 
 The Universal Stack is, well, universally usable. It's a good start for developers new to the cloud to get their feet wet without having to learn a bunch of new technologies and workflows. In short: The target groups is everybody.
