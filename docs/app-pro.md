@@ -16,7 +16,7 @@ The Professional Stack (formaly known as New App) is made for modern PHP develop
 
 ## Specs & limits
 
-Please visit our [specs page](https://www.fortrabbit.com/specs-pro) to see some hard numbers.
+Please visit our [specs page](//www.fortrabbit.com/specs-pro) to see some hard numbers.
 
 
 ### Scaling
@@ -71,7 +71,6 @@ As a result of the horizontal scalable resources and the ephemeral storage, [log
 ### High availability
 
 Most plans are available as Development and Production. All Production plans, and those which are not grouped into either, are highly available.
-
 
 ### Atomic deployment
 
