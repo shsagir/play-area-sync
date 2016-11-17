@@ -6,6 +6,7 @@ title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
 group:         platform
+proGroup:      Components
 
 stack:         all
 oldLink:       mysql-old
@@ -267,4 +268,3 @@ Instead of [looking up the existing MySQL password](#toc-obtain-the-mysql-passwo
 ### Differences between Professional and Universal
 
 All [Universal Apps](/app-uni) automatically come with a MySQL database. For [Professional Apps](app-pro), MySQL is an optional Component. There you can [scale](scaling#toc-mysql) it up and down individually.
-

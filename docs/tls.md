@@ -37,8 +37,7 @@ As part of [security efforts](/security) our aim is to give you secure, easy-to-
 
 ### Piggyback TLS
 
-You can already access your [App URL](app#toc-app-url) using HTTPS which is provided by us like so. For example: `https://{{app-name}}.frb.io`. Use this URL for testing or if a custom domain is not important to you.
-
+You can already access your [App URL](app#toc-app-url) using HTTPS which is provided by us for free. For example: `https://{{app-name}}.frb.io`. Use this URL for testing or if a custom domain is not important to you.
 
 ### Professional App
 
@@ -60,7 +59,9 @@ TODO: write about SSL & TLS for Universal Apps
 
 ### Universal App
 
-Universal Apps 
+#### Play App
+
+The above "TLS free" is available for all "Side Project" and "Work" Apps.
 
 
 -->

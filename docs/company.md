@@ -23,7 +23,7 @@ keywords:
 ---
 
 
-Your fortrabbit Account represents YOU and is your personal login and path to access Apps. A Company on fortrabbit helps you to structure and manage team and billing aspects for your Apps.
+Your fortrabbit Account represents YOU and is your personal login and path to access Apps. A Company on fortrabbit helps you to structure and manage team and billing aspects of your Apps.
 
 ```nohighlight
 ┌─────────────────────────────────────────────────────┐
@@ -43,14 +43,21 @@ Your fortrabbit Account represents YOU and is your personal login and path to ac
 └─────────────────────────────────────────────────────┘
 ```
 
-The above illustrates the hierarchy/structure of billing and collaboration features. Your Company owns the Apps. A Company can have multiple members (employees/Accounts) to collaborate on the Apps. The Company also have multiple Billing Contacts. Each App must be associated to one Billing Contact. Please also see our [collaboration article](collaboration).
+The above illustration shows how Companies, Apps, Accounts and Billing Contacts relate to each other:
 
+* Each App belongs to a Company.
+* A Company can have multiple Apps.
+* A Company can have multiple members ("employees") to collaborate on the Apps.
+* A Company also can have multiple Billing Contacts to pay for the Apps.
+* Each App is associated with one Billing Contact of the Company.
 
+## Managing Companies
+
+We believe in graceful disclosure: Companies are virtually invisible and for all intends and purposes synonym to your Account - until you need them.
 
 ### Creating a Company
 
-You can create as many Companies you need — free of charge. In the the Dashboard > Your Account > Companies > "Create a Company" button. In the following steps you will create a Company with a first Billing Contact. Each Company needs at least one Owner, you are the one at first. This will give you an empty Company, no costs, as long as you don't assign an App to the Company.
-
+You can create as many Companies as you need — free of charge. In the the Dashboard > Your Account > Companies > "Create a Company" button. Following the guided create process, you will not only create a new Company, but also it's first Billing Contact. Once created, you will be the Owner of the new Company.
 
 <div data-markdown="1" data-user="known">
 
@@ -58,12 +65,18 @@ You can create as many Companies you need — free of charge. In the the Dashboa
 
 </div>
 
+### Deleting a Company
+
+As an Owner you can also decide to delete your Company. This is a huge step, as all Apps owned by the Company will be deleted and all the team will loose access. To do so: In the Dashboard > Your Account > Companies > {{ Your Company }} > Hit the "Delete Company" button and follow the instructions.
+
 ### Collaboration
 
-There are two levels of collaboration:
+There are two levels of collaboration
 
 1. [App level collaboration](app-collaboration): Grant code access on a per-App basis
 2. **[Company level collaboration](company-collaboration)**: Grant company-wide access to all Apps and the Companies themselves
+
+Since collaboration can easily become rather complex, we also have [collaboration overview article](collaboration), which shows you the big picture.
 
 ### Support
 
@@ -73,9 +86,9 @@ Beside basic free support, you an also get [Professional Support](//www.fortrabb
 
 Each App with fortrabbit has limited resources, most of them are scalable or extendible. We advice to start small and only scale when needed. Some resources scale by usage. For example, when your App has users who are uploading images, the web space or the Object Storage space will get fuller and fuller by time.
 
-All collaborators on the App will see those usage metrics with the App overview in the Dashboard. When a resource is about to exceed, it will be shown in a yellow color to alert you. In addtion each Company can has one or many technical contacts which will be used for those automatic alerting when App resources are about to exceed and in special cases like where we to interact manually need to contact you personally quickly — for instance when we detect abnormal patterns which indicate an attack or otherwise unwanted behavior.
+All collaborators on the App will see those usage metrics at the App overview in the Dashboard. When a resource is about to hit the limit, it will be shown in a yellow color to alert you.
 
-All owners of the App will get an e-mail, once a usage metric is about to exceed or already exceeded it's limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
+All Owners of the App will get an e-mail, once a usage metric is about to hit the limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
 
 <!--
 
@@ -94,13 +107,7 @@ Individual Accounts can opt-out of receiving those alerts by deselecting this fr
 -->
 
 
-
-### Deleting a Company
-
-As an Owner you can also decide to delete a Company. This is a huge step, as all Apps owned by the Company will be deleted and all the team will loose access. To do so: In the Dashboard > Your Account > Companies > {{ Your Company }} > Hit the "Delete Company" button and follow the instructions.
-
-
-### Billing Contacts
+## Billing Contacts
 
 A Billing Contact represents the payment details which are used by fortrabbit to bill you. Usually you need only one, but in some instances you need one App to be paid by one credit card and another App to be paid by another credit card. Billing Contacts allow that: A Company within fortrabbit is a container to manage billing aspects. Within one Company you can create multiple Billing Contacts and then assign individual Apps to either Billing Contacts. In contrast to using multiple Companies: you can still manage the same developer team on the Company.
 
