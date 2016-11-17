@@ -66,12 +66,12 @@ While you can have as many Git branches you want, only changes to the master bra
 Fine tune deployment configurations with the `fortrabbit.yml` deployment file: control the way Composer runs, define pre- & post-deploy scripts and more.
 
 * [deployment file Version 1](deployment-file-v1-old) for Old Apps
-* [deployment file Version 2](deployment-file-v2) for New Apps
+* [deployment file Version 2](deployment-file-v2) for Professional & Universal Apps
 
 
 ### Composer
 
-New Apps will always run an [Composer](composer) install after a successful `git push`. With the [Old Apps](app-old) you can use a special formated commit message to [trigger Composer](composer) `install` or `update` on the fortrabbit remote after you pushed some code.
+Professional and Universal Apps will always run an [Composer](composer) install after a successful `git push`. With the [Old Apps](app-old) you can use a special formated commit message to [trigger Composer](composer) `install` or `update` on the fortrabbit remote after you pushed some code.
 
 
 ### Private Git/Composer repos

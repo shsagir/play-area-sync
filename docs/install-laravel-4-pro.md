@@ -27,7 +27,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine. You also need a local [Laravel](http://laravel.com/docs/4.2/installation) installation.
+We assume you've already created an [App](/app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine. You also need a local [Laravel](http://laravel.com/docs/4.2/installation) installation.
 
 
 ## Install

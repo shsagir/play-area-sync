@@ -14,7 +14,7 @@ stack:        old
 
 ## Word!
 
-This article only applies to [Old Apps](app-old), Git Submodules are not available for New Apps. **Also in any case**: Please consider to use a Git subtree instead of a Git submodule. Git subtrees are easy to use and mostly do the job quite well.
+This article only applies to [Old Apps](app-old), Git Submodules are not available for Professional & Universal Apps. **Also in any case**: Please consider to use a Git subtree instead of a Git submodule. Git subtrees are easy to use and mostly do the job quite well.
 
 
 ## Usage

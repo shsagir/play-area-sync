@@ -60,9 +60,9 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoRG3kKXftyfp9XGTqc8aOVPqJe+UXmNExE651uILG
 You can now install the key in your (companies) private Composer repository. You can re-run this hook at any time. However, it will always generate a *new* key-pair and remove the old one.
 
 
-### Generating a public key for a New App
+### Generating a public key for a Professional App
 
-With the New Apps you can create a new SSH keypair for your App, using the `keygen` command.
+With the Professional Apps you can create a new SSH keypair for your App, using the `keygen` command.
 
 ```bash
 ssh git@deploy.eu2.frbit.com keygen your-app

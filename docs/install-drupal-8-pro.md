@@ -23,7 +23,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created a New App with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
+We assume you've already created an App with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
 
 
 ### Set the Apps root path

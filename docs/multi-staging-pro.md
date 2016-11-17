@@ -65,7 +65,7 @@ $ git remote add staging {{your-app-stage}}@deploy.{{region}}.frbit.com:{{your-a
 $ git remote add production {{your-app-prod}}@deploy.{{region}}.frbit.com:{{your-app-prod}}.git
 ```
 
-#### Mapping branches for New Apps
+#### Mapping branches
 
 Again, start out with the testing App by creating a new local branch named as the testing App. Then you can push it to the remote using the `-u` flag, which will create a "link" between the local and the remote branch:
 

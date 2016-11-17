@@ -26,7 +26,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created a New App and chose Laravel in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine. If you haven't chosen Laravel stack when creating the App in the Dashboard at first, please set the following:
+We assume you've already created an [App](/app) and chose Laravel in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine. If you haven't chosen Laravel stack when creating the App in the Dashboard at first, please set the following:
 
 ### Root path
 
