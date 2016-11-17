@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-07
+reviewed:      2016-11-17
 title:         SFTP
 naviTitle:     SFTP
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
@@ -18,9 +18,9 @@ keywords:
 
 ---
 
-Albeit [deploying with Git](git-deployment) has many advantages, sometimes it's more of a burden then it helps. Especially when working with CMS. These systems are often not designed for Git-workflows and write on the file system when installing plugins and upgrading versions. Those changes can not be back-ported to the version control. Stuff get's out of control.
+Albeit [deploying with Git](git-deployment) has many advantages, sometimes it's more of a burden than it helps. Especially when working with CMS. These systems are often not designed for Git-workflows and write on the file system when installing plugins and upgrading versions. Those changes can not be back-ported to the version control. Stuff get's out of control.
 
-All Universal Stack Apps come with SFTP access out-of-the-box to legacy applications and workflows.
+All [Universal Stack Apps](app-uni) come with SFTP access out-of-the-box to support legacy applications and workflows.
 
 
 ## Accessing SFTP
@@ -64,7 +64,7 @@ Got an error when trying to login? fortrabbit supports username + password and p
 
 ## About SFTP
 
-SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH]([SSH](ssh-uni)) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really makes a difference.
+SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH]([SSH](ssh-uni)) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really makes a difference. Mostly, SFTP is preferable to FTP because of its underlying security features.
 
 ## Mixing deployment methods
 
