@@ -24,7 +24,7 @@ hideExamples:  yes
 * **App Collaborator**: a [team member](collaboration) role within the Dashboard
 * **Node**: a lightweight virtual container for a specific service
 * **Owner**: a [team member](collaboration) role within the Dashboard
-* **[Worker](worker)**: an optional Component (Professional App)
+* **[Worker](worker-pro)**: an optional Component (Professional App)
 * **PHP request**: a single call for a PHP file
 * **Development level**: a scaling extension for small Apps and staging (Professional App)
 * **Production level**: a scaling extension state safe for live Apps (Professional App)
