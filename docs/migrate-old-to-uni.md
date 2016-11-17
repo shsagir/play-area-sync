@@ -13,7 +13,7 @@ stack:         all
 
 ## Motivational intro
 
-The [Old App](/app-old) is sunsetting. This guide helps you to migrate an Old App to a [Universal Stack App](app-uni). It is recommened for all legacy website kind of projects with low - medium traffic.
+The [Old App](/app-old) is sunsetting. This guide helps you to migrate an Old App to a [Universal Stack App](app-uni). It is recommended for all legacy websites with low to medium traffic.
 
 The Universal Stack is pretty much like the Old App stack in terms of backward compability and ease of use. It's faster and more affordable. Also see our [stacks article](/stacks).
 
@@ -30,10 +30,10 @@ First you need to decide which Universal App plan fit's your needs. Start by che
 
 Now make sure the following applies to your App:
 
-1. Your App doesn't use "PHP l" or "PHP xl" (which are multi-node plans) or your App currently uses either of them but doesn't need as much resources
+1. Your App doesn't use "PHP l" or "PHP xl" or bigger (which are multi-node plans) or your App currently uses either of them but doesn't need as much resources
 2. Your App doesn't use [Memcache](memcache-old), which is not available for single-node Universal Apps
 
-If you are unsure about (1), then check the App metrics: If your PHP requests are below 1000 per hour on average, you are, most likely, good and can proceed. 
+If you are unsure about (1), then check the App metrics: If your PHP requests are below 1000 per hour on average, you are, most likely, good and can proceed.
 
 If either of the above applies an cannot be changed, then we strongly recommend to use a [Professional App](app-pro) instead.
 
@@ -144,7 +144,7 @@ Now it's time to deploy your adjusted code base. Again, depending on whether you
 
 ### Git only
 
-Double check your `.gitignore` file. Make sure that it does *NOT* contain `composer.lock` or `composer.json`, if you are working with Composer. When you are confident it looks alright, just push to your new Universal App's remote:
+Double check your `.gitignore` file. Make sure that it does *NOT* contain `composer.lock` or `composer.json`, if you are working with Composer. When you are confident that all looks alright, just push to your new Universal App's remote:
 
 ```bash
 $ git push -u fortrabbit2 master
@@ -161,3 +161,10 @@ Once the first deployment is done, it's time to review your new App: are any of 
 ## Finish up
 
 Once your new Universal App is working as expected, you can safely migrate all domains from the Old App to the new Universal App. Mind that you also keep the same root path, when doing so.
+
+The general approach is:
+
+* Change the [domain routing](domains#toc-routing-options) from the old App's hostname to the new App's hostname
+* Delete the domain from the old App
+* Add the domain to the new App
+* Rinse and repeat for all domains
