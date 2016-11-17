@@ -14,11 +14,11 @@ keywords:
     - beginner
     - deployment
     - dreamweaver
-    - 
+    -
 
 ---
 
-Albeit [deploying with Git](git-deployment) has many advantages, sometimes it's more of a burden than it helps. Especially when working with CMS. These systems are often not designed for Git-workflows and write on the file system when installing plugins and upgrading versions. Those changes can not be back-ported to the version control. Stuff get's out of control.
+Albeit [deploying with Git](git-deployment) has many advantages, sometimes it's more of a burden than it helps. Especially when working with CMS. These systems are often not designed for Git-workflows and write on the file system when installing plugins and upgrading versions via web-based interfaces. Those changes can not be back-ported to the version control. Stuff gets out of control.
 
 All [Universal Stack Apps](app-uni) come with SFTP access out-of-the-box to support legacy applications and workflows.
 
@@ -52,7 +52,7 @@ This example shows how to configure your SFTP client to quickly sync code:
 4. Run simulation first, the first run will take longer, results will be cached, execution will be fast
 5. First sync down, then sync up
 
-The workflow has been tested with (macOS commercial) SFTP client Transmit from Panic. 
+The workflow has been tested with (macOS commercial) SFTP client Transmit from Panic.
 
 
 ## Troubleshooting authentication
@@ -69,6 +69,3 @@ SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged wi
 ## Mixing deployment methods
 
 Please see our [deployment methods article](deployment-methods-uni) to learn how the diffrent ways to deploy code work side by side.
-
-
-
