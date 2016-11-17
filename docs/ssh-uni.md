@@ -17,7 +17,7 @@ keywords:
 
 ---
 
-Using our [Git deployment](git-deployment) is great, but sometimes need a little more control. That's where the Secure shell comes in. SSH is the big brother of [SFTP](sftp-uni) and allows you to directly interact with your App's code.
+Using our [Git deployment](git-deployment) is great, but sometimes need a little more control. That's where the Secure SHell comes in. SSH is the big brother of [SFTP](sftp-uni) and allows you to directly interact with your App's code.
 
 
 ## Accessing SSH
@@ -36,7 +36,7 @@ When it worked, you will see small a welcome screen:
 –––––––––––––––––––––––  ∙ƒ  –––––––––––––––––––––––
 ```
 
-You are now logged in to your App by SSH. See [below](#toc-troubleshooting-authentication) when you got an error.
+You are now logged in to your App by SSH. See [below](#toc-troubleshooting-authentication) if you got an error.
 
 ## Things to do with SSH
 
