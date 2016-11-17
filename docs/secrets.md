@@ -28,6 +28,8 @@ Use fortrabbits App secrets to store your credentials safely. App secrets are st
 
 App secrets are closely related to ENV vars insofar that they are both available to your App at runtime. The big difference between them is that App secrets are stored highly secured and they are not automatically dumped out by debug tools - such as `phpinfo()` or your favorite debug toolbar.
 
+Since App secrets are a rather unique concept, they are completely optional to use. Per default, new Apps make all App secrets available as [dynamic ENV vars](env-vars#toc-dynamic-env-vars). If you prefer to use only App secrets, then you can disable this behavior.
+
 ## App secrets in your App
 
 Access App secrets from inside your App via PHP like so:

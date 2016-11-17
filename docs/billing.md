@@ -28,12 +28,12 @@ We get a few e-mails each month after invoicing. People are confused why they st
 
 **You can always quit**. Scale down or kill certain Apps or even cancel your Account completely.
 
-We will delete all your Account data. But it is required by law to keep your billing related data, that is basically the invoices and infos around it. The same applies to your credit card informations, but those are stored with our credit card service merchant — not with us. And yes, if you cancel the service while still having open invoices with us, they stay open and we might take further legal steps to finally get that money.
+We will delete all your Account data. But it is required by law to keep your billing related data, that is basically the invoices and infos around it. The same applies to your credit card informations, but those are stored with our credit card service vendor — not with us. <!-- See https://trello.com/c/GPwtgrVV/445-3-billing-artikel-erweitern: And yes, if you cancel the service while still having open invoices with us, they stay open and we might take further legal steps to finally get that money.  -->
 
 
 ### Monthly invoices
 
-Within the first days of every new month you will get the invoice for your last month's consumption. As there are no upfront payments (yet), yearly payment is not possible.
+Within the first days of every new month you will get the invoice for your last month's consumption. As there are no upfront payments (yet), yearly payment is not (yet) supported.
 
 ### Daily billing cycle
 
@@ -41,7 +41,7 @@ When you book something on the 16th day of a month and the month has 30 days you
 
 ### Costs monitoring
 
-You can see a live preview of your usage for the current month. Log in to the Dashboard > Billing Contact. There you'll find a cost preview for the ongoing month, covering all of your Apps. This overview shows you what will be printed on the next invoice. Please mind that it will show the current costs of the day of the month so far. 
+You can see a live preview of your usage for the current month. Log in to the Dashboard > Billing Contact. There you'll find a cost preview for the ongoing month, covering all of your Apps. This overview shows you what will be printed on the next invoice. Please mind that it will show the current costs of the day of the month so far.
 
 
 ### Payment methods
@@ -69,7 +69,7 @@ We recommend to enter your VAT-IN with your Billing Contact. This way you save u
 
 ### Currencies
 
-All [Billing Contacts](/company#toc-billing-contacts) within the EU are required to pay in EUR. Billing Contacts from other countries can choose rather they like to be charged in USD or EUR. It is not possible to change the currency of a Billing Contact later on. But you can: create a new Billing Contact with a different currency and then move Apps there. Please mind that customers from the EU have to pay in EUR. 
+All [Billing Contacts](/company#toc-billing-contacts) within the EU are required to pay in EUR. Billing Contacts from other countries can choose rather they like to be charged in USD or EUR. It is not possible to change the currency of a Billing Contact later on. But you can: create a new Billing Contact with a different currency and then move Apps there. Please mind that customers from the EU have to pay in EUR.
 
 
 ### Pending transaction
@@ -81,7 +81,7 @@ When you create a Billing Contact, we'll do a debit test on your credit card, wh
 
 **Option 1**: Scan your e-mail inbox for mails with the subject "fortrabbit invoice" for the monthly invoices we have sent you. Each e-mail contains a secret link to the invoice. From there you can print/download.
 
-**Option 2**: "Download/print" invoices from the [Dashboard](/dashboard): Login to the Dashboard > Your Account > Companies (Your Company) > Billing Contact > Invoice archive > Invoice > print. 
+**Option 2**: "Download/print" invoices from the [Dashboard](/dashboard): Login to the Dashboard > Your Account > Companies (Your Company) > Billing Contact > Invoice archive > Invoice > print.
 
 Invoices are shown as HTML > you can use print from the browser to generate and download a nicely styled PDF.
 
