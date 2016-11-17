@@ -144,7 +144,7 @@ return [
 
 ### Memcache
 
-Cache & session settings: If you plan on running your App in a production PHP plan then you need a shared accessible cache, which [Memcache](/memcache) is, since those plans run your App on multiple Nodes. If you are just tinkering, then you can skip this topic for now.
+Cache & session settings: If you plan on running your App in a production PHP plan then you need a shared accessible cache, which [Memcache](/memcache-pro) is, since those plans run your App on multiple Nodes. If you are just tinkering, then you can skip this topic for now.
 
 First make sure the sessions are using your Memcache component by creating the file `config/prod/session.php` with the following content:
 

@@ -65,7 +65,7 @@ Now follow the Project > MQ 3 and find your "IronMQ API URL" (the **queue hostna
 
 Lastly click on your account email in the upper right of the page and choose "My Tokens". Click the "*****" hiding your **account token** and note it down when it's shown, too.
 
-Now a good idea is to take all three credentials and the queue name you chose before and store them in your App's [secrets](app-secrets) by going to the fortrabbit Dashboard > Your App > Settings > App secrets and add:
+Now a good idea is to take all three credentials and the queue name you chose before and store them in your App's [secrets](secrets-pro) by going to the fortrabbit Dashboard > Your App > Settings > App secrets and add:
 
 ```plain
 IRON_MQ_HOST=your-queue-hostname

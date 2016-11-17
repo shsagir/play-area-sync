@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-11-15
 title:         Scaling
 naviTitle:     Scaling
 lead:          When and how to grow and shrink your Apps resources.
@@ -49,7 +49,7 @@ A Node is a lightweight virtual container that is configured to run a specific s
 
 ### Vertical scaling
 
-Vertical scaling means that you grow your Node size. On fortrabbit this mostly means more memory, but also more [CPU power](http://fortrabbit.com/specs). Which vertical scaling size for which Component your App needs depends in large parts on the technology you are using.
+Vertical scaling means that you grow your Node size. On fortrabbit this mostly means more memory, but also more [CPU power](http://fortrabbit.com/specs-pro). Which vertical scaling size for which Component your App needs depends in large parts on the technology you are using.
 
 ### Horizontal scaling
 
@@ -118,7 +118,7 @@ So what is there to scale? Given a typical PHP web application, you have these m
 
 ### PHP
 
-PHP is the main Component on fortrabbit, you can scale it vertically and horizontally. Please see our dedicated [article on scaling PHP](php-scaling).
+PHP is the main Component on fortrabbit, you can scale it vertically and horizontally. Please see our dedicated [article on PHP](php-pro).
 
 
 ### MySQL

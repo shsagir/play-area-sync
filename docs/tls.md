@@ -52,7 +52,7 @@ This is the default free and zero-config option which makes use of the external 
 
 #### TLS custom
 
-Bring your own certificate for even more security and advanced options for your custom domains. See the [TLS custom help article](/tls-custom) for why and how.
+Bring your own certificate for even more security and advanced options for your custom domains. See the [TLS custom help article](/tls-custom-pro) for why and how.
 
 <!--
 

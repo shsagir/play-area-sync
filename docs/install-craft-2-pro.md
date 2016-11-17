@@ -158,7 +158,7 @@ CRAFT_CACHE=db
 
 All fortrabbit production PHP plans run on multiple Nodes and require a cache which is accessible jointly - same goes for sessions, of course. This disqualifies `apc`, `db` and `file` and leaves you with `memcache` as options.
 
-So make sure you have booked the [Memcache component](memcache) and then create the file `craft/config/memcache.php` with the following content:
+So make sure you have booked the [Memcache component](/memcache-pro) and then create the file `craft/config/memcache.php` with the following content:
 
 ```php
 if ($file = getenv('APP_SECRETS')) {

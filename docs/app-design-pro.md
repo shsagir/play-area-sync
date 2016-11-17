@@ -148,7 +148,7 @@ If you are integrating external services, for example for any kind of REST API, 
 
 ### Database performance
 
-Our MySQL Add-Ons can scale. Make sure you have the [correct size](scaling) selected. Also very common: check your JOIN queries! If they ran fast when your dataset was small, it doesn't mean they still do! Utilize caches to buffer costly databases results.
+Our MySQL Add-Ons can scale. Make sure you have the correct size selected. Also very common: check your JOIN queries! If they ran fast when your dataset was small, it doesn't mean they still do! Utilize caches to buffer costly databases results.
 
 ### Massive I/O
 

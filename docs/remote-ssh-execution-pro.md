@@ -14,7 +14,7 @@ group:         deployment
 
 ## Problem
 
-With fortrabbits [Pro Stack Apps](app-pro) you [deploy with Git](/deployment). But sometimes SSH access to your App can be helpful as well. fortrabbit Apps have [ephemeral storage](quirks#toc-ephemeral-storage) and a horizontal scalable infrastructure. This allows great performance and grants high availability. One trade off is that full SSH access is not feasible.
+With fortrabbits [Pro Stack Apps](app-pro) you [deploy with Git](/git-deployment). But sometimes SSH access to your App can be helpful as well. fortrabbit Apps have [ephemeral storage](app-pro#toc-ephemeral-storage) and a horizontal scalable infrastructure. This allows great performance and grants high availability. One trade off is that full SSH access is not feasible.
 
 
 ## Solution
@@ -27,7 +27,7 @@ Remote SSH execution: run single commands remotely using the SSH remote exec pro
 * Use CLI tools for tasks like database migration (see below)
 * Use remote task runners like [Envoy](https://laravel.com/docs/master/envoy) (or [Gulp/SSH](https://www.npmjs.com/package/gulp-ssh))
 * List files on remote: see what actually has been deployed
-* Debug while developing your [Worker](/worker) and cron jobs
+* Debug while developing your [Worker](/worker-pro) and cron jobs
 * Debug while developing your [pre/post deploy scripts](/deployment-file-v2#toc-full-schema)
 * Execute arbitrary PHP scripts within your Apps
 * …
@@ -54,7 +54,7 @@ $ ssh [[your-app]]@deploy.[[region]].frbit.com ls -lha
 #                ssh login command          remote command
 ```
 
-**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are deployed. So if the script, you want to execute, is locally under `{{vendor/bin/foo}}` then you'd need to execute `ssh …frbit.com php {{vendor/bin/foo}}`. Check out the [directory structure](/directory-structure) for more information.
+**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are deployed. So if the script, you want to execute, is locally under `{{vendor/bin/foo}}` then you'd need to execute `ssh …frbit.com php {{vendor/bin/foo}}`. Check out the [directory structure](/directory-structure-pro) for more information.
 
 **Note II**: You must write the interpreter `php` before all PHP scripts, including CLIs like `artisan` or `app/console`, you want to execute. So `ssh …frbit.com php {{script.php}}` works and `ssh …frbit.com {{script.php}}` does not.
 
@@ -70,9 +70,9 @@ Many modern web development frameworks and CMS come with a programmable command 
 
 ### Limitations
 
-**No persistent code manipulation**: Code changes made via remote SSH execution don't have any effect in your running App! This means: You can run a database migrate command, which changes the contents of your database and thereby has effect on your App. But: If your remote command actually modifies, creates or removes files, it will only be modified, created or removed from the "deployment Container" in which the SSH command was executed, not in the "Web Container", which is used to serve your App to the web. Also those changes will be undone with your next deploy. Hence: All code changes need to be made locally and then [committed and pushed via Git](/deployment).
+**No persistent code manipulation**: Code changes made via remote SSH execution don't have any effect in your running App! This means: You can run a database migrate command, which changes the contents of your database and thereby has effect on your App. But: If your remote command actually modifies, creates or removes files, it will only be modified, created or removed from the "deployment Container" in which the SSH command was executed, not in the "Web Container", which is used to serve your App to the web. Also those changes will be undone with your next deploy. Hence: All code changes need to be made locally and then [committed and pushed via Git](/git-deployment).
 
-**No uploads**: SFTP is not available. All code changes need to be made via [Git deployment](/deployment) due to [ephemeral storage](quirks#toc-ephemeral-storage).
+**No uploads**: SFTP is not available. All code changes need to be made via [Git deployment](/git-deployment) due to [ephemeral storage](app-pro#toc-ephemeral-storage).
 
 **No concurrent usage**: To guarantee code consistency no deployments can be made while a remote SSH command is executing. For the same reasons parallel deployments and parallel SSH executions are not allowed.
 

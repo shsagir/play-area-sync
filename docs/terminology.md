@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-16
+reviewed:      2016-11-16
 naviTitle:     Terminology
 title:         What is what on fortrabbit?
 lead:          You'll find many capitalized words here in this documentation here. These words refer to fortrabbit "creations". This list shall give you an overview:
@@ -11,8 +11,6 @@ hideExamples:  yes
 
 ---
 
-<!--  TODO: update/extend or trash —> Frank -->
-
 * **[App](app)**: a virtual instance for your PHP application
 * **[App Secrets](secrets)**: a way to store confidential credentials
 * **App URL**: a unique default URL each App has: appname.frb.io
@@ -21,15 +19,15 @@ hideExamples:  yes
 * **Activities**: a history log in the Dashboard
 * **Billing Contact**: payment and billing group for Apps
 * **Company**: [collaboration](collaboration) group
-* **Component**: a service that can individually be booked and scaled to any Professional App
+* **Component**: a service that can individually be booked and scaled (Professional App)
 * **[Dashboard](dashboard)**: the master control panel: [dashboard.fortrabbit.com](https://dashboard.fortrabbit.com)
-* **Developer**: a [team member](collaboration) role within the Dashboard
+* **App Collaborator**: a [team member](collaboration) role within the Dashboard
 * **Node**: a lightweight virtual container for a specific service
 * **Owner**: a [team member](collaboration) role within the Dashboard
-* **[Worker](worker)**: an optional Component
+* **[Worker](worker)**: an optional Component (Professional App)
 * **PHP request**: a single call for a PHP file
-* **Tinkering level**: a scaling extension for small Apps and staging
-* **Production level**: a scaling extension state safe for live Apps
-* **Dedicated level**: a scaling extension state for big Apps
+* **Development level**: a scaling extension for small Apps and staging (Professional App)
+* **Production level**: a scaling extension state safe for live Apps (Professional App)
+* **Dedicated level**: a scaling extension state for big Apps (Professional App)
 
 

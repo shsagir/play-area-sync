@@ -62,7 +62,7 @@ Apache access and error logs will be written here.
 
 ### log/php
 
-PHP error logs and [Worker](workers) output log (worker-out.log).
+PHP error logs and Worker output log (worker-out.log).
 
 ### tmp
 

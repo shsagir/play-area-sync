@@ -299,7 +299,7 @@ return [
 
 ### Memcache
 
-Make sure you enabled the [Memcache](memcache) Component. Then you can use the [App Secrets](app-secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
+Make sure you enabled the [Memcache](memcache) Component. Then you can use the [App Secrets](secrets) to attain your credentials. Modify the `memcached` connection in your `config/cache.php` like so:
 
 ```php
 // locally: use standard settings

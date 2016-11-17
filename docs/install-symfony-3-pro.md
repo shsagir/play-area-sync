@@ -166,7 +166,7 @@ Both are well documented. In essence, you should configure your filesystem abstr
 
 ### Memcache
 
-If you are using a PHP production plan, then your App is distributed over multiple nodes. This means you need a network capable caching: [Memcache](memcache).
+If you are using a PHP production plan, then your App is distributed over multiple nodes. This means you need a network capable caching: [Memcache](memcache-pro).
 
 Open `app/config/parameters_prod.php` again and add:
 

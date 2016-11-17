@@ -55,7 +55,7 @@ Since you can scale later on at any point, we recommend to choose a plan fitting
 
 ## Connecting
 
-In the instances list of the ElephantSQL console click on the "Details" button of your just created database. Now open the fortrabbit Dashboard in another tab, navigate to Your App > Settings > App secrets and insert the ElephantSQL credentials as your App's [secrets](app-secrets):
+In the instances list of the ElephantSQL console click on the "Details" button of your just created database. Now open the fortrabbit Dashboard in another tab, navigate to Your App > Settings > App secrets and insert the ElephantSQL credentials as your App's [secrets](secrets):
 
 ```plain
 # The "Hostname" from the ElephantSQL details

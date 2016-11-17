@@ -54,7 +54,7 @@ Since you can scale later on at any point, we recommend to choose a small Plan, 
 
 ## Connecting
 
-In the instances list of the CloudAMQP console click on the "Details" button of your just created queue. Now open the fortrabbit Dashboard in another tab, navigate to Your App > Settings > App secrets and insert the CloudAMQP credentials as your App [secrets](app-secrets):
+In the instances list of the CloudAMQP console click on the "Details" button of your just created queue. Now open the fortrabbit Dashboard in another tab, navigate to Your App > Settings > App secrets and insert the CloudAMQP credentials as your App [secrets](/secrets):
 
 ```plain
 # The "Server" from the CloudAMQP details

@@ -98,7 +98,7 @@ $container->setParameter('log_type', 'error_log');
 
 ### General config
 
-The general config must now include the previously created `parameters_prod.php` and further set up [Memcache](memcache) as the default session cache. Open up `app/config/config_prod.yml` and replace it with the following content:
+The general config must now include the previously created `parameters_prod.php` and further set up [Memcache](memcache-pro) as the default session cache. Open up `app/config/config_prod.yml` and replace it with the following content:
 
 ```yaml
 imports:

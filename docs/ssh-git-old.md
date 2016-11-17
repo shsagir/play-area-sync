@@ -11,7 +11,7 @@ group:         platform
 
 ---
 
-This workflow is for advanced developers to solve special cases. It is based on your SSH account and Git, which is installed on the shell. WARNING: Do not confuse this workflow with the regular [Git workflow](git)! This workflow should be used for solving edge cases, only!
+This workflow is for advanced developers to solve special cases. It is based on your SSH account and Git, which is installed on the shell. WARNING: Do not confuse this workflow with the regular [Git workflow](git-deployment)! This workflow should be used for solving edge cases, only!
 
 
 
@@ -61,7 +61,3 @@ cd ~/htdocs/some-folder/.git/hooks
 ln -s /usr/local/bin/git-hook-call update
 echo '<?php echo "Hello from update" ?>;' > update.php
 ```
-
-## Multiple Git repos in one App
-
-Here you can define any folder in your App to contain a Git remote repo. In combination with the possibility to [route any domain to any folder](artciles/domains#setting-the-root-path) you can basically have: one App containing multiple projects (or websites or whatever you like to call it).

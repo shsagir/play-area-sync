@@ -21,7 +21,7 @@ keywords:
 
 ## About SendGrid
 
-SendGrid offers an e-mail delivery service that assists businesses with transactional e-mail management — see our [category article](/about-transactional-e-mail).
+SendGrid offers an e-mail delivery service that assists businesses with transactional e-mail management.
 
 
 ## Pricing

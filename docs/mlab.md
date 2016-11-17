@@ -66,7 +66,7 @@ If you are not still there, go to the just created database detail view. Here yo
 
 What you need to take from this are two things: Your **hostname**, which would be `ds123456.mlab.com` in this case and your **port**, which would be `23456` in this case.
 
-We recommend to stash those information and the user credentials from before in your App's [secrets](app-secrets). Go to the fortrabbit Dasboard > Your App > Settings > App Secrets and add:
+We recommend to stash those information and the user credentials from before in your App's [secrets](secrets). Go to the fortrabbit Dasboard > Your App > Settings > App Secrets and add:
 
 ```plain
 # the hostname and port you got

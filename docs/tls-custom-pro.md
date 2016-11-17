@@ -63,7 +63,7 @@ The roadmap to setup TLS custom reads like so:
 
 ### Route domains
 
-With "TLS custom" you just install the certificate for your qualified domain name (from the cert). Take to also have that [domain](about-domains) registered and routed to your App.
+With "TLS custom" you just install the certificate for your qualified domain name (from the cert). Take to also have that [domain](domains) registered and routed to your App.
 
 
 ### Create a new key and certificate

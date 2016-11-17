@@ -185,7 +185,7 @@ return [
 
 ### Memcache
 
-Best to use the [App secrets](app-secrets) to attain your Memcache credentials. Create a config for your production environment (see above) for the `memcached` connection in `app/config/production/cache.php`:
+Best to use the [App secrets](secrets) to attain your Memcache credentials. Create a config for your production environment (see above) for the `memcached` connection in `app/config/production/cache.php`:
 
 ```php
 $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);

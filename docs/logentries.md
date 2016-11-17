@@ -44,7 +44,7 @@ Once you are logged in click on the "+ Add New" button in the upper left corner.
 
 ## Connecting
 
-Stash the just created token in your App's [secrets](app-secrets). Go to the fortrabbit Dashboard > Your App > Settings > App Secrets and add:
+Stash the just created token in your App's [secrets](secrets). Go to the fortrabbit Dashboard > Your App > Settings > App Secrets and add:
 
 ```plain
 LOGENTRIES_TOKEN={{the-token-you-just-got}}

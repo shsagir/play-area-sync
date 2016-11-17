@@ -111,7 +111,7 @@ Upgrades between Production levels are smooth and completely transparent to any 
 
 ### Memcache is recommended
 
-When using Production PHP plans, which run on two or even more Nodes, you need a solution to store session and cache data in a way that it can be accessed from all Nodes. Our recommendation is to use the network cache [Memcache](memcache) for this. It's fast and easy to use.
+When using Production PHP plans, which run on two or even more Nodes, you need a solution to store session and cache data in a way that it can be accessed from all Nodes. Our recommendation is to use the network cache [Memcache](memcache-pro) for this. It's fast and easy to use.
 
 Alternatively you can store session data in the [MySQL Database](mysql) and cache data in APCU, which works fine for Apps with few visitors (>1k PHP requests / h, to our experience).
 

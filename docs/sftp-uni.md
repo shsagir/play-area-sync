@@ -64,7 +64,7 @@ Got an error when trying to login? fortrabbit supports username + password and p
 
 ## About SFTP
 
-SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH]([SSH](ssh-uni)) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really makes a difference. Mostly, SFTP is preferable to FTP because of its underlying security features.
+SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH](/ssh-uni) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really makes a difference. Mostly, SFTP is preferable to FTP because of its underlying security features.
 
 ## Mixing deployment methods
 

@@ -90,7 +90,7 @@ To keep deployment fast for everyone the size of the release package is limited 
 
 ## MySQL with persistent connections during upgrade
 
-When [scaling](/scaling#toc-mysql) (up or down) your MySQL, your App's database will be migrated to a new node. Therefore the CNAME target of your Apps MySQL hostname will be changed. The hostname's time to live (TTL) is 60 seconds, which reflects the maximum expected downtime during upgrade.
+When scaling (up or down) your MySQL, your App's database will be migrated to a new node. Therefore the CNAME target of your Apps MySQL hostname will be changed. The hostname's time to live (TTL) is 60 seconds, which reflects the maximum expected downtime during upgrade.
 
 With persistent connections this can take longer (possibly up to half an hour). Thefore we recommend to disable persistent connections during upgrades and downgrades.
 
