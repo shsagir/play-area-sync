@@ -57,9 +57,9 @@ Horizontal scaling means that you add more Nodes. Once you have figured out whic
 
 To make things easier for you, we categorized most Components into the scaling groups (extension levels), which reflect a point in life of your application. It's mostly best practice to combine Components from the same scaling groups, everything on Production level grade, for example, but it depends on the use case.
 
-### Tinkering
+### Development
 
-Use this in development, as staging environment or for low volume/traffic Apps. This level keeps things simple and affordable by saving on availability and performance.
+Use this for tinkering, in development, as staging environment or for low volume/traffic Apps. This level keeps things simple and affordable by saving on availability and performance.
 
 ```
 # Tinkering level scaling App example
@@ -147,7 +147,7 @@ All worker plans run only on a single Node. In case one of those Nodes fails the
 
 ### Object Storage
 
-Professional Apps have an [ephemeral local storage](app-pro#toc-ephemeral-storage), which means that all files on the server will be wiped on each deploy or change of configuration, also on maintenance. 
+Professional Apps have an [ephemeral local storage](app-pro#toc-ephemeral-storage), which means that all files on the server will be wiped on each deploy or change of configuration, also on maintenance.
 
 Content driven websites usually make use of the local file system to store assets. If you have a "media website" or an social community focused on image or videos for example, the storage needs to be able to scale as well. For those use cases we recommend to use our [Object Storage](object-storage) component. It's easy to setup, supports best practices and reduces load on the PHP Nodes.
 
@@ -169,7 +169,7 @@ What happens when you hit or even go over one of the scaling limits described in
 
 ### App base limits
 
-**Traffic** is measured with the App. When an App exceeds the included traffic, additional traffic will be billed. See the [specs page](http://www.fortrabbit.com/specs) for costs and packaged. 
+**Traffic** is measured with the App. When an App exceeds the included traffic, additional traffic will be billed. See the [specs page](http://www.fortrabbit.com/specs) for costs and packaged.
 s
 
 ### PHP plan limits
