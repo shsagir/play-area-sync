@@ -45,7 +45,7 @@ A unique quality of Company collaboration are the role based permissions. Delega
 The Owner role can NOT be modified by someone else, multiple Owners per Company are possible. Each Company must have at least one Owner. Accounts with this role within a Company can:
 
 * create, delete, configure & scale all Apps of the Company
-* access code to all Apps of the Company
+* access code of all Apps of the Company
 * delete, create, change Billing Contacts for the Company
 * manage all roles (but other Owners) of the Company
 * invite new Users for any role to the Company
@@ -58,7 +58,8 @@ The Owner role can NOT be modified by someone else, multiple Owners per Company 
 The Admin role can be modified by Owners. Accounts with this role within a Company can:
 
 * create, delete, configure & scale all Apps of the Company
-* code access to all Apps of the Company
+* access code of all Apps of the Company
+* manage all Collaborators of the Company
 * invite new Admins or Collaborators to the Company
 * leave the Company
 
@@ -85,7 +86,7 @@ Just like in real life, you can create or join any number of Companies with your
 
 ### Working with the same person in different Companies
 
-When you have multiple Companies and you want to collaborate with same person on all or a subset of them: Just invite them to each Company. The same person then will have access to all Companies while logged in with their Account.
+If you have multiple Companies and you want to collaborate with same person on all or a subset of them: Just invite them to each Company. The same person then will have access to all Companies while logged in with their Account.
 
 ### Moving an App from one Billing Contact to another
 
@@ -110,7 +111,7 @@ In some cases you might want to move the App to a different Company. This will c
 
 This action can only be done by Accounts who have Owner or Admin privileges on both Companies.
 
-<!--  TODO: Confirm/test this: is it REALLY only possible to move an App to another Company, when I am only Collab in the other Compnay?  -->
+<!--  TODO: Confirm/test this: is it REALLY only possible to move an App to another Company, if I am only Collab in the other Compnay?  -->
 
 
 ### Moving a Company member to another Company
@@ -143,13 +144,13 @@ Role changes have immediate effect, they do not require another confirmation by 
 
 #### Changing the role of a collaborator
 
-When Company collaboration is active and you are either Owner or Admin, you can promote and demote other people like so: Visit the Company the Account is part of, click on the role of Account. This will open a form in which you can change the role of the Account.
+If Company collaboration is active and you are either Owner or Admin, you can promote and demote other people like so: Visit the Company the Account is part of, click on the role of Account. This will open a form in which you can change the role of the Account.
 
 
 
-### When people leave
+### If people leave
 
-The Account who leaves a Comoany will loose the ability to see and edit the App in the Dashboard and also will loose all personal code access to the App. There are two directions of leaving a Company:
+The Account who leaves a Company will loose the ability to see and edit the App in the Dashboard and also will loose all personal code access to the App. There are two directions of leaving a Company:
 
 #### Active: An Account leaves a Company
 
@@ -162,30 +163,28 @@ In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > "Leave Co
 There is one special case in which you can not leave a Company and that is when you are the last Owner. A Company must have at least one Owner.
 
 
-#### Passive: An Owner or Admin terminates Company access from another Account
+#### Passive: An Owner or Admin terminates Company access for another Account
 
 Let's say a project phase has ended, so that an App Collaborator does not need have access any more. Who can can fire whom:
 
-* An Owner can make Admins and App collaboratores leave
-* An Admin can make App collaborators leave
-* An App Collaborator can make nobody leave
-* No one can make an Owner leave
+* An Owner can remove Admins and App collaboratores
+* An Admin can remove App collaborators
+* An App Collaborator can remove nobody
+* No one can remove an Owner
 
-##### How to fire people
+##### How to remove Accounts
 
-In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > Under Collaborators > Click the role of the Account you would like to fire. This will bring up a form where you can choose to completly revoke access.
+In the Dashboard > "Your Account" > "Companies" > {{ Company Name }} > Under Collaborators > Click the role of the Account you would like to remove. This will bring up a form in which you can revoke access.
 
 
 #### Confirmation on cancellations
 
-To make the process of leaving transparent, all involved parties will get a confirmation mail about the action. All Owners of the Company will be informed about someone leaving. The person who left or was left will also get a confirmation.
-
-<!-- TODO: be more specfic about demotion and promotion as well here, who will get a mail on promotion and demotion? -->
+To make the process of leaving transparent, all involved parties will get a notification mail about the action: All owners, the account who did the removal and the removed account itself.
 
 
 #### A note on security when people leave
 
-Please mind that the person who has left still might hold local code copies and have other senstive data. We advice to reset service passwords. Please see the [security article](security#password-reset) for more.
+Please mind that the person who has left still might have local code copies and thereby access to sensitive data like MySQL passwords. We advice to reset service passwords. Please see the [security article](security#password-reset) for more.
 
 <!-- TODO: make link to security section above work  -->
 
