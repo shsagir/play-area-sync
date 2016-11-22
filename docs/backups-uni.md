@@ -32,22 +32,6 @@ Please mind that backups are not included with all App plans. See our [pricing p
 
 If your App has backups: Find them in the Dashboard > Your Apps overview > Backups. We automatically generate two backup files per day: One of your App's web storage and one of your App's MySQL storage. The web storage backup file is a `tar` archive of all the contents of the `htdocs` folder of your App. The MySQL storage files is a plain `sql` file, containing the result of a `mysqldump` of your App's database.
 
-<!--
-
-TOOD: exclude this to the specs page:
-
-### Backup availability
-
-Depending on the region your App runs in, the daily backups will become available at around:
-
-* **EU**: 05:00h GMT (05:00h UTC)
-* **US**: 05:00h EST (10:00h UTC)
-
-
-All backups are generated from snapshots, which are taken at 02:00h in the respective time zone.
-
--->
-
 If you need backups available for a longer time period than the retention time allows (see [specs page](https://www.fortrabbit.com/specs)), then we recommend to periodically download the backups from the dashboard and store them locally.
 
 ## Recover from backups
