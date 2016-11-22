@@ -78,9 +78,15 @@ There are two levels of collaboration
 
 Since collaboration can easily become rather complex, we also have [collaboration overview article](collaboration), which shows you the big picture.
 
+<!-- 
+
+TODO: rewrite/review when Company Plans
+
 ### Support
 
 Beside basic free support, you an also get [Professional Support](//www.fortrabbit.com/support) from us. Support plans are booked on behalf the Company and are available for the whole team.
+
+-->
 
 ### Automatic resource exhaustion alerts
 
@@ -105,6 +111,30 @@ You can define the services you want to receive alerts for. By default all servi
 Individual Accounts can opt-out of receiving those alerts by deselecting this from their Accounts notification settings.
 
 -->
+
+### Working with multiple Companies
+
+Just like in real life, you can create or join any number of Companies with your Account. So one Account can own multiple Companies while also being involved in other Companies as Admins or even App level collaborators.
+
+
+### Moving an App from one Company to another
+
+In some cases you might want to move the App to a different Company. This will change billing AND team. Of course you first need to be at least Admin in two Companies.
+
+
+### Changing the Company of an App
+
+2. Go to the App in the Dashboard, click the "Change ownership" button
+3. This will open a form, where you choose a different Company (and Billing Contact)
+
+This action can only be done by Accounts who have Owner or Admin privileges on both Companies.
+
+
+### Moving a Company member to another Company
+
+Well, that's not what you do, actually. What you'll do is: invite the same person again to the another Company. The Account will then be able to see and access Apps from both Companies under one login. The Account itself or you (as the Admin or Owner) can then revoke access to the first Company.
+
+
 
 
 ## Billing Contacts
@@ -138,3 +168,15 @@ Each month we'll send an invoice and send a link by e-mail. You can change this 
 ### Changing the Billing Contact of an App
 
 In the [Dashboard](dashboard), go to your [App](app) and hit the "Change ownership" button. Here you can change the Company (and the [team](collaboration)), as well as the Billing Contact (only affects billing). You must be Owner of the Company for this.
+
+
+### Moving an App from one Billing Contact to another
+
+In case you want the App to be billed from another credit card or bank account but still want to keep the team of the App the same: You simply change the Billing Contact of the App. You first need to have at least two Billing Contacts with your Company.
+
+### Changing the Billing Contact of an App
+
+1. Go to the App in the Dashboard, click the "Change ownership" button
+2. This will open a form, where you choose a different Billing Contact
+
+This action can only be executed by Owners or Admins of a Company. The App will then be billed on the old Billing Contact until that day of change and from the next day on to the new Billing Contact. For example: If you move your App on the 15ths of a month to the Billing Contact of another Company, it will be billed until the 15ths to the old Billing Contact and starting from the 16ths to the new Billing contact.
