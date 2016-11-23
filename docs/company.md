@@ -130,10 +130,6 @@ In some cases you might want to move the App to a different Company. This will c
 This action can only be done by Accounts who have Owner or Admin privileges on both Companies.
 
 
-### Moving a Company member to another Company
-
-Well, that's not what you do, actually. What you'll do is: invite the same person again to the another Company. The Account will then be able to see and access Apps from both Companies under one login. The Account itself or you (as the Admin or Owner) can then revoke access to the first Company.
-
 
 
 

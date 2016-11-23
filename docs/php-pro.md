@@ -28,7 +28,7 @@ You'll find a PHP settings page with your App in the Dashboard. Here you can swi
 
 ## Vertical scaling
 
-When first creating your App, you might or might not know how much memory (PHP memory limit) your application will need. The amount determines the vertical scaling plan you should choose.
+When first creating your App, you might or might not know how much memory (PHP memory limit) your application will need. The amount determines the [vertical scaling](scaling-pro#toc-vertical-scaling) plan you should choose.
 
 We offer three main PHP scaling plan sizes: **PHP s, PHP m, PHP l**. Which of those fits your App best depends on the technology stack (framework, CMS …) and on the code you write. For the latter you should read our [application design](app-design) guide on how you can get the most performance out of your application.
 
@@ -36,17 +36,17 @@ Don't be afraid to test and experiment with different scaling settings: You can 
 
 ### PHP s: universal usage
 
-The majority of applications will run within the small vertical scaling group:
+The majority of applications will run within this scaling group.
 
 * [Symfony](http://symfony.com/), [our install guide](install-symfony)
 * [Laravel](http://laravel.com/), [our install guide](install-laravel)
 * [WordPress](https://wordpress.com/), [our install guide](install-wordpress)
-* [Craft CMS](https://buildwithcraft.com/)
+* [Craft CMS](https://buildwithcraft.com/), [our install guide](install-craft)
 * [Drupal8](https://www.drupal.org/), [our install guide](install-drupal)
 * [CodeIgniter](https://www.codeigniter.com/)
-* [Phalcon](https://phalconphp.com/en/), [our install guide](install-phalcon) <!-- TEMP or fitting? -->
-* [Grav](http://getgrav.org/), [our install guide](install-grav) <!-- TEMP, 'cause our install guide  -->
-* [Slim](http://www.slimframework.com/), [our install guide](install-slim) <!-- TEMP, 'cause install guide -->
+* [Phalcon](https://phalconphp.com/en/), [our install guide](install-phalcon)
+* [Grav](http://getgrav.org/), [our install guide](install-grav)
+* [Slim](http://www.slimframework.com/), [our install guide](install-slim)
 
 
 ### PHP m: bigger CMS & grown Apps
@@ -75,14 +75,14 @@ In some cases swap usage by the application is not possible. In these cases you 
 
 ## Horizontal scaling
 
-You can scale horizontally for two reasons: 1) higher availability, 2) more visitors. While single Node Tinkering plans can handle low traffic amounts easy enough, multi Node Production plans can handle live traffic and come with considerable increased availability.
+You can [scale horizontally](scaling-pro#toc-horizontal-scaling) for two reasons: 1) higher availability, 2) more visitors. While single Node Tinkering plans can handle low traffic amounts easy enough, multi Node Production plans can handle live traffic and come with considerable increased availability.
 
-If the App is mission critical, then you want to consider using plans which could handle more traffic than it is actually getting. More Nodes assure that the App keeps running without any impact even when one of the Nodes fails (although it would automatic recover, it could take some minutes).
+If the App is mission critical, then you want to consider using plans which could handle more traffic than it is actually getting. More Nodes assure that the App keeps running without any impact even of one of the Nodes fails (although it would automatic recover, it could take some minutes).
 
 
-### PHP requests
+### PHP requests vs page-views
 
-In our [specs](http://www.fortrabbit.com/specs) table you can find an overview of how many "PHP requests" per hour you can expect from each plan. A PHP request is a single request to your App, which is handled by a PHP script.
+In our [specs](http://www.fortrabbit.com/specs-pro) table you can find an overview of how many "PHP requests" per hour you can expect to handle with each plan. A PHP request is a single request to your App, which is handled by a PHP script.
 
 Viewing a single page of an App ("page-view") usually calls a PHP script, which renders out HTML. The HTML usually contains references to "static" assets (.js, .css, ..). which are then loaded by the browser. In this case **a PHP request is equivalent to a page-view**.
 
@@ -91,11 +91,11 @@ A PHP request differs from a page-view, if:
 1. You make AJAX requests from the page which are handled by PHP scripts
 2. The loaded assets (.js, .css, ..) are "piped" through or rendered by PHP
 
-In both of those cases: one page-view generates multiple PHP requests.
+In both of those cases: one page-view will generate multiple PHP requests.
 
 Now, a PHP requests to one App is different from a PHP request to another App in terms of resource usage. Say one request is to a plain PHP script which just prints "Hello world" and takes 5 ms to render, while the other is to a fat e-commerce stack, which includes hundreds of PHP files and takes 1000 ms to render.
 
-For simplification we assume an average of 500 ms rendering time per PHP request in our recommendations in the [specs](http://www.fortrabbit.com/specs) table, which is on the safe-side. If your App is faster: great! Expect more performance. If it's slower: well, you can probably [tune your App](app-design)).
+For simplification we assume an average of 500 ms rendering time per PHP request in our recommendations in the [specs](http://www.fortrabbit.com/specs-pro) table, which is on the safe-side. If your App is faster: great! Expect more performance. If it's slower: well, you can probably [tune your App](app-design)).
 
 
 
@@ -113,7 +113,7 @@ Upgrades between Production levels are smooth and completely transparent to any 
 
 When using Production PHP plans, which run on two or even more Nodes, you need a solution to store session and cache data in a way that it can be accessed from all Nodes. Our recommendation is to use the network cache [Memcache](memcache-pro) for this. It's fast and easy to use.
 
-Alternatively you can store session data in the [MySQL Database](mysql) and cache data in APCU, which works fine for Apps with few visitors (>1k PHP requests / h, to our experience).
+Alternatively you can store session data in the [MySQL Database](mysql) and cache data in APCU, which works fine for Apps with few visitors (~1k PHP requests per hour) in our experience.
 
 
 ## Scaling from Production to Dedicated
@@ -133,18 +133,18 @@ Besides the plans you can choose in the Dashboard we offer much larger plans. Pl
 
 fortrabbit utilizes FPM (FastCGI Process Manager) for persistent PHP processes. Each Node comes with two processes. Each PHP process can respond to one concurrent PHP request at a time. Most PHP requests don't take very long to execute. Say responding takes 500 ms on average, than one process can handle two requests per second. If it takes 100 ms than one process can handle ten requests per second. And so on.
 
-For your convinience, you can find the amount of available PHP processes per plan on the [specs](http://www.fortrabbit.com/specs) page.
+For your convinience, you can find the amount of available PHP processes per plan on the [specs](http://www.fortrabbit.com/specs-pro) page.
 
 
 ## PHP memory
 
-The memory of each PHP plans is only for PHP usage - no Apache, no MySQL, no nothing. So 128 MB, 256 MB and even 512 MB of memory might sound small, but it is actually quite a lot, because PHP itself does not need much to run.
+The memory of each PHP plans is only for PHP usage - no Apache, no MySQL, no nothing. So 128 MB, 256 MB and even 512 MB of memory might sound small, but it is actually quite a lot, because it is not shared with other resources.
 
 How much memory your App will require depends on multiple factors. Let's start with the theory:
 
 **Extensions**: Each enabled PHP extension must be loaded into memory. Extension have a different size, so a full fledged framework such as Phalcon uses more memory than a simple driver such as Memcached.
 
-**OPcache 1: PHP libraries**: You most likely are using Composer to manage your dependencies. This implies a set of PHP files which need to be interpreted and loaded into memory - specifically the OPcache.
+**OPcache 1: PHP libraries**: You most likely are using Composer to manage your dependencies. This implies a set of PHP files which need to be interpreted and loaded into memory - specifically into the OPcache.
 
 **OPcache 2: PHP code**: The code you write yourself consumes memory in the OPcache as well. The more code you have, i.e. the more functions and complexity, the more memory is required.
 

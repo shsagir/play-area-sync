@@ -31,16 +31,7 @@ Create a file named `fortrabbit.yml` in the App's root folder of your project an
 version: 2
 
 # called before Composer runs
-pre:
-
-    # relative to ~/htdocs
-    path: my-script.php
-
-    # optional parameters
-    args:
-        - foo
-        - bar
-        - baz
+pre: my-script.php arg1 arg2 arg3
 
 # optional Composer settings
 composer:
@@ -58,16 +49,7 @@ composer:
     no-scripts: false
 
 # called after Composer runs
-post:
-
-    # relative to ~/htdocs
-    path: sub/folder/my-script.php
-
-    # optional parameters
-    args:
-        - foo
-        - bar
-        - baz
+post: my-script.php arg1 arg2 arg3
 
 # list of sustained folders in ~/htdocs. If not given, then it defaults to the "vendor" folder
 sustained:
