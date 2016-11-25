@@ -10,6 +10,9 @@ stack:         all
 
 ---
 
+
+<!--  TODO: this is the same text as on the home page. a bit longer text here probably. write something about project descions, first app this stack, second app that stack … -->
+
 ## The two sentence story
 
 **The Universal Stack** is for everyone to build websites and web applications, combining legacy workflows with modern design paradigms. **The Professional Stack** is for spohisticated developers to build modern cloud-enabled high-performance PHP web applications with lot's of traffic.

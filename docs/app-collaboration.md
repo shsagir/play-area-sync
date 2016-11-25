@@ -60,6 +60,13 @@ The list is endless. Following the most common, as we see them:
 
 fortrabbit offers [Company level collaboration](company-collaboration), which allows you to invite Accounts not only to Apps but directly to your Company. Those Accounts will then be able to invite App collaborators and manage Apps on a different level. In contrast, App collaboration is meant for working with others only on one or a few Apps, without giving them too many rights.
 
+<!--
+
+TODO: write about limits on App Collaboration: certain Apps may or may not include App collaboration. Please don't name the APp Plans. 
+
+-->
+
+
 
 ## Inviting an App collaborator
 

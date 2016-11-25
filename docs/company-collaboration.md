@@ -29,11 +29,20 @@ A [Company](/company), within the fortrabbit platform, represents your business 
 * Grant your accounting access to fortrabbit, so that they can download the invoices on their own
 
 
+<!--
+
+TODO: rewrite/reorder when Company plans launch
+
+
 ## Booking a Company collaboration plan
 
 Company collaboration is a paid feature, see our [fancy marketing page](https://www.fortrabbit.com/collaboration) for plans and prices. They are optional and always booked for an individual Company. Like any other resource with fortrabbit, they are billed on a precise daily settlement.
 
 To book a Company collaboration plan: In the Dashboard > navigate to your Account > Companies > {{ Your Company }} > and there to "Company collaboration", this will show you a screen to book a plan. This way you can also upgrade and downgrade the Company collaboration plan.
+
+
+-->
+
 
 
 ## Roles
@@ -74,49 +83,19 @@ The Collaborator role can be modified by Owners and Admins. It's the same as wit
 The steps to invite a Company collaborator are the same as described [in the App collaboration](app-collaboration#toc-inviting-an-app-collaborator). The difference is that you can choose additional Company level roles.
 
 
-
 ## Advanced collaboration usage
 
 Still reading? Cool go on to dive even deeper.
-
-### Working with multiple Companies
-
-Just like in real life, you can create or join any number of Companies with your Account. So one Account can own multiple Companies while also being involved in other Companies as Admins or even App level collaborators.
 
 
 ### Working with the same person in different Companies
 
 If you have multiple Companies and you want to collaborate with same person on all or a subset of them: Just invite them to each Company. The same person then will have access to all Companies while logged in with their Account.
 
-### Moving an App from one Billing Contact to another
 
-In case you want the App to be billed from another credit card or bank account but still want to keep the team of the App the same: You simply change the Billing Contact of the App. You first need to have at least two Billing Contacts with your Company.
+<!--
 
-### Changing the Billing Contact of an App
-
-1. Go to the App in the Dashboard, click the "Change ownership" button
-2. This will open a form, where you choose a different Billing Contact
-
-This action can only be executed by Owners or Admins of a Company. The App will then be billed on the old Billing Contact until that day of change and from the next day on to the new Billing Contact. For example: If you move your App on the 15ths of a month to the Billing Contact of another Company, it will be billed until the 15ths to the old Billing Contact and starting from the 16ths to the new Billing contact.
-
-
-### Moving an App from one Company to another
-
-In some cases you might want to move the App to a different Company. This will change billing AND team. Of course you first need to be at least Admin in two Companies.
-
-### Changing the Company of an App
-
-2. Go to the App in the Dashboard, click the "Change ownership" button
-3. This will open a form, where you choose a different Company (and Billing Contact)
-
-This action can only be done by Accounts who have Owner or Admin privileges on both Companies.
-
-<!--  TODO: Confirm/test this: is it REALLY only possible to move an App to another Company, if I am only Collab in the other Compnay?  -->
-
-
-### Moving a Company member to another Company
-
-Well, that's not what you do, actually. What you'll do is: invite the same person again to the another Company. The Account will then be able to see and access Apps from both Companies under one login. The Account itself or you (as the Admin or Owner) can then revoke access to the first Company.
+TODO: rewrite/reorder
 
 ### Downgrading a Company collaboration plan
 
@@ -126,7 +105,7 @@ Visit the booking page as described above and select the new, smaller plan or no
 * No Admins exist
 * No App has more App collaborators then the App allows (Professional unlimited, Universal are limited, see [specs page](//www.fortrabbit.com/specs#limits))
 
-
+-->
 
 
 ### Promoting and demoting people
@@ -142,9 +121,13 @@ Just like in real life the roles of Accounts inside a Company can change like so
 Role changes have immediate effect, they do not require another confirmation by the affected Account.
 
 
-#### Changing the role of a collaborator
+#### Changing the role of a Company member
 
 If Company collaboration is active and you are either Owner or Admin, you can promote and demote other people like so: Visit the Company the Account is part of, click on the role of Account. This will open a form in which you can change the role of the Account.
+
+### Moving a Company member to another Company
+
+Well, that's not what you do, actually. What you'll do is: invite the same person again to the another Company. The Account will then be able to see and access Apps from both Companies under one login. The Account itself or you (as the Admin or Owner) can then revoke access to the first Company.
 
 
 
