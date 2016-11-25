@@ -10,6 +10,8 @@ stack:         all
 
 ---
 
+<!-- TODO: explain more benefits, compare with marketing why not digital ocean  -->
+
 ## Concept
 
 ```nohighlight
