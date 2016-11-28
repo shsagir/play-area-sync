@@ -107,9 +107,10 @@ You can, of course, grant the same Account collaborating rights on App level to 
 
 ### App collaboration availability
 
-App collaboration may or may not be available for your App:
+App collaboration may or may not be available for your App plan:
 
 * no App collaboration during trial
-* limited App collaborators for different Universal stack Apps, see [specs page](https://www.fortrabbit.com/specs).
+* no App collaborators for the smallest Universal stack Apps, see [specs page](https://www.fortrabbit.com/specs).
+* unlimited App collaborators for all, but the smallest, Universal stack Apps
 * unlimited App collaborators for all Professional stack Apps
 * unlimited App collaborators for all Apps when a Company level plan is booked
