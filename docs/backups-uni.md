@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-11
+reviewed:      2016-11-28
 naviTitle:     Backups
 title:         Working fortrabbit backups
 lead:
@@ -21,11 +21,24 @@ Automatic, out-of-the box, off-site, encrypted daily backups, without configurat
 
 <!-- TODO: link to marketing page when ready -->
 
-
 ## Availabilty
 
 Please mind that backups are not included with all App plans. See our [pricing page](https://www.fortrabbit.com/pricing) for more.
 
+## Backup features
+
+* File backups (code + assets + user uploads)
+* Low disk I/O > copy on write filesystem > only changes
+* MySQL backups
+* Zero downtime
+* No performance impact on live database
+* Secure off site backups
+* end-to-end encrypted transport
+* AES-256 encrypted storage
+* Stored in a non-public S3 bucket
+* 14 days retention
+* Easy access from the Dashboard
+* Unlimited backup storage size
 
 
 ## Access backups
