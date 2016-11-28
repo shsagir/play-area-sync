@@ -3,8 +3,8 @@
 template:      article
 reviewed:      2016-11-28
 naviTitle:     Backups
-title:         Working fortrabbit backups
-lead:
+title:         Working with fortrabbit backups
+excerpt:       Download web storage and MySQL database backups
 group:         platform
 stack:         uni
 

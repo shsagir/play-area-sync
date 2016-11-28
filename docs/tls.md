@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-11-28
 dontList:      false
 title:         Using TLS with fortrabbit
 naviTitle:     TLS
@@ -38,9 +38,11 @@ As part of [security efforts](/security) our aim is to give you secure, easy-to-
 
 You can already access your [App URL](app#toc-app-url) using HTTPS which is provided by us for free. For example: `https://{{app-name}}.frb.io`. Use this URL for testing or if a custom domain is not important to you.
 
-### TLS via Let's Encrypt
+### Automatic TLS
 
-[Let's encrypt](https://en.wikipedia.org/wiki/Let's_Encrypt) is a free certificate authority and can be used to generate free certificates for custom domains. This option **does not work for wildcard domains**. We offer automatic Let's Encrypt integration for many plans for free.
+[Let's encrypt](https://en.wikipedia.org/wiki/Let's_Encrypt) is a free certificate authority and can be used to generate free certificates for custom domains. This option **does not work for wildcard domains**. Automatic TLS is included for all Professional Apps and some Universal Apps.
+
+
 
 ### Bring your own certificate
 
@@ -55,16 +57,18 @@ Which of the options can be used depends on the [App stack](stacks) and the spec
 | **TLS Option**                 | Availability                                                                                       |
 | ------------------------------ | -------------------------------------------------------------------------------------------------- |
 | Piggyback TLS                  | Automatic available for your App URL. No extra costs.                                              |
-| Let's Encrypt                  | Automatic available for all custom domains. No extra costs.                                        |
-| Bring your own certificate     | Available as TLS custom plan. See the [specs page for pricing](//www.fortrabbit.com/specs-pro#tls) |
+| Automatic TLS                  | Automatic available for all custom domains. No extra costs.                                        |
+| Bring your own certificate     | Available as TLS Component. See the [specs page for pricing](//www.fortrabbit.com/specs-pro#tls) |
 
 
 ### Universal App
 
+<!--  TODO: don't name plan names, they will be outdated, we will forget about this -->
+
 | **TLS Option**                 | Availability                                                                                      |
 | ------------------------------ | ------------------------------------------------------------------------------------------------- |
 | Piggyback TLS                  | Automatic available for your App URL. No extra costs.                                             |
-| Let's Encrypt                  | Available for all custom domains for Apps using either Side Project or Work plan. No extra costs. |
+| Automatic TLS                  | Available for all custom domains for Apps using either Side Project or Work plan. No extra costs. |
 | Bring your own certificate     | Available for Apps using Work plan. No extra costs.                                               |
 
 
