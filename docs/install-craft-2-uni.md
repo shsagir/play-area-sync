@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-11-11
+reviewed:         2016-11-30
 title:            Install Craft CMS 2 on fortrabbit
 naviTitle:        Craft CMS
 lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/?utm_source=fortrabbit
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          2.5
+version:          2.6
 group:            Install_guides
 
 keywords:
@@ -50,8 +50,8 @@ return [
 	'password'    => getenv('MYSQL_PASSWORD') ?: 'local-db-password',
 	'tablePrefix' => 'craft',
 	
-	// To be compatible with MySQL 5.7
-	'initSQLs' => ["SET SESSION sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';"],
+	// to be compatible with MySQL 5.7, requires 2.6.2949 or greater
+	'initSQLs'     => ["SET SESSION sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';"],
 
 ];
 ```
