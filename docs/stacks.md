@@ -40,6 +40,8 @@ stack:         all
 
 * [Universal Stack article](/app-uni)
 * [Professional Stack article](/app-pro)
+* [Universal Stack specs](https://www.fortrabbit.com/specs)
+* [Professional Stack specs](https://www.fortrabbit.com/specs-pro)
 
 ## Legacy stacks
 
