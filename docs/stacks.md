@@ -35,6 +35,8 @@ stack:         all
 | Deployment protocols        | SFTP, Git, SSH                          | Git                                               |
 | Composer integration        | after Git push + via SSH                | after Git push                                    |
 | SSH integration             | [full](ssh-uni)                         | [remote SSH execution](/remote-ssh-execution-pro) |
+| Background Jobs             | a single Cron Job                       | multiple Cron and Nonstop Jobs                    |
+
 
 ## More infos on the stacks
 
