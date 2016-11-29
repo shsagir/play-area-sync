@@ -79,7 +79,7 @@ Instead of sending an e-mail with a FTP password to another developer, you are s
 │                        Company                         │    •
 │                                                        │    •
 │                                                        │    •  Level 2
-│                                                        │    •  Advanaced
+│                                                        │    •  Advanced
 └─────▲─────────┬─────────────┬────────────┬────────▲────┘    •  Company level
       │                                             │         •  team cooperation
     Owner       │             │            │      Admin       •  where Owners & Admins
