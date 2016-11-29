@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2016-11-16
+reviewed:      2016-11-29
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         platform
 stack:         uni
@@ -12,7 +12,7 @@ showAlways:    true
 ---
 
 
-The Universal Stack (see our [stack article](/stacks) to lean more about the options) is made for general purpose PHP web development — websites and web applications. It's design unifies legacy development workflows with modern web development paradigms. Everyone should be able to use the Universal stack out-of-the-box.
+The Universal Stack (see our [stack article](/stacks) to learn more about the options) is made for general purpose PHP web development — websites and web applications. It's design unifies legacy development workflows with modern web development paradigms. Everyone should be able to use the Universal stack out-of-the-box.
 
 ## Specs & limits
 
@@ -22,7 +22,7 @@ Please visit our [specs page](https://www.fortrabbit.com/specs) to see some hard
 
 The purpose of the Universal Stack is not to be very scalable in terms of performance. The various plans differ in amount of available storage (Web and MySQL), but not in "PHP power". This means: your site can grow over time with bigger databases and more user uploaded contents, but it won't deliver vastly more performance in higher plans then in lower ones.
 
-If you need more horese power and options, please see how you can: [Migrate from Universal App to Professional App](/migrate-uni-to-pro).
+If you need more horse power and options, please see how you can: [Migrate from Universal App to Professional App](/migrate-uni-to-pro).
 
 ## Target audience
 
@@ -32,8 +32,8 @@ The Universal Stack is, well, universally usable. It's a good start for develope
 
 Unless your project is very resource intensive, there is virtually no application type which won't fit. To name a few:
 
-* Company homepages
-* Small community sites
+* CMS driven websites
+* Static websites
 * Small e-shops
 * Blogs
 * Weekend projects
