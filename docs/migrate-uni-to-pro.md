@@ -46,6 +46,7 @@ Start by aligning all the settings of the new App with those of the old. Here is
 * PHP Extensions
 * [Environment variables](env-vars), if any
 * [App secets](secrets), if any
+* Cron jobs, if any
 
 
 ## Migration
@@ -89,8 +90,8 @@ If you App is already under Git version control, then you only need to add your 
 
 Since the excludes, specified in `.gitignore`, are highly depended on your framework/CMS and your custom code, we can give you only a general advise:
 
-* If you are working with composer:
-  * NOT exclude the `composer.lock` or `composer.json` file, if you are working with Composer
+* If you are working with Composer:
+  * NOT exclude the `composer.lock` or `composer.json` file
   * Exclude the `vendor/` folder
 * Exclude upload folders
 * Exclude log folders
