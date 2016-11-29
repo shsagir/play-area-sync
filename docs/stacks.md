@@ -26,7 +26,7 @@ stack:         all
 | Pricing model               | fixed plans                             | flexible Components                               |
 | Traffic                     | low, medium                             | low - very high                                   |
 | Scalability                 | xxs - s                                 | xxs - xxxl                                        |
-| High Availability           | no                                      | yes, except Tinkering                             |
+| High Availability           | no                                      | yes, except Development level                     |
 | Local storage               | persistent                              | [ephemeral](#toc-ephemeral-storage)               |
 | Primary application type    | websites                                | web applications                                  |
 | Secondary application type  | web applications                        | websites                                          |
