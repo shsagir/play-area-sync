@@ -49,6 +49,10 @@ return [
 	'user'        => getenv('MYSQL_USER')     ?: 'local-db-user',
 	'password'    => getenv('MYSQL_PASSWORD') ?: 'local-db-password',
 	'tablePrefix' => 'craft',
+	
+	// To be compatible with MySQL 5.7
+	'initSQLs' => ["SET SESSION sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';"],
+
 ];
 ```
 
