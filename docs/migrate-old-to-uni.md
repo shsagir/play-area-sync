@@ -51,9 +51,9 @@ For the purposes of this article, we recommend to chose the newly created Univer
 
 Make sure you apply the same configuration to your new Universal App, as you have set for your Old App. Following a short checklist:
 
-* [ ] PHP Settings (especially: extensions)
-* [ ] [Environment variables](env-vars), if any
-* [ ] [App secets](secrets), if any
+* PHP Settings (especially: extensions)
+* [Environment variables](env-vars), if any
+* [Worker jobs](worker-pro), if any
 
 
 ## Data migration
