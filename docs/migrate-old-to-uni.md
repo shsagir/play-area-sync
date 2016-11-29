@@ -32,8 +32,9 @@ Now make sure the following applies to your App:
 
 1. Your App doesn't use "PHP l" or "PHP xl" or bigger (which are multi-node plans) or your App currently uses either of them but doesn't need as much resources
 2. Your App doesn't use [Memcache](memcache-old), which is not available for single-node Universal Apps
+3. Your App doesn't use [Workers](workers-old) to process queues or to execute multiple cron jobs (one cron is okay)
 
-If you are unsure about (1), then check the App metrics: If your PHP requests are below 1000 per hour on average, you are, most likely, good and can proceed.
+If you are unsure about (1), then check the App metrics: If your PHP requests are below 500 per hour on average, you are, most likely, good and can proceed.
 
 If either of the above applies an cannot be changed, then we strongly recommend to use a [Professional App](app-pro) instead.
 
