@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-07-22
+reviewed:      2016-11-30
 naviTitle:     Access methods
 title:         How to access fortrabbit services
 lead:          Learn about the different authentication methods with fortrabbit.
@@ -23,21 +23,27 @@ keywords:
 
 So far so good: You are using your Account e-mail address and your Account password to login to the fortrabbit [Dashboard](/dashboard). Beside that, there are these interaction channels with fortrabbit services:
 
-* Accessing the [MySQL database](/mysql#toc-remote-mysql-access)
-* Accessing the [Object Storage](/object-storage#toc-accessing-the-object-storage)
+## Interactions requiring authentication
+
 * Deploying code with [Git](/git-deployment#toc-usage)
-* Execution [SSH Remote commands](/remote-ssh-execution-pro#toc-usage)
+* Using [SSH](/ssh-uni)
+* Using [SFTP](/sftp-uni)
+* Accessing the [MySQL database](/mysql#toc-remote-mysql-access)
 * Viewing [log files](/logging-uni)
+* Execution [SSH Remote commands](/remote-ssh-execution-pro#toc-usage)
+* Accessing the [Object Storage](/object-storage#toc-accessing-the-object-storage)
 
-Of course these operations need to be protected. We need to make sure that only you and your team have access. You can choose between two authentication methods: "[password](#toc-password-authentication)" and "[public SSH key](#toc-ssh-key-authentication)".
+Of course these operations need to be protected. We need to make sure that only you and your team have access. You can choose between two authentication methods: 
 
+## Available authentication methods
+
+* **Password** - the easy default - [see below](#toc-password-authentication)
+* **Public SSH key** - for advanced users - [see below](#toc-ssh-key-authentication)
 
 
 ## How to edit your access method
 
 In the "[Dashboard](/dashboard)", go to "Your Account" (upper right). Under "Access method" you can find your current settings. You see which method is currently set.
-
-
 
 
 ## SSH key authentication
