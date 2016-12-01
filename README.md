@@ -220,6 +220,7 @@ $ linkcheck.mac --url http://help.fortrabbit.dev
 * **App** — ~~app~~, ~~website~~, ~~application~~
 * **Billing Contact** ~~bc~~
 * **Company** — ~~company~~
+* **Cron Job** — ~~cron~~, ~~cron job~~
 * **Dashboard** — ~~control panel~~, ~~console~~
 * **Developer** ~~developer~~
 * **fortrabbit scheduler** — ~~scheduler~~
