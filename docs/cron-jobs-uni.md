@@ -51,7 +51,7 @@ The interval timing is guaranteed, the exact time of execution is randomized. Fo
 
 ### Status
 
-This optional, you can 
+Once you have the first cron job registered, you will see a list of Cron Jobs. You can stop (disable) and start (enable) and delete Cron Jobs.
 
 
 ## Alternatives to Cron Jobs
