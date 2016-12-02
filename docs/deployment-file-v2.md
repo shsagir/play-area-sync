@@ -64,8 +64,7 @@ A fortrabbit.yml which calls the PHP script `post.php` on top-level of the repo 
 
 ```yml
 version: 2
-post:
-    path: post.php
+post: post.php
 
 ```
 
