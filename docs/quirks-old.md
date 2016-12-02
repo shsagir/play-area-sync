@@ -6,7 +6,7 @@ title:       "Quirks & constraints"
 lead:        Limits, restrictions, permissions there are some — aren't there always?
 dontList:    true
 stack:       old
-group:       Kitchen_sink
+group:       platform
 deprecated:  yes
 allLink:     quirks
 

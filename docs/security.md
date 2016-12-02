@@ -1,11 +1,11 @@
 ---
 
 template:    article
-reviewed:    2016-11-07
+reviewed:    2016-12-01
 title:       Some words on security
 naviTitle:   Security
 lead:        fortrabbit security concepts and how you can help.
-group:       Kitchen_sink
+group:       platform
 stack:       all
 
 keywords:
