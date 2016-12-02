@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2016-08-03
+reviewed:     2016-11-20
 title:        Local development
 naviTitle:    Local development
 lead:         Why and how to set a local PHP development environment.
@@ -80,7 +80,10 @@ You will most likely need Composer, as it is the one and only PHP dependency man
 
 ### Environment detection
 
+<!-- TODO: provide example, explain more - AND/OR - Maybe this is somewhere else already, maybe link texts …  -->
+
 Our code examples in the [install guides](/#install-guides) always include checks to detect if the App is running locally or on fortrabbit. You should consider this when developing your code - or rather setting up your configuration. For example: MySQL will need different credentials locally then on fortrabbit.
+
 
 ### Multi-staging
 
