@@ -77,7 +77,7 @@ We highly recommend to enable 2FA with your fortrabbit Account. You can so do in
 
 ## Code access
 
-You store your public SSH key with your fortrabbit Account. You can also install multiple keys with your Account, for instance one for your desktop, one for your laptop. fortrabbit automatically installs your up-to-date key(s) on each App you have access to.
+We recomend to store your [public SSH](/ssh-keys) key with your fortrabbit Account. You can also install multiple keys with your Account, for instance one for your desktop, one for your laptop. fortrabbit automatically installs your up-to-date key(s) on each App you have access to.
 
 ### Check your SSH keys
 
