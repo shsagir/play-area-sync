@@ -8,7 +8,7 @@ lead:          Learn about development/production environments and how to run th
 dontList:      true
 stack:         old
 group:         platform
-allLink:       multi-staging
+allLink:       multi-staging-pro
 
 ---
 

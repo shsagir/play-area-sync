@@ -95,7 +95,7 @@ WORD: you must remove the `--dry-run` flag to execute the synchronization. With 
 
 #### Authorized keys file
 
-When [logged in](directory-structure) via SSH to fortrabbit you can "see" two files:
+When [logged in](directories) via SSH to fortrabbit you can "see" two files:
 
 * `.ssh/authorized_keys` — managed by you and kept for legacy reasons. We don't recommend to use it anymore.
 * `.ssh/authorized_keys2` — managed by the Dashboard.

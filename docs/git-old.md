@@ -58,7 +58,7 @@ The old files will be overwritten with the ones that have been updated thru Git.
 
 ### The master branch counts
 
-While you can have as many Git branches you want, only changes to the master branch will be synchronized into the webspace. Currently there is no way to change which branch shall be deployed to an App. However you can match your local branches to master branches of different Apps to create a [development/production setup](multi-staging). [Professional Apps](app-pro) also accept and prefer a branch called like the App name.
+While you can have as many Git branches you want, only changes to the master branch will be synchronized into the webspace. Currently there is no way to change which branch shall be deployed to an App. However you can match your local branches to master branches of different Apps to create a [development/production setup](multi-staging-pro). [Professional Apps](app-pro) also accept and prefer a branch called like the App name.
 
 
 ## Deployment file

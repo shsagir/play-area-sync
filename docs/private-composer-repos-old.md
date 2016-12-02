@@ -8,7 +8,7 @@ lead:        Generate a unique SSH key-pair for your App on fortrabbit to use pr
 dontList:    true
 stack:       old
 allLink:     private-composer-repos
-group:       Kitchen_sink
+group:       platform
 
 keywords:
     - Composer

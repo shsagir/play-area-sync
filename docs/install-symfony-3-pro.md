@@ -144,7 +144,7 @@ monolog:
             # ..
 ```
 
-You can safely remove `path` from the `nested` block as well. You can now use the regular [log access](logging) to view the stream.
+You can safely remove `path` from the `nested` block as well. You can now use the regular [log access](logging-pro) to view the stream.
 
 ### Migrate & other database commands
 

@@ -276,7 +276,7 @@ $app->configureMonologUsing(function($monolog) {
 });
 ```
 
-You can now use our regular [log access](logging) to view the stream.
+You can now use our regular [log access](logging-pro) to view the stream.
 
 
 #### Setting time zone in Laravel

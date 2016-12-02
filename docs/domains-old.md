@@ -43,7 +43,7 @@ PATIENCE YOUNG JEDI: Most Domain DNS records have a TTL (Time To Live) of 24 hou
 
 ## Set a custom root path
 
-Normally all domains of the App will route to the `~/htdocs` [folder](directory-structure). Most of the time, this is what you want. However, in some cases, you need to set a different docroot or want to route different domains to different folder. Laravel for examples has a `public` folder for this.
+Normally all domains of the App will route to the `~/htdocs` [folder](directories). Most of the time, this is what you want. However, in some cases, you need to set a different docroot or want to route different domains to different folder. Laravel for examples has a `public` folder for this.
 
 You can do this by writing the relative path to the sub-folder (all folders below the htdocs folder are allowed) in the Root Path field right to the domain URL.
 

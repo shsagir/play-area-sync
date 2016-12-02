@@ -39,7 +39,7 @@ You need to add the private repositories into your `composer.json` file? Read on
 
 ### Composer from SSH
 
-Universal Apps only: You can execute Composer from [SSH](ssh-sftp-uni). It is installed per default and all you need to do is execute it:
+Universal Apps only: You can execute Composer from [SSH](ssh-uni). Composer is pre-installed (latest stable) per default and all you need to do is execute it:
 
 ```bash
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com

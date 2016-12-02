@@ -115,7 +115,7 @@ While you can have as many Git branches you want, only changes in certain branch
 
 ### Branching for multi-staging setups
 
-Usually, only the remote Git `master` branch will be deployed. With the Professional Apps you can also create a branch with the same name as your App, which will be preferred over the master branch. That way it is easier to set up a [multi-staging environment](multi-staging).
+Usually, only the remote Git `master` branch will be deployed. With the Professional Apps you can also create a branch with the same name as your App, which will be preferred over the master branch. That way it is easier to set up a [multi-staging environment](multi-staging-pro).
 
 
 ### Deployment file

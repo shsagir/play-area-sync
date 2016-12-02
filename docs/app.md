@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-08
+reviewed:      2016-12-01
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -10,9 +10,16 @@ stack:         all
 
 ---
 
-<!-- TODO: explain more benefits, compare with marketing why not digital ocean  -->
+## Understanding the platform
 
-## Concept
+We claim that the fortrabbit hosting platform is different to classical hosting. Our comparsion pages give you a good picture what fortrabbit is about:
+
+* [How fortrabbit is different than VPS hosting](https://www.fortrabbit.com/why-not-vps)
+* [How IaaS is being used](https://www.fortrabbit.com/why-not-aws)
+
+
+
+## The App Concept
 
 ```nohighlight
 # simplified App topology
@@ -32,6 +39,8 @@ stack:         all
 ```
 
 An App is a virtual container for your web project, website, web application, staging branch, project or whatever you do.
+
+
 
 ### One website per App
 
@@ -72,7 +81,7 @@ So, a fortrabbit App is designed to host one website:
 Each App comes with a set of basic features and [limits](https://www.fortrabbit.com/specs).
 
 * a dedicated Git repo
-* a unique [App URL](#toc-app-url) 
+* a unique [App URL](#toc-app-url)
 * custom metrics
 * included monthly traffic
 * various settings in the Dashboard
@@ -88,9 +97,11 @@ There are various settings to control the routing of domains. Please also see th
 
 While creating your fortrabbit App you will be asked for an App name. This name can't be changed later on and is used in many places as an identifier. The most prominent one is your default App URL which looks like this: `https://your-app.frb.io/`. This is where you can always reach your App thru the web browser. Use the App URL for development, testing and to connect to external services.
 
+Please mind that you can not change the App name later on. 7 days after you have deleted an App, the same App name will become available to use again.
+
 #### Set up a custom domain
 
-You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard. 
+You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard.
 
 <div markdown="1" data-user="known">
 
@@ -106,9 +117,9 @@ You can register your App to accept requests from any external domain you route 
 
 Per default all the [domains](/domains) of the App will route to the same root path. When you have chosen [Laravel](/install-laravel) when creating the App `~/htdocs/public` will be used.
 
-When no framework or CMS has been chosen while creating the App, the root path [folder](directory-structure-uni) is `~/htdocs`. You can change this setting with your App in the Dashboard.
+When no framework or CMS has been chosen while creating the App, the root path [folder](directories) is `~/htdocs`. You can change this setting with your App in the Dashboard.
 
-<!-- TODO: check link, just guessed the URL --> 
+<!-- TODO: check link, just guessed the URL -->
 
 <div markdown="1" data-user="known">
 
@@ -124,18 +135,8 @@ When visiting the root path settings form with a [Professional stack Apps](/app-
 
 <!-- TODO: write something about HTACCESS solution to rewrite URLS for everyone. maybe just a hint without example.  -->
 
+## Further readings
 
-- - -
-
-## FAQ
-
-### Can i change the App URL later on?
-
-Sorry that is not possible as it as an identifier for many services.
-
-### I want to reuse an App URL but the name unavailable
-
-After 7 days you can reuse the App URL.
-
-
-
+* [Quirks and constrains](/quirks)
+* [App Specs](https://www.fortrabbit.com/specs)
+* [About the Stacks](/stacks)

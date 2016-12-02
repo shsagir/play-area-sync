@@ -38,9 +38,6 @@ srv
       htdocs      < default root path
 ```
 
-<!-- TODO: Re-unite this article with "directories-pro" article -->
-
-
 
 When you login with [SFTP](/sftp-uni) or [SSH](ssh-uni) to your [Universal App](app-uni) you can travel up in the file directory structure. In this article you can learn the predefined set of folders for each App and what they are for.
 

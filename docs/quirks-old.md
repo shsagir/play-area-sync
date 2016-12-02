@@ -6,7 +6,7 @@ title:       "Quirks & constraints"
 lead:        Limits, restrictions, permissions there are some — aren't there always?
 dontList:    true
 stack:       old
-group:       Kitchen_sink
+group:       platform
 deprecated:  yes
 allLink:     quirks
 
@@ -57,7 +57,7 @@ Swift_Preferences::getInstance()->setCharset('UTF-8');
 
 ### Logs
 
-[Logs](directory-structure) are saved in `~/log/apache/` and `~/log/php/`. You can access the logs via SSH. The logs are written time delayed (~10-60 secs).
+Logs are [stored](directories) in `~/log/apache/` and `~/log/php/`. You can access the logs via SSH. The logs are written time delayed (~10-60 secs).
 
 ### Storage limit
 
@@ -183,4 +183,3 @@ Apps don't have a fixed outgoing IP address. This is a side effect of "the cloud
 As we are currently only in the AWS EU1 (Ireland) region, there is an semi-official [list of ip ranges](https://forums.aws.amazon.com/ann.jspa?annID=1701), which we are using. Depending on the use-case, it is possible to use a [HTTP](https://www.quotaguard.com/pricing#_quotaguardstatic) [proxy](http://www.vpnuk.info/dedicated-ip.html) provider, which offers a static IP.
 
 The context for requests on this is for payment processing, have a look at an external provider.
-

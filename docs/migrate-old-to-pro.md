@@ -53,7 +53,7 @@ local: master  -> fortrabbit remote: Old App / master
 local: pro-app -> fortrabbit remote: Professional App / master
 ```
 
-It's up to your preference, you can also work with environment detection to differentiate between Pro and Old App. See our [multi-staging article](multi-staging) to get the idea.
+It's up to your preference, you can also work with environment detection to differentiate between Pro and Old App. See our [multi-staging article](multi-staging-pro) to get the idea.
 
 
 ### Deploy code to the Professional App

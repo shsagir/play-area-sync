@@ -1,11 +1,11 @@
 ---
 
 template:    article
-reviewed:    2016-11-07
+reviewed:    2016-12-01
 title:       Some words on security
 naviTitle:   Security
 lead:        fortrabbit security concepts and how you can help.
-group:       Kitchen_sink
+group:       platform
 stack:       all
 
 keywords:
@@ -77,19 +77,16 @@ We highly recommend to enable 2FA with your fortrabbit Account. You can so do in
 
 ## Code access
 
-You store your public SSH key with your fortrabbit Account. You can also install multiple keys with your Account, for instance one for your desktop, one for your laptop. fortrabbit automatically installs your up-to-date key(s) on each App you have access to.
+We recomend to store your [public SSH](/ssh-keys) key with your fortrabbit Account. You can also install multiple keys with your Account, for instance one for your desktop, one for your laptop. fortrabbit automatically installs your up-to-date key(s) on each App you have access to.
 
 ### Check your SSH keys
 
 Please revisit your list of SSH keys from time to time and keep it as short as possible. Only keep those keys you are really using.
 
-### Passwords in the Dashboard
 
-<!--  TODO: the following part only works for Universal Apps, now we can write something for the Universal Apps too.  -->
+### Password reset
 
-We save all passwords encrypted. That's why we can't read your passwords. So when you lost a password, eg for MySQL, you can only set a new one. All those passwords are randomly generated strings with high entropy.
-
-<!--  TODO: write something about password "reset" why to do it: Only when someone levaes. But when someone leaves it is adviced to do it … -->
+You can reset the fortrabbit service passwords for MySQL and Object Storage in the Dashboard with your Apps. It is recommended to reset those passwords periodically and when a Company member leaves for each App.
 
 
 

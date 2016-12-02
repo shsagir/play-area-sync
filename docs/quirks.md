@@ -6,7 +6,7 @@ reviewed:      2016-09-15
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions there are some — aren't there always? Heads up so it doesn't cost you hours of debugging in the wrong direction."
 stack:         all
-group:         Kitchen_sink
+group:         platform
 
 ---
 

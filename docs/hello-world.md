@@ -59,60 +59,60 @@ $ git push -u origin master
 # Total 3 (delta 0), reused 0 (delta 0)
 
 # Commit received, starting build of branch master
-# 
+#
 # –––––––––––––––––––––––  ∙ƒ  –––––––––––––––––––––––
-# 
+#
 # B U I L D
-# 
-# 
+#
+#
 # Checksum:
 #   3ec951f4f4a59a42afa7e6bebaa78477672d3b6a
-# 
+#
 # Deployment file:
 #   not found
-# 
+#
 # Pre-script:
 #   not found
 #   0ms
-# 
+#
 # Composer:
 #   not executing (composer.json missing)
 #   0ms
-# 
+#
 # Post-script:
 #   not found
 #   0ms
-# 
-# 
-# 
+#
+#
+#
 # R E L E A S E
-# 
-# 
+#
+#
 # Packaging:
 #   6ms
-# 
+#
 # Revision:
 #   1446568383255266100.3ec951f4f4a59a42afa7e6bebaa78477672d3b6a
-# 
+#
 # Size:
 #   182B
-# 
+#
 # Uploading:
 #   134ms
-# 
+#
 # Build & release done in 217ms, now queued for final distribution.
-# 
+#
 # –––––––––––––––––––––––  ∙ƒ  –––––––––––––––––––––––
-# 
+#
 # To {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 #  * [new branch]      master -> master
 # Branch master set up to track remote branch master from origin.
 ```
-**Got an error?** Please see [access troubleshooting](/access-methods#toc-troubleshooting) and [Git troubleshooting](/git).  
+**Got an error?** Please see [access troubleshooting](/access-methods#toc-troubleshooting) and [Git troubleshooting](/git).
 **Did it work?** Cool! That's it. You now visit your App URL in the browser:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 ### Further readings
 
-This was just a simple example. Don't miss our install guides for [Laravel](install-laravel), [WordPress](install-wordpress), [Symfony](install-symfony), [Craft CMS](install-craft), [Drupal 8](install-drupal-8) …
+This was just a simple example. Don't miss our install guides for [Laravel](install-laravel), [WordPress](install-wordpress), [Symfony](install-symfony), [Craft CMS](install-craft), [Drupal](install-drupal) …

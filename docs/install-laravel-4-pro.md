@@ -109,7 +109,7 @@ if ($env == 'production') {
 }
 ```
 
-You can now use the regular [log access](logging) to view the stream.
+You can now use the regular [log access](logging-pro) to view the stream.
 
 
 ### Detect HTTPS

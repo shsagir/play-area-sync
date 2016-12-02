@@ -54,7 +54,7 @@ $ ssh [[your-app]]@deploy.[[region]].frbit.com ls -lha
 #                ssh login command          remote command
 ```
 
-**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are deployed. So if the script, you want to execute, is locally under `{{vendor/bin/foo}}` then you'd need to execute `ssh …frbit.com php {{vendor/bin/foo}}`. Check out the [directory structure](/directory-structure-pro) for more information.
+**Note I**: Unless otherwise specified by you all commands are executed from within `/srv/app/{{app-name}}/htdocs`, which is also the location to which your files are deployed. So if the script, you want to execute, is locally under `{{vendor/bin/foo}}` then you'd need to execute `ssh …frbit.com php {{vendor/bin/foo}}`. Check out the [directory structure](/directories) for more information.
 
 **Note II**: You must write the interpreter `php` before all PHP scripts, including CLIs like `artisan` or `app/console`, you want to execute. So `ssh …frbit.com php {{script.php}}` works and `ssh …frbit.com {{script.php}}` does not.
 
@@ -172,4 +172,3 @@ $ artisan-{{app-name}} migrate
 ```
 
 To persist those aliases between shell sessions you need to add them to your shell profile file. Usually that is either `~/.profile`, `~/.zshrc` or `~/.bashrc`.
-
