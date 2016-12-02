@@ -86,7 +86,7 @@ Please revisit your list of SSH keys from time to time and keep it as short as p
 
 ### Password reset
 
-You can reset the fortrabbit service passwords for MySQL and Object Storage. It is recommended to reset those passwords periodically and when a Company member leaves.
+You can reset the fortrabbit service passwords for MySQL and Object Storage in the Dashboard with your Apps. It is recommended to reset those passwords periodically and when a Company member leaves for each App.
 
 
 
