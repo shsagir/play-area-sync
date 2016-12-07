@@ -81,7 +81,7 @@ So, a fortrabbit App is designed to host one website:
 Each App comes with a set of basic features and [limits](https://www.fortrabbit.com/specs).
 
 * a dedicated Git repo
-* a unique [App URL](#toc-app-url) 
+* a unique [App URL](#toc-app-url)
 * custom metrics
 * included monthly traffic
 * various settings in the Dashboard
@@ -101,7 +101,7 @@ Please mind that you can not change the App name later on. 7 days after you have
 
 #### Set up a custom domain
 
-You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard. 
+You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard.
 
 <div markdown="1" data-user="known">
 
@@ -117,9 +117,9 @@ You can register your App to accept requests from any external domain you route 
 
 Per default all the [domains](/domains) of the App will route to the same root path. When you have chosen [Laravel](/install-laravel) when creating the App `~/htdocs/public` will be used.
 
-When no framework or CMS has been chosen while creating the App, the root path [folder](directory-structure-uni) is `~/htdocs`. You can change this setting with your App in the Dashboard.
+When no framework or CMS has been chosen while creating the App, the root path [folder](directories) is `~/htdocs`. You can change this setting with your App in the Dashboard.
 
-<!-- TODO: check link, just guessed the URL --> 
+<!-- TODO: check link, just guessed the URL -->
 
 <div markdown="1" data-user="known">
 

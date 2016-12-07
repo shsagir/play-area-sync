@@ -87,7 +87,7 @@ Our code examples in the [install guides](/#install-guides) always include check
 
 ### Multi-staging
 
-You might want to have a dedicated remote testing environment with pubic access? Head over to our advanced [multi-staging article](multi-staging).
+You might want to have a dedicated remote testing environment with pubic access? Head over to our advanced [multi-staging article](multi-staging-pro).
 
 
 ### Apache instead of NginX

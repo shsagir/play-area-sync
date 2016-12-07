@@ -64,7 +64,7 @@ Most, if not all, of the CI providers assume that you host your code on a public
 
 ### CI & multi-staging
 
-The general concepts of our [multi staging](articles/multi-staging) apply, just the `local branch` -> `remote branch` mappings are different.
+The general concepts of our [multi staging](multi-staging-old) apply, just the `local branch` -> `remote branch` mappings are different.
 
 For example, if you have three environments: `testing`, `staging` and `production` and if you use Bitbucket as your repository, you would create three local branches: `test`, `stage` and `prod`. All three local branches would map directly to branches of the same name on Bitbucket. On Bitbucket, you would now set up your deployment hook, which tells your CI provider.
 
@@ -97,5 +97,3 @@ git merge stage
 git checkout prod
 git push -u origin prod
 ```
-
-

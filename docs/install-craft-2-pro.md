@@ -59,7 +59,7 @@ If you are just testing then best use the [HappyLager Demo](https://github.com/p
 
 ## Configure the fortrabbit environment
 
-Craft's native multi-environment configuration (also see our [multi-staging article](multi-staging)) options allow you to define configuration options based on the domain name. This is great, but there is a potential security flaw (when using Git based deployments) you should be aware of: You're hard-coding the configuration details of your production environment into your code, which means you will have sensitive information in your Git version history. Let's solve this.
+Craft's native multi-environment configuration (also see our [multi-staging article](multi-staging-pro)) options allow you to define configuration options based on the domain name. This is great, but there is a potential security flaw (when using Git based deployments) you should be aware of: You're hard-coding the configuration details of your production environment into your code, which means you will have sensitive information in your Git version history. Let's solve this.
 
 Open up `craft/config/general.php` and replace all contents it like so:
 
@@ -275,7 +275,7 @@ $ git push -u fortrabbit master
 
 ### Logging & debugging
 
-Per default Craft writes all the logs to a file, which won't do. So we wrote a simple plugin, which writes all logs to STDERR instead. Then the logs are accessible via our standard [logging](logging). The plugin can be found here: [github.com/ostark/craft-stderr-logger](https://github.com/ostark/craft-stderr-logger)
+Per default Craft writes all the logs to a file, which won't do. So we wrote a simple plugin, which writes all logs to STDERR instead. Then the logs are accessible via our standard [logging](logging-pro). The plugin can be found here: [github.com/ostark/craft-stderr-logger](https://github.com/ostark/craft-stderr-logger)
 
 
 ### Sending mail

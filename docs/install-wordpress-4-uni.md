@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-11-10
+reviewed:         2016-12-02
 title:            Install WordPress 4
 naviTitle:        WordPress
 group:            Install_guides
@@ -133,7 +133,7 @@ Instead of manually uploading code files changes one by one, you can also:
 
 #### Syncing code with SFTP
 
-Read on in the [SSH/SFTP article](ssh-sftp-uni#toc-file-synchronization)
+Read on in the [SSH article](ssh-uni#toc-syncing-code-with-rsync)
 
 #### Deploying WordPress with Git
 

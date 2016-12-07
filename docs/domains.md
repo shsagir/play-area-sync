@@ -101,7 +101,7 @@ Some domain providers also support a simple HTTP redirect. Please see your domai
 
 ### Using CloudFlare
 
-Please see our [CloudFlare article](/cloudfare) on how to setup and use CloudFlare together with fortrabbit.
+Please see our [CloudFlare article](/cloudflare) on how to setup and use CloudFlare together with fortrabbit.
 
 
 ### Wildcard domains
@@ -114,7 +114,7 @@ Some domain providers promote wildcard domains as the save and easy catch-all so
 
 #### Wildcard domain limitations
 
-For security reasons we'll need to verify that you own the domain. You will need to verify an e-mail send to this domain. We do not provide [TLS free](/tls) for wildcard domains, you need to book [TLS custom](/tls-custom) in order to have https on your wildcard domain.
+For security reasons we'll need to verify that you own the domain. You will need to verify an e-mail send to this domain. We do not provide [TLS free](/tls) for wildcard domains, you need to book [TLS custom](/tls-custom-pro) in order to have https on your wildcard domain.
 
 
 
@@ -131,9 +131,9 @@ Domains on fortrabbit can be accessed via `HTTP` and `HTTPS`. Please see the [TL
 
 ## Setting a custom root path for a domain
 
-A root path is a folder in the [file system](/directory-structure) of the App where the domain will end. Per default all domains will have the same 
+A root path is a folder in the [file system](/directories) of the App where the domain will end. Per default all domains will have the same
 
-The [root path](/app#toc-root-path) of your App 
+The [root path](/app#toc-root-path) of your App
 
 
 - - -

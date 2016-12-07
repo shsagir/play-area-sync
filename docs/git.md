@@ -70,7 +70,7 @@ Once you have everything setup and working you can have a look at how to use Git
 
 ### Authentication
 
-You can either authenticate with your Dashboard password or with your [public SSH keys](/ssh-keys). The code examples in these help pages will show you examples that you can copy/paste. Please see our [authentication Article](/code-access) to learn about those methods. 
+You can either authenticate with your Dashboard password or with your [public SSH keys](/ssh-keys). The code examples in these help pages will show you examples that you can copy/paste. Please see our [authentication Article](/access-methods) to learn about those methods. 
 
 
 ### Using the remote Git repo as a version control system

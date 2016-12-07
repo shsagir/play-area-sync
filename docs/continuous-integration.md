@@ -68,9 +68,9 @@ You need to setup a hook, which notifies your CI provider whenever you push some
 3. The CI providers pulls the changeset and runs your tests
 4. If the tests succeed, the CI provider will deploy your App to fortrabbit
 
-### CI & multi-staging
+### CI & multi staging
 
-The general concepts of our [multi staging](articles/multi-staging) apply, just the `local branch` -> `remote branch` mappings are different.
+The general concepts of our [multi staging](multi-staging-pro) apply, just the `local branch` -> `remote branch` mappings are different.
 
 For example, if you have three environments: `testing`, `staging` and `production` and if you use Bitbucket as your repository, you would create three local branches: `test`, `stage` and `prod`. All three local branches would map directly to branches of the same name on Bitbucket. On Bitbucket, you would now set up your deployment hook, which tells your CI provider.
 

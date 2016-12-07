@@ -46,7 +46,7 @@ That's basically deploying. The next runs will be much faster.
 
 ## Root path configuration
 
-Laravel is installed into the `htdocs` [folder](directory-structure) of your App. In the Dashboard you tell the App to [route all requests](domains#toc-root-path) to Laravels `public` folder.
+Laravel is installed into the `htdocs` [folder](directories) of your App. In the Dashboard you tell the App to [route all requests](domains#toc-root-path) to Laravels `public` folder.
 
 ## Environment detection
 
@@ -68,7 +68,7 @@ $env = $app->detectEnvironment(function () {
 // ..
 ```
 
-If you use a different App on fortrabbit as [multi staging environment](multi-staging), set the same variable with the value `staging` (or whatever you prefer).
+If you use a different App on fortrabbit as [multi staging environment](multi-staging-pro), set the same variable with the value `staging` (or whatever you prefer).
 
 ### Setting up the MySQL database
 
