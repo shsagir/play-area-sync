@@ -1,12 +1,13 @@
 ---
 
 template:     article
-reviewed:     2016-09-15
+reviewed:     2016-12-07
 title:        Worker
 naviTitle:    Worker
 lead:         Offshore long running and compute intensive tasks with background jobs — that's what the Worker Component is for.
 group:        Components
 stack:        pro
+uniLink:      cron-job-uni
 
 ---
 

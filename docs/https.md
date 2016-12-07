@@ -1,9 +1,9 @@
 ---
 
 template:      article
-reviewed:      2016-11-28
+reviewed:      2016-12-07
 dontList:      false
-title:         Using TLS with fortrabbit
+title:         Using HTTPS with fortrabbit
 naviTitle:     TLS
 lead:          "How to make use of HTTPS on fortrabbit. Learn about the three options."
 group:         platform
@@ -30,7 +30,7 @@ keywords:
 `HTTPS` is **H**yper **T**ext **T**ransfer **P**rotocol over Transport Layer **S**ecurity. It is used to secure the data transport between a client (browser) and a server. HTTPS is based on **TLS** (Transport Layer Security), which is the successor to the still better known **SSL** (Secure Sockets Layer). Current browsers show a green lock in the address bar if the connection is over HTTPS, the certificate could be verified and if the certificate is still valid.
 
 
-## TLS options on fortrabbit
+## HTTPS options on fortrabbit
 
 As part of [security efforts](/security) our aim is to give you secure, easy-to-use and affordable options:
 
