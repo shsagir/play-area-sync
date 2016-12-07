@@ -38,14 +38,7 @@ The PHP command which shall be executed, eg `app/console db:cleanup` or `path/to
 
 ### Interval
 
-The interval at which you want to execute the job.
-
-1. every hour
-2. every day
-3. every week
-4. every month
-
-The interval length is guaranteed, the exact time of execution is randomized. For example: an "every hour" interval will run once per hour with 60 minutes in between. However, it won't necessarily run at the 0th minute. It could run at the 11th minute or the 43th minute of every hour. All daily, weekly and monthly jobs run between 00:00 and 10:00 UTC. Weekly intervals will run on Monday.
+The interval at which you want to execute the job. The interval length is guaranteed, the exact time of execution is randomized. For example: an "every hour" interval will run once per hour with 60 minutes in between. However, it won't necessarily run at the 0th minute. It could run at the 11th minute or the 43th minute of every hour. All daily, weekly and monthly jobs run between 00:00 and 10:00 UTC. Weekly intervals will run on Monday.
 
 ## Logging
 
