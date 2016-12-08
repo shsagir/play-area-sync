@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-01
+reviewed:      2016-12-08
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -112,14 +112,9 @@ You can register your App to accept requests from any external domain you route 
 
 #### Root path
 
-<!-- TODO: check if this correct according to latest specs for the whole root path thing -->
-<!-- TODO: is TILDE the way you enter this in the Dashboard? I guess not, maybe remove TILDE to make this more obvious here -->
 
-Per default all the [domains](/domains) of the App will route to the same root path. When you have chosen [Laravel](/install-laravel) when creating the App `~/htdocs/public` will be used.
+Per default all the [domains](/domains) of the App will route to the same root path `htdocs`. This path can vary, depending on what you have selected in the stack chooser when creating the App. For example, if you have chosen [Laravel](/install-laravel), the root path `htdocs/public` would be used.
 
-When no framework or CMS has been chosen while creating the App, the root path [folder](directories) is `~/htdocs`. You can change this setting with your App in the Dashboard.
-
-<!-- TODO: check link, just guessed the URL -->
 
 <div markdown="1" data-user="known">
 
@@ -133,7 +128,7 @@ In some cases, you might want to route different domains to different folders. P
 
 When visiting the root path settings form with a [Professional stack Apps](/app-pro) you will find a switch to change from a global path for all domains to custom root paths for each domain.
 
-<!-- TODO: write something about HTACCESS solution to rewrite URLS for everyone. maybe just a hint without example.  -->
+Mind that you can also use `.htaccess` files with `RewriteRule` directives to handle different domains differently.
 
 ## Further readings
 
