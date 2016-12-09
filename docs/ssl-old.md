@@ -1,13 +1,13 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-12-09
 title:         Using the SSL component - Old App
 naviTitle:     SSL
 lead:          https and SSL for the rest of us.
 dontList:      true
 stack:         old
-allLink:       tls
+allLink:       https
 group:         platform
 
 keywords:

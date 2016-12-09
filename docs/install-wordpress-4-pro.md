@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-08-22
+reviewed:         2016-12-09
 title:            Install WordPress 4
 naviTitle:        WordPress
 lead:             WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
@@ -63,7 +63,7 @@ WP_SITEURL=http://{{app-name}}.frb.io/wp
 [Go to my ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
-We are using the App URL in this example. You can use your own domain here of course – just take care to also [route the domain](about-domains) then. The folder `wp` in the WP_SITEURL is Bedrock-specific. You can also use the encrypted `https` protocol.
+We are using the App URL in this example. You can use your own domain here of course – just take care to also [route the domain](domains) then. The folder `wp` in the WP_SITEURL is Bedrock-specific. You can also use the encrypted `https` protocol.
 
 
 
@@ -225,7 +225,7 @@ $ git push
 ## Tuning
 
 ### Installing plugins
-  
+
 [Bedrock allows](https://roots.io/bedrock/docs/composer/#plugins) two ways to install plugins:  Use Composer to install plugins from [WordPress Packagist](http://wpackagist.org/); Just download and unpack the plugins into `web/app/plugins`
 
 #### With Composer

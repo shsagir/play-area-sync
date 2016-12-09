@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-11-10
+reviewed:    2016-12-09
 title:       How to move your App to fortrabbit
 naviTitle:   Migrating to fortrabbit
 lead:        How to transfer an application to fortrabbit.
@@ -55,9 +55,9 @@ If your App is using a MySQL database, you will need to migrate the database dat
 
 Simple `sendmail` won't work, see our [quirks article](/quirks#Mailing) on how to send mails, either via SMTP or 3rd party provider.
 
-## TLS/SSL (optional)
+## HTTPS (optional)
 
-All fortrabbit Apps can be accessed using a free HTTPS App URL (`https://{{app-name}}.frb.io`). Most Apps also offer free [TLS](/tls) by Let's Encrypt for [custom domains](/domains).
+All fortrabbit Apps can be accessed using a free HTTPS App URL (`https://{{app-name}}.frb.io`). Most Apps also offer free [HTTPS](/https) by Let's Encrypt for [custom domains](/domains).
 
 ## Final switch: DNS
 

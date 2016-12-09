@@ -2,7 +2,7 @@
 
 dontList:      true
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-12-09
 title:         Using SSH - for Old App
 naviTitle:     SSH
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
@@ -18,7 +18,7 @@ We recommend to [deploy with Git](git) to fortrabbit. But in some cases it's ver
 
 * Dealing with static assets outside the Git repo
 * Manual controlling the automated deployment workflow
-* Using [Git submodules](git-submodules)
+* Using [Git submodules](git-submodules-old)
 * Advanced deployments workflows
 * Quick and dirty code changes and hotfixes (not recommended)
 * Legacy deployment (not recommended)

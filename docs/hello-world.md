@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-12-09
 naviTitle:     General
 title:         Deploy code to fortrabbit with Git
 lead:          This is the famous 5 minute tutorial to get started with fortrabbit. See how fast and easy you can get your code up and running.
@@ -24,7 +24,7 @@ keywords:
 
 Let's have a quick check-up before we get started here:
 
-1. You have already [signed up to fortrabbit](https//dashboard.fortrabbit.com/signup)
+1. You have already [signed up to fortrabbit](//dashboard.fortrabbit.com/signup)
 2. You should have created a plain vanilla [App](app) (free trial)
 3. You should have a [PHP development environment](/local-development) or at least [Git](/git) running on your local machine
 

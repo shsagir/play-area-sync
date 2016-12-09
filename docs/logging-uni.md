@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2016-09-15
+reviewed:   2016-12-09
 title:      About logs on fortrabbit
 naviTitle:  Logging
 lead:       Accessing logs of your App is essential for developing. Here is how you can do it on fortrabbit.
@@ -20,7 +20,7 @@ You are developing your App and see the "white screen of death". You are getting
 
 ## Log file access
 
-You can access your log files from [SSH/SFTP](ssh-sftp-uni). They are stored in the folder `logs`, right above the `htdocs` folder. The `log` folder contains up to 8 files:
+You can access your log files from [SSH](ssh-uni) or [SFTP](sftp-uni). They are stored in the folder `logs`, right above the `htdocs` folder. The `log` folder contains up to 8 files:
 
 ```bash
 $ ls -1 ../logs

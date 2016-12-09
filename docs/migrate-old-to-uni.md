@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     Migrate Old App > Universal
 title:         Migrate Old App to Universal
-reviewed:      2016-11-10
+reviewed:      2016-12-09
 lead:          "Here is how you manually migrate an Old App to the new Universal Stack."
 group:         platform
 stack:         all
@@ -94,7 +94,7 @@ $ git remote add fortrabbit2 {{app-name}}@deploy.{{region}}.frbit.com
 
 #### No Git
 
-Download ALL your web data using [SFTP](ssh-sft-old) from the web storage to a local folder.
+Download ALL your web data using [SFTP](ssh-sftp-old) from the web storage to a local folder.
 
 ## Code & config adjustments
 
