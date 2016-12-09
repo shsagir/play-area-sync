@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-12-09
 naviTitle:     Remote SSH execution
 title:         Using remote SSH commands
 excerpt:       "How to run Artisan migrate and other useful commands."
@@ -60,7 +60,7 @@ $ ssh [[your-app]]@deploy.[[region]].frbit.com ls -lha
 
 ### Authentication
 
-For remote SSH execution you can identify yourself using your public SSH keys or with your Account password. The examples above show you correct values, when you are logged in to the Dashboard. Please check the [authentication article](/code-access) as well.
+For remote SSH execution you can identify yourself using your public SSH keys or with your Account password. The examples above show you correct values, when you are logged in to the Dashboard. Please check the [access methods article](/access-methods) for more information.
 
 
 ### Using CLI tools

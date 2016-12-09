@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-12-02
+reviewed:         2016-12-09
 title:            Install WordPress 4
 naviTitle:        WordPress
 group:            Install_guides
@@ -171,7 +171,7 @@ You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use a S
 There are two reasons to install wordpress not in the `htdocs` but in a sub directory:
 
 1. WordPress is just the blog-part of the website: `mydomain.com/blog`
-2. You want to run multiple WordPress in one App. [Please don't.](/apps)
+2. You want to run multiple WordPress in one App. [Please don't.](/app#toc-one-website-per-app)
 
 You can achieve the first option by putting WordPress in a folder and by changing the "Site Address URL" parameter (see above). Also see the official WordPress codex on how to [give WordPress it's own directory](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory).
 

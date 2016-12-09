@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-02
+reviewed:      2016-12-09
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -119,18 +119,17 @@ $credentials = [
 
 #### Access credentials using mapped ENV vars
 
-If you enable "Populate App Secrets in ENV vars automatically" <!-- TODO: Wording -->
-
 ```php
-$secrets     = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
 $credentials = [
-    'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
-    'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
-    'key'      => $secrets['OBJECT_STORAGE']['KEY'],
-    'region'   => $secrets['OBJECT_STORAGE']['REGION'],
-    'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
+    'bucket'   => getenv('OBJECT_STORAGE_BUCKET'),
+    'endpoint' => 'https://'. getenv('OBJECT_STORAGE_SERVER'),
+    'key'      => getenv('OBJECT_STORAGE_KEY'),
+    'region'   => getenv('OBJECT_STORAGE_REGION'),
+    'secret'   => getenv('OBJECT_STORAGE_SECRET'),
 ];
 ```
+
+**Note**: The ["Dynamic ENV vars"](env-vars#toc-dynamic-env-vars) option must be enabled for the App to use ENV vars.
 
 ### Programmatic upload
 

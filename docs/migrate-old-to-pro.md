@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-17
+reviewed:      2016-12-09
 title:         Migrate Old App to Professional
 naviTitle:     Migrate Old App > Professional
 lead:          Learn how to move your Old App to a Professional App.
@@ -33,7 +33,7 @@ If in doubt: go ahead and use the trial mode and ask us to extend your trial tim
 
 Check the TTL of your domain(s) and make sure they are set to the lowest possible value, if they aren't already. You do so with your domain provider. This is very important to circumvent downtimes. If you reduced the TTL then make sure you continue the migration *after* the previous TTL elapsed: If it was 24h, then you need to wait 24h before everybody (=all DNS caches on the way) gets the new TTL.
 
-If you are using TLS you should also enable the [TLS](/tls) component for the Professional App now and install your key and certificate(s). This won't have any impact on your Old App. Two Apps can have the same certificate installed without any problem.
+If you are using HTTPS you should also enable the [HTTPS component](/https-custom-pro) for the Professional App now and install your key and certificate(s). This won't have any impact on your Old App. Two Apps can have the same certificate installed without any problem.
 
 ## Get your Professional App up and running
 
@@ -125,7 +125,7 @@ Depending on how business critical your App is and how much data it generates, y
 
 Now delete all customs domains from the Old App in the Dashboard and then immediately add them to your Professional App accordingly. Mind to use the same document roots.
 
-In the last step you [route the domains(s)](about-domains#toc-route-a-custom-domain) to the Professional App with your Domain Provider.
+In the last step you [route the domains(s)](domains#toc-routing-options) to the Professional App with your Domain Provider.
 
 
 ## Done

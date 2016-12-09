@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-12-09
 title:         All about Domains & DNS
 naviTitle:     Domains - Old App
 lead:          The world of App URLs, domains and DNS.
@@ -113,4 +113,4 @@ You probably want to route all requests for subdomains to your fortrabbit App li
 
 ### HTTPS
 
-For SSL connections on your own custom domain you'll additionally need: certificate, signed form an external vendor and the [TLS component](tls).
+For SSL connections on your own custom domain you'll additionally need: certificate, signed form an external vendor and the [SSL component](ssl-old).

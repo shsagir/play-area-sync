@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-08
+reviewed:      2016-12-09
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -114,7 +114,7 @@ Some domain providers promote wildcard domains as the save and easy catch-all so
 
 #### Wildcard domain limitations
 
-For security reasons we'll need to verify that you own the domain. You will need to verify an e-mail send to this domain. We do not provide [TLS free](/tls) for wildcard domains, you need to book [TLS custom](/tls-custom-pro) in order to have https on your wildcard domain.
+For security reasons we'll need to verify that you own the domain. You will need to verify an e-mail send to this domain. We do not provide [HTTPS free](/https) for wildcard domains, you need to book [HTTPS custom](/https-custom-pro) in order to have https on your wildcard domain.
 
 
 
@@ -126,7 +126,7 @@ To change the default domain: In the Dashboard go to your App > Domains. There c
 
 ## Using HTTPS
 
-Domains on fortrabbit can be accessed via `HTTP` and `HTTPS`. Please see the [TLS article](/tls) for informations on secured connections and SSL certificates.
+Domains on fortrabbit can be accessed via `HTTP` and `HTTPS`. Please see the [HTTPS article](/https) for informations on secured connections and SSL certificates.
 
 
 ## Setting a custom root path for a domain
@@ -178,12 +178,12 @@ What you want, in most scenarios, is the first one: forwarding. Serving the same
 
 ### Forwarding other domains with your domain provider
 
-This should be preffered. You can forward one domain to another domain without any involement of fortrabbit at all. Please check your domain provider if forwarding is allowed. The configuration should be dead simple. You point one domain to another and that's it.
+This should be preferred. You can forward one domain to another domain without any involvement of fortrabbit at all. Please check your domain provider if forwarding is allowed. The configuration should be dead simple. You point one domain to another and that's it.
 
 * Do: forward using a HTTP 301 code (moved permanently).
 * Don't: a "masked forward" where the other domain is loaded into an iframe
 
-Please keep an eye on HTTPS when forwarding. SSL will most likely not be enabled for the first domain, that will forwared then. the final domain has HTTPS. In most cases this is not issue.
+Please keep an eye on HTTPS when forwarding. HTTPS will most likely not be provided by your domain provider. In most cases this is not issue.
 
 
 ### Forwarding other domains within your App

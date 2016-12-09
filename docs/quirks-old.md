@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-05-22
+reviewed:    2016-12-09
 title:       "Quirks & constraints"
 lead:        Limits, restrictions, permissions there are some — aren't there always?
 dontList:    true
@@ -123,7 +123,7 @@ You can use / create as many [branches](git) as you want and push them to the fo
 
 Git is very good with text files. Differences can be extracted and are stored compressed. However, Git doesn't work so good with binary files. Also Git does not forget. You cannot really delete a file, once it is in the Git history. Normally our motto is to encourage, but not enforce best-practice. However in this case, we think we would do more harm than good, if we'd allow unlimited large files.
 
-If you want to manage your binary files with Git as well, we recommend to setup a dedicated repository for this and use the [SSH + Git workflow](ssh-git).
+If you want to manage your binary files with Git as well, we recommend to setup a dedicated repository for this and use the [SSH + Git workflow](ssh-git-old).
 
 ## SSH
 

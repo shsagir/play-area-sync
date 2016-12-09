@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-07
+reviewed:      2016-12-09
 dontList:      false
 title:         Using TLS custom
 naviTitle:     TLS custom
@@ -30,7 +30,7 @@ So: either this is an article for all (remove -uni title and front-matter stack 
 
 -->
 
-We assume that your are familiar with the basic concepts of TLS and the [general TLS implementation on fortrabbit](/tls). In this article you can learn why and how to use "TLS custom" instead of it's free counterpart.
+We assume that your are familiar with the basic concepts of TLS and the [general HTTPS implementation on fortrabbit](/https). In this article you can learn why and how to use "TLS custom" instead of it's free counterpart.
 
 ## About TLS custom
 
@@ -53,7 +53,7 @@ Instead of making use of Let's Encrypt in the free version, you can bring your o
 
 The roadmap to setup TLS custom reads like so:
 
-1. have an external [domain](about-domains) registered with your fortrabbit App
+1. have an external [domain](domains) registered with your fortrabbit App
 2. create a key and a certificate request locally
 3. using the certificate request: purchase an TLS/SSL cert from a third party CA
 4. book the TLS component for your App in the Dashboard

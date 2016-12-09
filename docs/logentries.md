@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        Logentries
-reviewed:         2016-09-15
+reviewed:         2016-12-09
 title:            Using Logentries with fortrabbit
 stack:            all
 
@@ -54,8 +54,6 @@ LOGENTRIES_TOKEN={{the-token-you-just-got}}
 [Add a new App secret for {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/secrets/new)
 </div>
 
-
-<!-- TODO: define stack -->
 
 ## Request a firewall white-listing
 

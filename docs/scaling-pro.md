@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-15
+reviewed:      2016-12-09
 title:         Scaling
 naviTitle:     Scaling
 lead:          When and how to grow and shrink your Apps resources.
@@ -204,5 +204,3 @@ s
 **Worker memory** is a soft limit. When exceeding it, either nothing happens or you can see fatal errors or slower execution depending on whether memory exhaustion is caused by permanent usage or isolated events or accidental overlapping of time scheduled jobs.
 
 **Worker memory** is limited in the Dashboard. You can only add a s many jobs as included in the selected plan.
-
-<!--  TODO: object storage launch -->

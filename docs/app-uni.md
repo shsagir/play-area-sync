@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2016-12-08
+reviewed:      2016-12-09
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         platform
 stack:         uni
@@ -12,7 +12,7 @@ showAlways:    true
 ---
 
 
-The Universal Stack is made for general purpose PHP web development — websites and web applications. It's design unifies legacy development workflows with modern web development paradigms. 
+The Universal Stack is made for general purpose PHP web development — websites and web applications. It's design unifies legacy development workflows with modern web development paradigms.
 
 ## Target audience
 
@@ -54,6 +54,6 @@ If you need more horse power and options, please see how you can: [Migrate from 
 
 Sorry, at this time it is not possible to downgrade from a higher to a lower plan in the Univeral Stack. While this would be nice for users - please believe that it is not our aim to lock you in - it would be quite complicated to achieve. To downgrade, we would have to implement several limit checks and give infos in the Dashboard which limits should have be to adjusted before downgrading.
 
-As an alternative we suggest to throw away the current App and create a new one: Download the [backups](/bakcups-uni), delete the App, create a new App with correct plan and upload (or deploy) again.
+As an alternative we suggest to throw away the current App and create a new one: Download the [backups](/backups-uni), delete the App, create a new App with correct plan and upload (or deploy) again.
 
 Thanks for understanding!
