@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-28
+reviewed:      2016-12-07
 naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
@@ -9,20 +9,6 @@ group:         platform
 stack:         uni
 
 ---
-
-<!--
-
-TODO: 
-
-* More content in general, much tooo short!
-* More examples: Why backups (maybe hardware fault or maybe better hardware is redundant?!s)
-* HIGHLIGHT that backups must be DOWNLOADED and cannot be recopued with a click (expectation)
-* More details on "re-uploading" files/database (steps)
-* More examples of usage: 1. update your local dev env, 2. creating a clone of an App …
-* More details: Why backups with Professional Apps are not so important
-* …
-
--->
 
 
 ## Problem
@@ -43,7 +29,7 @@ Backups are not included with all App plans. See our [pricing page](https://www.
 
 ## Backup features
 
-* Daily backups > 
+* Daily backups >
 * 14 days retention
 * File backups (code + assets + user uploads)
 * Low disk I/O > copy on write filesystem > only changes
