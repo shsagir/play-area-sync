@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-09
+reviewed:      2016-12-09
 title:         Company collaboration on fortrabbit
 naviTitle:     Company collaboration
 lead:          Leverage Company level collaboration to map your real world structures back to fortrabbit.
@@ -197,3 +197,9 @@ This clean workflow maps the real world relationship closely. The client is the 
 3. The developer changes the "Invoice e-mail" address to the client
 
 This workflow is faster and does not involve interaction from the client at all. It is however not so clean as the the developer needs to have access to confidential credit card informations.
+
+
+
+### Downgrading a Company plan
+
+You might be able to downgrade your Company plan at any time of course. To proceed a downgrade, please make sure that your Company is wthin the limits of the lower plan.
