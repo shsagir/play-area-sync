@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-12-09
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -69,17 +69,10 @@ The reset operation is non-destructive, meaning: It does not generate a release.
 
 ### Git with a GUI or IDE
 
-You can also use a graphical interface like Tower, Sourctree, Gitbox - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an editor (PhpStorm …) to manage Git. You'll need these access credentials:
+You can also use a graphical interface like Tower, SourceTree, Gitbox and so on - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an IDE like PhpStorm or Eclipse to manage Git. You'll need these access credentials:
 
-**SSH clone URL**:
-{{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}
-
-**SSH password**:
-{{ssh-password}}
-
-
-<!-- TODO: discuss differents between Professional & Universal implementation! Overwrite not delete VS full package, why does Git pull does not show my uploads? -->
-
+* **SSH clone URL**: {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}
+* **SSH password**: {{ssh-password}}
 
 ## Advanced usage
 
@@ -90,10 +83,7 @@ Still reading? Dig deeper!
 
 Universal Apps have persistent storage, which you can access via [SSH](ssh-uni) or [SFTP](sftp-uni). It further means, that runtime data, like user uploads, are persistent and *will not be removed* upon Git push.
 
-To make sure nothing is deleted, all git deployments to Universal Apps follow an **overwrite but not delete** strategy. This means:
-
-* Contents which are not in your Git repository will not be touched
-* Contents which are in your Git repository will be overwritten
+To make sure nothing is deleted, all git deployments to Universal Apps follow an **overwrite but not delete** strategy which is thoroughly explained in the [deployment methods article](deployment-methods-uni#toc-git-push-overwrite-but-not-deletes).
 
 ### Behind the scenes
 

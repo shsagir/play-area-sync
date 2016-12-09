@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2016-09-25
+reviewed:   2016-12-09
 title:      Using environment variables in PHP
 naviTitle:  Environment variables
 lead:       ENV vars help to create and shape the environment of where the code runs.
@@ -62,9 +62,7 @@ Generic ENV vars cannot be overwritten by you. They are always available.
 
 ### Stack ENV vars
 
-<!--  TODO: correct wording here: Stack is Professional or Universal. "Sofztware chooser" is what the stack chooser is called now. -->
-
-Depending on which Stack you have chosen when creating your App, additional ENV vars will be pre-created (seeded) for you. For example: When choosing Laravel the ENV var `APP_KEY` with a random, 32 char long string will created (among others).
+Depending on what you have selected in the Software chooser when creating your App, additional ENV vars will be pre-created (seeded) for you. For example: When choosing Laravel the ENV var `APP_KEY` with a random, 32 char long string will created (among others).
 
 You can replace or remove those Stack ENV vars after App creation the same way you can replace or remove your manually created ENV vars.
 
@@ -75,7 +73,7 @@ Dynamic ENV vars become available if you have enabled *"Populate App Secrets in 
 
 They will never overwrite existing, manually created ENV vars. This means: if you manually create an ENV var, we guarantee that we won't replace it's value by a dynamically generated ENV var.
 
-Following a list of available dynamic ENV vars: 
+Following a list of available dynamic ENV vars:
 
 **MySQL** (All Universal Apps or Professional App Component)
 
