@@ -61,7 +61,7 @@ You can create as many Companies as you need — free of charge. In the the Dash
 
 <div data-markdown="1" data-user="known">
 
-* [Create a new Company](https://dashboard.fortrabbit.com/account/company/new) (login required)
+* [Create a new Company](https://dashboard.fortrabbit.com/account/company/new)
 
 </div>
 
