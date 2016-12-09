@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-17
+reviewed:      2016-12-09
 title:         SFTP
 naviTitle:     SFTP
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
@@ -27,7 +27,7 @@ All [Universal Stack Apps](app-uni) come with SFTP access out-of-the-box to supp
 
 There are various GUIs out there, which make your life easier. We recommend [Cyberduck](https://cyberduck.io/) (Mac, Windows).
 
-<!-- TODO: Describe configuration of Cyberduck connection with example -->
+<!-- TODO: @Frank: Describe configuration of Cyberduck connection with example -->
 
 Many modern editors or IDEs also feature SFTP integrations by plugin.
 

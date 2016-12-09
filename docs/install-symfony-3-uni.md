@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-11-14
+reviewed:         2016-12-09
 title:            Install Symfony
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 or 3 on fortrabbit.
@@ -108,9 +108,7 @@ parameters:
 
 ### Use app_dev.php
 
-<!-- TODO: what is "the development"?  -->
-
-If you want to use the development, you must modify `web/app_dev.php`. A simple example would be to replace the block, responding with a 403 like so:
+If you want to use the development environment, you must modify `web/app_dev.php`. A simple example would be to replace the block, responding with a 403 like so:
 
 ```
 if (isset($_SERVER['APP_NAME']) && $_SERVER['APP_NAME'] === '{{app-name}}') {

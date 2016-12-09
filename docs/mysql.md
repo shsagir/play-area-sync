@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-10
+reviewed:      2016-12-09
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -32,7 +32,7 @@ keywords:
 
 You can look up the MySQL password in the Dashboard > Your App > Deployment & code access.
 
-<!-- TODO: in Dashboard, the tabs need to react on the anchor tag -->
+<!-- TODO: @Frank: in Dashboard, the tabs need to react on the anchor tag -->
 
 <div markdown="1" data-user="known">
 [Look up the MySQL password for **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)

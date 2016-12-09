@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-09
+reviewed:      2016-12-09
 title:         Company collaboration on fortrabbit
 naviTitle:     Company collaboration
 lead:          Leverage Company level collaboration to map your real world structures back to fortrabbit.
@@ -167,9 +167,7 @@ To make the process of leaving transparent, all involved parties will get a noti
 
 #### A note on security when people leave
 
-Please mind that the person who has left still might have local code copies and thereby access to sensitive data like MySQL passwords. We advice to reset service passwords. Please see the [security article](security#password-reset) for more.
-
-<!-- TODO: make link to security section above work  -->
+Please mind that the person who has left still might have local code copies and thereby access to sensitive data like MySQL passwords. We advice to reset service passwords. Please see the [security article](security#toc-password-reset) for more.
 
 
 ### How to work with a non-techie client

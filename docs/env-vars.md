@@ -69,7 +69,7 @@ You can replace or remove those Stack ENV vars after App creation the same way y
 
 ### Dynamic ENV vars
 
-Dynamic ENV vars become available if you have enabled *"Populate App Secrets in ENV vars automatically"* in the Dashboard, which is the default for new Apps. They contain access details for services offered by fortrabbit.
+Dynamic ENV vars become available if you have enabled *"Dynamic ENV vars"* in the Dashboard, which is the default for new Apps. They contain access details for services offered by fortrabbit. You can find them in the Dashboard > {{app-name}} > ENV vars on the right hand side.
 
 They will never overwrite existing, manually created ENV vars. This means: if you manually create an ENV var, we guarantee that we won't replace it's value by a dynamically generated ENV var.
 
