@@ -232,7 +232,7 @@ $ linkcheck.mac --url http://help.fortrabbit.dev
 * **Owner** ~~owner~~
 * **root path** ~~document root~~, ~~doc root~~
 * **terminal** ~~Terminal~~, ~~shell~~, ~~bash~~
-* **Tinkering plans** ~~Development plans~~ (single Node App plans on Professional stack)
+* **Tinkering level** ~~Development plans~~ (single Node App plans on Professional stack)
 * **URL** — ~~Url~~, ~~url~~
 * **User** — ~~member~~, ~~account~~
 * **Workers** — ~~Worker~~
@@ -241,6 +241,20 @@ $ linkcheck.mac --url http://help.fortrabbit.dev
 * **{{ interchangble-value }}** < something the users will need to modify
 * **{{ your-app }}** ~~{{ my-app }}~~, ~~{{ app-name }}~~
 
+
+### Collaboration words
+
+* **Collaboration** = Company collaboration + App collaboration
+* **Company collaboration** with Company plans, Admins, Owners & App Collaborators
+* **Company plans** — the plans one can book
+* **App collaboration** with App Collaborators
+* **App Collaborator** = Access to Apps
+* **Team members** = Company members + App Collaborators
+* **Company member** — ~~Company collaborator~~
+* **Admin** = the Role
+* **Owner** = the Role
+* **App Collaborator**
+* **Role** — ~~permission~~, ~~acccess role~~
 
 ## Times & dates
 
