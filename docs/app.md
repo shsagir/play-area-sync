@@ -113,20 +113,30 @@ You can register your App to accept requests from any external domain you route 
 #### Root path
 
 
-Per default all the [domains](/domains) of the App will route to the same root path `htdocs`. This path can vary, depending on what you have selected in the stack chooser when creating the App. For example, if you have chosen [Laravel](/install-laravel), the root path `htdocs/public` would be used.
+Per default all the [domains](/domains) of the App will route to the same root path (sometimes this is also called: document root, docroot or root folder): `htdocs`. This path is, where the first `index.php` will be called, when people are visiting your App on any domain.
 
+This path setting can vary, depending on what the framework or CMS you have selected in the software chooser when creating the App:
+
+| Framework/CMS                 | Root path     |
+| ----------------------------- | ------------- |
+| Laravel, Phalcon, October CMS | htdocs/public |
+| Symfony                       | htdocs/web    |
+| Drupal 8, WordPress, Grav     | htdocs        |
+
+You can however set the root path afterwards at any given time by visiting the according setting in the Dashboard under your App. 
 
 <div markdown="1" data-user="known">
 
-* [Change the root path for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/root-path)
+* [Change the root path for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 
 </div>
 
-##### Different root paths for different domains
 
-In some cases, you might want to route different domains to different folders. Please mind that there are limited use cases for this and don't use one App to host multiple website (see [here](/app#toc-one-website-per-app) as well).
+##### Individual root paths per domain
 
-When visiting the root path settings form with a [Professional stack Apps](/app-pro) you will find a switch to change from a global path for all domains to custom root paths for each domain.
+In some cases, you might want to route individual domains to different folders. Please mind that there are limited use cases for this and don't use one App to host multiple website (see [here](/app#toc-one-website-per-app) as well).
+
+When visiting the root path settings form with a [Professional stack Apps](/app-pro) you will find a switch to change from a global root path for all domains to custom root paths for each domain.
 
 Mind that you can also use `.htaccess` files with `RewriteRule` directives to handle different domains differently.
 
