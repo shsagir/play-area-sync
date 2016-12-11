@@ -27,6 +27,12 @@ keywords:
 
 We assume you've already created an [App](/app) and chose Custom in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
+<!--
+
+TODO: Frank: what about root path here? in the pro article we say to set the root path. In some other Uni articles we also do. Can't see a pattern here!
+
+-->
+
 ## Quick start
 
 Start by downloading the [latest October CMS archive](http://octobercms.com/download) from the October CMS website and unpack it locally. It will extract into the folder `install-master`. Now copy the **contents** of the local `install-master` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
