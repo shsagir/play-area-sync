@@ -140,6 +140,42 @@ When visiting the root path settings form with a [Professional stack Apps](/app-
 
 Mind that you can also use `.htaccess` files with `RewriteRule` directives to handle different domains differently.
 
+
+
+## Trial
+
+You can test fortrabbit for free. Therefore each Account can have one trial App running. The purpose of the trial is testdrive the platform. See if it works as advertised. See if fortrabbit is the right hosting solution for you.
+
+
+#### Starting a new trial App
+
+Find the "Create an App" on the Dashboard home. When asked for the plan, you can choose the free trial option instead. Trial Apps are available for both stacks, Universal & Professional.
+
+#### Extending the trial
+
+The default trial time is short. A timer in the Dashboard with your App will show you the time left. You can extend the evaluation period by completing some simple tasks like: 
+
+* Confirming your Accounts e-mail address
+* Setting your real name under your Account
+* Deploying some code to the trial App
+* Routing a domain to the trial App
+
+A task that is completed has a checkmark `✔`. Tasks that are still todo will show how much time you will gain `+12h`.
+
+Additionally, after some trial time has passed, we show a link to a contact form where you can ask us to extend the trial time. Here you'll write us something about your goals with the trial and we are happy to extend the trial for much longer period.
+
+You can see those tasks in the Dashboard with the overview of your App.
+
+#### Upgrading the trial
+
+You can, of course, upgrade from your trial to a paid plan at any time. You can do so under your Apps overview. 
+
+
+#### The end of a trial
+
+When the trial is finally over, the trial App will be deleted — we will not keep your data hostage. Good news is: we will inform you by e-mail before it happens and you can start a new trial right away, after your current trial ended.
+
+
 ## Further readings
 
 * [Quirks and constrains](/quirks)
