@@ -51,7 +51,7 @@ Find them in the Dashboard > Your App > Backups. Two backup files per day are au
 
 ### Older backups
 
-If you need backups available for a longer time period than the retention time allows (see [specs page](https://www.fortrabbit.com/specs)), then we recommend to periodically download the backups from the dashboard and store them locally.
+If you need backups available for a longer time period than the retention time allows (see [specs page](https://www.fortrabbit.com/specs)), we recommend to periodically download the backups from the dashboard and store them locally.
 
 
 
