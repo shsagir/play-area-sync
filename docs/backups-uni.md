@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-07
+reviewed:      2016-12-12
 naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
@@ -29,7 +29,7 @@ Backups are not included with all App plans. See our [pricing page](https://www.
 
 ## Backup features
 
-* Daily backups >
+* Daily backups
 * 14 days retention
 * File backups (code + assets + user uploads)
 * Low disk I/O > copy on write filesystem > only changes
