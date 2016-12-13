@@ -105,7 +105,7 @@ Our scaling capabilities are focused on the first two scenarios, because the sla
 
 ### Comparing with metrics
 
-The fortrabbit [Dashboard](/dashboard) provides you with useful metrics on how your App is doing, what it is handling and how much memory it consumes. This can help you fine tune for the best scaling settings.
+The fortrabbit [Dashboard](/dashboard) provides you with useful performance metrics on how your App is doing, what it is handling and how much memory it consumes. This can help you fine tune for the best scaling settings.
 
 
 ## How to scale

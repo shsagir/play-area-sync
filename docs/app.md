@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-08
+reviewed:      2016-12-13
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -142,6 +142,21 @@ Mind that you can also use `.htaccess` files with `RewriteRule` directives to ha
 
 
 
+#### Metrics
+
+<!--
+
+TODO: extend this topic, it's a major selling point. explain how to use it with use cases bla bla bla.
+
+-->
+
+Each App comes with "**Usage metrics**": Those show you the current status of the Web storage, MySQL storage and Object Storage and context of your 
+
+Some Apps also come with "**Performance metrics**": Those show you how fast your App is and where you might need to improve. Perfomance metrics are: requests, PHP response time, traffic, errors and other useful stuff. You can set different time intervals to monitor perfromance over time.
+
+
+
+
 ## Trial
 
 You can test fortrabbit for free. Therefore each Account can have one trial App running. The purpose of the trial is testdrive the platform. See if it works as advertised. See if fortrabbit is the right hosting solution for you.
@@ -162,9 +177,7 @@ The default trial time is short. A timer in the Dashboard with your App will sho
 
 A task that is completed has a checkmark `✔`. Tasks that are still todo will show how much time you will gain `+12h`.
 
-Additionally, after some trial time has passed, we show a link to a contact form where you can ask us to extend the trial time. Here you'll write us something about your goals with the trial and we are happy to extend the trial for much longer period.
-
-You can see those tasks in the Dashboard with the overview of your App.
+Additionally, after some trial time has passed, we show a link to a contact form where you can ask us to extend the trial time. Here you'll write us something about your goals with the trial and we are happy to extend the trial for much longer period. You can see those tasks in the Dashboard with the overview of your App.
 
 #### Upgrading the trial
 
