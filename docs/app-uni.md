@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2016-12-09
+reviewed:      2016-12-13
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         platform
 stack:         uni
@@ -47,6 +47,10 @@ You can access either live logs or historic logs of your App. Please [read the l
 ## Scaling
 
 The purpose of the Universal Stack is not to be very scalable in terms of performance. The various plans differ in amount of available storage (Web and MySQL), but not in "PHP power". This means: your site can grow over time with bigger databases and more user uploaded contents, but it won't deliver vastly more performance in higher plans then in lower ones.
+
+The different Universal Stack App plans differ in web storage size, MySQL size and most importantly features, like backups and collaboration. 
+
+The smallest plan is suited for hobby projects, landing pages, one-pagers, MVPs, weekend hacks, development, skeletons, personal blogs and whatever small project you can think of. The highest plan is suited for more serious intentions: you can put a commercial project there. Everything in between can be in between. [See the pricing page](https://www.fortrabbit.com/pricing) for specs.
 
 If you need more horse power and options, please see how you can: [Migrate from Universal App to Professional App](/migrate-uni-to-pro).
 
