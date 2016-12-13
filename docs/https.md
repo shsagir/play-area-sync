@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-12
+reviewed:      2016-12-13
 dontList:      false
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit
@@ -22,7 +22,7 @@ keywords:
 
 ---
 
-**Problem**: The interwebs is full of criminals trying to read your communication.  
+**Problem**: The interwebs is full of criminals trying to read your communication.
 **Solution**: Serve requests over `HTTPS` not just `HTTP`.
 
 
@@ -59,7 +59,7 @@ Which of the options can be used depends on the [App stack](stacks) and the spec
 | --------------------- | -------------------------------------------------------------------------- | ------------------ |
 | Piggyback HTTPS       | Yes                                                                        | Yes                |
 | Automatic HTTPS       | Yes                                                                        | Depends on plan    |
-| Custom HTTPS          | Yes, as extra Component, [see specs](//www.fortrabbit.com/specs-pro#tls)   | Depends on plan    |
+| Custom HTTPS          | Yes, as extra Component, [see specs](//www.fortrabbit.com/specs-pro#https) | Depends on plan    |
 
 
 ## Using TLS/HTTPS
