@@ -1,10 +1,10 @@
 ---
 
 template:      article
-reviewed:      2016-12-07
+reviewed:      2016-12-12
 dontList:      false
 title:         Using HTTPS with fortrabbit
-naviTitle:     TLS
+naviTitle:     HTTPS on fortrabbit
 lead:          "How to make use of HTTPS on fortrabbit. Learn about the three options."
 group:         platform
 stack:         all
