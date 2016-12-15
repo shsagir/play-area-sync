@@ -28,7 +28,7 @@ We assume you've already created an App with fortrabbit. You should also have a 
 
 ## Quick start
 
-Start by downloading the [latest Drupal archive](https://www.drupal.org/8) from the Drupal website and unpack it locally. It will extract into a folder named `drupal-8.2.2` - the name varies wit the actual version you are using. Now copy the **contents** of the local `drupal-8.2.2` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
+Start by downloading the [latest Drupal archive](https://www.drupal.org/8) from the Drupal website and unpack it locally. It will extract into a folder named `drupal-8.2.4` - the name varies wit the actual version you are using. Now copy the **contents** of the local `drupal-8.2.4` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 
 * **Server**: `deploy.{{region}}.frbit.com`
 * **User name**: `{{ssh-user}}`
