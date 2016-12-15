@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-11-11
+reviewed:         2016-12-15
 title:            Install Drupal 8
 naviTitle:        Drupal 8
 lead:             Drupal 8 is one of the best known open source PHP CMS. Learn here how to use it with fortrabbit.
@@ -56,3 +56,14 @@ After that, the setup is done and you can browse to your freshly installed Drupa
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io) _< Drupal installation_
 * [{{app-name}}.frb.io/user/login](https://{{app-name}}.frb.io/user/login) _< Drupal admin_
+
+
+## Advanced topics
+
+See our Drupal install guide for the [Professional Stack](/app-pro) to learn more about these topics:
+
+* [Drupal with Composer](/install-drupal-8-uni#toc-install)
+* [Git Deployment](/install-drupal-8-uni#toc-configure-git)
+* [Database migration](/install-drupal-8-uni#toc-mysql-import)
+
+
