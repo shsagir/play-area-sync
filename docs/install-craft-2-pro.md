@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-08-02
+reviewed:         2016-12-15
 title:            Install Craft CMS 2 on fortrabbit
 naviTitle:        Craft CMS
 lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/?utm_source=fortrabbit
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          2.5
+version:          2.6
 group:            Install_guides
 
 keywords:
@@ -37,20 +37,12 @@ If you haven't already (the stack chooser does that for you) - in the Dashboard:
 
 If you haven't already (the stack chooser does that for you) - in the Dashboard set the following [environment variables](env-vars):
 
-```
+```osterei32
 CRAFT_DEBUG=0
 CRAFT_CACHE=memcache
 CRAFT_UPDATES=0
-```
-
-### Set App secrets
-
-Then, still in the fortrabbit Dashboard, head over to the [App secrets](secrets) and add a validation key (long random string):
-
-```osterei32
 CRAFT_KEY=LongRandomString
 ```
-
 
 ## Install
 
@@ -65,19 +57,16 @@ Open up `craft/config/general.php` and replace all contents it like so:
 
 ```php
 <?php
-// Only triggered on fortrabbit
-$validationKey = false;
-if ($file = getenv('APP_SECRETS')) {
-    $secrets = json_decode(file_get_contents($file), true);
-    $validationKey = $secrets['CUSTOM']['CRAFT_KEY'];
-}
+
+$protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http';
 
 return [
     'allowAutoUpdates'  => getenv('CRAFT_UPDATES') ?: true,
     'cacheMethod'       => getenv('CRAFT_CACHE') ?: 'file',
     'devMode'           => getenv('CRAFT_DEBUG') ?: false,
-    'siteUrl'           => 'http://'. $_SERVER['HTTP_HOST'],
-    'validationKey'     => $validationKey,
+    'validationKey'     => getenv('CRAFT_KEY') ?: false,
+    'siteUrl'           => $protocol . '://' . $_SERVER['HTTP_HOST'] . '/',
+    'baseCpUrl'         => $protocol . '://' . $_SERVER['HTTP_HOST'] . '/',
     'environmentVariables' => [
         'assetsBaseUrl'  => '/assets',
         'assetsBasePath' => './assets',
@@ -87,29 +76,15 @@ return [
 
 ## MySQL
 
-Your App needs database access - when working local and on remote. We use environment detection to store both access informations. On fortrabbit the actual credentials are getting parsed from the [App secrets](secrets). Open `craft/config/db.php` in your editor and modify it like the following:
+Your App needs database access - when working local and on remote. We provide `MYSQL_...` environment variables automatically, so that you don't have to care. Open `craft/config/db.php` in your editor and modify it like the following:
 
 ```php
-// Connnect to MySQL on fortrabbit
-if ($file = getenv('APP_SECRETS')) {
-    $secrets = json_decode(file_get_contents($file), true);
-    return [
-        'server'      => $secrets['MYSQL']['HOST'],
-        'user'        => $secrets['MYSQL']['USER'],
-        'password'    => $secrets['MYSQL']['PASSWORD'],
-        'database'    => $secrets['MYSQL']['DATABASE'],
-        'port'        => $secrets['MYSQL']['PORT'],
-        'tablePrefix' => 'craft',
-    ];
-}
-
-// Connect to MySQL from local development environment
 return [
-    'server'      => '127.0.0.1',
-    'user'        => 'your-local-db-user',
-    'password'    => 'your-local-db-password',
-    'database'    => 'your-local-db-name',
-    'tablePrefix' => 'craft',
+	'server'      => getenv('MYSQL_HOST')     ?: 'localhost',
+	'database'    => getenv('MYSQL_DATABASE') ?: 'local-db-name',
+	'user'        => getenv('MYSQL_USER')     ?: 'local-db-user',
+	'password'    => getenv('MYSQL_PASSWORD') ?: 'local-db-password',
+	'tablePrefix' => 'craft',
 ];
 ```
 
@@ -121,7 +96,7 @@ Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to acce
 
 ## Object Storage
 
-Since fortrabbit does not support a [persistent storage](quirks#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets.
+Since the Professional Stack does not support a [persistent storage](app-pro#toc-ephemeral-storage) you want to use the [Object Storage](object-storage) to save your uploads and static assets.
 
 We've prepared a Craft plugin that acts as a drop-in replacement for the Amazon S3 asset source. [Download the plugin](https://github.com/fortrabbit/craft-s3-fortrabbit) from GitHub and **follow the setup instructions in the [README.md](https://github.com/fortrabbit/craft-s3-fortrabbit/blob/master/README.md)**. Once that's done, you can create your Object Storage asset source:
 
@@ -150,52 +125,50 @@ Now that is done you can safely remove the empty, local asset sources:
 
 ### Cache & sessions
 
-If you are just testing out Craft: make sure you use tinkering PHP plan with fortrabbit. With those you can set the cache variable (above) to `file`, `db` or `apc` during your tinkering, for example:
+If you are just testing out Craft: make sure you use Development PHP plan with fortrabbit. With those you can set the `CRAFT_CACHE` env var to `file`, `db` or `apc` during your tinkering, for example:
 
 ```
 CRAFT_CACHE=db
 ```
 
-All fortrabbit production PHP plans run on multiple Nodes and require a cache which is accessible jointly - same goes for sessions, of course. This disqualifies `apc`, `db` and `file` and leaves you with `memcache` as options.
+All fortrabbit production PHP plans run on multiple Nodes and require a cache which is accessible jointly - same goes for sessions, of course. This disqualifies `apc`, `db` and `file` and leaves you with `memcache` as the only option.
 
 So make sure you have booked the [Memcache component](/memcache-pro) and then create the file `craft/config/memcache.php` with the following content:
 
 ```php
-if ($file = getenv('APP_SECRETS')) {
-    $secrets = json_decode(file_get_contents($file), true);
-    if (isset($secrets['MEMCACHE'])) {
-        $memcache = $secrets['MEMCACHE'];
+if (getenv('MEMCACHE_COUNT')) {
 
-        $handlers = [];
-        $servers  = [];
-        foreach (range(1, $memcache['COUNT']) as $num) {
-            $handlers []= $memcache['HOST'. $num]. ':'. $memcache['PORT'. $num];
-            $servers []= [
-                'host'          => $memcache['HOST'. $num],
-                'port'          => $memcache['PORT'. $num],
-                'retryInterval' => 2,
-                'status'        => true,
-                'timeout'       => 2,
-                'weight'        => 1,
-            ];
-        }
-
-        // session config
-        ini_set('session.save_handler', 'memcached');
-        ini_set('session.save_path', implode(',', $handlers));
-        if ($memcache['COUNT'] == 2) {
-            ini_set('memcached.sess_number_of_replicas', 1);
-            ini_set('memcached.sess_consistent_hash', 1);
-            ini_set('memcached.sess_binary', 1);
-        }
-
-        // craft config
-        return [
-            'servers'      => $servers,
-            'useMemcached' => true,
+    $handlers = [];
+    $servers  = [];
+    foreach (range(1, getenv('MEMCACHE_COUNT')) as $num) {
+        $handlers[] = getenv('MEMCACHE_HOST' . $num) . ':' . getenv('MEMCACHE_PORT' . $num);
+        $servers[] = [
+            'host'          => getenv('MEMCACHE_HOST' . $num),
+            'port'          => getenv('MEMCACHE_PORT' . $num),
+            'retryInterval' => 2,
+            'status'        => true,
+            'timeout'       => 2,
+            'weight'        => 1,
         ];
     }
-}
+
+    // session config
+    ini_set('session.save_handler', 'memcached');
+    ini_set('session.save_path', implode(',', $handlers));
+    
+    if (getenv('MEMCACHE_COUNT') == 2) {
+        ini_set('memcached.sess_number_of_replicas', 1);
+        ini_set('memcached.sess_consistent_hash', 1);
+        ini_set('memcached.sess_binary', 1);
+    }
+
+    // craft config
+    return [
+        'servers'      => $servers,
+        'useMemcached' => true,
+    ];
+}    
+    
 ```
 
 ### Database migration
