@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-08-03
+reviewed:         2016-12-15
 title:            Install Drupal 8
 naviTitle:        Drupal 8
 lead:             Drupal 8 is one of the best known open source PHP CMS. Learn here how to use it with fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://www.drupal.org/?utm_source=fortrabbit
 websiteLinkText:  drupal.org
 category:         CMS
 image:            drupal8-mark.png
-version:          8.1 (dev)
+version:          8.1
 
 keywords:
     - drupal
@@ -37,8 +37,6 @@ If you haven't already (the stack chooser does that for you) — in the Dashboar
 
 ## Install
 
-**At the time of writing Drupal 8 will only work with the latest DEV release 8.1**
-
 Execute the following in your local terminal to initialize a new [composer-based Drupal](https://github.com/drupal-composer/drupal-project).
 
 ```bash
@@ -60,21 +58,18 @@ Create a new file `web/sites/default/settings_prod.php` with the following conte
 
 ```php
 // Detect environment: Only triggered on fortrabbit
-if (!isset($_SERVER['APP_SECRETS'])) {
+if (!getenv('APP_NAME')) {
     return;
 }
 
-// Grab MySQL credentials from App secrets:
-$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-
 // Configure database
 $databases['default']['default'] = [
-    'database'  => $secrets['MYSQL']['DATABASE'],
-    'username'  => $secrets['MYSQL']['USER'],
-    'password'  => $secrets['MYSQL']['PASSWORD'],
+    'database'  => getenv('MYSQL_DATABASE'),
+    'username'  => getenv('MYSQL_USER'),
+    'password'  => getenv('MYSQL_PASSWORD'),
     'prefix'    => '',
-    'host'      => $secrets['MYSQL']['HOST'],
-    'port'      => $secrets['MYSQL']['PORT'],
+    'host'      => getenv('MYSQL_HOST'),
+    'port'      => getenv('MYSQL_PORT'),
     'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
     'driver'    => 'mysql',
 ];
@@ -116,15 +111,15 @@ $schemes = [
     'object-storage' => [
         'driver' => 's3',
         'config' => [
-            'key'      => $secrets['OBJECT_STORAGE']['KEY'],
-            'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
-            'region'   => $secrets['OBJECT_STORAGE']['REGION'],
-            'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
+            'key'      => getenv('OBJECT_STORAGE_KEY'),
+            'secret'   => getenv('OBJECT_STORAGE_SECRET'),
+            'region'   => getenv('OBJECT_STORAGE_REGION'),
+            'bucket'   => getenv('OBJECT_STORAGE_BUCKET'),
             'options'  => [],
             'protocol' => 'https',
             'prefix'   => '',
-            'cname'    => $secrets['OBJECT_STORAGE']['HOST'],
-            'endpoint' => 'https://' . $secrets['OBJECT_STORAGE']['SERVER'],
+            'cname'    => getenv('OBJECT_STORAGE_HOST'),
+            'endpoint' => 'https://' .getenv('OBJECT_STORAGE_SERVER'),
         ],
         'cache'     => true
         'serve_js'  => true,
