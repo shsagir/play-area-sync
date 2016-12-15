@@ -23,6 +23,8 @@ keywords:
      - heidisql
      - workbench
      - sequel-pro
+     - sequel
+     - tunnel
      - nosql
 
 ---
@@ -30,12 +32,10 @@ keywords:
 
 ## Obtain the MySQL password
 
-You can look up the MySQL password in the Dashboard > Your App > Deployment & code access.
-
-<!-- TODO: @Frank: in Dashboard, the tabs need to react on the anchor tag -->
+You can look up the MySQL password in the Dashboard > Your App > Access.
 
 <div markdown="1" data-user="known">
-[Look up the MySQL password for **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+[Look up the MySQL password for **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}#tab-mysql)
 </div>
 
 
