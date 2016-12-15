@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-09
+reviewed:      2016-12-15
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -143,4 +143,4 @@ We don't have any fancy GitHub/Bitbucket integrations (yet). But it is easily po
 
 ## Don't use Git submodules
 
-Git submodules are not supporte. We recommend to use Git subtrees instead. See [this post from Atlassian](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/).
+Git submodules are not supported. We recommend to use Git subtrees instead. See [this post from Atlassian](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/).
