@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-13
+reviewed:      2016-12-15
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -105,7 +105,7 @@ You can register your App to accept requests from any external domain you route 
 
 <div markdown="1" data-user="known">
 
-* [Set up a new domain for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new/name)
+* [Set up a new domain for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new)
 
 </div>
 
@@ -119,7 +119,7 @@ This path setting can vary, depending on what the framework or CMS you have sele
 
 | Framework/CMS                 | Root path     |
 | ----------------------------- | ------------- |
-| Laravel, Phalcon, October CMS | htdocs/public |
+| Laravel, Phalcon, Craft CMS   | htdocs/public |
 | Symfony                       | htdocs/web    |
 | Drupal 8, WordPress, Grav     | htdocs        |
 
@@ -175,7 +175,7 @@ The default trial time is short. A timer in the Dashboard with your App will sho
 * Deploying some code to the trial App
 * Routing a domain to the trial App
 
-A task that is completed has a checkmark `✔`. Tasks that are still todo will show how much time you will gain `+12h`.
+A task that is completed has a checkmark `✔`. Tasks that are still todo will show how much time you will gain `+24h`.
 
 Additionally, after some trial time has passed, we show a link to a contact form where you can ask us to extend the trial time. Here you'll write us something about your goals with the trial and we are happy to extend the trial for much longer period. You can see those tasks in the Dashboard with the overview of your App.
 
