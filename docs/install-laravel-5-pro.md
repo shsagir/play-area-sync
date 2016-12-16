@@ -506,6 +506,16 @@ $ envoy run migrate
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
 
 
+### Using artisan down
+
+`artisan down` generates the file `storage/framework/down`, which is then checked from your App's HTTP kernel as middleware — as far as we know. Modifying files via [SSH remote execution](remote-ssh-execution-pro.md) does only affect the deployment Node, not your live App (i.e. any file changes via SSH remote exec do not affect your App).
+
+There are at least two options to do this:
+
+1. Add `artisan down` as a `post-install-cmd` script in `composer.json`, then `git push` (remove the command and push again to bring it back online)
+2. Use a custom middleware and command which uses another source than a file, eg memcache or database
+
+
 ## Add an existing project
 
 You can also push your existing Laravel installation to fortrabbit. When you already using Git, you can add fortrabbit as an additional remote, like described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.
