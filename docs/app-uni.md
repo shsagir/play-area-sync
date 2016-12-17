@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2016-12-13
+reviewed:      2016-12-17
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         platform
 stack:         uni
@@ -27,13 +27,8 @@ The Universal Stack is, well, universally usable. Everyone should be able to use
 
 ## Application types
 
-Unless your project is very resource intensive, there is virtually no application type which won't fit. To name a few:
+Unless your project is very resource intensive, there is virtually no application type which won't fit. Depending on the chosen plan, coding skills, data volume and traffic you can use Universal Stack Apps for anything you like, like: semi-static websites, small e-shops, all kind of blogs, weekend projects, development, staging, MVPs to CMS driven websites and small web applications.
 
-* CMS driven websites
-* Static websites
-* Small e-shops
-* Blogs
-* Weekend projects
 
 ## Persistent storage
 
