@@ -1,40 +1,24 @@
 ---
 
 template:      article
-reviewed:      2016-07-19
+reviewed:      2016-12-20
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
 group:         deployment
-
-otherVersionLinks:
-    - git-old-app
+stack:         all
+oldLink:       git-old
 
 keywords:
     - beginner
     - dashboard
-
-tags:
-     - git
-
-seeAlsoLinks:
-    - git
-    - git-deployment
-    - ssh-keys
-    - deployment-architecture-video
-    - git-submodules
-    - deployment-file-v2
-    - directory-structure
-    - ssh-sftp-old-app
-    - security
-    - quirks
-
+    - deployment
 
 ---
 
 ## Git ready
 
-**There is no FTP here.** We assume that you have: [Git installed](git) locally and know the basics. We further assume that you know about [access methods](/access-methods) here on fortrabbit, so either have your SSH keys installed or your [Dashboard](/dashboard) password handy.
+We assume that you have: [Git installed](git) locally and know the basics. We further assume that you know about [access methods](/access-methods) here on fortrabbit, so either have your SSH keys installed or your [Dashboard](/dashboard) password handy.
 
 ## Usage
 
@@ -57,7 +41,7 @@ $ git add index.php
 $ git commit -am 'Intial commit'
 $ git push -u origin master
 ```
-after the deployment is done you can worship your work in the browser:  
+after the deployment is done you can worship your work in the browser:
 [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 Also see our specific install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
@@ -72,37 +56,34 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 
 ### Resetting the remote repo
 
+To start with a complete new Git history, you can now reset your repository. This can be done with the `reset` command like so:
+
 ```
 # Reset the remote repo (delete remote Git repo & vendor folder):
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```
 
 
+The reset operation is non-destructive, meaning: It does not generate a release. Thereby your live App continues to operate without any interruption. The new release will only be build on the next push (of your new code base). A repository reset also removes any sustained directory (the `vendor` folder, so a following [Composer](composer) install requires to download everything once again).
+
+
 ### Git with a GUI or IDE
 
-You can also use a graphical interface like Tower, Sourctree, Gitbox - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an editor (PhpStorm …) to manage Git. You'll need these access credentials:
+You can also use a graphical interface like Tower, SourceTree, Gitbox and so on - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an IDE like PhpStorm or Eclipse to manage Git. You'll need these access credentials:
 
-**SSH clone URL**:  
-{{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}
-
-**SSH password**:  
-{{ssh-password}}
-
-
-<!--
-| | |
-|-|-|
-| **SSH clone URL** | {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}              |
-| **SSH password**  | {{ssh-password}}    |
--->
-
-
-
-
+* **SSH clone URL**: {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}
+* **SSH password**: {{ssh-password}}
 
 ## Advanced usage
 
 Still reading? Dig deeper!
+
+
+### Git deployment vs Universal Apps
+
+Universal Apps have persistent storage, which you can access via [SSH](ssh-uni) or [SFTP](sftp-uni). It further means, that runtime data, like user uploads, are persistent and *will not be removed* upon Git push.
+
+To make sure nothing is deleted, all git deployments to Universal Apps follow an **overwrite but not delete** strategy which is thoroughly explained in the [deployment methods article](deployment-methods-uni#toc-git-push-overwrite-but-not-deletes).
 
 ### Behind the scenes
 
@@ -119,7 +100,13 @@ Your `git push` updates the Git remote on fortrabbit and triggers the build of a
 
 ### The branch name counts
 
-While you can have as many Git branches you want, only changes in certain branches will be deployed. Besides the `master` Branch also any branch named like the App itself - `{{app-name}}`, if that's the name of your App - will be considered. The latter helps when working with [multi staging setups](multi-staging).
+While you can have as many Git branches you want, only changes in certain branches will be deployed. The `master` branch us the default one.
+
+
+### Branching for multi-staging setups
+
+Usually, only the remote Git `master` branch will be deployed. With the Professional Apps you can also create a branch with the same name as your App, which will be preferred over the master branch. That way it is easier to set up a [multi-staging environment](multi-staging-pro).
+
 
 ### Deployment file
 
@@ -152,3 +139,8 @@ $ ls -lh {{app-name}}.tar.gz
 ### Integrating with GitHub & Bitbucket
 
 We don't have any fancy GitHub/Bitbucket integrations (yet). But it is easily possible to combine your fortrabbit repo with [GitHub](github) and [Bitbucket](bitbucket).
+
+
+## Don't use Git submodules
+
+Git submodules are not supported. We recommend to use Git subtrees instead. See [this post from Atlassian](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/).

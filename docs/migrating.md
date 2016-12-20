@@ -1,35 +1,31 @@
 ---
 
 template:    article
-reviewed:    2016-07-22
+reviewed:    2016-12-20
 title:       How to move your App to fortrabbit
 naviTitle:   Migrating to fortrabbit
 lead:        How to transfer an application to fortrabbit.
-group:       getting_started
-
-tags:
-     - beginner
-
-seeAlsoLinks:
-     - app
-     - scaling
-     - app-design
-     - git-deployment
-     - terminology
+group:       platform
+stack:       all
 
 ---
 
 
 WORD: fortrabbit is not your traditional hosting environment. It may require some tinkering on your application and we recommend reading about [the fortrabbit platform generals](app) as well as our [specific guides](/#install-guides) for various frameworks & CMS.
 
-This article covers the general basics as well as some deep links for moving your App from any hosting provider to fortrabbit. This will hopefully cover everything you need to realize a smooth transition.
+This article covers the general basics as well as some deep links for moving your App from any hosting provider to fortrabbit. This will hopefully cover everything you need to realize a smooth transition. Each App is different, adjust your plan accordingly and don't hesitate to [contact us](http://www.fortrabbit.com/contact) with your specific questions.
 
-Each App is different, adjust your plan accordingly and don't hesitate to [contact us](http://www.fortrabbit.com/contact) with your specific questions.
+
+
 
 
 ## Create your fortrabbit App
 
-Each website or web application is represented by an [App](app) on fortrabbit. You can have as many Apps as you want. So in order to move your project you need to create an App on fortrabbit first.
+Each website or web application is represented by an [App](app) on fortrabbit. You can have as many Apps as you want. So in order to move your project you need to create an App on fortrabbit first. Do so in the forabbit [Dashboard](/dashboard).
+
+### Choose a Stack
+
+When creating an App, you'll be asked for a Stack. Small standard webites go into Universal, high performance web applications go into the Professional Stack. See our [stack article](/stacks) to learn more.
 
 
 ## Prepare your domains
@@ -40,18 +36,16 @@ If you have some kind of web control panel with your domain provider, then you c
 
 After that's done make sure to add all the domains to your new fortrabbit App in the dashboard.
 
-## Migrate your runtime data
-
-Runtime data means all kinds of data, which is created by your App at runtime. Usually these are user uploads or uploads from a CMS or some-such.
-
-fortrabbit Apps are 12-factor apps: They do not have a persistent storage, the storage is ephemeral. So, you can not simply upload files.
-
-The [Object Storage](/object-storage) solves this and has some additional benefits. The bottom line is that you use file-system abstraction to offshore static assets to a remote Node and serve them from there. It's similar to AWS S3 and there Composer packages and CMS plugins for that.
-
 
 ## Migrate your code
 
 If you already subscribe to a Git based workflow, then there is probably not much to do here. If not, then you should familiarize yourself with Git. We promise: You won't regret it. Once you've used it, you won't go back without being forced.
+
+
+## Migrate your runtime data
+
+Runtime data means all kinds of data, which is created by your App at runtime. Usually these are user uploads or uploads from a CMS or some-such. When working with a Professional App or a clean Git workflow, the runtime data and the code should be separated.
+
 
 ## Migrate your databases
 
@@ -61,9 +55,9 @@ If your App is using a MySQL database, you will need to migrate the database dat
 
 Simple `sendmail` won't work, see our [quirks article](/quirks#Mailing) on how to send mails, either via SMTP or 3rd party provider.
 
-## TLS/SSL (optional)
+## HTTPS (optional)
 
-All Apps on fortrabbit can be accessed using a free HTTPS URL (`https://{{app-name}}.frb.io`). If you want to use a custom domain with a custom certificate we offer the [TLS Component](tls).
+All fortrabbit Apps can be accessed using a free HTTPS App URL (`https://{{app-name}}.frb.io`). Most Apps also offer free [HTTPS](/https) by Let's Encrypt for [custom domains](/domains).
 
 ## Final switch: DNS
 

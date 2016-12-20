@@ -2,25 +2,22 @@
 
 template:         article
 naviTitle:        Redis Cloud
-reviewed:         2016-03-10
+reviewed:         2016-12-20
 title:            Using Redis Cloud with fortrabbit
-
 group:            Databases
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://redislabs.com/redis-cloud?utm_source=fortrabbit
 websiteLinkText:  redislabs.com/redis-cloud
 dataCenters:      US, EU
 image:            redis-cloud-logo.png
 
-tags:
-     - advanced
-
 ---
 
 ## About Redis
 
-Redis is an open-source in-memory key-value storage software. Redis is newer and sexier than [Memcache](memcache).
+Redis is an open-source in-memory key-value storage software. Redis is newer and sexier than [Memcache](memcache-pro).
 
 ## About Redis Cloud
 
@@ -56,7 +53,7 @@ In the next step you can name your resource (aka Redis server). Our recommended 
 
 When your subscription becomes available (you can see the status in the Redis Labs control panel) you will get an "Endpoint", which consists of a hostname and a port. For example: `pub-redis-12345.us-east-1-3.7.ec2.redislabs.com:12345`. The first part `pub-redis...redislabs.com` is the hostname and the last part `12345` is the port.
 
-We recommend to stash those information in your App's [secrets](app-secrets). Go to the fortrabbit Dasboard > Your App > Settings > App Secrets and add:
+We recommend to stash those information in your App's [secrets](secrets). Go to the fortrabbit Dasboard > Your App > Settings > App Secrets and add:
 
 ```plain
 # the hostname and port you got

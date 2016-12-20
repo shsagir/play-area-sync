@@ -2,11 +2,11 @@
 
 template:         article
 naviTitle:        mLab
-reviewed:         2016-03-10
+reviewed:         2016-12-20
 title:            Using mLab with fortrabbit
-
 group:            Databases
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://mlab.com?utm_source=fortrabbit
 websiteLinkText:  mlab.com
@@ -14,17 +14,11 @@ category:         databases
 dataCenters:      US, EU
 image:            mlab-mark.png
 
-tags:
-     - advanced
-
 keywords:
      - advanced
      - mongodb
      - DBaaS
      - ORM
-
-seeAlsoLinks:
-    - about-databases
 
 ---
 
@@ -72,7 +66,7 @@ If you are not still there, go to the just created database detail view. Here yo
 
 What you need to take from this are two things: Your **hostname**, which would be `ds123456.mlab.com` in this case and your **port**, which would be `23456` in this case.
 
-We recommend to stash those information and the user credentials from before in your App's [secrets](app-secrets). Go to the fortrabbit Dasboard > Your App > Settings > App Secrets and add:
+We recommend to stash those information and the user credentials from before in your App's [secrets](secrets). Go to the fortrabbit Dasboard > Your App > Settings > App Secrets and add:
 
 ```plain
 # the hostname and port you got

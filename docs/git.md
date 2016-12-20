@@ -1,11 +1,12 @@
 ---
 
 template:      article
-reviewed:      2016-07-19
-naviTitle:     Get started with Git
-title:         Get started with Git on fortrabbit
+reviewed:      2016-12-20
+naviTitle:     Getting started with Git
+title:         Getting started with Git on fortrabbit
 lead:          This is a quick intro to Git, how to set it up and how to use it on fortrabbit.
-group:         getting_started
+group:         deployment
+stack:         all
 
 keywords:
     - ssh key
@@ -17,20 +18,6 @@ keywords:
     - Cygwin
     - Windows
     - Git Bash
-
-
-seeAlsoLinks:
-    - ssh-keys
-    - git-deployment
-    - dashboard
-    - terminology
-    - github
-    - bitbucket
-    - app
-
-
-tags:
-    - beginner
 
 ---
 
@@ -83,7 +70,7 @@ Once you have everything setup and working you can have a look at how to use Git
 
 ### Authentication
 
-You can either authenticate with your Dashboard password or with your [public SSH keys](/ssh-keys). The code examples in these help pages will show you examples that you can copy/paste. Please see our [authentication Article](/code-access) to learn about those methods. 
+You can either authenticate with your Dashboard password or with your [public SSH keys](/ssh-keys). The code examples in these help pages will show you examples that you can copy/paste. Please see our [authentication Article](/access-methods) to learn about those methods. 
 
 
 ### Using the remote Git repo as a version control system

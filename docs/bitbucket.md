@@ -1,11 +1,11 @@
 ---
 
 template:       article
-reviewed:       2016-03-10
+reviewed:       2016-12-20
 naviTitle:      Bitbucket
 title:          Combine fortrabbit with Bitbucket
 lead:           Learn how to integrate the second most popular Git-as-a-service provider with your fortrabbit workflow.
-
+stack:          all
 group:          Code_collaboration
 section:        Expanding_fortrabbit
 
@@ -15,16 +15,6 @@ websiteLinkText:  bitbucket.org
 category:         Code collaboration
 dataCenters:      n/a
 image:            bitbucket-mark.svg
-
-
-seeAlsoLinks:
-    - about-code-collaboration
-    - git-deployment
-    - git-submodules
-    - github
-
-tags:
-    - advanced
 
 keywords:
     - addon

@@ -1,12 +1,14 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-12-20
 title:         Meaning of life
 lead:          The universe, and everything.
 naviTitle:     Life
 noToc:         1
-group:         Kitchen_sink
+group:         platform
+stack:         all
+hideExamples:  yes
 
 keywords:
     - 42
@@ -14,12 +16,6 @@ keywords:
     - Hitchhiker
     - Galaxy
     - Guide
-
-tags:
-    - advanced
-
-externalLinks:
-    - http://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy
 
 ---
 

@@ -1,11 +1,12 @@
 ---
 
 template:    article
-reviewed:    2016-08-04
+reviewed:    2016-12-20
 title:       Using secure App secrets
 naviTitle:   App secrets
 lead:        App secrets provide a secure storage and access method for all the credentials your App needs to run.
 group:       deployment
+stack:       all
 
 keywords:
     - Secrets
@@ -13,27 +14,21 @@ keywords:
     - ENV vars
     - Environment variables
 
-seeAlsoLinks:
-   - env-vars
-
-tags:
-  - php
-  - beginner
-
 ---
 
 ## Problem
 
-Your App needs confidential credentials to connect to other services (user-names, passwords, API keys or alike). Those can be on fortrabbit like the MySQL database access, or externally like an API key for a cloud storage.
-
-We advise to [not store secrets within your code base](//blog.fortrabbit.com/how-to-keep-a-secret#not-in-git), since it's controlled by Git - so version controlled. You [should not store them unencrypted in ENV vars](//blog.fortrabbit.com/how-to-keep-a-secret#not-in-an-env-var-either-) either.
-
-In addition: your App will run in at least two environments: locally and on fortrabbit. Any solution must address the problems resulting from multiple runtime environments.
+Your App needs confidential access details to connect to other services (user-names, passwords, API keys or alike). Those can be on fortrabbit like the MySQL database access, or externally like an API key for a queue or something. You are as paraniod [as we are](//blog.fortrabbit.com/how-to-keep-a-secret), regarding storing those details in [ENV vars](/env-vars).
 
 ## Solution
 
 Use fortrabbits App secrets to store your credentials safely. App secrets are stored in a JSON file called `secrets.json` which is only accessible by you and your App. The location of this JSON file is stored in a predefined environment variable called `APP_SECRETS`.
 
+## App secrets vs ENV vars
+
+App secrets are closely related to ENV vars insofar that they are both available to your App at runtime. The big difference between them is that App secrets are stored highly secured and they are not automatically dumped out by debug tools - such as `phpinfo()` or your favorite debug toolbar.
+
+Since App secrets are a rather unique concept, they are completely optional to use. Per default, new Apps make all App secrets available as [dynamic ENV vars](env-vars#toc-dynamic-env-vars). If you prefer to use only App secrets, then you can disable this behavior.
 
 ## App secrets in your App
 
@@ -64,12 +59,12 @@ $secrets == [
 ];
 ```
 
-See examples to use the App secrets to connect to MySQL for: [Laravel](install-laravel#toc-mysql), [Symfony](install-symfony#toc-mysql), [WordPress](install-wordpress#toc-mysql), [Craft CMS](install-craft-2#toc-mysql), [Drupal](install-drupal-8#toc-mysql).
+See examples to use the App secrets to connect to MySQL for: [Laravel](install-laravel-pro#toc-mysql), [Symfony](install-symfony-pro#toc-mysql), [WordPress](install-wordpress-pro#toc-mysql), [Craft CMS](install-craft-pro#toc-mysql), [Drupal](install-drupal-pro#toc-mysql).
 
 
 ## App secrets from local
 
-Read App secrets from your local machine by using an [SSH remote exec](/remote-ssh-execution) command in your terminal:
+Read App secrets from your local machine by using an [SSH remote exec](/remote-ssh-execution-pro) command in your terminal:
 
 ```bash
 # show all App secrets
@@ -115,12 +110,6 @@ You can add or remove custom App secrets in the [Dashboard](dashboard). You'll d
 
 </div>
 
-
-## App secrets vs ENV vars
-
-App secrets are closely related to ENV vars insofar that they are both available to your App at runtime. The big difference between them is that App secrets are stored highly secured and they are not automatically dumped out by debug tools - such as `phpinfo()` or your favorite debug toolbar.
-
-To achieve a level of security approaching the App secrets with ENV vars you can encrypt them, as described in [the ENV var article](env-vars#toc-env-vars-vs-security).
 
 ## App secrets vs local environment
 

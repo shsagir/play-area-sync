@@ -1,11 +1,12 @@
 ---
 
 template:      video
-reviewed:      2015-11-10
+reviewed:      2016-12-20
 naviTitle:     Deployment video
 title:         Video: Deployment - behind the scenes
 videoid:       5k3rCnCYjrA
 group:         Videos
+dontList:      true
 
 keywords:
     - hosting architecture
@@ -15,12 +16,6 @@ keywords:
     - shell
     - bash
 
-seeAlsoLinks:
-    - git-deployment
-    - dashboard
-    - app
-
-
 ---
 
-See what happens in the background when you `git push` to deploy. This video showcases aspects of the [New Apps](new-apps) architecture.
+See what happens in the background when you `git push` to deploy.

@@ -2,11 +2,11 @@
 
 template:         article
 naviTitle:        SendGrid
-reviewed:         2016-03-10
+reviewed:         2016-12-20
 title:            Using SendGrid with fortrabbit
-
 group:            Transactional_e-mail
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://sendgrid.com?utm_source=fortrabbit
 websiteLinkText:  sendgrid.com
@@ -16,18 +16,12 @@ image:            sendgrid-mark.svg
 keywords:
     - "transactional mail"
 
-tags:
-    - advanced
-
-seeAlsoLinks:
-    - about-transactional-e-mail
-
 ---
 
 
 ## About SendGrid
 
-SendGrid offers an e-mail delivery service that assists businesses with transactional e-mail management — see our [category article](/about-transactional-e-mail).
+SendGrid offers an e-mail delivery service that assists businesses with transactional e-mail management.
 
 
 ## Pricing
@@ -48,7 +42,6 @@ Choose your desired plan to initiate the sign up. You'll first just need to choo
 In order to get your mails through the SPAM filter of your users, you'll need to authorize the ownership of the domain you are using — think DNS modifications. fortrabbit is not envolved here. You do this with your domain or DNS provider of choice. This is done with DKIM ([SendGrid docs](https://sendgrid.com/docs/Glossary/dkim.html)) and SPF ([SendGrid docs](https://sendgrid.com/docs/Glossary/spf.html)).
 
 
-<!-- TODO: get more detailed here  -->
 
 ## Using SendGrid with fortrabbit
 

@@ -2,24 +2,11 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2016-05-17
+reviewed:      2016-12-20
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions there are some — aren't there always? Heads up so it doesn't cost you hours of debugging in the wrong direction."
-
-otherVersionLinks:
-    - quirks-old-app
-
-group:       Kitchen_sink
-
-seeAlsoLinks:
-    - app
-    - dashboard
-    - app
-    - encoding
-    - http-auth
-
-tags:
-    - beginner
+stack:         all
+group:         platform
 
 ---
 
@@ -48,25 +35,6 @@ In the following we focus on an SMTP implementation. There are countless possibi
 There are special solutions for [WordPress](install-wordpress#toc-smtp), [Laravel](install-laravel#toc-smtp) & [Symfony](install-symfony#toc-smtp).
 
 
-## Logs
-
-Currently only [live logs](logging) are available.
-
-
-## Ephemeral storage
-
-Each App has a [limited amount](https://www.fortrabbit.com/specs#limits) of local non-persistent, floating — so called ephemeral storage. It's a bit of a unique concept and might look very strange at first, but it's actually a corner stone of cloud enabled applications. From the [12-factor Apps](http://12factor.net/) manifesto:
-
-> The filesystem … can be used as a brief, single-transaction cache. For example, downloading a large file, operating on it, and storing the results of the operation in the database. The twelve-factor app never assumes that anything cached … on disk will be available on a future request or job … a restart (triggered by code deploy, config change, or the execution environment relocating the process to a different physical location) will usually wipe out all local (e.g., memory and filesystem) state.
-
-
-So you better not store any runtime data, like user uploads there. Here is what might can happen: You install [WordPress](install-wordpress), you upload images via the wp-admin. Everything works fine, but then you deploy code again and everything you have uploaded is gone. 
-
-During each [deployment](/git-deployment) the whole local storage gets whipped and replaced. See also our [deployment video](/deployment-architecture-video) to learn about what happens in the background.
-
-But we have a good solution. With the [Object Storage Component](/object-storage) you can offshore your static assets. It's similar to Amazon S3. It's a very scalable solution that also brings other benefits and speed improvements. You can easily integrate it with a plugin or Composer package and some config, see your framework/CMS guides here as well.
-
-
 ## PHP
 
 ### PATH_INFO
@@ -93,11 +61,9 @@ RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
 ### pecl_http
 
-The PHP extension `HTTP` from PECL is enabled by default. The classes `HttpRequest`, `HttpR`sponse` and `HttpMessage` are very handy replacement for curl and alike. The downside: it breaks CakePHP in some cases. You can disable the extension in your Settings -> Extensions tab of your App.
+The PHP extension `HTTP` from PECL is enabled by default. The classes `HttpRequest`, `HttpRsponse` and `HttpMessage` are very handy replacement for curl and alike. The downside: it breaks CakePHP in some cases. You can disable the extension in your Settings -> Extensions tab of your App.
 
-### Locales
-
-Available locales are:
+### Available locales
 
 <pre><code class="plain" id="locales"></code></pre>
 
@@ -124,7 +90,7 @@ To keep deployment fast for everyone the size of the release package is limited 
 
 ## MySQL with persistent connections during upgrade
 
-When [scaling](/scaling#toc-mysql) (up or down) your MySQL, your App's database will be migrated to a new node. Therefore the CNAME target of your Apps MySQL hostname will be changed. The hostname's time to live (TTL) is 60 seconds, which reflects the maximum expected downtime during upgrade.
+When scaling (up or down) your MySQL, your App's database will be migrated to a new node. Therefore the CNAME target of your Apps MySQL hostname will be changed. The hostname's time to live (TTL) is 60 seconds, which reflects the maximum expected downtime during upgrade.
 
 With persistent connections this can take longer (possibly up to half an hour). Thefore we recommend to disable persistent connections during upgrades and downgrades.
 

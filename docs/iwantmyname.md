@@ -2,20 +2,17 @@
 
 template:         article
 naviTitle:        iwantmyname
-reviewed:         2016-03-10
+reviewed:         2016-12-20
 title:            Using iwantmyname with fortrabbit
-
 group:            Domains_and_DNS
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://iwantmyname.com/
 websiteLinkText:  iwantmyname.com
 category:         queues
 dataCenters:      n/a
 image:            iwantmyname-logo.png
-
-seeAlsoLinks:
-     - about-domains
 
 keywords:
      - domain
@@ -30,7 +27,7 @@ keywords:
 ---
 
 
-With fortrabbit you can configure how your [App handles domain requests](/app#toc-domains). fortrabbit does not offer domain ordering — see our [comprehensive domain article](/about-domains).
+With fortrabbit you can configure how your [App handles domain requests](/app#toc-domains). fortrabbit does not offer domain ordering — see our [comprehensive domain article](/domains).
 
 
 ## About iwantmyname

@@ -1,23 +1,19 @@
 ---
 
 template:      video
-reviewed:      2015-12-10
-naviTitle:     App architecture
+reviewed:      2016-12-20
+naviTitle:     App architecture video
 title:         Video: App architecture
 videoid:       SKMaiJhoPJw
-
 group:         Videos
+dontList:      true
+stack:         pro
 
 keywords:
     - hosting pricing
     - Git
     - PaaS
     - Platform
-
-seeAlsoLinks:
-    - collaboration
-    - dashboard
-    - app
 
 ---
 

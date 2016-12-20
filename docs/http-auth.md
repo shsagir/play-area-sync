@@ -1,23 +1,16 @@
 ---
 
 template:    article
-reviewed:    2016-01-22
+reviewed:    2016-12-20
 title:       Using Basic access authentication aka HTTP Auth on fortrabbit
 naviTitle:   HTTP Auth
 lead:        How to set up your App in a way that the browser prompts for username/password.
-group:       Kitchen_sink
+group:       platform
+stack:       old
 
 keywords:
     - HTTP Auth
     - password for website
-
-externalLinks:
-    - http://en.wikipedia.org/wiki/Basic_access_authentication
-
-seeAlsoLinks:
-    - quirks
-
-tags:
     - php
 
 ---
@@ -56,4 +49,3 @@ list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(
     base64_decode(substr($_SERVER['REMOTE_USER'], 6))
 );
 ```
-
