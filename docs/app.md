@@ -4,28 +4,9 @@ template:      article
 reviewed:      2016-12-20
 naviTitle:     About Apps
 title:         What is an App?
-<<<<<<< HEAD
-lead:          Forget servers. Think apps instead. Learn the basic fortrabbit concepts.
-group:         getting_started
-
-seeAlsoLinks:
-    - dashboard
-    - migrating
-    - scaling
-    - app-design
-    - old-apps
-    - new-apps
-    - git-deployment
-    - terminology
-
-tags: 
-    - beginner
-    - platform
-=======
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
 group:         platform
 stack:         all
->>>>>>> feature-hobby-stack
 
 ---
 
