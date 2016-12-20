@@ -44,7 +44,7 @@ $ git push -u origin master
 after the deployment is done you can worship your work in the browser:
 [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
-Also see our specdifc install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
+Also see our specific install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
 
 
 ### Adding fortrabbit as a remote
