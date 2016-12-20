@@ -16,6 +16,7 @@ We claim that the fortrabbit hosting platform is different to classical hosting.
 
 * [How fortrabbit is different than VPS hosting](https://www.fortrabbit.com/why-not-vps)
 * [How IaaS is being used](https://www.fortrabbit.com/why-not-aws)
+* [See the fortrabbit terminology](/terminology)
 
 
 
