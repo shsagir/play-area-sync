@@ -1,22 +1,14 @@
 ---
 
 template:     article
-reviewed:     2016-01-10
+reviewed:     2016-09-15
 title:        Integrating CI with fortrabbit
 naviTitle:    Continuous Integration
 lead:         Automated testing, builds, special deploy scripts and other actions on fortrabbit.
-group:        Kitchen_sink
+group:        platform
+stack:        all
+oldLink:      continuous-integration-old
 
-otherVersionLinks:
-    - continuous-integration-old-app
-
-seeAlsoLinks:
-    - multi-staging
-
-externalLinks:
-    - http://en.wikipedia.org/wiki/Continuous_integration
-    - http://born2code.net/blog/2013/08/26/Deploying-from-wercker-to-fortrabbit/
-    - http://blog.fortrabbit.com/integrating-codeship-with-fortrabbit/
 
 keywords:
     - ci
@@ -47,7 +39,7 @@ Continuous Integration to the rescue — first making things even more complicat
     '--------- repeat ---------'
 ```
 
-You can **code** on your local machine and **deploy** to fortrabbit. For the **testing** part you must either: run tests locally before each `git push` or integrate an external CI provider in your deployment and automate the whole process. 
+You can **code** on your local machine and **deploy** to fortrabbit. For the **testing** part you must either: run tests locally before each `git push` or integrate an external CI provider in your deployment and automate the whole process.
 
 
 
@@ -56,12 +48,12 @@ This article helps you to integrate an external CI provider in your workflow.
 
 ## Usage
 
-```nohighlight 
- #####                      
+```nohighlight
+ #####
 # + + #     +———————————+  +—————————+  +————+  +————————————+
 # ––– #———> | Git local |->| GitHub… |->| CI |->| fortrabbit |
  #####      +———————————+  +—————————+  +————+  +————————————+
-  you                       
+  you
 ```
 
 Most, if not all, of the CI providers assume that you host your code on a public available version control (Git) repository. This does not mean your repository publicly accessible without authentication, just that it's not on your local host. You can use [GitHub](https://github.com) or [Bitbucket](http://bitbucket.org/) and any other VCS provider to host a (private) public repositories.
@@ -76,40 +68,43 @@ You need to setup a hook, which notifies your CI provider whenever you push some
 3. The CI providers pulls the changeset and runs your tests
 4. If the tests succeed, the CI provider will deploy your App to fortrabbit
 
-### CI & multi-staging
+### CI & multi staging
 
-The general concepts of our [multi staging](articles/multi-staging) apply, just the `local branch` -> `remote branch` mappings are different.
+The general concepts of our [multi staging](multi-staging-pro) apply, just the `local branch` -> `remote branch` mappings are different.
 
 For example, if you have three environments: `testing`, `staging` and `production` and if you use Bitbucket as your repository, you would create three local branches: `test`, `stage` and `prod`. All three local branches would map directly to branches of the same name on Bitbucket. On Bitbucket, you would now set up your deployment hook, which tells your CI provider.
 
 ```bash
-git clone git@bitbucket.org:your-username/your-repo-name.git
-cd your-repo-name
+# 1. clone the repo from BitBucket (or Github) example
+$ git clone git@bitbucket.org:your-username/your-repo-name.git
 
-# rename master branch to test branch, if you haven't already
-git branch -m master test
+# 2. Go to into that folder
+$ cd your-repo-name
 
-# create stage and prod branch, if you haven't already
-git branch stage
-git branch prod
+# 3. rename master branch to test branch, if you haven't already
+$ git branch -m master test
 
-# do some stuff in the test branch
+# 4. create stage and prod branch, if you haven't already
+$ git branch stage
+$ git branch prod
+
+# 5. do some stuff in the test branch
 git checkout test
 # .. code
-git commit -am 'My changes'
 
-# on first push to your bitbucket remote, make sure use the "-u" switch
-git push -u origin test
+# 6. Commit changes
+$ git commit -am 'My changes'
 
-# merge test into stage
-git checkout stage
-git merge test
-git push -u origin stage
+# 7. on first push to your bitbucket remote, make sure use the "-u" switch
+$ git push -u origin test
 
-# merge stage into prod
-git merge stage
-git checkout prod
-git push -u origin prod
+# 8. Merge test into stage
+$ git checkout stage
+$ git merge test
+$ git push -u origin stage
+
+# 9. merge stage into prod
+$ git merge stage
+$ git checkout prod
+$ git push -u origin prod
 ```
-
-

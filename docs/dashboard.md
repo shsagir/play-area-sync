@@ -1,11 +1,12 @@
 ---
 
 template:      article
-reviewed:      2016-07-21
+reviewed:      2016-09-20
 naviTitle:     The Dashboard
 title:         The fortrabbit Dashboard
 lead:          On fortrabbit you won't find any old-school server admin control panel like CPanel. The fortrabbit dashboard is designed to give you fine-grained control:
-group:         getting_started
+group:         platform
+stack:         all
 
 
 keywords:
@@ -17,14 +18,6 @@ keywords:
     - ISPmanager
     - Ajenti
     - master control panel
-
-seeAlsoLinks:
-    - collaboration
-    - app-design
-    - app
-    - terminology
-
-tags:
     - beginner
 
 ---

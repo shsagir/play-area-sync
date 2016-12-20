@@ -1,20 +1,15 @@
 ---
 
 template:      article
-reviewed:      2016-05-31
+reviewed:      2016-10-10
 title:         Advanced Git deployment workflows with fortrabbit.yml
 naviTitle:     Deployment file
 lead:          Enhance your deployment process with the fortrabbit.yml deployment file.
 group:         deployment
+stack:         pro
+oldLink:       deployment-file-v1-old
 
-otherVersionLinks:
-    - deployment-file-v1-old-app
-
-seeAlsoLinks:
-    - git
-    - composer
-
-tags:
+keywords:
    - advanced
    - git
 
@@ -36,16 +31,7 @@ Create a file named `fortrabbit.yml` in the App's root folder of your project an
 version: 2
 
 # called before Composer runs
-pre:
-
-    # relative to ~/htdocs
-    path: my-script.php
-
-    # optional parameters
-    args:
-        - foo
-        - bar
-        - baz
+pre: my-script.php arg1 arg2 arg3
 
 # optional Composer settings
 composer:
@@ -63,16 +49,7 @@ composer:
     no-scripts: false
 
 # called after Composer runs
-post:
-
-    # relative to ~/htdocs
-    path: sub/folder/my-script.php
-
-    # optional parameters
-    args:
-        - foo
-        - bar
-        - baz
+post: my-script.php arg1 arg2 arg3
 
 # list of sustained folders in ~/htdocs. If not given, then it defaults to the "vendor" folder
 sustained:
@@ -87,17 +64,16 @@ A fortrabbit.yml which calls the PHP script `post.php` on top-level of the repo 
 
 ```yml
 version: 2
-post:
-    path: post.php
+post: post.php
 
 ```
 
 ## Developing pre or post calls
 
-When developing you Worker pre or post calls it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution).
+When developing you Worker pre or post calls it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution-pro).
 
 ## Multi staging use case
 
-To allow using a single git repo with [multiple remotes](multi-staging) you can use an App name based deployment file name.
+To allow using a single git repo with [multiple remotes](multi-staging-pro) you can use an App name based deployment file name.
 
 Assuming you are using two Apps, `your-app-prod` and `your-app-stage`, you can setup two deployment files with named: `fortrabbit.your-app-prod.yml` and `fortrabbit.your-app-stage.yml`. This way, you can have both deployment files in a single repo but which one is to be used is determined by the App you deploy to.

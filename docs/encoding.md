@@ -1,29 +1,19 @@
 ---
 
 template:   article
-reviewed:   2016-01-21
+reviewed:   2016-12-09
 title:      Encoding/charset other than UTF-8
 naviTitle:  Encodings
 lead:       UTF-8 is assumed as the default encoding. You can set a different encoding manually — if you really want. This is on how to change the character encodings with fortrabbit.
-group:      Kitchen_sink
+group:      platform
+stack:      all
 
 keywords:
     - iso-8895-1
     - iso-8895-15
     - UTF8
 
-tags:
-    - php
-
-seeAlsoLinks:
-    - quirks
-
-externalLinks:
-    - http://www.php.net/manual/en/function.ini-set.php
-    - http://www.php.net/manual/en/function.mysql-set-charset.php
-
 ---
-
 
 
 ### PHP

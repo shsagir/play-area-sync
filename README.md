@@ -1,11 +1,9 @@
 # fortrabbit help pages
 
-
-Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, with a little frontmatter meta-data on top. We include this repo as a Git subtree and publish it on: http://help.fortrabbit.com
+Welcome to the source of the official fortrabbit documentation. These files here are written in Markdown, with a little frontmatter meta-data on top. We include this repo as a Git subtree and publish it on: https://help.fortrabbit.com
 
 This repo lives under (clone URL):
 
-* https://github.com/fortrabbit/help.git
 * git@github.com:fortrabbit/help.git
 
 
@@ -22,44 +20,32 @@ The folder _WIP contains — as you might can guess — work in progress. All in
 
 
 
+### File name conventions
+
+* use dashes instead of spaces or lowdashes for filen ames
+* use the short versions: `-uni`, `-pro`, `-old` on the end for different stacks
+
+
+
 ### Front Matter syntax
 
 Each markdown file requires a yaml block at the top. See here which attributes are available, how and when to use them.
 
 ```yaml
-# which template to use - "article", if in doubt
+# Rendering
+
+# which template to use - "article", if in doubt — REQUIRED
 template: article
 
-# title shown in navigation -> short but descriptive
+
+
+# Headline & display
+
+# title shown in navigation -> short but descriptive — REQUIRED
 naviTitle: About Apps
 
 # title shown in article header on display
 title: What is an App anyways?
-
-# When the article was last checked? required, must be checked every year.
-# Don't forget to edit this each time you have reviewed a page
-# pages older than one year will be marked outdated
-reviewed: 2016-02-22
-
-# under which headline the content will be shown on home
-# (use underscore instead of space)
-group: Extending_fortrabbit
-
-
-# don't show in list on homepage
-dontList: true
-
-# do not include in search, don't show in search results
-dontIndex: true
-
-# The actual link you will send people to
-websiteLink: https://www.abcdefg.com?utm_source=fortrabbit
-
-# A human readable version of that same link, exclude clutter!
-websiteLinkText: abcdefg.com
-
-# set for latency relevant 3rd party services, otherwise use nor acceptable
-dataCenters: n/a
 
 # lead text for article detail view -> what to expect from content
 lead: Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -70,35 +56,76 @@ excerpt: Get to know about the basic concepts.
 # disable TOC generation for this article
 noToc: true
 
-# logo shown for 3rd party service or open source
-image: myfunkyimage.png
 
 
-# type, for CMS/framework
-type:  CMS
+# Stack meta
 
-# Other versions of this article (=filename without .md)
-otherVersionLinks:
-    - install-laravel-4
-    - install-laravel-6
-    - install-laravel-7
+# where to show this: uni, pro old, all — REQUIRED when required
+stack:     univ
 
-# names (=filename without .md) of linked articles related
-seeAlsoLinks:
-    - app
-    - composer
+# link to the Old App version
+oldLink:   mysql-old
+
+# link to the Universal App verison
+uniLink:   mysql-uni
+
+# link to the professional version
+proLink:   mysql-pro
+
+
+
+# General meta data
+
+# When the article was last checked?
+# Don't forget to edit this each time you have reviewed a page
+# pages older than one year will be marked outdated
+reviewed: 2016-10-22
+
+# set a warning that this article is outdated, no matter the date
+deprecated: 1
+
+
+# Under which headline the content will be shown on home
+# (use underscore instead of space)
+group: Extending_fortrabbit
+
+# don't show in list on homepage
+dontList: true
+
+# do not include in search, don't show in search results
+dontIndex: true
 
 # additional keywords for document search to help users find this article
 keywords:
     - foo
     - bar
 
-# tag article to filter
-# (currently not in use)
-tags:
-    - beginner
-    - cms
+
+# Extended meta data
+
+# The actual link you will send people to (for external services)
+websiteLink: https://www.wordpress.org?utm_source=fortrabbit
+
+# A human readable version of that same link, exclude clutter!
+websiteLinkText: www.wordpress.org
+
+# set for latency relevant 3rd party services, otherwise use nor acceptable
+dataCenters: n/a
+
+# logo shown for 3rd party service or open source
+image: myfunkyimage.png
+
+# type, for CMS/framework
+type:  CMS
+
 ```
+
+
+## Horizontal rulers
+
+* `---` don't use this, otherwise the whole help page won't be rendered
+* `- - -` use this
+
 
 ## Dynamic help
 
@@ -111,7 +138,6 @@ Your app: {{app-name}}
 ```
 
 It will dynamically show the correct code examples and Dashboard links.
-
 
 
 ## Dashboard links
@@ -131,8 +157,7 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 
 ## Code examples
 
-* try to keep code examples together in one block, don't mix paragraphs and code blocks
-*
+* try to keep code examples together in one block, avoid mixing paragraphs and code blocks
 
 ### Bash
 
@@ -141,21 +166,17 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 * output should be a comment
 * `$` to start a command
 
-
 ### PHP
 
 * when there is code between use: `other code …`
 
 
-## Install guide concept
+## Install guide skeleton
 
+* file name: `install-wordpress-uni`
 * Dashboard settings first
 * Mini guide in the middle > time to WOW
-* Tuning after that
-
-
-
-
+* Migration/Tuning after that
 
 
 ## Writing help & blog articles
@@ -176,7 +197,17 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 
 ## Maintainability
 
-Find the right balance between being general and being precise (aka Captain Obvious). Very detailed step-by-step articles are easy to follow but get outdated very quickly.
+Find the right balance between being general and being precise (aka Captain Obvious). Very detailed step-by-step articles are easy to follow but get outdated very quickly. Don't "bury" numbers (like prices and limits) in articles. All those numbers must be managed in the "pricing" and the "specs" page.
+
+## Link checking
+
+This example shows how to use the linkcheck command line tool (not included here) for macOS:
+
+```
+$ mv linkcheck.mac /usr/local/bin
+$ chmod +x linkcheck.mac
+$ linkcheck.mac --url http://help.fortrabbit.dev
+```
 
 
 ## fortrabbit owned words and common casing
@@ -189,6 +220,7 @@ Find the right balance between being general and being precise (aka Captain Obvi
 * **App** — ~~app~~, ~~website~~, ~~application~~
 * **Billing Contact** ~~bc~~
 * **Company** — ~~company~~
+* **Cron Job** — ~~cron~~, ~~cron job~~
 * **Dashboard** — ~~control panel~~, ~~console~~
 * **Developer** ~~developer~~
 * **fortrabbit scheduler** — ~~scheduler~~
@@ -200,12 +232,29 @@ Find the right balance between being general and being precise (aka Captain Obvi
 * **Owner** ~~owner~~
 * **root path** ~~document root~~, ~~doc root~~
 * **terminal** ~~Terminal~~, ~~shell~~, ~~bash~~
+* **Tinkering level** ~~Development plans~~ (single Node App plans on Professional stack)
 * **URL** — ~~Url~~, ~~url~~
 * **User** — ~~member~~, ~~account~~
 * **Workers** — ~~Worker~~
+* **Professional Stack** — ~~Pro Stack~~, ~~Professional stack~~
+* **Universal Stack** — ~~Hobby stack~~, ~~hobby stack~~
 * **{{ interchangble-value }}** < something the users will need to modify
 * **{{ your-app }}** ~~{{ my-app }}~~, ~~{{ app-name }}~~
 
+
+### Collaboration words
+
+* **Collaboration** = Company collaboration + App collaboration
+* **Company collaboration** with Company plans, Admins, Owners & App Collaborators
+* **Company plans** — the plans one can book
+* **App collaboration** with App Collaborators
+* **App Collaborator** = Access to Apps
+* **Team members** = Company members + App Collaborators
+* **Company member** — ~~Company collaborator~~
+* **Admin** = the Role
+* **Owner** = the Role
+* **App Collaborator**
+* **Role** — ~~permission~~, ~~acccess role~~
 
 ## Times & dates
 
@@ -291,3 +340,5 @@ There is no fortrabbit logo as graphic file. To create the brand logo just type:
 ### Logos and brand assets
 
 Place logos for external services and projects in the media folder. They ideally should be svg or either PNG with transparent background. Favor an "image mark" over a "word image mark".
+
+

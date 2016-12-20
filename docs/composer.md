@@ -1,23 +1,17 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-12-08
 title:         Leveraging Composer
 naviTitle:     Composer
 lead:          Learn how to integrate Composer into your development workflow with fortrabbit.
-group:         Kitchen_sink
-
-otherVersionLinks:
-   - composer-old-app
-
-seeAlsoLinks:
-   - git-deployment
-
-tags:
-   - git
+group:         deployment
+stack:         all
+oldLink:       composer-old
 
 keywords:
   - composerphp
+  - git
   - getcomposer
   - Dependency Manager
 
@@ -40,3 +34,12 @@ You can fine tune your deployment behavior and aspects of Composer in the deploy
 ### Use Private repositories in Composer
 
 You need to add the private repositories into your `composer.json` file? Read on [here](private-composer-repos).
+
+### Composer from SSH
+
+Universal Apps only: You can execute Composer from [SSH](ssh-uni). Composer is pre-installed (latest stable) per default and all you need to do is execute it:
+
+```bash
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
+$ composer install
+```

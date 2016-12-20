@@ -1,25 +1,26 @@
 ---
 
 template:         article
-reviewed:         2016-02-20
+reviewed:         2016-09-15
 title:            Integrate New Relic with fortrabbit
 naviTitle:        New Relic
 lead:             Where should I improve the performance of my App? Learn how to combine the popular software analysis tool with fortrabbit.
-
 group:            Profiling
 section:          Extending_fortrabbit
+stack:            all
 
 image:            new-relic-logo.svg
 websiteLink:      https://www.newrelic.com?utm_source=fortrabbit
 websiteLinkText:  newrelic.com
 dataCenters:      n/a
 
-seeAlsoLinks:
-    - blackfire
-
 ---
 
+
+
 ## About New Relic
+
+New Relic is integreated for some fortrabbit Apps. Please see the [specs page](/https://www.fortrabbit.com/specs) for availabilty with plans.
 
 [New Relic](https://www.newrelic.com) is a suite of professional software analysis tools. It offers analytics and deep insights on your Apps' performance and possible bottle necks. New Relic integrates as a PHP extension, which is installed (but not enabled) on all fortrabbit Apps.
 

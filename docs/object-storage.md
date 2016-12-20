@@ -1,12 +1,13 @@
 ---
 
 template:      article
-reviewed:      2016-09-02
+reviewed:      2016-12-09
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
 
 group:         Components
+stack:         pro
 
 keywords:
     - S3
@@ -19,17 +20,13 @@ keywords:
     - IAM
     - Google Cloud
 
-seeAlsoLinks:
-    - ssh-sftp-old-app
-    - scaling
-
 ---
 
 ## Problem
 
 Back in the days you had persistent storage with your local file system on the web server. This allowed you to upload an image - or any other static asset - directly to the server so that it would be served from there linked like so: `uploads/photo.jpg`. With modern cloud 12-factor-app based Infrastructures this is different:
 
-fortrabbit Apps have an [ephemeral file system](/new-apps#toc-asset-storage). This means that all changes to the local file system will be undone with each deploy. So, each time you `git push` a completely new package will be deployed, replacing everything else on the Node.
+fortrabbit Apps have an [ephemeral file system](/app-pro#toc-ephemeral-storage). This means that all changes to the local file system will be undone with each deploy. So, each time you `git push` a completely new package will be deployed, replacing everything else on the Node.
 
 Imagine you have a CMS and you are uploading images. Next time you push some changes, those images will be gone.
 
@@ -86,7 +83,7 @@ The Object Storage is sized in reasonable packages. Traffic is cumulated togethe
 
 ## Object Storage access
 
-To upload files to the Object Storage you have two options: 
+To upload files to the Object Storage you have two options:
 
 1. [Programmatic](#toc-programmatic-upload) — from within the App
 2. [Manual](#toc-manual-upload) — using a client
@@ -94,15 +91,45 @@ To upload files to the Object Storage you have two options:
 Once you have something up, you can view the files via [HTTP in your browser](#toc-http-access).
 
 
-### Obtaining upload credentials
+### Obtaining credentials
 
-The Apps Object Storage credentials consist of: a bucket name, a server (aka: endpoint), a key and a secret. As all credentials those are stored with the [App secrets](/secrets). Issue this in your local terminal to get them:
+The Apps Object Storage access details consist of: a bucket name, a server (aka: endpoint), a key and a secret. As all credentials those are stored with the [App secrets](/secrets). Issue this in your local terminal to get them:
 
 ```bash
 # Read the secrets.json, show access for the App {{app-name}}
-$ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 ```
 
+### Access credentials from code
+
+You have two options:
+
+#### Access credentials using secrets file
+
+```php
+$secrets     = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+$credentials = [
+    'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
+    'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
+    'key'      => $secrets['OBJECT_STORAGE']['KEY'],
+    'region'   => $secrets['OBJECT_STORAGE']['REGION'],
+    'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
+];
+```
+
+#### Access credentials using mapped ENV vars
+
+```php
+$credentials = [
+    'bucket'   => getenv('OBJECT_STORAGE_BUCKET'),
+    'endpoint' => 'https://'. getenv('OBJECT_STORAGE_SERVER'),
+    'key'      => getenv('OBJECT_STORAGE_KEY'),
+    'region'   => getenv('OBJECT_STORAGE_REGION'),
+    'secret'   => getenv('OBJECT_STORAGE_SECRET'),
+];
+```
+
+**Note**: The ["Dynamic ENV vars"](env-vars#toc-dynamic-env-vars) option must be enabled for the App to use ENV vars.
 
 ### Programmatic upload
 
@@ -190,7 +217,7 @@ We recommend to use a secured connection via `HTTPS` but that it is not required
 
 ### Log access
 
-You can use the [logging](/logging) service to tail live logs from the Object Storage.
+You can use the [logging](/logging-pro) service to tail live logs from the Object Storage.
 
 ```bash
 # Only Object Storage access log:
@@ -234,7 +261,7 @@ If you need to change the secret key of your Object Storage: Login to the Dashbo
 
 <div markdown="1" data-user="known">
 
-[Reset the Object Storage for the App **[{{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/access/object-storage/secret)**
+[Reset the Object Storage for the App **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/access/object-storage/secret)
 
 </div>
 

@@ -5,17 +5,14 @@ naviTitle:     Billing video
 title:         Video: Usage based billing
 videoid:       bHGYAwKAJUg
 group:         Videos
-
+dontList:      true
+stack:         pro
 
 keywords:
     - hosting pricing
     - php hosting
     - Git
     - video
-
-seeAlsoLinks:
-    - billing
-    - dashboard
 
 ---
 

@@ -2,11 +2,11 @@
 
 template:         article
 naviTitle:        CloudAMQP
-reviewed:         2016-02-25
+reviewed:         2016-11-08
 title:            Using CloudAMQP with fortrabbit
-
 group:            Queues
 section:          Extending_fortrabbit
+stack:            all
 
 websiteLink:      https://www.cloudamqp.com/
 websiteLinkText:  cloudamqp.com
@@ -15,16 +15,12 @@ dataCenters:      US, EU
 company:          84codes AB
 image:            cloudamqp-mark.png
 
-tags:
-     - advanced
-
 keywords:
      - advanced
 
 ---
 
 
-<!--  TODO: review one more time! -->
 
 ## About queues
 
@@ -58,7 +54,7 @@ Since you can scale later on at any point, we recommend to choose a small Plan, 
 
 ## Connecting
 
-In the instances list of the CloudAMQP console click on the "Details" button of your just created queue. Now open the fortrabbit Dashboard in another tab, navigate to Your App > Settings > App secrets and insert the CloudAMQP credentials as your App [secrets](app-secrets):
+In the instances list of the CloudAMQP console click on the "Details" button of your just created queue. Now open the fortrabbit Dashboard in another tab, navigate to Your App > Settings > App secrets and insert the CloudAMQP credentials as your App [secrets](/secrets):
 
 ```plain
 # The "Server" from the CloudAMQP details
@@ -82,8 +78,6 @@ By default all outgoing calls from your fortrabbit App are blocked for [security
 Login to the fortrabbit Dashboard, navigate to your App > Firewall whitelist and request a custom firewall rule. Write nothing under the optional IP field and insert the port `5672` in the Port field. As descriptions we suggest "CloudAMQP" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new queue!
 
 
-
-<!-- TODO: extend usage with more examples -->
 
 ## Using CloudAMQP
 

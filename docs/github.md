@@ -5,6 +5,7 @@ reviewed:         2016-03-10
 naviTitle:        GitHub
 title:            Combine fortrabbit with GitHub
 lead:             Learn how to integrate the most popular Git-as-a-service provider with your fortrabbit workflow.
+stack:            all
 
 group:            Code_collaboration
 section:          Extending_fortrabbit
@@ -13,16 +14,6 @@ websiteLink:      https://github.com?utm_source=fortrabbit
 websiteLinkText:  github.com
 image:            github-octocat.png
 dataCenters:      n/a
-
-seeAlsoLinks:
-    - about-code-collaboration
-    - git-deployment
-    - git
-    - git-submodules
-    - bitbucket
-
-tags:
-    - advanced
 
 keywords:
     - git-hub

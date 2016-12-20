@@ -1,15 +1,15 @@
 ---
 
 template:      article
-reviewed:      2016-08-31
+reviewed:      2016-12-09
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
+group:         platform
+proGroup:      Components
 
-group:         Components
-
-otherVersionLinks:
-     - mysql-old-app
+stack:         all
+oldLink:       mysql-old
 
 keywords:
      - localhost
@@ -20,105 +20,92 @@ keywords:
      - innodb
      - myisam
      - phpmyadmin
-
-seeAlsoLinks:
-    - ssh-sftp-old-app
-    - scaling
-    - local-development
+     - heidisql
+     - workbench
+     - sequel-pro
+     - sequel
+     - tunnel
+     - nosql
 
 ---
 
-## Booking & scaling
 
-MySQL is implemented as an Component. It's use is optional and it comes in different sizes. You can [scale](scaling#toc-mysql) it up and down any time without downtimes in the Dashboard.
+## Obtain the MySQL password
+
+You can look up the MySQL password in the Dashboard > Your App > Access.
+
+<div markdown="1" data-user="known">
+[Look up the MySQL password for **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}#tab-mysql)
+</div>
 
 
 ## Access MySQL from your App
 
-Usually there is a configuration file which is used from the App to connect to the database. fortrabbit provides access credentials for MySQL via [App secrets](secrets). Here is a general example:
+Usually there is a configuration file which is used from the App to connect to the database. This is what you need to fill in there:
+
+* **Database Name**: `{{app-name}}`
+* **Database Username**: `{{app-name}}`
+* **Database Password**: `{{app-database-password}}` _[< how to recover](#toc-obtain-the-mysql-password)_
+* **Database Host**: `{{app-name}}.mysql.{{region}}.frbit.com` _< not localhost_
+* **Database Port**: `3306` (usually not required)
+
+If possible, we recommend to use [MySQL env vars](env-vars) instead of hard coding them into your configuration files. The automatically available environment variables are:
+
+* `MYSQL_DATABASE`: Database name
+* `MYSQL_USER`: Database username
+* `MYSQL_PASSWORD`: Database password
+* `MYSQL_HOST`: Database host
+* `MYSQL_PORT`: Database port
+
+To give you an example on how to use the environment variables:
 
 ```php
-// read all App secrets from the JSON file, get the location via ENV var
-$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-
-// use the secrets without exposing passwords
-return [
-    'mysql' => [
-        'host'      => $secrets['MYSQL']['HOST'],
-        'database'  => $secrets['MYSQL']['DATABASE'],
-        'username'  => $secrets['MYSQL']['USER'],
-        'password'  => $secrets['MYSQL']['PASSWORD'],
-        'driver'    => 'mysql',
-        'charset'   => 'utf8',
-        'collation' => 'utf8'
-    ]
-];
+$pdo = new \PDO(
+    'mysql:host='. getenv('MYSQL_HOST'). ';dbname='. getenv('MYSQL_DATABASE'),
+    getenv('MYSQL_USER'),
+    getenv('MYSQL_PASSWORD'),
+);
+$pdo->query("SELECT * FROM ...")
 ```
-See our specific examples for: [Laravel](install-laravel-5#toc-mysql), [Symfony](install-symfony-2#toc-mysql), [WordPress](install-wordpress-4#toc-mysql), [Craft CMS](install-craft-2#toc-mysql).
 
 
-## Access MySQL from local
-
-Sometimes you want to run a certain query on your live database. Or you want to dump your database. So you need to access the MySQL database on fortrabbit remotely. For security reasons you can not connect to the MySQL database from "outside" directly. But you can open a [SSH tunnel](http://en.wikipedia.org/wiki/Tunneling_protocol) and then connect to the MySQL database thru this tunnel.
-
-#### MySQL access
-
-**MySQL host**:  
-{{app-name}}.mysql.{{region}}.frbit.com
-
-**MySQL database**:  
-{{app-name}}
-
-**MySQL user**:  
-{{app-name}}
-
-**MySQL password**:  
-See [below on how to reclaim](#toc-obtain-the-mysql-password) 
-
-**MySQL port**:  
-3306
+See our specific examples for: [Laravel](install-laravel-uni#toc-mysql), [Symfony](install-symfony-uni#toc-mysql), [WordPress](install-wordpress-uni#toc-mysql), [Craft CMS](install-craft-uni#toc-mysql).
 
 
+## Access MySQL database from local
 
-#### SSH tunnel for MySQL access
+Whether you want to run a query on your live database or you want to dump your whole database: you need to access the MySQL database on fortrabbit remotely. For security reasons you cannot connect to the MySQL database from "outside" directly, but you can open a [SSH tunnel](http://en.wikipedia.org/wiki/Tunneling_protocol) and then connect to the MySQL database through this tunnel.
 
-**SSH tunnel server**:  
-tunnel.{{region}}.frbit.com
-
-**SSH tunnel user**:  
-{{ssh-user}}
-
-**SSH password**:  
-{{ssh-password}}
-
-**SSH port**:  
-22
-
-
-
-### Obtain the MySQL password
-
-The MySQL password is stored safely with your [App secrets](/secrets). You can get it using a [remote SSH command](secrets#toc-accessing-app-secrets) in your terminal:
-
-```bash
-# Grab secrets.json to see the MySQL password
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
-```
+If you haven't: you need to [obtain your MySQL password](/#toc-obtain-the-mysql-password). Next you can decide upon using a graphical user interface or the terminal:
 
 
 
 ### MySQL via GUI
 
-Sometimes it's handy to manage your remote MySQL database with a graphical interface. We recommend [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
+We recommend the free [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
 
-All clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information. 
+All clients have connection presets that help you to establish the SSH tunnel and the MySQL connection in one convenient step. In the connection info you will insert all the SSH access information and the MySQL connection information.
 
-The MySQL hostname will not be `127.0.0.1` or `localhost` — it's the remote server:  
+To give you an idea of how the access details should be inserted, here an example using MySQL Workbench:
+
+* Create a new connection with *Connection Method* set to `Standard TCP/IP over SSH`, then:
+* **SSH Hostname**: `deploy.{{region}}.frbit.com`
+* **SSH Username**: `{{ssh-user}}`
+* **SSH Password**: `{{ssh-password}}`
+* **SSH Keyfile**: <code data-with-password>No need</code><code data-without-password>Your local SSH private key</code>
+* **MySQL Hostname**: `{{app-name}}.mysql.{{region}}.frbit.com`
+* **MySQL Server Port**: `3306`
+* **Username**: `{{app-name}}`
+* **Password**: [Look it up in the Dashboard](#toc-obtain-the-mysql-password)
+* **Default Schema**: `{{app-name}}`
+
+**Note**: The MySQL hostname will not be `127.0.0.1` or `localhost` — it's the remote server:
 `{{app-name}}.mysql.{{region}}.frbit.com`.
 
-#### phpMyAdmin
 
-Please don't try to install phpMyAdmin on your fortrabbit App - for security and practical reasons. But you can also manage the remote MySQL with your **local phpMyAdmin installation**. Add an additional server configuration to your local phpMyAdmin `config.inc.php` file like so:
+### phpMyAdmin
+
+For security and practical reasons we consider it bad practice to install phpMyAdmin on your fortrabbit App. However, you can also manage the remote MySQL with a **local phpMyAdmin installation**. Add an additional server configuration to your local phpMyAdmin `config.inc.php` file like so:
 
 ```
 $cfg['Servers'][$i]['verbose']       = '{{app-name}}';
@@ -131,7 +118,7 @@ $cfg['Servers'][$i]['auth_type']     = 'cookie';
 $i++;
 ```
 
-Then open a [tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). 
+Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). Usinf a local phpMyAdmin with your remote database requires you to always open a tunnel first - a [MySQL GUI](#toc-mysql-via-gui) might be the better choice.
 
 
 
@@ -156,23 +143,53 @@ $ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}}
 In the next step you will be asked for your [MySQL password](#toc-obtain-the-mysql-password).
 
 
-##  Export & import
 
-A common task is to move your MySQL data around, e.g. if you are migrating to fortrabbit or you are about to set up a staging environment. GUIs have easy to use export/import wizards, in the terminal you can do this like so:
+## Export & import
 
-### mysqldump & mysql
+A common task is to move your MySQL data around, e.g. if you are migrating to fortrabbit or you are about to set up a staging environment. All following examples show you how to export data from your local machine and import it into your App's database on fortrabbit. It works the same, with swapped login details, for the other way around.
 
-Using `mysqldump` and `mysql` is the standard approach to migrate a database between two MySQL servers. First of start by exporting your data from your old database (example):
+### Using MySQL Workbench (GUI)
+
+**Export from local**:
+
+1. Open Workbench
+2. Setup your local database connection
+3. Open your local database connection
+4. Choose: Server > Data Export from the menu
+5. Select your local database name
+6. Make sure to "Dump Structure and Data" (select below the database name listing)
+7. Choose a local destination file
+8. Start the export
+
+
+**Import to fortrabbit**:
+
+1. Open Workbench
+2. Create a new connection as [shown above](#toc-mysql-via-gui)
+2. Open the newly created remote database connection
+3. Choose: Server > Data Import from the menu
+4. Choose your previously generated dump file
+5. Make sure to select your App name in the *Default Target Schema*
+6. Start the import
+
+### Using the terminal
+
+Using `mysqldump` and `mysql` is the standard approach to migrate a database between two MySQL servers from the shell. First of start by exporting your data from your local database:
 
 ```bash
 # on your local machine or on the old server
-$ mysqldump {{database-name}} > database.sql
+$ mysqldump -uyour-local-db-user -pyour-local-db-password your-local-db-name > dump.sql
 ```
 
-Now [create a tunnel](#toc-mysql-via-terminal) to your fortrabbit App's MySQL database and import everything:
+Now you need to open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import.
 
 ```bash
-$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < database.sql
+# open the tunnel
+$ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
+
+# !!! in a new terminal window !!!
+# import the dump
+$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 ```
 
 ### LOAD DATA
@@ -190,9 +207,11 @@ $ mysql --local-infile=1 -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}}
 $ mysql> LOAD DATA LOCAL INFILE '/path/to/tablename.sql' INTO TABLE tablename;
 ```
 
+**Note**: You will be asked to enter your App's database password. [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql).
+
 ## Local MySQL
 
-This article describes how to deal with the fortrabbit remote MySQL database. You might a local one as well. Please see our [local development article](/local-development).
+This article describes how to deal with the fortrabbit remote MySQL database. You might want to have a local one as well. Please see our [local development article](/local-development).
 
 - - -
 
@@ -227,14 +246,25 @@ SELECT @@session.time_zone;
 `PDO` offers configurable options when setting up the connection. One of them allows you to issue commands right after initialization (connection).
 
 ```php
-$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-
 $pdo = new PDO(
-    'mysql:host='. $secrets['MYSQL']['HOST']. ';dbname='. $secrets['MYSQL']['DATABASE'],
-    $secrets['MYSQL']['USER'],
-    $secrets['MYSQL']['PASSWORD'],
+    'mysql:host='. getenv('MYSQL_HOST'). ';dbname='. getenv('MYSQL_DATABASE'),
+    getenv('MYSQL_USER'),
+    getenv('MYSQL_PASSWORD'),
     array(
         PDO::MYSQL_ATTR_INIT_COMMAND => 'SET time_zone = \'+02:00\''
     )
 );
 ```
+
+### Resetting the MySQL password
+
+Instead of [looking up the existing MySQL password](#toc-obtain-the-mysql-password), you can also reset it. Do so in the Dashboard > Your App > Access > MySQL. Please mind that this comes with consequences:
+
+* Unless your are using [env vars](env-vars): You'll need to change the password in your App's configuration files
+* Your coworkers need to change their password in their locally configured remote access tools (see below)
+
+
+
+### Differences between Professional and Universal
+
+All [Universal Apps](/app-uni) automatically come with a MySQL database. For [Professional Apps](app-pro), MySQL is an optional Component. There you can [scale](scaling#toc-mysql) it up and down individually.

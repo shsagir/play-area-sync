@@ -1,27 +1,21 @@
 ---
 
 template:    article
-reviewed:    2016-01-22
+reviewed:    2016-12-01
 title:       Some words on security
 naviTitle:   Security
 lead:        fortrabbit security concepts and how you can help.
-group:       Kitchen_sink
+group:       platform
+stack:       all
 
 keywords:
     - beginner
     - dashboard
 
-seeAlsoLinks:
-    - collaboration
-    - app
-
-tags:
-    - beginner
-
 ---
 
 
-»We take security very serious.« Isn't that what everybody is saying? It's our business to keep your business online. Our clients trust us with that. We know what we do and we are doing hosting for over ten years now. Make yourself a picture, have a look at our: [history](http://www.fortrabbit.com/about), [blog](http://blog.fortrabbit.com/), [tweets](https://twitter.com/fortrabbit), [past incidents](http://status.fortrabbit.com) or ask our customers directly. 
+»We take security very serious.« Isn't that what everybody is saying? It's our business to keep your business online. Our clients trust us with that. We know what we do and we are doing hosting for over ten years now. Make yourself a picture, have a look at our: [history](http://www.fortrabbit.com/about), [blog](http://blog.fortrabbit.com/), [tweets](https://twitter.com/fortrabbit), [past incidents](http://status.fortrabbit.com) or ask our customers directly.
 
 ## Our responsibilities
 
@@ -49,7 +43,7 @@ We use Wirecard — a PCI Level 1 compliant provider — for processing credit c
 
 ## Your responsibilities
 
-We are in it together! You are responsible for the code you write and even the one you are using. 
+We are in it together! You are responsible for the code you write and even the one you are using.
 
 ### Check your code
 
@@ -83,15 +77,17 @@ We highly recommend to enable 2FA with your fortrabbit Account. You can so do in
 
 ## Code access
 
-You store your public SSH key with your fortrabbit Account. You can also install multiple keys with your Account, for instance one for your desktop, one for your laptop. fortrabbit automatically installs your up-to-date key(s) on each App you have access to.
+We recomend to store your [public SSH](/ssh-keys) key with your fortrabbit Account. You can also install multiple keys with your Account, for instance one for your desktop, one for your laptop. fortrabbit automatically installs your up-to-date key(s) on each App you have access to.
 
 ### Check your SSH keys
 
 Please revisit your list of SSH keys from time to time and keep it as short as possible. Only keep those keys you are really using.
 
-### Passwords in the Dashboard
 
-We save all passwords encrypted. That's why we can't read your passwords. So when you lost a password, eg for MySQL, you can only set a new one. All those passwords are randomly generated strings with high entropy.
+### Password reset
+
+You can reset the fortrabbit service passwords for MySQL and Object Storage in the Dashboard with your Apps. It is recommended to reset those passwords periodically and when a Company member leaves for each App.
+
 
 
 ## Firewalling

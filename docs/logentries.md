@@ -2,8 +2,9 @@
 
 template:         article
 naviTitle:        Logentries
-reviewed:         2016-07-27
+reviewed:         2016-12-09
 title:            Using Logentries with fortrabbit
+stack:            all
 
 group:            Logging
 section:          Extending_fortrabbit
@@ -13,16 +14,10 @@ websiteLink:      https://logentries.com?utm_source=fortrabbit
 websiteLinkText:  logentries.com
 category:         logging
 
-tags:
-     - advanced
-
 keywords:
      - logging
      - log
      - logs
-
-seeAlsoLinks:
-    - about-databases
 
 ---
 
@@ -49,7 +44,7 @@ Once you are logged in click on the "+ Add New" button in the upper left corner.
 
 ## Connecting
 
-Stash the just created token in your App's [secrets](app-secrets). Go to the fortrabbit Dashboard > Your App > Settings > App Secrets and add:
+Stash the just created token in your App's [secrets](secrets). Go to the fortrabbit Dashboard > Your App > Settings > App Secrets and add:
 
 ```plain
 LOGENTRIES_TOKEN={{the-token-you-just-got}}
@@ -58,7 +53,6 @@ LOGENTRIES_TOKEN={{the-token-you-just-got}}
 <div markdown="1" data-user="known">
 [Add a new App secret for {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/secrets/new)
 </div>
-
 
 
 ## Request a firewall white-listing
