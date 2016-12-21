@@ -2,7 +2,7 @@
 
 template:      article
 naviTitle:     Voucher codes
-reviewed:      2016-02-22
+reviewed:      2016-12-20
 title:         Using fortrabbit voucher codes
 dontList:      true
 dontIndex:     true

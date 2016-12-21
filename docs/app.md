@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-15
+reviewed:      2016-12-20
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.

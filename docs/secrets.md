@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-11-17
+reviewed:    2016-12-20
 title:       Using secure App secrets
 naviTitle:   App secrets
 lead:        App secrets provide a secure storage and access method for all the credentials your App needs to run.

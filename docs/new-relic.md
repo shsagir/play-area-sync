@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-09-15
+reviewed:         2016-12-20
 title:            Integrate New Relic with fortrabbit
 naviTitle:        New Relic
 lead:             Where should I improve the performance of my App? Learn how to combine the popular software analysis tool with fortrabbit.

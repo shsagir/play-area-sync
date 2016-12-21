@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2016-12-07
+reviewed:     2016-12-20
 title:        Using Cron Jobs
 naviTitle:    Cron Jobs
 lead:         Use time scheduled cron jobs to execute long running operations in the background. They run at defined times, independent of visits to the web application.

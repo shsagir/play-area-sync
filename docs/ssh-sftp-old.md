@@ -2,7 +2,7 @@
 
 dontList:      true
 template:      article
-reviewed:      2016-12-09
+reviewed:      2016-12-20
 title:         Using SSH - for Old App
 naviTitle:     SSH
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.

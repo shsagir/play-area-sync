@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-07-27
+reviewed:         2016-12-20
 title:            Install Slim Framework 2
 naviTitle:        Slim Framework
 group:            Install_guides

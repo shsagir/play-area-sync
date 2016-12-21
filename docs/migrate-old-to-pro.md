@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-09
+reviewed:      2016-12-20
 title:         Migrate Old App to Professional
 naviTitle:     Migrate Old App > Professional
 lead:          Learn how to move your Old App to a Professional App.

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-12-20
 title:         All about MySQL — old App
 naviTitle:     MySQL
 lead:          Access and configure the database.

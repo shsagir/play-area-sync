@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-01-22
+reviewed:    2016-12-20
 title:       Git deployment — old App
 naviTitle:   Git deployment
 lead:        Learn how to deploy with Git and see advanced configuration.

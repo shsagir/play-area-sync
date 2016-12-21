@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        Redis Cloud
-reviewed:         2016-09-15
+reviewed:         2016-12-20
 title:            Using Redis Cloud with fortrabbit
 group:            Databases
 section:          Extending_fortrabbit

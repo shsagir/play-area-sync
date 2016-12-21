@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-09
+reviewed:      2016-12-20
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.

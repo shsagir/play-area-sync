@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-10
+reviewed:      2016-12-20
 title:         SSH
 naviTitle:     SSH
 lead:          Learn what you can do on the command line with fortrabbit Apps.

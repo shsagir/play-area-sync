@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-09
+reviewed:      2016-12-20
 title:         SFTP
 naviTitle:     SFTP
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.

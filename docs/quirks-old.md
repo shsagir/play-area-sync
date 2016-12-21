@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-12-09
+reviewed:    2016-12-20
 title:       "Quirks & constraints"
 lead:        Limits, restrictions, permissions there are some — aren't there always?
 dontList:    true

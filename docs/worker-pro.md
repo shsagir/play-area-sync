@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2016-12-07
+reviewed:     2016-12-20
 title:        Worker
 naviTitle:    Worker
 lead:         Offshore long running and compute intensive tasks with background jobs — that's what the Worker Component is for.

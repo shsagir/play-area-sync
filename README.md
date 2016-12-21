@@ -79,7 +79,7 @@ proLink:   mysql-pro
 # When the article was last checked?
 # Don't forget to edit this each time you have reviewed a page
 # pages older than one year will be marked outdated
-reviewed: 2016-10-22
+reviewed: 2016-12-20
 
 # set a warning that this article is outdated, no matter the date
 deprecated: 1

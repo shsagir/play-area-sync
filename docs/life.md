@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-09-15
+reviewed:      2016-12-20
 title:         Meaning of life
 lead:          The universe, and everything.
 naviTitle:     Life

@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     Migrate Old App > Universal
 title:         Migrate Old App to Universal
-reviewed:      2016-12-09
+reviewed:      2016-12-20
 lead:          "Here is how you manually migrate an Old App to the new Universal Stack."
 group:         platform
 stack:         all

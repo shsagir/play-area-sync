@@ -1,7 +1,7 @@
 ---
 
 template:       article
-reviewed:       2016-01-08
+reviewed:       2016-12-20
 naviTitle:      Code access
 title:          Different code deployment methods compare
 lead:           How you can authenticate to access code on fortrabbit.

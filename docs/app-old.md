@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-10
+reviewed:      2016-12-20
 title:         How to move on with the Old Apps
 naviTitle:     Old Apps 
 lead:          During sunset you can still use the Old Apps, this article helps finding your way and still work with the Old Apps.

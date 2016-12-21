@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        Logentries
-reviewed:         2016-12-09
+reviewed:         2016-12-20
 title:            Using Logentries with fortrabbit
 stack:            all
 

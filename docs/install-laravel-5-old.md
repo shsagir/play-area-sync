@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-12-20
 title:         Install Laravel 5 - for Old App
 naviTitle:     Laravel
 lead:          Learn how to deploy Laravel 5 with Composer to fortrabbit.

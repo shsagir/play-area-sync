@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-10-10
+reviewed:      2016-12-20
 title:         Advanced Git deployment workflows with fortrabbit.yml
 naviTitle:     Deployment file
 lead:          Enhance your deployment process with the fortrabbit.yml deployment file.

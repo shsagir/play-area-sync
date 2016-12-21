@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-01-21
+reviewed:         2016-12-20
 title:            Install Laravel 4
 naviTitle:        Laravel
 lead:             Deploy Laravel 4 with Composer to fortrabbit.

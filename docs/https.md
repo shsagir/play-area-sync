@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-13
+reviewed:      2016-12-20
 dontList:      false
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit

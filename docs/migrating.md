@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-12-09
+reviewed:    2016-12-20
 title:       How to move your App to fortrabbit
 naviTitle:   Migrating to fortrabbit
 lead:        How to transfer an application to fortrabbit.

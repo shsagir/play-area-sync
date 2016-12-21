@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-12-20
 title:         SSH + Git deployment workflow
 naviTitle:     SSH + Git
 lead:          How to use Git from the shell on fortrabbit — advanced worflow, special case.

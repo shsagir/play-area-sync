@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2015-02-20
+reviewed:         2016-12-20
 title:            Install WordPress
 naviTitle:        WordPress
 lead:             We all love it, we all hate it: our good ol' friend WordPress. This is how to run WordPress successfully on fortrabbit — maybe. For Old Apps.

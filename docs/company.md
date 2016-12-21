@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-11-11
+reviewed:      2016-12-20
 title:         Companies on fortrabbit
 naviTitle:     Company
 excerpt:       How to work with Companies on fortrabbit

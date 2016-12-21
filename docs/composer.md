@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-08
+reviewed:      2016-12-20
 title:         Leveraging Composer
 naviTitle:     Composer
 lead:          Learn how to integrate Composer into your development workflow with fortrabbit.

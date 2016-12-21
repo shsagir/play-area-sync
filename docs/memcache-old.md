@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2016-01-21
+reviewed:   2016-12-20
 title:      Memcache on fortrabbit
 naviTitle:  Memcache
 lead:       Caching with memcached on fortrabbit for Old Apps.

@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-09-10
+reviewed:    2016-12-20
 title:       All about Memcache
 naviTitle:   Memcache
 lead:        Speed speed speed. Why and how to do caching with Memcache on fortrabbit.

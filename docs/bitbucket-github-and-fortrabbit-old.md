@@ -1,7 +1,7 @@
 ---
 
 template:       article
-reviewed:       2016-01-08
+reviewed:       2016-12-20
 naviTitle:      GitHub and fortrabbit
 title:          Combine fortrabbit with GitHub or Bitbucket
 lead:           Learn how to integrate the most popular Git-as-a-service providers with your fortrabbit workflow.

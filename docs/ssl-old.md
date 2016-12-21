@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-09
+reviewed:      2016-12-20
 title:         Using the SSL component - Old App
 naviTitle:     SSL
 lead:          https and SSL for the rest of us.

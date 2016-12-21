@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2016-01-10
+reviewed:     2016-12-20
 title:        Using Git submodules
 naviTitle:    Git submodules
 lead:         Leverage Git submodules on fortrabbit.

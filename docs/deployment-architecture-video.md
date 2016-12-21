@@ -1,7 +1,7 @@
 ---
 
 template:      video
-reviewed:      2015-11-10
+reviewed:      2016-12-20
 naviTitle:     Deployment video
 title:         Video: Deployment - behind the scenes
 videoid:       5k3rCnCYjrA

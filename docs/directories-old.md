@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-02-18
+reviewed:      2016-12-20
 title:         Directory structure
 naviTitle:     Directory structure
 lead:          The predefined set of folders for each App you need to know for the Old App.
