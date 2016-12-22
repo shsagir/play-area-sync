@@ -115,17 +115,17 @@ You need change all those hard coded App specific configurations. Depending on y
 #### MySQL configuration
 
 * **OLD**:
-  * *Hostname:* `{{old-app-name}}.mysql.eu1.frbit.com`
-  * *Port:* `3306`
-  * *Database:* `{{old-app-name}}`
-  * *Username:* `{{old-app-name}}`
-  * *Password:* your Old Apps MySQL password
+  * **Hostname:** `{{old-app-name}}.mysql.eu1.frbit.com`
+  * **Port:** `3306`
+  * **Database:** `{{old-app-name}}`
+  * **Username:** `{{old-app-name}}`
+  * **Password:** your Old Apps MySQL password
 * **NEW**
-  * *Hostname:* `{{app-name}}.mysql.{{region}}.frbit.com`
-  * *Port:* `3306`
-  * *Database:* `{{app-name}}`
-  * *Username:* `{{app-name}}`
-  * *Password:* [obtain your new App's MySQL password](mysql#toc-obtain-the-mysql-password)
+  * **Hostname:** `{{app-name}}.mysql.{{region}}.frbit.com`
+  * **Port:** `3306`
+  * **Database:** `{{app-name}}`
+  * **Username:** `{{app-name}}`
+  * **Password:** [obtain your new App's MySQL password](mysql#toc-obtain-the-mysql-password)
 
 ### ENV var based configuration
 
