@@ -143,7 +143,11 @@ Find out which ENV vars are [available here](env-vars#toc-env-var-types).
 
 Now it's time to deploy your adjusted code base. Again, depending on whether you are using Git only or no Git (see [above](#toc-migrate-web-storage)):
 
-### Git only
+### Using SFTP or SSH
+
+Upload ALL your web data using [SFTP](sftp-uni) from your local folder to thew new Universal App.
+
+### Using Git
 
 Double check your `.gitignore` file. Make sure that it does *NOT* contain `composer.lock` or `composer.json`, if you are working with Composer. When you are confident that all looks alright, just push to your new Universal App's remote:
 
@@ -151,19 +155,14 @@ Double check your `.gitignore` file. Make sure that it does *NOT* contain `compo
 $ git push -u fortrabbit2 master
 ```
 
-### No Git
-
-Upload ALL your web data using [SFTP](sftp-uni) from your local folder to thew new Universal App.
 
 ## Review
 
 Once the first deployment is done, it's time to review your new App: are any of the configurations from the preparation missing or wrong? Do you have been to loose or to strict with the contents in your git ignore file? And so on. It should basically work at this point. The only thing missing are your custom domains, if you are using any.
 
-## Finish up
+## Migrate domains
 
-Once your new Universal App is working as expected, you can safely migrate all domains from the Old App to the new Universal App. Mind that you also keep the same root path, when doing so.
-
-The general approach is:
+Once your new Universal App is working as expected, you can safely migrate all domains from the Old App to the new Universal App. Mind that you also keep the same root path, when doing so. The general approach is:
 
 * Change the [domain routing](domains#toc-routing-options) from the old App's hostname to the new App's hostname
 * Delete the domain from the old App
