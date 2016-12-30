@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2016-12-30
 title:         Companies on fortrabbit
 naviTitle:     Company
 excerpt:       How to work with Companies on fortrabbit
@@ -68,6 +68,11 @@ You can create as many Companies as you need — free of charge. In the the Dash
 ### Deleting a Company
 
 As an Owner you can also decide to delete your Company. This is a huge step, as all Apps owned by the Company will be deleted and all the team will loose access. To do so: In the Dashboard > Your Account > Companies > {{ Your Company }} > Hit the "Delete Company" button and follow the instructions.
+
+#### Leaving a Company 
+
+With Company collaboration (see below) you can also leave a Company. That will keep the Company with fortrabbit, but you will loose access. When you cancel your Account and you are part of a Company with Owners left, you will leave the Company. 
+
 
 ### Collaboration
 
