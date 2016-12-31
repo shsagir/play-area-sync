@@ -3,7 +3,7 @@
 template:      article
 reviewed:      2016-12-31
 title:         Collaborating on fortrabbit
-naviTitle:     Collaboration
+naviTitle:     About Collaboration
 lead:          Learn about the powerful teamwork features and how to map your real world business relationships on your favorite hosting platform — fortrabbit.
 group:         collaboration
 stack:         all
