@@ -3,9 +3,9 @@
 template:      article
 naviTitle:     Migrate Universal > Professional
 title:         Migrate Universal to Professional
-reviewed:      2016-12-20
+reviewed:      2016-12-30
 lead:          "The Universal stack is a good starting point. If you truly need to scale: we offer the Professional stack for exactly that purpose. Here is how you migrate an App from Universal to Professional."
-group:         platform
+group:         stacks
 stack:         all
 
 ---

@@ -5,7 +5,7 @@ reviewed:      2016-12-20
 title:         Company collaboration on fortrabbit
 naviTitle:     Company collaboration
 lead:          Leverage Company level collaboration to map your real world structures back to fortrabbit.
-group:         platform
+group:         collaboration
 stack:         all
 
 keywords:

@@ -5,7 +5,7 @@ reviewed:      2016-12-20
 title:         Collaborating on Apps on fortrabbit
 naviTitle:     App collaboration
 lead:          Leverage App level collaboration to easily develop code with others on fortrabbit.
-group:         platform
+group:         collaboration
 stack:         all
 
 keywords:
