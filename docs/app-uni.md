@@ -3,9 +3,9 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2016-12-20
+reviewed:      2016-12-30
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
-group:         platform
+group:         stacks
 stack:         uni
 showAlways:    true
 

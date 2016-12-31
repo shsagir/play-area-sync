@@ -5,7 +5,7 @@ naviTitle:     "Professional Stack"
 title:         "About the Professional Stack"
 reviewed:      2016-12-20
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Professional Stack.'
-group:         platform
+group:         stacks
 stack:         pro
 uniLink:       app-uni
 showAlways:    true
