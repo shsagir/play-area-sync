@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-01-03
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -192,7 +192,7 @@ You might also do the forwarding programmtically within your App. The most commo
 
 Following an example, which always redirects to a domain `www.some-domain.tld`
 
-```
+```plain
 RewriteCond %{HTTP_HOST} !^www\.some-domain\.tld [NC]
 RewriteRule (.*) https://www.some-domain.tld/$1 [R=301,L]
 ```
