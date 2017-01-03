@@ -188,14 +188,15 @@ Please keep an eye on HTTPS when forwarding. HTTPS will most likely not be provi
 
 ### Forwarding other domains within your App
 
-You might also do the forwarding programmtically within your App. The most common approach here is to work with `.htaccess` rules to redirect all requests to that other domain. You register each domain within the fortrabbit Dahboard and then catch all the requests in the App.
-
-Following an example, which always redirects to a domain `www.some-domain.tld`
+You might also do the forwarding programmtically within your App. The most common approach here is to work with `.htaccess` rules to redirect all requests to that other domain. You register each domain within the fortrabbit Dahboard and then catch all the requests in the App. Following an example, which always redirects to a domain `www.some-domain.tld`:
 
 ```plain
 RewriteCond %{HTTP_HOST} !^www\.some-domain\.tld [NC]
 RewriteRule (.*) https://www.some-domain.tld/$1 [R=301,L]
 ```
+
+This example is generic. Please check your framework or CMS for plugins or configurations.
+
 
 - - -
 
