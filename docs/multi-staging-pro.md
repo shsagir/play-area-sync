@@ -76,7 +76,7 @@ $ git push -u testing {{your-app-test}}
 $ git checkout -b {{your-app-stage}}
 $ git push -u staging {{your-app-stage}}
 $ git checkout -b {{your-app-prod}}
-$ git push -u staging {{your-app-prod}}
+$ git push -u production {{your-app-prod}}
 
 
 # Verify settings
