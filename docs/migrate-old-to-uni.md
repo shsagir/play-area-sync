@@ -22,7 +22,7 @@ The Universal Stack is pretty much like the Old App stack in terms of backward c
 
 Depending on the MySQL and web storage size of your App, the whole migration process should take you between a couple of minutes and an hour.
 
-First you need to decide which Universal App plan fit's your needs. Start by checking your current Old App metrics in the Dashboard > Your App > Metrics. Find out:
+First you need to decide which Universal App plan fits your needs. Start by checking your current Old App metrics in the Dashboard > Your App > Metrics. Find out:
 
 * How much web storage the App is using
 * How much MySQL database storage the App is using
@@ -34,14 +34,14 @@ Now make sure the following applies to your App:
 2. Your App doesn't use [Memcache](memcache-old), which is not available for single-node Universal Apps
 3. Your App doesn't use [Workers](workers-old) to process queues or to execute multiple cron jobs (one cron is okay)
 
-If you are unsure about (1), then check the App metrics: If your PHP requests are below 500 per hour on average, you are, most likely, good and can proceed.
+If you are unsure about (1), then check the App metrics: if your PHP requests are below 500 per hour on average, you are, most likely, good and can proceed.
 
-If either of the above applies an cannot be changed, then we strongly recommend to use a [Professional App](app-pro) instead.
+If either of the above applies and cannot be changed, then we strongly recommend to use a [Professional App](app-pro) instead.
 
 
 ### Create a new Universal App
 
-Now that you know how much resources you require, you can decide upon the [right plan](//www.fortrabbit.com/pricing): Choose the one which grants you sufficient MySQL, sufficient web storage and sufficient App collaborators as you have found out in the previous step.
+Now that you know how much resources you require, you can decide upon the [right plan](//www.fortrabbit.com/pricing): choose the one which grants you sufficient MySQL, sufficient web storage and sufficient App collaborators as you have found out in the previous step.
 
 With that knowledge, create a new App in the Dashboard > click "Create an App" > follow the instructions and choose at the end the previously decided Universal App plan.
 
@@ -129,7 +129,7 @@ You need change all those hard coded App specific configurations. Depending on y
 
 ### ENV var based configuration
 
-Review the [settings](#toc-copy-settings) you copied earlier. Make sure you use your new App's MySQL login details and root path (as shown above) are used. Mind that you can leverage our new [nested environment variables](env-vars#toc-nested-variables). For example, if you are using an environment variable named `DB_HOST` which contains your App's MySQL hostname, you can utilize nested variables like so:
+Review the [settings](#toc-copy-settings) you copied earlier. Make sure you use your new App's MySQL login details and root path (as shown above). Mind that you can leverage our new [nested environment variables](env-vars#toc-nested-variables). For example, if you are using an environment variable named `DB_HOST` which contains your App's MySQL hostname, you can utilize nested variables like so:
 
 ```plain
 # reference the fortrabbit provided MYSQL_HOST var
@@ -145,7 +145,7 @@ Now it's time to deploy your adjusted code base. Again, depending on whether you
 
 ### Using SFTP or SSH
 
-Upload ALL your web data using [SFTP](sftp-uni) from your local folder to thew new Universal App.
+Upload ALL your web data using [SFTP](sftp-uni) from your local folder to the new Universal App.
 
 ### Using Git
 
@@ -158,7 +158,7 @@ $ git push -u fortrabbit2 master
 
 ## Review
 
-Once the first deployment is done, it's time to review your new App: are any of the configurations from the preparation missing or wrong? Do you have been to loose or to strict with the contents in your git ignore file? And so on. It should basically work at this point. The only thing missing are your custom domains, if you are using any.
+Once the first deployment is done, it's time to review your new App: are any of the configurations from the preparation missing or wrong? Do you have been too loose or too strict with the contents in your git ignore file? And so on. It should basically work at this point. The only thing missing are your custom domains, if you are using any.
 
 ## Migrate domains
 

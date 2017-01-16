@@ -20,13 +20,13 @@ For the purposes of this article, we recommend to chose the newly created Profes
 
 Make sure your code is ready to scale and you are using up-to-date design patterns. Have a look at our [App design article](/app-design-pro) to learn the best practices to that effect. Also have a look at our [general migration guide](/migrating).
 
-Before we show you how to migrate your existing Universal App to a Professional App, you first need make sure that the following applies. Mind that it only needs to apply if your App requires it (i.e. you don't need cache abstraction, if you don't need caching):
+Before we show you how to migrate your existing Universal App to a Professional App, you first need to make sure that the following applies. Mind that it only needs to apply if your App requires it (i.e. you don't need cache abstraction, if you don't need caching):
 
 * Your framework/CMS supports storage abstraction, so that you can use our [Object Storage](object-storage) Component
 * Your framework/CMS supports cache abstraction, so that you can use our [Memcache](memcache-pro) Component
 * Your framework/CMS does not use live updates (think "WordPress update button"), or you don't use them
 * You are familiar with Git
-* You are no fiend of the shell
+* You are no friend of the shell
 
 ### Check the install guides
 
@@ -45,7 +45,7 @@ Start by aligning all the settings of the new App with those of the old. Here is
 * PHP Settings
 * PHP Extensions
 * [Environment variables](env-vars), if any
-* [App secets](secrets), if any
+* [App secrets](secrets), if any
 * Cron jobs, if any
 
 
@@ -129,7 +129,7 @@ $ git push -u fortrabbit master
 
 ## Review
 
-Once the first deployment is done, it's time to review your new App: are any of the configurations from the preparation are missing or wrong? Do you have been to loose or to strict with the contents in your git ignore file? And so on. It should basically work at this point, just not with your custom domains.
+Once the first deployment is done, it's time to review your new App: are any of the configurations from the preparation are missing or wrong? Do you have been too loose or too strict with the contents in your git ignore file? And so on. It should basically work at this point, just not with your custom domains.
 
 ## Finish up: Migrate domains
 
