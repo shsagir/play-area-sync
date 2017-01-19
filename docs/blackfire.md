@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-12-20
+reviewed:         2017-01-16
 title:            Using Blackfire with fortrabbit
 naviTitle:        Blackfire
 stack:            all
@@ -36,7 +36,7 @@ Blackfire empowers all developers and IT/Ops to continuously verify and improve 
 
 ## Integration
 
-Blackfire is integreated with a BYO licence model for some fortrabbit Apps. Please see the [specs page](/https://www.fortrabbit.com/specs) for availabilty with plans.
+Blackfire is integreated with a BYO licence model for some fortrabbit Apps. Please see the [specs page](https://www.fortrabbit.com/specs) for availabilty with plans.
 
 To use Blackfire with your fortrabbit App, you only need to paste the Agent credentials from Blackfire into the fortrabbit [Dashboard](/dashboard). Here is a detailed step by step guide:
 
