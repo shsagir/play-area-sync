@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-12-20
+reviewed:         2017-01-20
 title:            Install Craft CMS 2 on fortrabbit
 naviTitle:        Craft CMS
 lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
@@ -34,7 +34,7 @@ We assume you've already created an App and chose Craft CMS in the stack chooser
 If you haven't chosen Craft CMS stack when creating the App in the Dashboard, please set the following: Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
-[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 </div>
 
 

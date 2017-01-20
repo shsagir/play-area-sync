@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-12-20
+reviewed:         2017-01-20
 title:            Install WordPress 4
 naviTitle:        WordPress
 lead:             WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
@@ -27,7 +27,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 If you haven't already (the stack chooser does that for you) — in the Dashboard: [Set the root path](/app#toc-root-path) of your App's domains to **web**.
 
 <div markdown="1" data-user="known">
-[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 </div>
 
 ### Set WordPress authentication unique keys and salts

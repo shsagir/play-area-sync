@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-12-20
+reviewed:         2017-01-20
 title:            Install October CMS on fortrabbit
 naviTitle:        October CMS
 lead:             October is a free, open-source, self-hosted CMS based on the Laravel PHP framework. Learn how to install and use it on fortrabbit.
@@ -32,7 +32,7 @@ We assume you've already created an [App](/app) with fortrabbit which has the [M
 In the Dashboard: [Set the root path](/app#toc-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
-[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 </div>
 
 

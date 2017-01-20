@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-12-20
+reviewed:         2017-01-20
 title:            Install Symfony
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 or 3 on fortrabbit.
@@ -30,7 +30,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 Also, if you haven't already (the stack chooser does that for you) — in the fortrabbit [Dashboard](/dashboard): [Set the root path](/app#toc-root-path) of your App's domains to **web**. This applies to all domains, either the App URL or your external domains.
 
 <div markdown="1" data-user="known">
-[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 </div>
 
 

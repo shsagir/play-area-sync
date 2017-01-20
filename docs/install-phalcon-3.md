@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-09-14
+reviewed:         2017-01-20
 title:            Install Phalcon 3
 naviTitle:        Phalcon
 lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C extension providing high performance and low resource consumption. Here you learn how to best getting started with Phalcon 3 on fortrabbit.
@@ -45,7 +45,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 Phalcon uses `public` as doc root, you need change that in the fortrabbit Dashboard under your Apps Domains settings.
 
 <div markdown="1" data-user="known">
-[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/{{app-name}}.frb.io/docroot)
+[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 </div>
 
 ### Enable Phalcon extension
