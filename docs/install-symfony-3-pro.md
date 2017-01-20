@@ -14,7 +14,7 @@ websiteLink:      http://symfony.com/?utm_source=fortrabbit
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
-version:          2.8, 3.1
+version:          3.1, 3.2
 
 ---
 
@@ -201,7 +201,7 @@ services:
 
     session.handler.memcached:
         class:     Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler
-        arguments: [@session.memcached, { prefix: %session_memcache_prefix%, expiretime: %session_memcache_expire% }]
+        arguments: ["@session.memcached", { prefix: %session_memcache_prefix%, expiretime: %session_memcache_expire% }]
 ```
 
 ### Sending mail
