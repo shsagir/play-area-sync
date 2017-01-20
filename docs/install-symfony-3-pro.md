@@ -169,6 +169,9 @@ If you are using a PHP production plan, then your App is distributed over multip
 Open `app/config/parameters_prod.php` again and add:
 
 ```php
+// Read secrets, unless you do alrady in this file:
+//$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+
 $container->setParameter('session_memcache_expire', getenv('SESSION_MEMCACHE_EXPIRE') ?: 86400);
 $container->setParameter('session_memcache_prefix', getenv('SESSION_MEMCACHE_PREFIX') ?: 'ez_');
 $container->setParameter('session_memcache_host_1', $secrets['MEMCACHE']['HOST1']);
