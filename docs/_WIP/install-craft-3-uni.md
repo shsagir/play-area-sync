@@ -44,10 +44,14 @@ Follow the [offical Craft 3 install guide](https://github.com/craftcms/docs/blob
 Leave the `config/db.php` untouched, but add this ENV vars to your App. It's a mapping from our default ENV vars to the names Craft expects. 
 
 ```plain
+# Mapping
 DB_DATABASE=${MYSQL_DATABASE}
 DB_SERVER=${MYSQL_HOST}
 DB_USER=${MYSQL_USER}
 DB_PASSWORD=${MYSQL_PASSWORD}
+
+# Driver
+DB_DRIVER=mysql
 ```
 
 <div markdown="1" data-user="known">
