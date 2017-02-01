@@ -58,7 +58,12 @@ DB_DRIVER=mysql
 [Add ENV vars to your App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
-## Deployment
+## Git Deployment
 
 Before pushing the first time to fortrabbit, make sure to `git add composer.lock -f`.
 
+
+
+## Using the craft cli
+
+SSH in an type `php craft`. The `php` prefix is required for now.
