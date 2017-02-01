@@ -54,3 +54,7 @@ DB_PASSWORD=${MYSQL_PASSWORD}
 [Add ENV vars to your App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
+## Deployment
+
+Before pushing the first time to fortrabbit, make sure to `git add composer.lock -f`.
+
