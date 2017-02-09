@@ -1,13 +1,14 @@
 ---
 
 template:         article
-reviewed:         2017-02-01
+reviewed:         2017-02-09
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft CMS
 lead:             Work in progress
 group:            Install_guides
 stack:            uni
 proLink:          install-craft-2-pro
+dontList:         true
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
