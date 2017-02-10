@@ -1,13 +1,13 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-02-10
 naviTitle:     Backups
 title:         Working with fortrabbit backups
-excerpt:       MySQL database backups
+excerpt:       Download MySQL database backups
 group:         platform
 stack:         pro
-dontList:      true
+uniLink:       backups-uni
 
 
 ---
