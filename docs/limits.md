@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-02-15
+reviewed:         2017-02-17
 title:            Limitations & troubleshooting
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -36,13 +36,13 @@ For high level insight, especially regarding peak consumption, we recommend to u
 
 The amount of processes divided by the average PHP response time determines how many PHP requests the App can handle per second. For example, if the App (on average) responds within 100ms then two processes could handle 20 requests per second:
 
-* `2 processes * 1 second % 100 ms = 20 requests per second`
-* `8 processes * 1 second % 150 ms = ~53 requests per second`
-* `16 processes * 1 second % 50 ms = 320 requests per second`
+* `2 processes * 1 second / 100 ms = 20 requests per second`
+* `8 processes * 1 second / 150 ms = ~53 requests per second`
+* `16 processes * 1 second / 50 ms = 320 requests per second`
 
 If more (PHP handled) requests are coming in than the application can handle, then they will be queued for a short time. If the queue is full, then the request will result in a `504 Gateway Timeout` error.
 
-**Solution**: The Dashboard metric _Page views_ show the amount of PHP requests per hour and the metric _PHP response time_ shows the average response those PHP requests took. With those metrics, you can determine whether your current scaling is sufficient. For example, if you have 100,000 average _Page views_ per hour and those execute on average (_PHP response_time_) in 100 ms, then you know that you need at least three processes to handle it, four to be safer. A simple calcualtion would be `100,000 requests per hour % 3600 seconds per hour = ~28` then `28 * 0.1 seconds average PHP response time = ~2.8 minimum required processes`.
+**Solution**: The Dashboard metric _Page views_ show the amount of PHP requests per hour and the metric _PHP response time_ shows the average response those PHP requests took. With those metrics, you can determine whether your current scaling is sufficient. For example, if you have 100,000 average _Page views_ per hour and those execute on average (_PHP response_time_) in 100 ms, then you know that you need at least three processes to handle it, four to be safer. A simple calcualtion would be `100,000 requests per hour / 3600 seconds per hour = ~28` then `28 * 0.1 seconds average PHP response time = ~2.8 minimum required processes`.
 
 Mind that those _PHP response time_ values are averages in the hour. If you have a strong difference in response times for individual requests (say 100 ms is the average, while some requests finish in 50 ms and others in 200 ms) then you might need more processes, to compensate for changes in the "request profile" (i.e. if those endpoints which result in 200 ms response time are suddenly more frequently used and your average response time goes toward 200 ms as a result).
 
