@@ -1,12 +1,13 @@
 ---
 
 template:         article
-reviewed:         2017-02-10
-title:            Limitations & Troubleshooting
-naviTitle:        Limitations
-lead:             Our products come in different sizes. Here we explain what happens when a limit is reached.
-category:         platform
+reviewed:         2017-02-15
+title:            Limitations & troubleshooting
+naviTitle:        Limits
+lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
+group:            platform
 stack:            all
+
 ---
 
 
@@ -14,7 +15,7 @@ stack:            all
 
 **Scope**: Universal and Professional Apps
 
-**Description**: The PHP component on fortrabbit has a memory limit. This limit depends on the selected scaling and is declared on the specs page ([Universal](https://www.fortrabbit.com/specs) & [Professional](https://www.fortrabbit.com/specs-pro#php)). Once the memory limit is reached, which can happen due to a [multitude of factors](php-pro#toc-php-memory), the application will start to fail. Failing means either a 503 error or a classic "PHP whitescreen". Depending on the type of failure you can expect to find errors in the log. A typical error would be:
+**Description**: The PHP Component on fortrabbit has a memory limit. This limit depends on the selected scaling and is declared on the ([Universal](https://www.fortrabbit.com/specs) & [Professional](https://www.fortrabbit.com/specs-pro#php)) specs pages. Once the memory limit is reached, which can happen due to a [multitude of factors](php-pro#toc-php-memory), the application will start to fail. Failing means either a 503 error or a classic "PHP whitescreen". Depending on the type of failure you can expect to find errors in the log. A typical error would be:
 
 ```
 Fatal error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 54 bytes)
@@ -60,11 +61,11 @@ Now if this script can be queried under the URL `https://{{app-name}}.frbit.com/
 The danger with using such a technique is producing a [deadlock](https://en.wikipedia.org/wiki/Deadlock): Using the above example imagine an App with two processes on a single node which receives two concurrent requests to `/home`. Both then "internally" generate a new request to `/navigation` and return the output. However, since the App only can handle two concurrent requests with two processes, both of them are locked and wait for the response of the request to `/navigation`. Neither of the requests to `/navigation` can be executed, since both processes are already in use handling the request to `/home`. The App is in a deadlock.
 
 
-## MySQL
+## MySQL storage
 
 **Scope**: Universal and Professional Apps
 
-**Description**: Each MySQL scaling comes with a fixed amount of maximum available storage ([Universal](http://www.fortrabbit.com/specs#plans) & [Professional](http://www.fortrabbit.com/specs-pro#mysql)). When this limit is exceeded all privileges to write operations, which could create additional data, are suspended. Those write operations are:
+**Description**: Each MySQL scaling comes with a fixed amount of maximum available storage - [Universal](http://www.fortrabbit.com/specs#plans) & [Professional](http://www.fortrabbit.com/specs-pro#mysql)). When this limit is exceeded all privileges to write operations, which could create additional data, are suspended. Those write operations are:
 
 * `CREATE TABLE`
 * `CREATE VIEW`
@@ -73,10 +74,10 @@ The danger with using such a technique is producing a [deadlock](https://en.wiki
 
 All other write operations, such as `DELETE` or `DROP`, which are needed for possible cleanup operations, are still allowed. The implementation of those suspensions is time delayed and can take effect a few minutes after the limit has been exceeded.
 
-**Solution**: To re-enable write capabilities you either can upgrade to a bigger plan or reduce data size by deleting rows or dropping tables. Mind that the time delay goes both ways: When you clean up the DB and remove data size, it can take a couple of minutes for the privileges to become available again.
+**Solution**: To re-enable write capabilities you either can upgrade to a bigger scaling or reduce data size by deleting rows or dropping tables. Mind that the time delay goes both ways: When you clean up the DB and remove data size, it can take a couple of minutes for the privileges to become available again.
 
 
-## Web Storage
+## Web storage
 
 **Scope**: Universal Apps
 
@@ -84,24 +85,12 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 **Solution**: We currently allow slight exceeding those limits. If you are using permanently more than 10% we expect you to upgrade to the next bigger scaling or we'll need to take the App at least temporarily offline. The storage availability of the biggest Universal App scaling is currently the highest we offer. Should you need to increase that limit permanently, we recommend to [migrate to the Professional Stack](https://help.fortrabbit.com/migrate-uni-to-pro).
 
-<!-- DONT SHOW: already in the help
-
-## Web Storage (temporary)
-
-**Scope**: Universal and Professional Apps
-
-**Description**: Each App allows temporary storage of data within the App. For Universal Apps, this means only the `/tmp` folder. For Professional Apps, this includes the `/tmp` folder and any other data generated by the App under `/srv/app/{{app-name}}/htdocs`. The current limit can be found in the specs ([Universal](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
-
-**Solution**: Automagic. Files under `/tmp` are automatically cleaned up after 7 days. if you are consuming more than the limit allows, then they will be cleaned up faster (up to hourly).
-
--->
-
 
 ## Object Storage
 
-**Scope**: Professional Apps with Object Storage component
+**Scope**: Professional Apps with Object Storage Component
 
-**Description**: Each Object Storage scaling comes with a fixed amount of available storage. You can review this amount per scaling on our [specs page](http://www.fortrabbit.com/specs-pro#object-storage). This limit cannot be exceed. Any write operation (modifying a file or creating a new file) will be rejected, if would result in exceeding the limit of the scaling.
+**Description**: Each Object Storage scaling comes with a fixed amount of available storage. You can review this amount per scaling on our [specs page](http://www.fortrabbit.com/specs-pro#object-storage). This limit cannot be exceeded. Any write operation (modifying a file or creating a new file) will be rejected, if would result in exceeding the limit of the scaling.
 
 **Solution**: You can either clean up obsolete data to reduce the used size or upgrade to a bigger scaling. If you need more than our current plans offer, please [get in touch](mailto:support@fortrabbit.com) and let us know how much you need and we will get back to you with an offer.
 
@@ -110,6 +99,6 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 **Scope**: Universal and Professional Apps
 
-**Description**: Each App has an included traffic amount which can be found in the specs ([Universal](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
+**Description**: Each App has an included traffic amount which can be found in the specs - ([Universal](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
 
 **Solution**: Once that limit is exceed, we will charge per additional 5GB or part thereof, as described in the above linked specs page.
