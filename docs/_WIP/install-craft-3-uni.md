@@ -1,13 +1,12 @@
 ---
 
 template:         article
-reviewed:         2017-02-09
+reviewed:         2017-02-27
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft CMS
 lead:             Work in progress
 group:            Install_guides
 stack:            uni
-proLink:          install-craft-2-pro
 dontList:         true
 
 websiteLink:      https://craftcms.com/
@@ -64,7 +63,36 @@ DB_DRIVER=mysql
 Before pushing the first time to fortrabbit, make sure to `git add composer.lock -f`.
 
 
+## Updating Craft
+
+The lastest beta is just a `composer update` away. The output looks something like this: 
+
+```plain
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+
+ [...]
+ 
+  - Removing yiisoft/yii2-debug (2.0.7)
+  - Installing yiisoft/yii2-debug (2.0.8)
+    Downloading: 100%
+
+  - Removing craftcms/cms (3.0.0-beta.3)
+  - Installing craftcms/cms (3.0.0-beta.5)
+    Downloading: 100%
+```
+
+The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App's `master` branch. The packages got installed during the deployment. As you can see it takes just a few seconds:
+
+![commit and push](https://static.frbit.name/img/help/craft3-composer-update.gif)
+
+
+
+
 
 ## Using the craft cli
 
 SSH in an type `php craft`. The `php` prefix is required for now.
+
+
+
