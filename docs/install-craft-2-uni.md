@@ -3,7 +3,7 @@
 template:         article
 reviewed:         2017-02-08
 title:            Install Craft CMS 2 on fortrabbit
-naviTitle:        Craft CMS
+naviTitle:        Craft 2
 lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
 group:            Install_guides
 stack:            uni
