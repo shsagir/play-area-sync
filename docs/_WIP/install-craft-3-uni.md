@@ -122,4 +122,3 @@ The following commands are available:
     migrate/up (default)      Upgrades the application by applying new
                               migrations.
 ```
-`
