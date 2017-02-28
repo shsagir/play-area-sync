@@ -1,19 +1,19 @@
 ---
 
 template:         article
-reviewed:         2017-02-27
+reviewed:         2017-02-28
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft CMS
-lead:             Work in progress
+lead:             Note: Like Craft 3 Beta this install guide is work in progress.
 group:            Install_guides
 stack:            uni
-dontList:         true
+dontList:         false
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0
+version:          3.0-beta5
 group:            Install_guides
 
 keywords:
@@ -23,6 +23,11 @@ keywords:
     - install-guide
 
 ---
+
+
+## Intro
+
+We are super excited about Craft 3! However, if you plan to launch new Craft sites within the next weeks you should go with the current stable version. [Here is the install guide for Craft 2](/install-craft-2-uni). If you are curious about the future this is the place to be.
 
 
 ## Get ready
@@ -65,7 +70,7 @@ Before pushing the first time to fortrabbit, make sure to `git add composer.lock
 
 ## Updating Craft
 
-The lastest beta is just a `composer update` away. The output looks something like this: 
+The lastest beta is just a `composer update` away. When you run this command in the terminal locally, the output looks something like this: 
 
 ```plain
 Loading composer repositories with package information
@@ -86,13 +91,35 @@ The `composer.lock` file reflects the exact package versions you've installed lo
 
 ![commit and push](https://static.frbit.name/img/help/craft3-composer-update.gif)
 
-
-
+That's it. 
 
 
 ## Using the craft cli
 
-SSH in an type `php craft`. The `php` prefix is required for now.
+Craft 3 ships with a Yii based cli tool. To use the cli remotely SSH in an type `php craft`. This will give you a list of all available commands.
 
+```
+This is Yii version 2.0.11.2.
 
+The following commands are available:
 
+- cache                       Allows you to flush cache.
+    cache/flush               Flushes given cache components.
+    cache/flush-all           Flushes all caches registered in the system.
+    cache/flush-schema        Clears DB schema cache for a given connection component.
+    cache/index (default)     Lists the caches that can be flushed.
+
+- migrate                     Manages Craft and plugin migrations.
+    migrate/create            @inheritdoc
+    migrate/down              Downgrades the application by reverting old
+                              migrations.
+    migrate/history           Displays the migration history.
+    migrate/mark              Modifies the migration history to the specified
+                              version.
+    migrate/new               Displays the un-applied new migrations.
+    migrate/redo              Redoes the last few migrations.
+    migrate/to                Upgrades or downgrades till the specified version.
+    migrate/up (default)      Upgrades the application by applying new
+                              migrations.
+```
+`
