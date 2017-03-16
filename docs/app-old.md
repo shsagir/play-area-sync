@@ -14,10 +14,9 @@ stack:         old
 We have three generations of Apps/Stacks here on fortrabbit: 
 
 * **Old Apps Stack** (2013 - 2017) this here
-* [Professional Stack](app-pro) (from 2015 on) < formaly known as New App
+* [Professional Stack](app-pro) (from 2015 on) < formerly known as New App
 * [Universal Stack](app-uni) (from 2016 on)
 
-Please be warned that the Old Apps are currently phasing out. We recommend not create any new Old App any more. Old Apps are in sun set phase. 
 
 
 ## Migrating
