@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-02-17
+reviewed:         2017-03-20
 title:            Limitations & troubleshooting
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -53,10 +53,10 @@ Also mind that the hourly _Page view_ metrics do not show you clustering within 
 One commonly seen pitfall are so called "self requests". Those are scenarios in which the App executes a PHP script, which fires an HTTP request to the App itself. A simple PHP example would be:
 
 ```php
-echo file_get_contents('https://{{app-name}}.frbit.com/navigation');
+echo file_get_contents('https://{{app-name}}.frb.io/navigation');
 ```
 
-Now if this script can be queried under the URL `https://{{app-name}}.frbit.com/home`, then `/home` makes a self request to `/navigation`.
+Now if this script can be queried under the URL `https://{{app-name}}.frb.io/home`, then `/home` makes a self request to `/navigation`.
 
 The danger with using such a technique is producing a [deadlock](https://en.wikipedia.org/wiki/Deadlock): Using the above example imagine an App with two processes on a single node which receives two concurrent requests to `/home`. Both then "internally" generate a new request to `/navigation` and return the output. However, since the App only can handle two concurrent requests with two processes, both of them are locked and wait for the response of the request to `/navigation`. Neither of the requests to `/navigation` can be executed, since both processes are already in use handling the request to `/home`. The App is in a deadlock.
 
