@@ -79,7 +79,7 @@ Clone your Old App's repo now, if you haven't a current local clone available:
 
 ```bash
 $ cd your-project-folder
-$ git clone {{old-app-name}}@git.eu1.frbit.com {{old-app-name}}
+$ git clone {{old-app-name}}@git.eu1.frbit.com:{{old-app-name}}.git {{old-app-name}}
 $ cd {{old-app-name}}
 ```
 
