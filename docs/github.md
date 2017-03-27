@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-12-20
+reviewed:         2017-03-27
 naviTitle:        GitHub
 title:            Combine fortrabbit with GitHub
 lead:             Learn how to integrate the most popular Git-as-a-service provider with your fortrabbit workflow.
@@ -56,10 +56,16 @@ $ git push fortrabbit master
 
 The reason why you can run into this issue temporarily is that GitHub limits it's API per IP. Given that you deploy on our Git servers (or use composer from our SSH servers) this IP address is shared with other developers deploying there as well. So if there is a deployment spike, GitHub might close down for a while.
 
-The solution is to create a GitHub OAuth token and put it in your `composer.json` file. Open up a terminal and issue the following command:
+The solution is to create a GitHub OAuth token and put it in your `composer.json` file. You can do so by visiting [https://github.com/settings/tokens](https://github.com/settings/tokens) or via terminal:
 
 ```bash
 curl -u your-github-user -d '{"note": "Fortrabbit Auth"}' https://api.github.com/authorizations
+```
+
+If you are using multi factor authentication (OTP), then you need to provide a valid OTP token like so:
+
+```bash
+curl -u your-github-user -H 'X-GitHub-OTP: 123456' -d '{"note": "Fortrabbit Auth"}' https://api.github.com/authorizations
 ```
 
 This will give you a response like the following:
