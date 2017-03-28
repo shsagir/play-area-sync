@@ -3,8 +3,9 @@
 template:      article
 reviewed:      2017-03-24
 title:         Billing Contact
-naviTitle:     Company
+naviTitle:     Billing Contact
 excerpt:       What you can do with a Billing Contact
+lead:          You want certain Apps to be charged from a different credit card while keeping team and access settings.
 group:         platform
 stack:         all
 
@@ -22,12 +23,9 @@ keywords:
 
 ---
 
-### Goal
+A Billing Contact represents the payment details which are used by fortrabbit to bill your [Company](/company). 
 
-You want certain Apps to be charged from a different credit card but want to keep team and access settings for the App.
-
-
-A Billing Contact represents the payment details which are used by fortrabbit to bill you. Usually you need only one, but in some instances you need one App to be paid by one credit card and another App to be paid by another credit card. Billing Contacts allow that: A Company within fortrabbit is a container to manage billing aspects. Within one [Company](/company) you can create multiple Billing Contacts and then assign individual Apps to either Billing Contacts. In contrast to using multiple Companies: you can still manage the same developer team on the Company.
+Most clients are happy with just one Billing Contact, but in some cases you need one App to be paid by one credit card and another App to be paid by another credit card. Billing Contacts allow just that.
 
 A Billing Contact persists of:
 
@@ -36,6 +34,12 @@ A Billing Contact persists of:
 * A billing e-mail address, to which the invoices will be send to
 
 Each App (except trial Apps) has is always associated with a specific Billing Contact. Each Billing Contact has its own invoice archive. Please also see the [billing article](/billing).
+
+## The difference between Billing Contact and Company
+
+The Billing Contact is part of a [Company](/company) on fortrabbit. Within the fortrabbit Company you can create multiple Billing Contacts and then assign individual Apps to either Billing Contacts. 
+
+You could also create multiple Companies to achieve that, but with multiple you can still manage the same team on the Company.
 
 ### Creating a Billing Contact
 
@@ -59,6 +63,23 @@ In the [Dashboard](dashboard), go to your [App](app) and hit the "Change ownersh
 ### Moving an App from one Billing Contact to another
 
 In case you want the App to be billed from another credit card or bank account but still want to keep the team of the App the same: You simply change the Billing Contact of the App. You first need to have at least two Billing Contacts with your Company.
+
+
+### Adding a VAT IN
+
+It is recomended to add your VAT IN to your Billing Contact when your company is registered in the European Union. This can save you (and us) upfront value added taxes. Please see our [tax topic](/billing#toc-taxes). To enter your VAT IN:
+
+1. Login to the Dashboard
+2. Go to "Your Account"
+3. Go to your Company
+4. Click on "VAT IN"
+5. Enter your companies VAT IN
+
+Please mind that we need to validate the VAT IN. So the number you enter needs to match the correct format. Please mind that your VAT IN is not the tax number. The correct number should start with your country code. Our VAT IN looks like so: 
+
+Entering the VAT IN will change how VAT will be charged for future invoices, entering the VAT IN can not affect past invoices.
+
+
 
 ### Changing the Billing Contact of an App
 

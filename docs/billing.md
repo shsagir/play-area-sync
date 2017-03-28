@@ -64,7 +64,7 @@ fortrabbit is a B2B hosting solution, it's for entrepreneurs only, we expect you
 
 ### VAT-IN from clients in EU countries
 
-We recommend to enter your VAT-IN with your Billing Contact. This way you save upfront costs for VAT — reverse charge makes this possible.
+We recommend to enter your VAT-IN. This way you save upfront costs for VAT — reverse charge makes this possible. See this [guide](/billing-contact#toc-taxes) to setup your VAT IN with your Billing Contact. 
 
 
 ### Currencies
