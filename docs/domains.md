@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-01-03
+reviewed:      2017-03-26
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -26,6 +26,8 @@ keywords:
     - lookup
 
 ---
+
+Please note that fortrabbit does not provide domain registration services. An "external domain" is a domain registered with a third party service. See [below](#toc-choosing-a-domain-provider) for more details.
 
 Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external domain to your App. Your goal here is to have your App running under your own domain.
 
