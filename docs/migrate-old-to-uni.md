@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     Migrate Old App > Universal
 title:         Migrate Old App to Universal
-reviewed:      2016-12-30
+reviewed:      2017-03-24
 lead:          "Here is how you manually migrate an Old App to the new Universal Stack."
 group:         stacks
 stack:         all
@@ -79,7 +79,7 @@ Clone your Old App's repo now, if you haven't a current local clone available:
 
 ```bash
 $ cd your-project-folder
-$ git clone {{old-app-name}}@git.eu1.frbit.com {{old-app-name}}
+$ git clone {{old-app-name}}@git.eu1.frbit.com:{{old-app-name}}.git {{old-app-name}}
 $ cd {{old-app-name}}
 ```
 
@@ -87,7 +87,7 @@ Now, since your local code base is already under Git version control, all you ne
 
 ```bash
 $ cd {{old-app-name}}
-$ git remote add fortrabbit2 {{app-name}}@deploy.{{region}}.frbit.com
+$ git remote add fortrabbit2 {{app-name}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
 
 **Note**: The above example names the new remote `fortrabbit2` so it doesn't collide with `fortrabbit`, which we recommend normally - you can use whichever name you prefer.
