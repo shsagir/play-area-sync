@@ -53,7 +53,7 @@ The above illustration shows how Companies, Apps, Accounts and Billing Contacts 
 
 ## Managing Companies
 
-We believe in graceful disclosure: Companies are virtually invisible and for all intends and purposes synonym to your Account - until you need them.
+Don't worry when this all sounds very complex at the beginning. We believe in graceful disclosure: Companies are virtually invisible and for all intends and purposes synonym to your Account when working alone - until you need them.
 
 ### Creating a Company
 
