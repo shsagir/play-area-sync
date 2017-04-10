@@ -27,7 +27,7 @@ Create a file named `fortrabbit.yml` in the App's root folder of your project an
 ## Full schema
 
 ```yml
-# differentiate from the deployment files for Old Apps
+# differentiate from the deployment files
 version: 2
 
 # called before Composer runs

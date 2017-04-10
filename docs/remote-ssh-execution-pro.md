@@ -136,7 +136,7 @@ $ gulp run-script
 
 ## Private repositories
 
-[Old Apps](app-old) offered a keygen hook to realize access to private Composer repos. With the Professional Apps you can create a new SSH keypair for your App, using the `keygen` command:
+With the Professional Apps you can create a new SSH keypair for your App, using the `keygen` command:
 
 ```bash
 ssh {{ssh-user}}@deploy.{{region}}.frbit.com keygen

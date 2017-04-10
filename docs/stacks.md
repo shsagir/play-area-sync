@@ -4,7 +4,7 @@
 template:      article
 naviTitle:     "About the Stacks"
 title:         "About the Stacks"
-reviewed:      2016-12-20
+reviewed:      2017-04-10
 lead:          "With each App you create, you can choose between two technology stacks. This article helps you to understand why there are two stacks and how to decide."
 group:         stacks
 stack:         all
@@ -45,7 +45,3 @@ stack:         all
 * [Professional Stack article](/app-pro)
 * [Universal Stack specs](https://www.fortrabbit.com/specs)
 * [Professional Stack specs](https://www.fortrabbit.com/specs-pro)
-
-## Legacy stacks
-
-* [Old Apps](/app-old)

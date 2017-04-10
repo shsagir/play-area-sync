@@ -56,7 +56,7 @@ Universal Apps offer [Git](git-deployment), [SSH](ssh-uni) and [SFTP](sftp-uni) 
 
 ### File system access
 
-[Old Apps](app-old) and [Universal Apps](app-uni) have a **persistent storage**: you have access via SSH and any changes the App writes to the file system are permanent. Hence: You can use web based uploads and those uploaded files will stay there until you remove them.
+[Universal Apps](app-uni) have a **persistent storage**: you have access via SSH and any changes the App writes to the file system are permanent. Hence: You can use web based uploads and those uploaded files will stay there until you remove them.
 
 With **ephemeral storage** it's different: On each Git deployment, all files of your App will be replaced with the files of the deployment. Files which are not part of the deployment will be removed. In other words: your App can, but should not write any relevant data (user uploads) you might want to reuse later to the local file system. Instead, you need a different solution:
 

@@ -63,9 +63,6 @@ noToc: true
 # where to show this: uni, pro old, all — REQUIRED when required
 stack:     univ
 
-# link to the Old App version
-oldLink:   mysql-old
-
 # link to the Universal App verison
 uniLink:   mysql-uni
 
