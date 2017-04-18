@@ -13,7 +13,7 @@ group:         platform
 
 ## Service location
 
-Mind that we are currently only offering service locations in Ireland (AWS EU). For customers from the US this means some data latency as all requests have to be send over the ocean. Please also consider that all prices are in Euro (€). We are based in Berlin, our time zone is: CET.
+Mind that we are currently only offering service locations in Ireland (AWS EU). For customers from the US this means some data latency as all requests have to be sent over the ocean. Please also consider that all prices are in Euro (€). We are based in Berlin, our time zone is: CET.
 
 ## Mailing
 
