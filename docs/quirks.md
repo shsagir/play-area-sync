@@ -2,7 +2,7 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2016-12-20
+reviewed:      2017-04-23
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions there are some — aren't there always? Heads up so it doesn't cost you hours of debugging in the wrong direction."
 stack:         all
@@ -13,7 +13,7 @@ group:         platform
 
 ## Service location
 
-Mind that we are currently only offering service locations in Ireland (AWS EU). For customers from the US this means some data latency as all requests have to be sent over the ocean. Please also consider that all prices are in Euro (€). We are based in Berlin, our time zone is: CET.
+Data center locations are available in Ireland (AWS EU-1) and Virginia / USA (AWS US-EAST-1). Data center can be chosen for each App indidually, but can't be changed later on. The service is available in Euro (€) or US Dollars ($) this can be chosen with each [Billing Contact](/billing-contact). The fortrabbit headquarter is based in Berlin, time zone is: CET.
 
 ## Mailing
 
