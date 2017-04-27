@@ -100,7 +100,7 @@ Your `git push` updates the Git remote on fortrabbit and triggers the build of a
 
 ### The branch name counts
 
-While you can have as many Git branches you want, only changes in certain branches will be deployed. The `master` branch us the default one.
+While you can have as many Git branches you want, only changes in certain branches will be deployed. The `master` branch is the default one.
 
 
 ### Branching for multi-staging setups
