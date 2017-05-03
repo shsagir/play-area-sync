@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-12-20
+reviewed:    2017-05-03
 title:       All about Memcache
 naviTitle:   Memcache
 lead:        Speed speed speed. Why and how to do caching with Memcache on fortrabbit.
@@ -67,6 +67,8 @@ $m->get('SomeKey');
 
 See also the specific examples for: [Laravel](install-laravel#toc-memcache), [Symfony](install-symfony#toc-memcache), [Craft](install-craft#toc-memcache).
 
+
+
 ## Scaling
 
 In the Dashboard, go to your App and click on Memcache under the scaling options. Please also see the [Memcache scaling](scaling#toc-memcache) section. Using a plan with two Nodes allow you two modes:
@@ -74,6 +76,59 @@ In the Dashboard, go to your App and click on Memcache under the scaling options
 1. **Combined**: data is stored only on one of the nodes > twice the memory size
 2. **Redundant** (recommended): data is stored on both nodes > one node can fail
 
+
+### Redundant setup
+
+The PHP Memcached extension can be heavily configured and tuned. Individual App configurations might require very custom configurations. With that in mind, following our own best practice advice for a redundant setup:
+
+``` php
+// initialize Memcached with an ID, which allows persistent connections
+$id = getenv("APP_NAME");
+$mc = new \Memcached($id);
+
+// use a global, tunable timeout, from which all time-related tuning options derive
+$timeout = 50;
+
+// set options
+$mc->setOptions([
+
+    // Assure that dead servers are properly removed and ...
+    Memcached::OPT_REMOVE_FAILED_SERVERS => true,
+
+    // ... retried after a short while (here: 2 seconds)
+    Memcached::OPT_RETRY_TIMEOUT         => 2,
+
+    // KETAMA must be enabled so that replication can be used
+    Memcached::OPT_LIBKETAMA_COMPATIBLE  => true,
+
+    // Replicate the data, i.e. write it to both memcached servers
+    Memcached::OPT_NUMBER_OF_REPLICAS    => 1,
+
+    // Those values assure that a dead (due to increased latency or really unresponsive) memcached server increased
+    // dropped fast and the other is used.
+    Memcached::OPT_POLL_TIMEOUT          => $timeout,           // milliseconds
+    Memcached::OPT_SEND_TIMEOUT          => $timeout * 1000,    // microseconds
+    Memcached::OPT_RECV_TIMEOUT          => $timeout * 1000,    // microseconds
+    Memcached::OPT_CONNECT_TIMEOUT       => $timeout,           // milliseconds
+
+    // Further performance tuning
+    Memcached::OPT_BINARY_PROTOCOL       => true,
+    Memcached::OPT_NO_BLOCK              => true,
+]);
+
+// init servers only if they are not already added (using above $id results in a persistent
+// setup, which keeps the connection in between handling (requests), so the servers need
+// only be added in the "first handling")
+if (!$mc->getServerList()) {
+    foreach ($servers as $server) {
+        $mc->addServer($server[0], $server[1]);
+    }
+}
+```
+
+### Pitfall: Memcached::getVersion vs redundant setup
+
+Some very popular Memcached adapters use the `getVersion` method of the Memcached extension to check the state of the connection after setup. We do not recommend this, [due to incompatibility of this approach with redundant setups](https://github.com/laravel/framework/issues/17957).
 
 ## Alternatives
 
