@@ -82,43 +82,46 @@ In the Dashboard, go to your App and click on Memcache under the scaling options
 The PHP Memcached extension can be heavily configured and tuned. Individual App requirements might result very custom settings. With that in mind, following our own best practice advice for a redundant setup:
 
 ``` php
-// initialize Memcached with an ID, which allows persistent connections
+// Initialize Memcached with an ID, which allows persistent connections
 $id = getenv("APP_NAME");
 $mc = new \Memcached($id);
 
-// use a global, tunable timeout, from which all time-related tuning options derive
+// Use a global, tunable timeout, from which all time-related tuning
+// options derive
 $timeout = 50;
 
-// set options
+// Set options
 $mc->setOptions([
 
     // Assure that dead servers are properly removed and ...
-    Memcached::OPT_REMOVE_FAILED_SERVERS => true,
+    \Memcached::OPT_REMOVE_FAILED_SERVERS => true,
 
     // ... retried after a short while (here: 2 seconds)
-    Memcached::OPT_RETRY_TIMEOUT         => 2,
+    \Memcached::OPT_RETRY_TIMEOUT         => 2,
 
     // KETAMA must be enabled so that replication can be used
-    Memcached::OPT_LIBKETAMA_COMPATIBLE  => true,
+    \Memcached::OPT_LIBKETAMA_COMPATIBLE  => true,
 
     // Replicate the data, i.e. write it to both memcached servers
-    Memcached::OPT_NUMBER_OF_REPLICAS    => 1,
+    \Memcached::OPT_NUMBER_OF_REPLICAS    => 1,
 
-    // Those values assure that a dead (due to increased latency or really unresponsive) memcached server increased
-    // dropped fast and the other is used.
-    Memcached::OPT_POLL_TIMEOUT          => $timeout,           // milliseconds
-    Memcached::OPT_SEND_TIMEOUT          => $timeout * 1000,    // microseconds
-    Memcached::OPT_RECV_TIMEOUT          => $timeout * 1000,    // microseconds
-    Memcached::OPT_CONNECT_TIMEOUT       => $timeout,           // milliseconds
+    // Those values assure that a dead (due to increased latency or
+    // really unresponsive) memcached server increased dropped fast
+    // and the other is used.
+    \Memcached::OPT_POLL_TIMEOUT          => $timeout,           // milliseconds
+    \Memcached::OPT_SEND_TIMEOUT          => $timeout * 1000,    // microseconds
+    \Memcached::OPT_RECV_TIMEOUT          => $timeout * 1000,    // microseconds
+    \Memcached::OPT_CONNECT_TIMEOUT       => $timeout,           // milliseconds
 
     // Further performance tuning
-    Memcached::OPT_BINARY_PROTOCOL       => true,
-    Memcached::OPT_NO_BLOCK              => true,
+    \Memcached::OPT_BINARY_PROTOCOL       => true,
+    \Memcached::OPT_NO_BLOCK              => true,
 ]);
 
-// init servers only if they are not already added (using above $id results in a persistent
-// setup, which keeps the connection in between handling (requests), so the servers need
-// only be added in the "first handling")
+// Init servers only if they are not already added (using above $id
+// results in a persistent setup, which keeps the connection in between
+// handling (requests), so the servers need only be added in the "first
+// handling")
 if (!$mc->getServerList()) {
     foreach ($servers as $server) {
         $mc->addServer($server[0], $server[1]);
