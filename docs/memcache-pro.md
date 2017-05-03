@@ -79,7 +79,7 @@ In the Dashboard, go to your App and click on Memcache under the scaling options
 
 ### Redundant setup
 
-The PHP Memcached extension can be heavily configured and tuned. Individual App configurations might require very custom configurations. With that in mind, following our own best practice advice for a redundant setup:
+The PHP Memcached extension can be heavily configured and tuned. Individual App requirements might result very custom settings. With that in mind, following our own best practice advice for a redundant setup:
 
 ``` php
 // initialize Memcached with an ID, which allows persistent connections
