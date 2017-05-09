@@ -68,11 +68,13 @@ You still should care about your naked domain, as some users might type it in di
 
 When you register a `www.` domain in the fortrabbit Dashboard, we additionally provide a forwarding service for your naked domain. You'll get two routing values, the main `CNAME` target and an additional `A`-record that points to our forwarding service.
 
+#### Example setup
+
 ```plain
-HOSTNAME      TYPE       VALUE
+HOSTNAME      TYPE        VALUE
 -------------------------------------------------
-@             A          0.0.0.0 < See Dashboard for actual IP
-www           CNAME      your-chosen-name.frb.io.
+@             A-Record    52.18.136.112 < See Dashboard for actual IP
+www           CNAME       {{app-name}}.
 ```
 
 This will redirect all requests incoming to the naked domain to the `www.` domain.
