@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-03-20
+reviewed:         2017-05-15
 title:            Limitations & troubleshooting
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -9,6 +9,8 @@ group:            platform
 stack:            all
 
 ---
+
+We don't believe in hosting offerings with unlimted resources. There is always a limit, even for cloud hosting. Our fair limits are designed to match the most common use cases on this platform. Some limits may seem small, but the vast majority of web project will not need more.
 
 
 ## PHP memory
@@ -95,10 +97,10 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 **Solution**: You can either clean up obsolete data to reduce the used size or upgrade to a bigger scaling. If you need more than our current plans offer, please [get in touch](mailto:support@fortrabbit.com) and let us know how much you need and we will get back to you with an offer.
 
 
-## Traffic
+## Transfer
 
 **Scope**: Universal and Professional Apps
 
-**Description**: Each App has an included traffic amount which can be found in the specs - ([Universal](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
+**Description**: Each App has an included traffic (transfer / bandwidth) amount which can be found in the specs - (see the [Universal specs](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional specs](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
 
-**Solution**: Once that limit is exceed, we will charge per additional 5GB or part thereof, as described in the above linked specs page.
+**Solution**: Once that limit is exceeded, we will charge per additional 5GB or part thereof, as described in the above linked specs page.
