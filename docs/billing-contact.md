@@ -25,7 +25,7 @@ keywords:
 
 A Billing Contact represents the payment details which are used by fortrabbit to bill your [Company](/company). 
 
-Most clients are happy with just one Billing Contact, but in some cases you need one App to be paid by one credit card and another App to be paid by another credit card. Billing Contacts allow just that.
+Most people are happy with just one Billing Contact, but in some cases you need one App to be paid by one credit card and another App to be paid by another credit card. Billing Contacts allow just that.
 
 A Billing Contact persists of:
 
