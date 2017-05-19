@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-05-19
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -166,6 +166,12 @@ You can test fortrabbit for free. Therefore each Account can have one trial App 
 #### Starting a new trial App
 
 Find the "Create an App" on the Dashboard home. When asked for the plan, you can choose the free trial option instead. Trial Apps are available for both stacks, Universal & Professional.
+
+
+#### Trial limits
+
+The trial App scaling specs are matching a small preset, always enough to get started. An urgent limitation is, that the trial has a limited lifetime:
+
 
 #### Extending the trial
 
