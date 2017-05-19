@@ -170,7 +170,7 @@ Find the "Create an App" on the Dashboard home. When asked for the plan, you can
 
 #### Trial limits
 
-The trial App scaling specs are matching a small preset, always enough to get started. An urgent limitation is, that the trial has a limited lifetime:
+The trial App scaling specs are matching a small preset, always enough to get started. The trial is NOT a forever-free tier. An urgent limitation is, that the trial has a limited lifetime:
 
 
 #### Extending the trial
