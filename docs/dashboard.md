@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-05-25
 naviTitle:     The Dashboard
 title:         The fortrabbit Dashboard
 lead:          On fortrabbit you won't find any old-school server admin control panel like CPanel. The fortrabbit dashboard is designed to give you fine-grained control:
@@ -28,9 +28,9 @@ keywords:
 
 **[Apps](/app)**: create, manage, scale and delete all of your Apps, get access credentials, set all kind of App-specific configurations, see metrics.
 
-**[Collaboration](/collaboration)**: Manage your own teams and join other teams.
-
 **Account**: Manage your SSH access keys, password, e-mail preferences and everything else associated.
+
+**[Collaboration](/collaboration)**: Manage your own teams and join other teams.
 
 **[Billing](/billing)**: Manage your different Companies and Billing Contacts, see invoices.
 
@@ -59,3 +59,9 @@ Your fortrabbit Account password, first chosen while signing up
 ## System requirements
 
 The fortrabbit Dashboard is supposed to work in modern desktop browsers, including Chrome, Firefox, Safari, IE11/Edge. JavaScript needs to be turned on. Cookies are used.
+
+
+
+## Activities
+
+On the Dashboard home page you will find a list of performed actions  within the Dashboard > activities. This includes your and your teams operations. Seeing who did what when makes your work transparent and helps to increase security.
