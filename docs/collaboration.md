@@ -111,6 +111,6 @@ There are two levels of teamwork:
 1. **[App level collaboration](/app-collaboration)**: Collaborators have access on per-App basis
 2. **[Company level collaboration](company-collaboration)**: Company members act on behalf of the Company
 
-Both levels work side by side and can be combined. Also check out our [fancy explaining video](http://help.fortrabbit.dev/teamwork-video).
+Both levels work side by side and can be combined. Also check out our [fancy explaining video](https://help.fortrabbit.com/teamwork-video).
 
 
