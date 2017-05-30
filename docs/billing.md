@@ -50,7 +50,7 @@ You can pay by **credit card** (Visa & Master, no debit cards) or **SEPA direct 
 
 ### Billing e-mail address
 
-You can setup a different e-mail address for each [Billing Contact](/company#toc-billing-contacts).
+You can setup a different e-mail address for each [Billing Contact](/billing-contact#toc-changing-the-billing-e-mail-address).
 
 ### Taxes
 
