@@ -1,8 +1,8 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
-title:         Collaborating on Apps on fortrabbit
+reviewed:      2017-06-02
+title:         App collaboration
 naviTitle:     App collaboration
 lead:          Leverage App level collaboration to easily develop code with others on fortrabbit.
 group:         collaboration
