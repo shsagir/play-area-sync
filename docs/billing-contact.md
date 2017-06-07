@@ -29,9 +29,9 @@ Most people are happy with just one Billing Contact, but in some cases you need 
 
 A Billing Contact persists of:
 
-* A payment method, which can be credit card or SEPA direct debit (EU only)
-* A billing address, which will be written on the invoice
-* A billing e-mail address, to which the invoices will be send to
+* A [payment method](#toc-changing-the-payment-method), which can be credit card or SEPA direct debit (EU only)
+* A [invoice address](#toc-changing-the-invoice-address), which will be written on the invoice
+* A [billing e-mail address](#toc-changing-the-billing-e-mail-address), to which the invoices will be send to
 
 Each App (except trial Apps) has is always associated with a specific Billing Contact. Each Billing Contact has its own invoice archive. Please also see the [billing article](/billing).
 
@@ -54,6 +54,20 @@ You cannot, because they are bound to previously created invoices and are needed
 ### Changing the billing e-mail address
 
 Each month we'll send an invoice and send a link by e-mail. You can change this e-mail to go directly to your book keeping department. Within the Dashboard > Your Account > Companies (Your Company) > Billing Contact > "Invoice e-mail".
+
+### Changing the invoice address
+
+Your invoices contain the street address of your organization. You will be asked for that while setting up a Billing Contact. You can change this invoice address (for future invoices) at any time like so:
+
+Within the Dashboard > Your Account > Companies (Your Company) > Billing Contact > "Invoice address".
+
+
+### Changing the payment method
+
+Will charge on a monthly basis. You will be asked for your payment method while setting up a Billing Contact. You can change this at any time like so:
+
+Within the Dashboard > Your Account > Companies (Your Company) > Billing Contact > "Payment method".
+
 
 ### Changing the Billing Contact of an App
 
