@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-06-07
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -144,3 +144,17 @@ We don't have any fancy GitHub/Bitbucket integrations (yet). But it is easily po
 ## Don't use Git submodules
 
 Git submodules are not supported. We recommend to use Git subtrees instead. See [this post from Atlassian](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/).
+
+## Reporting issues
+
+If your Git deployment fails for any reason and you need help to fix it, please get in touch. To help us help you please provide a verbose output of the push (or pull) operation:
+
+```
+# Generate verbose output for push
+$ GIT_SSH_COMMAND="ssh -vvv" git push fortrabbit master
+
+# Generate verbose output for pull
+$ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
+```
+
+**Note**: The remote name *fortrabbit* might be *origin* or any other custom name you have chosen.
