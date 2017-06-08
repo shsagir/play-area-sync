@@ -58,7 +58,7 @@ During the guided setup you will enable your second device to generate OneTimePa
 
 #### Using 2FA with your Account
 
-Once 2FA is enabled with your fortrabbit Account, you'll need to enter the extra OTP code when logging or performing critical actions requiring a SUDO.
+Once 2FA is enabled with your fortrabbit Account, you'll need to enter the extra TOTP code when logging or performing critical actions requiring a SUDO.
 
 #### Recovering 2FA when second device is lost
 
