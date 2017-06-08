@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-06
+reviewed:      2017-06-07
 title:         Leveraging Composer
 naviTitle:     Composer
 lead:          Learn how to integrate Composer into your development workflow with fortrabbit.
@@ -46,7 +46,9 @@ $ composer install
 
 ### Use alternative location
 
-If your `composer.json` and `composer.lock` file are not on top level, then they will be ignored by the deployment. For example, if those files are in `sub-folder` and the resulting `vendor` folder then would be in `sub-folder/vendor`, you can use the `pre` directive from the [deployment file](deployment-file):
+If your `composer.json` and `composer.lock` file are not on top level, then they will be ignored by the deployment. However, you can use the `pre` directive from the [deployment file](deployment-file) to setup a custom composer run in a different directory.
+
+Following an example which assumes that your `composer.*` files are within the folder `sub-folder`:
 
 **fortrabbit.yml**
 
