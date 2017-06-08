@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-05-18
+reviewed:      2017-06-08
 title:         Account
 naviTitle:     Account
 excerpt:       What you can do with your Account
@@ -16,6 +16,7 @@ keywords:
     - sharing
     - roles
     - access
+    - security
 
 ---
 
@@ -49,7 +50,21 @@ Have you forgot that Account password again? Hop over [here](https://dashboard.f
 
 ### Setting up 2FA
 
-We recomend to use [two-factor-authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication) with your fortrabbit Account to add an additional layer of security. You can setup and disable 2FA from your Account in the Dashboard.
+We recommend to use [two-factor-authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication) with your fortrabbit Account to add an additional layer of security. You can setup and disable 2FA from your Account in the Dashboard:
+
+* Dashboard > Your Account > [2FA](http://dashboard.fortrabbit.dev/account/security/enable2fa)
+
+During the guided setup you will enable your second device to generate OneTimePasswords for fortrabbit. 
+
+#### Using 2FA with your Account
+
+Once 2FA is enabled with your fortrabbit Account, you'll need to enter the extra OTP code when logging or performing critical actions requiring a SUDO.
+
+#### Recovering 2FA when second device is lost
+
+During the 2FA setup the Dashboard showed you some recovery codes. These codes are always valid for your Account. Please store those in a save place you still remember later on. When your device is lost, use those codes to login and disable (an re-enable) 2FA.
+
+When you have also lost your 2FA recovery codes: Contact us and ask us to disable 2FA for you manually. Please provide proof that we can safely identify you, for example: invoice numbers, account e-mail address, number and name of Apps, information about code or recent conversations.
 
 ### Managing SSH keys
 
