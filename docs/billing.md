@@ -101,4 +101,4 @@ Your payment bounces — which costs us a lot of money each month. We might pass
 
 #### Expired credit cards
 
-We will inform you about the bounced invoice. Please add your new credit card details to your Billing Contact.
+We will inform you about the bounced invoice. Please add your new credit card details to your [Billing Contact](/billing-contact/#toc-changing-the-payment-method).

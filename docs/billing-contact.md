@@ -64,10 +64,11 @@ Within the Dashboard > Your Account > Companies (Your Company) > Billing Contact
 
 ### Changing the payment method
 
-Will charge on a monthly basis. You will be asked for your payment method while setting up a Billing Contact. You can change this at any time like so:
+A valid payment method is required to use the fortrabbit services. Each Billing Contact has an associated payment method. When creating a Company you can choose between different [payment method options](/billing#toc-payment-methods) and enter your credentials. fortrabbit will charge on a monthly basis [after usage](/billing#toc-consumption-based-billing). Change the payment method of a Billing Contact like so:
 
-Within the Dashboard > Your Account > Companies (Your Company) > Billing Contact > "Payment method".
+* Dashboard > Companies (Your Company) > Billing Contact > "Payment method"
 
+Changing the payment method is required when your credit card expired or you which to switch from one payment option to another. Changing the payment method will affect future payments and will also be used to balance possible open invoices. 
 
 ### Changing the Billing Contact of an App
 
