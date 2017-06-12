@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-05-19
+reviewed:      2017-06-12
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -110,7 +110,6 @@ You can register your App to accept requests from any external domain you route 
 
 </div>
 
-
 #### Root path
 
 
@@ -133,7 +132,7 @@ You can however set the root path afterwards at any given time by visiting the a
 </div>
 
 
-##### Individual root paths per domain
+#### Individual root paths per domain
 
 In some cases, you might want to route individual domains to different folders. Please mind that there are limited use cases for this and don't use one App to host multiple website (see [here](/app#toc-one-website-per-app) as well).
 
@@ -142,23 +141,33 @@ When visiting the root path settings form with a [Professional stack Apps](/app-
 Mind that you can also use `.htaccess` files with `RewriteRule` directives to handle different domains differently.
 
 
-
-#### Metrics
-
-<!--
-
-TODO: extend this topic, it's a major selling point. explain how to use it with use cases bla bla bla.
-
--->
+### Metrics
 
 Each App comes with "**Usage metrics**": Those show you the current status of the Web storage, MySQL storage and Object Storage and context of your 
 
-Some Apps also come with "**Performance metrics**": Those show you how fast your App is and where you might need to improve. Perfomance metrics are: requests, PHP response time, traffic, errors and other useful stuff. You can set different time intervals to monitor perfromance over time.
+Some Apps also come with "**Performance metrics**": Those show you how fast your App is and where you might need to improve. Performance metrics are: requests, PHP response time, traffic, errors and other useful stuff. You can set different time intervals to monitor performance over time.
 
+### App team
 
+The team settings of the App are showing you which other developers have access to the App. From here you can also invite new team members directly to the App.
 
+See our [collaboration article](/collaboration) to learn more about joint development.
 
-## Trial
+### App Company
+
+This setting links to the Company owning the App. From here you can also:
+
+#### Changing App ownership
+
+The `Change ownership` button is a very powerful tool. You can move the App to a different Company or Billing Contact you have access to. That means, you can assign the App to a different team, and or to be billed from a different [Billing Contact](/billing-contact).
+
+#### Inviting a client to take over an App
+
+Are you working on behalf of someone? You want your client or the boss of the agency to pay for hosting? Here you can start the invitation. See our [client collaboration](/client-collaboration) article for more details.
+
+- - -
+
+## The App trial
 
 You can test fortrabbit for free. Therefore each Account can have one trial App running. The purpose of the trial is testdrive the platform. See if it works as advertised. See if fortrabbit is the right hosting solution for you.
 
@@ -195,8 +204,12 @@ You can, of course, upgrade from your trial to a paid plan at any time. You can 
 
 When the trial is finally over, the trial App will be deleted — we will not keep your data hostage. Good news is: we will inform you by e-mail before it happens and you can start a new trial right away, after your current trial ended.
 
+- - -
+
 
 ## Further readings
+
+Now you know the basics about Apps on fortrabbit, keep going:
 
 * [Quirks and constrains](/quirks)
 * [App Specs](https://www.fortrabbit.com/specs)
