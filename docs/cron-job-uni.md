@@ -11,7 +11,7 @@ proLink:      worker-pro
 
 ---
 
-
+Please mind that crons on fortrabbit are managed in the Dashboard, not via [SSH](/ssh-uni).
 
 ## Use cases
 

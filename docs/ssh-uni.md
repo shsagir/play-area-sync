@@ -106,6 +106,7 @@ $ composer install
 
 * This is not a root shell, so you can't install or remove software packages
 * Mind that you are using the same runtime as your web application: resource intensive operations will drain memory and CPU from the web execution
+* [Crons](/cron-job-uni) are managed via the Dashboard, not the shell
 * See the [specs page](https://fortrabbit.com/specs) for more limits and numbers
 
 
