@@ -66,15 +66,13 @@ App collaboration is available for all but the smallest Universal App plans. Wit
 
 Easy as pie:
 
-1. In the [Dashboard](/dashboard) overview: Click the "Invite someone" button
+1. In the [Dashboard](/dashboard) overview: Click the "Invite a developer" button
 2. Enter name and e-mail of your colleague
 3. If you are part of multiple Companies, you will be asked to choose the Company
 4. Next you will be asked, which kind Level of Collaboration you want, choose "App collaboration"
 5. In the last step you can choose between Apps you want your colleague to be invited to
 
-This will send an invitation e-mail. The recipient then can either refuse, by just ignoring the e-mail, or accept by following the sign-up link.
-
-You can start this process from your Company or from your App.
+This will send an invitation e-mail. The recipient then can either refuse, by just ignoring the e-mail, or accept by following the sign-up link. You can start this process also from your Company or from your App.
 
 
 ## Removing an App collaborator
