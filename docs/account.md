@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-08
+reviewed:      2017-06-13
 title:         Account
 naviTitle:     Account
 excerpt:       What you can do with your Account
@@ -20,23 +20,46 @@ keywords:
 
 ---
 
-## The difference between Account and Company
-
 Most classical hosting works like Twitter: You have a personal account and additional accounts for your corporate tweets. fortrabbit is more like Facebook: Your Account represents you as an individual. You add company pages to represent your businesses.
 
-* 😀 - **Account**: login & access, security settings, personal preferences
-* 🏢 - [**Company**](/company): team & collaboration, billing, App ownership
+```nohighlight
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│                         Company                         │
+│                                                         │
+└─────▲─────────┬─────────────┬────────────┬────────▲─────┘
+      │                                             │      
+    Owner      owns          owns         owns    Admin    
+      │                                             │      
+┌─────┴──────┐  │             │            │ ┌──────┴─────┐
+│            │                               │            │
+│  Account1  ├──┼───access    │    access──┼─┤  Account3  │
+│            │           │         │         │            │
+└─────┬──────┘  │        │    │    │       │ └──────┬─────┘
+      │                  │         │                │      
+    access      │        │    │    │       │     access    
+      │                  │         │                │      
+┌─────▼─────────▼─┐  ┌───▼────▼────▼───┐ ┌─▼────────▼─────┐
+│                 │  │                 │ │                │
+│      App1       │  │      App2       │ │      App3      │
+│                 │  │                 │ │                │
+└─────────────────┘  └─────────────────┘ └────────────────┘
+```
 
-Creating an Account with fortrabbit is free, of course.
+| Account 😀          | [Company](/company) 🏢 | [App](/app)                            |
+| ------------------- | ---------------------- | --------------------------------------- |
+| represents a person | represents a company   | represents a web application or website |
+| is activly managing | is managed by Accounts | is managed by Accounts                  |
+
+
 
 
 ## Managing your Account
 
 
-
 ### Creating an Account
 
-If you haven't already: just head over to [our signup page](https://dashboard.fortrabbit.com/signup). You will be asked for your e-mail & you will choose a safe password. 
+Creating an Account with fortrabbit is free, of course. If you haven't already: just head over to [our signup page](https://dashboard.fortrabbit.com/signup). You will be asked for your e-mail & you will choose a safe password. 
 
 
 ### Changing the Account e-mail address

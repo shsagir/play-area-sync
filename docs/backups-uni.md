@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-02-10
+reviewed:      2017-06-10
 naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
@@ -21,11 +21,9 @@ Data loss is something, which can happen to everybody: be it an unpatched securi
 Automatic, out-of-the box, off-site, encrypted daily backups, without configuration and without hassle.
 
 
-## Availabilty
+## Availability
 
 Backups are not included with all App plans. See our [pricing page](https://www.fortrabbit.com/pricing) for more.
-
-<!-- TODO: link to marketing page when ready, remove marketing bla bla here. -->
 
 
 ## Backup features

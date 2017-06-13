@@ -23,7 +23,7 @@ keywords:
 ---
 
 
-Your fortrabbit Account represents YOU and is your personal login and path to access Apps. A Company on fortrabbit helps you to structure and manage team and billing aspects of your Apps.
+While your [fortrabbit Account](/account) represents YOU and is your personal login and path to access Apps, a Company here on fortrabbit helps you to structure and manage team and billing aspects of your Apps.
 
 ```nohighlight
 ┌─────────────────────────────────────┐  
@@ -43,9 +43,9 @@ Your fortrabbit Account represents YOU and is your personal login and path to ac
 
 The above illustration shows how Companies, Apps, Accounts and Billing Contacts relate to each other:
 
-* Each App belongs to a Company.
+* Each App is owned by a Company.
 * A Company can have multiple Apps.
-* A Company can have multiple team members ("employees").
+* A Company can have multiple team members.
 * A Company also can have multiple Billing Contacts to pay for the Apps.
 * Each App is associated with one Billing Contact of the Company.
 
