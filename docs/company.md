@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-30
+reviewed:      2017-06-13
 title:         Companies on fortrabbit
 naviTitle:     Company
 excerpt:       How to work with Companies on fortrabbit
@@ -18,7 +18,7 @@ keywords:
     - access
     - tenant
     - client
-    - epmloyees
+    - employees
 
 ---
 
@@ -26,28 +26,26 @@ keywords:
 Your fortrabbit Account represents YOU and is your personal login and path to access Apps. A Company on fortrabbit helps you to structure and manage team and billing aspects of your Apps.
 
 ```nohighlight
-┌─────────────────────────────────────────────────────┐
-│                       Company                       │
-│                                                     │
-│    Apps           Accounts        Billing Contacts  │
-│  ┌─────────────┐ ┌──────────────┐ ┌──────────────┐  │
-│  │ {{app-one}} │ │  {{owner1}}  │ │ {{Billing1}} │  │
-│  ├─────────────┤ ├──────────────┤ ├──────────────┤  │
-│  │ {{app-two}} │ │  {{owner2}}  │ │ {{Billing1}} │  │
-│  ├─────────────┤ ├──────────────┤ └──────────────┘  │
-│  │{{app-three}}│ │  {{admin2}}  │                   │
-│  └─────────────┘ ├──────────────┤                   │
-│                  │  {{admin1}}  │                   │
-│                  └──────────────┘                   │
-│                                                     │
-└─────────────────────────────────────────────────────┘
+┌─────────────────────────────────────┐  
+│               Company               │  
+│                                     │          Accounts  
+│      Apps         Billing Contacts  │       ┌──────────────┐
+│  ┌─────────────┐  ┌──────────────┐  │  <——  │  {{owner1}}  │
+│  │ {{app-one}} │  │ {{Billing1}} │  │       ├──────────────┤
+│  ├─────────────┤  ├──────────────┤  │  <——  │  {{owner2}}  │
+│  │ {{app-two}} │  │ {{Billing1}} │  │       ├──────────────┤
+│  ├─────────────┤  └──────────────┘  │  <——  │  {{admin2}}  │
+│  │{{app-three}}│                    │       ├──────────────┤
+│  └─────────────┘                    │  <——  │  {{admin1}}  │
+│                                     │       └──────────────┘
+└─────────────────────────────────────┘
 ```
 
 The above illustration shows how Companies, Apps, Accounts and Billing Contacts relate to each other:
 
 * Each App belongs to a Company.
 * A Company can have multiple Apps.
-* A Company can have multiple members ("employees") to collaborate on the Apps.
+* A Company can have multiple team members ("employees").
 * A Company also can have multiple Billing Contacts to pay for the Apps.
 * Each App is associated with one Billing Contact of the Company.
 
@@ -83,15 +81,16 @@ There are two levels of collaboration
 
 Since collaboration can easily become rather complex, we also have [collaboration overview article](collaboration), which shows you the big picture.
 
-<!-- 
 
-TODO: rewrite/review when Company Plans
+### Company plans
 
-### Support
+Creating a Company itself is free of any charges and comes with a basic free Company plan by default. Company plans are booked on behalf of the Company and are available for the whole team. Higher Company plans coming are with better support levels and extended collaboration features:
 
-Beside basic free support, you an also get [Professional Support](//www.fortrabbit.com/support) from us. Support plans are booked on behalf the Company and are available for the whole team.
+* [See Company plan features](//www.fortrabbit.com/company-plans)
 
--->
+<!--
+
+TODO: uncomment and extend when alerts (relaunch)
 
 ### Automatic resource exhaustion alerts
 
@@ -100,6 +99,8 @@ Each App with fortrabbit has limited resources, most of them are scalable or ext
 All collaborators on the App will see those usage metrics at the App overview in the Dashboard. When a resource is about to hit the limit, it will be shown in a yellow color to alert you.
 
 All Owners of the App will get an e-mail, once a usage metric is about to hit the limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
+
+-->
 
 <!--
 

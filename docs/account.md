@@ -24,8 +24,11 @@ keywords:
 
 Most classical hosting works like Twitter: You have a personal account and additional accounts for your corporate tweets. fortrabbit is more like Facebook: Your Account represents you as an individual. You add company pages to represent your businesses.
 
-* 😀 Account: login & access, security settings, personal preferences
-* 🏢 Company: team & collaboration, billing, App ownership
+* 😀 - **Account**: login & access, security settings, personal preferences
+* 🏢 - [**Company**](/company): team & collaboration, billing, App ownership
+
+Creating an Account with fortrabbit is free, of course.
+
 
 ## Managing your Account
 
@@ -33,7 +36,7 @@ Most classical hosting works like Twitter: You have a personal account and addit
 
 ### Creating an Account
 
-If you haven't already: just head over to [our signup page](https://dashboard.fortrabbit.com/signup). You will be asked for your e-mail & you will choose a safe password. Creating an Account with fortrabbit is free, of course.
+If you haven't already: just head over to [our signup page](https://dashboard.fortrabbit.com/signup). You will be asked for your e-mail & you will choose a safe password. 
 
 
 ### Changing the Account e-mail address

@@ -67,7 +67,7 @@ We pre-installed various CLIs for you:
 
 ### Executing PHP scripts
 
-If you want to execute PHP scripts, including `artisan` and it's like, make sure to specifcy the PHP interpreter explicity:
+If you want to execute PHP scripts, including `artisan` and it's like, make sure to specify the PHP interpreter explicity:
 
 ```bash
 # will work

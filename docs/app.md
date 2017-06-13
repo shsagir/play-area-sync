@@ -12,7 +12,7 @@ stack:         all
 
 ## Understanding the platform
 
-We claim that the fortrabbit hosting platform is different to classical hosting. Our comparsion pages give you a good picture what fortrabbit is about:
+We claim that the fortrabbit hosting platform is different to classical hosting. Our comparison pages give you a good picture what fortrabbit is about:
 
 * [How fortrabbit is different than VPS hosting](https://www.fortrabbit.com/why-not-vps)
 * [How IaaS is being used](https://www.fortrabbit.com/why-not-aws)
@@ -65,9 +65,7 @@ So, a fortrabbit App is designed to host one website:
 * There is only one MySQL database per App
 * Each App has only one Git repo
 * Each App has it's own collaboration rules
-* Each App has it's own perfomance metrics
-
-
+* Each App has it's own performance metrics
 
 
 ## Dashboard links
@@ -169,7 +167,7 @@ Are you working on behalf of someone? You want your client or the boss of the ag
 
 ## The App trial
 
-You can test fortrabbit for free. Therefore each Account can have one trial App running. The purpose of the trial is testdrive the platform. See if it works as advertised. See if fortrabbit is the right hosting solution for you.
+You can test fortrabbit for free. Therefore each Account can have one trial App running. The purpose of the trial is test-drive the platform. See if it works as advertised. See if fortrabbit is the right hosting solution for you.
 
 
 #### Starting a new trial App
@@ -191,7 +189,7 @@ The default trial time is short. A timer in the Dashboard with your App will sho
 * Deploying some code to the trial App
 * Routing a domain to the trial App
 
-A task that is completed has a checkmark `✔`. Tasks that are still todo will show how much time you will gain `+24h`.
+A task that is completed has a check-mark `✔`. Tasks that are still todo will show how much time you will gain more time.
 
 Additionally, after some trial time has passed, we show a link to a contact form where you can ask us to extend the trial time. Here you'll write us something about your goals with the trial and we are happy to extend the trial for much longer period. You can see those tasks in the Dashboard with the overview of your App.
 
