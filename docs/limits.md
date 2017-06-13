@@ -34,7 +34,7 @@ For high level insight, especially regarding peak consumption, we recommend to u
 
 **Scope**: Universal and Professional Apps
 
-**Description**: Besides PHP memory, the amount of processes per App are also limited. The general rule is two processes per node. Since Universal Apps run only on one Node, they come with only two processes. The amount of processes for Professional Apps are [available in the specs](specs-pro#php).
+**Description**: Besides PHP memory, the amount of processes per App are also an important performance metric. See the [specs page for Universal Apps](https://www.fortrabbit.com/specs#plans) for limits. The amount of processes for Professional Apps are [available in the specs](https://www.fortrabbit.com/specs-pro#php).
 
 The amount of processes divided by the average PHP response time determines how many PHP requests the App can handle per second. For example, if the App (on average) responds within 100ms then two processes could handle 20 requests per second:
 
