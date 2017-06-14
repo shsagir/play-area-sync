@@ -59,7 +59,7 @@ Most classical hosting works like Twitter: You have a personal account and addit
 
 ### Creating an Account
 
-Creating an Account with fortrabbit is free, of course. If you haven't already: just head over to [our signup page](https://dashboard.fortrabbit.com/signup). You will be asked for your e-mail & you will choose a safe password. 
+Creating an Account with fortrabbit is free, of course. If you haven't already: just head over to [our signup page](https://dashboard.fortrabbit.com/signup). You will be asked for your e-mail & you will choose a safe password.
 
 
 ### Changing the Account e-mail address
@@ -80,7 +80,7 @@ We recommend to use [two-factor-authentication](https://en.wikipedia.org/wiki/Mu
 
 * Dashboard > Your Account > [2FA](http://dashboard.fortrabbit.dev/account/security/enable2fa)
 
-During the guided setup you will enable your second device to generate OneTimePasswords for fortrabbit. 
+During the guided setup you will enable your second device to generate OneTimePasswords for fortrabbit.
 
 #### Using 2FA with your Account
 
@@ -99,7 +99,7 @@ Also in the Dashboard under your Account, you can add your own SSH keys. Also se
 
 ### Setting the SUDO mode
 
-For many actions you are performing within the Dashboard you'll need to enter your Account password. The SUDO mode makes this a little less painless, while keeping it still secure. With the SUDO settings you can define how often you'll be asked for your Account password within a session. 
+For many actions you are performing within the Dashboard you'll need to enter your Account password. The SUDO mode makes this a little less painless, while keeping it still secure. With the SUDO settings you can define how often you'll be asked for your Account password within a session.
 
 ### Setting the session time
 
@@ -115,7 +115,7 @@ Please be so kind and provide your real name. This way, support is more personal
 
 ### Configuring your Avatar image
 
-There is no setting for this. We'll show your face with your Account, when you have your e-mail registered with [Gravatar](https://en.gravatar.com/). 
+There is no setting for this. We'll show your face with your Account, when you have your e-mail registered with [Gravatar](https://en.gravatar.com/).
 
 ### Your team profile
 
@@ -131,8 +131,12 @@ Your Account is also a staring point for Companies you own or are member of.
 
 ### Deleting an Account
 
-To cancel your Account completely: login to the dashboard > your account > cancel account. please be aware that:
+No longer like fortrabbit? Sorry! To cancel your Account completely:
 
-The [billing](/billing) cycle is monthly after usage. When you cancel today, you will get one last invoice next month for the usage this month so far. For example: Today is the 7th, so the first seven days of march will be billed after the march is over.
+1. Dashboard
+2. Your account
+3. **Cancel Account** and follow the instructions.
 
-When you have a [Company](/company) with other Owners, the Company will not be deleted, you will leave the Company. The fortrabbit Account itself is free, you can also delete all Apps and cancel all Company plans so that no future costs will applied. But please mind that you'll still might get "service" e-mails by us.
+Please be aware that: The [billing](/billing) cycle is monthly after usage. When you cancel today, you will get one last invoice next month for the usage this month so far. For example: Today is the 7th, so the first seven days of march will be billed after the march is over.
+
+When you have a [Company](/company) with other Owners, the Company will not be deleted, you will leave the Company. The fortrabbit Account itself is free, you can also delete all Apps and cancel all Company plans so that no future costs will applied. You'll still might get "service" e-mails by us.
