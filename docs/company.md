@@ -65,11 +65,18 @@ You can create as many Companies as you need — free of charge. In the the Dash
 
 ### Deleting a Company
 
-As an Owner you can also decide to delete your Company. This is a huge step, as all Apps owned by the Company will be deleted and all the team will loose access. To do so: In the Dashboard > Your Account > Companies > {{ Your Company }} > Hit the "Delete Company" button and follow the instructions.
+As an Owner you can also decide to delete your Company. This is a huge step, as all Apps owned by the Company will be deleted and all the team will loose access. To do so:
 
-#### Leaving a Company 
+* In the Dashboard (Home) >
+* Companies >
+* {{ Your Company }} >
+* Hit the "Delete Company" button and follow the instructions
 
-With Company collaboration (see below) you can also leave a Company. That will keep the Company with fortrabbit, but you will loose access. When you cancel your Account and you are part of a Company with Owners left, you will leave the Company. 
+Please mind: When a Company has more than one Owner (most likely you),
+
+#### Leaving a Company
+
+With Company collaboration (see below) you can also leave a Company. That will keep the Company with fortrabbit, but you will loose access. When you cancel your Account and you are part of a Company with Owners left, you will leave the Company.
 
 
 ### Collaboration
@@ -84,7 +91,7 @@ Since collaboration can easily become rather complex, we also have [collaboratio
 
 ### Company plans
 
-Creating a Company itself is free of any charges and comes with a basic free Company plan by default. Company plans are booked on behalf of the Company and are available for the whole team. Higher Company plans coming are with better support levels and extended collaboration features:
+Creating a Company itself is free of any charges and it comes with a basic free Company plan by default. Company plans are booked on behalf of the Company and are available for the whole team. Higher Company plans coming are with better support levels and extended collaboration features:
 
 * [See Company plan features](//www.fortrabbit.com/company-plans)
 
@@ -130,4 +137,4 @@ In some cases you might want to move the App to a different Company. This will c
 
 ### Changing the Company of an App
 
-You can also change the ownership of Apps at any time. It starts with the App, that's why you'll find [more details on App ownership changing over there](/app#toc-changing-app-ownership).
+You can also change the ownership of Apps at any time. It starts with the App, find [more details on App ownership changing over there](/app#toc-changing-app-ownership).
