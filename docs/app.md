@@ -157,7 +157,14 @@ This setting links to the Company owning the App. From here you can also:
 
 #### Changing App ownership
 
-The `Change ownership` button is a very powerful tool. You can move the App to a different Company or Billing Contact you have access to. That means, you can assign the App to a different team, and or to be billed from a different [Billing Contact](/billing-contact).
+1. Go to the App in the Dashboard
+2. Click the "Change ownership" button
+3. Choose a different Company (and Billing Contact)
+
+The `Change ownership` button, linked from your App overview is a very powerful tool. You can move the App to a different Company or Billing Contact you have access to. That means, you can assign the App to a different team, and or to be billed from a different [Billing Contact](/billing-contact). 
+
+This action can only be done by Accounts who have Owner or Admin privileges on both Companies. Also the App must be paid, not in trial mode.
+
 
 #### Inviting a client to take over an App
 

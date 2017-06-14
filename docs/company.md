@@ -130,7 +130,4 @@ In some cases you might want to move the App to a different Company. This will c
 
 ### Changing the Company of an App
 
-2. Go to the App in the Dashboard, click the "Change ownership" button
-3. This will open a form, where you choose a different Company (and Billing Contact)
-
-This action can only be done by Accounts who have Owner or Admin privileges on both Companies.
+You can also change the ownership of Apps at any time. It starts with the App, that's why you'll find [more details on App ownership changing over there](/app#toc-changing-app-ownership).

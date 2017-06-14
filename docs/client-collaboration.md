@@ -27,6 +27,39 @@ keywords:
 * You are a freelancer building websites › invite your clients
 * You are a developer in a digital agency › invite your boss
 
+```nohighlight
+  ┌───────────────────────────────────────────────────┐
+  │Before: You have a trial App                       │
+  │                                                   │
+  │                                                   │
+  │ ┌────────┐            ┌─────────┐      ┌────────┐ │
+  │ │ ■■  ■■ │            │         │      │ ■■  ■■ │ │
+  │ │        │──access────▶   App   │      │        │ │
+  │ │  ■■■■  │            │         │      │ ■■■■■■ │ │
+  │ ├────────┤            └─────────┘      ├────────┤ │
+  │ │  You   │                             │ Client │ │
+  │ └────────┘                             └────────┘ │
+  └───────────────────────────────────────────────────┘
+  ┌───────────────────────────────────────────────────┐
+  │After: You are Admin in your clients Company       │
+  │                                                   │
+  │                     ┌─────────┐                   │
+  │                     │         │                   │
+  │       ┌─────Admin───▶ Company ◀───Owner────┐      │
+  │       │             │         │            │      │
+  │       │             └────┬────┘            │      │
+  │       │                owns                │      │
+  │       │                  │                 │      │
+  │  ┌────┴───┐        ┌─────▼──────┐     ┌────┴───┐  │
+  │  │ ■■  ■■ │        │            │     │ ■■  ■■ │  │
+  │  │        │─access─▶    App     │     │        │  │
+  │  │  ■■■■  │        │            │     │ ■■■■■■ │  │
+  │  ├────────┤        └────────────┘     ├────────┤  │
+  │  │  You   │                           │ Client │  │
+  │  └────────┘                           └────────┘  │
+  └───────────────────────────────────────────────────┘
+```
+
 ## Inviting a client
 
 1. Login to the fortrabbit [Dashboard](https://dashboard.fortrabbit.com)
