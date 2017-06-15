@@ -70,13 +70,13 @@ As an Owner you can also decide to delete your Company. This is a huge step, as 
 * In the Dashboard (Home) >
 * Companies >
 * {{ Your Company }} >
-* Hit the "Delete Company" button and follow the instructions
+* Hit the **Delete Company** button and follow the instructions
 
-Please mind: When a Company has more than one Owner (most likely you),
+Deleting a Comoany will not cancel your Account, [see dedicated instructions for that](/account#toc-deleting-an-account). When a Company has more than one Owner, you can also just leave it:
 
 #### Leaving a Company
 
-With Company collaboration (see below) you can also leave a Company. That will keep the Company with fortrabbit, but you will loose access. When you cancel your Account and you are part of a Company with Owners left, you will leave the Company.
+With Company collaboration (see below) you can also leave a Company. The Company with stay, but you will loose access. When you cancel your Account and you are part of a Company with other Owners left, you will leave the Company.
 
 
 ### Collaboration

@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-12
+reviewed:      2017-06-15
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -121,7 +121,7 @@ This path setting can vary, depending on what the framework or CMS you have sele
 | Symfony                       | htdocs/web    |
 | Drupal 8, WordPress, Grav     | htdocs        |
 
-You can however set the root path afterwards at any given time by visiting the according setting in the Dashboard under your App. 
+You can however set the root path afterwards at any given time by visiting the according setting in the Dashboard under your App.
 
 <div markdown="1" data-user="known">
 
@@ -141,7 +141,7 @@ Mind that you can also use `.htaccess` files with `RewriteRule` directives to ha
 
 ### Metrics
 
-Each App comes with "**Usage metrics**": Those show you the current status of the Web storage, MySQL storage and Object Storage and context of your 
+Each App comes with "**Usage metrics**": Those show you the current status of the Web storage, MySQL storage and Object Storage and context of your
 
 Some Apps also come with "**Performance metrics**": Those show you how fast your App is and where you might need to improve. Performance metrics are: requests, PHP response time, traffic, errors and other useful stuff. You can set different time intervals to monitor performance over time.
 
@@ -161,9 +161,11 @@ This setting links to the Company owning the App. From here you can also:
 2. Click the "Change ownership" button
 3. Choose a different Company (and Billing Contact)
 
-The `Change ownership` button, linked from your App overview is a very powerful tool. You can move the App to a different Company or Billing Contact you have access to. That means, you can assign the App to a different team, and or to be billed from a different [Billing Contact](/billing-contact). 
+The `Change ownership` button, linked from your App overview is a very powerful tool. You can move the App to a different [Company](/company) or [Billing Contact](/billing-contact) you have access to. That means, you can assign the App to a different team, and or to be billed from a different [Billing Contact](/billing-contact).
 
-This action can only be done by Accounts who have Owner or Admin privileges on both Companies. Also the App must be paid, not in trial mode.
+This action can only be done by [Accounts](/account) who have Owner or Admin privileges on at least two [Companies](/company) or one Company with two [Billing Contacts](/billing-contact). In other words, you need to have something first, to change it to. Also the App must be paid, not in trial mode.
+
+The App will be billed on the old Billing Contact until that day of change and from the next day on to the new Billing Contact. For example: If you move your App on the 15ths of a month to the Billing Contact of another Company, it will be billed until the 15ths to the old Billing Contact and starting from the 16ths to the new Billing Contact.
 
 
 #### Inviting a client to take over an App
@@ -189,7 +191,7 @@ The trial App scaling specs are matching a small preset, always enough to get st
 
 #### Extending the trial
 
-The default trial time is short. A timer in the Dashboard with your App will show you the time left. You can extend the evaluation period by completing some simple tasks like: 
+The default trial time is short. A timer in the Dashboard with your App will show you the time left. You can extend the evaluation period by completing some simple tasks like:
 
 * Confirming your Accounts e-mail address
 * Setting your real name under your Account
@@ -202,7 +204,7 @@ Additionally, after some trial time has passed, we show a link to a contact form
 
 #### Upgrading the trial
 
-You can, of course, upgrade from your trial to a paid plan at any time. You can do so under your Apps overview. 
+You can, of course, upgrade from your trial to a paid plan at any time. You can do so under your Apps overview.
 
 
 #### The end of a trial
