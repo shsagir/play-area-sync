@@ -138,4 +138,3 @@ Within the fortrabbit Dashboard: Go to the PHP Settings of your App. Check if it
 
 * Phalcon2 is available for PHP 5.X and PHP 7.X
 * Phalcon3 is available for PHP 7.X
-
