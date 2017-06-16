@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-01-20
+reviewed:         2017-06-16
 title:            Install Phalcon 3
 naviTitle:        Phalcon
 lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C extension providing high performance and low resource consumption. Here you learn how to best getting started with Phalcon 3 on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://phalconphp.com/en/?utm_source=fortrabbit
 websiteLinkText:  phalconphp.com
 category:         framework
 image:            phalcon-mark.png
-version:          3.0.1
+version:          3.1.2
 
 keywords:
     - phalconphp
@@ -50,7 +50,7 @@ Go to the Dashboard and enable the **phalcon** PHP extension.
 
 ## Quick start
 
-Phalcon is unlike any other framework. You first need to get Phalcon running locally. That's the hard part:
+Phalcon is unlike any other framework. You first need to get Phalcon running locally. That's the hard part to run it locally:
 
 1. [Install the C-extension](https://docs.phalconphp.com/en/latest/reference/install.html)
 2. [Download the Phalcon developer tools](https://docs.phalconphp.com/en/latest/reference/tools.html)
