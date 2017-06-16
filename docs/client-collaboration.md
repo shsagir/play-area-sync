@@ -9,8 +9,8 @@ group:         collaboration
 stack:         all
 lead:          "fortrabbit is designed for people like us — web devs. But in real live the 'client' is sometimes not a techie at all. So there is a way to invite and work with a passive business owner — your clients."
 
-dontList:      true
-dontLink:      true
+dontList:      false
+dontLink:      false
 
 keywords:
     - collaboration
