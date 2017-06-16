@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-03-27
+reviewed:         2017-06-16
 naviTitle:        GitHub
 title:            Combine fortrabbit with GitHub
 lead:             Learn how to integrate the most popular Git-as-a-service provider with your fortrabbit workflow.
@@ -21,6 +21,9 @@ keywords:
     - add-on
     - integrations
     - integration
+    - gitlab
+    - bitbucket
+    - coding
     - API
     - CI
     - cloud
@@ -32,17 +35,19 @@ keywords:
 
 ## About GitHub
 
-You hopefully already know that [GitHub](https://github.com) is the most popular choice for versionized code hosting and collaborating. It is free to use with open source projects. This means that all the code you publish in the free version will be visible to everyone. But you can — of course — [purchase a plan](https://github.com/pricing) including private repos as well.
+You hopefully already know that [GitHub](https://github.com) is the most popular choice for versionized code hosting and collaborating. It is free to use with open source projects. This means that all the code you publish in the free version will be visible to everyone. But you can — of course — [purchase a plan](https://github.com/pricing) including private repos as well. 
+
+Similar alternatives are Bitbucket and GitLab (and Coding if you are from China). They basically work the same, so most concepts of this guide apply as well.
 
 ### GitHub is not Git
 
-GitHub is so popular that beginners sometimes confuse GitHub with Git. Git is the version control system established by Linus Torvalds. GitHub is the service, which offers Git remote hosting and additional extra magic collaboration features.
+GitHub is so popular that beginners sometimes confuse GitHub with Git. Git is the version control system established by Linus Torvalds. GitHub is the service, which offers Git remote hosting and additional extra magic collaboration features. If you are new to Git, check out our [getting started with Git article](/git).
 
 ## Integration
 
 It's actually quite simple: add your external Git-provider as one remote and fortrabbit as another remote. Then you can push to your external provider while in development and collaborating; push to fortrabbit to see the code in action.
 
-Here is how you add your App's Git remote on fortrabbit to your already existing local working copy of a GitHub / Bitbucket repo and then work with it:
+Here is how you add your App's Git remote on fortrabbit to your already existing local working copy of a GitHub / Bitbucket / GitLab repo and then work with it:
 
 ```bash
 # add your App's remote and name it "fortrabbit"
