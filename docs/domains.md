@@ -106,7 +106,7 @@ Some domain providers also support a simple HTTP redirect. Please see your domai
 
 In the cases above you have forwarded all requests to the ONE main domain you are using. In some cases you might have two domains serving the same content. Now, search engines need to know which page is the one they should show the results for. To hint the search bots, you can use a canonical tag. 
 
-Let's say you have the domains `fortrabbit.com` and `fort-rabbit.com` registered with your fortrabbit App. For this example you might want to create a redirect to the domain that matters most to you, but for some reason you may want both domains to work for deeplinks as well. Now you want the search engines to prefer and link to the first domain, so you add in the head of each HTML page delivered:
+Let's say you have the page `fortrabbit.com` and `fort-rabbit.com` registered with your fortrabbit App. And you want both to display the same content but still keep the originally entered URL. _Actually, for this example you might want to create a redirect to the domain that matters most to you, anyways, it's just an example._ Now you want the search engines to prefer and link to the first domain, so you add in the head of each HTML page delivered:
 
 ```
 <head>
