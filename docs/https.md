@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-06-20
 dontList:      false
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit
@@ -58,7 +58,7 @@ Which of the options can be used depends on the [App stack](stacks) and the spec
 | **HTTPS/TLS Option**  | Professional App                                                           | Universal App      |
 | --------------------- | -------------------------------------------------------------------------- | ------------------ |
 | Piggyback HTTPS       | Yes                                                                        | Yes                |
-| Automatic HTTPS       | Yes                                                                        | Depends on plan    |
+| Automatic HTTPS       | Yes                                                                        | Yes                |
 | Custom HTTPS          | Yes, as extra Component, [see specs](//www.fortrabbit.com/specs-pro#https) | Depends on plan    |
 
 
