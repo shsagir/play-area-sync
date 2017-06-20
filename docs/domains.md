@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-03-26
+reviewed:      2017-06-20
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -102,6 +102,20 @@ Some domain providers also support a simple HTTP redirect. Please see your domai
 * [Gandi: domain forwarding](https://wiki.gandi.net/en/domains/management/domain-as-website/forwarding)
 * [1&1: domain forwarding](http://help.1and1.com/domains-c36931/manage-domains-c79822/domain-destination-c38672redirectforward-your-domain-a594868.html)
 
+#### Using a canonical tag
+
+In the cases above you have forwarded all requests to the ONE main domain you are using. In some cases you might have two domains serving the same content. Now, search engines need to know which page is the one they should show the results for. To hint the search bots, you can use a canonical tag. 
+
+Let's say you have the domains `fortrabbit.com` and `fort-rabbit.com` registered with your fortrabbit App. For this example you might want to create a redirect to the domain that matters most to you, but for some reason you may want both domains to work for deeplinks as well. Now you want the search engines to prefer and link to the first domain, so you add in the head of each HTML page delivered:
+
+```
+<head>
+    …
+    <link rel="canonical" href="https://www.fortrabbit.com">
+</head>
+```
+
+More on [canonical URLs on Google webmasters](https://support.google.com/webmasters/answer/139066?hl=en)
 
 ### Using CloudFlare
 
