@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-05-18
+reviewed:         2017-06-20
 title:            Install WordPress 4
 naviTitle:        WordPress
 group:            Install_guides
@@ -16,7 +16,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          4.7.5
+version:          4.8
 
 keywords:
     - wp-admin
@@ -161,9 +161,22 @@ This is pretty standard operations. You can download and update themes directly 
 Urgent security advice: WordPress is popular with hackers. You are responsible to keep the software you install up-to-date — see our [security guidelines](/security). The good news is that WordPress has automatic background updates and they are enabled by default. Please check the article from the offical WordPress codex on how to [configure automatic background updates](https://codex.wordpress.org/Configuring_Automatic_Background_Updates) and take care that your WordPress core, plugins and even the themes are always up-to-date.
 
 
-### Sendinge-mails
+### Sending e-mails
 
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use a SMTP plugin like [WP SMTP](http://wordpress.org/plugins/wp-smtp/) or [MAIL SMTP](http://wordpress.org/plugins/wp-mail-smtp/) to enable SMTP support for the `wp_mail()` function.
+
+
+### Resetting your passsword for wp-admin
+
+Some user might to lazy to configure the mail delivery for WordPress via SMTP (see above). Then lazy user also forgets the password for `wp-admin`. Now the forgot password function from WordPress will not work. The lazy user can still set a new password in the database. Like so: 
+
+1. Connect to the remote MySQL database from local (see [here how](mysql#toc-access-mysql-database-from-local))
+2. Browse the MySQL tables to find the right admin user
+3. Choose a safe password
+4. Convert that password to a MD5 hash
+5. Update the table with the new password
+6. Go back to wp-admin and login using the new password
+
 
 
 ### Runing WordPress in a sub folder
