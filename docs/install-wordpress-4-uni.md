@@ -177,8 +177,6 @@ Some user might to lazy to configure the mail delivery for WordPress via SMTP (s
 5. Update the table with the new password
 6. Go back to wp-admin and login using the new password
 
-
-
 ### Runing WordPress in a sub folder
 
 There are two reasons to install wordpress not in the `htdocs` but in a sub directory:
