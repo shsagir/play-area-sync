@@ -92,7 +92,7 @@ You can reset the fortrabbit service passwords for MySQL and Object Storage in t
 
 ## Firewalling
 
-Per default all outgoing calls on all ports, except for [standard ones](/quirks#toc-firewalling), are closed. You can request to whitelist a port or port range. You do so in the Dashboard in the settings of your App.
+Per default all outgoing calls on all ports, except for [standard ones](https://www.fortrabbit.com/specs#firewall), are closed. You can request to white-list a port or port range. You do so in the Dashboard in the settings of your App.
 
 
 ## Vulnerability reporting

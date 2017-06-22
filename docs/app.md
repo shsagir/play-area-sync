@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-15
+reviewed:      2017-06-22
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -67,13 +67,25 @@ So, a fortrabbit App is designed to host one website:
 * Each App has it's own collaboration rules
 * Each App has it's own performance metrics
 
+<div markdown="1" data-user="known">
 
 ## Dashboard links
 
 * [Go to your list of Apps](https://dashboard.fortrabbit.com/apps)
 * [Go to your App: {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}})
 
+</div>
 
+
+## Two App types
+
+fortrabbit comes in two flavors (stacks): Universal & Professional. With each App you create, you can choose between either one. This can't be changed later on. The two Stacks are different from each other. The rule of thumb is: When unsure, choose Universal. Learn more here:
+
+* [About the Stacks](stacks)
+* [About Universal Apps](app-uni) and what is unique about them
+* [About Professional Apps](app-pro) and what is unique about them
+
+The following sections here are describing functionalities that are shared by the two different stacks.
 
 ## Settings
 
@@ -132,12 +144,15 @@ You can however set the root path afterwards at any given time by visiting the a
 
 #### Individual root paths per domain
 
-In some cases, you might want to route individual domains to different folders. Please mind that there are limited use cases for this and don't use one App to host multiple website (see [here](/app#toc-one-website-per-app) as well).
+In some cases, you might want to route individual domains to different folders. Please mind that there are limited use cases for this and don't use one App to host multiple website (see [above](/app#toc-one-website-per-app) as well).
 
-When visiting the root path settings form with a [Professional stack Apps](/app-pro) you will find a switch to change from a global root path for all domains to custom root paths for each domain.
+When visiting the root path settings form with a [Professional stack Apps](/app-pro) you will find a switch to change from a global root path for all domains to custom root paths for each domain. Mind that you can also use `.htaccess` files with `RewriteRule` directives to handle different domains differently.
 
-Mind that you can also use `.htaccess` files with `RewriteRule` directives to handle different domains differently.
+### Firewall
 
+Most connections calls on most ports are forbidden for [security](security) reasons. You can request to white-list a port or port range. With the firewall setting of your App you can see custom white-listed ports and request a new firewall rule.
+
+* [List of open ports](https://www.fortrabbit.com/specs#firewall)
 
 ### Metrics
 
