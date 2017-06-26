@@ -35,7 +35,7 @@ If you haven't already (the stack chooser does that for you) — in the Dashboar
 </div>
 
 
-## Install
+## Quick start
 
 Execute the following in your local terminal to initialize a new [composer-based Drupal](https://github.com/drupal-composer/drupal-project).
 

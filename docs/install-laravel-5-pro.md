@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-01-20
+reviewed:         2017-06-20
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -11,7 +11,7 @@ websiteLink:      http://laravel.com?utm_source=fortrabbit
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
-version:          5.3
+version:          5.4
 stack:            pro
 oldLink:          install-laravel-5-old
 uniLink:          install-laravel-5-uni
@@ -51,7 +51,7 @@ APP_KEY=ClickToGenerate
 
 
 
-## Install
+## Quick start
 
 Execute the following in your local terminal to start from scratch with a fresh new Laravel installation on fortrabbit (see [below](#toc-add-an-existing-project) on how to add an existing project):
 

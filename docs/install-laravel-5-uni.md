@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-01-20
+reviewed:         2017-06-20
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -11,7 +11,7 @@ websiteLink:      http://laravel.com?utm_source=fortrabbit
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
-version:          5.1
+version:          5.4
 stack:            uni
 oldLink:          install-laravel-5-old
 proLink:          install-laravel-5-pro
@@ -96,7 +96,7 @@ $ git push -u fortrabbit master
 
 ### Setup Git
 
-If you used the above Quick start guide, Git is already setup and you can safely skip this topic. If you havent, then you need follow steps 3 to 6 from above, to initialize a local Git repo and add your fortrabbit remote.
+If you used the above Quick start guide, Git is already setup and you can safely skip this topic. If you haven't, follow steps 3 to 6 from above, to initialize a local Git repo and add your fortrabbit remote or have a look at our general [getting started with Git guide](/git).
 
 ### MySQL configuration
 
