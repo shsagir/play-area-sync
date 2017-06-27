@@ -73,6 +73,14 @@ keywords:
 
 Your client will not be bothered with setting up SSH keys, nor will hir receive geeky newsletters. The client can login to the Dashboard to manage billing and team.
 
+### The 35 seconds video
+
+<div class="responsive-video m-top-s">
+  <iframe src="https://www.youtube.com/embed/k-67ce2olAk?showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+In this video you see how both sides of the invite look like. What you need to do, and what your client will see.
+
 ### Invitation details
 
 Client invitation also works with Apps in trial mode. This is super handy, as you don't need to enter your personal billing data at all. Mind that all client invites expire after a short time frame.
