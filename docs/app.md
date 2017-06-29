@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-22
+reviewed:      2017-06-29
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -41,7 +41,9 @@ We claim that the fortrabbit hosting platform is different to classical hosting.
 
 An App is a virtual container for your web project, website, web application, staging branch, project or whatever you do.
 
+### Multiple Apps per Company
 
+fortrabbit hosting has a multi-seat and multi-tenant model. Apps are owned by [Companies](/company) (your business) and managed by [Accounts](/account) (you). The App plans displayed on the [pricing page](https://fortrabbit.com/pricing) are per App. You can create as many Apps as you want of course.
 
 ### One website per App
 
