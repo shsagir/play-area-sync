@@ -112,6 +112,18 @@ While creating your fortrabbit App you will be asked for an App name. This name 
 
 Please mind that you can not change the App name later on. 7 days after you have deleted an App, the same App name will become available to use again.
 
+
+##### Sending transactional mails from your App URL
+
+Some clients asked how to setup TXT records for App URLs. They have the idea of sending mails over a transactional mail service from the App URL, for testing or even for production.
+
+And it is probably not what you want. At the end of the day, you want your mails to be sent from own domain. transactional mail providers need to take extra care that you are not a spammer, as they give very powerful tools. our generic App URLs do NOT look good from their point of view. For the App URL there isn't an MX record. So that sub-domain looks suspicious to any mail-server.
+
+We are using postmark app. It should work the same as mailgun or any other transactional mail provider. We have configured and verified our prime domain to be used with the service. Now, our dev and staging environments are also using the "real thing", but is configured (in our code base) so that they are sending all mails to "info@fortrabbit.com" (instead of what is entered by the testers).
+
+How other users are testing mails: some clients are using mailtrap to test mails. I have no experience. but as far as I know, it's easy to setup and use.
+
+
 #### Set up a custom domain
 
 You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard.
