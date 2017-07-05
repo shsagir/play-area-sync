@@ -65,7 +65,7 @@ Have a look at [Docker for Mac](https://docs.docker.com/docker-for-mac/) or […
 
 ### Other solutions
 
-The Laravel guys came up with a easy-to-use solution just for Laravel developers on Mac OS called [Valvet](https://laravel.com/docs/5.2/valet). If you fit that description then it's definitely worth looking into.
+The Laravel guys came up with a easy-to-use solution just for Laravel developers on Mac OS called [Valet](https://laravel.com/docs/5.2/valet). If you fit that description then it's definitely worth looking into.
 
 ## Considerations
 
