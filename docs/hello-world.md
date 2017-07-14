@@ -1,10 +1,10 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
-naviTitle:     General
-title:         Deploy code to fortrabbit with Git
-lead:          This is the famous 5 minute tutorial to get started with fortrabbit. See how fast and easy you can get your code up and running.
+reviewed:      2017-12-20
+naviTitle:     Hello world
+title:         Hello world tutorial with Git
+lead:          This is the famous 3 minute tutorial to get started with fortrabbit. It uses plan simple PHP without any framework or CMS. See how fast and easy you can get your code up and running.
 stack:         all
 group:         Install_guides
 
@@ -30,7 +30,7 @@ Let's have a quick check-up before we get started here:
 
 
 
-## Deploying
+## Deploy a hello world example with Git
 
 The following code gets executed on your local machine in your terminal application. The lines starting with a `$` are the ones you execute. The following code examples include the Git clone URL from your App: **{{app-name}}**.
 
@@ -115,4 +115,10 @@ $ git push -u origin master
 
 ### Further readings
 
-This was just a simple example. Don't miss our install guides for [Laravel](install-laravel), [WordPress](install-wordpress), [Symfony](install-symfony), [Craft CMS](install-craft), [Drupal](install-drupal) …
+This was just a simple example. Don't miss our guides to: 
+
+* [Install Laravel](install-laravel)
+* [Install WordPress](install-wordpress)
+* [Install Symfony](install-symfony)
+* [Install Craft CMS](install-craft)
+* [Install Drupal](install-drupal)
