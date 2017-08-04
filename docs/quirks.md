@@ -2,13 +2,21 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2017-04-23
+reviewed:      2017-08-04
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions there are some — aren't there always? Heads up so it doesn't cost you hours of debugging in the wrong direction."
 stack:         all
 group:         platform
 
 ---
+
+## Service scope
+
+Apps are lightweight containers optimized for speedy web delivery of PHP applications. Apps are specialized to do just that. Apps are single-purpose by design. Apps are also managed, they offer a jailed SSH environment for security reasons.
+
+Therefore, it's NOT possible install things like: FFmpeg, Node, jpegoptim, optipng, Gulp, webpack or Rails. Sounds scary? Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video.
+
+* [Learn more about Apps](/app)
 
 
 ## Service location
@@ -122,6 +130,7 @@ Embrace the idea of decoupled services! We don't offer some classical hosting pr
 * eMail hosting, E-Mail address configuration
 * any WebMail, so no RoundCube or SquirrelMail
 * Domain ordering, top level domain registration services
+* pre-installed phpMyAdmin, phpBB, Wikis …
 * one-click installers
 
 Our advice to you, the professional developer: consider to abandon your all-in-one old school hosting.
