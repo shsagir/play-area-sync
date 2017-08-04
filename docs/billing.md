@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-08-03
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -86,19 +86,28 @@ When you create a Billing Contact, we'll do a debit test on your credit card, wh
 Invoices are shown as HTML > you can use print from the browser to generate and download a nicely styled PDF.
 
 
+### Bounced payments
 
-### Open invoices
+Sometimes payments bounce, that just happens. Please mind that banks collect fees for those non-sufficient funds. We might pass those fees to you — our client. 
 
-You can pay your open invoices in the Dashboard yourself like so: Login to the Dashboard > follow the instructions on the "open invoices" warning. Credit card payments are done "live". SEPA direct payments are delayed. When your credit card didn't had enough balance at first, we might try again during the month.
+In any case, we will inform by e-mail when a payment didn't succeeded. Please contact us when you are aware that you have open invoices with us and questions about it. 
 
-Please contact us when you are aware that you habe open invoices with us. Otherwise we might delete your Apps. See [this story](https://blog.fortrabbit.com/bounced-payment).
+There are various reasons why payments bounce: 
+
+* Not sufficient funds - we might try to debit again after a few days.
+* Expired credit card — please update your [payment method](/billing-contact/#toc-changing-the-payment-method).
+* Something else - please update your payment method or contact us
+
+#### Service cancellation for open invoices
+
+At some point we have to cancel your Account to avoid further costs. Usually that happens when a client has multiple open invoices and was contacted by us multiple times without reply. But that can also happen sooner, for example, when the card or the project looks suspicious or neglected. 
 
 
-#### Not enough credits
+### Paying open invoices
 
-Your payment bounces — which costs us a lot of money each month. We might pass those costs to you — the client. We will inform you about bounced payments. We also try to debit again. Multiple bounced invoices will result in service cancelation.
+You pay your open invoices in the Dashboard yourself like so: 
 
+Login to the Dashboard > follow the instructions on the "open invoices" warning. 
 
-#### Expired credit cards
+Credit card payments are done "live". SEPA direct payments are delayed. When your credit card didn't had enough balance at first, we might try again during the month.
 
-We will inform you about the bounced invoice. Please add your new credit card details to your [Billing Contact](/billing-contact/#toc-changing-the-payment-method).
