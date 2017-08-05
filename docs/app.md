@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-29
+reviewed:      2017-08-05
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -91,27 +91,47 @@ The following sections here are describing functionalities that are shared by th
 
 ## Settings
 
-Each App comes with a set of basic features and [limits](https://www.fortrabbit.com/specs).
+Each App comes with a set of basic [features](https://www.fortrabbit.com/specs) and [limits](/limits):
 
-* a dedicated Git repo
-* a unique [App URL](#toc-app-url)
-* custom metrics
+* a dedicated [Git repo](/git-deployment)
+* a unique [App URL](#toc-app-name)
+* custom [metrics](#toc-metrics)
 * included monthly traffic
-* various settings in the Dashboard
 * [collaboration](collaboration) options
+* various other settings
 
-Most of it can be viewed and edited in the [Dashboard](/dashboard).
+Most of it can be viewed and edited in the [Dashboard](/dashboard). Here is what you'll need to know:
 
 ### Domains
 
 There are various settings to control the routing of domains. Please also see the [domains help article](/domains).
 
+### App Name
+
+The App name identifies your App. It is used in many instances — for example to login by SFTP or SSH. You will also find that App name on your invoices.
+
+When you sign up to fortrabbit you'll immediately start a new [trial App](app#toc-the-app-trial). For quick boarding, your first trial App will have a generic App name, depending on the software you'll use, it will look something like this: `wordpres-4wm7`.
+
+While creating your (second) fortrabbit App you will be asked for an **App Name**. Now, you can choose a name that is easier for your to identify your project like: `bobs-cool-app`. The App Name must be URL friendly (lowercase, no special chars, no spaces).
+
+
+#### Changing the App Name
+
+Please note, that it is not possible to change the App Name later on for technical reasons — cool URLs don't change, anyways. 
+
+This is not a bummer. Remember that the App Name is only an identifier to login and for development. The [App URL](#toc-app-url) is front-facing, but you'll only use to develop, you will route your [own domains](/domains) later on anyways.
+
+To identify the App within the Dashboard, you can also use App notes.
+
+If you are really desperate for your own vanity App Name: delete your current App and start a new one, this time using the desired App name. Apps are disposable, so deploying everything again shouldn't take too long.
+
+#### Re-using App names
+
+Sometimes you can't get it to work and you want to start over again. So you can delete your App and create a new one from scratch. Please mind that you can not use the same App name immediately. It takes 7 days after you have deleted an App, that the same App Name will become available to use again.
+
 #### App URL
 
-While creating your fortrabbit App you will be asked for an App name. This name can't be changed later on and is used in many places as an identifier. The most prominent one is your default App URL which looks like this: `https://your-app.frb.io/`. This is where you can always reach your App thru the web browser. Use the App URL for development, testing and to connect to external services.
-
-Please mind that you can not change the App name later on. 7 days after you have deleted an App, the same App name will become available to use again.
-
+The most prominent use of your App name is your default App URL which looks like this: `https://your-app.frb.io/`. This is where you can always reach your App thru the web browser. Use the App URL for development, testing and to connect to external services. Later on your App will reached through your [own top-level-doamin](/domains).
 
 ##### Sending transactional mails from your App URL
 
