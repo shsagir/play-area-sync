@@ -153,7 +153,7 @@ Domains on fortrabbit can be accessed via `HTTP` and `HTTPS`. Please see the [HT
 
 ## Setting a custom root path for a domain
 
-A root path is a folder in the [file system](/directories) of the App where the domain will end. Per default all domains will have the same root path. The [root path](/app#toc-root-path) of your App can be set under the settings of your App.
+A root path is a folder in the [file system](/directories) of the App where the domain will end. Per default all domains will have the same root path. The of your App can be set under the settings of your App — See the [root path settings topic](/app#toc-root-path).
 
 
 - - -
