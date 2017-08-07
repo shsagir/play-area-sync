@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-20
+reviewed:      2017-08-05
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -185,7 +185,7 @@ You probably want to host more than one website on your App like so:
 2. `your-other-domain.com` resovles in `htdocs/your-other-domain/public`
 3. …
 
-**Please don't do this!** It's the way VPS hosting works, but's it's really not a good design pattern. Your App is NOT a server, there are good reasons to only host one project, website or application in one App. Please see our [App help article](/app#toc-one-website-per-app) to learn more.
+**Please don't do this!** It's the way VPS hosting works, but it's really not a good design pattern. Your App is NOT a server, there are good reasons to only host one project, website or application in one App. Please see our [App help article](/app#toc-one-website-per-app) to learn more.
 
 ### Forwarding other domains to your App
 
@@ -194,7 +194,7 @@ Let's say you have `your-domain.com` pointed to your App already. Now that other
 1. `your-domain.co.uk/pricing` will forward to `your-domain.com/pricing`
 2. `your-domain.co.uk/pricing` and `your-domain.co.uk/pricing` will both show the same content
 
-What you want, in most scenarios, is the first one: forwarding. Serving the same content under multiple domains is confusing — not only for humans bur also for bots: The SEO spider bot might downrank your content as a duplicate. You want a primary domain — one canonical name.
+What you want, in most scenarios, is the first one: forwarding. Serving the same content under multiple domains is confusing — not only for humans bur also for bots: The SEO spider bot might down-rank your content as a duplicate. You want a primary domain — one canonical name.
 
 ### Forwarding other domains with your domain provider
 
@@ -208,14 +208,14 @@ Please keep an eye on HTTPS when forwarding. HTTPS will most likely not be provi
 
 ### Forwarding other domains within your App
 
-You might also do the forwarding programmtically within your App. The most common approach here is to work with `.htaccess` rules to redirect all requests to that other domain. You register each domain within the fortrabbit Dahboard and then catch all the requests in the App. Following an example, which always redirects to a domain `www.some-domain.tld`:
+You might also do the forwarding programmatically within your App. The most common approach here is to work with `.htaccess` rules to redirect all requests to that other domain. You register each domain within the fortrabbit Dashboard and then catch all the requests in the App. Following an example, which always redirects to a domain `www.some-domain.tld`:
 
 ```plain
 RewriteCond %{HTTP_HOST} !^www\.some-domain\.tld [NC]
 RewriteRule (.*) https://www.some-domain.tld/$1 [R=301,L]
 ```
 
-This example is generic. Please check your framework or CMS for plugins or configurations.
+This example is generic. Please check your framework or CMS for plug-ins or configurations.
 
 
 - - -
