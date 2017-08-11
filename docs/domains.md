@@ -33,7 +33,7 @@ Please note that fortrabbit does not provide domain registration services. An "e
 
 ## About domains on fortrabbit
 
-Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any external domain to your App. Your goal here is to have your App running under your own domain.
+Each fortrabbit [App](/app) has its own, unique [App URL](/app#toc-app-url). Additionally you can route any number of external domains to your App. Your goal here is to have your App running under your own domain.
 
 First off, make sure that the App knows about the domain. Then point the domain to your fortrabbit App with your domain provider. Start the process in the fortrabbit Dashboard like so:
 
@@ -249,6 +249,15 @@ help-frbit.eu2.frbit.net.  20    IN  A       52.48.51.144
 ```
 
 Alternately you can use a browser based DNS lookup tool. See [these results](http://lmgtfy.com/?q=dns+lookup).
+
+### Dig an IP
+
+```bash
+# This will print out the IP of your App
+$ dig +short {{app-name}}.frb.io 
+```
+
+See also [here](/quirks#toc-outgoing-ip) why you'll probably need your Apps IP.
 
 ### Time delays
 
