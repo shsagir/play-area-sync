@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-02-28
+reviewed:         2017-08-29
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft 3 Beta
 lead:             Note: Like Craft 3 Beta this install guide is work in progress.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0-beta5
+version:          3.0.0-beta.26
 group:            Install_guides
 
 keywords:
@@ -49,14 +49,18 @@ Follow the [offical Craft 3 install guide](https://github.com/craftcms/docs/blob
 Leave the `config/db.php` untouched, but add this ENV vars to your App. It's a mapping from our default ENV vars to the names Craft expects. 
 
 ```plain
-# Mapping
-DB_DATABASE=${MYSQL_DATABASE}
-DB_SERVER=${MYSQL_HOST}
-DB_USER=${MYSQL_USER}
-DB_PASSWORD=${MYSQL_PASSWORD}
+# DB Mapping
+CRAFT_DB_DATABASE=${MYSQL_DATABASE}
+CRAFT_DB_SERVER=${MYSQL_HOST}
+CRAFT_DB_USER=${MYSQL_USER}
+CRAFT_DB_PASSWORD=${MYSQL_PASSWORD}
 
-# Driver
-DB_DRIVER=mysql
+# DB Driver
+CRAFT_DB_DRIVER=mysql
+
+# The environment Craft is currently running in dev, staging, production, etc.)
+CRAFT_ENVIRONMENT=dev
+
 ```
 
 <div markdown="1" data-user="known">
@@ -79,10 +83,10 @@ Updating dependencies (including require-dev)
  [...]
  
   - Removing yiisoft/yii2-debug (2.0.7)
-  - Installing yiisoft/yii2-debug (2.0.8)
+  - Installing yiisoft/yii2-debug (2.0.12)
     Downloading: 100%
 
-  - Removing craftcms/cms (3.0.0-beta.3)
+  - Removing craftcms/cms (3.0.0-beta.26)
   - Installing craftcms/cms (3.0.0-beta.5)
     Downloading: 100%
 ```
@@ -99,15 +103,28 @@ That's it.
 Craft 3 ships with a Yii based cli tool. To use the cli remotely SSH in an type `php craft`. This will give you a list of all available commands.
 
 ```
-This is Yii version 2.0.11.2.
+This is Yii version 2.0.12.
 
 The following commands are available:
 
 - cache                       Allows you to flush cache.
     cache/flush               Flushes given cache components.
     cache/flush-all           Flushes all caches registered in the system.
-    cache/flush-schema        Clears DB schema cache for a given connection component.
+    cache/flush-schema        Clears DB schema cache for a given connection
+                              component.
     cache/index (default)     Lists the caches that can be flushed.
+
+- help                        Provides help information about console commands.
+    help/index (default)      Displays available commands or the detailed
+                              information
+    help/list                 List all available controllers and actions in
+                              machine readable format.
+    help/list-action-options  List all available options for the $action in
+                              machine readable format.
+    help/usage                Displays usage information for $action
+
+- install                     Craft CMS CLI installer.
+    install/index (default)   Runs the install migration
 
 - migrate                     Manages Craft and plugin migrations.
     migrate/create            @inheritdoc
@@ -121,4 +138,11 @@ The following commands are available:
     migrate/to                Upgrades or downgrades till the specified version.
     migrate/up (default)      Upgrades the application by applying new
                               migrations.
+
+- queue                       Manages application db-queue.
+    queue/exec                Executes a job.
+    queue/info (default)      Info about queue status.
+    queue/listen              Listens db-queue and runs new jobs.
+    queue/run                 Runs all jobs from db-queue.
+
 ```
