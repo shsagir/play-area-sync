@@ -16,7 +16,7 @@ stack:         all
 
 ## The two sentence story
 
-**The Universal Stack** is for everyone to build websites and web applications, combining legacy workflows with modern design paradigms. **The Professional Stack** is for spohisticated developers to build modern cloud-enabled high-performance PHP web applications with lot's of traffic.
+**The Universal Stack** is for everyone to build websites and web applications, combining legacy workflows with modern design paradigms. **The Professional Stack** is for sophisticated developers to build modern cloud-enabled high-performance PHP web applications with lot's of traffic.
 
 
 ## The facts table
