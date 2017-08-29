@@ -1,14 +1,12 @@
 ---
-
 template:      article
-reviewed:      2017-06-20
+reviewed:      2017-08-28
 dontList:      false
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit
-excerpt:          "How to make use of HTTPS on fortrabbit. Learn about the options."
+excerpt:       "How to make use of HTTPS on fortrabbit. Learn about the options."
 group:         platform
 stack:         all
-oldLink:       ssl-old
 
 keywords:
     - ssl
@@ -55,11 +53,11 @@ Bring your own certificate: There are various use-cases to mandate a custom cert
 
 Which of the options can be used depends on the [App stack](stacks) and the specific plans which are booked for the App:
 
-| **HTTPS/TLS Option**  | Professional App                                                           | Universal App      |
-| --------------------- | -------------------------------------------------------------------------- | ------------------ |
-| Piggyback HTTPS       | Yes                                                                        | Yes                |
-| Automatic HTTPS       | Yes                                                                        | Yes                |
-| Custom HTTPS          | Yes, as extra Component, [see specs](//www.fortrabbit.com/specs-pro#https) | Depends on plan    |
+| **HTTPS/TLS Option** | Professional App                         | Universal App   |
+| -------------------- | ---------------------------------------- | --------------- |
+| Piggyback HTTPS      | Yes                                      | Yes             |
+| Automatic HTTPS      | Yes                                      | Yes             |
+| Custom HTTPS         | Yes, as extra Component, [see specs](//www.fortrabbit.com/specs-pro#https) | Depends on plan |
 
 
 ## Using TLS/HTTPS
@@ -98,3 +96,16 @@ This will make your browser remember to always use the secured version of your A
 ### It's not working with Internet Explorer 8 or older
 
 Sorry, IE8 is not supported any more. All our TLS implementations are based on SNI.
+
+## Troubleshooting TLS
+
+Sometimes it just doesn't work as supposed to. Don't panic. You can of course always ask us for support. Here are some things you can do on your own:
+
+### You see a certificate warning 
+
+You visit your Apps domain under the `https://` address and the browser throws an error that the certificate can't be verified: This can happen, when the domain is brand new and the cert is not YET installed (can take up to eight hours). In this case, please wait a little. This can also happen, when your domain is not routed to fortrabbit (YET), only domains that are already routed to fortrabbit will receive a Let's Encrypt cert. Please the domain settings in th Dashboard.
+
+### Cert is installed but browser bar is not green
+
+In most cases this is due to "**mixed content**", which means, the cert is installed and everything is working, but your website is requesting external resources over non-secure addresses (http). Check the source code of your website and find and replace all `http:` with `https://` requests.
+

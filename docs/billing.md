@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-08-03
+reviewed:      2017-08-28
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -15,33 +15,30 @@ This article is all about the concepts of billing, pricing, payments, invoices &
 
 ### Free trial
 
-You can test fortrabbit before you pay a dime. All you need to do is: sign up to fortrabbit and try it for free.  Of course: You don't need to opt-out, but you can, of course, opt-in.
+You can test fortrabbit before you pay a dime. All you need to do is: sign up to fortrabbit and try it for free. The trial will end automatically, you don't have to cancel it.
+
 
 ### Consumption based billing
 
-Pay after usage: No upfront costs nor payment! **First you book, then you'll use it, then we'll invoice you** for what you have actually used.
-
-We get a few e-mails each month after invoicing. People are confused why they still see Apps on the invoice that have been deleted. Usually you pay upfront for stuff you book online. You want something, you pay for it. fortrabbit has a consumption based billing. That means we charge AFTER usage. Just like with your old telephone bill. At the end of the month you'll get an invoice for what you have used in that month. So, when you start using an App on the 15th of Jan, you'll be invoiced at the end of Jan for using the App for half a month. So at the start of each month you'll get an invoice for the stuff you have booked last month. Also look at the invoice period.
-
-
-### Account cancellation
-
-**You can always quit**. Scale down or kill certain Apps or even cancel your Account completely.
-
-We will delete all your Account data. But it is required by law to keep your billing related data, that is basically the invoices and infos around it. The same applies to your credit card informations, but those are stored with our credit card service vendor — not with us.
-
-
-### Monthly invoices
-
-Within the first days of every new month you will get the invoice for your last month's consumption. As there are no upfront payments (yet), yearly payment is not (yet) supported.
+Pay after usage: No upfront costs nor payment! **First you book, then you'll use it, then we'll invoice you** for what you have actually used. Just like with your old telephone bill. At the end of the month you'll get an invoice for what you have used in that month. 
 
 ### Daily billing cycle
 
-When you book something on the 16th day of a month and the month has 30 days you only pay for the 15 days you're using the product. The minimum billing period is one day. For paid support this rule does not apply!
+When you book something on the 16th day of a month and the month has 30 days you only pay for the 15 days you're using the product. The minimum billing period is one day. 
+
+### Monthly invoices
+
+Within the first days of every new month you will get the invoice for your last month's consumption. After receiving the invoice, the payments are due and will automatically be done by us. Credit Cards usually will happen within the first days of the month, SEPA direct within the first two weeks.
 
 ### Costs monitoring
 
-You can see a live preview of your usage for the current month. Log in to the Dashboard > Billing Contact. There you'll find a cost preview for the ongoing month, covering all of your Apps. This overview shows you what will be printed on the next invoice. Please mind that it will show the current costs of the day of the month so far.
+You can see a live preview of the usage for the current month: 
+
+1. Log in to the Dashboard
+2. Go to your Company (Company Name)
+3. Under Billing Contact select the "Current costs"
+
+There you'll find a cost preview (invoice draft) for the ongoing month, covering all of your Apps. This shows what will be printed on the next invoice. Please mind that it will show the current costs of the day of the month so far, it will show different values the next day.
 
 
 ### Payment methods
@@ -111,3 +108,13 @@ Login to the Dashboard > follow the instructions on the "open invoices" warning.
 
 Credit card payments are done "live". SEPA direct payments are delayed. When your credit card didn't had enough balance at first, we might try again during the month.
 
+### Not supported
+
+Yearly payments are not supported, as there are no upfront costs and the exact usage is unknown in advance. Therefore it is also not possible to pay with PayPal.
+
+
+### Account cancellation
+
+**You can always quit**. Scale down or kill certain Apps or even cancel your Account completely.
+
+We will delete all your Account data. But it is required by law to keep your billing related data, that is basically the invoices and infos around it. The same applies to your credit card informations, but those are stored with our credit card service vendor — not with us.
