@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-01-20
+reviewed:         2017-08-28
 title:            Install Symfony
 naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 or 3 on fortrabbit.
@@ -14,7 +14,7 @@ websiteLink:      http://symfony.com/?utm_source=fortrabbit
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
-version:          3.1, 3.2
+version:          3.1, 3.2, 3.3
 
 ---
 
@@ -192,8 +192,7 @@ framework:
 services:
     session.memcached:
         class: Memcached
-        arguments:
-            persistent_id: %session_memcache_prefix%
+        arguments: [ %session_memcache_prefix% ] 
         calls:
             - [ addServer, [ %session_memcache_host_1%, %session_memcache_port_1% ]]
             # if you are using a Memcache Production plan (with two nodes):
