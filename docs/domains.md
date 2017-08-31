@@ -80,8 +80,8 @@ When you register a `www.` domain in the fortrabbit Dashboard, we additionally p
 ```plain
 HOSTNAME      TYPE        VALUE
 -------------------------------------------------
-@             A-Record    52.18.136.112 < See Dashboard for actual IP
-www           CNAME       {{app-name}}.
+@             A-Record    52.18.136.112  < See Dashboard for IP, only naked!
+www           CNAME       {{app-name}}.  < Only www!
 ```
 
 This will redirect all requests incoming to the naked domain to the `www.` domain.
@@ -225,10 +225,25 @@ This example is generic. Please check your framework or CMS for plug-ins or conf
 
 ## Troubleshooting DNS
 
+DNS is hard. When visiting your domain within the Dashboard, you'll see two tables: On the left you see the desired settings of the domain. On the right, you'll see the current, actual settings. In general — when not using an external DNS service like Cloudflare — those two settings should match. The left and the right side should be the same.
+
+###  The most common problem
+
+The www-forwarding service is often misunderstood. When registering a `www.` domain with fortrabbit we'll provide an IP address for an A-Record. This one is for the naked domain only. Please see the [example setup above](#toc-example-setup). 
+
+* The IP address for the A-Record is for the naked domain ONLY. 
+* The CNAME is for the www. domain ONLY. 
+
+So, in general: When your www. domain has an A-Record, there might be something wrong. So when your naked domain has a CNAME record, there for sure is something wrong.
+
+
+
+## Dig
+
 You can use the terminal to see the current DNS settings of your domain. With the `dig` command you can see if there are any CNAME entries and where they are pointing to. Here we lookup `help.fortrabbit.com` and see a CNAME pointing to the App URL: `help-frbit.frb.io`.
 
 ```
-$ dig ANY help.fortrabbit.com
+$ dig help.fortrabbit.com
 ;; Truncated, retrying in TCP mode.
 
 ; <<>> DiG 9.8.3-P1 <<>> ANY help.fortrabbit.com
@@ -265,6 +280,8 @@ See also [here](/quirks#toc-outgoing-ip) why you'll probably need your Apps IP.
 ### Time delays
 
 Many DNS providers default the TTL (Time To Live) of all records to 24 hours. This means that all changes will apply with a delay up to 24 hours, because everybody who has looked up the domain caches the result for the TTL duration. Also the TTL is not guaranteed: One badly programmed router on the way, who ignores the TTL or imposes it's own minimal TTL, can change the TTL for everybody "behind it". The caching itself is actually a good thing as it helps to reduce round trips. Some providers let you set down the TTL, which is very useful when moving or changing domains.
+
+
 
 
 ### Testing domain routing with your local hosts file
