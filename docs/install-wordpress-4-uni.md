@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-06-20
+reviewed:         2017-09-02
 title:            Install WordPress 4
 naviTitle:        WordPress
 group:            Install_guides
@@ -16,7 +16,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          4.8
+version:          4.8.1
 
 keywords:
     - wp-admin
@@ -148,7 +148,10 @@ Your App URL `{{app-name}}.frb.io` is the first address your WordPress can be re
 2. [Connect the domain to your fortrabbit App](/domains#toc-connect-your-domain-to-fortrabbit), so that requests for a new domain will be delegated to your App
 3. Once, the domain is routed, tell WordPress to use the new domain as well:
 
-In the WordPress admin change the Site URL from your App URL to that new domain. Find this setting in wp-admin under Settings > General: "WordPress Address (URL)" and "Site Address (URL)". Change this to your new domain. More advanced help regarding domains and the vars `home_url` and `site_url` can be found in the Wordpress codex article on [changing the Site URL](https://codex.wordpress.org/Changing_The_Site_URL).
+
+### Change the site_url domain in the wp-admin
+
+In the WordPress admin (https://{{app-name}}.frb.io/wp-admin) change the Site URL from your App URL to that new domain. Find this setting in wp-admin under Settings > General: "WordPress Address (URL)" and "Site Address (URL)". Change this to your new domain. More advanced help regarding domains and the vars `home_url` and `site_url` can be found in the Wordpress codex article on [changing the Site URL](https://codex.wordpress.org/Changing_The_Site_URL).
 
 
 ### Installing themes & plugins
