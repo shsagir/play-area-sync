@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-08-13
+reviewed:      2017-09-04
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -227,14 +227,25 @@ This example is generic. Please check your framework or CMS for plug-ins or conf
 
 DNS is hard. When visiting your domain within the Dashboard, you'll see two tables: On the left you see the desired settings of the domain. On the right, you'll see the current, actual settings. In general — when not using an external DNS service like Cloudflare — those two settings should match. The left and the right side should be the same.
 
-###  The most common problem
+###  Wrong DNS settings
 
-The www-forwarding service is often misunderstood. When registering a `www.` domain with fortrabbit we'll provide an IP address for an A-Record. This one is for the naked domain only. Please see the [example setup above](#toc-example-setup). 
+Please mind the difference between the naked and the www domain. You have one domain registered with your provider, but from a DNS point of view, those things are different:
+
+1. `www.mydomain.com` < the www-domain
+2. `mydomain.com` < the naked domain
+
+The DNS settings described here need to be applied on the right place:
 
 * The IP address for the A-Record is for the naked domain ONLY. 
-* The CNAME is for the www. domain ONLY. 
+* The CNAME is for the www-domain ONLY. 
+
+When registering a `www.` domain with fortrabbit we'll provide an IP address for an A-Record. This one is for the naked domain only. This IP will forward all requests to that domain to the www version.
 
 So, in general: When your www. domain has an A-Record, there might be something wrong. So when your naked domain has a CNAME record, there for sure is something wrong.
+
+Please check the domain in the Dashboard > {{app-name}} > domains > {{domain-name}}. That view shows you two tables: The one on the left is the desired setup and shows two rows: one for the naked, one for the www-domain. On the right hand side you see the same table, but this one shows you the actual current settings. If those match, everything will work.
+
+Please see the [example setup above](#toc-example-setup). 
 
 
 
