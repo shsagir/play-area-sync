@@ -144,11 +144,23 @@ We don't have any fancy GitHub/Bitbucket integrations (yet). But it is easily po
 
 Git submodules are not supported. We recommend to use Git subtrees instead. See [this post from Atlassian](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/).
 
-## Reporting issues
 
-If your Git deployment fails for any reason and you need help to fix it, please get in touch. To help us help you please provide a verbose output of the push (or pull) operation:
+## Troubleshooting Git
+
+If your Git deployment fails for any reason: 
+
+1. If you are unsure about Git: Check out [Getting started with Git](git)
+2. If it didn't worked before: Read above to see if you missed something.
+3. If it still doesn't work: Please get in touch with us.
+
+### Reporting issues with Git
+
+To help us helping you please provide a verbose output of the push (or pull) operation:
 
 ```
+# See remotes
+$ git remote -v
+
 # Generate verbose output for push
 $ GIT_SSH_COMMAND="ssh -vvv" git push fortrabbit master
 
@@ -156,4 +168,4 @@ $ GIT_SSH_COMMAND="ssh -vvv" git push fortrabbit master
 $ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
 ```
 
-**Note**: The remote name *fortrabbit* might be *origin* or any other custom name you have chosen.
+**Note**: The remote name `fortrabbit` might be `origin` or any other custom name you have chosen, or it might not be needed, so without `fortrabbit master`
