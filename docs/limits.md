@@ -83,9 +83,9 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 **Scope**: Universal Apps
 
-**Description**: Each Universal App comes with a limited amount of available [persistent web storage](http://help.fortrabbit.com/app-uni#toc-persistent-storage). The amounts per scaling are available in [our specs](http://www.fortrabbit.com/specs#plans). Professional Apps have [ephemeral storage](http://help.fortrabbit.dev/app-pro#toc-ephemeral-storage), so this limit does not apply.
+**Description**: Each Universal App comes with a limited amount of available [persistent web storage](app-uni#toc-persistent-storage). The amounts per scaling are available in [our specs](/specs#plans). Professional Apps have [ephemeral storage](/app-pro#toc-ephemeral-storage), so this limit does not apply.
 
-**Solution**: We currently allow slight exceeding those limits. If you are using permanently more than 10% we expect you to upgrade to the next bigger scaling or we'll need to take the App at least temporarily offline. The storage availability of the biggest Universal App scaling is currently the highest we offer. Should you need to increase that limit permanently, we recommend to [migrate to the Professional Stack](https://help.fortrabbit.com/migrate-uni-to-pro).
+**Solution**: We currently allow slight exceeding those limits. If you are using permanently more than 10% we expect you to upgrade to the next bigger scaling or we'll need to take the App at least temporarily offline. The storage availability of the biggest Universal App scaling is currently the highest we offer. Should you need to increase that limit permanently, we recommend to [migrate to the Professional Stack](migrate-uni-to-pro).
 
 
 ## Object Storage

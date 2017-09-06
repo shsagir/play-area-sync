@@ -78,7 +78,7 @@ Have you forgot that Account password again? Hop over [here](https://dashboard.f
 
 We recommend to use [two-factor-authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication) with your fortrabbit Account to add an additional layer of security. You can setup and disable 2FA from your Account in the Dashboard:
 
-* Dashboard > Your Account > [2FA](http://dashboard.fortrabbit.dev/account/security/enable2fa)
+* Dashboard > Your Account > [2FA](https://dashboard.fortrabbit.com/account/security/enable2fa)
 
 During the guided setup you will enable your second device to generate OneTimePasswords for fortrabbit.
 
