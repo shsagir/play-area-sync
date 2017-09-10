@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-08-05
+reviewed:      2017-09-08
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -258,7 +258,9 @@ You can, of course, upgrade from your trial to a paid plan at any time. You can 
 
 #### The end of a trial
 
-When the trial is finally over, the trial App will be deleted — we will not keep your data hostage. Good news is: we will inform you by e-mail before it happens and you can start a new trial right away, after your current trial ended.
+When the trial is finally over, the trial App will be deleted. That might sounds cruel, but please consider that: We will not keep your data hostage until you pay us. 
+
+Good news is: we will inform you by e-mail before it happens and you can start a new trial right away, after your current trial ended. In many cases you can easily re-deploy your code base to the new App: When deploying with [Git](git-deployment), you just change the remote and push again. When using our CMS/framework presets with predefined [ENV vars](env-vars) database access will work without code modification.
 
 - - -
 
