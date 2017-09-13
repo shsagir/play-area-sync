@@ -1,12 +1,11 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-09-13
 title:         Learn about your Apps directory structure
 naviTitle:     Directory structure
 group:         platform
 stack:         all
-oldLink:       directories-old
 hideExamples:  yes
 
 keywords:
@@ -36,6 +35,7 @@ srv
   app
     {{app-name}}
       htdocs      < default root path
+      logs        < log files
 ```
 
 
@@ -52,6 +52,10 @@ The `htdocs` folder is also your "login folder", i.e. the folder you are in when
 Temporary folder; limited to 2GB of storage. Files older than 15 days will be automatically purged. Typical use cases are the default PHP session file folder or a temp destination for file uploads via PHP (before `move_uploaded_file()` is called).
 
 For multi node plans: The `tmp` folder is not shared. Meaning that each node has "their own" temporary folder.
+
+### logs
+
+Where the Apache and PHP errors are located. Also see: [logging for Universal Apps](/logging-uni) and [logging for Professional Apps](/logging-pro) to learn how to access those and how to work with them.
 
 ## Other folders
 
