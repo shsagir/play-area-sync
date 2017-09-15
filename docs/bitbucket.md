@@ -35,3 +35,5 @@ Bitbucket is similar to GitHub, please hop over to the [GitHub integration](gith
 
 Bitbucket has pipelines to handle hooks. [Here](https://gist.github.com/ukautz/4f3219c3eb5d97fbd018027dca4b8808) is an example for a pipeline that will push to fortrabbit, with the `pipeline.yml` and a `deploy.php`.
 
+In order, for BitBucket to push to your fortrabbit App, you have to [create an SSH key pair with Bitbucket](https://confluence.atlassian.com/bitbucket/use-ssh-keys-in-bitbucket-pipelines-847452940.html) and then [add the public key to your fortrabbit App](access-methods#toc-app-only-ssh-keys).
+
