@@ -70,7 +70,7 @@ Within the [Dashboard](dashboard) > Your Account > e-mail address. Follow the pr
 
 Within the [Dashboard](dashboard) > Your Account > password. Here you have to enter your old password to setup a new password. Please mind that this will also change your logins (SSH/SFTP/Git) when you use password (not SSH key) as [access method](/access-methods).
 
-### Reset password
+### Resetting the Account password
 
 With the [Dashboard login screen](https://dashboard.fortrabbit.com), you'll see a little link "**Forgot password?**". This will bring you to our password reset form [(direct link)](https://dashboard.fortrabbit.com/password) where you can recover your Account. In that form you will enter the e-mail address associated with your fortrabbit Account. The system will then send you a recovery link to your e-mail address. With that you can set a new password to login in again. Please mind that billing e-mail address and Account e-mail address might differ.
 
