@@ -180,7 +180,7 @@ You can however set the root path afterwards at any given time by visiting the a
 
 In some cases, you might want to route individual domains to different folders. Please mind that there are limited use cases for this and don't use one App to host multiple website (see [above](/app#toc-one-website-per-app) as well).
 
-When visiting the root path settings form with a [Professional stack Apps](/app-pro) you will find a switch to change from a global root path for all domains to custom root paths for each domain. Mind that you can also use `.htaccess` files with `RewriteRule` directives to handle different domains differently.
+When visiting the root path settings you will find a switch to change from a global root path for all domains to custom root paths for each domain. Mind that you can also use `.htaccess` files with `RewriteRule` directives to handle different domains differently.
 
 ### Firewall
 
