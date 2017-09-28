@@ -69,5 +69,5 @@ sustained:
 <?php
 
 chdir("sub-folder");
-execute("composer install");
+exec("composer install");
 ```
