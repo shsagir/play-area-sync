@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-07
+reviewed:      2017-10-02
 title:         Billing Contact
 naviTitle:     Billing Contact
 excerpt:       What you can do with a Billing Contact
@@ -66,7 +66,7 @@ Each month we'll send an invoice and send a link by e-mail. You can change this 
 
 ### Changing the invoice address
 
-Your invoices contain the street address of your organization. You will be asked for that while setting up a Billing Contact. You can change this invoice address (for future invoices) at any time like so:
+Your invoices contain the street address of your organization. You will be asked for that while setting up a Billing Contact. You can change this invoice address for future invoices at any time like so:
 
 * Dashboard > Companies > {{ Your Company }} >
 * Billing Contact >

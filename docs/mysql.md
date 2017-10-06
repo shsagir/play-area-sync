@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-10-06
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -89,7 +89,7 @@ All clients have connection presets that help you to establish the SSH tunnel an
 To give you an idea of how the access details should be inserted, here an example using MySQL Workbench:
 
 * Create a new connection with *Connection Method* set to `Standard TCP/IP over SSH`, then:
-* **SSH Hostname**: `deploy.{{region}}.frbit.com`
+* **SSH Hostname**: `tunnel.{{region}}.frbit.com`
 * **SSH Username**: `{{ssh-user}}`
 * **SSH Password**: `{{ssh-password}}`
 * **SSH Keyfile**: <code data-with-password>No need</code><code data-without-password>Your local SSH private key</code>
@@ -268,3 +268,7 @@ Instead of [looking up the existing MySQL password](#toc-obtain-the-mysql-passwo
 ### Differences between Professional and Universal
 
 All [Universal Apps](/app-uni) automatically come with a MySQL database. For [Professional Apps](app-pro), MySQL is an optional Component. There you can [scale](scaling#toc-mysql) it up and down individually.
+
+### Limits
+
+Each App has one database named like the App. There are no privileges to `CREATE DATABASE`. Please mind that `CREATE SCHEMA` requires the same permission.
