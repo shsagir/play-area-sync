@@ -112,7 +112,7 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 ## Load testing
 
-So, you want to run a stress test to check if this works as advertised? You are welcome! Mind the above and <a href="#" onclick="Intercom('showNewMessage', 'I want to do a load testing on _.__.__ UTC for my App ________ please confirm')">tell us upfront please</a>. Please respect the following limits: 
+So, you want to run a stress test to check if this works as advertised? You are welcome! Mind the above and <a href="" onclick="Intercom('showNewMessage', 'I want to do a load testing on _.__.__ UTC for my App ________ please confirm')">tell us upfront please</a>. Please respect the following limits: 
 
 * Universal Stack: Max 300 RPM
 * Professional Stack: 300 RPM per Node.
