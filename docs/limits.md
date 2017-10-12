@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-05-15
+reviewed:         2017-10-12
 title:            Limitations & troubleshooting
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -10,8 +10,11 @@ stack:            all
 
 ---
 
-We don't believe in hosting offerings with unlimted resources. There is always a limit, even for cloud hosting. Our fair limits are designed to match the most common use cases on this platform. Some limits may seem small, but the vast majority of web project will not need more.
+We don't believe in hosting offerings with unlimited resources. There is always a limit, even for cloud hosting. Our fair limits are designed to match the most common use cases on this platform. Some limits may seem small, but the vast majority of web project will not need more. Some of our limits are even intentionally kept small by design to force best practices:
 
+> I just want to say that you all make us better for our clients. The limits you set on the servers are reasonable and prevent us from coming up with lazy or hacked solutions. We are definitely better because of you all.
+
+– a client who refused to be named here
 
 ## PHP memory
 
@@ -104,3 +107,12 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 **Description**: Each App has an included traffic (transfer / bandwidth) amount which can be found in the specs - (see the [Universal specs](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional specs](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
 
 **Solution**: Once that limit is exceeded, we will charge per additional 5GB or part thereof, as described in the above linked specs page.
+
+- - -
+
+## Load testing
+
+So, you want to run a stress test to check if this works as advertised? You are welcome! Mind the above and <a href="#" onclick="Intercom('showNewMessage', 'I want to do a load testing on _.__.__ UTC for my App ________ please confirm')">tell us upfront please</a>. Please respect the following limits: 
+
+* Universal Stack: Max 300 RPM
+* Professional Stack: 300 RPM per Node.
