@@ -49,7 +49,13 @@ Follow the [offical Craft 3 install guide](https://github.com/craftcms/docs/blob
 Leave the `config/db.php` untouched, but add this ENV vars to your App. It's a mapping from our default ENV vars to the names Craft expects. 
 
 ```osterei32
-# DB Mapping
+# Crypto key
+SECURITY_KEY=ClickToGenerate
+
+# The environment Craft is currently running in dev, staging, production, etc.
+ENVIRONMENT=dev
+
+# DB Mapping (don't use actual values)
 DB_DATABASE=${MYSQL_DATABASE}
 DB_SERVER=${MYSQL_HOST}
 DB_USER=${MYSQL_USER}
@@ -57,13 +63,6 @@ DB_PASSWORD=${MYSQL_PASSWORD}
 
 # DB Driver
 DB_DRIVER=mysql
-
-# The environment Craft is currently running in dev, staging, production, etc.)
-ENVIRONMENT=dev
-
-# Crypto key
-SECURITY_KEY=ClickToGenerate
-
 ```
 
 <div markdown="1" data-user="known">
