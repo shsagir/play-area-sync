@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-10-12
+reviewed:         2017-10-18
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -14,7 +14,7 @@ We don't believe in hosting offerings with unlimited resources. There is always 
 
 > I just want to say that you all make us better for our clients. The limits you set on the servers are reasonable and prevent us from coming up with lazy or hacked solutions. We are definitely better because of you all.
 
-– a client who refused to be named here
+– Stephen Callender from [Shoe Shine Design](http://shoeshinedesign.com/)
 
 ## PHP memory
 
