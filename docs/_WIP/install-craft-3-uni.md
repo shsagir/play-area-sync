@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-08-29
+reviewed:         2017-10-18
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft 3 Beta
 lead:             Note: Like Craft 3 Beta this install guide is work in progress.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.0-beta.26
+version:          3.0.0-beta.29
 group:            Install_guides
 
 keywords:
@@ -48,19 +48,21 @@ Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's do
 Follow the [offical Craft 3 install guide](https://github.com/craftcms/docs/blob/master/en/installation.md) and use `composer create-project` to run Craft locally first. 
 Leave the `config/db.php` untouched, but add this ENV vars to your App. It's a mapping from our default ENV vars to the names Craft expects. 
 
-```plain
-# DB Mapping
-CRAFT_DB_DATABASE=${MYSQL_DATABASE}
-CRAFT_DB_SERVER=${MYSQL_HOST}
-CRAFT_DB_USER=${MYSQL_USER}
-CRAFT_DB_PASSWORD=${MYSQL_PASSWORD}
+```osterei32
+# Crypto key
+SECURITY_KEY=ClickToGenerate
+
+# The environment Craft is currently running in dev, staging, production, etc.
+ENVIRONMENT=dev
+
+# DB Mapping (don't use actual values)
+DB_DATABASE=${MYSQL_DATABASE}
+DB_SERVER=${MYSQL_HOST}
+DB_USER=${MYSQL_USER}
+DB_PASSWORD=${MYSQL_PASSWORD}
 
 # DB Driver
-CRAFT_DB_DRIVER=mysql
-
-# The environment Craft is currently running in dev, staging, production, etc.)
-CRAFT_ENVIRONMENT=dev
-
+DB_DRIVER=mysql
 ```
 
 <div markdown="1" data-user="known">
@@ -83,11 +85,11 @@ Updating dependencies (including require-dev)
  [...]
  
   - Removing yiisoft/yii2-debug (2.0.7)
-  - Installing yiisoft/yii2-debug (2.0.12)
+  - Installing yiisoft/yii2-debug (2.0.11)
     Downloading: 100%
 
   - Removing craftcms/cms (3.0.0-beta.26)
-  - Installing craftcms/cms (3.0.0-beta.5)
+  - Installing craftcms/cms (3.0.0-beta.29)
     Downloading: 100%
 ```
 
@@ -110,17 +112,13 @@ The following commands are available:
 - cache                       Allows you to flush cache.
     cache/flush               Flushes given cache components.
     cache/flush-all           Flushes all caches registered in the system.
-    cache/flush-schema        Clears DB schema cache for a given connection
-                              component.
+    cache/flush-schema        Clears DB schema cache for a given connection component.
     cache/index (default)     Lists the caches that can be flushed.
 
 - help                        Provides help information about console commands.
-    help/index (default)      Displays available commands or the detailed
-                              information
-    help/list                 List all available controllers and actions in
-                              machine readable format.
-    help/list-action-options  List all available options for the $action in
-                              machine readable format.
+    help/index (default)      Displays available commands or the detailed information.
+    help/list                 List all available controllers and actions in machine readable format.
+    help/list-action-options  List all available options for the $action in machine readable format.
     help/usage                Displays usage information for $action
 
 - install                     Craft CMS CLI installer.
@@ -128,16 +126,14 @@ The following commands are available:
 
 - migrate                     Manages Craft and plugin migrations.
     migrate/create            @inheritdoc
-    migrate/down              Downgrades the application by reverting old
-                              migrations.
+    migrate/down              Downgrades the application by reverting old migrations.
     migrate/history           Displays the migration history.
-    migrate/mark              Modifies the migration history to the specified
-                              version.
+    migrate/mark              Modifies the migration history to the specified version.
     migrate/new               Displays the un-applied new migrations.
     migrate/redo              Redoes the last few migrations.
     migrate/to                Upgrades or downgrades till the specified version.
-    migrate/up (default)      Upgrades the application by applying new
-                              migrations.
+    migrate/up (default)      Upgrades the application by applying new migrations.
+       
 
 - queue                       Manages application db-queue.
     queue/exec                Executes a job.
