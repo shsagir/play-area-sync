@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-10-06
+reviewed:      2017-10-26
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -272,3 +272,9 @@ All [Universal Apps](/app-uni) automatically come with a MySQL database. For [Pr
 ### Limits
 
 Each App has one database named like the App. There are no privileges to `CREATE DATABASE`. Please mind that `CREATE SCHEMA` requires the same permission.
+
+## Troubleshooting MySQL
+
+### Can't connect from local
+
+The most common misunderstanding when trying to connect from a local machine, is that people overlook to first open up the SSH tunnel and then connect to the database. Graphical MySQL clients support this connection method out of the box. You'll need to enter both: SSH access and MySQL access details. Within the fortrabbit Dashboard under your App > Access, there is a small link labeled: "Show SSH tunnel info" which will reveal everything you'll need to enter in a MySQL client to connect to the remote database.

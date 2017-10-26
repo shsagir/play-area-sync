@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2016-12-20
+reviewed:      2017-10-26
 title:         SFTP
 naviTitle:     SFTP
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
@@ -27,8 +27,6 @@ All [Universal Stack Apps](app-uni) come with SFTP access out-of-the-box to supp
 
 There are various GUIs out there, which make your life easier. We recommend [Cyberduck](https://cyberduck.io/) (Mac, Windows).
 
-<!-- TODO: @Frank: Describe configuration of Cyberduck connection with example -->
-
 Many modern editors or IDEs also feature SFTP integrations by plugin.
 
 * **Mode**: SFTP (not regular FTP)
@@ -38,11 +36,11 @@ Many modern editors or IDEs also feature SFTP integrations by plugin.
 * **Password**: Your Account password OR public SSH key
 
 
-## File synchronization
+### File synchronization
 
 Most SFTP clients feature a file synchronization mode. You can choose your local folder and sync it to the remote folder on fortrabbit. All files will be compared and only changed ones will be uploaded. This works in the other direction as well, of course.
 
-### Setting up SFTP file
+#### Setting up SFTP file sync
 
 This example shows how to configure your SFTP client to quickly sync code:
 
@@ -55,17 +53,27 @@ This example shows how to configure your SFTP client to quickly sync code:
 The workflow has been tested with (macOS commercial) SFTP client Transmit from Panic.
 
 
-## Troubleshooting authentication
+## Troubleshooting SFTP
 
 Got an error when trying to login? fortrabbit supports username + password and public key authentication. Please continue here to troubleshoot access:
 
 * [See the access methods article](/access-methods)
 
+### Blacklisting
 
-## About SFTP
+We are actively filtering deployment traffic for security reasons: too many falsy login attempts or parallel connections are considered dangerous and will get blacklisted.
+
+When you have tried to connect to often, you might got blacklisted, you can: 
+
+1. <a href="" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__')">Ask us</a> to remove your IP from the blacklisting ban.
+2. Get a new IP by disconnecting from the internet shortly.
+
+## Further readings
+
+### About SFTP
 
 SFTP stands for SSH File Transfer Protocol. It's a separate protocol packaged with [SSH](/ssh-uni) — think of it as the little sister of SSH. SFTP is very different than FTP or FTPS but all clients will speak it anyways, so for the usage it doesn't really makes a difference. Mostly, SFTP is preferable to FTP because of its underlying security features.
 
-## Mixing deployment methods
+### Mixing deployment methods
 
-Please see our [deployment methods article](deployment-methods-uni) to learn how the diffrent ways to deploy code work side by side.
+Please see our [deployment methods article](deployment-methods-uni) to learn how the different ways to deploy code work side by side.

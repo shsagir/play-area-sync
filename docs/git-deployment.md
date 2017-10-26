@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-09-05
+reviewed:      2017-10-26
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -68,7 +68,7 @@ The reset operation is non-destructive, meaning: It does not generate a release.
 
 ### Git with a GUI or IDE
 
-You can also use a graphical interface like Tower, SourceTree, Gitbox and so on - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an IDE like PhpStorm or Eclipse to manage Git. You'll need these access credentials:
+You can also use a graphical interface like SourceTree, Tower, Gitbox and so on - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an IDE like PhpStorm or Eclipse to manage Git. You'll need these access credentials:
 
 * **SSH clone URL**: {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}
 * **SSH password**: {{ssh-password}}
@@ -169,3 +169,13 @@ $ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
 ```
 
 **Note**: The remote name `fortrabbit` might be `origin` or any other custom name you have chosen, or it might not be needed, so without `fortrabbit master`
+
+## Blacklisting
+
+We are actively filtering deployment traffic for security reasons: too many falsy login attempts or parallel connections are considered dangerous and will get blacklisted.
+
+Some graphical clients for Git, like SourceTree and GitKraken are fetching often are opening many parallel connections. So you might get blacklisted here for using one of those. You can: 
+
+1. Change the settings of your GUI client, in Git Kraken, you can turn off auto-fetching under your preferences. In SourceTree you can turn off checks for default remotes.
+2. <a href="" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__')">Ask us</a> to remove your IP from the blacklisting ban.
+3. Get a new IP by disconnecting from the internet shortly.

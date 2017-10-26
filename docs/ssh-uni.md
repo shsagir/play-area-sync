@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-07-12
+reviewed:      2017-07-26
 title:         SSH
 naviTitle:     SSH
 lead:          Learn what you can do on the command line with fortrabbit Apps.
@@ -115,3 +115,13 @@ $ composer install
 Got an error when trying to login? fortrabbit supports username + password and public key authentication. The latter is recommend, but, especially when using Windows, sometimes password is the only feasible option. Please go on here:
 
 * [See the access methods article](access-methods)
+
+
+### Blacklisting
+
+We are actively filtering deployment traffic for security reasons: too many falsy login attempts or parallel connections are considered dangerous and will get blacklisted.
+
+When you have tried to connect to often, you might got blacklisted, you can: 
+
+1. <a href="" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__')">Ask us</a> to remove your IP from the blacklisting ban.
+2. Get a new IP by disconnecting from the internet shortly.
