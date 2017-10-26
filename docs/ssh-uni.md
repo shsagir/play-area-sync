@@ -123,5 +123,5 @@ We are actively filtering deployment traffic for security reasons: too many fals
 
 When you have tried to connect to often, you might got blacklisted, you can: 
 
-1. <a href="" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__')">Ask us</a> to remove your IP from the blacklisting ban.
+1. <a href="#asd" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__')">Ask us</a> to remove your IP from the blacklisting ban.
 2. Get a new IP by disconnecting from the internet shortly.
