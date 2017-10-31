@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-12-20
+reviewed:    2017-12-20
 title:       Using secure App secrets
 naviTitle:   App secrets
 lead:        App secrets provide a secure storage and access method for all the credentials your App needs to run.
@@ -102,6 +102,8 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com secrets MYSQL.PASSWORD
 ## Adding custom App secrets
 
 You can add or remove custom App secrets in the [Dashboard](dashboard). You'll do so in the settings of your [App](app). The contents of the App secrets cannot be viewed in the Dashboard due to the underlying encryption, which we consider a feature, not a bug.
+
+You can overwrite old values by adding new values to the same keys or by first deleting the App Secrets with the "delete" button.
 
 <div markdown="1" data-user="known">
 
