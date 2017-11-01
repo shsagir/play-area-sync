@@ -37,7 +37,9 @@ Most likely you are developing with a local PHP environment on your machine. So 
 
 The short of it: all you need to utilize multi-staging on fortrabbit is multiple Apps. We further assume you are using our [Git deployment](git-deployment) — because then your local setup is easier to manage.
 
-Git supports multiple, named branches of your code. Per default, it comes with a branch called `master`. When pushing to fortrabbit our deployment will look for the `master` branch and deploy it. To make things easier for multi-staging scenarios, there is another branch, which is preferred over the `master` branch by the fortrabbit deployment: A branch named like your App. Say the name of your App is `your-app`, then you can create a branch called `your-app` which will be deployed instead of the `master` branch.
+Git supports multiple, named branches of your code. Per default, it comes with a branch called `master`. When pushing to fortrabbit our deployment will look for the `master` branch and deploy it. 
+
+To make things easier for multi-staging scenarios, there is another branch, which is preferred over the `master` branch by the fortrabbit deployment: A branch named like your App. Say the name of your App is `your-app`, then you can create a branch called `your-app` which will be deployed instead of the `master` branch.
 
 ### Sample setup
 
