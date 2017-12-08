@@ -70,7 +70,7 @@ post: post.php
 
 ## Developing pre or post calls
 
-When developing you Worker pre or post calls it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution-pro).
+When developing pre/post scripts, it helps if you are able to execute them once and see what they do. To that end you can use [remote SSH commands](/remote-ssh-execution-pro).
 
 ## Multi staging use case
 
