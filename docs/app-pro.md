@@ -80,7 +80,7 @@ Universal Apps offer a synchronization Git deployment mode: the Git repo content
 The Professional Apps deployment is [atomic](http://blog.fortrabbit.com/new-apps-are-here). That means that a completely new release package will substitute the old one on every deploy. We have made a [behind the scenes video](deployment-architecture-video) showcasing what is happening in the background. The atomic deployment also features a more robust build process: your code will only be released if all scripts (composer install, optional pre- and post-deploy scripts) succeed.
 
 
-### Network Security
+### Network security
 
 Security groups restrict access to systems from external networks and between systems internally. By default, all access is denied and only explicitly allowed ports and protocols are allowed based on business need. Each system is assigned to a firewall security group based on the system’s function.
 
