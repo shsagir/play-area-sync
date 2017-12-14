@@ -48,7 +48,7 @@ CloudFlare also offers CNAME Flattening for naked domains. This way you can use 
 
 ## Prevent direct access
 
-You may want to assure all traffic is routed through CloudFlare. To block direct access and whitelist only CloudFlare's IPs, extend your `.htaccess`file with the following rules:
+You may want to assure all traffic is routed through CloudFlare. To block direct access and whitelist only CloudFlare's IPs, extend your `.htaccess` file with the following rules:
 
 ```
 ErrorDocument 403 "Not Allowed"
