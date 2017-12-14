@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Professional Stack"
 title:         "About the Professional Stack"
-reviewed:      2016-12-20
+reviewed:      2017-12-14
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Professional Stack.'
 group:         stacks
 stack:         pro
@@ -78,3 +78,14 @@ Most plans are available as Development and Production. All Production plans, an
 Universal Apps offer a synchronization Git deployment mode: the Git repo contents gets rsynced file by file. Per default this is non-destructive, new files will be created and changes files will overwrite existing files, but no files will be deleted (overwrite but not delete).
 
 The Professional Apps deployment is [atomic](http://blog.fortrabbit.com/new-apps-are-here). That means that a completely new release package will substitute the old one on every deploy. We have made a [behind the scenes video](deployment-architecture-video) showcasing what is happening in the background. The atomic deployment also features a more robust build process: your code will only be released if all scripts (composer install, optional pre- and post-deploy scripts) succeed.
+
+
+### Network Security
+
+Security groups restrict access to systems from external networks and between systems internally. By default, all access is denied and only explicitly allowed ports and protocols are allowed based on business need. Each system is assigned to a firewall security group based on the system’s function.
+
+Load balanced Apps (Production & Dedicated PHP plans) benefit from **AWS Shield Standard** - a managed DDoS Protection service provided by AWS, which protects against common DDoS attacks (e.g. SYN floods, ACK floods, UDP floods, Reflection attacks). Additionally you should consider using a Web application firewall like [Cloudflare](/cloudflare).
+
+
+
+
