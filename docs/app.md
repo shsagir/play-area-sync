@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-09-08
+reviewed:      2017-12-14
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -161,11 +161,12 @@ Per default all the [domains](/domains) of the App will route to the same root p
 
 This path setting can vary, depending on what the framework or CMS you have selected in the software chooser when creating the App:
 
-| Framework/CMS                 | Root path     |
-| ----------------------------- | ------------- |
-| Laravel, Phalcon, Craft CMS   | htdocs/public |
-| Symfony                       | htdocs/web    |
-| Drupal 8, WordPress, Grav     | htdocs        |
+| Framework/CMS                            | Root path     |
+| ---------------------------------------- | ------------- |
+| Laravel, Phalcon, Craft 2, Symfony 4     | htdocs/public |
+| Symfony 2, Symfony 3, Craft 3            | htdocs/web    |
+| Drupal 8, WordPress, Grav                | htdocs        |
+
 
 You can however set the root path afterwards at any given time by visiting the according setting in the Dashboard under your App.
 
