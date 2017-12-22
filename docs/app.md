@@ -131,7 +131,7 @@ Sometimes you can't get it to work and you want to start over again. So you can 
 
 ### App URL
 
-The most prominent use of your App name is your default App URL which looks like this: `https://your-app.frb.io/`. This is where you can always reach your App thru the web browser. Use the App URL for development, testing and to connect to external services. Later on your App will reached through your [own top-level-doamin](/domains).
+The most prominent use of your App name is your default App URL which looks like this: `https://your-app.frb.io/`. This is where you can always reach your App thru the web browser. Use the App URL for development, testing and to connect to external services. Later on your App can also be reached through your [own top-level-doamin](/domains). The App URL can't be removed or renamed.
 
 #### Sending transactional mails from your App URL
 
