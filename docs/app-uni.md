@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2017-08-05
+reviewed:      2018-01-12
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         stacks
 stack:         uni
@@ -39,11 +39,11 @@ Persistent storage is a fancy word to describe: it's just regular storage, which
 You can access either live logs or historic logs of your App. Please [read the logging article](logging-uni).
 
 
-## Scaling
+## Upgrading
 
-The purpose of the Universal Stack is not to be very scalable in terms of performance. The various plans differ in amount of available storage (Web and MySQL), but not in "PHP power". This means: your site can grow over time with bigger databases and more user uploaded contents, but it won't deliver vastly more performance in higher plans than in lower ones.
+The Universal plans differ in web storage size, MySQL size, available PHP memory and features like backups and cron jobs.
 
-The different Universal Stack App plans differ in web storage size, MySQL size and most importantly features, like backups and collaboration.
+The PHP memory has an impact on the performance of your site. Too little PHP memory can also cause errors or even crashes on memory intensive tasks. 
 
 The smallest plan is suited for hobby projects, landing pages, one-pagers, MVPs, weekend hacks, development, skeletons, personal blogs and whatever small project you can think of. The highest plan is suited for more serious intentions: you can put a commercial project there. Everything in between can be in between. [See the pricing page](https://www.fortrabbit.com/pricing) for specs.
 
