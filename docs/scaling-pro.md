@@ -154,7 +154,7 @@ Content driven websites usually make use of the local file system to store asset
 The Object Storage plans are limited by storage (not traffic). It will not scale automatically, you need to keep an eye on the size. In the App overview in the Dashboard you can find a graph that shows you home much storage within the current plan is in use. Scaling up and down can (almost) instantly be done in the Dashboard.
 
 
-## Clean code safes money
+## Clean code saves money
 
 We are in this together. The smarter you code, the less resources you'll need. Or to put it in more dramatic words: bad code doesn't scale. So please don't miss our [application design and coding practices article](app-design).
 
