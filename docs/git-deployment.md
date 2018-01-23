@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-10-26
+reviewed:      2018-01-23
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -35,15 +35,27 @@ $ cd {{app-name}}
 # 3. Do stuff
 $ echo '<?php echo "PHPower to the PHPeople";' >index.php
 
-# 4. Push to deploy
+# 4. Initialize Git locally
 $ git add index.php
 $ git commit -am 'Intial commit'
+
+# 5. Set upstream and 1st push
 $ git push -u origin master
 ```
-after the deployment is done you can worship your work in the browser:
-[{{app-name}}.frb.io](https://{{app-name}}.frb.io)
+After the deployment is done you can worship your work in the browser:
+[{{app-name}}.frb.io](https://{{app-name}}.frb.io) - Also see our specific install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
 
-Also see our specific install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
+### Continuous development
+
+Next time you want to send changes to your App you can simply:
+
+```bash
+$ git push
+```
+
+
+
+
 
 
 ### Adding fortrabbit as a remote
