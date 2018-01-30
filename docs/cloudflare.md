@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        CloudFlare
-reviewed:         2017-12-13
+reviewed:         2018-01-30
 title:            Using CloudFlare with fortrabbit
 group:            Domains_and_DNS
 section:          Extending_fortrabbit
@@ -40,11 +40,20 @@ Go to the [sign up page](https://www.cloudflare.com/a/sign-up) and enter email a
 
 ## Integrating CloudFlare with fortrabbit
 
-There is no technical connection between CloudFlare and fortrabbit. You basically configure CloudFlare with your [external domain](/domains).
+There is no technical connection between CloudFlare and fortrabbit. CloudFlare will be in between of your DNS provider and fortrabbit. 
 
-Many fortrabbit clients are using CloudFlare to get SSL (https) for their own custom domain without the need to book and setup the [HTTPS custom](/https-custom-pro) Component. 
+### Setup CloudFlare in addition to a working connection
 
-CloudFlare also offers CNAME Flattening for naked domains. This way you can use your non-www-domain directly with fortrabbit.
+Here is how to combine CloudFlare with your domain provider and fortrabbit. In the following example you first register your domain with your domain provider and point it to fortrabbit using our standard settings. Then CloudFlare will 
+
+1. Have your domain registered with a domain provider.
+2. Route the domain using our instructions (CNAME for www + IP for naked).
+3. Set up the domain with CloudFlare. There you'll be asked you to set their name servers. Set the CloudFlare NS with your domain provider.
+4. Done
+
+Many fortrabbit clients have used CloudFlare to get SSL (https) for their own custom domain without the need to book and setup the [HTTPS custom](/https-custom-pro) Component. Mind that fortrabbit (now) also offers free SSL certificates via Let's Encrypt on it's own.
+
+Still, CloudFlare offers enhanced dDos protection and CDN functionality. And it also offers CNAME Flattening for naked domains. This way you can use your non-www-domain directly with fortrabbit.
 
 ## Prevent direct access
 
