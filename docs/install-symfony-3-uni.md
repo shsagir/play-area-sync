@@ -14,7 +14,7 @@ websiteLink:      http://symfony.com/?utm_source=fortrabbit
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
-version:          2.8, 3.1
+version:          3.4.4
 
 ---
 
@@ -58,7 +58,7 @@ For a new Symfony installation execute the commands following in your local term
 
 ```bash
 # 1. Use Composer to create a local Symfony project named like your App
-$ composer create-project symfony/framework-standard-edition {{app-name}} "3.1.*"
+$ composer create-project symfony/framework-standard-edition {{app-name}} "3.4.*"
 
 # 2. Change into the folder
 $ cd {{app-name}}
