@@ -1,6 +1,6 @@
 ---
 template:         article
-reviewed:         2018-02-01
+reviewed:         2018-02-02
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft 3 Beta/RC
 lead:             Note that this install guide is for the Craft 3 (pre-stable) version.
@@ -31,11 +31,13 @@ Please mind, the official Craft 3 stable release is expected for 2018/04/04. If 
 
 ## Get ready
 
-We assume you've already created an App and chose Craft CMS in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
+We assume you've already created an App and chose Craft CMS in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). 
+
+Using a SSH Key to authenticate is highly recommended. If you havn't stored your public key with your fortrabbit account yet, [do it now](/ssh-keys#toc-save-your-public-ssh-keys-with-your-fortrabbit-account).  
 
 ### Root path
 
-If you created your App after 2018/02/01 the root path is already set to **web** for Craft Apps. Go to the Dashboard to verify the current settings and [modify the root path](/app#toc-root-path) of your App's domains if needed. 
+If you created your App after 2018/02/02 the root path is already set to **web** for Craft Apps. Go to the Dashboard to verify the current settings and [modify the root path](/app#toc-root-path) of your App's domains if needed. 
 
 <div markdown="1" data-user="known">
 [Change the root path for App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
@@ -144,10 +146,16 @@ $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 
 
 
-## Moving assets (existing uploads) to fortrabbit
+## Uploading assets
 
-sftp or [rsync](https://blog.fortrabbit.com/deploying-code-with-rsync)
+You are probably used to use S**FTP** and know [how it works](/sftp-uni#toc-accessing-sftp). We recommend giving `rsync` on the command line try, it's easier than think: 
 
+```
+# Sync local assets with remote
+$ rsync -av ./web/assets/ {{app-name}}@deploy.{{region}}.frbit.com:~/web/assets/
+```
+
+This [rsync tutorial](https://blog.fortrabbit.com/deploying-code-with-rsync) covers many useful rysnc options, like excludes, `--dry-run` and `--delete`. It's highly recommended!
 
 
 
@@ -176,46 +184,3 @@ The `composer.lock` file reflects the exact package versions you've installed lo
 
 That's it. 
 
-
-## Using the craft cli
-
-Craft 3 ships with a Yii based cli tool. To use the cli remotely SSH in an type `php craft`. This will give you a list of all available commands.
-
-```
-This is Yii version 2.0.12.
-
-The following commands are available:
-
-- cache                       Allows you to flush cache.
-    cache/flush               Flushes given cache components.
-    cache/flush-all           Flushes all caches registered in the system.
-    cache/flush-schema        Clears DB schema cache for a given connection component.
-    cache/index (default)     Lists the caches that can be flushed.
-
-- help                        Provides help information about console commands.
-    help/index (default)      Displays available commands or the detailed information.
-    help/list                 List all available controllers and actions in machine readable format.
-    help/list-action-options  List all available options for the $action in machine readable format.
-    help/usage                Displays usage information for $action
-
-- install                     Craft CMS CLI installer.
-    install/index (default)   Runs the install migration
-
-- migrate                     Manages Craft and plugin migrations.
-    migrate/create            @inheritdoc
-    migrate/down              Downgrades the application by reverting old migrations.
-    migrate/history           Displays the migration history.
-    migrate/mark              Modifies the migration history to the specified version.
-    migrate/new               Displays the un-applied new migrations.
-    migrate/redo              Redoes the last few migrations.
-    migrate/to                Upgrades or downgrades till the specified version.
-    migrate/up (default)      Upgrades the application by applying new migrations.
-       
-
-- queue                       Manages application db-queue.
-    queue/exec                Executes a job.
-    queue/info (default)      Info about queue status.
-    queue/listen              Listens db-queue and runs new jobs.
-    queue/run                 Runs all jobs from db-queue.
-
-```
