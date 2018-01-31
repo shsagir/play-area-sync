@@ -9,8 +9,6 @@ lead:             Symfony has been around for some while — but it doesn't look
 group:            Install_guides
 stack:            uni
 
-dontList: true
-dontIndex: true
 workInProgress: true
 
 websiteLink:      http://symfony.com/?utm_source=fortrabbit
@@ -33,6 +31,15 @@ If you haven't chosen Symfony stack when creating the App in the Dashboard at fi
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
+</div>
+
+
+### PHP Version
+
+If you haven't chosen Symfony (4) stack when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and set the PHP version of your App's domains to at least **7.1**.
+
+<div markdown="1" data-user="known">
+[Change the PHP version of your App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/settings/runtime)
 </div>
 
 
@@ -61,7 +68,7 @@ For a new Symfony installation execute the commands following in your local term
 
 ```bash
 # 1. Use Composer to create a local Symfony project named like your App
-$ composer create-project symfony/framework-standard-edition {{app-name}} "3.1.*"
+$  composer create-project symfony/website-skeleton {{app-name}}
 
 # 2. Change into the folder
 $ cd {{app-name}}
@@ -111,7 +118,7 @@ parameters:
 
 ### Use app_dev.php
 
-If you want to use the development environment, you must modify `web/app_dev.php`. A simple example would be to replace the block, responding with a 403 like so:
+WORK IN PROGRESS: If you want to use the development environment, you must modify `web/app_dev.php`. A simple example would be to replace the block, responding with a 403 like so:
 
 ```
 if (isset($_SERVER['APP_NAME']) && $_SERVER['APP_NAME'] === '{{app-name}}') {
@@ -130,7 +137,7 @@ This way you can easily decide per App whether you want to allow the dev mode or
 
 ### Logging
 
-You can always access any log files your App is writes on the file system. If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. Modify the `app/config/config_prod.yml` file:
+WORK IN PROGRESS: You can always access any log files your App is writes on the file system. If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. Modify the `app/config/config_prod.yml` file:
 
 ``` yaml
 monolog:
@@ -144,7 +151,7 @@ monolog:
 
 ### Sending mail
 
-You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use the `SwiftmailerBundle` and configure it in your `app/config/config.yml` file. Make sure you set the [charset](encoding) to UTF-8:
+WORK IN PROGRESS: You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use the `SwiftmailerBundle` and configure it in your `app/config/config.yml` file. Make sure you set the [charset](encoding) to UTF-8:
 
 ```php
 Swift_Preferences::getInstance()->setCharset('UTF-8');
