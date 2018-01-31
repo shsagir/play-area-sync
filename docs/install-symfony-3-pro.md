@@ -3,7 +3,7 @@
 template:         article
 reviewed:         2017-08-28
 title:            Install Symfony
-naviTitle:        Symfony
+naviTitle:        Symfony 3
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 or 3 on fortrabbit.
 
 group:            Install_guides

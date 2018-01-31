@@ -1,20 +1,23 @@
 ---
 
 template:         article
-reviewed:         2018-01-30
-title:            Install Symfony
-naviTitle:        Symfony 3
-lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 or 3 on fortrabbit.
+reviewed:         2018-01-31
+title:            Install Symfony 4
+naviTitle:        Symfony 4
+lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 4 on fortrabbit.
 
 group:            Install_guides
 stack:            uni
-proLink:          install-symfony-3-pro
+
+dontList: true
+dontIndex: true
+workInProgress: true
 
 websiteLink:      http://symfony.com/?utm_source=fortrabbit
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
-version:          2.8, 3.1
+version:          4.0
 
 ---
 
@@ -26,7 +29,7 @@ We assume you've already created a New App and chose Symfony in the stack choose
 
 ### Root path
 
-If you haven't chosen Symfony stack when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **web**.
+If you haven't chosen Symfony stack when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
