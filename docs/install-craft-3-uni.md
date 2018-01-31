@@ -1,9 +1,9 @@
 ---
 template:         article
-reviewed:         2018-01-30
+reviewed:         2018-02-01
 title:            Install Craft CMS 3 on fortrabbit
-naviTitle:        Craft 3 Beta
-lead:             Note that this install guide if for the Craft 3 BETA version.
+naviTitle:        Craft 3 Beta/RC
+lead:             Note that this install guide is for the Craft 3 (pre-stable) version.
 group:            Install_guides
 stack:            uni
 dontList:         false
@@ -27,8 +27,7 @@ keywords:
 
 ## Intro
 
-We are super excited about Craft 3! However, if you plan to launch new Craft sites within the next weeks you should go with the current stable version. [Here is the install guide for Craft 2](/install-craft-2-uni). If you are curious about the future this is the place to be.
-
+Please mind, the official Craft 3 stable release is expected for 2018/04/04. If you don't feel confident using a pre-release [head over to the Craft 2.6 install guide](/install-craft-2-uni). 
 
 ## Get ready
 
@@ -36,24 +35,27 @@ We assume you've already created an App and chose Craft CMS in the stack chooser
 
 ### Root path
 
-Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **web**, the default in Craft 2 was **public**.
+If you created your App after 2018/02/01 the root path is already set to **web** for Craft Apps. Go to the Dashboard to verify the current settings and [modify the root path](/app#toc-root-path) of your App's domains if needed. 
 
 <div markdown="1" data-user="known">
-[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
+[Change the root path for App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 </div>
 
 
 ## Quick start
 
-Follow the [offical Craft 3 install guide](https://github.com/craftcms/docs/blob/master/en/installation.md) and use `composer create-project` to run Craft locally first. 
-Leave the `config/db.php` untouched, but add this ENV vars to your App. It's a mapping from our default ENV vars to the names Craft expects. 
+Follow the [offical Craft 3 install guide](https://github.com/craftcms/docs/blob/master/en/installation.md) and use `composer create-project` to run Craft locally first.
+
+Craft 3 uses ENV vars to access environment specific settings. In your local environment these settings are stored in a `.env` file. On fortrabbit you manage ENV vars the Dashboard using the .env syntax.
+
+Your ENV vars in the Dashboard are pre-configured already. You may need to change the value of `ENVIRONMENT` to match the name in your config files.
 
 ```osterei32
 # Crypto key
 SECURITY_KEY=ClickToGenerate
 
 # The environment Craft is currently running in dev, staging, production, etc.
-ENVIRONMENT=dev
+ENVIRONMENT=production
 
 # DB Mapping (don't use actual values)
 DB_DATABASE=${MYSQL_DATABASE}
@@ -69,9 +71,84 @@ DB_DRIVER=mysql
 [Add ENV vars to your App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
-## Git Deployment
+Here is an example of a configuration group - `config/general.php` is structured like this. The `ENVIRONMENT` you've defined earlier, maps with the array key `production`, or `dev` which is the default for your local setup.
 
-Before pushing the first time to fortrabbit, make sure to `git add composer.lock -f`.
+```
+<?php
+return [
+	// Global settings
+    '*' => [
+        'cpTrigger' => 'brewery',
+    ],
+    // ENVIRONMENT specific 
+    'production' => [
+        'devMode' => false,
+    ],
+    'dev' => [
+        'devMode' => true,
+    ],
+];
+```
+
+## Deploy with Git
+
+Now that you have the configuration done, let's get the code up. If your local Craft installation is not under Git version control already, then you do it now:
+
+```
+# Initialize Git
+$ git init .
+
+# Add your App's Git remote to your local repo:
+$ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
+
+# Add changes to Git
+$ git add -A
+
+# Commit changes
+$ git commit -m 'My first commit'
+
+# Push to deploy to fortrabbit
+$ git push -u fortrabbit master
+```
+
+For reference, with this setup, further deployments are triggered by two commands:
+
+```
+$ git commit -m 'I changed something'
+$ git push 
+```
+
+
+
+## Export/import the database
+
+Database migrations are first-class citizen in Craft 3. This is great keep schema changes consistent across all enviroments.
+  
+However, this does not help with the actual data which is stored locally already. You need to export a mysqldump first and then import that dump to your App's database. Here is how:
+
+```bash
+# On your local machine
+$ mysqldump -ulocal-db-user -plocal-db-password local-db-name > dump.sql
+```
+
+Now you need to open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import.
+
+```bash
+# Open the tunnel
+$ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@deploy.{{region}}.frbit.com
+
+# !!! in a new terminal window !!!
+# Import the dump
+$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
+```
+
+
+
+## Moving assets (existing uploads) to fortrabbit
+
+sftp or [rsync](https://blog.fortrabbit.com/deploying-code-with-rsync)
+
+
 
 
 ## Updating Craft
