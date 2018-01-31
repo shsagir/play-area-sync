@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2016-12-20
+reviewed:    2017-12-20
 title:       Some words on security
 naviTitle:   Security
 lead:        fortrabbit security concepts and how you can help.

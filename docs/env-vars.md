@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2016-12-20
+reviewed:   2017-12-20
 title:      Using environment variables in PHP
 naviTitle:  Environment variables
 lead:       ENV vars help to create and shape the environment of where the code runs.

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-12-20
+reviewed:         2017-12-20
 title:            Install Drupal 8
 naviTitle:        Drupal 8
 lead:             Drupal 8 is one of the best known open source PHP CMS. Learn here how to use it with fortrabbit.

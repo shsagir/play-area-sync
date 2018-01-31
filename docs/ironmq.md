@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        IronMQ
-reviewed:         2016-12-20
+reviewed:         2017-12-20
 title:            Using IronMQ with fortrabbit
 stack:            all
 

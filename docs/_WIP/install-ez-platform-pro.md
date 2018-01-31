@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2016-12-20
+reviewed:         2017-12-20
 naviTitle:        eZ Platform
 title:            Install eZ Platform on fortrabbit
 lead:             Learn how to install and tune the eZ Platform on fortrabbit.

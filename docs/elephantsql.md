@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        ElephantSQL
-reviewed:         2016-12-20
+reviewed:         2017-12-20
 title:            Using ElephantSQL with fortrabbit
 stack:            all
 
