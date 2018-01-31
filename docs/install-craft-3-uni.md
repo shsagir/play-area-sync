@@ -1,19 +1,19 @@
 ---
-
 template:         article
-reviewed:         2017-10-18
+reviewed:         2018-01-30
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft 3 Beta
 lead:             Note: Like Craft 3 Beta this install guide is work in progress.
 group:            Install_guides
 stack:            uni
 dontList:         false
+workInProgress:   true
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.0-beta.29
+version:          3.0.0-RC7
 group:            Install_guides
 
 keywords:
