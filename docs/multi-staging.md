@@ -6,7 +6,6 @@ naviTitle:     Multi-staging
 title:         Multi stage App life cycles
 lead:          Learn about development/production environments and how to run them on fortrabbit.
 group:         platform
-oldLink:       multi-staging-old
 stack:         all
 
 ---

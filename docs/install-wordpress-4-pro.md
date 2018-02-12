@@ -14,7 +14,6 @@ image:            wordpress-mark.png
 version:          4.6
 stack:            pro
 uniLink:          install-wordpress-4-uni
-oldLink:          install-wordpress-4-old
 
 ---
 

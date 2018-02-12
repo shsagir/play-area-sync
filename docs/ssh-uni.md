@@ -7,7 +7,6 @@ naviTitle:     SSH
 lead:          Learn what you can do on the command line with fortrabbit Apps.
 
 stack:         uni
-oldLink:       ssh-sftp-old
 proLink:       remote-ssh-execution-pro
 group:         deployment
 

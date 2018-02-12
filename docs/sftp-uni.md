@@ -7,7 +7,6 @@ naviTitle:     SFTP
 lead:          Learn about the classical way to deploy and access your App on fortrabbit.
 
 stack:         uni
-oldLink:       ssh-sftp-old
 group:         deployment
 
 keywords:

@@ -1,13 +1,12 @@
 ---
 
 template:      article
-reviewed:      2017-06-07
+reviewed:      2018-02-12
 title:         Leveraging Composer
 naviTitle:     Composer
 lead:          Learn how to integrate Composer into your development workflow with fortrabbit.
 group:         deployment
 stack:         all
-oldLink:       composer-old
 
 keywords:
   - composerphp

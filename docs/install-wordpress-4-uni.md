@@ -8,7 +8,6 @@ group:            Install_guides
 stack:            uni
 lead:             Learn how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
 proLink:          install-wordpress-4-pro
-oldLink:          install-wordpress-4-old
 deprecated:       0
 stack:            uni
 

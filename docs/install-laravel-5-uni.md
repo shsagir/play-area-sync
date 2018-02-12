@@ -13,7 +13,6 @@ category:         framework
 image:            laravel-mark.png
 version:          5.4
 stack:            uni
-oldLink:          install-laravel-5-old
 proLink:          install-laravel-5-pro
 
 keywords:

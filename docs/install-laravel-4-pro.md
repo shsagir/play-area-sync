@@ -14,7 +14,6 @@ dontList:         true
 dontIndex:        true
 group:            Install_guides
 stack:            pro
-oldLink:          install-laravel-4-old
 deprecated:       yes
 
 keywords:

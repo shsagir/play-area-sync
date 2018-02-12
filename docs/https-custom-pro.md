@@ -8,7 +8,6 @@ naviTitle:     TLS custom
 lead:          "How to setup HTTPS with your own certificate."
 group:         Components
 stack:         pro
-oldLink:       ssl-old
 
 keywords:
     - ssl

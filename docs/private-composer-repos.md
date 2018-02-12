@@ -7,7 +7,6 @@ naviTitle:   Private Composer repos
 lead:        Generate a unique SSH key-pair for your App on fortrabbit to use private Composer repos.
 group:       platform
 stack:       all
-oldLink:     private-composer-repos-old
 
 keywords:
     - Composer

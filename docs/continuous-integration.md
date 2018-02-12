@@ -7,7 +7,6 @@ naviTitle:    Continuous Integration
 lead:         Automated testing, builds, special deploy scripts and other actions on fortrabbit.
 group:        deployment
 stack:        all
-oldLink:      continuous-integration-old
 
 
 keywords:

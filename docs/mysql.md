@@ -9,7 +9,6 @@ group:         platform
 proGroup:      Components
 
 stack:         all
-oldLink:       mysql-old
 
 keywords:
      - localhost
