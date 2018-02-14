@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-12-14
+reviewed:      2018-02-14
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -89,6 +89,26 @@ fortrabbit comes in two flavors (stacks): Universal & Professional. With each Ap
 
 The following sections here are describing functionalities that are shared by the two different stacks.
 
+## Creating an App
+
+When you sign up to fortrabbit, a new [trial App](#toc-the-app-trial) will be created on the fly. Later on you can create any number Apps in the Dashboard —  just find an accordingly named button. While creating an App, there are a few things to decide: 
+
+1. **App Name**: see [below](#toc-app-name)
+2. **Software Preset:** see [below](#toc-software-preset)
+3. **Data center location:** Where your App shall be hosted?
+4. **Stack & scaling**: [Uni](app-uni) or [Pro](app-pro), plan, or trial?
+
+### Software Preset
+
+While creating an App you can choose from a variety of popular open source PHP software types, like [Laravel](install-laravel) or [Craft CMS](install-craft). This will not install the software on your behalf, but prepare your Apps  settings, depending:
+
+* Set the matching PHP version
+* Enable/disable PHP 
+* Set the correct [root path](#toc-root-path)
+* Populate [ENV vars](env-vars)
+
+So, the Software Preset saves you some work and helps to prevent errors, it does does not install anything, it's non-destructive. You can change all settings later on as you wish. 
+
 ## Settings
 
 Each App comes with a set of basic [features](https://www.fortrabbit.com/specs) and [limits](/limits):
@@ -110,9 +130,9 @@ There are various settings to control the routing of domains. Please also see th
 
 The App name identifies your App. It is used in many instances — for example to login by SFTP or SSH. You will also find that App name on your invoices.
 
-When you sign up to fortrabbit you'll immediately start a new [trial App](#toc-the-app-trial). For quick boarding, your first trial App will have a generic App name, depending on the software you'll use, it will look something like this: `wordpres-4wm7`.
+For quick boarding, your first trial App will have a generic App name, depending on the software you'll use, it will look something like this: `wordpres-4wm7`.
 
-While creating your (second) fortrabbit App you will be asked for an **App Name**. Now, you can choose a name that is easier for your to identify your project like: `bobs-cool-app`. The App Name must be URL friendly (lowercase, no special chars, no spaces).
+While creating your (second) fortrabbit App you will be asked for an **App Name**. Now, you can choose a name that is easier for your to identify your project like: `bobs-cool-app`. The App Name must be URL friendly (lowercase, no special chars, no spaces) as it will be your test domain as well, the App will be available under: `bobs-cool-app.frb.io`.
 
 
 #### Changing the App Name
@@ -149,17 +169,12 @@ How other users are testing mails: some clients are using mailtrap to test mails
 You can register your App to accept requests from any external domain you route to fortrabbit — see also [the domain article](/domains). To set up a domain routing, you add a new custom domain within your Apps domain settings in the Dashboard.
 
 <div markdown="1" data-user="known">
-
 * [Set up a new domain for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/domains/new)
-
 </div>
 
 #### Root path
 
-
-Per default all the [domains](/domains) of the App will route to the same root path (sometimes this is also called: document root, docroot or root folder): `htdocs`. This path is, where the first `index.php` will be called, when people are visiting your App on any domain.
-
-This path setting can vary, depending on what the framework or CMS you have selected in the software chooser when creating the App:
+Per default all the [domains](/domains) of the App will route to the same root path (sometimes this is also called: document root, docroot or root folder): `htdocs`. This path is, where the first `index.php` will be called, when people are visiting your App on any domain. This path setting can vary, depending on what the framework or CMS you have selected in the software chooser when creating the App:
 
 | Framework/CMS                            | Root path     |
 | ---------------------------------------- | ------------- |
@@ -171,9 +186,7 @@ This path setting can vary, depending on what the framework or CMS you have sele
 You can however set the root path afterwards at any given time by visiting the according setting in the Dashboard under your App.
 
 <div markdown="1" data-user="known">
-
 * [Change the root path for your App {{app-name}}](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
-
 </div>
 
 
@@ -222,24 +235,20 @@ The App will be billed on the old Billing Contact until that day of change and f
 
 Are you working on behalf of someone? You want your client or the boss of the agency to pay for hosting? Here you can start the invitation. See our [client collaboration](/client-collaboration) article for more details.
 
-- - -
 
 ## The App trial
 
 You can test fortrabbit for free. Therefore each Account can have one trial App running. The purpose of the trial is test-drive the platform. See if it works as advertised. See if fortrabbit is the right hosting solution for you.
 
-
-#### Starting a new trial App
+### Starting a new trial App
 
 Find the "Create an App" on the Dashboard home. When asked for the plan, you can choose the free trial option instead. Trial Apps are available for both stacks, Universal & Professional.
 
-
-#### Trial limits
+### Trial limits
 
 The trial App scaling specs are matching a small preset, always enough to get started. The trial is NOT a forever-free tier. An urgent limitation is, that the trial has a limited lifetime:
 
-
-#### Extending the trial
+### Extending the trial
 
 The default trial time is short. A timer in the Dashboard with your App will show you the time left. You can extend the evaluation period by completing some simple tasks like:
 
@@ -252,18 +261,59 @@ A task that is completed has a check-mark `✔`. Tasks that are still todo will 
 
 Additionally, after some trial time has passed, we show a link to a contact form where you can ask us to extend the trial time. Here you'll write us something about your goals with the trial and we are happy to extend the trial for much longer period. You can see those tasks in the Dashboard with the overview of your App.
 
-#### Upgrading the trial
+### Upgrading the trial
 
 You can, of course, upgrade from your trial to a paid plan at any time. You can do so under your Apps overview.
 
-
-#### The end of a trial
+### The end of a trial
 
 When the trial is finally over, the trial App will be deleted. That might sounds cruel, but please consider that: We will not keep your data hostage until you pay us. 
 
 Good news is: we will inform you by e-mail before it happens and you can start a new trial right away, after your current trial ended. In many cases you can easily re-deploy your code base to the new App: When deploying with [Git](git-deployment), you just change the remote and push again. When using our CMS/framework presets with predefined [ENV vars](env-vars) database access will work without code modification.
 
-- - -
+
+## Troubleshooting
+
+Here are some common gotachs that mostly happen with new Apps:
+
+### 404 Not Found
+
+When your App is just sending a "404 file not found" page, please check this before contacting support:
+
+#### No code deployed
+
+A common case for the 404 page is, that no code has been deployed yet. 
+
+This can be misunderstanding, you might thought with choosing a [Software Preset](#toc-software-prest) software will be installed. Sorry, no one-click-installs here, you need to install the software yourself. So please go ahead deploy some code first.
+
+Maybe also, the deployment is not yet finished (SFTP is still uploading?) or your initial Git push returned an error? Please check if all code is deployed completely. With a Universal App you can use SSH/SFTP to login and see if the files are there.
+
+#### Wrong root path
+
+Maybe your software is using a different root path than the one that is currently set? Check the [root path](#toc-root-path) settings.
+
+`htdocs` is the default [root path](#toc-root-path), when no specific software has been chosen in the [Software Preset](#toc-software-preset). Now, when you decide to install [Laravel](install-laravel) or any software later on, you might to set the root path accordingly.
+
+We have also seen cases where people have uploaded a whole `Craft` folder into the Apps `htdocs` folder. You should probably better upload all files into `htdocs` directly not into an extra folder that contains the files.
+
+
+#### .htaccess is missing
+
+Another common cause for 404 errors is a missing `.htaccess` file. This file is hidden from your Operating System by default (as it starts with a point) but contains important rules for your application to function properly.
+So when you are uploading with SFTP and you have maybe dragged the files from your Desktop (Finder) into your SFTP application (Cyberduck, Transmit, FileZilla), this file is likely missing. 
+
+You might can use the file explorer from your SFTP application or temporary show hidden files in your OS to make the `.htaccess` visible to you. Just make sure that when a htaccess is present (most likely it is), that it get's uploaded as well.
+
+#### App is not yet ready
+
+Creating an App can sometimes take a few minutes. When you visited the App URL during that time, you'll get also get an 404 error. It's possible that this DNS response get's cached locally. 
+
+
+### 500 Internal Server Error
+
+Your application is just throwing a 500 or 502 internal server error? Congrats, at least something is happening. In most cases, this is NOT a server failure, it's a software problem caused by your configuration. And it's something you can likely solve yourself.
+
+There are many different reasons for 5xx errors. Be a detective and start the investigation by examining the logs, see [here for Uni Apps](logging-uni) and [here for Pro Apps](logging-pro). Within the logs you will find where application exited with which error, this is the hot leas you are after.
 
 
 ## Further readings
