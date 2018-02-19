@@ -283,7 +283,7 @@ Deleting Apps & Accounts is "mostly" (see [below](#toc-recovering-backups)) FINA
 
 ### Recovering Backups
 
-While the App get's deleted irrevocable, Backups might still be around. When your App plan included [Backups](/backups-uni) and those have not yet faded out within their retention period, we might can restore the backups for you. Please contact us for that.
+While the App get's deleted irrevocable, Backups might still be around. When your App plan included [Backups](/backups-uni) and those have not yet faded out within their retention period, we might can restore the backups for you. We then can provide you tar ball containing your data (web + mysql). Please contact us for that via chat.
 
 
 ## Troubleshooting
