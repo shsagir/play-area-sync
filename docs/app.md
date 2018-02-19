@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-02-14
+reviewed:      2018-02-19
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -270,6 +270,20 @@ You can, of course, upgrade from your trial to a paid plan at any time. You can 
 When the trial is finally over, the trial App will be deleted. That might sounds cruel, but please consider that: We will not keep your data hostage until you pay us. 
 
 Good news is: we will inform you by e-mail before it happens and you can start a new trial right away, after your current trial ended. In many cases you can easily re-deploy your code base to the new App: When deploying with [Git](git-deployment), you just change the remote and push again. When using our CMS/framework presets with predefined [ENV vars](env-vars) database access will work without code modification.
+
+
+
+## Deleting an App
+
+You can always delete Apps you own or admin. To delete an App, visit the App in the Dashboard, find and hit the "delete" button. You might need to enter your Account password and also confirm what you are about to do. The App will then get deleted within a couple of minutes. This includes all files and the database.
+
+### Recovering deleted Apps
+
+Deleting Apps & Accounts is "mostly" (see [below](#toc-recovering-backups)) FINAL here and can't be reversed. We delete as much as possible when a client requests so or we had to when payments bounced to often. We do so for privacy and security reasons. We believe that it should be your right to be forgotten. Imagine that we take your data as a hostage until you pay us. So in most cases that's actually good. Also read [how we handle bounced payments](/billing#toc-bounced-payments).
+
+### Recovering Backups
+
+While the App get's deleted irrevocable, Backups might still be around. When your App plan included [Backups](/backups-uni) and those have not yet faded out within their retention period, we might can restore the backups for you. Please contact us for that.
 
 
 ## Troubleshooting

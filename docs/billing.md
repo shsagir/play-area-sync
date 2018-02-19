@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-08-28
+reviewed:      2018-02-14
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -85,19 +85,17 @@ Invoices are shown as HTML > you can use print from the browser to generate and 
 
 ### Bounced payments
 
-Sometimes payments bounce, that just happens. Please mind that banks collect fees for those non-sufficient funds. We might pass those fees to you — our client. 
-
-In any case, we will inform by e-mail when a payment didn't succeeded. Please contact us when you are aware that you have open invoices with us and questions about it. 
-
-There are various reasons why payments bounce: 
+Sometimes payments bounce, that just happens. Please mind that banks collect fees for those non-sufficient funds. We might pass those fees to you — our client. In any case, we will inform by e-mail when a payment didn't succeeded. Please contact us when you are aware that you have open invoices with us and questions about it. There are various reasons why payments bounce: 
 
 * Not sufficient funds - we might try to debit again after a few days.
 * Expired credit card — please update your [payment method](/billing-contact/#toc-changing-the-payment-method).
 * Something else - please update your payment method or contact us
 
-#### Service cancellation for open invoices
+#### Service cancellation after bounced payments
 
-At some point we have to cancel your Account to avoid further costs. Usually that happens when a client has multiple open invoices and was contacted by us multiple times without reply. But that can also happen sooner, for example, when the card or the project looks suspicious or neglected. 
+At some point we have to delete your Apps to avoid further costs. Usually that happens when a client has multiple open invoices and didn't replied. But that can also happen sooner, for example, when the card or the project looks suspicious or neglected.
+
+Every month we have to deleted because of bounced payments. This is a part of this job that is not fun. [Read a drama story](https://blog.fortrabbit.com/bounced-payment).
 
 
 ### Paying open invoices
