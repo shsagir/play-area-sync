@@ -56,7 +56,7 @@ return [
 ];
 ```
 
-Before you upload anything: Rename the file `htaccess` in the extracted folder `public` to `.htaccess` (with a `.` in the beginning). If your operating system makes that hard for you (hello Mac), you can first upload and then rename the file directly on fortrabbit via SFTP.
+Before you upload anything: Rename the file `htaccess` in the extracted folder `public` to `.htaccess` (with a `.` in the beginning). If your operating system makes that hard for you, you can first upload and then rename the file directly on fortrabbit via SFTP.
 
 Copy everything you just extracted, including the changed `db.php` file and the renamed `.htaccess` file, via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 

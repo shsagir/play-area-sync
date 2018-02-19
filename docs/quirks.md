@@ -17,6 +17,7 @@ Apps are lightweight containers optimized for speedy web delivery of PHP applica
 Therefore, it's NOT possible install things like: FFmpeg, Node, jpegoptim, optipng, Gulp, webpack or Rails. Sounds scary? Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video.
 
 * [Learn more about Apps](/app)
+* [Learn about the differences to VPS hosting](https://www.fortrabbit.com/why-not-vps)
 
 
 ## Service location
