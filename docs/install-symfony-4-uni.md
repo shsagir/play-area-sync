@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-01-31
+reviewed:         2018-02-20
 title:            Install Symfony 4
 naviTitle:        Symfony 4
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 4 on fortrabbit.
@@ -22,7 +22,7 @@ version:          4.0
 
 ## Get ready
 
-We assume you've already created a New App and chose Symfony in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine.
+We assume you've already created a new App and chose Symfony in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine.
 
 
 ### Root path
@@ -33,28 +33,20 @@ If you haven't chosen Symfony stack when creating the App in the Dashboard at fi
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
 </div>
 
-
-### PHP Version
-
-If you haven't chosen Symfony (4) stack when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and set the PHP version of your App's domains to at least **7.1**.
-
-<div markdown="1" data-user="known">
-[Change the PHP version of your App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/settings/runtime)
-</div>
-
-
 ### ENV vars
 
-Go to the Dashboard and add the following [environment variables](/env-vars) to your App:
+Unlike in previous versions, Symfony 4 [environments](https://symfony.com/doc/current/configuration/environments.html#executing-an-application-in-different-environments) are controlled by the `APP_ENV` ENV var. Even in the .yml configurations you can use ENV vars now.
 
-```plain
-SYMFONY_ENV=prod
-SYMFONY__DATABASE__USER=${MYSQL_USER}
-SYMFONY__DATABASE__PASSWORD=${MYSQL_PASSWORD}
-SYMFONY__DATABASE__HOST=${MYSQL_HOST}
-SYMFONY__DATABASE__PORT=${MYSQL_PORT}
-SYMFONY__DATABASE__NAME=${MYSQL_DATABASE}
+In the Dashboard you set [environment variables](/env-vars) for your App, which you can access from your code, e.g. to apply them in your config. To get you started quickly, we provide you with the following ENV vars by default:
+
+```osterei32
+APP_ENV=prod
+APP_DEBUG=0
+APP_SECRET=ClickToGenerate
+DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${MYSQL_HOST}/${MYSQL_DATABASE}
 ```
+
+Modify `APP_DEBUG` or `APP_ENV` to change the behaviour of your application on the fly. Also, define your own key-value-pairs and use them in your configuration files, if it makes a difference from one environment to another. 
 
 <div markdown="1" data-user="known">
 [Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
@@ -64,28 +56,25 @@ SYMFONY__DATABASE__NAME=${MYSQL_DATABASE}
 
 ## Quick start
 
-For a new Symfony installation execute the commands following in your local terminal:
+If your project is not under git version control yet, follow these steps to be prepared for your first `git push`. 
 
 ```bash
-# 1. Use Composer to create a local Symfony project named like your App
-$  composer create-project symfony/website-skeleton {{app-name}}
+# 1. Change into the project folder
+$ cd my-project
 
-# 2. Change into the folder
-$ cd {{app-name}}
-
-# 3. Initialize a local Git repo
+# 2. Initialize a local Git repo
 $ git init .
 
-# 4. Add all files
+# 3. Add all files
 $ git add -A
 
-# 5. Commit files for the first time
+# 4. Commit files for the first time
 $ git commit -m 'Initial'
 
-# 6. Add fortrabbit as a remote
+# 5. Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 7. Push changes to fortrabbit
+# 6. Push changes to fortrabbit
 $ git push -u fortrabbit master
 ```
 
@@ -94,52 +83,96 @@ $ git push -u fortrabbit master
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
-## Advanced setup and migration
+## Database setup and migration
 
-Until now this is a vanilla Symfony. It needs some more tinkering to make it yours.
+Until now you just deployed some code. It needs some more tinkering to make it yours.
 
-### MySQL
 
-The MySQL access details are available via [environment variables](env-vars). If you have chosen Symfony in the Stack choser when creating the App, we will automatically create `SYMFONY__DATABASE__*` environment for you and you can use them as following (if you haven't choosen the right stack, please [add those Symfony env vars manually, as shown above](#toc-env-vars)):
 
-Open `app/config/parameters.yml.dist` and modify all `database_*` parameters:
+### MySQL config
+
+The `DATABASE_URL` ENV var stores all DB access information already. You just need to use it in your `config/doctrine.yaml` like in the example below:  
 
 ```yaml
-parameters:
-    # ... keep above
-    database_host: %database.host%
-    database_port: %database.port%
-    database_name: %database.name%
-    database_user: %database.user%
-    database_password: %database.password%
-    # ... keep below
+doctrine:
+    dbal:
+        # All in one single line (default)
+        url: '%env(DATABASE_URL)%'
+        
+```
+
+### Doctrine & symfony console
+
+Once doctrine is configured and the changes are deployed, you may want to create the DB schema, run migrations or load fixtures. You don't need to ssh in to your App, instead you can fire single commands like so:
+
+```
+{{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:schema:create'
+{{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:fixtures:load'
+```
+
+## Webpack Encore
+
+We assume you use Encore to manage your css/js assets and `node` and `yarn` is configured in local environment already.
+
+### Build configuration
+
+In your `webpack.config.js` define different locations of the build - `prod` and `dev`.  
+
+```js
+var Encore = require('@symfony/webpack-encore');
+var assetEnv = Encore.isProduction() ? 'prod' : 'dev'
+
+Encore
+    .setOutputPath('public/build/' + assetEnv)
+    .setPublicPath('/build/' + assetEnv)
+    .setManifestKeyPrefix('build')
+   	 // ...
+    .addEntry('js/app', './assets/js/app.js')
+;
+
+module.exports = Encore.getWebpackConfig();
+```
+
+Tell the application where to find the `manifest.json` - again for `prod` and `dev`.
+
+```yml
+# config/package/prod/framework.yaml
+framework:
+    assets:
+        json_manifest_path: '%kernel.project_dir%/public/prod/build/manifest.json'
+
+```
+```yml
+# config/package/dev/framework.yaml
+framework:
+    assets:
+        json_manifest_path: '%kernel.project_dir%/public/dev/build/manifest.json'
+
+```
+
+### Deploy assets
+
+Compiled assets should not be under version contol. So, instead of commiting the files we use rsync.
+
+```bash
+# Build production assets locally 
+$ yarn run encore production
+
+# Deploy the build/prod folder
+$ rsync -av ./public/build/prod {{app-name}}@deploy.{{region}}.frbit.com:~/public/build/prod/
+
 ```
 
 
-### Use app_dev.php
+## Advanced configurations
 
-WORK IN PROGRESS: If you want to use the development environment, you must modify `web/app_dev.php`. A simple example would be to replace the block, responding with a 403 like so:
-
-```
-if (isset($_SERVER['APP_NAME']) && $_SERVER['APP_NAME'] === '{{app-name}}') {
-    // allow
-} elseif (isset($_SERVER['HTTP_CLIENT_IP'])
-    || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
-    || !(in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', 'fe80::1', '::1')) || php_sapi_name() === 'cli-server')
-) {
-    header('HTTP/1.0 403 Forbidden');
-    exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
-}
-```
-
-This way you can easily decide per App whether you want to allow the dev mode or not.
 
 
 ### Logging
 
-WORK IN PROGRESS: You can always access any log files your App is writes on the file system. If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. Modify the `app/config/config_prod.yml` file:
+You can always access any log files your App is writes on the file system. If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. Modify the `config/packages/prod/framework.yml` file:
 
-``` yaml
+``` yml
 monolog:
     # ..
     handlers:
@@ -151,8 +184,10 @@ monolog:
 
 ### Sending mail
 
-WORK IN PROGRESS: You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use the `SwiftmailerBundle` and configure it in your `app/config/config.yml` file. Make sure you set the [charset](encoding) to UTF-8:
+You can not use [sendmail](quirks#toc-mailing) on fortrabbit but you can use the `Swiftmailer`. Configure it in your `config/packages/swiftmailer.yaml` file and provide the `MAILER_URL` ENV var in Dashboard.
 
-```php
-Swift_Preferences::getInstance()->setCharset('UTF-8');
+``` yml
+swiftmailer:
+    url: '%env(MAILER_URL)%'
+    spool: { type: 'memory' }
 ```
