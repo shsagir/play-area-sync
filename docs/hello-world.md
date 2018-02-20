@@ -52,7 +52,7 @@ $ git add index.php
 # 5. Commit the staged snapshot to the project history
 $ git commit -am 'initial commit'
 
-# 6. Just push to deploy
+# 6. Set upstream and 1st push
 $ git push -u origin master
 # Counting objects: 3, done.
 # Writing objects: 100% (3/3), 251 bytes | 0 bytes/s, done.
@@ -107,6 +107,9 @@ $ git push -u origin master
 # To {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 #  * [new branch]      master -> master
 # Branch master set up to track remote branch master from origin.
+
+# 7. Every deploy from now on
+$ git push
 ```
 **Got an error?** Please see [access troubleshooting](/access-methods#toc-troubleshooting) and [Git troubleshooting](/git).
 **Did it work?** Cool! That's it. You now visit your App URL in the browser:

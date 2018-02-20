@@ -41,8 +41,13 @@ $ git commit -am 'Intial commit'
 
 # 5. Set upstream and 1st push
 $ git push -u origin master
+# long output
+# After that it already works
+
+# 6. Every deploy from now on
+$ git push
 ```
-After the deployment is done you can worship your work in the browser:
+After the first deployment is done you can worship your work in the browser:
 [{{app-name}}.frb.io](https://{{app-name}}.frb.io) - Also see our specific install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
 
 ### Continuous development
