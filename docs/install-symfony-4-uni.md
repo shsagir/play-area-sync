@@ -53,29 +53,26 @@ Within the Dashboard under your App settings you can modify the ENV vars. Modify
 
 ## Quick start
 
-If your project is not under git version control yet, follow these steps to be prepared for your first `git push`. 
+We assume that you already have [Symfony installed locally](http://symfony.com/download). If your project is not under Git version control yet, follow these steps to be prepared for your first `git push`. 
 
 ```bash
-# 1. Change into the project folder
-$ cd my-project
-
-# 2. Initialize a local Git repo
+# 1. Initialize a local Git repo
 $ git init .
 
-# 3. Add all files
+# 2. Add all files
 $ git add -A
 
-# 4. Commit files for the first time
+# 3. Commit files for the first time
 $ git commit -m 'Initial'
 
-# 5. Add fortrabbit as a remote
+# 4. Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 6. Initial push and set upstream
+# 5. Initial push and set upstream
 $ git push -u fortrabbit master
 # Lot's of output
 
-# 7. From there on only
+# 6. From there on only
 $ git push
 ```
 
