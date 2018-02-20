@@ -66,14 +66,17 @@ Now open `composer.json` and modify the `post-install-cmd` under `scripts` by ad
 Next open `.gitignore` and remove the `composer.lock` line. Once all is done, you can add everything, create an initial commit and push your local repo to the App remote:
 
 ```bash
+# 1. Add files
 $ git add -A
+
+# 2. Commit files
 $ git commit -m 'Initial'
+
+# 3. Initial push and upstream
 $ git push -u fortrabbit master
 ```
 
-This first push can take a bit, since all the Composer packages need to be installed. While that is happening, change back to the Dashboard and [set the document root](/domains#toc-root-path) of your App's domains to `public`.
-
-When the push is done you can visit your App URL in the browser and see the Laravel welcome screen! Any subsequent push will be much faster and you can leave you the `-u fortrabbit master`.
+This first push can take a bit, since all the Composer packages need to be installed. While that is happening, change back to the Dashboard and [set the document root](/domains#toc-root-path) of your App's domains to `public`. When the push is done you can visit your App URL in the browser and see the Laravel welcome screen! Any subsequent push will be much faster and you can leave you the `-u fortrabbit master`.
 
 Tuning
 ------

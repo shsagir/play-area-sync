@@ -71,8 +71,12 @@ $ git commit -m 'Initial'
 # 6. Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 7. Push changes to fortrabbit
+# 7. Initial push and upstream
 $ git push -u fortrabbit master
+# That's it.
+
+# 8. From there on only
+$ git push
 ```
 
 **Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool! This first push can take a bit, since all the Composer packages need to be installed. When the push is done you can visit your App URL in the browser and see the Symfony welcome screen:

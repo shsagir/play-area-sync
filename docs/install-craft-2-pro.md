@@ -228,14 +228,17 @@ node_modules
 You're almost done with the basic setup. Last step is to deploy your code:
 
 ```
-# Add changes to Git
+# 1. Add changes to Git
 $ git add -A
 
-# Commit changes
+# 2. Commit changes
 $ git commit -m 'Init'
 
-# Push to deploy to fortrabbit
+# 3. Initial push and upstream
 $ git push -u fortrabbit master
+
+# 4. From there on only
+$ git push
 ```
 
 **Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, when this is done, you can visit your App URL in the browser:

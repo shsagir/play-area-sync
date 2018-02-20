@@ -61,8 +61,11 @@ $ git add -A
 # 5. Commit changes
 $ git commit -m 'Initial'
 
-# 6. Push to fortrabbit
+# 6. Initial push and upstream
 $ git push -u fortrabbit master
+
+# 7. From there on only
+$ git push
 ```
 
 Done. Your Grav site is now online and you can visit it in your browser!

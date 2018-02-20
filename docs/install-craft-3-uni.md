@@ -97,30 +97,24 @@ return [
 Now that you have the configuration done, let's get the code up. If your local Craft installation is not under Git version control already, then you do it now:
 
 ```
-# Initialize Git
+# 1. Initialize Git
 $ git init .
 
-# Add your App's Git remote to your local repo:
+# 2. Add your App's Git remote to your local repo:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# Add changes to Git
+# 3. Add changes to Git
 $ git add -A
 
-# Commit changes
+# 4. Commit changes
 $ git commit -m 'My first commit'
 
-# Push to deploy to fortrabbit
+# 5. Initial push and upstream
 $ git push -u fortrabbit master
+
+# 6. From there on only
+$ git push
 ```
-
-For reference, with this setup, further deployments are triggered by two commands:
-
-```
-$ git commit -m 'I changed something'
-$ git push 
-```
-
-
 
 ## Export/import the database
 

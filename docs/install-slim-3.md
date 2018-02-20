@@ -52,9 +52,13 @@ $ git commit -m 'Initial'
 # 6. Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 7. Push changes to fortrabbit
+# 7. Initial push and upstream
 $ git push -u fortrabbit master
+# That's it.
+
+# 8. From there on only
+$ git push
 ```
 
-That's it. You can see the welcome page in the browser:
+You can see the welcome page in the browser:
 [https://{{app-name}}.frb.io/](https://{{app-name}}.frb.io/)

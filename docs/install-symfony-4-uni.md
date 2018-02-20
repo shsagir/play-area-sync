@@ -71,24 +71,26 @@ $ git commit -m 'Initial'
 # 5. Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 6. Push changes to fortrabbit
+# 6. Initial push and set upstream
 $ git push -u fortrabbit master
+# Lot's of output
+
+# 7. From there on only
+$ git push
 ```
 
-**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool! This first push can take a bit, since all the Composer packages need to be installed. When the push is done you can visit your App URL in the browser and see the Symfony welcome screen:
+**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool! This first push can take a bit, since all the Composer packages need to be installed. When the first push is done you can visit your App URL in the browser and see the Symfony welcome screen:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
-## Database setup and migration
+## MySQL
 
 Until now you just deployed some code. It needs some more tinkering to make it yours.
 
+### Configuration
 
-
-### MySQL config
-
-The `DATABASE_URL` ENV var stores all DB access information already (see above). You just need to use it in your `doctrine.yaml` config, like in the example below:  
+The `DATABASE_URL` ENV var stores all DB access information already (see [above](#toc-env-vars)). You just need to use it in `doctrine.yaml` like so:  
 
 ```yaml
 doctrine:
@@ -100,7 +102,7 @@ doctrine:
 
 ### Doctrine & symfony console
 
-Once doctrine is configured and the changes are deployed, you may want to create the DB schema, run migrations or load fixtures. You don't need to ssh in to your App, instead you can fire single commands like so:
+Once doctrine is configured and the changes are deployed, you may want to create the DB schema, run migrations or load fixtures. You can login via [ssh](ssh) in to your App, or instead just fire single commands like so:
 
 ```
 {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:schema:create'
@@ -109,11 +111,11 @@ Once doctrine is configured and the changes are deployed, you may want to create
 
 ## Webpack Encore
 
-We assume you use Encore to manage your css/js assets and `node` and `yarn` is configured in local environment already.
+We assume you are using Encore to manage your css/js assets and `yarn` is configured in the local environment already. 
 
 ### Configuration
 
-In your `webpack.config.js` define different locations of the build - `prod` and `dev`.  
+In your `webpack.config.js` define different locations of the build - `prod` and `dev`:
 
 ```js
 var Encore = require('@symfony/webpack-encore');
@@ -130,27 +132,25 @@ Encore
 module.exports = Encore.getWebpackConfig();
 ```
 
-Tell the application where to find the `manifest.json` - again for `prod` and `dev`.
+Tell the application where to find the `manifest.json` - again for `prod` and `dev`:
 
 ```yml
 # config/package/prod/framework.yaml
 framework:
     assets:
         json_manifest_path: '%kernel.project_dir%/public/prod/build/manifest.json'
-
 ```
+
 ```yml
 # config/package/dev/framework.yaml
 framework:
     assets:
         json_manifest_path: '%kernel.project_dir%/public/dev/build/manifest.json'
-
 ```
 
 ### Deploying assets
 
-Compiled assets should not be under version control. So, instead of committing the build files to git, we need to deploy them differently.
-Rsync works great for this and it's easier than you might think.
+Compiled assets should not be under version control. So, instead of committing the build files to Git, you deploy them separately. rsync works great for this and it's easier than you might think:
 
 ```bash
 # Build production assets locally 
@@ -163,11 +163,11 @@ $ rsync -av ./public/build/prod {{app-name}}@deploy.{{region}}.frbit.com:~/publi
 
 ## Advanced configurations
 
-
+Still reading? Let's go on:
 
 ### Logging
 
-You can always access any log files your App is writes on the file system. If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. Modify the `config/packages/prod/framework.yml` file:
+You can access all log files your App writes on the file system. If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. Modify the `config/packages/prod/framework.yml` file:
 
 ``` yml
 monolog:

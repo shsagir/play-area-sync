@@ -163,7 +163,7 @@ You can either login to [SSH](ssh-uni) and execute `artsian` or utilize [execute
 
 ```bash
 # remote execution
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate'
 
 # login and execute
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com

@@ -74,10 +74,13 @@ $ git commit -m 'Initial'
 # 6. Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 7. Push changes to fortrabbit
+# 7. Initial push and upstream
 $ git push -u fortrabbit master
 # this will install Laravel on remote and take another while
-# the next deployments will be much faster
+
+# The next deployments will be much faster
+# 8. Push from now on only
+$ git push
 ```
 
 **Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, when this is done, you can visit your App URL in the browser to see the Laravel welcome screen:
@@ -90,7 +93,6 @@ $ git push -u fortrabbit master
 ## Tune
 
 Until now this is a vanilla Laravel. Now, make it yours.
-
 
 
 ### MySQL
@@ -153,9 +155,9 @@ Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to acce
 You can [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
 
 ```bash
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate:rollack
-$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan tinker
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate'
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan migrate:rollack'
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan tinker'
 ```
 
 If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.

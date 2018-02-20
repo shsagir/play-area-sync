@@ -85,8 +85,11 @@ $ git commit -m 'Initial'
 # 7. Add fortrabbit as a remote
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 8. Push to fortrabbit
+# 8. Initial push and upstream
 $ git push -u fortrabbit master
+
+# 9. From there on only
+$ git push
 ```
 
 When it is done you can visit your App URL in the browser to see the Phalcon welcome screen:
