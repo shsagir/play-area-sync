@@ -91,7 +91,7 @@ Until now you just deployed some code. It needs some more tinkering to make it y
 
 ### MySQL config
 
-The `DATABASE_URL` ENV var stores all DB access information already. You just need to use it in your `config/doctrine.yaml` like in the example below:  
+The `DATABASE_URL` ENV var stores all DB access information already. You just need to use it in your `doctrine.yaml` config, like in the example below:  
 
 ```yaml
 doctrine:
@@ -114,20 +114,20 @@ Once doctrine is configured and the changes are deployed, you may want to create
 
 We assume you use Encore to manage your css/js assets and `node` and `yarn` is configured in local environment already.
 
-### Build configuration
+### Configuration
 
 In your `webpack.config.js` define different locations of the build - `prod` and `dev`.  
 
 ```js
 var Encore = require('@symfony/webpack-encore');
-var assetEnv = Encore.isProduction() ? 'prod' : 'dev'
+var env = Encore.isProduction() ? 'prod' : 'dev';
 
 Encore
-    .setOutputPath('public/build/' + assetEnv)
-    .setPublicPath('/build/' + assetEnv)
+    .setOutputPath('public/build/' + env)
+    .setPublicPath('/build/' + env)
     .setManifestKeyPrefix('build')
-   	 // ...
-    .addEntry('js/app', './assets/js/app.js')
+    // ...
+    .enableVersioning(true)
 ;
 
 module.exports = Encore.getWebpackConfig();
@@ -150,9 +150,10 @@ framework:
 
 ```
 
-### Deploy assets
+### Deploying assets
 
-Compiled assets should not be under version contol. So, instead of commiting the files we use rsync.
+Compiled assets should not be under version control. So, instead of committing the build files to git, we need to deploy them differently.
+Rsync works great for this and it's easier than you might think.
 
 ```bash
 # Build production assets locally 
@@ -160,7 +161,6 @@ $ yarn run encore production
 
 # Deploy the build/prod folder
 $ rsync -av ./public/build/prod {{app-name}}@deploy.{{region}}.frbit.com:~/public/build/prod/
-
 ```
 
 
