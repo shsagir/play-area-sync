@@ -81,7 +81,11 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 # 7. Push changes to fortrabbit
 $ git push -u fortrabbit master
 # this will install Laravel on remote and take another while
+
+
 # the next deployments will be much faster
+# 8. Push from now on
+$ git push
 ```
 
 **Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, when this is done, you can visit your App URL in the browser to see the Laravel welcome screen:
