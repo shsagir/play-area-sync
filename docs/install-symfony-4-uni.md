@@ -35,9 +35,7 @@ If you haven't chosen Symfony stack when creating the App in the Dashboard at fi
 
 ### ENV vars
 
-Unlike in previous versions, Symfony 4 [environments](https://symfony.com/doc/current/configuration/environments.html#executing-an-application-in-different-environments) are controlled by the `APP_ENV` ENV var. Even in the .yml configurations you can use ENV vars now.
-
-In the Dashboard you set [environment variables](/env-vars) for your App, which you can access from your code, e.g. to apply them in your config. To get you started quickly, we provide you with the following ENV vars by default:
+Symfony 4 [environments](https://symfony.com/doc/current/configuration/environments.html#executing-an-application-in-different-environments) are controlled by the `APP_ENV` ENV var. You can even use ENV vars in the .yml configurations now. To get you started quickly, we provide you with the following ENV vars by default when you have chosen the Symfony from the Software chooser when creating the App:
 
 ```osterei32
 APP_ENV=prod
@@ -46,12 +44,11 @@ APP_SECRET=ClickToGenerate
 DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${MYSQL_HOST}/${MYSQL_DATABASE}
 ```
 
-Modify `APP_DEBUG` or `APP_ENV` to change the behaviour of your application on the fly. Also, define your own key-value-pairs and use them in your configuration files, if it makes a difference from one environment to another. 
+Within the Dashboard under your App settings you can modify the ENV vars. Modify `APP_DEBUG` or `APP_ENV` to change the behavior of your application. You can also define your own key-value-pairs and use them in your configuration files. 
 
 <div markdown="1" data-user="known">
 [Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
-
 
 
 ## Quick start
@@ -91,7 +88,7 @@ Until now you just deployed some code. It needs some more tinkering to make it y
 
 ### MySQL config
 
-The `DATABASE_URL` ENV var stores all DB access information already. You just need to use it in your `doctrine.yaml` config, like in the example below:  
+The `DATABASE_URL` ENV var stores all DB access information already (see above). You just need to use it in your `doctrine.yaml` config, like in the example below:  
 
 ```yaml
 doctrine:
