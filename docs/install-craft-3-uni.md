@@ -100,19 +100,22 @@ Now that you have the configuration done, let's get the code up. If your local C
 # 1. Initialize Git
 $ git init .
 
-# 2. Add your App's Git remote to your local repo:
+# 2. Add your App's Git remote to your local repo
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 3. Add changes to Git
+# 3. Download a proper .gitignore file
+$ curl -O  https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore
+
+# 4. Add changes to Git
 $ git add -A
 
-# 4. Commit changes
+# 5. Commit changes
 $ git commit -m 'My first commit'
 
-# 5. Initial push and upstream
+# 6. Initial push and upstream
 $ git push -u fortrabbit master
 
-# 6. From there on only
+# From there on only
 $ git push
 ```
 
@@ -158,18 +161,15 @@ This [rsync tutorial](https://blog.fortrabbit.com/deploying-code-with-rsync) cov
 The lastest beta is just a `composer update` away. When you run this command in the terminal locally, the output looks something like this: 
 
 ```plain
-Loading composer repositories with package information
-Updating dependencies (including require-dev)
+  Loading composer repositories with package information
+  Installing dependencies (including require-dev) from lock file
+  Package operations: 0 installs, 17 updates, 1 removal
+    - Updating craftcms/cms (3.0.0-RC7 => 3.0.0-RC12): Downloading (100%)
+    - Updating yiisoft/yii2 (2.0.13.1 => 2.0.14): Downloading (100%)
+   [...]
+    - Updating ostark/craft-async-queue (1.1.5 => 1.3.0):  Checking out c262aa5e21
+    - Updating symfony/var-dumper (v3.4.3 => v3.4.4): Downloading (100%)
 
- [...]
- 
-  - Removing yiisoft/yii2-debug (2.0.7)
-  - Installing yiisoft/yii2-debug (2.0.11)
-    Downloading: 100%
-
-  - Removing craftcms/cms (3.0.0-beta.26)
-  - Installing craftcms/cms (3.0.0-beta.29)
-    Downloading: 100%
 ```
 
 The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App's `master` branch. The packages got installed during the deployment. As you can see it takes just a few seconds:
