@@ -1,6 +1,6 @@
 ---
 template:         article
-reviewed:         2018-02-02
+reviewed:         2018-02-23
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft 3 Beta/RC
 lead:             Note that this install guide is for the Craft 3 (pre-stable) version.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.0-RC7
+version:          3.0.0-RC11
 group:            Install_guides
 
 keywords:
@@ -37,7 +37,7 @@ Using a SSH Key to authenticate is highly recommended. If you havn't stored your
 
 ### Root path
 
-If you created your App after 2018/02/02 the root path is already set to **web** for Craft Apps. Go to the Dashboard to verify the current settings and [modify the root path](/app#toc-root-path) of your App's domains if needed. 
+If you selected Craft 3 in the stack chooser, the root path is already set to **web** for Craft Apps. Go to the Dashboard to verify the current settings and [modify the root path](/app#toc-root-path) of your App's domains if needed. 
 
 <div markdown="1" data-user="known">
 [Change the root path for App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
@@ -158,7 +158,7 @@ This [rsync tutorial](https://blog.fortrabbit.com/deploying-code-with-rsync) cov
 
 ## Updating Craft
 
-The lastest beta is just a `composer update` away. When you run this command in the terminal locally, the output looks something like this: 
+The lastest update is just a `composer update` away. When you run this command in the terminal locally, the output looks something like this: 
 
 ```plain
   Loading composer repositories with package information
@@ -172,9 +172,14 @@ The lastest beta is just a `composer update` away. When you run this command in 
 
 ```
 
-The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App's `master` branch. The packages got installed during the deployment. As you can see it takes just a few seconds:
+The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App's `master` branch. During the Git deployment we run `composer install` - this way your local composer changes get applied on the remote automatically.
 
-![commit and push](https://static.frbit.name/img/help/craft3-composer-update.gif)
+Some plugins or the Craft core include database migrations. Don't forget to run the following command after the updated packages are deployed:
 
-That's it. 
+```bash
+$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
+```
+
+
+**That's it.** 
 
