@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-02-19
+reviewed:      2018-02-22
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -286,6 +286,9 @@ Deleting Apps & Accounts is "mostly" (see [below](#toc-recovering-backups)) FINA
 While the App get's deleted irrevocable, Backups might still be around. When your App plan included [Backups](/backups-uni) and those have not yet faded out within their retention period, we might can restore the backups for you. We then can provide you tar ball containing your data (web + mysql). Please contact us for that via chat.
 
 
+
+
+
 ## Troubleshooting
 
 Here are some common gotachs that mostly happen with new Apps:
@@ -328,6 +331,9 @@ Creating an App can sometimes take a few minutes. When you visited the App URL d
 Your application is just throwing a 500 or 502 internal server error? Congrats, at least something is happening. In most cases, this is NOT a server failure, it's a software problem caused by your configuration. And it's something you can likely solve yourself.
 
 There are many different reasons for 5xx errors. Be a detective and start the investigation by examining the logs, see [here for Uni Apps](logging-uni) and [here for Pro Apps](logging-pro). Within the logs you will find where application exited with which error, this is the hot leas you are after.
+
+
+
 
 
 ## Further readings

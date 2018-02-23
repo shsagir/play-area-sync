@@ -3,7 +3,7 @@ template:         article
 reviewed:         2018-02-23
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft 3 Beta/RC
-lead:             Note that this install guide is for the Craft 3 (pre-stable) version.
+lead:             Note that this install guide is for the Craft 3 (pre-stable) version. If you don't feel confident using a pre-release <a href='/install-craft-2-uni'>head over to the Craft 2.6 install guide</a>.
 group:            Install_guides
 stack:            uni
 dontList:         false
@@ -23,21 +23,21 @@ keywords:
     - install-guide
 
 ---
-
-
-## Intro
-
-Please mind, the official Craft 3 stable release is expected for 2018/04/04. If you don't feel confident using a pre-release [head over to the Craft 2.6 install guide](/install-craft-2-uni). 
-
+ 
 ## Get ready
 
 We assume you've already created an App and chose Craft CMS in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). 
 
+<!--
+    TBD: this is not specific to Craft CMS. Maybe include this is in all install guides or don't.
+
 Using a SSH Key to authenticate is highly recommended. If you havn't stored your public key with your fortrabbit account yet, [do it now](/ssh-keys#toc-save-your-public-ssh-keys-with-your-fortrabbit-account).  
+-->
+
 
 ### Root path
 
-If you selected Craft 3 in the stack chooser, the root path is already set to **web** for Craft Apps. Go to the Dashboard to verify the current settings and [modify the root path](/app#toc-root-path) of your App's domains if needed. 
+If you selected Craft 3 in the software chooser, the root path is already set to **web** for Craft Apps. Go to the Dashboard to verify the current settings and [modify the root path](/app#toc-root-path) of your App's domains if needed. 
 
 <div markdown="1" data-user="known">
 [Change the root path for App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
@@ -121,16 +121,14 @@ $ git push
 
 ## Export/import the database
 
-Database migrations are first-class citizen in Craft 3. This is great keep schema changes consistent across all enviroments.
-  
-However, this does not help with the actual data which is stored locally already. You need to export a mysqldump first and then import that dump to your App's database. Here is how:
+Database migrations are first-class citizen in Craft 3. Using this pattern keeps changes consistent across all environments. However, this does not help with the actual data which is stored locally already. To get started, you'll need to export a mysqldump first and then import that into your Apps database. Here is how:
 
 ```bash
 # On your local machine
 $ mysqldump -ulocal-db-user -plocal-db-password local-db-name > dump.sql
 ```
 
-Now you need to open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import.
+Now you need to open a tunnel and import the just created dump file into your remote database. This requires two terminal windows: One containing the open tunnel, the other to execute the import.
 
 ```bash
 # Open the tunnel
@@ -141,11 +139,14 @@ $ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@depl
 $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 ```
 
+You can also do this with a MySQL GUI of course, please see our [MySQL guides](/mysql) for more on the topic.
 
 
 ## Uploading assets
 
-You are probably used to use S**FTP** and know [how it works](/sftp-uni#toc-accessing-sftp). We recommend giving `rsync` on the command line try, it's easier than think: 
+<!-- TODO: Please provide some context: What are assets, any why they have not been synced with Git already? Are the already excluded by default? Or do they need to get excluded?  -->
+
+You are probably used to use [SFTP](/sftp-uni#toc-accessing-sftp), that's one way to upload assets. We recommend giving `rsync` on the command line try, it's easier than think: 
 
 ```
 # Sync local assets with remote
@@ -158,7 +159,7 @@ This [rsync tutorial](https://blog.fortrabbit.com/deploying-code-with-rsync) cov
 
 ## Updating Craft
 
-The lastest update is just a `composer update` away. When you run this command in the terminal locally, the output looks something like this: 
+The latest Craft update is just a `composer update` away. When you run this command in the terminal locally, the output looks something like this: 
 
 ```plain
   Loading composer repositories with package information
@@ -180,6 +181,11 @@ Some plugins or the Craft core include database migrations. Don't forget to run 
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 ```
 
+<!-- 
+
+TODO: How to work with changes made to the contents of the page? What when the remote version contain files, that are not locally? Why are not there when I git pull? How do I get them best?
+
+ -->
 
 **That's it.** 
 

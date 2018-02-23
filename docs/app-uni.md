@@ -56,3 +56,20 @@ Sorry, at this time it is not possible to downgrade from a higher to a lower pla
 As an alternative we suggest to throw away the current App and create a new one: download the [backups](/backups-uni), delete the App, create a new App with correct plan and upload (or deploy) again.
 
 Thanks for understanding!
+
+<!-- apache-util2 not installed, will not work that way.
+
+## Password authentication with http-auth
+
+```shell
+# 1. login to your App via SSH
+
+
+# 2. create a .htpasswd file containg a "username" in the tmp folder
+htpasswd -c /srv/tmp/.htpasswd username
+# You'll be asked for a password
+
+# 3. 
+
+```
+-->
