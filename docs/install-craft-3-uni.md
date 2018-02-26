@@ -27,11 +27,7 @@ keywords:
 
 We assume you've already created an App and chose Craft CMS in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). 
 
-<!--
-    TBD: this is not specific to Craft CMS. Maybe include this is in all install guides or don't.
-
 Using a SSH Key to authenticate is highly recommended. If you haven't stored your public key with your fortrabbit Account yet, [do it now](/ssh-keys#toc-save-your-public-ssh-keys-with-your-fortrabbit-account).
--->
 
 
 ### Root path
@@ -143,10 +139,6 @@ You can also do this with a MySQL GUI of course, please see our [MySQL guides](/
 
 ## Uploading assets
 
-<!-- 
-    TODO: Please provide some context: What are assets, any why they have not been synced with Git already? Are the already excluded by default? Or do they need to get excluded?  
--->
-
 You are probably used to use [SFTP](/sftp-uni#toc-accessing-sftp), that's one way to upload assets. We recommend giving `rsync` on the command line try, it's easier than think: 
 
 ```
@@ -182,15 +174,6 @@ Some plugins or the Craft core include database migrations. Don't forget to run 
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 ```
 
-## Keeping remote and local in sync
-
-
-
-<!-- 
-
-    TODO: How to work with changes made to the contents of the page? What when the remote version contain files, that are not locally? Why are not there when I git pull? How do I get them best?
-
- -->
 
 **That's it.** 
 
