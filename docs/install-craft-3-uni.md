@@ -27,8 +27,6 @@ keywords:
 
 We assume you've already created an App and chose Craft CMS in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). 
 
-Using a SSH Key to authenticate is highly recommended. If you haven't stored your public key with your fortrabbit Account yet, [do it now](/ssh-keys#toc-save-your-public-ssh-keys-with-your-fortrabbit-account).
-
 
 ### Root path
 
