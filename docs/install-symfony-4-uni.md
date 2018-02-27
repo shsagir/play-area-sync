@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-02-20
+reviewed:         2018-02-27
 title:            Install Symfony 4
 naviTitle:        Symfony 4
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 4 on fortrabbit.
@@ -28,7 +28,7 @@ We assume you've already created a new App and chose Symfony in the stack choose
 
 ### Root path
 
-If you haven't chosen Symfony stack when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
+If you haven't chosen Symfony when creating the App in the Dashboard at first, please set the following: Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
@@ -36,7 +36,7 @@ If you haven't chosen Symfony stack when creating the App in the Dashboard at fi
 
 ### ENV vars
 
-Symfony 4 [environments](https://symfony.com/doc/current/configuration/environments.html#executing-an-application-in-different-environments) are controlled by the `APP_ENV` ENV var. You can even use ENV vars in the .yml configurations now. To get you started quickly, we provide you with the following ENV vars by default when you have chosen the Symfony from the Software chooser when creating the App:
+Symfony 4 [environments](https://symfony.com/doc/current/configuration/environments.html#executing-an-application-in-different-environments) are controlled by the `APP_ENV` ENV var. You can even use ENV vars in the .yml configurations now. To get you started quickly, we provide you with the following ENV vars by default when you have chosen the Symfony from when creating the App:
 
 ```osterei32
 APP_ENV=prod
@@ -112,7 +112,7 @@ Once doctrine is configured and the changes are deployed, you may want to create
 
 ## Webpack Encore
 
-We assume you are using Encore to manage your css/js assets and `yarn` is configured in the local environment already. 
+We assume you are using Encore to manage your CSS & JS assets and `yarn` is configured in the local environment already. 
 
 ### Configuration
 
