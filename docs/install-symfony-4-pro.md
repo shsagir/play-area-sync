@@ -6,7 +6,6 @@ title:            Install Symfony 4
 naviTitle:        Symfony 4
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 4 on fortrabbit.
 
-group:            Install_guides
 stack:            uni
 
 workInProgress: true
