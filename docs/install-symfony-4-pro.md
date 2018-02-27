@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-02-20
+reviewed:         2018-02-26
 title:            Install Symfony 4
 naviTitle:        Symfony 4
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 4 on fortrabbit.
@@ -11,7 +11,7 @@ stack:            uni
 
 workInProgress: true
 
-websiteLink:      https://symfony.com
+websiteLink:      https://symfony.com/
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
@@ -106,57 +106,6 @@ Once doctrine is configured and the changes are deployed, you may want to create
 {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:fixtures:load'
 ```
 
-## Webpack Encore
-
-We assume you are using Encore to manage your css/js assets and `yarn` is configured in the local environment already. 
-
-### Configuration
-
-In your `webpack.config.js` define different locations of the build - `prod` and `dev`:
-
-```js
-var Encore = require('@symfony/webpack-encore');
-var env = Encore.isProduction() ? 'prod' : 'dev';
-
-Encore
-    .setOutputPath('public/build/' + env)
-    .setPublicPath('/build/' + env)
-    .setManifestKeyPrefix('build')
-    // ...
-    .enableVersioning(true)
-;
-
-module.exports = Encore.getWebpackConfig();
-```
-
-Tell the application where to find the `manifest.json` - again for `prod` and `dev`:
-
-```yml
-# config/package/prod/framework.yaml
-framework:
-    assets:
-        json_manifest_path: '%kernel.project_dir%/public/prod/build/manifest.json'
-```
-
-```yml
-# config/package/dev/framework.yaml
-framework:
-    assets:
-        json_manifest_path: '%kernel.project_dir%/public/dev/build/manifest.json'
-```
-
-### Deploying assets
-
-Compiled assets should not be under version control. So, instead of committing the build files to Git, you deploy them separately. rsync works great for this and it's easier than you might think:
-
-```bash
-# Build production assets locally 
-$ yarn run encore production
-
-# Deploy the build/prod folder
-$ rsync -av ./public/build/prod {{app-name}}@deploy.{{region}}.frbit.com:~/public/build/prod/
-```
-
 
 ## Advanced configurations
 
@@ -164,7 +113,7 @@ Still reading? Let's go on:
 
 ### Logging
 
-You can access all log files your App writes on the file system. If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. Modify the `config/packages/prod/framework.yml` file:
+If you want to use [live logging](logging#toc-live-log-access), then you should configure Symfony to use `error_log`. Modify the `config/packages/prod/framework.yml` file:
 
 ``` yml
 monolog:
