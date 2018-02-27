@@ -6,7 +6,6 @@ title:            Install Symfony 3
 naviTitle:        Symfony 3
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 2 or 3 on fortrabbit.
 
-group:            Install_guides
 stack:            uni
 proLink:          install-symfony-3-pro
 

@@ -8,6 +8,7 @@ lead:             Symfony has been around for some while — but it doesn't look
 
 group:            Install_guides
 stack:            uni
+proLink:          install-symfony-4-pro
 
 workInProgress: true
 

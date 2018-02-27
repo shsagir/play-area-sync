@@ -6,6 +6,8 @@ naviTitle:        Craft 3 Beta/RC
 lead:             Note that this install guide is for the Craft 3 (pre-stable) version. If you don't feel confident using a pre-release <a href='/install-craft-2-uni'>head over to the Craft 2.6 install guide</a>.
 group:            Install_guides
 stack:            uni
+proLink:          install-craft-3-pro
+
 dontList:         false
 workInProgress:   true
 
