@@ -104,9 +104,13 @@ doctrine:
 
 Once doctrine is configured and the changes are deployed, you may want to create the DB schema, run migrations or load fixtures. You can login via [ssh](ssh) in to your App, or instead just fire single commands like so:
 
-```
-{{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:schema:create'
-{{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:fixtures:load'
+```bash
+# doctrine
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:schema:create'
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:fixtures:load'
+
+# cache clear
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console cache:clear'
 ```
 
 

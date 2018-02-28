@@ -105,9 +105,13 @@ doctrine:
 
 Once doctrine is configured and the changes are deployed, you may want to create the DB schema, run migrations or load fixtures. You can login via [ssh](ssh) in to your App, or instead just fire single commands like so:
 
-```
-{{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:schema:create'
-{{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:fixtures:load'
+```bash
+# doctrine
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:schema:create'
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:fixtures:load'
+
+# cache clear
+$ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console cache:clear'
 ```
 
 ## Webpack Encore
@@ -139,14 +143,14 @@ Tell the application where to find the `manifest.json` - again for `prod` and `d
 # config/package/prod/framework.yaml
 framework:
     assets:
-        json_manifest_path: '%kernel.project_dir%/public/prod/build/manifest.json'
+        json_manifest_path: '%kernel.project_dir%/public/build/prod/manifest.json'
 ```
 
 ```yml
 # config/package/dev/framework.yaml
 framework:
     assets:
-        json_manifest_path: '%kernel.project_dir%/public/dev/build/manifest.json'
+        json_manifest_path: '%kernel.project_dir%/public/build/dev/manifest.json'
 ```
 
 ### Deploying assets
@@ -158,7 +162,7 @@ Compiled assets should not be under version control. So, instead of committing t
 $ yarn run encore production
 
 # Deploy the build/prod folder
-$ rsync -av ./public/build/prod {{app-name}}@deploy.{{region}}.frbit.com:~/public/build/prod/
+$ rsync -av ./public/build/prod/ {{app-name}}@deploy.{{region}}.frbit.com:~/public/build/prod/
 ```
 
 
