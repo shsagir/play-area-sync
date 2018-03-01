@@ -408,53 +408,10 @@ If you plan on using Redis as a cache, then open `config/cache.php` and set `def
 
 Laravel supports multiple queue drivers. One which can be used with fortrabbit out of the box is `database`, which simple uses your database connection as a queue. That's great for small use-cases and tinkering, but if your App handles very many queue messages you should consider [Redis](#toc-redis).
 
-Once you've decided the queue you want to use just open `config/queue.php` and set `default` to either `redis`, `database`, `iron` or `amqp` - or even better: set the `QUEUE_DRIVER` [environment variable](env-vars) accordingly in the Dashboard.
+Once you've decided the queue you want to use just open `config/queue.php` and set `default` to either `redis`, `database`, `sqs` - or even better: set the `QUEUE_DRIVER` [environment variable](env-vars) accordingly in the Dashboard.
 
 To run `php artisan queue:work` in the background, spin up a new [Worker](worker) and define the artisan command as a **Nonstop Job**.
 
-
-#### CloudAMQP (RabbitMQ)
-
-CloudAMQP  can be used in Laravel as a queue driver. First integrate with [CloudAMQP](cloudamqp), install the composer package `vladimir-yuldashev/laravel-queue-rabbitmq:5.3`, then configure the queue connection in `config/queue.php`:
-
-
-```php
-$rabbitmq = [];
-
-// on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-    $rabbitmq = [
-        'driver'         => 'rabbitmq',
-        'host'           => $secrets['CUSTOM']['CLOUD_AMQP_HOST'],
-        'port'           => $secrets['CUSTOM']['CLOUD_AMQP_PORT'],
-        'user'           => $secrets['CUSTOM']['CLOUD_AMQP_USER'],
-        'password'       => $secrets['CUSTOM']['CLOUD_AMQP_PASSWORD'],
-        'vhost'          => $secrets['CUSTOM']['CLOUD_AMQP_VHOST'],
-        'queue'          => null,
-        'channel_id'     => null,
-        'exchange_name'  => null,
-        'exchange_type'  => null,
-        'exchange_flags' => null,
-
-         //Durable queue (survives server crash)
-        'queue_flags'=> ['durable' => true, 'routing_key' => null],
-
-        //Persistent messages (survives server crash)
-        'message_properties' => ['delivery_mode' => 2],
-    ];
-}
-
-return [
-    // other code …
-    'connections' => [
-        // other code …
-        'rabbitmq' => $rabbitmq,
-        // other code …
-    ],
-    // other code …
-];
-```
 
 
 
@@ -462,50 +419,6 @@ Make sure you have added `VladimirYuldashev\LaravelQueueRabbitMQ\LaravelQueueRab
 
 Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `rabbitmq `.
 
-<!--
-#### IronMQ
-
-IronMQ can be used in Laravel as a queue driver. First integrate with [IronMQ](ironmq) then configure the queue connection in `config/queue.php`:
-
-```php
-// locally: use standards
-$iron = [
-    'driver'  => 'iron',
-    'host'    => env('IRON_MQ_HOST'),
-    'token'   => env('IRON_MQ_TOKEN'),
-    'project' => env('IRON_MQ_PROJECT_ID'),
-    'queue'   => env('IRON_MQ_QUEUE'),
-    'encrypt' => true,
-];
-
-// on fortrabbit: construct credentials from App secrets
-if (isset($_SERVER['APP_SECRETS'])) {
-    $secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-    $iron = [
-        'driver'  => 'iron',
-        'host'    => $secrets['CUSTOM']['IRON_MQ_HOST'],
-        'token'   => $secrets['CUSTOM']['IRON_MQ_TOKEN'],
-        'project' => $secrets['CUSTOM']['IRON_MQ_PROJECT_ID'],
-        'queue'   => $secrets['CUSTOM']['IRON_MQ_QUEUE'],
-        'encrypt' => true,
-    ];
-}
-
-return [
-    // other code …
-    'connections' => [
-        // other code …
-        'iron' => $iron,
-        // other code …
-    ],
-    // other code …
-];
-```
-
-**Note for Laravel 5.2 and higher:** The `iron`-block does not exist and needs to be created. Also the `laravelcollective/iron-queue` composer package must be installed manually (mind adding `Collective\IronQueue\IronQueueServiceProvider::class` into `providers` in `app.php`).
-
-Lastly set the `QUEUE_DRIVER` [environment variable](env-vars) in the Dashboard to `iron`.
--->
 
 #### Using envoy
 
