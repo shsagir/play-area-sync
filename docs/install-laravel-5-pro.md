@@ -288,7 +288,19 @@ Also mind that you need to tell your source code to look for the minified CCS & 
 
 ### Logging
 
-Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead. That's easily done: open `boostrap/app.php` and add the following **just before the** `return $app` statement at the bottom:
+Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead. 
+
+#### In Laravel 5.6
+
+Laravel's new `logging.php` config allows you to define various log channels. Make sure to add the `errorlog` channel to the `stack` or simply set the default channel via ENV var:
+
+```
+LOG_CHANNEL=errorlog
+```
+
+#### In Laravel 5.1 - 5.5
+
+That's easily done: open `boostrap/app.php` and add the following **just before the** `return $app` statement at the bottom:
 
 ```php
 $app->configureMonologUsing(function($monolog) {
