@@ -33,7 +33,7 @@ fortrabbit employs a multi-tier security strategy.
 
 On the inside, each node is built around a hardened Linux kernel, which enforces strong privilege and resource separation mechanisms at an OS level. All operating systems and software components are kept up-to-date by our maintenance staff and we pride ourselves in reacting quickly to all [Poodles](http://blog.fortrabbit.com/ssl-v3-disabled-poodle-vulnerability/), [Heartbleeds](http://blog.fortrabbit.com/heartbleed-openssl-vulnerability/), Shellshocks and [Ghosts](https://twitter.com/fortrabbit/status/560478509475577856) that have and will come up.
 
-At the next tier, each node exists within isolated virtual containers, which guarantee complete logical separation of Apps on fortrabbit. In addition, the container technology allows for hard resource capping, which reduces the bad neighbor effect of shared environments to a bare minimum.
+At the next tier, each node houses isolated virtual containers, which guarantee complete logical separation of Apps on fortrabbit. In addition, the container technology allows for hard resource capping, which reduces the bad neighbor effect of shared environments to a bare minimum.
 
 On the outside, we utilize network firewalling and hardened TCP/IP stacks to mitigate resource exhaustion attempts. Sniffing and spoofing attacks are prevented through the underlying infrastructure. Our setup is flexible and we are able to isolate or boost resources quickly.
 
@@ -83,7 +83,7 @@ You can reset the fortrabbit service passwords for MySQL and Object Storage in t
 
 ## Firewalling
 
-Per default all outgoing calls on all ports, except for [standard ones](https://www.fortrabbit.com/specs#firewall), are closed. You can request to whitelist a port or port range via the Dashboard in the settings of your App.
+By default all outgoing traffic on all ports, except for [standard ones](https://www.fortrabbit.com/specs#firewall), is blocked. You can request to whitelist a port or port range via the Dashboard in the settings of your App.
 
 ## Vulnerability reporting
 
