@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2017-12-20
+reviewed:   2018-03-13
 title:      Using environment variables in PHP
 naviTitle:  Environment variables
 lead:       ENV vars help to create and shape the environment of where the code runs.
@@ -125,7 +125,38 @@ ANOTHER_VAR=something
 Storing credentials (passwords, secrets, ..) in environment variables is not without risk. They can be exposed, due to programming errors or oversights. Please read an BLOG[in-depth discussion in our Blog](how-to-keep-a-secret). We offer a convenient solution for this problem with our [App secrets](secrets).
 
 
+
+## ENV var validation
+
+Strict validation rules for ENV vars are in use. Chars like the "$" sign can be harmful in Linux systems. Here is the regex we use to validate the ENV var input in the Dashboard:
+
+```
+/^[\p{L}\p{N}\ _\-\+=\.,:;\?!@~%&\*\(\)\[\]\{\}<>\/\\#]+$/u
+```
+
+So sometimes, 
+
+
+### Encode and decode ENV vars
+
+If you can not change the value of your ENV var, use a base64 encoded string and decode it when applying it to your config in your code. Encoding works like this:
+
+```php
+php -r "echo base64_encode('YOUR-M$Pa#A-VALUEx') . PHP_EOL;"
+```
+
+And this should give you an idea how you can do the decoding: 
+
+* https://github.com/laravel/ideas/issues/416#issuecomment-280436034
+
+
+
+
+
+
 <!--
+
+TODO: why not publish this?
 
 ### ENV var encryption
 
