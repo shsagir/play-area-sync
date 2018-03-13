@@ -128,26 +128,24 @@ Storing credentials (passwords, secrets, ..) in environment variables is not wit
 
 ## ENV var validation
 
-Strict validation rules for ENV vars are in use. Chars like the "$" sign can be harmful in Linux systems. Here is the regex we use to validate the ENV var input in the Dashboard:
+Strict validation rules for ENV vars are in use in the Dashboard while entering. Chars like the "$" sign can be harmful in Linux systems. Here is the regex we use to validate the ENV var input in the Dashboard:
 
-```
+```plain
 /^[\p{L}\p{N}\ _\-\+=\.,:;\?!@~%&\*\(\)\[\]\{\}<>\/\\#]+$/u
 ```
 
-So sometimes, 
+So sometimes, when you want to store an external API key as an ENV var, you might get a validation error like: "Variable value contains invalid characters". If you can not change the value of your ENV var, you can encode and decode those:
 
 
 ### Encode and decode ENV vars
 
-If you can not change the value of your ENV var, use a base64 encoded string and decode it when applying it to your config in your code. Encoding works like this:
+Use a base64 encoded string and decode it when applying it to your configuration in your code. Encoding works like this:
 
 ```php
 php -r "echo base64_encode('YOUR-M$Pa#A-VALUEx') . PHP_EOL;"
 ```
 
-And this should give you an idea how you can do the decoding: 
-
-* https://github.com/laravel/ideas/issues/416#issuecomment-280436034
+And [this example](https://github.com/laravel/ideas/issues/416#issuecomment-280436034) should give you an idea how you can do the decoding.
 
 
 
