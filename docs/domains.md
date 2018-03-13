@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-09-04
+reviewed:      2018-03-12
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -60,6 +60,11 @@ The trick is that you can route subdomains using `CNAME` records. By this you ar
 There are so called "naked", "APEX" or "root" domains. They have no prefix and look like so: `fortrabbit.com`. Some think that they are aesthetically more pleasing than their subdomain counterparts. But they don't play well as with cloud services — like ours. Naked domains should not be routed using a `CNAME` record; they should be routed using an `A`-Record. An domain routed to a an IP is static. It doesn't give us the flexibility to move your App around.
 
 Yes, naked domains may look more pleasing to the eye, but don't take this too serious. Look, all big players, like Google are using a www. subdomain, without that you ever noticed, most bigger sites you'll visit do as well. The Safari web browser doesn't even show the `www.` suffix any more. As long as the naked domain works and will forward all requests, don't bother too much.
+
+The www prefix is so common, you'll hardly hardly recognize it. Is Facebook with www? Is Google with www? Is Wikipedia with www? Do you know? Yes, they all are and you don't care. It's just the best way to deal with DNS. 
+
+We are providing a forwarding service, so that all requests on the naked domain will get forwarded to the www domain, even deeplinks and https links. So you can still print the naked domain on flyers or in your e-mail signature.
+
 
 
 #### Don't dos
