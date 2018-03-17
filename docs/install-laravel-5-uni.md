@@ -56,12 +56,12 @@ DB_USERNAME=${MYSQL_USER}
 
 ## Quick start
 
-Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-advanced-setup-and-migration). Execute the following in your terminal:
+Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-advanced-setup-and-migration). Execute the following in your terminal **on your local machine**:
 
 ```bash
 # 1. Use Composer to create a local Laravel project named like your App
 $ composer create-project laravel/laravel --prefer-dist {{app-name}}
-# this installs Laravel locally and will take a while
+# this installs Laravel with Composer locally and will take a while
 
 # 2. Change into the folder
 $ cd {{app-name}}
@@ -80,8 +80,7 @@ $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}
 
 # 7. Push changes to fortrabbit
 $ git push -u fortrabbit master
-# this will install Laravel on remote and take another while
-
+# this installs Laravel with Composer on remote and take while
 
 # the next deployments will be much faster
 # 8. Push from now on
