@@ -71,6 +71,9 @@ DB_SERVER=${MYSQL_HOST}
 DB_USER=${MYSQL_USER}
 DB_PASSWORD=${MYSQL_PASSWORD}
 
+# Align the prefix with the one you are using locally
+DB_TABLE_PREFIX=craft_
+
 # DB Driver
 DB_DRIVER=mysql
 ```
