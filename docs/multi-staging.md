@@ -54,7 +54,7 @@ $ git clone {{app-name}}@deploy.eu2.frbit.com:your-app-test.git {{your-app-test}
 $ cd {{app-name}}
 ```
 
-This first cloning will create the remote `origin` and clone the `master` branch to you local disk.
+This first cloning will create the remote `origin` and clone the `master` branch to your local disk.
 
 #### Add the other Apps
 

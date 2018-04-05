@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-02-27
+reviewed:         2018-03-20
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft 3 Beta/RC
 lead:             Note that this install guide is for the Craft 3 (pre-stable) version. If you don't feel confident using a pre-release <a href='/install-craft-2-uni'>head over to the Craft 2.6 install guide</a>.
@@ -71,6 +71,9 @@ DB_DATABASE=${MYSQL_DATABASE}
 DB_SERVER=${MYSQL_HOST}
 DB_USER=${MYSQL_USER}
 DB_PASSWORD=${MYSQL_PASSWORD}
+
+# Align the prefix with the one you are using locally
+DB_TABLE_PREFIX=craft_
 
 # DB Driver
 DB_DRIVER=mysql
