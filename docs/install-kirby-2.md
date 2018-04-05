@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-02-23
+reviewed:         2018-04-05
 title:            Install Kirby on fortrabbit
 naviTitle:        Install Kirby
 lead:             Kirby is a popular, file based CMS originated from Germany (YEAH!). Learn here how to install and tune Kirby on fortrabbit.
@@ -14,7 +14,7 @@ websiteLink:      https://getkirby.com/
 websiteLinkText:  getkirby.com
 category:         CMS
 image:            kirby-mark.png
-version:          2.5.8
+version:          2.5.10
 
 keywords:
     - getkirby
@@ -30,7 +30,7 @@ We assume you've already created an App. You have chosen "Any other PHP applicat
 
 We assume that you run [a local development environment](/local-development) where you do the main coding, before deploying or uploading changes to the fortrabbit App. At least have the Kirby "starterkit" downloaded, so that you have something to start with.
 
-### Choose your deployment workflow
+### Choose your deployment work-flow
 
 There are two main ways to deploy code here on fortrabbit: [Git](/git-deployment) and [SFTP](/sftp-uni). The general rule of thumb is, that content driven legacy applications, like [WordPress](/install-wordpress), are better uploaded in classical manner with SFTP. Modern PHP web frameworks that are based on [Composer](/composer) are mostly deployed with Git. 
 
@@ -83,6 +83,7 @@ $ git push
 ### An advanced way to use Git
 
 Advanced users might separate the content parts from the code parts and use Git to deploy the code parts and SSH/SFTP or maybe best `rsync` to manage the actual contents.
+
 
 
 ## Customization
