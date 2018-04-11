@@ -1,22 +1,22 @@
 ---
 
 template:         article
-reviewed:         2018-03-20
+reviewed:         2018-04-11
 title:            Install Craft CMS 3 on fortrabbit
-naviTitle:        Craft 3 Beta/RC
-lead:             Note that this install guide is for the Craft 3 (pre-stable) version. If you don't feel confident using a pre-release <a href='/install-craft-2-uni'>head over to the Craft 2.6 install guide</a>.
+naviTitle:        Craft 3
+lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
 group:            Install_guides
 stack:            uni
 proLink:          install-craft-3-pro
 
 dontList:         false
-workInProgress:   true
+workInProgress:   false
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.0-RC12
+version:          3.0.2
 
 keywords:
   - craft
@@ -45,7 +45,7 @@ If you selected Craft 3 in the software chooser, the root path is already set to
 First, have a local Craft CMS running. For this, create a new Craft project by using [Composer](/composer) like so: 
 
 ```
-$ composer create-project -s RC craftcms/craft {{app-name}}
+$ composer create-project craftcms/craft {{app-name}}
 ```
 
 Follow the [official Craft 3 install guide](https://github.com/craftcms/docs/blob/v3/en/installation.md) for more details.
@@ -187,7 +187,7 @@ $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 
 You can also do this with a MySQL GUI of course, please see our [MySQL guides](/mysql) for more on the topic.
 
-### Updating Craft
+## Updating Craft
 
 The latest Craft update is just a `composer update` away. When you run this command in the terminal **locally**, the output looks something like this: 
 
@@ -210,6 +210,10 @@ Some plugins or the Craft core include database migrations. Don't forget to run 
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 ```
 
+
+## Older versions of Craft
+
+We have an install guide for Craft Version 2 [over here](/install-craft-2-uni) as well.
 
 <!--
 

@@ -1,22 +1,22 @@
 ---
 
 template:         article
-reviewed:         2018-02-26
+reviewed:         2018-04-11
 title:            Install Craft CMS 3 on fortrabbit
-naviTitle:        Craft 3 Beta/RC
-lead:             Note that this install guide is for the Craft 3 (pre-stable) version. If you don't feel confident using a pre-release <a href='/install-craft-2-pro'>head over to the Craft 2.6 install guide</a>.
+naviTitle:        Craft 3
+lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
 group:            Install_guides
 stack:            pro
 uniLink:          install-craft-3-uni
 
 dontList:         false
-workInProgress:   true
+workInProgress:   false
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.0-RC11
+version:          3.0.2
 
 keywords:
     - craft
@@ -159,7 +159,7 @@ The latest Craft update is just a `composer update` away. When you run this comm
   Loading composer repositories with package information
   Installing dependencies (including require-dev) from lock file
   Package operations: 0 installs, 17 updates, 1 removal
-    - Updating craftcms/cms (3.0.0-RC7 => 3.0.0-RC12): Downloading (100%)
+    - Updating craftcms/cms (3.0.1 => 3.0.2): Downloading (100%)
     - Updating yiisoft/yii2 (2.0.13.1 => 2.0.14): Downloading (100%)
    [...]
     - Updating ostark/craft-async-queue (1.1.5 => 1.3.0):  Checking out c262aa5e21
@@ -177,4 +177,8 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 
 
 **That's it.** 
+
+## Older versions of Craft
+
+We have an install guide for Craft Version 2 [over here](/install-craft-2-pro) as well.
 

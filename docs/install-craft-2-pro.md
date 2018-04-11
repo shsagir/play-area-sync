@@ -4,7 +4,7 @@ template:         article
 reviewed:         2017-12-20
 title:            Install Craft CMS 2 on fortrabbit
 naviTitle:        Craft CMS
-lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
+lead:             The install guide for current version 3 is over <a href='/install-craft-3-pro'>here</a>.
 group:            Install_guides
 stack:            pro
 uniLink:          install-craft-2-uni
