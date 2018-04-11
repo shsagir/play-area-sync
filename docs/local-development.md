@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2017-12-20
+reviewed:     2018-04-06
 title:        Local development
 naviTitle:    Local development
 lead:         Why and how to set a local PHP development environment.
@@ -87,7 +87,7 @@ Our code examples in the [install guides](/#install-guides) always include check
 
 ### Multi-staging
 
-You might want to have a dedicated remote testing environment with pubic access? Head over to our advanced [multi-staging article](multi-staging).
+You might want to have a dedicated remote testing environment with public access? Head over to our advanced [multi-staging article](multi-staging).
 
 
 ### Apache instead of NginX
