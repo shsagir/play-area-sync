@@ -1,22 +1,24 @@
 ---
 
 template:         article
-reviewed:         2018-02-27
+reviewed:         2018-04-05
 title:            Install Symfony 4
-naviTitle:        Symfony 4
+naviTitle:        Symfony
 lead:             Symfony has been around for some while — but it doesn't look old. Learn how to install and tune Symfony 4 on fortrabbit.
 
 group:            Install_guides
 stack:            uni
 proLink:          install-symfony-4-pro
 
-workInProgress: true
-
 websiteLink:      https://symfony.com
 websiteLinkText:  symfony.com
 category:         framework
 image:            symfony-mark.png
 version:          4.0
+
+otherVersions:
+  3 : install-symfony-3-uni
+
 
 ---
 

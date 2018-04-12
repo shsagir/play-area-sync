@@ -15,6 +15,9 @@ version:          5.4
 stack:            pro
 uniLink:          install-laravel-5-uni
 
+otherVersions:
+   4 : install-laravel-4-pro
+
 keywords:
     - php
     - install

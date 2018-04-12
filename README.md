@@ -61,7 +61,7 @@ noToc: true
 # Stack meta
 
 # where to show this: uni, pro old, all — REQUIRED when required
-stack:     univ
+stack:     uni
 
 # link to the Universal App verison
 uniLink:   mysql-uni

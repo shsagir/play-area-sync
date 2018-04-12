@@ -16,6 +16,9 @@ group:            Install_guides
 stack:            pro
 deprecated:       yes
 
+otherVersions:
+   5 : install-laravel-5-pro
+
 keywords:
     - php
     - install

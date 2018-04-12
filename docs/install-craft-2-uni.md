@@ -15,6 +15,8 @@ category:         CMS
 image:            craft-cms-logo.png
 version:          2.6
 group:            Install_guides
+deprecated:       yes
+dontList:         true
 
 keywords:
     - craft

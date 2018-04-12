@@ -3,7 +3,7 @@
 template:         article
 reviewed:         2017-12-20
 title:            Install Craft CMS 2 on fortrabbit
-naviTitle:        Craft CMS
+naviTitle:        Craft
 lead:             The install guide for current version 3 is over <a href='/install-craft-3-pro'>here</a>.
 group:            Install_guides
 stack:            pro
@@ -15,6 +15,11 @@ category:         CMS
 image:            craft-cms-logo.png
 version:          2.6
 group:            Install_guides
+deprecated:       yes
+dontList:         yes
+
+otherVersions:
+   3 : install-craft-3-pro
 
 keywords:
     - craft
