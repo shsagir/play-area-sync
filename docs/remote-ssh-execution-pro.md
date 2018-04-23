@@ -104,7 +104,7 @@ Check out the [Laravel article](/install-laravel-5#toc-migrate-amp-other-databas
 
 A simple example which executes `my-script.php` remotely and write it's output into local `logs/output.log` file. This is the `gulpfile.js`:
 
-```js
+```
 'use strict'
 
 var fs = require('fs'),
