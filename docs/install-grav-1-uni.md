@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-01-03
+reviewed:         2018-04-23
 title:            Install Grav
 naviTitle:        Grav
 lead:             Grav is a popular, free, file based CMS based on Twig & Markdown. Learn here how to install and tune Grav on fortrabbit.
@@ -11,7 +11,7 @@ websiteLink:      https://getgrav.org?utm_source=fortrabbit
 websiteLinkText:  getgrav.org
 category:         CMS
 image:            grav-symbol.png
-version:          1.3.8, 1.4.0
+version:          1.4.2
 stack:            uni
 proLink:          install-grav-1-pro
 
@@ -62,5 +62,14 @@ debugger:
   enabled: true
 ```
 
+## Alternative workflow with Git
 
-<!-- TODO: write something on how to keep GRAV up date with local dev … link SYNC section of SFTP article -->
+You might be tempted to manage deploy Grav using Git. This is possible, but requires some planing ahead: As Grav is a file based CMS, code and content life very close together. It would be nice to have the content under version control as well, but what happens when you or the client is editing contents via the Admin plugin on the App directly? Remember: The [contents of the web storage are not the Git repo](deployment-methods-uni) and can not be synced back into it. So you can use these strategies:
+
+### Don't generate any content on the App itself
+
+This workflow is good when you — the developer - are using Grav for private development blog, or you collaborate with other developers who prefer to edit the contents directly in a text-editor locally. So you skip the admin plugin for good, keep Git and code in Git and deploy with Git to publish new articles.
+
+### Keep the contents out of Git
+
+You can also exclude the contents from Git. So you deploy only your theme and the templates by Git, while the contents can be edited on remote and synced via SSH or SFTP.
