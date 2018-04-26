@@ -136,14 +136,21 @@ Fine tune deployment configurations with the `fortrabbit.yml` deployment file: c
 
 You can also include your own private Composer repository as described [here](private-composer-repos).
 
-### Large files
+### Large Git repos
 
-We don't actively enforce a single file limit, but you should not put big binary files (> 2 MB) into your Git repo. This would bloat your repository and slow down deployment.
+A bloated Git repository slows down deployment. You might even hit our limits. In most cases the repo can and should be much smaller.
+
+#### Large files
+
+We don't actively enforce a single file limit, but you should not put big binary files (> 2 MB) into your Git repo.
 
 In general we also advice not to put assets and most importantly images or even videos in Git. Some images that are belonging to your website layout, like your company logo (a small SVG) are Ok. But when you have a lot of images in Git, odds are, that this is bad practice.
 
 For almost all cases, your uploaded content images (.jpg, .png, .gif) do not belong in Git. Remember that the Git repo and the web-space are different things here at fortrabbit, [Git is a one-way street here](/deployment-methods-uni#toc-git-works-only-one-way). The next user upload will not be in Git anyways. It's a good practice to **separate code from content** for many reasons. So we advice to deploy user uploads, static assets and other runtime data separated from the core code deployment done with Git. With Universal Stack you can use SFTP/SSH or rsync for this. With the Professional Stack you'll manage those assets on the [Object Storage](/object-storage) anyways.
 
+#### The hidden .git folder
+
+Git never forgets. It can bring back any content from any file, even deleted ones. To do so, it stores all the stuff in the hidden `.git` folder on top level of the repo. Over time that file can get big to. It can also contain unreachable blobs and other stuff you are not aware of. Depending on the situation, there are many to clean this up: delete files of a certain type, delete the history before a certain date, or even start again from the current state. 
 
 
 ### Deployment release package
