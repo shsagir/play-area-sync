@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-01-23
+reviewed:      2018-04-26
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -138,7 +138,12 @@ You can also include your own private Composer repository as described [here](pr
 
 ### Large files
 
-We don't actively enforce a file limit, but you should not put big binary files (> 2 MB) into your Git repo. It would bloat your repository and slows down deployment.
+We don't actively enforce a single file limit, but you should not put big binary files (> 2 MB) into your Git repo. This would bloat your repository and slow down deployment.
+
+In general we also advice not to put assets and most importantly images or even videos in Git. Some images that are belonging to your website layout, like your company logo (a small SVG) are Ok. But when you have a lot of images in Git, odds are, that this is bad practice.
+
+For almost all cases, your uploaded content images (.jpg, .png, .gif) do not belong in Git. Remember that the Git repo and the web-space are different things here at fortrabbit, [Git is a one-way street here](/deployment-methods-uni#toc-git-works-only-one-way). The next user upload will not be in Git anyways. It's a good practice to **separate code from content** for many reasons. So we advice to deploy user uploads, static assets and other runtime data separated from the core code deployment done with Git. With Universal Stack you can use SFTP/SSH or rsync for this. With the Professional Stack you'll manage those assets on the [Object Storage](/object-storage) anyways.
+
 
 
 ### Deployment release package
