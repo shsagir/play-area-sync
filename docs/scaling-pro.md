@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2018-04-27
 title:         Scaling
 naviTitle:     Scaling
 lead:          When and how to grow and shrink your Apps resources.
@@ -14,7 +14,6 @@ keywords:
 ---
 
 <!-- TODO: merge with PHP article (so all infos are together) -->
-
 
 One of the fortrabbit platform fundamentals is scalability – handle nearly any amount of visitors. Start with low resources and grow wild at any time, increase or decrease computing resources on demand. Each App on fortrabbit has multiple Components which can be scaled individually.
 

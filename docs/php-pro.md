@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2018-04-27
 title:         Using and scaling PHP
 naviTitle:     PHP
 lead:          PHP is — as you are probably aware — a popular web programming language. It's also the core Component here on fortrabbit. See here how to use and scale PHP.
@@ -124,9 +124,13 @@ The Dedicated PHP plans are the continuation of the Production level. They allow
 * If you come from PHP m: Choose medium processes
 * If you come from PHP l: Choose large processes
 
+You (might) have 3 GB Memory for your FPM processes. Now with this setting you can define how to use those. When you set this to 10, each process will have 300 MB. When you set this to 20 each process will have 150 MB. The best setting is defined by the type of your application (see [above](#toc-vertical-scaling)). Less is better of course, so you can run the App on more processes. More processes enable the App to "process" more parallel requests at the same time — handle more traffic. Our memory metrics in the Dashboard help you to see the memory usage of your App.
+
 Each dedicated PHP plan comes with a dedicated load balancer cluster, which we manage and which will scale automatically with your Apps demands.
 
 Besides the plans you can choose in the Dashboard we offer much larger plans. Please [contact us](mailto:sales@fortrabbit.com?subject=Scale+me+up!).
+
+
 
 
 ## PHP processes

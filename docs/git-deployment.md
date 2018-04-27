@@ -150,7 +150,7 @@ For almost all cases, your uploaded content images (.jpg, .png, .gif) do not bel
 
 #### The hidden .git folder
 
-Git never forgets. It can bring back any content from any file, even deleted ones. To do so, it stores all the stuff in the hidden `.git` folder on top level of the repo. Over time that file can get big to. It can also contain unreachable blobs and other stuff you are not aware of. Depending on the situation, there are many to clean this up: delete files of a certain type, delete the history before a certain date, or even start again from the current state. 
+Git never forgets. It can bring back any content from any file, even deleted ones. To do so, it stores all the stuff in the hidden `.git` folder on top level of the repo. Over time that file can get big to. It can also contain unreachable blobs and other stuff you are not aware of. Depending on the situation, there are many to clean this up: delete files of a certain type, delete the history before a certain date, or even start again from the current state.
 
 
 ### Deployment release package
