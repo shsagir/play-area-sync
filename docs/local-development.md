@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2018-04-06
+reviewed:     2018-04-29
 title:        Local development
 naviTitle:    Local development
 lead:         Why and how to set a local PHP development environment.
@@ -18,18 +18,22 @@ keywords:
 
 ## Problem
 
-fortrabbit [Apps](app) are made for production (live) or staging (review). They are not well suited for online development. The deployment is fast but still takes too long when developing rapid changing aspects of your App. Also, it is never a good idea to have your live application display errors and debugging informations.
+fortrabbit [Apps](app) are made for production (live) or staging (review). They are not well suited for online-only development. The deployment is fast but still takes too long when developing rapid changing aspects of your App. Also, it is never a good idea to have your live application display errors and debugging informations.
 
 
 ## Solution
 
-Set up a local PHP development environment so that your Apps can run on your local machine as well as remote on the fortrabbit. Our workflow is to run every live App locally under `{{app-name}}.dev`, while `{{app-name}}.frb.io` runs on fortrabbit, of course. To make this happen you need to have some open source software running:
+Set up a local PHP development environment so that your Apps can run on your local machine. Developing locally is by far the fastest way to see changes. Also, this way, you always have an up-to-date backup of your code.
+
+Browse and test your websites and web applications in the browser before deploying them to fortrabbit. Our workflow is to run the App locally under `{{app-name}}.dev`, while it runs under `{{app-name}}.frb.io` on fortrabbit. To make this happen you need to have some open source software running:
 
 * **Apache** – the webserver
 * **MySQL** – the database - [see dedicated article](/mysql) on remote usage
 * **PHP** – the server side scripting language
 * **Git** – the version control - [see dedicated article](/git)
 * **Composer** – the dependency manager for PHP - [see below](#toc-composer)
+
+A local PHP development environment is key for a successful App lifetime management and continuous deployment, not only on fortrabbit. With all of our install guides we expect you to have this.
 
 
 ## Setup
