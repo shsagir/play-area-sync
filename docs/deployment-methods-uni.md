@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Deployment methods"
 title:         "Deployment methods"
-reviewed:      2018-04-23
+reviewed:      2018-04-29
 excerpt:       "How Git, SSH & SFTP work side by side."
 group:         deployment
 stack:         uni
@@ -50,17 +50,17 @@ The different deployment methods work side by side. This articles explains how t
 
 Please keep in mind, that the Git repo is not the web storage. After you Git push, first the Git repo will be updated, then changes will be synchronized (overwrite but not delete) to the web storage. So the web storage contains:
 
-1. The latest changes from Git
+1. The latest Git changes synced in
 2. Changes from SFTP & SSH
 3. Uploads from website users
 
 ### Git works only one way
 
-Git is a one way street here. You can not `pull` the changes, which are made via SSH or SFTP, from the web storage back into your Git repo. While this might looks odd at first: this design keeps your Git repo clean of temporary, binary and other blob data. Use Git only for code deployment, not to manage all of your Apps runtime data. Separate code - managed in Git - from content - managed via SSH/SFTP.
+**Git is a one way street here and the only way is up.** You can not `pull` the changes, which are made via SSH or SFTP, from the web storage back into your Git repo. So you can upload something via SFTP and clone it down later via Git. While this might looks odd at first: this design keeps your Git repo clean of temporary, binary and other blob data. The diagram above visualizes this. Use Git only for code deployment, not to manage all of your Apps runtime data. Separate code - managed in Git - from content - managed via SSH/SFTP.
 
 ### Git push overwrite but not deletes
 
-The Professional Stack has atomic deployments. With the Universal Stack it's different, the contents from Git will be synced into the web space:
+The [Professional Stack](app-pro) has [atomic deployments](app-pro#toc-atomic-deployment). With the Universal Stack it's different, the contents from Git will be synced into the web space:
 
 When you push new changes via Git to your App Composer will be executed. In addition, user defined scripts (either specified via [deployment file](/deployment-file-v2) or [Composer scripts](https://getcomposer.org/doc/articles/scripts.md)) might also be executed. Resulting of the push and the executions, a temporary file set is generated and subsequently synchronized to your App's web storage. So, when accessing your App via SSH/SFTP, the web storage can contain files which are not in Git. 
 
@@ -72,4 +72,14 @@ The strategy applied in the synchronization is:
 
 ### Not all applications work well with Git
 
-Git deployment is great when your App skeleton has clean folder structure with exclude patterns and [Composer](/composer) support. [Laravel](/install-laravel) and [Symfony](/install-symfony) are poster childs for good Git support. [WordPress](/install-wordpress) and other CMS are not Git compatible, out-of-the-box (while good [hacks](install-wordpress-pro) are available).
+Git deployment is great when your App skeleton has clean folder structure with exclude patterns and [Composer](/composer) support. [Laravel](/install-laravel) and [Symfony](/install-symfony) are poster childs for good Git support. [WordPress](/install-wordpress) and other CMS are not Git compatible, out-of-the-box (while good [hacks](install-wordpress-pro) are available). [Craft 3](/install-craft) works well with Git and Composer.
+
+## Choosing a workflow
+
+You can mix deployment methods, but not interchange the different deployment methods. Choose your main deployment method upfront.
+
+Use the workflow that matches your skills and the requirements of the software you are using. In general we advice to work with Git, as it is: faster, more secure, it also includes an additional code backup with rollback and — with fortrabbit — Composer is also already integrated.
+
+## Mixing deployment methods
+
+It's not black and white either. When working with Git, you often will use some SSH/SFTP in addition — to deploy generated assets and manage user uploads for example. 
