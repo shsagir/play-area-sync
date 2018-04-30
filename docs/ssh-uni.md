@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-07-26
+reviewed:      2018-04-26
 title:         SSH
 naviTitle:     SSH
 lead:          Learn what you can do on the command line with fortrabbit Apps.
@@ -95,11 +95,8 @@ The above command assures that the remote folder `custom-plugin` contains exactl
 
 ### Using Composer
 
-Using [Git deployment](git-deployment) will trigger [Composer](composer) automatically. If you need to run Composer manually, just execute the following when logged in via SSH:
+Using [Git deployment](git-deployment) will trigger [Composer](composer) automatically. So usually, you don't need to run Composer on the App itself. Really. When you find yourself running Composer on the App itself, chances are that you are doing something wrong there. Think twice, ask us in doubt. If you still need to run Composer manually on the App, you can, please don't use `composer update`, that will cause memory problems in most cases. Use `composer install` instead. Again, running Composer directly on the App is for edge cases.
 
-```bash
-$ composer install
-```
 
 ## Limitations
 
