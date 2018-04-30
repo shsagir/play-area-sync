@@ -47,10 +47,7 @@ $ git push -u origin master
 # 6. Every deploy from now on
 $ git push
 ```
-After the first deployment is done, the Git repo will be synced into the Apps web space so that you can worship your work in the browser:
-[{{app-name}}.frb.io](https://{{app-name}}.frb.io) - Also see our specific install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
-
-### Continuous development
+After the first deployment is done, the Git repo will be synced into the Apps web space so that you can worship your work in the browser: [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 Next time you want to send changes to your App you can simply:
 
