@@ -21,7 +21,7 @@ We assume that you have: [Git installed](git) locally and know the basics. We fu
 
 ## Usage
 
-Each fortrabbit App comes with its own Git repo. Set this as a Git remote in your local Git working copy. To deploy just push your code to that remotes master branch.
+Each fortrabbit App comes with its own Git repo. Note that this repo is not located on the App's web storage itself, but on a separated deployment Node. Set your App's Git URL as a Git remote in your local Git working copy. To deploy just push your code to that remotes master branch. 
 
 ### Simple Git deployment workflow
 
@@ -47,7 +47,7 @@ $ git push -u origin master
 # 6. Every deploy from now on
 $ git push
 ```
-After the first deployment is done you can worship your work in the browser:
+After the first deployment is done, the Git repo will be synced into the Apps web space so that you can worship your work in the browser:
 [{{app-name}}.frb.io](https://{{app-name}}.frb.io) - Also see our specific install guides for [Laravel](/install-laravel), [Symfony](/install-symfony), [Craft CMS](/install-craft), [WordPress](/install-wordpress) …
 
 ### Continuous development
@@ -58,15 +58,10 @@ Next time you want to send changes to your App you can simply:
 $ git push
 ```
 
-
-
-
-
-
 ### Adding fortrabbit as a remote
 
 ```
-# Using Git already? Add fortrabbit as additional remote:
+# Using Git already? Add fortrabbit as an additional remote:
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 ```
 
@@ -78,7 +73,6 @@ To start with a complete new Git history, you can now reset your repository. Thi
 # Reset the remote repo (delete remote Git repo & vendor folder):
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com reset
 ```
-
 
 The reset operation is non-destructive, meaning: It does not generate a release. Thereby your live App continues to operate without any interruption. The new release will only be build on the next push (of your new code base). A repository reset also removes any sustained directory (the `vendor` folder, so a following [Composer](composer) install requires to download everything once again).
 
