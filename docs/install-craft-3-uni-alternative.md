@@ -239,30 +239,42 @@ You can set a MySQL table prefix in the `.env` file locally or in the ENV vars s
 DB_TABLE_PREFIX=craft_
 ```
 
-### Updating Craft with a Git workflow
+### Craft updates
 
-We assume that you are not going to update 
+From time to time a new minor Craft version will come out, like an update from 3.0.5 to 3.0.6. We recommend to always use the latest version for security reasons. Depending on your deployment workflow (see above), there are two ways to update Craft:
 
-The latest Craft update is just a `composer update` away. When you run this command in the terminal **locally**, the output looks something like this: 
 
-```plain
-  Loading composer repositories with package information
-  Installing dependencies (including require-dev) from lock file
-  Package operations: 0 installs, 17 updates, 1 removal
-    - Updating craftcms/cms (3.0.0-RC7 => 3.0.0-RC12): Downloading (100%)
-    - Updating yiisoft/yii2 (2.0.13.1 => 2.0.14): Downloading (100%)
-   [...]
-    - Updating ostark/craft-async-queue (1.1.5 => 1.3.0):  Checking out c262aa5e21
-    - Updating symfony/var-dumper (v3.4.3 => v3.4.4): Downloading (100%)
+#### A. Update Craft with a Git workflow
+
+Don't click the shiny update button in the interface. Don't follow [the official guides](https://docs.craftcms.com/v3/updating.html) here. User Composer instead! First update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**: 
+
+```shell
+# Make sure to be in the projects root folder (locally)
+$ composer update
+
+# The output looks something like this: 
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Package operations: 0 installs, 17 updates, 1 removal
+  - Updating craftcms/cms (3.0.0-RC7 => 3.0.0-RC12): Downloading (100%)
+  - Updating yiisoft/yii2 (2.0.13.1 => 2.0.14): Downloading (100%)
+ [...]
+  - Updating ostark/craft-async-queue (1.1.5 => 1.3.0):  Checking out c262aa5e21
+  - Updating symfony/var-dumper (v3.4.3 => v3.4.4): Downloading (100%)
 ```
 
 The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App's `master` branch. During the Git deployment we run `composer install` - this way your local composer changes get applied on the remote automatically.
 
-Some plugins or the Craft core include database migrations. Don't forget to run the following command after the updated packages are deployed:
+Some plugins or the Craft core may include database migrations. Don't forget to run the following command after the updated packages are deployed:
 
 ```bash
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 ```
+
+#### B. Update Craft with a SFTP workflow
+
+Just use the shiny update button interface. Follow [the official guides](https://docs.craftcms.com/v3/updating.html). You need to do that twice: Once for your local installation, once for the one on remote (ony your App).
+
 
 ### Dev Mode
 
