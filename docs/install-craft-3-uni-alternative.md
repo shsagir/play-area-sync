@@ -51,7 +51,7 @@ We assume that you have a PHP development environment with Apache, MySQL, PHP an
 
 Use the [official Craft 3 install guide](https://github.com/craftcms/docs/blob/v3/en/installation.md) as your guideline to install Craft on your local machine first.
 
-The way you do that will set the course on how you will deploy Craft CMS on fortrabbit. There are two ways to get Craft 3: A. via Composer or B. by download. Those ways are matching the different [deployment workflows - SFTP and Git](/deployment-methods) here on fortrabbit. Choose your workflow now:
+The way you do that will set the course on how you will deploy Craft CMS on fortrabbit. There are two ways to get Craft 3: A. via Composer or B. by download. Those ways are matching the different [deployment workflows](/deployment-methods) [SFTP](/sftp-uni) and [Git](/git-deployment) here on fortrabbit. Choose your workflow now:
 
 ### A. Install Craft with Composer + deploy with Git
 
