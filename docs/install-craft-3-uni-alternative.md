@@ -10,7 +10,6 @@ stack:            uni
 proLink:          install-craft-3-pro
 
 dontList:         yes
-workInProgress:   yes
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
@@ -265,7 +264,7 @@ Some plugins or the Craft core include database migrations. Don't forget to run 
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 ```
 
-## Dev Mode
+### Dev Mode
 
 Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the official Craft CMS docs for more details:
 
@@ -293,19 +292,32 @@ return [
 The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually locally).
 
 
-## Older versions of Craft
+### Older versions of Craft
 
-We have an install guide for Craft Version 2 [over here](/install-craft-2-uni) as well.
-
-<!--
-
-TBD: 
-
-* Is there no way to do SFTP with Craft 3? We should mentioned it, why not? DRAFT:
+We have an install guide for Craft Version 2 [over here](/install-craft-2-uni) as well, but recommend to use Craft 3 instead. Consider an upgrade when you have an old installation. 
 
 
-## Deploy with SFTP
+### Upgrading from Craft 2
 
-Terminal, Composer and Git are maybe not your thing? You just want to upload your Craft CMS using SFTP? Well, that's not so easy any more. Craft 3 depends on Composer to manage the dependencies. You might can upload your local SFTP and then execute Composer on the remote machine. But for that you'll also need to login via SSH and run commands in the Terminal.
+You already have Craft 2 CMS installed and you are now looking to upgrade it to version 3? Here is what you need to know. First of all, please read the official upgrade guide:
 
--->
+* [docs.craftcms.com/v3/upgrade.html](https://docs.craftcms.com/v3/upgrade.html)
+
+Craft 2 was way more simple. So we have recommended to use SFTP deployment. With Craft 3 many things are different, modern and more powerful. Just the way we like it:
+
+* configuration with `dotenv` files
+* new directory structure
+* Composer based workflow
+* Git support
+
+Now you have two options to upgrade from Craft 2 to Craft 3:
+
+#### 1. Quick update
+
+The above linked guide offer you a way to upgrade with as little intervention as possible. Go that route if you are looking a quick way to upgrade. Keep your current directory structure and continue the SFTP workflow. 
+
+#### 2. Full update
+
+So you want to make use Git and Composer and resemble the new Craft 3 directory structure? Then you best: Start a new Craft 3 project from scratch, import your templates, configs and contents.
+
+For more details on this workflow, see the [offcial guide](https://docs.craftcms.com/v3/upgrade.html#if-you-want-your-directory-structure-to-resemble-a-new-craft-3-project).
