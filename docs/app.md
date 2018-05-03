@@ -176,11 +176,11 @@ You can register your App to accept requests from any external domain you route 
 
 Per default all the [domains](/domains) of the App will route to the same root path (sometimes this is also called: document root, docroot or root folder): `htdocs`. This path is, where the first `index.php` will be called, when people are visiting your App on any domain. This path setting can vary, depending on what the framework or CMS you have selected in the software chooser when creating the App:
 
-| Framework/CMS                            | Root path     |
-| ---------------------------------------- | ------------- |
-| Laravel, Phalcon, Craft 2, Symfony 4     | htdocs/public |
-| Symfony 2, Symfony 3, Craft 3            | htdocs/web    |
-| Drupal 8, WordPress, Grav                | htdocs        |
+| Framework/CMS                                | Root path     |
+| -------------------------------------------- | ------------- |
+| Laravel, Phalcon, Craft 2, Symfony 4, Slim 3 | htdocs/public |
+| Symfony 2, Symfony 3, Craft 3                | htdocs/web    |
+| Drupal 8, WordPress, Grav                    | htdocs        |
 
 
 You can however set the root path afterwards at any given time by visiting the according setting in the Dashboard under your App.

@@ -4,7 +4,7 @@ template:         article
 reviewed:         2018-05-02
 title:            Install Craft CMS 3 on fortrabbit
 naviTitle:        Craft
-lead:             Craft is a CMS you and your clients love. Learn how to deploy Craft using Git on fortrabbit.
+lead:             Craft is a CMS you and your clients will love. Learn how to deploy Craft using Git or SFTP here on fortrabbit.
 group:            Install_guides
 stack:            uni
 proLink:          install-craft-3-pro
@@ -130,10 +130,12 @@ It's maybe there already. **Pro tip**: See below on how to [enable Dev Mode](#to
 
 Now it's time to show your great Craft website to the world for the first time. Deploy your local Craft CMS to fortrabbit. Start here if you already have an existing Craft installation.
 
+
+## Deploy Craft
+
 So depending on how you downloaded, Craft CMS, you'll now continue with either A. or B.:
 
-
-## A. Deploy with Git
+### A. Deploy with Git
 
 Use Git deployment when you have already used Composer to create your Craft installation. Trigger the following commands in your **local** terminal:
 
@@ -168,22 +170,11 @@ $ git push
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
-### Uploading assets in a Git workflow
+#### Uploading assets in a Git workflow
 
-<!-- TODO: 
-    Explain and link to what assets are, is it:
+Assets in Craft are the files that are managed by Craft, also see [the official Craft docs](https://docs.craftcms.com/v3/assets.html). Think: mostly user generated, uploaded files, mostly images. The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore) file excludes `/web/assets/*` from Git. Why? Because, code and content are separated and the assets uploaded to the App are [not represented in Git](https://help.fortrabbit.com/deployment-methods-uni#toc-git-works-only-one-way) anyways.
 
-    A: User Uploads
-    B: Minified CSS, JS and IMGs?
-    C: Both
-
-If it's A: briefly touch the topic of over-write but not delete sync strategy to explain why this is the case here.
-
--->
-
-The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore) file excludes this: `/web/assets/*`. So, all assets are excluded from Git and must be deployed independently. [SFTP](/sftp-uni#toc-accessing-sftp) is one way to to do it. 
-
-We recommend giving `rsync` on the command line a try, it's easier than think: 
+So when you deploy using Git here, the assets must be managed and deployed independently. [SFTP](/sftp-uni#toc-accessing-sftp) is one way to to do it. We recommend giving `rsync` on the command line a try. It's easier than you think: 
 
 ```
 # Sync local assets with remote
@@ -193,7 +184,7 @@ $ rsync -av ./web/assets/ {{app-name}}@deploy.{{region}}.frbit.com:~/web/assets/
 Our [rsync tutorial](https://blog.fortrabbit.com/deploying-code-with-rsync) covers many useful rsync options, like excludes, `--dry-run` and `--delete`.
 
 
-## B. Upload Craft CMS via SFTP
+### B. Upload Craft CMS via SFTP
 
 Use SFTP to upload your Craft website, when you started by downloading the archive file.
 
@@ -239,7 +230,7 @@ You can set a MySQL table prefix in the `.env` file locally or in the ENV vars s
 DB_TABLE_PREFIX=craft_
 ```
 
-### Craft updates
+### Updating Craft
 
 From time to time a new minor Craft version will come out, like an update from 3.0.5 to 3.0.6. We recommend to always use the latest version for security reasons. Depending on your deployment workflow (see above), there are two ways to update Craft:
 
@@ -263,9 +254,9 @@ Package operations: 0 installs, 17 updates, 1 removal
   - Updating symfony/var-dumper (v3.4.3 => v3.4.4): Downloading (100%)
 ```
 
-The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App's `master` branch. During the Git deployment we run `composer install` - this way your local composer changes get applied on the remote automatically.
+The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App. During the [Git deployment](/git-deployment), `composer install` will run automatically. This way your local composer changes get applied on the remote.
 
-Some plugins or the Craft core may include database migrations. Don't forget to run the following command after the updated packages are deployed:
+Some plugins or the Craft core may include database migrations. Don't forget to run the following SSH remote execution command after the updated packages are deployed:
 
 ```bash
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
@@ -333,3 +324,19 @@ The above linked guide offer you a way to upgrade with as little intervention as
 So you want to make use Git and Composer and resemble the new Craft 3 directory structure? Then you best: Start a new Craft 3 project from scratch, import your templates, configs and contents.
 
 For more details on this workflow, see the [offcial guide](https://docs.craftcms.com/v3/upgrade.html#if-you-want-your-directory-structure-to-resemble-a-new-craft-3-project).
+
+
+<!-- TODO:
+
+MISSING FOLDERS
+as by support request: what about an non-existing "storage" or "assets" folder?
+
+DOMAINS
+https://craftcms.com/support/site-url
+https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/480927/conversations/16114188408
+adding domains? which config needs to be changed in Craft?
+
+MULTI-SITE
+Multi-Site VS fortrabbit. what do we say here? https://docs.craftcms.com/v3/sites.html
+
+ -->
