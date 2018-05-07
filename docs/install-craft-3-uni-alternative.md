@@ -94,7 +94,6 @@ You can also run the installer in the browser by visiting this address: `http://
 **Wrap up**: By now your Craft CMS should already run locally. You should be able to visit your Craft installation on your local machine and login to the Craft admin panel.
 
 
-
 ## Deploy Craft CMS
 
 Now it's time to show your great Craft website to the world for the first time. Get your local Craft CMS up to fortrabbit. Start here if you already have an existing Craft installation. So depending on how you downloaded and installed Craft CMS, you'll now continue with either A. or B.:
@@ -136,7 +135,7 @@ $ git push
 
 #### Uploading assets in a Git workflow
 
-Assets in Craft are the files that are managed by Craft, also see [the official Craft docs](https://docs.craftcms.com/v3/assets.html). Think: mostly user generated, uploaded files, mostly images. The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore) file excludes `/web/assets/*` from Git. Why? Because, code and content are separated and the assets uploaded to the App are [not represented in Git](https://help.fortrabbit.com/deployment-methods-uni#toc-git-works-only-one-way) anyways.
+Assets in Craft are the files that are managed by Craft, also see [the official Craft docs](https://docs.craftcms.com/v3/assets.html). This user generated stuff, uploaded files, mostly images. The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore) file excludes `/web/assets/*` from Git. Why? Because, code and content are separated and the assets uploaded to the App are [not represented in Git](https://help.fortrabbit.com/deployment-methods-uni#toc-git-works-only-one-way) anyways.
 
 So when you deploy using Git here, the assets must be managed and deployed independently. [SFTP](/sftp-uni#toc-accessing-sftp) is one way to to do it. We recommend giving `rsync` on the command line a try. It's easier than you think: 
 
@@ -156,7 +155,7 @@ This workflow is so simple and common that it doesn't actually needs much explan
 
 - - -
 
-That's it basically. Thanks for following so far!
+That's it, basically. Thanks for following so far!
 
 ## Tuning
 
