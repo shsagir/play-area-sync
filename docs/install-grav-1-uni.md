@@ -73,3 +73,11 @@ This workflow is good when you — the developer - are using Grav for private de
 ### Keep the contents out of Git
 
 You can also exclude the contents from Git. So you deploy only your theme and the templates by Git, while the contents can be edited on remote and synced via SSH or SFTP.
+
+### Create a point of switch
+
+During initial development, everything is in Git, including content. This allows to control the base structure and copy while deciding on how pages might be broken down, what copy belongs in what area etc.
+
+Once it's ready to handover to the client, the user-editable content get's pulled out of Git. Simply leave it on the App's file system so it can be edited from that point on via Grav admin and not overwritten by Git. The fortrabbit backups are helping to keep things stored safely. 
+
+The rest of Grav stays in Git. Theme, plugin or core Grav udgrades are first done in local dev environment, then committed, and deployed.

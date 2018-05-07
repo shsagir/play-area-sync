@@ -1,10 +1,10 @@
 ---
 
 template:      article
-reviewed:      2018-02-12
+reviewed:      2018-05-07
 title:         Leveraging Composer
 naviTitle:     Composer
-lead:          No need to explain this anymore: Composer is the defacto standard to handle PHP application dependencies, as well as providing mechanisms to keep them up2date. Learn how to integrate Composer into your development workflow with fortrabbit.
+lead:          No need to explain this anymore: Composer is the defacto standard to handle PHP application dependencies, as well as providing mechanisms to keep them up-2-date. Learn how to integrate Composer into your development workflow with fortrabbit.
 group:         deployment
 stack:         all
 
@@ -31,11 +31,9 @@ Local         fortrabbit deploy service           Your fortrabbit App
 └────────┘    └────────────┘  └────────────┘      └──────────────┘
 ```
 
-The above drawing illustrates the fortrabbit architecture. When you deploy with Git, Composer will run **automatically** along within the deployment process. 
+The above drawing illustrates the fortrabbit architecture. When you deploy with Git, Composer will run **automatically** along within the deployment process on fortrabbit. 
 
-The `vendor` folder should NOT be in Git > make sure that folder ins included in your `.gitignore` file. This directory is created by Composer within in your project locally and contains all the packages you are using locally.
-
-Make sure that both the `composer.lock` file and the `composer.json` file are present and part of Git.
+The `vendor` folder should NOT be in Git > make sure that folder ins included in your `.gitignore` file. This directory is created by Composer within in your project locally and contains all the packages you are using locally. Make sure that both the `composer.lock` file and the `composer.json` file are present and part of Git.
 
 The deployment build process executes `composer install` (not update) to make sure that exactly the packages your App requires are installed.
 
@@ -57,7 +55,7 @@ version: 2
 # execute alternate composer run before anything
 pre: composer-run.php
 
-# makre sure the new vendor folder is sustained during deploys
+# make sure the new vendor folder is sustained during deploys
 sustained:
   - sub-folder/vendor
 ```
@@ -77,7 +75,7 @@ You need to add the private repositories into your `composer.json` file? Read on
 
 ## Composer from SSH
 
-Universal Apps only: While we recommend to leverage Composer with Git deployment (see above), you can also execute Composer when logged in via [SSH](ssh-uni). Composer is pre-installed. 
+Universal Apps only: While we recommend to leverage Composer with the Git deployment (see above), you can also execute Composer when logged in via [SSH](ssh-uni). Composer is pre-installed. 
 
 ```bash
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
@@ -87,3 +85,6 @@ $ composer install
 This way Composer will be executed within your Apps web delivery environment, which is not optimized for such tasks. Please don't use Composer update as this might cause Composer to hit the Apps memory limits.
 
 
+## Local Composer
+
+It's kinda mandatory that you have Composer running in your [local development environment](/local-development) as well. See the [offical Composer install guides](https://getcomposer.org/download/) on how to download and install Composer locally.

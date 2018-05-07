@@ -1,10 +1,10 @@
 ---
 
 template:     article
-reviewed:     2018-04-29
+reviewed:     2018-05-07
 title:        Local development
 naviTitle:    Local development
-lead:         Why and how to set a local PHP development environment.
+lead:         Why and how to set up a local PHP development environment.
 group:        deployment
 stack:        all
 
@@ -23,82 +23,77 @@ fortrabbit [Apps](app) are made for production (live) or staging (review). They 
 
 ## Solution
 
-Set up a local PHP development environment so that your Apps can run on your local machine. Developing locally is by far the fastest way to see changes. Also, this way, you always have an up-to-date backup of your code.
+Set up a local PHP development environment so that your Apps can run on your local machine. Developing locally is by far the fastest way to see changes quickly. Browse and test your websites and web applications in the browser before deploying them. Also, this way, you always have an up-to-date backup of your code. In other words: A local PHP development environment is key for a successful App lifetime management and continuous deployment.
 
-Browse and test your websites and web applications in the browser before deploying them to fortrabbit. Our workflow is to run the App locally under `{{app-name}}.dev`, while it runs under `{{app-name}}.frb.io` on fortrabbit. To make this happen you need to have some open source software running:
+### Required software
 
-* **Apache** – the webserver
+The following open source software should run in your local development environment:
+
+* **Apache** or NGNIX — a web server
 * **MySQL** – the database - [see dedicated article](/mysql) on remote usage
 * **PHP** – the server side scripting language
 * **Git** – the version control - [see dedicated article](/git)
-* **Composer** – the dependency manager for PHP - [see below](#toc-composer)
-
-A local PHP development environment is key for a successful App lifetime management and continuous deployment, not only on fortrabbit. With all of our install guides we expect you to have this.
-
+* **Composer** – the dependency manager for PHP - [see dedicated section](/composer#toc-local-composer)
 
 ## Setup
 
-There are multiple ways to get your local development stack up and running: You can use a prepared solution stack, bundled up and controlled by a user friendly GUI (best for beginners), you can set up what you need manually or you can box everything neatly into a [virtual machine](#toc-virtualization).
+There are multiple ways to get your local development stack up and running. Choose the one that best fits your skills and needs. Also, your Operating System (Windows, macOS or Linux) might affect your choice here:
 
-### GUIs
+### A local PHP server
+
+You can run a web server and PHP directly on your local machine. This is probably the quickest and easiest way to get up and running. Your options:
+
+#### GUIs
 
 These solution stacks are easy to handle through a graphical interface and they interfere with the rest of your system as little as possible. The most commonly used here are:
 
+* [MAMP](https://www.mamp.info/) GUI for Mac OS and Windows (free and paid version)
 * [XAAMP](https://www.apachefriends.org/index.html) GUI for Windows, Mac OS, Linux
-* [MAMP](https://www.mamp.info/) GUI for Mac OS and Windows
 
-Those don't include [Git](git) and [Composer](#toc-composer).
+Please mind that those don't include [Git](git) and [Composer](composer).
 
-### Manual setup
+#### Laravel Valet
 
-Well, it's all manual so you should attempt it only if you know what you are doing. To get you started, we looked up some helpful guides:
+This is an really easy-to-use local solution <del>just for</del> **not only** for Laravel developers on macOS. You have to install it with the Terminal. It's best installed with Homebrew and it requires Composer. The setup is easier than you think and it aligns with best practices of modern development. It bundles NGNIX, DnsMasq and some other magic to an easy to use CLI. 
 
-* [Manually install Apache, PHP, MySQL & Composer on Windows](http://heiswayi.github.io/http://heiswayi.github.io/manually-install-apache-php-mysql-composer-on-windows.html.html)
-* [Superuser: Manually install Apache PHP & MySQL on Windows](http://superuser.com/questions/748117/how-to-manually-install-apache-php-and-mysql-on-windows)
-* [PHP Dev on Mac OS X 10.10 (PHP, MySQL, Apache, Composer)](https://gist.github.com/suvozit/6dda7971e240f0a3f282)
+* [Offcial docs to install Laravel Valet](https://laravel.com/docs/valet)
+
+
+
+#### Manual setup
+
+You can also install and manage the software to run your local web server yourself. You'll find lot's of tutorials when Googling around.
 
 ### Virtualization
 
-Utilizing virtualization for development allows you better replication of your local setup across your team. Also having a everything stashed into a virtual machine very much nullifies any interference with your local host system. In a sentence: It keeps things clean.
+Utilizing a virtualization for development allows you better replication of your local setup across your team. Also having everything stashed into a virtual machine very much nullifies any interference with your local host system. It keeps things clean. There are two primary virtualization approaches for development:
 
-There are two primary virtualization approaches for development: [Desktop virtualization](https://en.wikipedia.org/wiki/Desktop_virtualization), for example [VirtualBox](https://www.virtualbox.org/) or [VMware](http://www.vmware.com/) or [container virtualization](https://en.wikipedia.org/wiki/Operating-system-level_virtualization), which means primarily [Docker](http://www.docker.com/) these days. There are a lot of fundamental difference between both approaches, but when considering development it boils down to: Desktop virtualization is easier to setup but eats up more resources - container virtualization is harder to setup, but once done easier to use and is very economical in terms of resource usage.
+#### Desktop virtualization
 
-Many developers today use VirtualBox controlled by [Vagrant](https://www.vagrantup.com/), which helps a lot when setting up reproducible development environments from scratch - or rather from config file. Many Laravel developers use [Homestead](https://laravel.com/docs/5.2/homestead), which builds upon Vagrant and simplifies Laravel development even further.
+[Desktop virtualization](https://en.wikipedia.org/wiki/Desktop_virtualization) is the classic way, it's likely easier to setup for novice users, but eats up more resources. Example VM applications are: [VirtualBox](https://www.virtualbox.org/)(free by Oracle) or [VMware](http://www.vmware.com/)(paid).
 
-Have a look at [Docker for Mac](https://docs.docker.com/docker-for-mac/) or [… for Windows](https://docs.docker.com/docker-for-windows/), it's on the rise.
+VirtualBox in combination controlled by [Vagrant](https://www.vagrantup.com/) helps a lot when setting up reproducible development environments from scratch - or rather from config file. Many Laravel developers use [Homestead](https://laravel.com/docs/5.2/homestead), which builds upon Vagrant and simplifies Laravel development even further.
 
-### Other solutions
+#### Container virtualization
 
-The Laravel guys came up with a easy-to-use solution just for Laravel developers on Mac OS called [Valet](https://laravel.com/docs/5.2/valet). If you fit that description then it's definitely worth looking into.
+[Container virtualization](https://en.wikipedia.org/wiki/Operating-system-level_virtualization) is harder to setup, but once done easier to use and is very economical in terms of resource usage. [Docker](http://www.docker.org/) is the goto tool. Have a look at [Docker for Mac](https://docs.docker.com/docker-for-mac/) or [for Windows](https://docs.docker.com/docker-for-windows/) on how to install and get started.
 
 ## Considerations
 
-What else you need to think about when setting up your local development environment.
+What else you need to think about when setting up your local development environment?
 
-### Composer
+### Virtual hosts
 
-You will most likely need Composer, as it is the one and only PHP dependency manager (besides PEAR, but who uses that anymore?):
-
-* **[Offical Composer install guides](https://getcomposer.org/download/)**
-* [Composer on Mac OS for MAMP](https://gist.github.com/kkirsche/5710272)
+By default your local development environment will likely be reached under: `localhost` or `127.0.0.1`. You might set up multiple vhosts to serve multiple websites from one machine at the same time. Our workflow is to run the App locally under `{{app-name}}.test`, while it runs under `{{app-name}}.frb.io` on fortrabbit. Please refer to the docs of your 
 
 ### Environment detection
 
-<!-- TODO: provide example, explain more - AND/OR - Maybe this is somewhere else already, maybe link texts …  -->
-
 Our code examples in the [install guides](/#install-guides) always include checks to detect if the App is running locally or on fortrabbit. You should consider this when developing your code - or rather setting up your configuration. For example: MySQL will need different credentials locally then on fortrabbit.
-
 
 ### Multi-staging
 
 You might want to have a dedicated remote testing environment with public access? Head over to our advanced [multi-staging article](multi-staging).
 
+### Apache instead of NGINX
 
-### Apache instead of NginX
-
-Some might prefer a NginX web-server over Apache as it is easier to configure. Mind that fortrabbit is using Apache, some features might not be compatible. You will find `.htaccess` examples in these articles which only work with Apache.
-
-
-### Virtual hosts
-
-You might set up multiple vhosts - not just `localhost` or `127.0.0.1` - to serve multiple websites from one machine.
+Some might prefer a NGINX web-server over Apache as it is easier to configure. Mind that fortrabbit is using Apache, some features might not be compatible. You will find `.htaccess` examples in these articles which will only work with Apache.
