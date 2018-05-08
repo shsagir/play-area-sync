@@ -9,6 +9,8 @@ lead:             October is a free, open-source, self-hosted CMS based on the L
 group:            Install_guides
 stack:            pro
 uniLink:          install-october-cms-uni
+deprecated:       yes
+dontList:         true
 
 websiteLink:      https://octobercms.com/?utm_source=fortrabbit
 websiteLinkText:  octobercms.com

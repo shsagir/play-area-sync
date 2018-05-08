@@ -86,7 +86,7 @@ deprecated: 1
 # (use underscore instead of space)
 group: Extending_fortrabbit
 
-# don't show in list on homepage
+# don't show in list on homepage ()
 dontList: true
 
 # do not include in search, don't show in search results

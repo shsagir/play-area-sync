@@ -10,12 +10,16 @@ lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C
 group:            Install_guides
 stack:            pro
 deprecated:       yes
+dontList:         true
+
 
 websiteLink:      https://phalconphp.com/en/?utm_source=fortrabbit
 websiteLinkText:  phalconphp.com
 category:         framework
 image:            phalcon-mark.png
 version:          2
+
+
 
 otherVersionLinks:
     - install-slim-phalcon-3

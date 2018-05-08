@@ -8,6 +8,8 @@ lead:             Looking for sPHPeed? Phalcon is a web framework delivered as C
 group:            Install_guides
 stack:            pro
 uniLink:          install-phalcon-3-uni
+deprecated:       yes
+dontList:         true
 
 websiteLink:      https://phalconphp.com/en/?utm_source=fortrabbit
 websiteLinkText:  phalconphp.com

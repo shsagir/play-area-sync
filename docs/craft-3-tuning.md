@@ -3,18 +3,15 @@
 template:         article
 reviewed:         2018-05-07
 title:            Tune Craft CMS
-naviTitle:        Tune Craft CMS
-lead:             
+naviTitle:        Tune Craft
+lead:             Learn how to tweak Craft CMS and tackle problems.
 group:            craft
 stack:            all
-
-dontList:         no
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.5
 
 keywords:
   - craft
@@ -24,30 +21,6 @@ keywords:
 
 ---
 
-
-Learn how to tweak Craft CMS and tackle problems.
-
-## Database export and import
-
-Database migrations are first-class citizen in Craft 3. Using this pattern keeps changes consistent across all environments. However, this does not help with the actual data which is stored locally already. To get started, you'll need to export a mysqldump first and then import that into your Apps database. Here is how to this in the Terminal:
-
-```bash
-# On your local machine
-$ mysqldump -ulocal-db-user -plocal-db-password local-db-name > dump.sql
-```
-
-Now you need to open a tunnel and import the just created dump file into your remote database. This requires two terminal windows: One containing the open tunnel, the other to execute the import.
-
-```bash
-# Open the tunnel
-$ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@deploy.{{region}}.frbit.com
-
-# !!! in a new terminal window !!!
-# Import the dump
-$ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
-```
-
-You can also do this with a MySQL GUI of course, please see our [MySQL guides](/mysql) for more on the topic.
 
 ## Table prefixes
 
@@ -60,11 +33,11 @@ DB_TABLE_PREFIX=craft_
 
 ### Updating Craft
 
-From time to time a new minor Craft version will come out, like an update from 3.0.5 to 3.0.6. We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. Depending on your deployment workflow (see above), there are two ways to update Craft:
+From time to time a new minor Craft version will come out, like an update from 3.1.5 to 3.1.6. We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. Depending on your deployment workflow — [Git](/craft-3-deploy-with-git-uni) or [SFTP](/craft-3-upload-with-sftp) — there are two ways to update Craft:
 
 #### A. Update Craft with a Git workflow
 
-Don't click the shiny update button in the interface. Don't follow [the official guides](https://docs.craftcms.com/v3/updating.html) here. User Composer instead! First update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**: 
+Don't click the shiny update button in the interface. Don't follow [the official guides](https://docs.craftcms.com/v3/updating.html). Use Composer instead! First update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**: 
 
 ```shell
 # Make sure to be in the projects root folder (locally)

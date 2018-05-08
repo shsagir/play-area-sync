@@ -3,12 +3,10 @@
 template:         article
 reviewed:         2018-05-07
 title:            Install Craft CMS locally
-naviTitle:        Craft
-lead:             Craft is a CMS you and your clients will love. Learn how to install Craft CMS locally and deploy it here on fortrabbit.
+naviTitle:        Install Craft locally
+lead:             Craft is a CMS you and your clients will love. Learn how to install Craft CMS locally, matching your deployment workflow.
 group:            craft
 stack:            all
-
-dontList:         no
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
@@ -27,6 +25,11 @@ keywords:
 
 ---
 
+## Get ready
+
+1. Make sure to have a [local development environment](/local-development) up and running.
+
+## Choose your workflow
 
 Use the detailed [official Craft 3 install guide](https://github.com/craftcms/docs/blob/v3/en/installation.md) as your guideline to install Craft on your local machine first. The way you do that will set the course on how you will [deploy](/deployment-methods) Craft CMS here on fortrabbit. **Choose your workflow now**, a or b?
 
