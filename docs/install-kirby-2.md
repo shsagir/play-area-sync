@@ -22,13 +22,7 @@ keywords:
 
 ---
 
-## Get ready
-
-We assume you've already created an App. You have chosen "Any other PHP application" in the software stack chooser. Kirby does not need any special configuration, so it just works out of the box with the fortrabbit default settings. If not: You can do so in the [fortrabbit Dashboard](/dashboard). 
-
-### Have a local installation
-
-We assume that you run [a local development environment](/local-development) where you do the main coding, before deploying or uploading changes to the fortrabbit App. At least have the Kirby "starterkit" downloaded, so that you have something to start with.
+At least have the Kirby "starterkit" downloaded, so that you have something to start with.
 
 ### Choose your deployment work-flow
 

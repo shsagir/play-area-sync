@@ -28,25 +28,6 @@ keywords:
 
 ---
 
-## Get ready
-
-
-### Create an App
-
-We assume you've already created an App and chose Craft CMS 3 in the software stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). 
-
-#### Set the Apps root path
-
-If you have selected the Craft 3 preset in the software chooser - while setting up the App on fortrabbit - the root path is already set to **web** for Craft 3. In the Dashboard you can verify the current settings and [modify the root path](/app#toc-root-path) of your [domains](/domains) if needed. 
-
-<div markdown="1" data-user="known">
-[Change the root path for App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
-</div>
-
-### Run a local web server with PHP
-
-You have a PHP development environment with Apache, MySQL, PHP and Git setup and running on your local machine? Haven't you? This is crucial, because you first will install Craft locally. Find more details on how to do that in our [local development article](local-development).
-
 
 ## Download and install Craft CMS locally
 

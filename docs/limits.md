@@ -106,7 +106,7 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 **Description**: Each App has an included traffic (transfer / bandwidth) amount which can be found in the specs - (see the [Universal specs](http://www.fortrabbit.com/specs#storage-and-traffic) & [Professional specs](http://www.fortrabbit.com/specs-pro#storage-and-traffic)).
 
-**Solution**: Once that limit is exceeded, we will charge per additional 5GB or part thereof, as described in the above linked specs page.
+**Solution**: Once that limit is exceeded, we will charge per additional 5GB or part thereof, as described in the above linked specs page. High traffic is often caused by videos or images. Images are often not compressed well enough and videos are big by definition. An alternative way to set delivery of static assets is by using a pull-CDN or by completely outsourcing the static files, either to image and video hosting service, or to a cloud storage like AWS S3, for the Professional Stack we are offering the Object Storage.
 
 - - -
 
