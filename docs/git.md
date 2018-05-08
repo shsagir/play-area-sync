@@ -47,17 +47,11 @@ To successfully use fortrabbit you should be familiar with Git standard operatio
 
 ## Install Git
 
-To use Git, you need to have it installed on your local machine. You might already have Git: open a terminal window and type `git --version`.
-
-
-### Git on Mac Os & Linux
-
-Good news: you most likely already have it installed.
-
+To use Git, you need to have it installed on your local machine. You might already have Git: open a terminal window and type `git --version`. Good news for macOS and Linux users: you most likely already have it installed.
 
 ### Git on Windows
 
-Good news: you can work it out. The primary problem you have to solve is: which Git distribution are you going to use. There are multiple of those floating around, we recommend to download and install Git from the **[official Git website](https://git-scm.com/downloads)**. This one comes with the "Git Bash".
+You can work it out. The primary problem you have to solve is: which Git distribution are you going to use. There are multiple of those floating around, we recommend to download and install Git from the **[official Git website](https://git-scm.com/downloads)**. This one comes with the "Git Bash".
 
 * [Stack Overflow: Difference between Gits for Windows](http://stackoverflow.com/questions/22310007/differences-between-git-scm-msysgit-git-for-windows)
 * [Beanstalk Git Windows install guides with SSH key setup](http://guides.beanstalkapp.com/version-control/git-on-windows.html#installing-Git)
