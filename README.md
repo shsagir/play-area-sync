@@ -82,6 +82,10 @@ reviewed: 2017-12-20
 deprecated: 1
 
 
+# show that this is work in progress
+workInProgress: yes
+
+
 # Under which headline the content will be shown on home
 # (use underscore instead of space)
 group: Extending_fortrabbit

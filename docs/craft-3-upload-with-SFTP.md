@@ -7,7 +7,6 @@ naviTitle:        Upload Craft with SFTP
 lead:             Are you more "web designer" and less a "web developer"? Learn how to upload Craft in a classical way using SFTP. 
 group:            craft
 stack:            uni
-proLink:          install-craft-3-pro
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
@@ -22,21 +21,28 @@ keywords:
 
 ---
 
-## Prerequisite
+## Get ready
 
-Make sure you to have this done before starting here:
+Make sure you to have completed all steps in the [get ready guide](/get-ready) and have a [Craft installed and running locally](/craft-3-install-locally). This guide here follows the easiest path to get Craft running on fortrabbit, we also have a better but more advanced workflow to [deploy Craft with Git](/craft-3-deploy-with-git-uni) here.
 
-1. Complete all steps in the [get ready guide](/get-ready).
-2. Download and unpack the latest Craft zip file from here: [craftcms.com/latest-v3.zip](https://craftcms.com/latest-v3.zip)
-3. Have [Craft installed and running locally](/craft-3-install-locally).
+## Upload Craft with SFTP
 
-_PSSST_: We also have advanced ways to [deploy Craft with Git](/craft-3-deploy-with-git-uni).
+This workflow is so simple and common that it doesn't actually needs much explanations, everybody and his dog knows [how to use SFTP](/sftp). Just grab your personal SFTP login credentials from the Dashboard. Use any SFTP client. Upload all contents of your local Craft folder into the `htdocs` folder of your fortrabbit App. Don't forget the hidden `.htaccess` file. Leave the other hidden `.env` file — which is only for your local development — at home.
 
-## 
+**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting) and our [SFTP guide](/sftp).
 
-SFTP also works here. Just download Craft directly from the Craft website: [craftcms.com/latest-v3.zip](https://craftcms.com/latest-v3.zip). Unpack that zip file to get to the actual project files.
+## No configuration required
 
-Use SFTP to upload your Craft website, when you started by downloading the archive file.
+It is assumed that you have chosen Craft in software chooser while you have created the App on fortrabbit. In this case all the required settings (ENV vars and root path) to make Craft run on fortrabbit are already set.
 
-This workflow is so simple and common that it doesn't actually needs much explanations. Just grab your personal SFTP login credentials from the Dashboard. Use any SFTP client. Upload all contents of your local Craft folder into the `htdocs` folder of your fortrabbit App. 
 
+## Import the database
+
+Now, unless your database is completely empty, you want to import your local database up to the one on fortrabbit. Please see our [mysql export & import guide](/mysql#toc-export-amp-import) on how to do that.
+
+
+- - -
+
+Now, that should be it. Finally you should be able to visit your App in the browser:
+
+* [{{app-name}}.frb.io](https://{{app-name}}.frb.io)

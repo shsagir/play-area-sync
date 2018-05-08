@@ -7,13 +7,13 @@ naviTitle:        Deploy Craft with Git
 lead:             Learn how to deploy Craft CMS to fortrabbit using Git for the code base and rsync for the runtime data. 
 group:            craft
 stack:            uni
-proLink:          install-craft-3-pro
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
 version:          3.0.5
+proLink:          craft-3-deploy-with-git-pro
 
 otherVersions:
     2.6 : install-craft-2-uni
@@ -26,9 +26,9 @@ keywords:
 
 ---
 
-## Prerequisite
+## Get ready
 
-For best the results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/install-craft-locally). This guide is for advanced users: [Git](/git) and [Composer](/composer) are used from the terminal. There is a more simple guide to install Craft using SFTP [over here](/craft-3-upload-with-sftp).
+For best results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/install-craft-locally). This guide is for advanced users: [Git](/git) and [Composer](/composer) are used from the terminal. There is a more simple guide to install Craft using SFTP [over here](/craft-3-upload-with-sftp).
 
 ## Deploy the code base with Git
 
@@ -59,14 +59,12 @@ $ git push -u fortrabbit master
 $ git push
 ```
 
-**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, finally you can visit your fortrabbit Craft App in your browser:
-
-* [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
+**Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting) and our [Git guide](/git).
 
 
-## Uploading assets with rsync
+## Upload assets with rsync
 
-Assets in Craft are the files that are managed by Craft, also see [the official Craft docs](https://docs.craftcms.com/v3/assets.html). This user generated stuff, uploaded files, mostly images. The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore) file excludes `/web/assets/*` from Git. Why? Because, code and content are separated and the assets uploaded to the App are [not represented in Git](https://help.fortrabbit.com/deployment-methods-uni#toc-git-works-only-one-way) anyways.
+Assets in Craft are the files that are managed by Craft. This is the user generated stuff, uploaded files, mostly images — also see [the official Craft docs](https://docs.craftcms.com/v3/assets.html) on that. The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore) file excludes `/web/assets/*` from Git. Why? Because, code and content are separated and the assets uploaded to the App are [not represented in Git](https://help.fortrabbit.com/deployment-methods-uni#toc-git-works-only-one-way) anyways.
 
 So when you deploy using Git here, the assets must be managed and deployed independently. [SFTP](/sftp-uni#toc-accessing-sftp) is one way to to do it. We recommend giving `rsync` on the command line a try. It's easier than you think: 
 
@@ -83,4 +81,8 @@ Now, unless your database is completely empty, you want to import your local dat
 
 - - -
 
-That should be it. Now you have a local Craft  and push and sync it to your fortrabbit using Git and rsync.
+That should be it for now. Now you have a local Craft for quick development. You can push new code changes up and sync the assets with rsync. Visit your fortrabbit Craft App in your browser:
+
+* [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
+
+Continue with our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.

@@ -19,9 +19,9 @@ version:          3.10
 
 ## Get ready
 
-We assume you've already created a new App. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
+For best results here, make sure you have completed all steps from the [get ready guide](/get-ready).
 
-### Root path
+## Root path
 
 Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
 

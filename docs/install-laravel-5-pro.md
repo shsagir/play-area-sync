@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-04-23
+reviewed:         2018-05-07
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -28,30 +28,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created an [App](/app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
-
-
-### Set the Apps root path
-
-If you haven't already (the stack chooser does that for you) - in the Dashboard: [Set the root path](/app#toc-root-path) of your App's domains to **public**.
-
-<div markdown="1" data-user="known">
-[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
-</div>
-
-### Add the application key
-
-If you haven't already (the stack chooser does that for you) - in the Dashboard: Add an application key as a new as an [environment variable](/env-vars) named `APP_KEY` to your App. You can use this:
-
-```osterei32
-APP_KEY=ClickToGenerate
-```
-
-<div markdown="1" data-user="known">
-[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
-</div>
-
-
+Please make sure to have followed our [get ready guide](/get-ready) before starting here. You will also need a local Laravel installation.
 
 ## Quick start
 

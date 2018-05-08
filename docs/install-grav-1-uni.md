@@ -19,8 +19,7 @@ proLink:          install-grav-1-pro
 
 ## Get ready
 
-We assume you've already created an [App](app) and chose WordPress in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
-
+For best results here, make sure you have completed all steps from the [get ready guide](/get-ready).
 
 ## Quick start
 

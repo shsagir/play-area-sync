@@ -12,6 +12,7 @@ websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
 version:          5.4
+deprecated:       yes
 stack:            uni
 proLink:          install-laravel-5-pro
 
@@ -22,37 +23,9 @@ keywords:
 
 ---
 
-
 ## Get ready
 
-We assume you've already created an [App](/app) and chose Laravel in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine. If you haven't chosen Laravel stack when creating the App in the Dashboard at first, please set the following:
-
-### Root path
-
-Go to the Dashboard and [set the root path](/app#toc-root-path) of your App's domains to **public**.
-
-<div markdown="1" data-user="known">
-[Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
-</div>
-
-### ENV vars
-
-Go to the Dashboard and add the following [environment variables](/env-vars) to your App:
-
-```osterei32
-APP_KEY=ClickToGenerate
-APP_ENV=production
-DB_DATABASE=${MYSQL_DATABASE}
-DB_HOST=${MYSQL_HOST}
-DB_USER=${MYSQL_USER}
-DB_PASSWORD=${MYSQL_PASSWORD}
-DB_PORT=${MYSQL_PORT}
-DB_USERNAME=${MYSQL_USER}
-```
-
-<div markdown="1" data-user="known">
-[Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
-</div>
+Please make sure to have followed our [get ready guide](/get-ready) before starting here. You will also need a local Laravel installation.
 
 ## Quick start
 
