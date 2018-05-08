@@ -9,7 +9,7 @@ group:            Install_guides
 stack:            uni
 proLink:          install-craft-3-pro
 
-dontList:         false
+dontList:         true
 workInProgress:   false
 
 websiteLink:      https://craftcms.com/

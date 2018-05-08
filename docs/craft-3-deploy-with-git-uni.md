@@ -2,14 +2,14 @@
 
 template:         article
 reviewed:         2018-05-07
-title:            Install Craft CMS 3 on fortrabbit
+title:            Deploy Craft CMS with Git 
 naviTitle:        Craft
-lead:             Craft is a CMS you and your clients will love. Learn how to install Craft CMS locally and deploy it here on fortrabbit.
-group:            Install_guides
+lead:             Learn how to deploy Craft CMS to fortrabbit using Git foe th code base and rsync for runtime data. 
+group:            craft
 stack:            uni
 proLink:          install-craft-3-pro
 
-dontList:         yes
+dontList:         no
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
@@ -28,61 +28,19 @@ keywords:
 
 ---
 
+## Prerequisite
 
-## Download and install Craft CMS locally
+For the best results make sure you to have this done:
 
-Use the detailed [official Craft 3 install guide](https://github.com/craftcms/docs/blob/v3/en/installation.md) as your guideline to install Craft on your local machine first. The way you do that will set the course on how you will [deploy](/deployment-methods) Craft CMS here on fortrabbit. **Choose your workflow now**:
+1. Have completed all steps from the [get ready guide](/get-ready).
+2. Have a [Craft 3 installed and running locally](/install-craft-locally).
+3. Have installed [Craft using Composer](/install-craft-locally#toc-composer)
 
-### Download Craft CMS
+If you have just installed Craft locally by downloading the zip file, maybe better upload Craft with SFTP.
 
-#### 1a. Download Craft with Composer + deploy with Git
+## Deploy Craft CMS with Git
 
-This is the recommended - more sophisticated - way. You will use [Git](/git) and [Composer](/comoser#toc-local-composer) in the Terminal. Run this command **on you local machine** to create a Craft 3 project:
-
-```
-$ composer create-project craftcms/craft {{app-name}}
-```
-
-See an error? Check your [local development](/local-development).
-
-#### 1b. Download the Craft zip file + upload with SFTP
-
-Are you more "designer" and less "developer"? SFTP also works here. Just download Craft directly from the Craft website: [craftcms.com/latest-v3.zip](https://craftcms.com/latest-v3.zip). Unpack that zip file to get to the actual project files.
-
-
-### Install Craft CMS locally
-
-Craft 3 uses environment variables to access environment specific settings. With your fortrabbit Craft App, those variables are already set. Configure it to work on your local machine now. You have two options to install Craft:
-
-#### 2a. Terminal setup
-
-```
-# 1. go into your local Craft folder 
-$ cd {{app-name}}
-
-# 2. run the terminal installer
-$ ./craft setup
-```
-
-This will ask you some questions, the defaults will work mostly, you can change these settings [later](#toc-mastering-the-env-file).
-
-#### 2b. Browser setup
-
-You can also run the installer in the browser by visiting this address: `http://{{host}}/index.php?p=admin` in your browser. Substitute `{{host}}` with the [host name of your local development environment](/local-development#toc-virtual-hosts). 
-
-- - -
-
-**Wrap up**: By now your Craft CMS should already run locally. You should be able to visit your Craft installation on your local machine and login to the Craft admin panel.
-
-
-## Deploy Craft CMS
-
-Now it's time to show your great Craft website to the world for the first time. Get your local Craft CMS up to fortrabbit. Start here if you already have an existing Craft installation. So depending on how you downloaded and installed Craft CMS, you'll now continue with either A. or B.:
-
-### 3a. Deploy with Git
-
-Use Git deployment when you have already used Composer to create your Craft installation. Trigger the following commands in your **local** terminal:
-
+Trigger the following commands in your **local** terminal:
 
 ```
 # 1. Initialize Git (when not already done)
@@ -114,7 +72,7 @@ $ git push
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
-#### Uploading assets in a Git workflow
+### Uploading assets with rsync
 
 Assets in Craft are the files that are managed by Craft, also see [the official Craft docs](https://docs.craftcms.com/v3/assets.html). This user generated stuff, uploaded files, mostly images. The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore) file excludes `/web/assets/*` from Git. Why? Because, code and content are separated and the assets uploaded to the App are [not represented in Git](https://help.fortrabbit.com/deployment-methods-uni#toc-git-works-only-one-way) anyways.
 
@@ -126,15 +84,6 @@ $ rsync -av ./web/assets/ {{app-name}}@deploy.{{region}}.frbit.com:~/web/assets/
 ```
 
 Our [rsync tutorial](https://blog.fortrabbit.com/deploying-code-with-rsync) covers many useful rsync options, like excludes, `--dry-run` and `--delete`.
-
-
-### 3b. Upload Craft CMS via SFTP
-
-Use SFTP to upload your Craft website, when you started by downloading the archive file.
-
-This workflow is so simple and common that it doesn't actually needs much explanations. Just grab your personal SFTP login credentials from the Dashboard. Use any SFTP client. Upload all contents of your local Craft folder into the `htdocs` folder of your fortrabbit App. 
-
-- - -
 
 That's it, basically. Thanks for following so far!
 
