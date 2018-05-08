@@ -23,7 +23,7 @@ The folder _WIP contains — as you might can guess — work in progress. All in
 ### File name conventions
 
 * use dashes instead of spaces or lowdashes for filen ames
-* use the short versions: `-uni`, `-pro`, `-old` on the end for different stacks
+* use the short versions: `-uni`, `-pro` on the end for different stacks
 
 
 
@@ -195,6 +195,8 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 ## Maintainability
 
 Find the right balance between being general and being precise (aka Captain Obvious). Very detailed step-by-step articles are easy to follow but get outdated very quickly. Don't "bury" numbers (like prices and limits) in articles. All those numbers must be managed in the "pricing" and the "specs" page.
+
+Keep it DRY! Don't repeat yourself. Don't cover the same topic on different places. Just link to the location where it best suits. 
 
 ## Link checking
 
