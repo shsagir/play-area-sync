@@ -13,19 +13,10 @@ Found a typo or an error? Do you want to add something about your framework or s
 
 Do you run a 3rd party service or an open source project that can be integrated with fortrabbit? You are also more than welcome to add it.
 
-
-### _WIP
-
-The folder _WIP contains — as you might can guess — work in progress. All infos in there are subject to major errors. Please contribute!
-
-
-
 ### File name conventions
 
-* use dashes instead of spaces or lowdashes for filen ames
+* use dashes instead of spaces or lowdashes for file names
 * use the short versions: `-uni`, `-pro` on the end for different stacks
-
-
 
 ### Front Matter syntax
 
@@ -36,7 +27,6 @@ Each markdown file requires a yaml block at the top. See here which attributes a
 
 # which template to use - "article", if in doubt — REQUIRED
 template: article
-
 
 
 # Headline & display
@@ -81,16 +71,14 @@ reviewed: 2017-12-20
 # set a warning that this article is outdated, no matter the date
 deprecated: 1
 
-
 # show that this is work in progress
 workInProgress: yes
 
-
-# Under which headline the content will be shown on home
+# Set under which headline the content will be shown on home
 # (use underscore instead of space)
 group: Extending_fortrabbit
 
-# don't show in list on homepage ()
+# don't show in list on homepage
 dontList: true
 
 # do not include in search, don't show in search results
@@ -100,7 +88,6 @@ dontIndex: true
 keywords:
     - foo
     - bar
-
 
 # Extended meta data
 
@@ -121,12 +108,10 @@ type:  CMS
 
 ```
 
-
 ## Horizontal rulers
 
 * `---` don't use this, otherwise the whole help page won't be rendered
 * `- - -` use this
-
 
 ## Dynamic help
 
@@ -139,7 +124,6 @@ Your app: {{app-name}}
 ```
 
 It will dynamically show the correct code examples and Dashboard links.
-
 
 ## Dashboard links
 
@@ -156,6 +140,8 @@ You can have certain parts in Markdown available only for Users who are logged i
 This parses markdown inside the DIV. With the data-user attribute it checks if the user is logged in. links to the Dashboard will be styled as buttons — use a verb to start them!
 
 
+# Writing conventions
+
 ## Code examples
 
 * try to keep code examples together in one block, avoid mixing paragraphs and code blocks
@@ -166,19 +152,6 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 * show output only when necessary
 * output should be a comment
 * `$` to start a command
-
-### PHP
-
-* when there is code between use: `other code …`
-
-
-## Install guide skeleton
-
-* file name: `install-wordpress-uni`
-* Dashboard settings first
-* Mini guide in the middle > time to WOW
-* Migration/Tuning after that
-
 
 ## Writing help & blog articles
 
@@ -198,9 +171,12 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 
 ## Maintainability
 
-Find the right balance between being general and being precise (aka Captain Obvious). Very detailed step-by-step articles are easy to follow but get outdated very quickly. Don't "bury" numbers (like prices and limits) in articles. All those numbers must be managed in the "pricing" and the "specs" page.
-
-Keep it DRY! Don't repeat yourself. Don't cover the same topic on different places. Just link to the location where it best suits. 
+* Find the right balance between being general and being precise (aka Captain Obvious). 
+* Very detailed step-by-step articles are easy to follow but get outdated very quickly. 
+* Don't "bury" numbers (like prices and limits) in articles. 
+* All those numbers must be managed in the "pricing" and the "specs" page.
+* Keep it DRY! Don't repeat yourself. 
+* Don't fully cover the same topic on different places. Just link to the location where it best suits. 
 
 ## Link checking
 
@@ -239,6 +215,7 @@ $ linkcheck.mac --url http://help.fortrabbit.dev
 * **URL** — ~~Url~~, ~~url~~
 * **User** — ~~member~~, ~~account~~
 * **Workers** — ~~Worker~~
+* **Software Preset** — ~~stack chooser~~
 * **Professional Stack** — ~~Pro Stack~~, ~~Professional stack~~
 * **Universal Stack** — ~~Hobby stack~~, ~~hobby stack~~
 * **{{ interchangble-value }}** < something the users will need to modify
