@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        CloudFlare
-reviewed:         2018-01-30
+reviewed:         2018-05-08
 title:            Using CloudFlare with fortrabbit
 group:            Domains_and_DNS
 section:          Extending_fortrabbit
@@ -61,7 +61,7 @@ CloudFlare is a bit of blackbox, DNS-wise. When you'll visit a domain in the for
 
 ### ClouFlare SSL VS Let's Encrypt
 
-Many fortrabbit clients have used CloudFlare to get SSL (https) for their own custom domain without the need to book and setup the [HTTPS custom](/https-custom-pro) Component here. Now, fortrabbit also offers free SSL certificates via (free and zero-config) Let's Encrypt on it's own. So if that is your aim, you'll might not need CloudFlare.
+Many fortrabbit clients have used CloudFlare to get SSL (https) for their own custom domain without the need to book and setup a custom cert here. Now, fortrabbit also offers free SSL certificates via (free and zero-config) Let's Encrypt. So if that is your aim, you'll might not need CloudFlare.
 
 ### Other reasons to use CloudFlare
 

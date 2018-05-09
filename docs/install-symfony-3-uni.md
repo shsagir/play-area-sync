@@ -25,7 +25,7 @@ otherVersions:
 
 ## Get ready
 
-We assume you've already created a New App and chose Symfony in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine.
+We assume you've already created a New App and chose Symfony in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). You should also have a [PHP development environment](/local-development) running on your local machine.
 
 
 ### Root path

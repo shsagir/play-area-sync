@@ -100,14 +100,14 @@ When you sign up to fortrabbit, a new [trial App](#toc-the-app-trial) will be cr
 
 ### Software Preset
 
-While creating an App you can choose from a variety of popular open source PHP software types, like [Laravel](install-laravel) or [Craft CMS](install-craft). This will not install the software on your behalf, but prepare your Apps  settings, depending:
+While creating an App you can choose from a variety of popular open source PHP software types. This will **not install** the software on your behalf, but prepare some settings, depending on the chosen software:
 
-* Set the matching PHP version
-* Enable/disable PHP 
-* Set the correct [root path](#toc-root-path)
-* Populate [ENV vars](env-vars)
+* Set a matching PHP version — some legacy Apps need older versions
+* Enable/disable PHP extensions — for best performance
+* Set a [root path](#toc-root-path) — to serve the App from the right location
+* Populate [ENV vars](env-vars) — to connect to to the database automatically
 
-So, the Software Preset saves you some work and helps to prevent errors, it does does not install anything, it's non-destructive. You can change all settings later on as you wish. 
+So, the Software Preset saves you some work and helps to prevent errors. It does does not install anything. It's non-destructive, you can change all settings later on as you wish. This is especially handy with modern software that supports [ENV var](env-vars) configuration and environment detection — like [Laravel](install-laravel) or [Craft CMS](craft-3-deploy-git) do. It makes the application really portable, you can deploy the same code base to any App and it will work out of the box. 
 
 ## Settings
 

@@ -36,11 +36,11 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ### Set the root path
 
-If you haven't already (the stack chooser does that for you) - in the Dashboard: [Set the document root](/domains#toc-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
+If you haven't already (the Software Preset does that for you) - in the Dashboard: [Set the document root](/domains#toc-root-path) of your App's domains to `public`. This applies to all domains, either the App URL or your external domains.
 
 ### Set ENV vars
 
-If you haven't already (the stack chooser does that for you) - in the Dashboard set the following [environment variables](env-vars):
+If you haven't already (the Software Preset does that for you) - in the Dashboard set the following [environment variables](env-vars):
 
 ```osterei32
 CRAFT_DEBUG=0

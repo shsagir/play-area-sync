@@ -29,7 +29,7 @@ We assume you've already created an App with fortrabbit. You should also have a 
 
 ### Set the Apps root path
 
-If you haven't already (the stack chooser does that for you) — in the Dashboard: [Set the root path](/app#toc-root-path) of your App's domains to **web**.
+If you haven't already (the Software Preset does that for you) — in the Dashboard: [Set the root path](/app#toc-root-path) of your App's domains to **web**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)

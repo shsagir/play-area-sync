@@ -65,6 +65,9 @@ The www prefix is so common, you'll hardly hardly recognize it. Is Facebook with
 
 We are providing a forwarding service, so that all requests on the naked domain will get forwarded to the www domain, even deeplinks and https links. So you can still print the naked domain on flyers or in your e-mail signature.
 
+Sometimes we have heard that the move from naked to www can impact SEO in a negative way. This should not be the case, when you do it properly, as all your old URLs and deeplinks shall be redirected to the new ones, using a standard 301 moved permanently HTTP header. 
+
+
 
 
 #### Don't dos

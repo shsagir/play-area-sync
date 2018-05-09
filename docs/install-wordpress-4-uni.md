@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-01-04
+reviewed:         2018-05-04
 title:            Install WordPress 4
 naviTitle:        WordPress
 group:            Install_guides
@@ -15,7 +15,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          4.9.1
+version:          4.9.5
 
 keywords:
     - wp-admin
@@ -25,7 +25,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created an [App](app) and chose WordPress in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
+We assume you've already created an [App](app) and chose WordPress in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
 ## Quick start
 

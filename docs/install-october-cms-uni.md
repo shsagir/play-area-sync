@@ -27,7 +27,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created an [App](/app) and chose Custom in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
+We assume you've already created an [App](/app) and chose Custom in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
 <!--
 

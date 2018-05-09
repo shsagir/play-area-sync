@@ -12,6 +12,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
+version:          3.0.5
 
 keywords:
   - craft
@@ -31,18 +32,12 @@ This workflow is so simple and common that it doesn't actually needs much explan
 
 **Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting) and our [SFTP guide](/sftp).
 
-## No configuration required
 
-It is assumed that you have chosen Craft in software chooser while you have created the App on fortrabbit. In this case all the required settings (ENV vars and root path) to make Craft run on fortrabbit are already set.
+## Next steps
 
+Your Craft fortrabbit App should already connect to the fortrabbit database, thanks to the [Software Preset](/app#toc-software-preset). So, next, you may want to import your local database to the one fortrabbit. Head on to our [MySQL export & import guide](/mysql#toc-export-amp-import).
 
-## Import the database
+After that, please make yourself familiar with the options to deploy the Craft `assets` folder separately. There are two dedicated guides here, depending on the Stack: [Deploy assets with rsync (Uni)](/craft-3-assets-uni) and [Deploy assets to the Object Storage (Pro)](/craft-3-assets-pro).
 
-Now, unless your database is completely empty, you want to import your local database up to the one on fortrabbit. Please see our [mysql export & import guide](/mysql#toc-export-amp-import) on how to do that.
+Also see our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.
 
-
-- - -
-
-Now, that should be it. Finally you should be able to visit your App in the browser:
-
-* [{{app-name}}.frb.io](https://{{app-name}}.frb.io)

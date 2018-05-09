@@ -27,9 +27,9 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/install-craft-local). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer), it applies to [Professional](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. There is a more simple guide to install Craft using SFTP [over here](/craft-3-upload-sftp).
+For best results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/craft-3-install-local). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer), it can be applied to [Professional](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. There is a more basic guide to install Craft using SFTP on Universal Apps [over here](/craft-3-upload-sftp).
 
-## Deploy the code base with Git
+## Deploy the Craft code base with Git
 
 Trigger the following commands in your **local** terminal:
 
@@ -61,8 +61,10 @@ $ git push
 **Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting) and our [Git guide](/git).
 
 
-## Import the database
+## Next steps
 
-Now, unless your database is completely empty, you want to import your local database up to the one on fortrabbit. Please see our [mysql export & import guide](/mysql#toc-using-the-terminal) on how to do that quickly.
+Your Craft fortrabbit App should already connect to the fortrabbit database, thanks to the [Software Preset](/app#toc-software-preset). So, next, you may want to import your local database to the one fortrabbit. Head on to our [MySQL export & import guide](/mysql#toc-export-amp-import) or take a shortcut with the [craft-copy CLI](/craft-3-tuning#toc-craft-copy).
 
-Continue with our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.
+After that, please make yourself familiar with the options to deploy the Craft `assets` folder separately. There are two dedicated guides here, depending on the Stack: [Deploy assets with rsync (Uni)](/craft-3-assets-uni) and [Deploy assets to the Object Storage (Pro)](/craft-3-assets-pro).
+
+Also see our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.

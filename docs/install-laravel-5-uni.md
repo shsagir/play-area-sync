@@ -75,7 +75,7 @@ If you used the above Quick start guide, Git is already setup and you can safely
 
 ### MySQL configuration
 
-If you have choosen Laravel in the stack chooser when creating your App, we will automatically populate the "right" environment variables for Laravel's MySQL connection for you. So, you don't need to change a thing, just keep `config/database.php` as is:
+If you have chosen Laravel in the [Software Preset](app#toc-software-preset) when creating your App, we will automatically populate the "right" environment variables for the MySQL connection. So, you don't need to change a thing, just keep `config/database.php` as is:
 
 ```php
 <?php
@@ -102,7 +102,7 @@ return [
 ];
 ```
 
-If you have not chosen the Laravel in the stack chooser on App creation, then please make sure to [set the ENV vars as described above](#toc-env-vars).
+If you have not chosen the Laravel in the [Software Preset](app#toc-software-preset) on App creation, then please make sure to [set the ENV vars as described above](#toc-env-vars).
 
 
 ### Database migration

@@ -14,6 +14,7 @@ image:            wordpress-mark.png
 version:          4.6
 stack:            pro
 uniLink:          install-wordpress-4-uni
+deprecated:       yes
 
 ---
 
@@ -23,7 +24,7 @@ We assume you've already created an [App](app) with fortrabbit. You should also 
 
 ### Set the root path
 
-If you haven't already (the stack chooser does that for you) — in the Dashboard: [Set the root path](/app#toc-root-path) of your App's domains to **web**.
+If you haven't already (the [Software Preset](app#toc-software-preset) does that for you) — in the Dashboard: [Set the root path](/app#toc-root-path) of your App's domains to **web**.
 
 <div markdown="1" data-user="known">
 [Change the root path for App URL of App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/rootpath)
@@ -31,7 +32,7 @@ If you haven't already (the stack chooser does that for you) — in the Dashboar
 
 ### Set WordPress authentication unique keys and salts
 
-If you haven't already (the stack chooser does that for you) — in the Dashboard, add the following [App secrets](secrets):
+If you haven't already (the [Software Preset](app#toc-software-preset) does that for you) — in the Dashboard, add the following [App secrets](secrets):
 
 ```osterei32
 AUTH_KEY=LongRandomString

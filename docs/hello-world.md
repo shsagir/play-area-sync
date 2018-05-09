@@ -22,11 +22,7 @@ keywords:
 
 ## Get ready
 
-Let's have a quick check-up before we get started here:
-
-1. You have already [signed up to fortrabbit](//dashboard.fortrabbit.com/signup)
-2. You should have created a plain vanilla [App](app) (free trial)
-3. You should have a [PHP development environment](/local-development) or at least [Git](/git) running on your local machine
+Let's have a quick check-up before we get started here: You have already [signed up to fortrabbit](//dashboard.fortrabbit.com/signup), have created a plain vanilla [App](app) and have a [PHP development environment](/local-development) or at least [Git](/git) running on your local machine.
 
 
 

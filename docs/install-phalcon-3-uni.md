@@ -29,7 +29,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine. You can skip the following two parts when you have chosen Phalcon in the Stack Chooser when creating your App.
+We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine. You can skip the following two parts when you have chosen Phalcon in the [Software Preset](app#toc-software-preset) when creating your App.
 
 ### Root path
 

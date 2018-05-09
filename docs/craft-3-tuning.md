@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-07
+reviewed:         2018-05-09
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Learn how to tweak Craft CMS on fortrabbit, master advanced topics, overcome obstacles and tackle problems.
@@ -12,6 +12,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
+version:          3.0.5
 
 keywords:
   - craft
@@ -21,6 +22,12 @@ keywords:
 
 ---
 
+
+## craft-copy
+
+**fortrabbit craft-copy** is a little handy open-source command line tool to speed up common deployment tasks around Craft CMS on fortrabbit. It connects your local Craft CMS installation with an App on fortrabbit and then enables you to sync database and assets in a speedy and convenient way. Please head on to the GitHub page to learn how to use it:
+
+* [github.com/fortrabbit/craft-copy](https://github.com/fortrabbit/craft-copy)
 
 ## Updating Craft
 
@@ -57,9 +64,9 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 
 Just use the shiny update button interface. Follow [the official guides](https://docs.craftcms.com/v3/updating.html). You need to do that twice: Once for your local installation, once for the one on remote (ony your App).
 
-## Table prefixes
+## MySQL table prefixes
 
-You can set a MySQL table prefix in the `.env` file locally or in the ENV vars settings with your App in the Dashboard like so:
+You can set a table prefix in the `.env` file locally or in the ENV vars settings with your App in the Dashboard like so:
 
 ```
 # Example Table prefix
@@ -71,9 +78,11 @@ When your local Craft installation contains a table prefix the one on the fortra
 
 ## The .env file
 
-In your local environment the Craft settings are stored in the `.env` file. This hidden file is excluded from Git as it stores sensitive information only suited for a single environment. **Don't upload it to fortrabbit.** Edit the `.env` file with text editor to configure Craft to run locally. These settings include:
+In your local environment the Craft settings are stored in the `.env` file. This hidden file is excluded from Git as it stores sensitive information only suited for a single environment. **Don't upload it to fortrabbit.** Edit the `.env` file with text editor to configure Craft to run locally. These settings are mostly set by the Craft web intaller or by the Craft CLI setup tool. You can also edit them manually. The .env settings file for Craft CMS includes:
 
 ### Security key
+
+From the Craft Docs: "Each Craft CMS project should have a unique security key. This key is shared between the environments that the project runs on." This mandatory key is automatically generated, when using a Composer installation, you can also assign it manually in the `.env file or trigger a terminal command to set it. 
 
 We recommend to use the security key of your fortrabbit App. Go to the App's ENV vars settings in the Dashboard and copy the content of the `security_key` variable - it's the last line in the textarea. Here is the direct link:
 
@@ -98,6 +107,8 @@ DB_SERVER=127.0.0.1
 DB_USER=mysql-user
 DB_PASSWORD=mysql-password
 ```
+
+There is no MySQL configuration required to make Craft connect to the database on fortrabbit, when have chosen Craft in [software chooser](/app#toc-software-preset) while you have created the App. In this case all the required settings (ENV vars and root path) are already set.
 
 The actual values for accessing your local database are depending on your [local development environment](/local-development). For your Craft fortrabbit App everything should already be set and done.
 
@@ -145,10 +156,24 @@ We have an install guide for Craft Version 2 [over here](/install-craft-2-uni) a
 Craft now supports to host multiple websites in a single installation, see the [offical docs](https://docs.craftcms.com/v3/sites.html) on that topic. Use cases for this, is a one website in very similar versions, for example the same website in different languages or marketing landing pages that are very similar. Please don't try to install all you different Craft [websites in one App](/app#toc-one-app-one-website).
 
 
+## The storage folder
+
+The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore` file](). So we 
+
+* [docs.craftcms.com/v2/folder-structure.html#craft-storage](https://docs.craftcms.com/v2/folder-structure.html#craft-storage)
+* [craftcms.com/support/craft-storage-gitignore](https://craftcms.com/support/craft-storage-gitignore)
+
+
 <!-- TODO:
 
-MISSING FOLDERS
-as by support request: what about an non-existing "storage" or "assets" folder?
+
+
+What about this?
+https://github.com/fortrabbit/craft-starter
+Is thi still up-to-date?
+
+
+Describe what needs to be done to set a domain with Craft and fortrabbit.
 
 DOMAINS
 https://craftcms.com/support/site-url

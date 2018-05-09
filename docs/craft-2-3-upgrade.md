@@ -4,7 +4,7 @@ template:         article
 reviewed:         2018-05-07
 title:            Upgrade from Craft 2 to Craft 3
 naviTitle:        Upgrade from Craft 2
-lead:             Learn how to update your Craft CMS 2 installation to Craft CMS 3 here on fortrabbit. 
+lead:             What you need to know, when upgrading from a Craft CMS 2 installation to Craft CMS 3 here on fortrabbit. 
 group:            craft
 stack:            all
 
@@ -12,6 +12,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
+version:          3.0.5
 
 keywords:
   - craft
@@ -28,7 +29,7 @@ First of all, please read the official upgrade guide: [docs.craftcms.com/v3/upgr
 
 ## About the changes in Craft 3
 
-Craft 2 was way more simple. So we have recommended to use SFTP deployment. With Craft 3 many things are different, modern and more powerful. Just the way we like it:
+Craft 2 was way more simple. So we have recommended to use [an SFTP deployment](/install-craft-2-uni). With Craft 3 many things are different, modern and more powerful. Just the way we like it:
 
 * configuration with `dotenv` files
 * new directory structure

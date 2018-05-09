@@ -29,7 +29,7 @@ keywords:
 
 ## Get ready
 
-We assume you've already created an App and chose Craft CMS in the stack chooser. If not: You can do so in the [fortrabbit Dashboard](/dashboard).
+We assume you've already created an App and chose Craft CMS in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard).
 
 ### Root path
 

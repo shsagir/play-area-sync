@@ -30,7 +30,7 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/install-craft-locally). This guide is for advanced users on the advanced [Pro Stack](/app-pro).
+For best results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/craft-3install-local). This guide is for advanced users on the advanced [Pro Stack](/app-pro).
 
 ## Deploy the code base with Git
 

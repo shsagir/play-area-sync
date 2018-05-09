@@ -21,8 +21,8 @@ We assume you've already created an [App](/app) with fortrabbit. If not: Do so i
 
 #### Choose your software
 
-While creating the App we are showing you a list of popular frameworks and CMS, the [software preset](app#toc-software-preset). Choose the one you want. That will pre-configure the fortrabbit App, but not install any software.
+While creating the App we are showing you a list of popular frameworks and CMS, this is called the [Software Preset](app#toc-software-preset). Choose the one you want, or any PHP App. That will pre-configure the fortrabbit App, but not install any software. You can change that later on.
 
 ## Run a local web server with PHP
 
-You have a PHP development environment with Apache, MySQL, PHP and Git setup and running on your local machine? Haven't you? This is crucial, we advice to have a local development environment for all kind of projects. All install guides are written with a local development environment in mind. Find more details on how to do that in our [local development guide](local-development).
+You have a PHP development environment with Apache, MySQL, PHP and Git setup and running on your local machine, haven't you? This is crucial, we advice to have a local development environment for all kind of projects. All install guides are written with a local development environment in mind. Find more details on how to do that in our [local development guide](local-development).
