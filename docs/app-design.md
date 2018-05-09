@@ -1,24 +1,20 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2018-05-09
 title:         Application design & optimization
 naviTitle:     Application design
 lead:          Best practices: from development to production, from backend to frontend.
 group:         platform
-stack:         pro
+stack:         all
 
 ---
 
 Of course: in case of a performance problem we can always throw more hardware on your App, but that won't always help when the problem is in the code somewhere. We want you to encourage to **design for performance** and scalability. And that is all about thinking a bit ahead.
 
-> Most people make the mistake of thinking design is what it looks like. That’s not what we think design is. It’s not just what it looks like and feels like. Design is how it works.
-
-Steve Jobs
-
 ## Backend design
 
-The performance of a modern web application depends on the hosting environment AND the application design. In short: we are in this together! We — fortrabbit — as your hosting vendor, are responsible to provide a great, scalable and [secure](security) infrastructure. You, as the developer, are responsible to leverage this infrastructure by good application design.
+The performance of a modern web application depends on the hosting environment AND the application design. In short: **We are in this together!** We — fortrabbit — as your hosting vendor, are responsible to provide a great, scalable and [secure](security) infrastructure. You, as the developer, are responsible to leverage this infrastructure by good application design.
 
 
 ### Prepare to cache
@@ -28,7 +24,7 @@ If you begin developing, you might not instantly utilize a pair of multi gigabyt
 * **File**: Disk storage is not very fast and does not scale horizontally. It should be used for testing only!
 * **Database**: Normally faster than disk. A good idea if you need to cache data for a long time (i.e. weeks).
 * **APC**: All App plans include APC. Aside from opcode caching which happens automatically, you can use APC as an object cache very similar to _Memcache_. However APC lives in local memory, which is not shared between multiple Nodes.
-* **Memcache**: Very fast, in-memory network cache.
+* **Memcache**: Very fast, in-memory network cache, for Pro Apps.
 * **Redis**: If you want to use Redis, just sign up with a third party Redis vendor and let us know the port they assigned to you.
 
 A high cache hit rate indicates if your caching strategy works as expected. For APC and Memcache we provide Dashboard Metrics for _APC/Memcache misses_ (that's the hit rate from another angle). The rule of thumb in production: <10% misses is okay, <2% misses is better.
@@ -38,19 +34,19 @@ A high cache hit rate indicates if your caching strategy works as expected. For 
 It's always a good idea to reduce file input/output operations on the disk to the minimum. In PHP this means:
 
 * **PHP includes**: Reduce amount of includes as much as possible. Always use absolute pathnames, which reduces the amount of lookups.
-* **Avert files**: Don't use file-sessions, file-caches or anything file-*, if you can replace it with an in-memory cache or even the database.
+* **Avert files**: Don't use file-sessions, file-caches or anything `file-*`, if you can replace it with an in-memory cache or even the database.
 * **Outsource static files**: Put your static files on an object storage. Sure, they could be delivered very fast from local, but still, they will create I/O which your (PHP) App will be missing.
 * **Shrink your loader chain**: Make sure you load only the classes (files) you need. For a production App (in which code changes do not occur often) you can set `apc.stat` or `pcache.validate_timestamps` to `0`, which reduces I/O on `.php` files even further, but requires an APC/OPcache flush for changed files to apply.
 
 ### Decouple, but loosely
 
-Leverage the power of the cloud: Span your App across multiple services. If you need image or video encoding: use a service for this. If you want to send mass mails: use a service for this. Why? Because it balances the load of your App and thereby gives it more resources for each individual task it has to perform.
+Leverage the power of the cloud: Span your App across multiple services. If you need image or video encoding: use an external service for this. If you want to send mass mails: use an external service for this. Why? Because it balances the load of your App and thereby gives it more resources for each individual task it has to perform.
 
 However, if one of those external service (temporarily) breaks, make sure you can switch it off in seconds! You still want your shopping basket to run, if your image transformation has a problem.
 
 ### Scale out, not up
 
-Up-scaling (bigger boxes) might be simpler, but with out-scaling (more boxes) you can grow nearly limitless. To be able to scale out means to be able to run your App across multiple nodes. Make sure you don't use local files or APC - or at least use abstraction, as mentioned above, so you can replace them transparently. Also, using multiple Nodes to deliver your websites comes with a feature you don't want to miss: high-availability.
+Up-scaling (bigger boxes) might be simpler, but with out-scaling (more boxes) you can grow nearly limitless. To be able to scale out means to be able to run your App across multiple nodes. Make sure you don't use local files or APC - or at least use abstraction, as mentioned above, so you can replace them transparently. Also, using multiple Nodes to deliver your websites comes with a feature you don't want to miss: high-availability. Horizontal scaling is available for [Pro Apps](/app-pro).
 
 ### Prepare for CDN
 
@@ -161,10 +157,3 @@ If your App runs fast with only a few visitors it doesn't mean it can handle the
 ## Security design
 
 Last not least: take care to integrate [security patterns](security) as well!
-
-## Further readings
-
-* [Strategies for staying on top of web performance](https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/) by Chris Coyier
-* [Make the web faster](https://developers.google.com/speed/) by Google
-* [Mysql indexes 101](http://www.sitepoint.com/optimizing-mysql-application/)
-* [Blackfire profiler on fortrabbit](http://blog.fortrabbit.com/blackfire-profiler-on-fortrabbit/)

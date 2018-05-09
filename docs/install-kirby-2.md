@@ -22,7 +22,9 @@ keywords:
 
 ---
 
-At least have the Kirby "starterkit" downloaded, so that you have something to start with.
+## Get ready
+
+Make sure you to have completed all steps in the [get ready guide](/get-ready) and have the Kirby "starterkit" downloaded, so that you have something to start with. Better you have it already running.
 
 ### Choose your deployment work-flow
 

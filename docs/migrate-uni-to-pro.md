@@ -18,7 +18,7 @@ For the purposes of this article, we recommend to chose the newly created Profes
 
 ## Preparation
 
-Make sure your code is ready to scale and you are using up-to-date design patterns. Have a look at our [App design article](/app-design-pro) to learn the best practices to that effect. Also have a look at our [general migration guide](/migrating).
+Make sure your code is ready to scale and you are using up-to-date design patterns. Have a look at our [App design article](/app-design) to learn the best practices to that effect. Also have a look at our [general migration guide](/migrating).
 
 Before we show you how to migrate your existing Universal App to a Professional App, you first need to make sure that the following applies. Mind that it only needs to apply if your App requires it (i.e. you don't need cache abstraction, if you don't need caching):
 

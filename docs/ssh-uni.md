@@ -60,7 +60,7 @@ Also checkout: [WordPress install from SSH](install-wordpress-4-uni#toc-installi
 We pre-installed various CLIs for you:
 
 * [WP-CLI](http://wp-cli.org/): eg `wp theme ...`
-* [Drush](http://www.drush.org/en/master/): eg `drush topic`
+* [Drush](http://www.drush.org/): eg `drush topic`
 * [Drupal Console](https://www.drupal.org/project/console): eg `drupal check`
 
 

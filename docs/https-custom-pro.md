@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2018-05-09
 dontList:      false
 title:         Using TLS custom
 naviTitle:     TLS custom
@@ -126,7 +126,6 @@ The RSA format is required by our TLS implementation.
 
 Most Certificate Authority provider look slightly dusty, but they do the job (We have business relations here):
 
-* [StartSSL](https://www.startssl.com/) provides also free certificates
 * [Comodo](https://www.comodo.com/)
 * [DigiCert](https://www.digicert.com/)
 * [GoDaddy](https://www.godaddy.com/) does CA and domain registrations

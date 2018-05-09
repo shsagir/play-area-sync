@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-10-26
+reviewed:      2018-05-09
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -40,7 +40,7 @@ You can look up the MySQL password in the Dashboard > Your App > Access.
 
 ## Access MySQL from your App
 
-Usually there is a configuration file which is used from the App to connect to the database. This is what you need to fill in there:
+Usually there is a configuration file which is used from the App to connect to the fortrabbit database. This is what you need to fill in there:
 
 * **Database Name**: `{{app-name}}`
 * **Database Username**: `{{app-name}}`
@@ -67,17 +67,14 @@ $pdo = new \PDO(
 $pdo->query("SELECT * FROM ...")
 ```
 
+That is only a generic example. See our specific guides for: [Laravel](install-laravel-uni#toc-mysql), [Symfony](install-symfony-uni#toc-mysql), [WordPress](install-wordpress-uni#toc-mysql), [Craft CMS](craft-3-tuning) which are often using zero-config style environment variables.
 
-See our specific examples for: [Laravel](install-laravel-uni#toc-mysql), [Symfony](install-symfony-uni#toc-mysql), [WordPress](install-wordpress-uni#toc-mysql), [Craft CMS](install-craft-uni#toc-mysql).
 
-
-## Access MySQL database from local
+## Access the MySQL database from local
 
 Whether you want to run a query on your live database or you want to dump your whole database: you need to access the MySQL database on fortrabbit remotely. For security reasons you cannot connect to the MySQL database from "outside" directly, but you can open a [SSH tunnel](http://en.wikipedia.org/wiki/Tunneling_protocol) and then connect to the MySQL database through this tunnel.
 
 If you haven't: you need to [obtain your MySQL password](/#toc-obtain-the-mysql-password). Next you can decide upon using a graphical user interface or the terminal:
-
-
 
 ### MySQL via GUI
 
@@ -123,7 +120,7 @@ Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local ph
 
 ### MySQL via terminal
 
-If you are familiar with the shell then this is no biggie. Issue this in your terminal:
+If you are familiar with the shell then this is no biggie. Issue this in your **local** terminal:
 
 ```bash
 # open a tunnel on local port 13306 < arbitrary, choose between 10000-65000
@@ -142,34 +139,9 @@ $ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}}
 In the next step you will be asked for your [MySQL password](#toc-obtain-the-mysql-password).
 
 
-
 ## Export & import
 
-A common task is to move your MySQL data around, e.g. if you are migrating to fortrabbit or you are about to set up a staging environment. All following examples show you how to export data from your local machine and import it into your App's database on fortrabbit. It works the same, with swapped login details, for the other way around.
-
-### Using MySQL Workbench (GUI)
-
-**Export from local**:
-
-1. Open Workbench
-2. Setup your local database connection
-3. Open your local database connection
-4. Choose: Server > Data Export from the menu
-5. Select your local database name
-6. Make sure to "Dump Structure and Data" (select below the database name listing)
-7. Choose a local destination file
-8. Start the export
-
-
-**Import to fortrabbit**:
-
-1. Open Workbench
-2. Create a new connection as [shown above](#toc-mysql-via-gui)
-2. Open the newly created remote database connection
-3. Choose: Server > Data Import from the menu
-4. Choose your previously generated dump file
-5. Make sure to select your App name in the *Default Target Schema*
-6. Start the import
+A common task is to move your MySQL data around, like when you are migrating to fortrabbit or you are about to set up a staging environment. All following examples show you how to export data from your local machine and import it into your App's database on fortrabbit. It works the same, with swapped login details, for the other way around.
 
 ### Using the terminal
 
@@ -190,6 +162,29 @@ $ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunn
 # import the dump
 $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 ```
+
+### Using MySQL Workbench (GUI)
+
+**Export from local**:
+
+1. Open Workbench
+2. Setup your local database connection
+3. Open your local database connection
+4. Choose: Server > Data Export from the menu
+5. Select your local database name
+6. Make sure to "Dump Structure and Data" (select below the database name listing)
+7. Choose a local destination file
+8. Start the export
+
+**Import to fortrabbit**:
+
+1. Open Workbench
+2. Create a new connection as [shown above](#toc-mysql-via-gui)
+2. Open the newly created remote database connection
+3. Choose: Server > Data Import from the menu
+4. Choose your previously generated dump file
+5. Make sure to select your App name in the *Default Target Schema*
+6. Start the import
 
 ### LOAD DATA
 
