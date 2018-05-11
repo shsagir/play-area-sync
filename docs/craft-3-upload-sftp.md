@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-07
+reviewed:         2018-05-11
 title:            Upload Craft CMS with SFTP 
 naviTitle:        Upload Craft with SFTP
 lead:             Are you more "web designer" and less a "web developer"? Learn how to upload Craft in a classical way using SFTP. 
@@ -24,11 +24,13 @@ keywords:
 
 ## Get ready
 
-Make sure you to have completed all steps in the [get ready guide](/get-ready) and have a [Craft installed and running locally](/craft-3-install-locally). This guide here follows the easiest path to get Craft running on fortrabbit, we also have a better but more advanced workflow to [deploy Craft with Git](/craft-3-deploy-with-git-uni) here.
+Make sure you to have completed all steps in the [get ready guide](/get-ready) and have a [Craft installed and running locally](/craft-3-install-locally). This guide here follows the easiest path to get Craft up and running on fortrabbit, we also have a better but more advanced workflow to [deploy Craft with Git](/craft-3-deploy-with-git-uni) here.
+
+This workflow is so simple and common that it doesn't actually needs much explanations, everybody and his dog knows [how to use SFTP](/sftp). Check the [downloading an archive file manually](https://docs.craftcms.com/v3/installation.html) workflow from the offcial Craft docs as your detailed reference. 
 
 ## Upload Craft with SFTP
 
-This workflow is so simple and common that it doesn't actually needs much explanations, everybody and his dog knows [how to use SFTP](/sftp). Just grab your personal SFTP login credentials from the Dashboard. Use any SFTP client. Upload all contents of your local Craft folder into the `htdocs` folder of your fortrabbit App. Don't forget the hidden `.htaccess` file. Leave the other hidden `.env` file — which is only for your local development — at home.
+On the fortrabbit side: Just grab your personal SFTP login credentials from the Dashboard. Use any SFTP client. Upload all contents of your local Craft folder into the `htdocs` folder of your fortrabbit App. Also make sure that Craft can write the files `composer.json`, `composer.lock`, `config/license.key`, `storage/*` and `vendor/*` on the App. Set the file permissions for those to `744` with your SFTP client. Don't forget the hidden `.htaccess` file. Leave the other hidden `.env` file — which is only for your local development — at home. Don't forget to set 
 
 **Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting) and our [SFTP guide](/sftp).
 
