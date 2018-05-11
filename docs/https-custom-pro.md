@@ -150,7 +150,6 @@ Remember that certificates are usually only valid for one year. So you need to r
 
 It's not you. It's the whole surprisingly confusing process here. Unsure about certain parts? Have questions? Hanging somewhere? Don't be afraid to ask. We are experienced and we can help you get this done.
 
-
 ### Solve SSL verification errors
 
 This is the fix for verification errors when using ssl_verify. If you are receiving an error like the following:
