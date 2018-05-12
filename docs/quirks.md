@@ -2,7 +2,7 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2018-05-02
+reviewed:      2018-05-11
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions there are some — aren't there always? Heads up so it doesn't cost you hours of debugging in the wrong direction."
 stack:         all
@@ -12,12 +12,27 @@ group:         platform
 
 ## Service scope
 
-Apps are lightweight containers optimized for speedy web delivery of PHP applications. Apps are specialized to do just that. Apps are single-purpose by design. Apps are also managed, they offer a jailed SSH environment for security reasons.
-
-Therefore, it's NOT possible install things like: FFmpeg, Node, jpegoptim, optipng, Gulp, webpack or Rails. Sounds scary? Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video.
+Apps are lightweight containers optimized for speedy web delivery of PHP applications. Apps are specialized to do just that. Apps are single-purpose by design. Apps are also managed.
 
 * [Learn more about Apps](/app)
 * [Learn about the differences to VPS hosting](https://www.fortrabbit.com/why-not-vps)
+
+
+## No root shell
+
+[Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, jpegoptim, optipng, Gulp, webpack or Rails. Sounds scary? Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video. That's by design:
+
+### Performance
+
+Apps are designed for fast web delivery — to answer page requests swiftly. Unlike a VPS, which is a multi-purpose box, Apps are single-purpose for web delivey. Installing CPU intensive software would hurt the performance. 
+
+* [Learn about the resource limits here](/limits)
+
+### Security
+
+We believe in a clear division of security. In a nutshell: We - fortrabbit - take care of the Operarting Sytem level and the PHP runtime, you - the developer - are responsible for the software you write and use. Installing additional software would blur that strict division.
+
+* [Learn about the security concepts here](/security)
 
 
 ## Service location
