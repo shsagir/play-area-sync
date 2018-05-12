@@ -20,7 +20,21 @@ Apps are lightweight containers optimized for speedy web delivery of PHP applica
 
 ## No root shell
 
-[Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, jpegoptim, optipng, Gulp, webpack or Rails. Sounds scary? Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video. That's by design:
+Professinal Apps only have [remote SSH execution](/remote-ssh-execution-pro). [Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. 
+
+Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, jpegoptim, optipng, Gulp, webpack or Rails. The Pro Stack has the [Worker Component](/worker-pro) to have CPU intensive long running tasks run in the background.
+
+Sounds scary? Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video. Consider to use an alternative or a third party service.
+
+### wkhtmltopdf
+
+wkhtmltopdf is a popular library to convert HTML to PDF. It's NOT installed and you can not install it on your own for reasons named above. Check out the following alternatives: 
+
+* [dompdf](https://github.com/dompdf/dompdf) is a PHP only PDF CSS renderer
+* Use PDF as a service like [cloudconvert](https://cloudconvert.com/) or [others](https://stackoverflow.com/a/5344424/1449386)
+* Rethink if you really need PDF? An invoice in HTML is sometimes Ok too. Lesss tech = less trouble
+* Consider PDF creation on the client side with JS in the browser, with [jsPDF](https://parall.ax/products/jspdf) or alike
+
 
 ### Performance
 
