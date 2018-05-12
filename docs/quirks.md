@@ -30,9 +30,9 @@ Sounds scary? Embrace the idea of decoupled services, don't let your users wait,
 
 wkhtmltopdf is a popular library to convert HTML to PDF. It's NOT installed and you can not install it on your own for reasons named above. Check out the following alternatives: 
 
-* [dompdf](https://github.com/dompdf/dompdf) is a PHP only PDF CSS renderer
+* [dompdf](https://github.com/dompdf/dompdf) is a PHP only PDF by CSS renderer
 * Use PDF as a service like [cloudconvert](https://cloudconvert.com/) or [others](https://stackoverflow.com/a/5344424/1449386)
-* Rethink if you really need PDF? An invoice in HTML is sometimes Ok too. Lesss tech = less trouble
+* Rethink if you really need PDF? An invoice in HTML is sometimes Ok too
 * Consider PDF creation on the client side with JS in the browser, with [jsPDF](https://parall.ax/products/jspdf) or alike
 
 
