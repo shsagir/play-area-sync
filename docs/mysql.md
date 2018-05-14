@@ -272,3 +272,10 @@ Each App has one database named like the App. There are no privileges to `CREATE
 ### Can't connect from local
 
 The most common misunderstanding when trying to connect from a local machine, is that people overlook to first open up the SSH tunnel and then connect to the database. Graphical MySQL clients support this connection method out of the box. You'll need to enter both: SSH access and MySQL access details. Within the fortrabbit Dashboard under your App > Access, there is a small link labeled: "Show SSH tunnel info" which will reveal everything you'll need to enter in a MySQL client to connect to the remote database.
+
+### max_user_connections
+
+You'll see a `max_user_connections` error when you've reached the max connection limit of your current MySQL plan. Most likely you are trying to connect to the database with a MySQL GUI, like Navicat, Workbench or Sequel Pro. Some those clients are "eating" MySQL connections like popcorn. With fortrabbit, the MySQL connections and the PHP processes are balanced and therefore kept on a low level, to force best practices and improve security. Once the connection are eaten up, it can take a little until the App recovers, auto-heals itself. There might be a setting with the client to limit the connections, or you'll try the command line tools as an alternative.
+
+If you see that error on other ocasions or it's not going away after a while, contact support.
+
