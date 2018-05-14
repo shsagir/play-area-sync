@@ -15,6 +15,7 @@ keywords:
     - git
     - ssh
     - Putty
+    - PuttyGen
     - msysGit
     - CygWin
     - Windows
@@ -127,6 +128,7 @@ We advice not to use PuTTY for this. If you installed your SSH keys on Windows w
 * [Stack Overflow: Where to find my private RSA key?](http://serverfault.com/questions/194567/how-do-i-tell-git-for-windows-where-to-find-my-private-rsa-key)
 * [superuser: Where does Putty store known_hosts information on Windows?](http://superuser.com/questions/197489/where-does-putty-store-known-hosts-information-on-windows)
 
+Putty uses .ppk key files - Putty Private Key. Those don't work here. You can convert those files to stanadard openSSH keys within PuttyGen or an online service.
 
 ### When nothing works for you
 
