@@ -229,8 +229,7 @@ An alternative to our Object Storage Component is Amazon S3 and we have written 
 
 #### Laravel Mix
 
-You can use Mix locally - not on fortrabbit as there is no Node on remote. You extend the Mix with the `webpack-s3-plugin` to export your minified assets to the [Object Storage](object-storage). 
-This is how it works. To start, execute in your terminal:
+You can use Mix locally - not on fortrabbit as there is no Node on remote. You can extend the Mix with the `webpack-s3-plugin` to export your minified assets to the [Object Storage](object-storage). This is how it works. To start, execute in your terminal:
 
 ```bash
 # Get your Object Storage credentials
