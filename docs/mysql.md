@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-09
+reviewed:      2018-05-12
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -76,6 +76,27 @@ Whether you want to run a query on your live database or you want to dump your w
 
 If you haven't: you need to [obtain your MySQL password](/#toc-obtain-the-mysql-password). Next you can decide upon using a graphical user interface or the terminal:
 
+
+### MySQL via terminal
+
+If you are familiar with the shell then this is no biggie. Issue this in your **local** terminal:
+
+```bash
+# open a tunnel on local port 13306 < arbitrary, choose between 10000-65000
+$ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
+```
+
+**This command will not reply with any message on success! If nothing shows up: you did right!** This behavior is how SSH clients are implemented and sadly we cannot issue any positive response message.
+
+Once the tunnel is up, you can connect to the remote MySQL database with the `mysql` console client. Open a **new window terminal window** and issue this on your **local machine**:
+
+```bash
+# connect to the database < use 127.0.0.1, not localhost
+$ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}}
+```
+
+In the next step you will be asked for your [MySQL password](#toc-obtain-the-mysql-password).
+
 ### MySQL via GUI
 
 We recommend the free [MySQL Workbench](http://www.mysql.com/products/workbench/) (Mac/Linux/Windows). There is also [Navicat](http://www.navicat.com/products/navicat-for-mysql) (also multi-platform), [HeidiSQL](http://www.heidisql.com/) for Windows and [Sequel Pro](http://www.sequelpro.com/) for Mac. And a [host of others](https://www.google.com/search?q=mysql%20gui).
@@ -117,42 +138,22 @@ $i++;
 Then open a [terminal tunnel](#toc-mysql-via-terminal), then visit your local phpMyAdmin in the browser. You now can select your fortrabbit App. You will be asked for the MySQL user "**{{app-name}}**" and [password](#toc-obtain-the-mysql-password). Usinf a local phpMyAdmin with your remote database requires you to always open a tunnel first - a [MySQL GUI](#toc-mysql-via-gui) might be the better choice.
 
 
-
-### MySQL via terminal
-
-If you are familiar with the shell then this is no biggie. Issue this in your **local** terminal:
-
-```bash
-# open a tunnel on local port 13306 < arbitrary, choose between 10000-65000
-$ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunnel.{{region}}.frbit.com
-```
-
-**This command will not reply with any message on success! If nothing shows up: you did right!** This behavior is how SSH clients are implemented and sadly we cannot issue any positive response message.
-
-Once the tunnel is up, you can connect to the remote MySQL database with the `mysql` console client. Open a **new window terminal window** and issue:
-
-```bash
-# connect to the database < use 127.0.0.1, not localhost
-$ mysql -u{{app-name}} -h127.0.0.1 -P13306 -p {{app-name}}
-```
-
-In the next step you will be asked for your [MySQL password](#toc-obtain-the-mysql-password).
-
-
 ## Export & import
 
 A common task is to move your MySQL data around, like when you are migrating to fortrabbit or you are about to set up a staging environment. All following examples show you how to export data from your local machine and import it into your App's database on fortrabbit. It works the same, with swapped login details, for the other way around.
 
 ### Using the terminal
 
-Using `mysqldump` and `mysql` is the standard approach to migrate a database between two MySQL servers from the shell. First of start by exporting your data from your local database:
+Using `mysqldump` and `mysql` is the standard approach to migrate a database between two MySQL servers from the shell. First of start by exporting your data from your local database. Do this on your local machine:
 
 ```bash
 # on your local machine or on the old server
-$ mysqldump -uyour-local-db-user -pyour-local-db-password your-local-db-name > dump.sql
+$ mysqldump -u{{your-local-db-user}} -p{{your-local-db-password}} {{your-local-db-name}} > dump.sql
 ```
 
-Now you need to open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import.
+Replace the placeholders with your local 
+
+Next, open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import. Do this on your **local machine**, please don't login via SSH before, run it locally:
 
 ```bash
 # open the tunnel
@@ -162,6 +163,8 @@ $ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunn
 # import the dump
 $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 ```
+
+If you see a connection error with the first command, please troubleshoot your 
 
 ### Using MySQL Workbench (GUI)
 
