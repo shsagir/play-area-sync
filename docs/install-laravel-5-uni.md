@@ -153,7 +153,7 @@ You can access your logs via SSH or SFTP. Laravel, per default, stores it's log 
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com
 
 # tail the logs (they contain the current date, per default)
-$ tail -f storage/logs/laravel-2016-10-27.log
+$ tail -f storage/logs/laravel-2018-10-27.log
 ```
 
 #### Setting time zone in Laravel
