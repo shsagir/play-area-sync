@@ -71,7 +71,7 @@ $ git push
 
 ### Setup Git for an existing application
 
-If you used the above Quick start guide, you have a plain vanilla installation, Git is already setup and you can safely skip this topic. If you haven't and you have a local Laravel already running, follow steps 3 to 6 from above, to initialize a local Git repo and add your fortrabbit remote or have a look at our general [getting started with Git guide](/git).
+If you used the above Quick start guide, you have a plain vanilla installation, Git is already setup and you can safely skip this topic. If you haven't and you have a local Laravel already running, follow steps 3 to 6 from above, to initialize a local Git repo and add your fortrabbit remote or have a look at our general [getting started with Git guide](/git). When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.
 
 ### MySQL configuration
 
@@ -214,8 +214,3 @@ Laravel Mix compiles JS and CSS to really small and handy files using webpack, a
 ### Sending mail
 
 You can not use [sendmail](quirks#toc-mailing) on fortrabbit but Laravel provides a API over the popular SwiftMailer library. The mail configuration file is `app/config/mail.php`, and contains options allowing you to change your SMTP host, port, and credentials, as well as set a global form address for all messages delivered by the library.
-
-
-## Add an existing project
-
-You can also push your existing Laravel installation to fortrabbit. When you already using Git, you can add fortrabbit as an additional remote, like described [above](#toc-install) under point 6. When moving from another host to fortrabbit, please also read our [migration guide](/migrating) as well.
