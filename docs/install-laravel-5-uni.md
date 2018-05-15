@@ -11,8 +11,7 @@ websiteLink:      http://laravel.com?utm_source=fortrabbit
 websiteLinkText:  laravel.com
 category:         framework
 image:            laravel-mark.png
-version:          5.4
-deprecated:       yes
+version:          5.6
 stack:            uni
 proLink:          install-laravel-5-pro
 
@@ -25,7 +24,8 @@ keywords:
 
 ## Get ready
 
-Please make sure to have followed our [get ready guide](/get-ready) before starting here. You will also need a local Laravel installation.
+Please make sure to have followed our [get ready guide](/get-ready) before starting here.
+
 
 ## Quick start
 
@@ -65,13 +65,13 @@ $ git push
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
 
-## Advanced setup and migration
+## Setup and migration
 
 **Don't stop with a plain vanilla installation. Make it yours!** Check out the following topics if you have an existing Laravel installation or if you would like to setup Laravel so that you can run in a local development environment as well as in your fortrabbit App:
 
-### Setup Git
+### Setup Git for an existing application
 
-If you used the above Quick start guide, Git is already setup and you can safely skip this topic. If you haven't, follow steps 3 to 6 from above, to initialize a local Git repo and add your fortrabbit remote or have a look at our general [getting started with Git guide](/git).
+If you used the above Quick start guide, you have a plain vanilla installation, Git is already setup and you can safely skip this topic. If you haven't and you have a local Laravel already running, follow steps 3 to 6 from above, to initialize a local Git repo and add your fortrabbit remote or have a look at our general [getting started with Git guide](/git).
 
 ### MySQL configuration
 
@@ -126,8 +126,6 @@ Read on in the [MySQL Article: Export & import > Using the terminal](mysql-uni#t
 #### MySQL access from local
 
 Please see the [MySQL article](mysql-uni#toc-access-mysql-from-local) on how to access the database remotely from your computer.
-
-
 
 ### Migrate & other artisan commands
 
@@ -202,6 +200,15 @@ Then execute locally:
 $ envoy run ls
 $ envoy run migrate
 ```
+
+### Laravel Mix
+
+Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can not on fortrabbit as there is [no Node] on remote running. So you need to run the built process for production locally first. For deploying the minified output — this also applies to other workflows like with Gulp — you can either: 
+
+1. Include the .min files with Git and push it along. That's not a clean method, but it works.
+2. Deploy the minified files separately. You can do this with SFTP or rsync.
+
+<!-- TODO: include rsync example -->
 
 
 ### Sending mail
