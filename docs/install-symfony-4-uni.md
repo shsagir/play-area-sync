@@ -124,7 +124,7 @@ We assume you are using Encore to manage your CSS & JS assets and `yarn` is conf
 
 In your `webpack.config.js` define different locations of the build - `prod` and `dev`:
 
-```
+```js
 var Encore = require('@symfony/webpack-encore');
 var env = Encore.isProduction() ? 'prod' : 'dev';
 
