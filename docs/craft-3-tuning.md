@@ -133,4 +133,14 @@ https://craftcms.com/support/site-url
 https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/480927/conversations/16114188408
 adding domains? which config needs to be changed in Craft?
 
+
+
+cache headers images:
+https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/conversation/16319087993
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)\.(\d+)\.(bmp|css|cur|gif|ico|jpe?g|js|png|svgz?|webp|webmanifest)$ $1.$3 [L]
+</IfModule>
  -->
