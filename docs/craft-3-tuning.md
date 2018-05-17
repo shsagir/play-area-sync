@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-09
+reviewed:         2018-05-17
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Learn how to tweak Craft CMS on fortrabbit, master advanced topics, overcome obstacles and tackle problems.
@@ -22,18 +22,18 @@ keywords:
 
 ---
 
+## Get ready
 
-## craft-copy
+Make sure to have followed [our guides](/craft-3-about) so far. By now your local and fortrabbit Craft should already be running.
 
-**fortrabbit craft-copy** is a little handy open-source command line tool to speed up common deployment tasks around Craft CMS on fortrabbit. It connects your local Craft CMS installation with an App on fortrabbit and then enables you to sync database and assets in a speedy and convenient way. Please head on to the GitHub page to learn how to use it:
-
-* [github.com/fortrabbit/craft-copy](https://github.com/fortrabbit/craft-copy)
 
 ## Updating Craft
 
 From time to time a new minor Craft version will come out, dot or a dot-dot, like an update from 3.1.5 to 3.1.6. We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
 
 ### A. Update Craft with a Git workflow
+
+<!-- TODO: Describe how to turn off web updates in Craft -->
 
 **Don't click the shiny update button in the interface. Don't follow [the official guides](https://docs.craftcms.com/v3/updating.html).** Use Composer to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**: 
 
@@ -64,55 +64,8 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 
 Just use the shiny update button interface. Follow [the official guides](https://docs.craftcms.com/v3/updating.html). You need to do that twice: Once for your local installation, once for the one on remote (ony your App).
 
-## MySQL table prefixes
 
-You can set a table prefix in the `.env` file locally or in the ENV vars settings with your App in the Dashboard like so:
-
-```
-# Example Table prefix
-DB_TABLE_PREFIX=craft_
-```
-
-When your local Craft installation contains a table prefix the one on the fortrabbit App should have the same one. Set the table prefix on fortrabbit with the Apps [ENV vars](/env-vars).
-
-
-## The .env file
-
-In your local environment the Craft settings are stored in the `.env` file. This hidden file is excluded from Git as it stores sensitive information only suited for a single environment. **Don't upload it to fortrabbit.** Edit the `.env` file with text editor to configure Craft to run locally. These settings are mostly set by the Craft web intaller or by the Craft CLI setup tool. You can also edit them manually. The .env settings file for Craft CMS includes:
-
-### Security key
-
-From the Craft Docs: "Each Craft CMS project should have a unique security key. This key is shared between the environments that the project runs on." This mandatory key is automatically generated, when using a Composer installation, you can also assign it manually in the `.env file or trigger a terminal command to set it. 
-
-We recommend to use the security key of your fortrabbit App. Go to the App's ENV vars settings in the Dashboard and copy the content of the `security_key` variable - it's the last line in the textarea. Here is the direct link:
-
-* [dashboard.fortrabbit.com/apps/{{app-name}}/vars](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
-
-Paste that long string into the value of the `SECURITY_KEY` within your local `.env` file. Here is what the specific line looks like:
-
-```
-SECURITY_KEY={{PASTE-KEY-FROM-DASHBOARD-HERE}}
-```
-
-When you have installed Craft with Composer that value might already contain a value. Just replace it with the one from the fortrabbit Dashboard.
-
-### MySQL credentials
-
-Your Craft CMS needs to connect to two databases: on your local machine and the fortrabbit database. This is what the according lines in your local `.env` file can look like:
-
-```
-# Use your own local settings as values
-DB_DATABASE=database-name
-DB_SERVER=127.0.0.1
-DB_USER=mysql-user
-DB_PASSWORD=mysql-password
-```
-
-There is no MySQL configuration required to make Craft connect to the database on fortrabbit, when have chosen Craft in [software chooser](/app#toc-software-preset) while you have created the App. In this case all the required settings (ENV vars and root path) are already set.
-
-The actual values for accessing your local database are depending on your [local development environment](/local-development). For your Craft fortrabbit App everything should already be set and done.
-
-#### Environment settings
+### Environment settings
 
 We expect fortrabbit to be your production environment, so it has been set accordingly in the ENV vars. Your local development environment will be "dev". This is what your `.env` file needs to contain:
 
@@ -121,7 +74,6 @@ ENVIRONMENT=dev
 ```
 
 It's maybe there already. **Pro tip**: See below on how to [enable Dev Mode](#toc-dev-mode).
-
 
 ## Dev Mode
 
@@ -166,6 +118,7 @@ The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore`
 
 <!-- TODO:
 
+Licsence keys
 
 
 What about this?
