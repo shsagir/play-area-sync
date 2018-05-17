@@ -4,7 +4,7 @@ template:         article
 reviewed:         2018-05-09
 title:            Deploy Craft CMS with Git 
 naviTitle:        Deploy Craft with Git
-lead:             Learn how to deploy Craft CMS to fortrabbit using Git for the code base and rsync for the runtime data. 
+lead:             Learn how to deploy Craft CMS code base with Git to fortrabbit. 
 group:            craft
 stack:            all
 
