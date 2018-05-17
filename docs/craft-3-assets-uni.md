@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-09
+reviewed:         2018-05-17
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to Universal Apps using rsync or SFTP.
@@ -28,7 +28,7 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/craft-3-install-local). Further, this guide is for advanced users on the advanced Uni Stack already using [Git deployment to deploy Craft](/craft-3-deploy-git). You don't need to care about all this, when you have [uploaded Craft with SFTP](/craft-3-upload-sftp).
+For best results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/craft-3-install-local). Further, this guide is for advanced users on the [Uni Stack](/app-uni) already using [Git deployment to deploy Craft](/craft-3-deploy-git). You don't need to care about all this, when you have [uploaded Craft with SFTP](/craft-3-upload-sftp).
 
 ## About Craft assets
 
@@ -51,12 +51,14 @@ $ rsync -av ./web/assets/ {{app-name}}@deploy.{{region}}.frbit.com:~/web/assets/
 
 Our [rsync tutorial](https://blog.fortrabbit.com/deploying-code-with-rsync) covers many useful rsync options, like excludes, `--dry-run` and `--delete`.
 
-
 ## Manage Craft assets with SFTP
 
 Good old [SFTP](/sftp-uni#toc-accessing-sftp) is another valid way to to do it. Just fire up your SFTP client, login to the App and manage the assets manually. Many SFTP clients are offering sync options, to keep local and remote files up-to-date.  
 
-
 ## Outsource assets to a cloud storage
 
-This is basically what we are doing with the [Object Storage](/object-storage) for the [Pro Apps](/app-pro). The assets are not stored on the file system of the App any more, once the user uploads files, they get uploaded to an external cloud storage like S3 (or the Object Storage here), within the templates you hot-link all the files to the external storage. This more professional design helps to reduce load on the App. Look out for S3 Craft plugins to get started with this. Use this, when you really need it. Don't over-engineer.
+This is basically what we are doing with the [Object Storage](/object-storage) for the [Pro Apps](/app-pro): The assets are not stored on the file system of the App any more, once the user uploads files, they get uploaded to an external cloud storage like S3 (or the Object Storage here), within the templates you hot-link all the files to the external storage. This more professional design helps to reduce load on the App. Look out for S3 Craft plugins to get started with this. Use this, when you really need it. Don't over-engineer.
+
+## Next steps
+
+Make sure to have your [Craft setup](/craft-3-setup) correctly. Then [tune and optimize](/craft-3-tuning).

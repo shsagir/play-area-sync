@@ -4,7 +4,7 @@ template:         article
 reviewed:         2018-05-17
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
-lead:             Learn how to tweak Craft CMS on fortrabbit, master advanced topics, overcome obstacles and tackle problems.
+lead:             Learn how to tweak Craft CMS on fortrabbit, master advanced topics, overcome obstacles, tackle problems and get most out of it.
 group:            craft
 stack:            all
 
@@ -24,7 +24,7 @@ keywords:
 
 ## Get ready
 
-Make sure to have followed [our guides](/craft-3-about) so far. By now your local and fortrabbit Craft should already be running.
+Make sure to have followed [our guides](/craft-3-about) so far, either with a Senior workflow or Junior workflow  By now your local and fortrabbit Craft should already be running.
 
 
 ## Updating Craft

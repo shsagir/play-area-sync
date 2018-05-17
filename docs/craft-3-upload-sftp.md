@@ -42,6 +42,19 @@ Doesn't work as expected? Keep calm and read on:
 
 ### File permissions
 
+<!--
+
+TODO: 
+
+Either confirm or delete this part. I have added this based on that feedback: 
+https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/search/conversations/16267404732?q=744
+
+Maybe it's OS related? It's also in the offcial docs:
+https://docs.craftcms.com/v3/installation.html#step-2-set-the-file-permissions
+
+-->
+
+
 Make sure that Craft can write the files `composer.json`, `composer.lock`, `config/license.key`, `storage/*` and `vendor/*` on the App. Set the file permissions for those files to `744` with your SFTP client. 
 
 ### Hidden .htaccess file
