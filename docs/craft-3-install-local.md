@@ -1,10 +1,10 @@
 ---
 
 template:         article
-reviewed:         2018-05-07
+reviewed:         2018-05-16
 title:            Install Craft CMS locally
 naviTitle:        Install Craft locally
-lead:             Craft is a CMS you and your clients will love. Learn how to install Craft CMS locally, matching your deployment workflow.
+lead:             Learn how to install Craft CMS locally, matching your skills and workflows.
 group:            craft
 stack:            all
 
@@ -68,6 +68,17 @@ This will ask you some questions, the defaults will work mostly, you can change 
 
 You can also run the installer in the browser by visiting this address: `http://{{host}}/index.php?p=admin` in your browser. Substitute `{{host}}` with the [host name of your local development environment](/local-development#toc-virtual-hosts). 
 
-- - -
 
-**Wrap up**: By now your Craft CMS should already run on your local development machine. You should be able to visit your Craft installation locally and login to the Craft admin panel. Next up: [deploy Craft with Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp).
+## The .env file
+
+In your local environment the Craft settings are stored in the `.env` file. This hidden file is excluded from Git as it stores sensitive information only suited for a single environment. **Don't upload it to fortrabbit.** Edit the `.env` file with text editor to configure Craft to run locally. These settings are mostly set by the Craft web installer or by the Craft CLI setup tool. You can also edit them manually.
+
+## Wrap up
+
+By now your Craft CMS should run on your local development machine. You should be able to visit your Craft installation locally and login to the Craft admin panel.
+
+## Next steps
+
+Now, depending on the workflow you have used, you TODO
+
+ [deploy Craft with Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp).
