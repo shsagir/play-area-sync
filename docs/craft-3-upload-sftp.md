@@ -24,13 +24,13 @@ keywords:
 
 ## Get ready
 
-Make sure to have completed the other steps from the [Junior workflow](craft-3-about#toc-junior-workflow) before. This guide here follows the easiest path to get Craft up and running on fortrabbit, we also have a better but more advanced workflow to [deploy Craft with Git](/craft-3-deploy-with-git-uni) here.
+Make sure to have completed the other steps from the [Junior workflow](craft-3-about#toc-juniors) before. This guide here follows the easiest path to get Craft up and running on fortrabbit, we also have a better but more advanced workflow to [deploy Craft with Git](/craft-3-deploy-with-git-uni) here.
 
 ## Upload Craft with SFTP
 
-This workflow is so simple and common that it doesn't actually needs much explanations, everybody and his dog knows [how to use SFTP](/sftp). Check the [downloading an archive file manually](https://docs.craftcms.com/v3/installation.html) workflow from the official Craft docs as your detailed reference. 
+This workflow is simple and common. It doesn't need much explanation. Everybody and his dog knows [how to use SFTP](/sftp). Check the [downloading an archive file manually](https://docs.craftcms.com/v3/installation.html) workflow from the official Craft docs as your detailed reference. 
 
-On the fortrabbit side: Just grab your personal SFTP login credentials from the Dashboard. Use any SFTP client. Upload all contents of your local Craft folder into the `htdocs` folder of your fortrabbit App. 
+On the fortrabbit side: Just grab your personal SFTP login credentials from the Dashboard. Use any SFTP client. Upload all contents of your local Craft folder into the `htdocs` folder of your fortrabbit App. And you are good to go.
 
 ## Troubleshooting
 
@@ -64,9 +64,6 @@ Don't forget to upload hidden `.htaccess` file. This file is required. You can n
 
 ## Next steps
 
-Your Craft fortrabbit App should already connect to the fortrabbit database, thanks to the [Software Preset](/app#toc-software-preset). So, next, [configure Craft](/craft-3-setup).
+Your Craft fortrabbit App should already connect to the fortrabbit database, thanks to the [Software Preset](/app#toc-software-preset). Next, [configure Craft](/craft-3-setup) to complete your setup.
 
-After that, please make yourself familiar with the options to deploy the Craft `assets` folder separately. There are two dedicated guides here, depending on the Stack: [Deploy assets with rsync (Uni)](/craft-3-assets-uni) and [Deploy assets to the Object Storage (Pro)](/craft-3-assets-pro).
-
-Also see our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.
-
+A downside of the SFTP workflow is, that you have keep both of your Craft environments in sync manually. Our [manage assets with rsync](/craft-3-assets-uni) is optional but still helpful for SFTP users. Also see our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.
