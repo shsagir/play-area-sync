@@ -93,7 +93,18 @@ openssl req -new -nodes -keyout {{app-name}}.key -out {{app-name}}.csr -newkey r
 openssl rsa -in {{app-name}}.key -out {{app-name}}.rsa.key
 ```
 
-Do not enter a password! Also: if you plan on using `www.yourdomain.tld`, don't miss the `www.` in the "Common Name"!
+Do not enter a password! Also: if you plan on using `www.yourdomain.tld`, don't miss the `www.` in the "Common Name"! When you have a wildcard domain, use `*domain.tld` as the Common Name.
+
+#### Checking your CSR
+
+You can decode the created CSR file to make sure did it correctly. Run this in your local Terminal:
+
+```
+openssl req -in yourcsr.csr -noout -text
+```
+
+Substitute `yourcsr.csr` with your file. Or just use an online tool, like [this one](/https://www.sslshopper.com/csr-decoder.html).
+
 
 #### Convert an existing key to RSA format
 
