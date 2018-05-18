@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-03-12
+reviewed:      2018-05-12
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -145,10 +145,15 @@ Do you want to route all requests for all possible subdomains to your fortrabbit
 
 Some domain providers promote wildcard domains as the save and easy catch-all solution. With fortrabbit you should use a wildcard domain solely for the purpose when there is really any number of addresses that change dynamically. Imagine a social network App where your users will have `[[user]].[[your-domain.com]]` addresses.
 
-#### Wildcard domain limitations
+When you actually only have a handful sub-domains you need to cover, don't use a wildcard domain, register them manually with the Dashboard. A bonus is that those can be covered by the free Let's Encrypt certs. So when you plan for something like this: `www.domain.foo`, `help.domain.foo`, `blog.domain.foo`, `another.domain.foo` — don't register a wildcard domain. Wildcard domains are not the easy fix.
 
-For security reasons we'll need to verify that you own the domain. You will need to verify an e-mail send to this domain. We do not provide [HTTPS free](/https) for wildcard domains, you need to book [HTTPS custom](/https-custom-pro) in order to have https on your wildcard domain.
+#### Wildcard domain verification
 
+For security reasons we'll need to verify that you own the domain. You will need to verify an e-mail send to this domain.
+
+#### No free TLS for wildcard domains
+
+We do not provide Let's Encrypt certificates for wildcard domains. So you need to bring your own certificate. See our [HTTPS article](/https) for more.
 
 
 ## Changing the default domain
