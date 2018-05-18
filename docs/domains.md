@@ -143,9 +143,9 @@ Do you want to route all requests for all possible subdomains to your fortrabbit
 
 #### Wildcard domain use cases
 
-Some domain providers promote wildcard domains as the save and easy catch-all solution. With fortrabbit you should use a wildcard domain solely for the purpose when there is really any number of addresses that change dynamically. Imagine a social network App where your users will have `[[user]].[[your-domain.com]]` addresses.
+Some domain providers promote wildcard domains as the easy catch-all solution. With fortrabbit you should use a wildcard domain solely for the purpose when there is really any number of addresses that change dynamically. Imagine a social network App where your users will have `[[user]].[[your-domain.com]]` addresses.
 
-When you actually only have a handful sub-domains you need to cover, don't use a wildcard domain, register them manually with the Dashboard. A bonus is that those can be covered by the free Let's Encrypt certs. So when you plan for something like this: `www.domain.foo`, `help.domain.foo`, `blog.domain.foo`, `another.domain.foo` — don't register a wildcard domain. Wildcard domains are not the easy fix.
+When you actually only have a handful of sub-domains you need to cover, don't use a wildcard domain, register them manually with the Dashboard. A bonus is that those can be covered by the free Let's Encrypt certs. So when you plan for something like this: `www.domain.foo`, `help.domain.foo`, `blog.domain.foo`, `another.domain.foo` — don't register a wildcard domain. Wildcard domains are not the easy fix.
 
 #### Wildcard domain verification
 
