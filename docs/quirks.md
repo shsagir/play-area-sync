@@ -2,7 +2,7 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2018-05-11
+reviewed:      2018-05-21
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions there are some — aren't there always? Heads up so it doesn't cost you hours of debugging in the wrong direction."
 stack:         all
@@ -22,9 +22,9 @@ Apps are lightweight containers optimized for speedy web delivery of PHP applica
 
 Professinal Apps only have [remote SSH execution](/remote-ssh-execution-pro). [Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. 
 
-Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, jpegoptim, optipng, Gulp, webpack or Rails. The Pro Stack has the [Worker Component](/worker-pro) to have CPU intensive long running tasks run in the background.
+Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, jpegoptim, optipng, Gulp, webpack, ruby, Rails a mailserver. Sounds scary? Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video. Consider to use an alternative or a third party service.
 
-Sounds scary? Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video. Consider to use an alternative or a third party service.
+The Pro Stack has the [Worker Component](/worker-pro) to have CPU intensive long running tasks run in the background, but again only for software you can install via Composer.
 
 ### wkhtmltopdf
 
