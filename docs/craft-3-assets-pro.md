@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-09
+reviewed:         2018-05-22
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to the Object Storage with fortrabbit Professional Apps.
@@ -43,8 +43,15 @@ So what you want: is to swap the assets folder on the file system with external 
 
 * [github.com/fortrabbit/craft-object-storage](https://github.com/fortrabbit/craft-object-storage)
 
-That will make the App use the Object Storage. To access the Object Storage yourself, you can use any S3 compatible SFTP client — most of them are.
+That will make the App use the Object Storage. To access the Object Storage yourself, you can use any S3 compatible SFTP client — most of them speak the S3 protocol.
 
+### Craft asset bundler
+
+<!-- TODO: Check this, not sure how it integrates with the Object Storage? -->
+
+One reason to choose our Professional Stack is the option to have a horizontally scaled setup AKA high availability. But there are still some [problems with Craft 3 itself](https://github.com/craftcms/cms/issues/2500) in such cases currently — fix hopefully soon. For now we have published a plugin as a workaround:
+
+* [github.com/fortrabbit/craft-asset-bundler](https://github.com/fortrabbit/craft-asset-bundler)
 
 ## Next steps
 
