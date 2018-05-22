@@ -14,6 +14,9 @@ category:         CMS
 image:            craft-cms-logo.png
 version:          3.0.5
 
+otherVersions:
+    2 : install-craft-2-uni
+
 keywords:
   - craft
   - craftCMS
@@ -61,9 +64,11 @@ Make sure that Craft can write the files `composer.json`, `composer.lock`, `conf
 
 Don't forget to upload hidden `.htaccess` file. This file is required. You can not see that file in your Desktop, unless you set the option to show hidden files. The file browser from your SFTP client most likely will show that file by default. Leave the other hidden `.env` file — which is only for your local development — at home.
 
+## Consider
+
+A downside of the SFTP workflow is, that you have keep both of your Craft environments in sync manually. Our [manage assets with rsync](/craft-3-assets-uni) is optional but still helpful for SFTP users. Also see our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.
+
 
 ## Next steps
 
 Your Craft fortrabbit App should already connect to the fortrabbit database, thanks to the [Software Preset](/app#toc-software-preset). Next, [configure Craft](/craft-3-setup) to complete your setup.
-
-A downside of the SFTP workflow is, that you have keep both of your Craft environments in sync manually. Our [manage assets with rsync](/craft-3-assets-uni) is optional but still helpful for SFTP users. Also see our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.
