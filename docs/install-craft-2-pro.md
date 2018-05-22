@@ -19,7 +19,7 @@ deprecated:       yes
 dontList:         yes
 
 otherVersions:
-   3 : install-craft-3-pro
+    3 : craft-3-about
 
 keywords:
     - craft

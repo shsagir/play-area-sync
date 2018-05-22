@@ -94,6 +94,11 @@ keywords:
 # The actual link you will send people to (for external services)
 websiteLink: https://www.wordpress.org?utm_source=fortrabbit
 
+# when there is another version available
+otherVersions:
+    3 : install-craft-2-uni
+
+
 # A human readable version of that same link, exclude clutter!
 websiteLinkText: www.wordpress.org
 

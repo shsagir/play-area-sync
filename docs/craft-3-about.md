@@ -15,7 +15,7 @@ image:            craft-cms-logo.png
 version:          3.0.5
 
 otherVersions:
-    2.6 : install-craft-2-uni
+    2 : install-craft-2-uni
 
 keywords:
   - craft

@@ -18,6 +18,10 @@ group:            Install_guides
 deprecated:       yes
 dontList:         true
 
+otherVersions:
+    3 : craft-3-about
+
+
 keywords:
     - craft
     - craftCMS
