@@ -182,15 +182,13 @@ s
 
 ### MySQL limits
 
-**MySQL storage** limit is critical. When exceeding: either nothing happens, or some parts of the site throw errors or a "white screen". This depends where write capabilities are used (eg news site which can only be written by admin works fine - whereas community site, which stores user comments stops working in large parts).
+**MySQL storage** limit is critical. When exceeding this, multi things can happen: maybe nothing happens, or some parts of the site throwing errors or even "white screens". The kind of error depends where write capabilities are used, a news site which can only be written by an editor might deliver just fine - whereas a community site, which stores user comments stops working in large parts.
 
 **MySQL memory** limit is only a recommendation. As long as: `memory + index < total storage` all is good.
 
 **MySQL index** limit on tinkering & production plans is only a recommendation. See above.
 
 **MySQL index** limit on a dedicated plan is a soft limit. When exceeding, either nothing happens or the App get's slower because the total available dedicated memory is exhausted depending on whether index memory exhaustion is caused permanently or by isolated event.
-
-
 
 **MySQL IOPS** limit is a soft limit. Exceeding it probably degrades performance for website delivery.
 
