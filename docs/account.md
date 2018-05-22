@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-09-16
+reviewed:      2018-05-22
 title:         Account
 naviTitle:     Account
 excerpt:       What you can do with your Account
@@ -17,6 +17,8 @@ keywords:
     - roles
     - access
     - security
+    - mfa
+    - 2fa
 
 ---
 
@@ -84,7 +86,7 @@ During the guided setup you will enable your second device to generate OneTimePa
 
 #### Using 2FA with your Account
 
-Once 2FA is enabled with your fortrabbit Account, you'll need to enter the extra TOTP code when logging or performing critical actions requiring a SUDO.
+Once 2FA is enabled with your fortrabbit Account, you'll need to enter the extra TOTP code when logging or performing critical actions requiring a SUDO. 
 
 #### Recovering 2FA when second device is lost
 
