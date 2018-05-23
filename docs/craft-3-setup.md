@@ -189,8 +189,20 @@ The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore`
 
 <!-- TODO:
 
-Licsence keys
 
+HTTPS?
+
+I'd like to see the TLS/HTTPS topic covered in the help pages here for Craft, it's new for many users how this is done here. We have the X-forward header thing in the general article. Maybe there is a setting in Craft CMS?
+
+https://craftcms.stackexchange.com/questions/4128/how-do-i-force-ssl-on-craft?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+
+
+
+- - 
+
+
+Licsence keys
 
 What about this?
 https://github.com/fortrabbit/craft-starter
