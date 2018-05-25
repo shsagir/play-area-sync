@@ -80,6 +80,8 @@ DB_PASSWORD=mysql-password
 
 Usually there is no MySQL configuration required to make Craft connect to the database on fortrabbit, when have chosen Craft in [software chooser](/app#toc-software-preset) while you have created the App. In this case all the required settings (ENV vars and root path) are already set. The actual values for accessing your local database are depending on your [local development environment](/local-development). For your Craft fortrabbit App everything should already be set and done.
 
+
+
 #### MySQL table prefixes
 
 You can set a table prefix in the `.env` file locally or in the ENV vars settings with your App in the Dashboard like so:
