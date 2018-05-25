@@ -175,7 +175,7 @@ You visit your Apps domain under the `https://` address and the browser throws a
 
 ### Cert is installed but browser bar is not green
 
-In most cases this is due to "**mixed content**", which means, the cert is installed and everything is working, but your website is requesting external resources over non-secure addresses (http). Check the source code of your website and find and replace all `http:` with `https://` requests.
+In most cases this is due to "**mixed content**", which means, the cert is installed and everything is working, but your website is requesting external resources over non-secure addresses (http). Check the source code of your website and find and replace all `http:` requests. You can use `https://` instead or you just leave out the protocol entirely like so: `//`. The last method will use whatever has been used before, so that works especially well, with different environments, for instance when your local development machine doesn't have TLS.
 
 ### It's not working with Internet Explorer 8 or older
 
