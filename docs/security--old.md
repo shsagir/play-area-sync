@@ -7,6 +7,9 @@ naviTitle:   Security
 lead:        fortrabbit security concepts and how you can help.
 group:       platform
 stack:       all
+dontList:    true
+dontIndex:   true
+
 
 keywords:
     - beginner
