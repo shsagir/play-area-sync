@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-11
+reviewed:      2018-06-01
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -207,6 +207,8 @@ Most connections calls on most ports are forbidden for [security](security) reas
 Each App comes with "**Usage metrics**": Those show you the current status of the Web storage, MySQL storage and Object Storage and context of your
 
 Some Apps also come with "**Performance metrics**": Those show you how fast your App is and where you might need to improve. Performance metrics are: requests, PHP response time, traffic, errors and other useful stuff. You can set different time intervals to monitor performance over time.
+
+* https://dashboard.fortrabbit.com/apps/{{app-name}}/metrics
 
 ### App team
 

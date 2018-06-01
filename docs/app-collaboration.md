@@ -85,9 +85,7 @@ Within this form you can add or remove Apps for this Collaborator.
 
 ## Promoting an App collaborator
 
-When you already have a Company collaboration plan you can promote a Collaborator to become Admin or Owner. In the Dashboard: Navigate to the Company the App is part of. Under App collaborators, click on the collaborators access role. This will open a form where you can change the role.
-
-You can also find the Collaborators profile page from the respective App's overview.
+When you already have a Company collaboration plan you can promote a Collaborator to become Admin or Owner. In the Dashboard: Navigate to the Company the App is part of. Under App collaborators, click on the collaborators access role. This will open a form where you can change the role. You can also find the Collaborators profile page from the respective App's overview.
 
 
 ## Assigning more Apps to the same App collaborator
