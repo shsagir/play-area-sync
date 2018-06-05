@@ -1,12 +1,12 @@
 ---
 
 template:    article
-reviewed:    2016-12-20
-title:       Using Basic access authentication aka HTTP Auth on fortrabbit
-naviTitle:   HTTP Auth
-lead:        How to set up your App in a way that the browser prompts for username/password.
+reviewed:    2018-06-02
+title:       Using HTTP Auth on fortrabbit
+lead:        You probably don't want the whole world to see your development in progress. Better restrict access to a fortunate few. This is how to use HTTP (basic) authentication to trigger a username/password prompt in the browser.
+naviTitle:   HTTP auth
 group:       platform
-stack:       old
+stack:       all
 
 keywords:
     - HTTP Auth
@@ -15,37 +15,39 @@ keywords:
 
 ---
 
-## Problem
 
-You probably don't want the whole world to see your development in progress. So you want to restrict access to a fortunate few using [HTTP (basic) auth](https://en.wikipedia.org/wiki/Basic_access_authentication). In the fortrabbit PHP/FPM infrastructure neither `PHP_AUTH_USER` nor `PHP_AUTH_PW` are available - but you can hack around easily.
+### Set a root path below htdocs
 
-## Solution
+When no framework or CMS was chosen when creating the App, `htdocs` is the default root folder of the App. Create a new folder, called something like `web` or `root`. Move all your web contents into that folder. Set the newly created folder containing everything now, as the new root path in the Dashboard, see also [here on how to do the last part](/app#toc-root-path).
 
-To utilize HTTP (basic) Auth, you need to add a directive in your `.htaccess` file, forwarding the `Authorization` header as an environment variable. This variable then contains the base64 encoded authentication data, which you can then decode to the `PHP_AUTH_USER` and `PHP_AUTH_PW`.
+### Create the .htaccess file
 
-### Modify .htaccess file
+Create a `.htaccess` file in the directory you want to secure. Likely that this is your new root directory, can also be below that. Be careful, the dot at the beginning of the file names indicates that it is a hidden file. You can upload the file by any deployment method: with Git, by SFTP or create it on remote via SSH. Please note, that all frameworks and CMS systems will already have an `.htaccess` file in their own root path. You can modify that as well. This is, what your `.htaccess` should contain for HTTP auth:
 
+ 
 ```
-# ..
-RewriteCond %{HTTP:Authorization} .
-RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+Authtype Basic
+AuthName "Welcome to my awesome project. Please Login."
+AuthUserFile /srv/app/{{appname}}/htdocs/.htpasswd
+Require valid-user
 ```
 
-### Decode auth header in PHP
+The first line starts the directive. The second line set a hello message which is printed to greet the user. The third line points the server to the file that stores the username and password to login, this is an absolute path. This `.htpasswd` file should NOT be reachable from the outside, via http. That's why you have moved all the files one level deeper. The last line finally sets the rule, that only valid users are allowed to browse.
 
-```php
+### Create the .htpasswd file
 
-// header was not provided
-if (empty($_SERVER['REMOTE_USER'])) {
-    header('WWW-Authenticate: Basic realm="My Realm"');
-    header('HTTP/1.0 401 Unauthorized');
-    echo 'Need auth!';
-    exit;
-}
+As you can already guess by now, the `.htpasswd` file hosts the required username and password to enter your project. And this is how that file can look like:
 
-// extract user and pw from encoded auth data
-list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(
-    ':',
-    base64_decode(substr($_SERVER['REMOTE_USER'], 6))
-);
+```htpasswd
+john:$aSr1$jw6nGOHx$f/HpoNv9thNMd6w35Ttl80
 ```
+
+The username is before the colon. The long string after the colon is the password. It needs to be Base64 encrypted. "htpasswd" is a command line tool likely installed on your local machine (sorry not on fortrabbit yet, so you have to run that locally):
+
+```bash
+htpasswd -c ~/directory/.htpasswd john
+```
+
+The -c flag create a new file. The first param defines the file name and (absolute) pat to store it. The second param the username. The tool will prompt for the password. You can also use web service like this one:
+
+* [htaccesstools.com/htpasswd-generator](http://www.htaccesstools.com/htpasswd-generator/)
