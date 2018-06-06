@@ -32,16 +32,35 @@ keywords:
 Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local) and deployed it your fortrabbit App. 
 
 
+<!--
+
+TODO: rethink headlines:
+
+* The Craft in the headline is notz needed here?
+* What does the next headline and the one after actually say? whta makes them different?
+
+-->
+
 ## Craft environment configuration
 
-Instead of hard coding secret credentials into your config files directly — like with WordPress — Craft 3 uses a much smarter approach: [environment detection](local-development#toc-environment-detection). So you can run your Craft locally and on remote without code or configuration file changes.
+<!--
+
+TODO: Storing credentials in an ENV var and enviroment detection are not the same thing IMO. I would separate the two topics. 1st of all, the credentials are stored in ENV. Second: use ENV detection to differentiate between local and prod.
+
+-->
+
+Instead of hard coding secret credentials - like the database username and password - into your config files directly — like with WordPress — Craft 3 uses a much smarter approach: [environment detection](local-development#toc-environment-detection). So you can run your Craft locally and on remote without code or configuration file changes.
+
+
 
 Locally, your `.env` file will be modified and read. On fortrabbit the [environment variables](/env-vars) are getting feeded from the ones you can set in the Dashboard. When have chosen Craft in [software chooser](/app#toc-software-preset) while you have created the App, all ENV vars at fortrabbit are already pre-populated, all set and done.
 
 
 ### Environment settings
 
-We expect fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. 
+<!--  -->
+
+We assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. 
 
 ```
 <?php

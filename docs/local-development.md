@@ -88,6 +88,8 @@ By default your local development environment will likely be reached under: `loc
 
 ### Environment detection
 
+<!-- TODO: write more here. This is linked from craft and currently is a bit of a dead end without much info. -->
+
 Our code examples in the [install guides](/#install-guides) always include checks to detect if the App is running locally or on fortrabbit. You should consider this when developing your code - or rather setting up your configuration. For example: MySQL will need different credentials locally then on fortrabbit.
 
 ### Multi-staging
