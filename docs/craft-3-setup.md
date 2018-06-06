@@ -29,7 +29,7 @@ keywords:
 
 ## Get ready
 
-Make sure to have followed [our guides](/craft-3-about) so far. You should have already installed Craft locally and on fortrabbit. 
+Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local) and deployed it your fortrabbit App. 
 
 
 ## Craft environment configuration
