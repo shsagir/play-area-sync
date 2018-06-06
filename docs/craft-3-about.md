@@ -47,10 +47,10 @@ Read more about the Stacks [here](/stacks).
 
 #### 1.2 Modern workflow steps
 
-<!-- TODO merge 1+2, skip local) -->
+<!-- TODO ??????? merge 1+2, skip local) -->
 1. [Be ready](/get-ready), fortrabbit App + local dev env
 2. Have an existing Craft 3 project running or [install a new on with Composer](craft-3-install-local#toc-1a-download-craft-with-composer) locally
-2. [Prepare environments](/craft-3-setup#environments)
+2. [Prepare environments](/craft-3-setup#environments)<!-- TODO dead link -->
 3. [Migrate database](/craft-3-setup#database)
 4. [Deploy Craft with Git](/craft-3-deploy-git)
 5. Manage Craft assets by [rsync for Uni](/craft-3-assets-uni) or by [Object Storage upload for Pro](/craft-3-assets-pro) 
@@ -62,9 +62,9 @@ Juniors and web developers with a focus on front-end are likely more comfortable
 
 #### 2.1 Legacy workflow steps
 
-<!-- TODO merge 1+2, skip local) -->
+<!-- TODO ??????? merge 1+2, skip local) -->
 1. [Be ready](/get-ready), fortrabbit App + local dev env
 2. Have an existing Craft 3 project running or [download Craft](craft-3-install-local#toc-1b-download-the-craft-zip-file)
-2. [Prepare environments](/craft-3-setup#environments)
+2. [Prepare environments](/craft-3-setup#environments) <!-- TODO dead link -->
 3. [Migrate database](/craft-3-setup#database)
 4. [Upload Craft with SFTP](/craft-3-upload-sftp)
