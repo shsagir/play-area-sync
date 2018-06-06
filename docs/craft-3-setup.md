@@ -51,14 +51,12 @@ TODO: Storing credentials in an ENV var and enviroment detection are not the sam
 
 Instead of hard coding secret credentials - like the database username and password - into your config files directly — like with WordPress — Craft 3 uses a much smarter approach: [environment detection](local-development#toc-environment-detection). So you can run your Craft locally and on remote without code or configuration file changes.
 
-
-
 Locally, your `.env` file will be modified and read. On fortrabbit the [environment variables](/env-vars) are getting feeded from the ones you can set in the Dashboard. When have chosen Craft in [software chooser](/app#toc-software-preset) while you have created the App, all ENV vars at fortrabbit are already pre-populated, all set and done.
 
 
 ### Environment settings
 
-<!--  -->
+<!-- TODO: make clear which file is edited here! -->
 
 We assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. 
 
@@ -87,6 +85,7 @@ The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `pro
 ### Security key
 
 <!-- TODO: shorten -->
+
 From the Craft Docs: "Each Craft CMS project should have a unique security key. This key is shared between the environments that the project runs on." This mandatory key is automatically generated, when using a Composer installation, you can also assign it manually in the `.env` file or trigger a terminal command to set it. 
 
 It is crucial that the security key is the same on all of the environments the Craft projects runs in. We recommend to use the security key of your fortrabbit App. Go to the App's ENV vars settings in the Dashboard and copy the content of the `security_key` variable - it's the last line in the textarea. Here is the direct link:
@@ -100,8 +99,6 @@ SECURITY_KEY={{PASTE-KEY-FROM-DASHBOARD-HERE}}
 ```
 
 When you have installed Craft with Composer that value might already contain a value. Just replace it with the one from the fortrabbit Dashboard. You can also go the other way around and paste your local existing security key to the Dashboard.
-
-
 
 ### MySQL table prefixes
 
