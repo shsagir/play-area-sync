@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-02
+reviewed:      2018-05-28
 title:         App collaboration
 naviTitle:     App collaboration
 lead:          Leverage App level collaboration to easily develop code with others on fortrabbit.
@@ -60,8 +60,6 @@ The list is endless. Following the most common, as we see them:
 
 fortrabbit offers [Company level collaboration](company-collaboration), which allows you to invite Accounts not only to Apps but directly to your Company. Those Accounts will then be able to invite App collaborators and manage Apps on a different level. In contrast, App collaboration is meant for working with others only on one or a few Apps, without giving them too many rights.
 
-App collaboration is available for all but the smallest Universal App plans. With any paid Company collaboration plan it becomes available for any App of any plan.
-
 ## Inviting an App collaborator
 
 Easy as pie:
@@ -87,22 +85,9 @@ Within this form you can add or remove Apps for this Collaborator.
 
 ## Promoting an App collaborator
 
-When you already have a Company collaboration plan you can promote a Collaborator to become Admin or Owner. In the Dashboard: Navigate to the Company the App is part of. Under App collaborators, click on the collaborators access role. This will open a form where you can change the role.
-
-You can also find the Collaborators profile page from the respective App's overview.
+When you already have a Company collaboration plan you can promote a Collaborator to become Admin or Owner. In the Dashboard: Navigate to the Company the App is part of. Under App collaborators, click on the collaborators access role. This will open a form where you can change the role. You can also find the Collaborators profile page from the respective App's overview.
 
 
 ## Assigning more Apps to the same App collaborator
 
 You can, of course, grant the same Account collaborating rights on App level to multiple of your Apps. In the Dashboard: Navigate to the Company the Collaborator is part of, under App collaborators, click on the collaborators access role. There you can select all Apps with enabled collaboration for this collaborator.
-
-
-### App collaboration availability
-
-App collaboration may or may not be available for your App plan:
-
-* no App collaboration during trial
-* no App collaborators for the smallest Universal stack Apps, see [specs page](https://www.fortrabbit.com/specs).
-* unlimited App collaborators for all, but the smallest, Universal stack Apps
-* unlimited App collaborators for all Professional stack Apps
-* unlimited App collaborators for all Apps when a Company level plan is booked

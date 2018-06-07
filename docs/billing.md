@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-02-14
+reviewed:      2018-06-03
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -10,17 +10,17 @@ stack:         all
 
 ---
 
-This article is all about the concepts of billing, pricing, payments, invoices & taxes. Please also check out the [Billing Contact](company#toc-billing-contacts) section of the Company article to learn about practical usage in the Dashboard.
+This article is all about the concepts of billing, pricing, payments, invoices & taxes. Please also check out the [Billing Contact](/billing-contact) article to learn about practical usage in the Dashboard.
 
 
 ### Free trial
 
-You can test fortrabbit before you pay a dime. All you need to do is: sign up to fortrabbit and try it for free. The trial will end automatically, you don't have to cancel it.
+You can test fortrabbit before you pay a dime. All you need to do is: sign up to fortrabbit and try it for free. The trial will end automatically, you don't have to cancel it. No credit card required. Once you decide to book a paid plan the following applies:
 
 
 ### Consumption based billing
 
-Pay after usage: No upfront costs nor payment! **First you book, then you'll use it, then we'll invoice you** for what you have actually used. Just like with your old telephone bill. At the end of the month you'll get an invoice for what you have used in that month. 
+Pay after usage: No upfront costs nor payment! **First you book, then you'll use it, then we'll invoice you** for what you have actually used. It's prorate, just like with your old telephone bill. At the end of the month you'll get an invoice for what you have used in that month. 
 
 ### Daily billing cycle
 
@@ -32,18 +32,11 @@ Within the first days of every new month you will get the invoice for your last 
 
 ### Costs monitoring
 
-You can see a live preview of the usage for the current month: 
-
-1. Log in to the Dashboard
-2. Go to your Company (Company Name)
-3. Under Billing Contact select the "Current costs"
-
-There you'll find a cost preview (invoice draft) for the ongoing month, covering all of your Apps. This shows what will be printed on the next invoice. Please mind that it will show the current costs of the day of the month so far, it will show different values the next day.
-
+You can check the current costs with your Billing Contact, see [here](/billing-contact#toc-costs-monitoring).
 
 ### Payment methods
 
-You can pay by **credit card** (Visa & Master, no debit cards) or **SEPA direct debit** (EU clients only). For "enterprise clients" (large volume) we also offer to pay by **bill** (on account, after invoice).
+You can pay by **credit card** (Visa, Master, Amex, no debit cards) or **SEPA direct debit** (EU clients only). For "enterprise clients" (large volume) we also offer to pay by **bill** (on account, after invoice).
 
 ### Billing e-mail address
 
@@ -106,7 +99,11 @@ Login to the Dashboard > follow the instructions on the "open invoices" warning.
 
 Credit card payments are done "live". SEPA direct payments are delayed. When your credit card didn't had enough balance at first, we might try again during the month.
 
-### Not supported
+### No upfront payments
+
+As the billing is based on consumption, we can not foresee what you are about to use. That's why it is also not possible to pay upfront.
+
+### No yearly payments
 
 Yearly payments are not supported, as there are no upfront costs and the exact usage is unknown in advance. Therefore it is also not possible to pay with PayPal.
 

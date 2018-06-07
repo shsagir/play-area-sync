@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-07
+reviewed:         2018-06-03
 title:            Upgrade from Craft 2 to Craft 3
 naviTitle:        Upgrade from Craft 2
 lead:             What you need to know, when upgrading from a Craft CMS 2 installation to Craft CMS 3 here on fortrabbit. 
@@ -12,7 +12,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.5
+version:          3.0.9
 
 keywords:
   - craft
@@ -25,27 +25,32 @@ keywords:
 
 ## Get ready
 
-First of all, please read the official upgrade guide: [docs.craftcms.com/v3/upgrade.html](https://docs.craftcms.com/v3/upgrade.html). Use that as your main source.
+First of all, please read the official upgrade guide: [docs.craftcms.com/v3/upgrade.html](https://docs.craftcms.com/v3/upgrade.html). Use that as your main source, your general guideline and single source of truth. Like with all our install guides, we assume you have a local development running where you will do most of the hard work. If not, see [here](/local-development). Also, as you will be using two Apps on fortrabbit, check out our [multi staging article](/multi-staging) for general concepts.
 
 ## About the changes in Craft 3
 
-Craft 2 was way more simple. So we have recommended to use [an SFTP deployment](/install-craft-2-uni). With Craft 3 many things are different, modern and more powerful. Just the way we like it:
+Craft 2 was way more simple. Craft 3 is different in many ways, modern and much more powerful. Just the way we like it: configuration with `dotenv` files, new directory structure, Composer based workflow and good Git support.
 
-* configuration with `dotenv` files
-* new directory structure
-* Composer based workflow
-* Git support
+## Upgrade path
 
-## Choose your upgrade path
+Approach this like you're building a new Craft 3 site. Make use of all the new features. Have a fresh start and a clean installation. Then import the contents from your old installation. This is your route:
 
-Now you have two options to upgrade from Craft 2 to Craft 3:
+### 1. Locally
 
-### 1. Quick update
+The hard work is done in your local development environment: 
 
-The above linked guide offer you a way to upgrade with as little intervention as possible. Go that route if you are looking a quick way to upgrade. Keep your current directory structure and continue the [SFTP workflow](/craft-3-upload-sftp). 
+1. Start a new Craft 3 project from scratch in a new folder
+2. Import your templates, configs and contents from the old folder
 
-### 2. Full update
+So, at the end of this — ideally — you have two versions of your project/website running locally in parallel: the one based on Craft 2, and the new one on Craft 3. Both with the same content and probably the same look, but with a different engine. 
 
-So you want to make use Git and Composer and resemble the new Craft 3 directory structure? Then you best: Start a new Craft 3 project from scratch, import your templates, configs and contents. See the [official Craft guide](https://docs.craftcms.com/v3/upgrade.html#if-you-want-your-directory-structure-to-resemble-a-new-craft-3-project) for more on this.
+### 2. On fortrabbit
 
-On the fortrabbit side you better start a new App additional App as well. When your local development version is running the new Craft 3 version with all your contents, [deploy it with Git]() and use [rsync](craft-3-deploy-with-git-uni) to your new fortrabbit App. Once it is also running on fortrabbit, remove the [domain](/domains) from the old App running on Craft 2 and add it to the new App running on Craft 3. Once the domain switch is done, delete the now not needed Craft 2 fortrabbit App. Also check out our general [migration guide](/migrating) on how to switch seamlessly and without downtime.
+On your fortrabbit production environment you are replicating your local workflow by creating two parallel versions:
+
+1. Create a new App in the Dashboard.
+2. [Deploy code with Git](/craft-3-deploy-git) and [rsync the assets](/craft-3-assets-uni) from your new local Craft 3 version to your new fortrabbit App.
+3. Once you have two versions running locally and on fortrabbit smoothly, remove the [domain](/domains) from the old App running on Craft 2 and add it to the new App running on Craft 3. Check out our general [migration guide](/migrating) on how to switch seamlessly and without downtime.
+4. After the domain switch is done, you can now safely delete the not needed Craft 2 fortrabbit App. 
+
+Don't worry about costs here too much. Remember that fortrabbit Apps are billed on a daily basis. So it will not burst your budget, when you have two Apps running here for a few days. And please don't hesitate to contact us when you hang somewhere.

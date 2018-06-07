@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-02
+reviewed:      2018-05-27
 title:         Company collaboration
 naviTitle:     Company collaboration
 lead:          Leverage Company level collaboration to map your real world structures back to fortrabbit.
@@ -92,7 +92,7 @@ Visit the booking page as described above and select the new, smaller plan or no
 
 * Only one Owner exists
 * No Admins exist
-* No App has more App collaborators then the App allows (Professional unlimited, Universal are limited, see [specs page](//www.fortrabbit.com/specs#limits))
+* No App collaborators exist
 
 
 ### Promoting and demoting people

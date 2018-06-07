@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-02
+reviewed:      2018-06-02
 title:         Billing Contact
 naviTitle:     Billing Contact
 excerpt:       What you can do with a Billing Contact
@@ -93,6 +93,18 @@ It is recommended to add your VAT IN to your Billing Contact when your company i
 Please mind that we need to validate the VAT IN. So the number you enter needs to match the correct format. Please mind that your VAT IN is not the tax number. The correct number should start with your country code. Our VAT IN looks like so:
 
 Entering the VAT IN will change how VAT will be charged for future invoices, entering the VAT IN can not affect past invoices.
+
+
+### Costs monitoring
+
+You can see a live preview of the usage for the current month: 
+
+1. Log in to the Dashboard
+2. Go to your Company (Company Name)
+3. Under Billing Contact select the "Current costs"
+
+There you'll find a cost preview (invoice draft) for the ongoing month, covering all of your Apps. This shows what will be printed on the next invoice. Please mind that it will show the current costs of the day of the month so far, it will show different values the next day.
+
 
 ### Changing the Billing Contact of an App
 
