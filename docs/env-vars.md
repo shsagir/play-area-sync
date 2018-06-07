@@ -80,6 +80,8 @@ You can add ENV vars to your App in the [Dashboard](dashboard) > Your App > Sett
 [Add ENV vars to your App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 </div>
 
+The changes will be distributed after you save the page. It may take around 60 seconds, a re-deploy is not necessary. Some frameworks and CMS might cache the ENV vars, like Laravel, see [here](https://laravel.com/docs/5.6/configuration#configuration-caching).
+
 
 ## Advanced topics
 
