@@ -24,7 +24,7 @@ You most likely run at least two environments of your App: A [local one for deve
 
 ## Solution
 
-With environment variables or short "ENV vars", you avoid configuration conflicts between different environments. 
+Everything specific to the environment should be stored in Environment variables or short "ENV vars".
 
 ### About ENV vars
 
@@ -42,9 +42,6 @@ This is a basic example on how you can do that locally, for further usage and ho
 
 You can access ENV vars from PHP — yeaaah! And it is a commonly wide spread best practice to do that.
 
-```php
-$mysqlPassword = getenv('MY_SQL_PASS');
-```
 
 ### The .env file
 
@@ -84,6 +81,15 @@ You can add ENV vars of your App in the [Dashboard](dashboard) > Your App > Sett
 
 The changes will be distributed after you save the page. It may take around 60 seconds, a re-deploy is not necessary. Some frameworks and CMS might cache the ENV vars, like Laravel, see [here](https://laravel.com/docs/5.6/configuration#configuration-caching).
 
+### Accessing ENV vars from raw PHP
+
+You can access your ENV vars from PHP either using the global variable `$_SERVER` or the function `getenv()`:
+
+```php
+echo $_SERVER["MY_ENV_VAR"];
+# or
+echo getenv("MY_ENV_VAR");
+```
 
 ## Advanced topics
 
@@ -172,15 +178,7 @@ ANOTHER_VAR=something
 Storing credentials (passwords, secrets, ..) in environment variables is not without risk. They can be exposed, due to programming errors or oversights, for example when you forget to remove the `phpinfo()` from production. Please read an [in-depth discussion in our Blog](how-to-keep-a-secret). We offer a convenient solution for this problem with our [App secrets](secrets).
 
 
-### Accessing ENV vars from raw PHP
 
-You can access your ENV vars from PHP either using the global variable `$_SERVER` or the function `getenv()`:
-
-```php
-echo $_SERVER["MY_ENV_VAR"];
-# or
-echo getenv("MY_ENV_VAR");
-```
 
 ### ENV var validation
 
