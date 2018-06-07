@@ -20,11 +20,11 @@ keywords:
 
 ## Problem
 
-You most likely run at least two environments of your App: A [local one for development](/local-development) and one here on fortrabbit for production. Both instances probably have access to a database. Your local MySQL has of course different credentials than the remote one. Your config file, storing this information, is under Git version control. So how to deal with different environment-specific configurations? Also, how to work in a team when everyone has it's own local settings? How to separate code from configuration, so that the code is portable? How to achieve zero-dependency?
+You most likely run at least two environments of your App: A [local one for development](/local-development) and one here on fortrabbit for production. Both instances probably have access to a database. Your local MySQL has of course different credentials than the remote one. Your config file, storing this information, is under Git version control. So how to deal with different environment-specific configurations? Also, how to work in a team when everyone has it's own local settings? How to separate code from configuration, so that the code is portable?
 
 ## Solution
 
-Use environment variables to keep local configurations out of the main code base. Environment variables or short "ENV vars" — are supporting script flexibility in potentially changing server environments.
+With environment variables or short "ENV vars", you avoid configuration conflicts between different environments. 
 
 ### About ENV vars
 
@@ -42,39 +42,41 @@ This is a basic example on how you can do that locally, for further usage and ho
 
 You can access ENV vars from PHP — yeaaah! And it is a commonly wide spread best practice to do that.
 
+```php
+$mysqlPassword = getenv('MY_SQL_PASS');
+```
+
 ### The .env file
 
-Dealing with server settings is not convenient for many developers. So the Ruby community figured out the `.env` file format. This configuration file contains your ENV vars. A dotenv library with your runtime engine (JS, PHP, Ruby …) will read that file and put the vars where they belong, Apache or Ngnix for example. So the `.env` file format is just a design pattern and itself language and server independent.
+Dealing with server settings is not convenient for many developers. So the Ruby community figured out the `.env` file format. This a plain configuration file with `KEY=VALUE` pairs, easy to write by humans and runtime agnostic.
+All you need is a parser library, that reads the file and makes the vars accessible from your code base. 
 
 ### PHP dotenv
 
-The .env file concept has become quite common and there are ports to all languages. Here is the PHP library:
+The .env file concept has become quite common and there are ports to all languages. Here are the most popular ones for the PHP:
 
 * [github.com/vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
+* [github.com/symfony/dotenv](https://github.com/symfony/dotenv)
 
-This implemenation itself is used by modern PHP frameworks, like [Laravel](/install-laravel) and CMS, like [Craft](/craft-3-about).
-
-At the end of the day, you have a configuration file again. The application is not reading that file directly, instead it's asking the server for the ENV vars. Why is that better? Read on.
+Modern PHP frameworks, like [Laravel](/install-laravel) or [Symfony](/install-laravel) and CMS, like [Craft](/craft-3-about) use one or the other under the hood.
 
 ### ENV vars on fortrabbit
 
 Recap: ENV vars are environment specific. So, in consequence, the `.env` file will NOT be deployed to your fortrabbit App. It's usually excluded from tracking in Git. 
 
-Now, how should your fortrabbit App now about it's ENV vars? Some users think they need to set up an addtional `.env` file on the fortrabbit App. That's not the way it works.
+Now, how should your fortrabbit App know about it's ENV vars? Some users think they need to set up an addtional `.env` file on the fortrabbit App. That's not the way it works.
 
 fortrabbit Apps have their ENV vars set directly with the server. Those can be set in the Dashboard with the App. 
 
-Recap: The PHP application itself will just query the ENV vars from server. The phpdotenv library just helps to populate the ENV vars into the server, but only when they are not set already. 
+Recap: The PHP application itself will just query the ENV vars from server. A library just helps to populate the ENV vars into the code base, but only when they are not set already. 
 
-The fortrabbit [Software Preset](/app#software-preset) is where the magic happens. While creating an App on fortrabbit, you'll choose your desired CMS or framework. This selection will configure the server ENV vars in ways, the software can work with it. For Laravel, the ENV var `DB_PASSWORD` will be populated with the password of the Apps database. For Craft CMS `DB_PASS` will be populated. 
+The fortrabbit [Software Preset](/app#software-preset) is where the magic happens. While creating an App on fortrabbit, you'll choose your desired CMS or framework. This selection will configure the server ENV vars in ways, the software can work with it. For example, for Laravel and Craft, the ENV var `DB_PASSWORD` will be populated with the password of the Apps database. For Symfony we provide a ready to use DSN in the `DATABASE_URL` variable.
 
 So, most likely, your fortrabbit App will work out of the box. As a bonus you even reset the database password without touching any configurations.
 
-For example, the `APP_NAME` variable will automatically provide the correct App name here. fortrabbit provides several standard variables like this. 
-
 ### Adding and editing ENV vars on fortrabbit
 
-You can add ENV vars to your App in the [Dashboard](dashboard) > Your App > Settings > ENV Vars. The input supports the dotenv file format and allows you to create or update multiple variables at once.
+You can add ENV vars of your App in the [Dashboard](dashboard) > Your App > Settings > ENV Vars. The input supports the dotenv file format and allows you to create or update multiple variables at once.
 
 <div markdown="1" data-user="known">
 [Add ENV vars to your App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
@@ -87,10 +89,13 @@ The changes will be distributed after you save the page. It may take around 60 s
 
 So far we have covered the basics read on to learn to dive deeper into ENV vars and how they can help you.
 
+<!--
+Environment detection usually the opposite
+
 ### Environment detection
 
 ENV vars, by definition, also can play a major role when it comes to detecting which environment the application currently runs in. Beside different access credentials, you may want to set additional parameters, when running locally, please see our [local development](local-development#toc-environment-detection) article for more.
-
+-->
 
 ### ENV var types on fortrabbit
 
@@ -199,6 +204,10 @@ php -r "echo base64_encode('YOUR-M$Pa#A-VALUEx') . PHP_EOL;"
 And [this example](https://github.com/laravel/ideas/issues/416#issuecomment-280436034) should give you an idea how you can do the decoding.
 
 
+<!--
+
+outdated
+
 ### ENV var encryption
 
 EXPERIMENTAL IDEA:  If you prefer not to use [App secrets](secrets), but want to secure your ENV vars we recommend to store them encrypted and encoded in the Dashboard. You then decode and decrypt them later on in your App. Following a generic example:
@@ -237,3 +246,4 @@ $dbUser = secEnv("DB_USER");
 $dbPass = secEnv("DB_PASS");
 // ..
 ```
+-->
