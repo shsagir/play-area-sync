@@ -51,18 +51,28 @@ Read more about the Stacks [here](/stacks).
 <!-- TODO ??????? merge 1+2, skip local) -->
 1. [Be ready](/get-ready), fortrabbit App + local dev env
 2. Have an existing Craft 3 project running or [install a new on with Composer](craft-3-install-local#toc-1a-download-craft-with-composer) locally
-2. [Prepare environments](/craft-3-setup#environments)<!-- TODO dead link -->
+2. [Prepare environments](/craft-3-setup#toc-craft-environment-configuration)
 3. [Migrate database](/craft-3-setup#database)
 4. [Deploy Craft with Git](/craft-3-deploy-git)
 5. Manage Craft assets by [rsync for Uni](/craft-3-assets-uni) or by [Object Storage upload for Pro](/craft-3-assets-pro) 
 
-#### Take a shortcut with craft-copy
+#### Craft Copy
 
-We have published this little handy open-source command line tool to speed up common deployment tasks around Craft CMS on fortrabbit. It connects your local Craft CMS installation with an App on fortrabbit and then enables you to sync database and assets in a speedy and convenient way. It guides you through the process of setting everything up, it even has a table to show you which parts are still missing. Please head on to the GitHub page to learn how to use it:
+**Take a shortcut!** We have published this little handy open-source command line tool to speed up common deployment tasks around Craft CMS on fortrabbit. It connects your local Craft CMS installation with an App on fortrabbit and then enables you to sync database and assets in a speedy and convenient way. It guides you through the process of setting everything up, it even has a table to show you which parts are still missing. Give it a try! Here is an appetizer:
+
+```bash
+# Install and initialize
+$ composer require fortrabbit/craft-copy
+$ ./craft install/plugin
+$ ./craft copy/setup
+
+# Sync database (local ⇄ fortrabbit )
+$ php craft copy/db/up
+```
+
+Please head on to the GitHub page for more usage examples:
 
 * [github.com/fortrabbit/craft-copy](https://github.com/fortrabbit/craft-copy)
-
-
 
 
 ### 2. Legacy workflow

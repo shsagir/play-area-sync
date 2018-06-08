@@ -85,7 +85,7 @@ The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `pro
 
 ### Security key
 
-<!-- TODO: shorten -->
+<!-- TODO: shorten, maybe? -->
 
 From the Craft Docs: "Each Craft CMS project should have a unique security key. This key is shared between the environments that the project runs on." This mandatory key is automatically generated, when using a Composer installation, you can also assign it manually in the `.env` file or trigger a terminal command to set it. 
 
@@ -121,34 +121,27 @@ DB_TABLE_PREFIX=craft_
 
 
 
+## Database setup
+
+
+
 ## Database synchronization
 
-This can easily be done with the [Craft Copy Plugin](https://github.com/fortrabbit/craft-copy) we developed for this purpose. Follow these steps:
+You will probably often want to synchronize your local database with the one on fortrabbit. The manual way is a bit mundane, so we have developed a very cool tool: [Craft Copy](https://github.com/fortrabbit/craft-copy)
 
-```bash
-# Install and initialize
-$ composer require fortrabbit/craft-copy
-$ ./craft install/plugin
-$ ./craft copy/setup
-
-# Sync
-$ php craft copy/db/up
-```
-
-If you prefer to export/import manually: Head over to our [MySQL export & import guide](/mysql#toc-export-amp-import) to learn how to access the database on fortrabbit.
+If you still prefer to export/import manually: Head over to our [MySQL export & import guide](/mysql#toc-export-amp-import) to learn how to access the database on fortrabbit.
 
 
+## Image tuning 
 
+Image uploads to Craft are usually getting processed by ImageMagick. [Some people suggest](https://nystudio107.com/blog/creating-optimized-images-in-craft-cms) to further optimize images with jpegoptim or optipng. These tools are not available here, see [here why](/quirks#toc-no-root-shell). But there are some good alternatives. We evangelize to use dedicated specialized third party image optimization services, like imgix, tinypng, kraken or imageoptim to do the job best. These two Craft plugins are supporting external services:
 
+* [Imager Craft](https://github.com/aelvan/Imager-Craft/)
+* [Craft Imageoptimize](https://github.com/nystudio107/craft-imageoptimize)
 
-<!-- TODO:
+Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
 
-Image tuning
-
-no jpegoptim here, but various good alternatives.
-
-
-
+<!--
 
 HTTPS?
 
