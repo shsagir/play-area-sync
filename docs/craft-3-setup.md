@@ -7,6 +7,7 @@ naviTitle:        Setup Craft
 lead:             Learn how to configure Craft CMS to run locally AND on fortrabbit, smoothly.
 group:            craft
 stack:            all
+order:            10
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
@@ -25,6 +26,15 @@ keywords:
   - install-guide
 
 ---
+
+<!--
+
+TODO: 
+
+* check contents of old articles, where is the craft-copy part? integrate (elsewhere)
+* …
+
+-->
 
 
 ## Get ready

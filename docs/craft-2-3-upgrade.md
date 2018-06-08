@@ -7,6 +7,7 @@ naviTitle:        Upgrade from Craft 2
 lead:             What you need to know, when upgrading from a Craft CMS 2 installation to Craft CMS 3 here on fortrabbit. 
 group:            craft
 stack:            all
+dontList:         true
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com

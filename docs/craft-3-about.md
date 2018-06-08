@@ -4,6 +4,7 @@ template:         article
 reviewed:         2018-06-05
 title:            About Craft on fortrabbit
 naviTitle:        About Craft on fortrabbit
+order:            1
 lead:             Craft 3 is the CMS you and your clients will love. We love it too. Our aim is to help you — the developer — to successfully develop and deploy Craft here. This is your entry point. 
 group:            craft
 stack:            all

@@ -7,6 +7,7 @@ naviTitle:        Upload Craft with SFTP
 lead:             Are you more "web designer" and less a "web developer"? Learn how to upload Craft in a classical way using SFTP. 
 group:            craft
 stack:            uni
+dontList:         true
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
