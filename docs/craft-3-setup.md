@@ -152,6 +152,13 @@ If you prefer to export/import manually: Head over to our [MySQL export & import
 
 <!-- TODO:
 
+Image tuning
+
+no jpegoptim here, but various good alternatives.
+
+
+
+
 HTTPS?
 
 I'd like to see the TLS/HTTPS topic covered in the help pages here for Craft, it's new for many users how this is done here. We have the X-forward header thing in the general article. Maybe there is a setting in Craft CMS?
