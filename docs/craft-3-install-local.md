@@ -70,13 +70,6 @@ This will ask you some questions, the defaults will work mostly, you can change 
 You can also run the installer in the browser by visiting this address: `http://{{host}}/index.php?p=admin` in your browser. Substitute `{{host}}` with the [host name of your local development environment](/local-development#toc-virtual-hosts). 
 
 
-## The .env file
-
-In your local environment the Craft settings are stored in the `.env` file. This hidden file is excluded from Git as it stores sensitive information only suited for a single environment. **Don't upload it to fortrabbit.** Edit the `.env` file with text editor to configure Craft to run locally. These settings are mostly set by the Craft web installer or by the Craft CLI setup tool. You can also edit them manually.
-
-
-
-
 ## Next steps
 
 By now your Craft CMS should be running on your local development machine. You should be able to visit your Craft installation locally and login to the Craft admin panel. Now it's time to [configure Craft](/craft-3-setup) to work in both environments and depending on the workflow you have used, you either head on to [deploy Craft with Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp).

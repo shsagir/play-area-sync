@@ -181,6 +181,7 @@ This parses markdown inside the DIV. With the data-user attribute it checks if t
 * Don't "bury" numbers (like prices and limits) in articles. 
 * All those numbers must be managed in the "pricing" and the "specs" page.
 * Keep it DRY! Don't repeat yourself. 
+* Have one SSOT, link to it.
 * Don't fully cover the same topic on different places. Just link to the location where it best suits. 
 
 ## Link checking
