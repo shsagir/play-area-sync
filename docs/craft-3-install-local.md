@@ -69,7 +69,6 @@ This will ask you some questions, the defaults will work mostly, you can change 
 
 You can also run the installer in the browser by visiting this address: `http://{{host}}/index.php?p=admin` in your browser. Substitute `{{host}}` with the [host name of your local development environment](/local-development#toc-virtual-hosts). 
 
-
 ## Next steps
 
-By now your Craft CMS should be running on your local development machine. You should be able to visit your Craft installation locally and login to the Craft admin panel. Now it's time to [configure Craft](/craft-3-setup) to work in both environments and depending on the workflow you have used, you either head on to [deploy Craft with Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp).
+By now your Craft CMS should be running on your local development machine. You should be able to visit your Craft installation locally and login to the Craft admin panel. Now it's time to [configure Craft](/craft-3-setup) to work in both environments.
