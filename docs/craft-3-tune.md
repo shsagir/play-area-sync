@@ -25,7 +25,7 @@ keywords:
 
 ## Get ready
 
-Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with tuning and answers some common topics.
+Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with tuning and answers some common topics around running and tuning Craft.
 
 
 ## Updating Craft
@@ -63,7 +63,7 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 
 #### Disable updates from the admin interface
 
-Craft CMS has the option to run updates directly from the admin control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in the Craft configs, see also the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates), like so:
+Craft CMS has the option to run updates directly from the admin control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in the Craft configs, see also the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates) and [this question](https://craftcms.stackexchange.com/a/27/4504), like so:
 
 ```
 public $allowUpdates = false;
@@ -127,9 +127,7 @@ The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore`
 
 <!--
 
-
-  <!-- TODO:
-
+TODO:
 
 HTTPS?
 
@@ -137,13 +135,9 @@ I'd like to see the TLS/HTTPS topic covered in the help pages here for Craft, it
 
 https://craftcms.stackexchange.com/questions/4128/how-do-i-force-ssl-on-craft?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
-
-
-
 - - 
 
-
-Licsence keys
+License keys
 
 What about this?
 https://github.com/fortrabbit/craft-starter
