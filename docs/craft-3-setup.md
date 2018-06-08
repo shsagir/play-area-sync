@@ -27,15 +27,6 @@ keywords:
 
 ---
 
-<!--
-
-TODO: 
-
-* check contents of old articles, where is the craft-copy part? integrate (elsewhere)
-* …
-
--->
-
 
 ## Get ready
 

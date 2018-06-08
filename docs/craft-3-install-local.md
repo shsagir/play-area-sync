@@ -7,6 +7,7 @@ naviTitle:        Install Craft locally
 lead:             Learn how to install Craft CMS locally, matching your skills and workflows.
 group:            craft
 stack:            all
+order:            2
 
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com

@@ -56,6 +56,14 @@ Read more about the Stacks [here](/stacks).
 4. [Deploy Craft with Git](/craft-3-deploy-git)
 5. Manage Craft assets by [rsync for Uni](/craft-3-assets-uni) or by [Object Storage upload for Pro](/craft-3-assets-pro) 
 
+#### Take a shortcut with craft-copy
+
+We have published this little handy open-source command line tool to speed up common deployment tasks around Craft CMS on fortrabbit. It connects your local Craft CMS installation with an App on fortrabbit and then enables you to sync database and assets in a speedy and convenient way. It guides you through the process of setting everything up, it even has a table to show you which parts are still missing. Please head on to the GitHub page to learn how to use it:
+
+* [github.com/fortrabbit/craft-copy](https://github.com/fortrabbit/craft-copy)
+
+
+
 
 ### 2. Legacy workflow
 
