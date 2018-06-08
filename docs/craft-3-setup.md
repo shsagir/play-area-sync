@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-05
+reviewed:         2018-06-09
 title:            Setup Craft CMS
 naviTitle:        Setup Craft
 lead:             Learn how to configure Craft CMS to run locally AND on fortrabbit, smoothly.
@@ -32,60 +32,13 @@ keywords:
 
 Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local) and deployed it your fortrabbit App. 
 
+## Craft configuration on fortrabbit
 
-<!--
+Craft 3 uses modern `.env` style configuration, learn more about the concepts [here](/env-vars). In result, you can run your Craft locally and on remote without code or configuration file changes. Locally, your `.env` file will be modified and read.
 
-TODO: rethink headlines:
+On fortrabbit the [environment variables](/env-vars) are getting seeded from the ones you can set in the Dashboard. When you have chosen Craft in the [Software Preset](/app#toc-software-preset) while have creating the App, all ENV vars at fortrabbit are already pre-populated, all set and done. It will work out of the box. If not, see [here](/????)
 
-* The Craft in the headline is notz needed here?
-* What does the next headline and the one after actually say? whta makes them different?
-
--->
-
-## Craft environment configuration
-
-<!--
-
-TODO: Storing credentials in an ENV var and enviroment detection are not the same thing IMO. I would separate the two topics. 1st of all, the credentials are stored in ENV. Second: use ENV detection to differentiate between local and prod.
-
--->
-
-Instead of hard coding secret credentials - like the database username and password - into your config files directly — like with WordPress — Craft 3 uses a much smarter approach: [environment detection](local-development#toc-environment-detection). So you can run your Craft locally and on remote without code or configuration file changes.
-
-Locally, your `.env` file will be modified and read. On fortrabbit the [environment variables](/env-vars) are getting feeded from the ones you can set in the Dashboard. When have chosen Craft in [software chooser](/app#toc-software-preset) while you have created the App, all ENV vars at fortrabbit are already pre-populated, all set and done.
-
-
-### Environment settings
-
-<!-- TODO: make clear which file is edited here! -->
-
-We assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. 
-
-```
-<?php
-return [
-    // Global settings
-    '*' => [
-        'cpTrigger' => 'brewery',
-        'securityKey' => getenv('SECURITY_KEY'),
-        'siteUrl' => getenv('SITE_URL')
-    ],
-    // ENVIRONMENT specific 
-    'production' => [
-        'devMode' => false,
-        'allowUpdates' => false
-    ],
-    'dev' => [
-        'devMode' => true,
-    ],
-];
-```
-
-The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually locally).
-
-### Security key
-
-<!-- TODO: shorten, maybe? -->
+## Security key
 
 From the Craft Docs: "Each Craft CMS project should have a unique security key. This key is shared between the environments that the project runs on." This mandatory key is automatically generated, when using a Composer installation, you can also assign it manually in the `.env` file or trigger a terminal command to set it. 
 
@@ -101,25 +54,18 @@ SECURITY_KEY={{PASTE-KEY-FROM-DASHBOARD-HERE}}
 
 When you have installed Craft with Composer that value might already contain a value. Just replace it with the one from the fortrabbit Dashboard. You can also go the other way around and paste your local existing security key to the Dashboard.
 
-### MySQL table prefixes
+## MySQL table prefixes
 
-When your local Craft installation contains a table prefix the one on the fortrabbit App should have the same one. Set the table prefix on fortrabbit with the App [ENV vars](/env-vars).
+When your local Craft installation contains a table prefix the one on the fortrabbit App should have the same one. You can set the table prefix on fortrabbit with the App's [ENV vars](/env-vars) like so:
 
 ```dotenv
 # Example Table prefix
 DB_TABLE_PREFIX=craft_
 ```
 
-
 ### cpTrigger
 
-### devMode
-
-### allowUpdates
-
 ### siteUrl
-
-
 
 ## Database setup
 

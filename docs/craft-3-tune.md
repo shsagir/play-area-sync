@@ -85,6 +85,40 @@ ENVIRONMENT=dev
 
 It's maybe there already. **Pro tip**: See below on how to [enable Dev Mode](#toc-dev-mode).
 
+
+## Environment detection
+
+<!-- TODO: make clear which file is edited here! -->
+
+[environment detection](local-development#toc-environment-detection)
+
+We assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. 
+
+```
+<?php
+return [
+    // Global settings
+    '*' => [
+        'cpTrigger' => 'brewery',
+        'securityKey' => getenv('SECURITY_KEY'),
+        'siteUrl' => getenv('SITE_URL')
+    ],
+    // ENVIRONMENT specific 
+    'production' => [
+        'devMode' => false,
+        'allowUpdates' => false
+    ],
+    'dev' => [
+        'devMode' => true,
+    ],
+];
+```
+
+The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually locally).
+
+
+
+
 ## Dev Mode
 
 Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details. Here is an example of a configuration group `config/general.php`:
