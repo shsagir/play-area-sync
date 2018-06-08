@@ -86,6 +86,21 @@ ENVIRONMENT=dev
 It's maybe there already. **Pro tip**: See below on how to [enable Dev Mode](#toc-dev-mode).
 
 
+## Manually set ENV vars
+
+Our [Software Preset](/app#toc-software-preset) will populate the ENV vars on fortrabbit for you, see [here](/env-vars) for more on ENV vars. So when you have not chosen Craft, or you are just curious how this works, or your ENV vars have been deleted accidentally. This is what will be set:
+
+```dotenv
+DB_DATABASE=${MYSQL_DATABASE}
+DB_DRIVER=mysql
+DB_PASSWORD=${MYSQL_PASSWORD}
+DB_SERVER=${MYSQL_HOST}
+DB_USER=${MYSQL_USER}
+ENVIRONMENT=production
+SECURITY_KEY=LongRandomString
+```
+
+
 ## Environment detection
 
 <!-- TODO: make clear which file is edited here! -->
@@ -141,6 +156,32 @@ return [
 ```
 
 The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually locally).
+
+
+## Database synchronization
+
+You will probably often need to synchronize your local database with the one on fortrabbit. The manual way is a bit mundane, so we have developed a very cool tool: [Craft Copy](https://github.com/fortrabbit/craft-copy)
+
+If you still prefer to export/import manually: Head over to our [MySQL export & import guide](/mysql#toc-export-amp-import) to learn how to access the database on fortrabbit.
+
+## MySQL table prefixes
+
+When your local Craft installation contains a table prefix the one on the fortrabbit App should have the same one. You can set the table prefix on fortrabbit with the App's [ENV vars](/env-vars) like so:
+
+```dotenv
+# Example Table prefix
+DB_TABLE_PREFIX=craft_
+```
+
+
+## Image tuning 
+
+Image uploads to Craft are usually getting processed by ImageMagick. [Some people suggest](https://nystudio107.com/blog/creating-optimized-images-in-craft-cms) to further optimize images with jpegoptim or optipng. These tools are not available here, see [here why](/quirks#toc-no-root-shell). But there are some good alternatives. We evangelize to use dedicated specialized third party image optimization services, like imgix, tinypng, kraken or imageoptim to do the job best. These two Craft plugins are supporting external services:
+
+* [Imager Craft](https://github.com/aelvan/Imager-Craft/)
+* [Craft Imageoptimize](https://github.com/nystudio107/craft-imageoptimize)
+
+Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
 
 
 ## Older Craft versions
