@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-12
+reviewed:         2018-06-09
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -86,9 +86,9 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 **Scope**: Universal Apps
 
-**Description**: Each Universal App comes with a limited amount of available [persistent web storage](app-uni#toc-persistent-storage). The amounts per scaling are available in [our specs](/specs#plans). Professional Apps have [ephemeral storage](/app-pro#toc-ephemeral-storage), so this limit does not apply.
+**Description**: Each Universal App comes with a limited amount of available [persistent web storage](app-uni#toc-persistent-storage). The amounts per scaling are available in [our specs](/specs#plans). Professional Apps have [ephemeral storage](/app-pro#toc-ephemeral-storage), uploads will be outsourced to the [Object Storage](/object-storage). 
 
-**Solution**: We currently allow slight exceeding those limits. If you are using permanently more than 10% we expect you to upgrade to the next bigger scaling or we'll need to take the App at least temporarily offline. The storage availability of the biggest Universal App scaling is currently the highest we offer. Should you need to increase that limit permanently, we recommend to [migrate to the Professional Stack](migrate-uni-to-pro).
+**Solution**: We currently allow slight exceeding those limits. If you are using permanently more than 10% we expect you to upgrade to the next bigger scaling or we'll need to take the App at least temporarily offline. The storage availability of the biggest Universal App scaling is currently the highest we offer. The purpose of fortrabbit Apps is fast light weight PHP engines,the web storage limits are set accordingly. When you are hosting large many images or videos here, you are probably doing it wrong, you might also hit traffic limits. Better use an external video or image hosting service for this.
 
 
 ## Object Storage
