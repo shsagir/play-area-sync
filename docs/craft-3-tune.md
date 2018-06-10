@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-05
+reviewed:         2018-06-10
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -25,7 +25,17 @@ keywords:
 
 ## Get ready
 
-Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with tuning and answers some common topics around running Craft.
+Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with running, tuning and troubleshooting.
+
+<!--
+
+  TBD:
+  The purpose here is to give tips on best practices, everything that is "nice to have", but not a must, nothing that is absolutely required to run Craft. Maybe one of the topics below is required to run Craft? We can move it to the setup article. I believe is absolutely necessary. I tried to group this by context, config settings are together, ENV vars are together … etc.
+
+  TODO:
+  check for errors there might be many. I found the headline "cpTrigger" and guessed the purpose.
+
+-->
 
 
 ## Environment detection
@@ -39,14 +49,21 @@ ENVIRONMENT=dev
 
 ### Craft config example
 
-Below is an example `config/general.php` on 
+Below is an example of a `config/general.php`. It sets some useful shared settings, like [alllowUpdates](#toc-allowupdates) and [cpTrigger](#toc-cptrigger), as well as [DevMode](#toc-dev-mode) for local development.
+
+<!--
+
+  TODO: 
+  shouldn't we include a siteURL in this example? DEV + Prod?
+
+-->
 
 ```
 <?php
 return [
     // Global settings
     '*' => [
-        'cpTrigger'    => 'wp-admin',
+        'cpTrigger'    => 'godmode',
         'securityKey'  => getenv('SECURITY_KEY'),
         'siteUrl'      => getenv('SITE_URL'),
         'allowUpdates' => false
@@ -65,11 +82,11 @@ return [
 
 ## Dev Mode
 
-Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details. See [above](#) for an example of a configuration group.
+Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details. See [above](#toc-craft-config-example) for an configuration groups example.
 
 ## Manually setting ENV vars
 
-Our [Software Preset](/app#toc-software-preset) will populate the ENV vars on fortrabbit for you, see [here](/env-vars) for more on ENV vars. So when you have not chosen Craft while creating the App, or you are just curious how this works, or your ENV vars have been deleted accidentally.
+Our [Software Preset](/app#toc-software-preset) will populate the ENV vars on fortrabbit for you, see [here](/env-vars) for more on ENV vars. So when you have not chosen Craft while creating the App, or you are just curious how this works, or your ENV vars have been deleted accidentally, here is what will be set:
 
 ### Craft ENV vars on fortrabbit
 
@@ -83,25 +100,14 @@ ENVIRONMENT=production
 SECURITY_KEY=LongRandomString
 ```
 
-
 ## MySQL table prefixes
 
-When your local Craft installation contains a table prefix the one on the fortrabbit App should have the same one. You can set the table prefix on fortrabbit with the App's [ENV vars](/#toc-craft-config-example) like so:
+When your local Craft installation contains a table prefix the one on the fortrabbit App should have the same one. You can set the table prefix, locally in your `.env` file and on fortrabbit with the App's [ENV vars](/#toc-craft-config-example) like so:
 
 ```dotenv
 # Example Table prefix
 DB_TABLE_PREFIX=craft_
 ```
-
-
-## Image tuning 
-
-Image uploads to Craft are usually getting processed by ImageMagick. [Some people suggest](https://nystudio107.com/blog/creating-optimized-images-in-craft-cms) to further optimize images with jpegoptim or optipng. These tools are not available here, see [here why](/quirks#toc-no-root-shell). But there are some good alternatives. We evangelize to use dedicated specialized third party image optimization services, like imgix, tinypng, kraken or imageoptim to do the job best. These two Craft plugins are supporting external services:
-
-* [Imager Craft](https://github.com/aelvan/Imager-Craft/)
-* [Craft Imageoptimize](https://github.com/nystudio107/craft-imageoptimize)
-
-Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
 
 ## Updating Craft
 
@@ -132,22 +138,17 @@ The `composer.lock` file reflects the exact package versions you've installed lo
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 ```
 
-#### Disable updates from the Craft control panel
-
-Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in your Craft configuration, see an [example below](#toc-craft-config-example). Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates) and [this question](https://craftcms.stackexchange.com/a/27/4504). 
-
 ### B. Update Craft with a SFTP workflow
 
 Just use the shiny update button interface. Follow [the official guides](https://docs.craftcms.com/v3/updating.html). You need to do that twice: Once for your local installation, once for the one on remote (ony your App).
 
+## allowupdates
 
-## Older Craft versions
+Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in your Craft configuration, see an [example above](#toc-craft-config-example). Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates) and [this question](https://craftcms.stackexchange.com/a/27/4504). 
 
-We have an install guide for Craft Version 2 [over here](/install-craft-2-uni) as well, but recommend to use Craft 3 instead. Consider an [upgrade](/craft-2-3-upgrade) when you have an old installation. 
+## cpTrigger
 
-## Multi site
-
-Craft now supports to host multiple websites in a single installation, see the [offical docs](https://docs.craftcms.com/v3/sites.html) on that topic. Use cases for this, is a one website in very similar versions, for example the same website in different languages or marketing landing pages that are very similar. Please don't try to install all you different Craft [websites in one App](/app#toc-one-app-one-website).
+"Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. The "cpTrigger" variable in your 
 
 ## The storage folder
 
@@ -157,12 +158,39 @@ The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore`
 * [craftcms.com/support/craft-storage-gitignore](https://craftcms.com/support/craft-storage-gitignore)
 
 
-## cpTrigger
+<!--
 
-
+  TODO! 
+  Write something on domains! 
+  App URL, how to add your first real domain!
+  https://trello.com/c/XgaKA9JV/918-default-domain-enhancements
 
 
 ## siteUrl
+
+* https://craftcms.com/support/site-url
+
+-->
+
+
+## Image tuning 
+
+Image uploads to Craft are usually getting processed by ImageMagick. [Some people suggest](https://nystudio107.com/blog/creating-optimized-images-in-craft-cms) to further optimize images with jpegoptim or optipng. These tools are not available here on fortrabbit, see [here why](/quirks#toc-no-root-shell). But there are some good alternatives. We evangelize to use dedicated specialized third party image optimization services, like imgix, tinypng, kraken or imageoptim to do the job best. These two Craft plugins are supporting external services:
+
+* [Imager Craft](https://github.com/aelvan/Imager-Craft/)
+* [Craft Imageoptimize](https://github.com/nystudio107/craft-imageoptimize)
+
+Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
+
+
+
+## Older Craft versions
+
+We have an install guide for Craft CMS Version 2 [over here](/install-craft-2-uni) as well, but recommend to use Craft CMS 3 instead. Consider an [upgrade](/craft-2-3-upgrade) when you have an old installation. 
+
+## Multi site
+
+Craft now supports to host multiple websites in a single installation, see the [offical docs](https://docs.craftcms.com/v3/sites.html) on that topic. Use cases for this, is a one website in very similar versions, for example the same website in different languages or marketing landing pages that are very similar. Please don't try to install all you different Craft [websites in one App](/app#toc-one-app-one-website).
 
 
 
@@ -170,6 +198,11 @@ The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore`
 <!--
 
 TODO:
+
+integrate the following topics, headlines and snippets:
+
+
+
 
 HTTPS?
 
@@ -193,7 +226,7 @@ https://craftcms.com/support/site-url
 https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/480927/conversations/16114188408
 adding domains? which config needs to be changed in Craft?
 
-
+- - -
 
 cache headers images:
 https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/conversation/16319087993
