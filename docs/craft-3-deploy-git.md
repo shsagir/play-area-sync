@@ -65,8 +65,9 @@ $ git push
 
 ## Next steps
 
-[Configure Craft](/craft-3-setup) to complete your setup. After that, import your local database to the one fortrabbit. Head on to our [MySQL export & import guide](/mysql#toc-export-amp-import) or take a shortcut with the [craft-copy CLI](/craft-3-tuning#toc-craft-copy).
+Please also make yourself familiar with the options to deploy the Craft `assets` folder separately. There are two dedicated guides here, depending on your [App's Stack](/craft-3-about#toc-1-1-choose-your-stack): 
 
-Please also make yourself familiar with the options to deploy the Craft `assets` folder separately. There are two dedicated guides here, depending on the [Stack](/craft-3-about#toc-choose-your-stack): [Deploy assets with rsync (Uni)](/craft-3-assets-uni) and [Deploy assets to the Object Storage (Pro)](/craft-3-assets-pro).
+* Universal: [Deploy assets with rsync](/craft-3-assets-uni)
+* Professional: [Deploy assets to the Object Storage](/craft-3-assets-pro).
 
 Last not least, see our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.

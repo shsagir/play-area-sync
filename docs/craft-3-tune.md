@@ -25,45 +25,7 @@ keywords:
 
 ## Get ready
 
-Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with tuning and answers some common topics around running and tuning Craft.
-
-
-## Updating Craft
-
-From time to time a new minor Craft version will come out, dot or a dot-dot, like an update from 3.1.5 to 3.1.6. We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
-
-### A. Update Craft with a Git workflow
-
-When you have used a Git to deploy Craft, your update workflow likely looks like this: Use Composer to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**: 
-
-```shell
-# Make sure to be in the projects root folder (locally)
-$ composer update
-
-# The output looks something like this: 
-Loading composer repositories with package information
-Installing dependencies (including require-dev) from lock file
-Package operations: 0 installs, 17 updates, 1 removal
-  - Updating craftcms/cms (3.0.0-RC7 => 3.0.0-RC12): Downloading (100%)
-  - Updating yiisoft/yii2 (2.0.13.1 => 2.0.14): Downloading (100%)
- [...]
-  - Updating ostark/craft-async-queue (1.1.5 => 1.3.0):  Checking out c262aa5e21
-  - Updating symfony/var-dumper (v3.4.3 => v3.4.4): Downloading (100%)
-```
-
-The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App. During the [Git deployment](/git-deployment), `composer install` will run automatically. This way your local Composer changes get applied on the remote. Some plugins or the Craft core may include database migrations. Don't forget to run the following SSH remote execution command after the updated packages are deployed:
-
-```bash
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
-```
-
-#### Disable updates from the Craft control panel
-
-Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in your Craft configuration, see an [example below](#toc-craft-config-example). Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates) and [this question](https://craftcms.stackexchange.com/a/27/4504). 
-
-### B. Update Craft with a SFTP workflow
-
-Just use the shiny update button interface. Follow [the official guides](https://docs.craftcms.com/v3/updating.html). You need to do that twice: Once for your local installation, once for the one on remote (ony your App).
+Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with tuning and answers some common topics around running Craft.
 
 
 ## Environment detection
@@ -121,9 +83,6 @@ ENVIRONMENT=production
 SECURITY_KEY=LongRandomString
 ```
 
-## Database synchronization
-
-You will probably often need to synchronize your local database with the one on fortrabbit. The manual way is a bit mundane, so we have developed a **very cool tool: [Craft Copy](https://github.com/fortrabbit/craft-copy)**. If you still prefer to export/import manually: Head over to our [MySQL export & import guide](/mysql#toc-export-amp-import) to learn how to access the database on fortrabbit.
 
 ## MySQL table prefixes
 
@@ -143,6 +102,43 @@ Image uploads to Craft are usually getting processed by ImageMagick. [Some peopl
 * [Craft Imageoptimize](https://github.com/nystudio107/craft-imageoptimize)
 
 Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
+
+## Updating Craft
+
+From time to time a new minor Craft version will come out, dot or a dot-dot, like an update from 3.1.5 to 3.1.6. We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
+
+### A. Update Craft with a Git workflow
+
+When you have used a Git to deploy Craft, your update workflow likely looks like this: Use Composer to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**: 
+
+```shell
+# Make sure to be in the projects root folder (locally)
+$ composer update
+
+# The output looks something like this: 
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Package operations: 0 installs, 17 updates, 1 removal
+  - Updating craftcms/cms (3.0.0-RC7 => 3.0.0-RC12): Downloading (100%)
+  - Updating yiisoft/yii2 (2.0.13.1 => 2.0.14): Downloading (100%)
+ [...]
+  - Updating ostark/craft-async-queue (1.1.5 => 1.3.0):  Checking out c262aa5e21
+  - Updating symfony/var-dumper (v3.4.3 => v3.4.4): Downloading (100%)
+```
+
+The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App. During the [Git deployment](/git-deployment), `composer install` will run automatically. This way your local Composer changes get applied on the remote. Some plugins or the Craft core may include database migrations. Don't forget to run the following SSH remote execution command after the updated packages are deployed:
+
+```bash
+$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
+```
+
+#### Disable updates from the Craft control panel
+
+Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in your Craft configuration, see an [example below](#toc-craft-config-example). Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates) and [this question](https://craftcms.stackexchange.com/a/27/4504). 
+
+### B. Update Craft with a SFTP workflow
+
+Just use the shiny update button interface. Follow [the official guides](https://docs.craftcms.com/v3/updating.html). You need to do that twice: Once for your local installation, once for the one on remote (ony your App).
 
 
 ## Older Craft versions
