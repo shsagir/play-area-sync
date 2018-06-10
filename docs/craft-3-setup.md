@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-09
+reviewed:         2018-06-10
 title:            Setup Craft CMS
 naviTitle:        Setup Craft
 lead:             Learn how to configure Craft CMS to run locally AND on fortrabbit, smoothly.
@@ -58,8 +58,6 @@ SECURITY_KEY={{PASTE-KEY-FROM-DASHBOARD-HERE}}
 
 When you have installed Craft with Composer that value might already contain a value. Just replace it with the one from the fortrabbit Dashboard. You can also go the other way around and paste your local existing security key to the Dashboard.
 
-
-## cpTrigger
 
 ## siteUrl
 

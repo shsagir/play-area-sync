@@ -61,9 +61,9 @@ Some plugins or the Craft core may include database migrations. Don't forget to 
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 ```
 
-#### Disable updates from the admin interface
+#### Disable updates from the Craft control panel
 
-Craft CMS has the option to run updates directly from the admin control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in the Craft configs, see also the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates) and [this question](https://craftcms.stackexchange.com/a/27/4504), like so:
+Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in the Craft configs, see also the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates) and [this question](https://craftcms.stackexchange.com/a/27/4504), like so:
 
 ```
 public $allowUpdates = false;
@@ -88,7 +88,7 @@ It's maybe there already. **Pro tip**: See below on how to [enable Dev Mode](#to
 
 ## Manually set ENV vars
 
-Our [Software Preset](/app#toc-software-preset) will populate the ENV vars on fortrabbit for you, see [here](/env-vars) for more on ENV vars. So when you have not chosen Craft, or you are just curious how this works, or your ENV vars have been deleted accidentally. This is what will be set:
+Our [Software Preset](/app#toc-software-preset) will populate the ENV vars on fortrabbit for you, see [here](/env-vars) for more on ENV vars. So when you have not chosen Craft while creating the App, or you are just curious how this works, or your ENV vars have been deleted accidentally. This here is what is set:
 
 ```dotenv
 DB_DATABASE=${MYSQL_DATABASE}
@@ -103,11 +103,13 @@ SECURITY_KEY=LongRandomString
 
 ## Environment detection
 
-<!-- TODO: make clear which file is edited here! -->
+In [modern Craft develop and deploy workflows](/craft-3-about) your local development environment is where changes are developed and tested first. Craft 3 knows about this concept and provides convenient ways to check where ever the installation currently runs. We assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. Your local ENV might be set 
+
+See the topic on  
 
 [environment detection](local-development#toc-environment-detection)
 
-We assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. 
+ `config/general.php`
 
 ```
 <?php
@@ -116,44 +118,25 @@ return [
     '*' => [
         'cpTrigger' => 'brewery',
         'securityKey' => getenv('SECURITY_KEY'),
-        'siteUrl' => getenv('SITE_URL')
+        'siteUrl' => getenv('SITE_URL'),
+        'allowUpdates' => false
     ],
     // ENVIRONMENT specific 
     'production' => [
-        'devMode' => false,
-        'allowUpdates' => false
+        'devMode' => false
     ],
     'dev' => [
-        'devMode' => true,
-    ],
+        'devMode' => true
+    ]
 ];
 ```
 
 The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually locally).
 
 
-
-
 ## Dev Mode
 
 Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details. Here is an example of a configuration group `config/general.php`:
-
-```
-<?php
-return [
-    // Global settings
-    '*' => [
-        'cpTrigger' => 'brewery',
-    ],
-    // ENVIRONMENT specific 
-    'production' => [
-        'devMode' => false,
-    ],
-    'dev' => [
-        'devMode' => true,
-    ],
-];
-```
 
 The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually locally).
 
@@ -198,6 +181,11 @@ The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore`
 
 * [docs.craftcms.com/v2/folder-structure.html#craft-storage](https://docs.craftcms.com/v2/folder-structure.html#craft-storage)
 * [craftcms.com/support/craft-storage-gitignore](https://craftcms.com/support/craft-storage-gitignore)
+
+
+## cpTrigger
+
+
 
 
 <!--
