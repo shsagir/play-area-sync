@@ -34,9 +34,7 @@ From time to time a new minor Craft version will come out, dot or a dot-dot, lik
 
 ### A. Update Craft with a Git workflow
 
-When you have used a Git to deploy Craft, your update workflow likely looks like this: You will update your local installation first, then, when everything works, you will deploy the changes to your fortrabbit production App. Use Composer to first update your local installation, then push the changes to trigger the update on remote.
-
-Run the following command in the terminal on your computer **locally**: 
+When you have used a Git to deploy Craft, your update workflow likely looks like this: Use Composer to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**: 
 
 ```shell
 # Make sure to be in the projects root folder (locally)
@@ -53,9 +51,7 @@ Package operations: 0 installs, 17 updates, 1 removal
   - Updating symfony/var-dumper (v3.4.3 => v3.4.4): Downloading (100%)
 ```
 
-The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App. During the [Git deployment](/git-deployment), `composer install` will run automatically. This way your local composer changes get applied on the remote.
-
-Some plugins or the Craft core may include database migrations. Don't forget to run the following SSH remote execution command after the updated packages are deployed:
+The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App. During the [Git deployment](/git-deployment), `composer install` will run automatically. This way your local Composer changes get applied on the remote. Some plugins or the Craft core may include database migrations. Don't forget to run the following SSH remote execution command after the updated packages are deployed:
 
 ```bash
 $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
@@ -63,32 +59,57 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 
 #### Disable updates from the Craft control panel
 
-Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in the Craft configs, see also the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates) and [this question](https://craftcms.stackexchange.com/a/27/4504), like so:
-
-```
-public $allowUpdates = false;
-```
-
+Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in the interface directly on the fortrabbit App. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) on the Uni Stack and that those changes even will get lost on the Pro Stack, due to [ephemeral storage](/app-pro#toc-ephemeral-storage). So you better prevent the shiny "update me" button from showing up at all. You can do that in your Craft configuration, see an [example below](#toc-craft-config-example). Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates) and [this question](https://craftcms.stackexchange.com/a/27/4504). 
 
 ### B. Update Craft with a SFTP workflow
 
 Just use the shiny update button interface. Follow [the official guides](https://docs.craftcms.com/v3/updating.html). You need to do that twice: Once for your local installation, once for the one on remote (ony your App).
 
 
-## Environment settings
+## Environment detection
 
-We expect fortrabbit to be your production environment, so it has been set accordingly in the ENV vars. Your local development environment will be "dev". This is what your `.env` file needs to contain:
+In [modern Craft develop-and-deploy workflows](/craft-3-about) your local development environment is where changes are developed and tested first. See more on environment detection in our [local development](local-development#toc-environment-detection). Craft 3 knows about this concept and provides a convenient way to check where the installation currently runs. We assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. We suggest to set your local `ENVIRONMENT` ENV var to `dev`:
 
 ```
+# Local environment ENV setting
 ENVIRONMENT=dev
 ```
 
-It's maybe there already. **Pro tip**: See below on how to [enable Dev Mode](#toc-dev-mode).
+### Craft config example
 
+Below is an example `config/general.php` on 
 
-## Manually set ENV vars
+```
+<?php
+return [
+    // Global settings
+    '*' => [
+        'cpTrigger'    => 'wp-admin',
+        'securityKey'  => getenv('SECURITY_KEY'),
+        'siteUrl'      => getenv('SITE_URL'),
+        'allowUpdates' => false
+    ],
+    // ENVIRONMENT specific 
+    // fortrabbit
+    'production' => [
+        'devMode' => false
+    ],
+    // local
+    'dev' => [
+        'devMode' => true
+    ]
+];
+```
 
-Our [Software Preset](/app#toc-software-preset) will populate the ENV vars on fortrabbit for you, see [here](/env-vars) for more on ENV vars. So when you have not chosen Craft while creating the App, or you are just curious how this works, or your ENV vars have been deleted accidentally. This here is what is set:
+## Dev Mode
+
+Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details. See [above](#) for an example of a configuration group.
+
+## Manually setting ENV vars
+
+Our [Software Preset](/app#toc-software-preset) will populate the ENV vars on fortrabbit for you, see [here](/env-vars) for more on ENV vars. So when you have not chosen Craft while creating the App, or you are just curious how this works, or your ENV vars have been deleted accidentally.
+
+### Craft ENV vars on fortrabbit
 
 ```dotenv
 DB_DATABASE=${MYSQL_DATABASE}
@@ -100,56 +121,13 @@ ENVIRONMENT=production
 SECURITY_KEY=LongRandomString
 ```
 
-
-## Environment detection
-
-In [modern Craft develop and deploy workflows](/craft-3-about) your local development environment is where changes are developed and tested first. Craft 3 knows about this concept and provides convenient ways to check where ever the installation currently runs. We assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. Your local ENV might be set 
-
-See the topic on  
-
-[environment detection](local-development#toc-environment-detection)
-
- `config/general.php`
-
-```
-<?php
-return [
-    // Global settings
-    '*' => [
-        'cpTrigger' => 'brewery',
-        'securityKey' => getenv('SECURITY_KEY'),
-        'siteUrl' => getenv('SITE_URL'),
-        'allowUpdates' => false
-    ],
-    // ENVIRONMENT specific 
-    'production' => [
-        'devMode' => false
-    ],
-    'dev' => [
-        'devMode' => true
-    ]
-];
-```
-
-The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually locally).
-
-
-## Dev Mode
-
-Sometime while developing you might want to see some error output directly on your browser screen. That's what Dev Mode is for. See the [Craft docs](https://craftcms.com/support/dev-mode) for more details. Here is an example of a configuration group `config/general.php`:
-
-The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually locally).
-
-
 ## Database synchronization
 
-You will probably often need to synchronize your local database with the one on fortrabbit. The manual way is a bit mundane, so we have developed a very cool tool: [Craft Copy](https://github.com/fortrabbit/craft-copy)
-
-If you still prefer to export/import manually: Head over to our [MySQL export & import guide](/mysql#toc-export-amp-import) to learn how to access the database on fortrabbit.
+You will probably often need to synchronize your local database with the one on fortrabbit. The manual way is a bit mundane, so we have developed a **very cool tool: [Craft Copy](https://github.com/fortrabbit/craft-copy)**. If you still prefer to export/import manually: Head over to our [MySQL export & import guide](/mysql#toc-export-amp-import) to learn how to access the database on fortrabbit.
 
 ## MySQL table prefixes
 
-When your local Craft installation contains a table prefix the one on the fortrabbit App should have the same one. You can set the table prefix on fortrabbit with the App's [ENV vars](/env-vars) like so:
+When your local Craft installation contains a table prefix the one on the fortrabbit App should have the same one. You can set the table prefix on fortrabbit with the App's [ENV vars](/#toc-craft-config-example) like so:
 
 ```dotenv
 # Example Table prefix
@@ -184,6 +162,11 @@ The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore`
 
 
 ## cpTrigger
+
+
+
+
+## siteUrl
 
 
 
