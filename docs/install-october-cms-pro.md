@@ -220,12 +220,12 @@ return [
         'uploads' => [
             'disk'   => 's3',
             'folder' => 'uploads',
-            'path'   => $secrets['OBJECT_STORAGE']['URL']. '/uploads',
+            'path'   => $secrets['OBJECT_STORAGE']['SERVER']. '/uploads',
         ],
         'media' => [
             'disk'   => 's3',
             'folder' => 'media',
-            'path'   => $secrets['OBJECT_STORAGE']['URL']. '/media',
+            'path'   => $secrets['OBJECT_STORAGE']['SERVER']. '/media',
         ]
     ]
 ];
