@@ -18,9 +18,7 @@ keywords:
 
 <!--
 
-TODO:
-
-  * check 
+TODO: check it one more time!
 
 -->
 
