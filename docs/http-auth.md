@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-06-08
+reviewed:    2018-06-11
 title:       Using HTTP Auth on fortrabbit
 lead:        You probably don't want the whole world to see your development in progress. Better restrict access to a fortunate few. This is how to use HTTP (basic) authentication to trigger a username/password prompt in the browser.
 naviTitle:   HTTP auth
@@ -29,6 +29,7 @@ TODO:
 
 When no framework or CMS was chosen when creating the App, `htdocs` is the default root folder of the App. Create a new folder, called something like `web` or `root`. Move all your web contents into that folder. Set the newly created folder containing everything now, as the new root path in the Dashboard, see also [here on how to do the last part](/app#toc-root-path).
 
+This step not required, as with fortrabbit all files starting with: `.ht*` will be blocked from delivery. Still it is recommended.
 
 
 ## Create the .htaccess file
