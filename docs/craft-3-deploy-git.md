@@ -25,11 +25,13 @@ keywords:
 
 ---
 
+This is the advanced guide, there is a more basic guide to install Craft using SFTP [over here](/craft-3-upload-sftp).
+
+
 ## Get ready
 
 For best results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/craft-3-install-local). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer), it can be applied to [Professional](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. 
 
-There is a more basic guide to install Craft using SFTP on Universal Apps [over here](/craft-3-upload-sftp).
 
 ## Deploy the Craft code base with Git
 

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-12
+reviewed:         2018-06-11
 title:            Upload Craft CMS with SFTP 
 naviTitle:        Upload Craft with SFTP
 lead:             Are you more "web designer" and less a "web developer"? Learn how to upload Craft in a classical way using SFTP. 
@@ -26,13 +26,16 @@ keywords:
 
 ---
 
+
+This legacy guide here follows the easiest path to get Craft up and running on fortrabbit.  We also have a more advanced workflow to [deploy Craft with Git](/craft-3-deploy-git).
+
 ## Get ready
 
-Make sure to have completed the other steps from the [Junior workflow](craft-3-about#toc-juniors) before. This guide here follows the easiest path to get Craft up and running on fortrabbit, we also have a better but more advanced workflow to [deploy Craft with Git](/craft-3-deploy-with-git-uni) here.
+In any case, you should have [local development environment](local-development) and [Craft installed](/craft-3-install-local) and [configured](/craft-3-setup), also see our [get ready guide](/get-ready).
 
 ## Upload Craft with SFTP
 
-This workflow is simple and common. It doesn't need much explanation. Everybody and his dog knows [how to use SFTP](/sftp). Check the [downloading an archive file manually](https://docs.craftcms.com/v3/installation.html) workflow from the official Craft docs as your detailed reference. 
+This workflow is simple and common. It doesn't need much explanation. Everybody and his dog knows [how to use SFTP](/sftp). Check the [downloading an archive file manually](https://docs.craftcms.com/v3/installation.html#downloading-an-archive-file-manually) workflow from the official Craft docs as your detailed reference. 
 
 On the fortrabbit side: Just grab your personal SFTP login credentials from the Dashboard. Use any SFTP client. Upload all contents of your local Craft folder into the `htdocs` folder of your fortrabbit App. And you are good to go.
 
