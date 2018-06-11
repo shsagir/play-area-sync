@@ -95,19 +95,6 @@ Creating a Company itself is free of any charges and it comes with a basic free 
 
 * [See Company plan features](//www.fortrabbit.com/company-plans)
 
-<!--
-
-TODO: uncomment and extend when alerts (relaunch)
-
-### Automatic resource exhaustion alerts
-
-Each App with fortrabbit has limited resources, most of them are scalable or extendible. We advice to start small and only scale when needed. Some resources scale by usage. For example, when your App has users who are uploading images, the web space or the Object Storage space will get fuller and fuller by time.
-
-All collaborators on the App will see those usage metrics at the App overview in the Dashboard. When a resource is about to hit the limit, it will be shown in a yellow color to alert you.
-
-All Owners of the App will get an e-mail, once a usage metric is about to hit the limit. Please see our [specs page](https://www.fortrabbit.com/specs#limits) to learn about the resources with App alerts and how the limits are handled.
-
--->
 
 <!--
 
