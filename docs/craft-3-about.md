@@ -48,7 +48,6 @@ Read more about the Stacks [here](/stacks).
 
 #### 1.2 Modern workflow steps
 
-<!-- TODO ??????? merge 1+2, skip local) -->
 1. [Be ready](/get-ready), fortrabbit App + local dev env
 2. Have an existing Craft 3 project running or [install a new on with Composer](craft-3-install-local#toc-1a-download-craft-with-composer) locally
 2. [Prepare environments](/craft-3-setup#toc-craft-environment-configuration)
@@ -81,7 +80,6 @@ Juniors and web developers with a focus on front-end are likely more comfortable
 
 #### 2.1 Legacy workflow steps
 
-<!-- TODO ??????? merge 1+2, skip local) -->
 1. [Be ready](/get-ready), fortrabbit App + local dev env
 2. Have an existing Craft 3 project running or [download Craft](craft-3-install-local#toc-1b-download-the-craft-zip-file)
 2. [Prepare environments](/craft-3-setup#environments) <!-- TODO dead link -->
