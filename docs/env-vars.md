@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2018-06-07
+reviewed:   2018-06-11
 title:      Using environment variables in PHP and on fortrabbit
 naviTitle:  Environment variables
 lead:       ENV vars help to create and shape the environment of where the code runs. It's a good modern practice.
@@ -28,7 +28,7 @@ Everything specific to the environment should be stored in Environment variables
 
 ### About ENV vars
 
-An ENV var is a key value pair, like so: `MY_SQL_PASS:sCRAmblEDegGGs`. These variables are, as you hopefully can guess by now, specifically stored per environment. ENV vars are potentially stored in multiple places — most importantly here: with your web server, on fortrabbit that is Apache. This is how you can define an ENV var with Apache:
+An ENV var is a key value pair, like so: `MY_SQL_PASS:sCRAmblEDegGGs`. These variables are, as you hopefully can guess by now, specifically stored per environment. ENV vars are potentially stored in multiple places. This is how you can define an ENV var with an Apache configuration:
 
 ```
 <VirtualHost hostname:80>
@@ -36,7 +36,7 @@ An ENV var is a key value pair, like so: `MY_SQL_PASS:sCRAmblEDegGGs`. These var
 </VirtualHost>
 ```
 
-This is a basic example on how you can do that locally, for further usage and how to do it on fortrabbit, please read on.
+This is a basic example on how you can do that locally. In most cases you will not need to touch that level here. Please read on for further usage and how to do it on fortrabbit.
 
 ## ENV vars in modern PHP
 
@@ -50,24 +50,24 @@ All you need is a parser library, that reads the file and makes the vars accessi
 
 ### PHP dotenv
 
-The .env file concept has become quite common and there are ports to all languages. Here are the most popular ones for the PHP:
+The `.env` file concept has become quite common and there are ports to all languages. Here are the most popular ones for the PHP:
 
 * [github.com/vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
 * [github.com/symfony/dotenv](https://github.com/symfony/dotenv)
 
-Modern PHP frameworks, like [Laravel](/install-laravel) or [Symfony](/install-laravel) and CMS, like [Craft](/craft-3-about) use one or the other under the hood.
+Modern PHP frameworks — [Laravel](/install-laravel), [Symfony](/install-symfony) …) and CMS ([Craft](/craft-3-about)) use one or the other under the hood.
 
 ### ENV vars on fortrabbit
 
 Recap: ENV vars are environment specific. So, in consequence, the `.env` file will NOT be deployed to your fortrabbit App. It's usually excluded from tracking in Git. 
 
-Now, how should your fortrabbit App know about it's ENV vars? Some users think they need to set up an addtional `.env` file on the fortrabbit App. That's not the way it works.
+Now, how should your fortrabbit App know about it's ENV vars? Some users think they need to set up an additional `.env` file on the fortrabbit App. That's not the way it works. fortrabbit Apps have their ENV vars set directly with the server. Those can be set in the Dashboard with the App. 
 
-fortrabbit Apps have their ENV vars set directly with the server. Those can be set in the Dashboard with the App. 
+Recap: The PHP application itself will just query the ENV vars. A library just helps to populate the ENV vars into the code base, but only when they are not set already. 
 
-Recap: The PHP application itself will just query the ENV vars from server. A library just helps to populate the ENV vars into the code base, but only when they are not set already. 
+The fortrabbit [Software Preset](/app#software-preset) is where the magic happens. While creating an App on fortrabbit, you'll choose your desired CMS or framework. This selection will configure the server ENV vars in ways, the software can work with it. For example, for Laravel and Craft, the ENV var `DB_PASSWORD` will be populated with the password of the Apps database. For Symfony we provide a ready to use DSN in the `DATABASE_URL` variable. Here is the link to the settings of your App:
 
-The fortrabbit [Software Preset](/app#software-preset) is where the magic happens. While creating an App on fortrabbit, you'll choose your desired CMS or framework. This selection will configure the server ENV vars in ways, the software can work with it. For example, for Laravel and Craft, the ENV var `DB_PASSWORD` will be populated with the password of the Apps database. For Symfony we provide a ready to use DSN in the `DATABASE_URL` variable.
+* [dashboard.fortrabbit.com/apps/{{app-name}}/vars](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 
 So, most likely, your fortrabbit App will work out of the box. As a bonus you even reset the database password without touching any configurations.
 
