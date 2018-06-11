@@ -88,7 +88,7 @@ It will contain a value when you have [installed Craft 3 correctly](/craft-3-ins
 
 * [dashboard.fortrabbit.com/apps/{{app-name}}/vars](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 
-That ENV var is already set. Just replace it with your local one.
+That ENV var is already set. Just replace it with your local one. Also see the [official Craft guide on that topic](https://docs.craftcms.com/v3/installation.html#step-3-set-a-security-key) to learn about the different ways to create the key.
 
 
 ## Database synchronization
