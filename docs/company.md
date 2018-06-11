@@ -96,22 +96,6 @@ Creating a Company itself is free of any charges and it comes with a basic free 
 * [See Company plan features](//www.fortrabbit.com/company-plans)
 
 
-<!--
-
-TODO: uncomment and extend when Technical Contact feature launches
-
-#### Setting a technical contact
-
-If you have a Company collaboration plan booked, all Owners and Admins of the Company can change the technical contact.
-
-In the Dashboard under "Your Account" > "Companies" > {{ Company }} > "Technical contact" you can set one or more contacts. This can be any Account associated with the Company or any e-mail address you like.
-
-You can define the services you want to receive alerts for. By default all services are enabled. Further: you can tune the settings to include or exclude certain Apps. You can also overwrite those settings on App level.
-
-Individual Accounts can opt-out of receiving those alerts by deselecting this from their Accounts notification settings.
-
--->
-
 ### Working with multiple Companies
 
 Just like in real life, you can create or join any number of Companies with your Account. So one Account can own multiple Companies while also being involved in other Companies as Admins or even App level collaborators.
