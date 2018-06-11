@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-23
+reviewed:      2018-06-11
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit
 excerpt:       All about HTTPS and TLS.
@@ -127,10 +127,6 @@ Unsure from where to book your certificate? Most Certificate Authority provider 
 Remember that certificates are usually only valid for one year. So you need to re-purchase a new certificate from your provider and re-install it with your App, when using Custom HTTPS . The steps are the same as described above.
 
 
-
-
-
-
 ## Using TLS/HTTPS
 
 The following practical tips on how to deal with HTTPS are applying to all TLS options on fortrabbit:
@@ -164,6 +160,12 @@ Header always set Strict-Transport-Security "max-age=31536000"
 ```
 
 This will make your browser remember to always use the secured version of your App. It makes use of the "[HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security)" policy and improves security by eliminating the risks of man-in-the-middle TLS-protocol-downgrade attacks. Be careful: setting this header will tell the browser never (or that is: until max-age) to use `http://` again. So if you later on decide to serve (parts of) your site using no encryption, all those clients (browsers) which saw the header will not comply and keep using `https://`.
+
+
+### Secure your domain with a CAA
+
+A Certification Authority Authorization (CAA) is a DNS record to specify which certificate authorities (CAs) are allowed to issue certificates for a domain. It's an extra security layer, so that now one else can intercept any certificates by wrong authorities. There is no integration here on fortrabbit needed. See if your DNS / domain provider support CAA entries, set the according identifying domain name. When you are using our free Let's Encrypt certs, see [this article](https://letsencrypt.org/docs/caa/) on how to set it up.
+
 
 ## Troubleshooting TLS
 
