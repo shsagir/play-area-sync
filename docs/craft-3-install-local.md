@@ -28,7 +28,7 @@ keywords:
 
 ## Get ready
 
-Make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-3-about) available. Use the detailed [official Craft 3 install guide](https://docs.craftcms.com/v3/installation.html) as your guideline to install Craft on your local machine first.
+[Be ready](/get-ready), make sure to have a [local development environment](/local-development) up and running and be aware of the [different Craft deployment workflows](/craft-3-about) available. Use the detailed [official Craft 3 install guide](https://docs.craftcms.com/v3/installation.html) as your guideline to install Craft on your local machine first.
 
 ## Choose your Craft install workflow
 
