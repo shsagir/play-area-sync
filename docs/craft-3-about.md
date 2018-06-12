@@ -72,7 +72,7 @@ Please head on to the GitHub page for more usage examples:
 
 Juniors and web developers with a focus on front-end are likely more comfortable using the legacy SFTP workflow. Use this workflow when you are coming from WordPress and not yet familiar to use the Terminal, Git and Composer. This is your route:
 
-1. **[Run Craft locally](craft-3-install-local)**: Install new with Composer or existing project
+1. **[Run Craft locally](craft-3-install-local)**: Install new or existing project
 2. **[Setup Craft](/craft-3-setup)**: Prepare environments, sync database
 3. **[Upload Craft with SFTP](/craft-3-upload-sftp)**
 4. **[Tune Craft](/craft-3-tune)**: Master it!
