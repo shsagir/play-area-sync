@@ -32,7 +32,8 @@ keywords:
 There are [two hosting stacks](/stacks) here on fortrabbit. You can choose with each new [App](/app) your create:
 
 1. The [Universal Stack](/app-uni) has VPS or shared hosting feeling. It's easy to use, affordable, but limited in scaling. Use it for testing + small projects.
-2. The [Professional Stack](/app-pro) is designed to scale horizontally. All components are redundant to assure high uptime. There is only Git deployment, [ephemeral storage](/app-pro#toc-ephemeral-storage) and assets are stored on a remote file system like the [Object Storage](/craft-3-assets-pro). Use it for serious business + potentially large sites with some traffic.
+2. The [Professional Stack](/app-pro) is designed to scale horizontally. All components are redundant to assure high uptime. There is only Git deployment, [ephemeral storage](/app-pro#toc-ephemeral-storage) and assets are stored on a remote file system like the [Object Storage](/craft-3-assets-pro). Use it for serious business + potentially large sites.
+
 
 ## Choose your workflow
 
