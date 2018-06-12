@@ -80,8 +80,8 @@ The ENV var might already be set. Just replace it with the one from the fortrabb
 
 The mandatory Craft CMS security key has to be shared among all environments. We recommend to use your local security key as the master key. Open your local (hidden) `.env` file from the root folder of your project and find a line that looks like this:
 
-```osterei32
-SECURITY_KEY={{longRandomString}}
+```dotenv
+SECURITY_KEY=69UzZSEquw9E7RdCyRRTRb1lxe7h0EPd
 ```
 
 It will contain a value when you have [installed Craft 3 correctly](/craft-3-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
