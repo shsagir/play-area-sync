@@ -40,7 +40,7 @@ Make sure to have followed [our guides](/craft-3-about) so far. You should have 
 
 ## Environment detection
 
-In [modern Craft develop-and-deploy workflows](/craft-3-about) your local development environment is where changes are developed and tested first. See more on environment detection in our [local development](local-development#toc-environment-detection). Craft 3 knows about this concept and provides a convenient way to check where the installation currently runs. We assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. We suggest to set your local `ENVIRONMENT` ENV var to `dev`:
+In [modern Craft develop-and-deploy workflows](/craft-3-about) your local development environment is where changes are developed and tested first. See more on environment detection in our [local development](local-development#toc-environment-detection). Craft 3 knows about this concept and provides a convenient way to check where the installation currently runs. The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually local). So, we assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. We suggest to set your local `ENVIRONMENT` ENV var to `dev`:
 
 ```
 # Local environment ENV setting
