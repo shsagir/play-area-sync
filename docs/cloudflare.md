@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        CloudFlare
-reviewed:         2018-05-08
+reviewed:         2018-06-12
 title:            Using CloudFlare with fortrabbit
 group:            Domains_and_DNS
 section:          Extending_fortrabbit
@@ -28,32 +28,42 @@ keywords:
 CloudFlare is a "magical" multi-purpose website performance & security service, which works on DNS level. It can be used as a kind of Content Delivery Network and as a protection against Denial Of Service Attacks. It is also popular choice to get an SSL certificate for your domain without costs and hustle.
 
 
-## Pricing
+## Pricing and signup
 
-It starts with a free plan with the basic features to get you started. [cloudflare.com/plans/](https://www.cloudflare.com/plans?utm_source=fortrabbit).
-
-
-## Signing Up
-
-Go to the [sign up page](https://www.cloudflare.com/a/sign-up) and enter email and choose a password.
+It starts with a free plan with the basic features to get you started. [cloudflare.com/plans/](https://www.cloudflare.com/plans?utm_source=fortrabbit). Go to the [sign up page](https://www.cloudflare.com/a/sign-up) and enter email and choose a password.
 
 
 ## Integrating CloudFlare with fortrabbit
 
-There is no technical connection between CloudFlare and fortrabbit. CloudFlare will be in between of your DNS provider and fortrabbit. 
+There is no technical connection between CloudFlare and fortrabbit. CloudFlare will be in between of your DNS provider and fortrabbit — think of it as proxy. You will set your name-servers (NS) to point to CloudFlare. 
 
-### Recommended setup
+### Setup CloudFlare
 
 In the following example you first register your domain with your domain provider, then point it to fortrabbit using our standard settings, then CloudFlare will scan the DNS records for you:
 
 1. Make sure to have a domain registered with a domain provider
 2. Make sure to have added the domain in the fortrabbit Dashboard
-3. Route the domain using our instructions (CNAME for www + IP for naked) still with your old DNS provider
-4. Set up the domain with CloudFlare. There you'll be asked you to set their name servers. Set the CloudFlare NS with your domain provider
+3. Route the domain using our instructions still with your old DNS provider
+4. Set up the domain with CloudFlare
 4. CloudFlare will scan and use the DNS settings already in place
 5. DONE
 
-You might also start with a fresh domain from scratch within CloudFlare. Then CloudFlare will act as your DNS provider. Enter the DNS settings from the fortrabbit Dashboard.
+You might also start with a fresh domain from scratch within CloudFlare. Then CloudFlare will act as your DNS provider. Enter the DNS settings from the fortrabbit Dashboard with CloudFlare.
+
+### Crypto setting
+
+Each domain on CloudFlare comes with a bunch of settings. One is called "Crypto" and is about SSL. Your goal is that the whole communication between the user of your website is encrypted of course. Now, CloudFlare, as described above, is a proxy between your user and fortrabbit. The first lap from the user to CloudFlare is secured by default, but what about the the next one, between CloudFlare and fortrabbit? 
+
+```
+┌──────┐       ┌────────────┐             ┌────────────┐
+│ User ├─HTTPS─▶ CloudFlare ├─ ? HTTPS ? ─▶ fortrabbit │
+└──────┘       └────────────┘             └────────────┘
+```
+
+CloudFlare is the domain end point for the user. CloudFlare itself will actually talk to the App URL. As the App URL has HTTPS, you can and should set SSL to **full** to ensure end-to-end encryption. The default **flexible** setting is not enough (in our opinion). When 
+
+
+## Advanced topics
 
 ### CloudFlare VS fortrabbit Dashboard
 
@@ -61,7 +71,7 @@ CloudFlare is a bit of blackbox, DNS-wise. When you'll visit a domain in the for
 
 ### ClouFlare SSL VS Let's Encrypt
 
-Many fortrabbit clients have used CloudFlare to get SSL (https) for their own custom domain without the need to book and setup a custom cert here. Now, fortrabbit also offers free SSL certificates via (free and zero-config) Let's Encrypt. So if that is your aim, you'll might not need CloudFlare.
+Many fortrabbit clients have used CloudFlare to get SSL, see our [HTTPS article](/https) as well, for their own custom domain without the need to book and setup a custom cert here. Now, fortrabbit also offers free SSL certificates via (free and zero-config) Let's Encrypt. So if that is your aim, you'll might not need CloudFlare.
 
 ### Other reasons to use CloudFlare
 
