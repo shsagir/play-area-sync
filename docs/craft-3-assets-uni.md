@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-17
+reviewed:         2018-06-11
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to Universal Apps using rsync or SFTP.
@@ -61,4 +61,4 @@ This is basically what we are doing with the [Object Storage](/object-storage) f
 
 ## Next steps
 
-Make sure to have your [Craft setup](/craft-3-setup) correctly. Then [tune and optimize](/craft-3-tuning).
+Make sure to have your [Craft setup](/craft-3-setup) correctly. Then [tune and optimize](/craft-3-tune).
