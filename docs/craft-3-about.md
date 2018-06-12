@@ -44,7 +44,7 @@ There are many ways to work with Craft CMS — depending on project needs and sk
 Sophisticated developers, experienced in backend development and ready to work with the Terminal, [Git](/git) and [Composer](/composer) will benefit the most from our advanced workflows. This is were our 💜 is.
 
 
-1. **[Be ready](/get-ready)**: Have fortrabbit App and a local dev env
+1. **[Be ready](/get-ready)**: Have a fortrabbit App and a local dev env running
 2. **[Run Craft locally](craft-3-install-local)**: Install new with Composer or existing project
 3. **[Setup Craft](/craft-3-setup)**: Prepare environments, sync database
 4. **[Deploy Craft with Git](/craft-3-deploy-git)**
@@ -74,7 +74,7 @@ Please head on to the GitHub page for more usage examples:
 
 Juniors and web developers with a focus on front-end are likely more comfortable using the legacy SFTP workflow. Use this workflow when you are coming from WordPress and not yet familiar to use the Terminal, Git and Composer. This is your route:
 
-1. **[Be ready](/get-ready)**: Have fortrabbit App and a local dev env
+1. **[Be ready](/get-ready)**: Have a fortrabbit App and a local dev env running
 2. **[Run Craft locally](craft-3-install-local)**: Install new with Composer or existing project
 3. **[Setup Craft](/craft-3-setup)**: Prepare environments, sync database
 4. **[Upload Craft with SFTP](/craft-3-upload-sftp)**
