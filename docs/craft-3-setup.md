@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-10
+reviewed:         2018-06-13
 title:            Setup Craft CMS
 naviTitle:        Setup Craft
 lead:             How to configure Craft CMS to run locally AND on fortrabbit.
@@ -26,14 +26,6 @@ keywords:
   - install-guide
 
 ---
-
-
-<!--
-
-  TBD:
-  This is minimum required setup. All the beautiful, maybe important to Oli, stuff can be found in the tuning article. The idea here is to have it as short as possible so that users are motivated to do it. They don't need to know about every best practice upfront. I believe.
-
--->
 
 
 ## Get ready
@@ -96,6 +88,14 @@ That ENV var is already set. Just replace it with your local one. Also see the [
 Now, your [local Craft installation](/craft-3-install-local) should already have created a MySQL database with a few tables in it, at least for the admin to login. The fortrabbit database, on the other side, is still empty. Now, export your local database and import it to the fortrabbit remote. Head over to our [MySQL export & import guide](/mysql#toc-export-amp-import) to learn how to access the database on fortrabbit and export/import tables.
 
 PRO TIP: You will probably often need to synchronize development and production databases. We have developed a handy command line tool: **[Craft Copy](https://github.com/fortrabbit/craft-copy)** to speed that up.
+
+```bash
+# Sync database up (local ⟶ fortrabbit)
+$ php craft copy/db/up
+
+# Sync database down (local ⟵ fortrabbit)
+$ php craft copy/db/down
+```
 
 
 ## Next steps
