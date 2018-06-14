@@ -31,7 +31,11 @@ Make sure to have followed [our guides](/craft-3-about) so far. You should have 
 
 ## Multi-Environment configuration
 
-In [modern Craft develop-and-deploy workflows](/craft-3-about) your local development environment is where changes are developed and tested first. See more on environment detection in our [local development](local-development#toc-environment-detection). Craft 3 knows about this concept and provides a convenient way to check where the installation currently runs. The `ENVIRONMENT` which is defined in the ENV vars, maps with the array key `production` (usually fortrabbit), or `dev` (usually local). So, we assume fortrabbit to be your production environment, so it has been set accordingly in the `ENVIRONMENT` ENV var. We suggest to set your local `ENVIRONMENT` ENV var to `dev`:
+Craft embraces the idea of storing environment specific configurations in ENV vars. The database config ([config/db.php](https://github.com/craftcms/craft/blob/master/config/db.php)) is a good example for that.
+
+Additionally you can create groups in every config file. The top level array key maps with the `CRAFT_ENVIRONMENT` constant, which defaults to the `ENVIRONMENT` ENV var. With this flexible approach you decide which configurations are under version control to share it with your team and which are not.
+
+We assume fortrabbit to be your production environment, so the `ENVIRONMENT` ENV var is set to `production` on remote and locally to `dev`.
 
 ```dotenv
 # Local environment ENV setting
@@ -40,7 +44,7 @@ ENVIRONMENT=dev
 
 ### Craft config example
 
-Below is an example of a `config/general.php`. It sets some useful shared settings, like [allowUpdates](#toc-allowupdates) and [cpTrigger](#toc-cptrigger), as well as [DevMode](#toc-dev-mode) for local development.
+Below is an example of a `config/general.php`. It sets some useful shared settings, like [userSessionDuration](#toc-usersessionduration) and [cpTrigger](#toc-cptrigger), as well as [allowUpdates](#toc-allowupdates) (false) in production and [DevMode](#toc-dev-mode) (true) for local development.
 
 
 ```php
@@ -48,11 +52,11 @@ Below is an example of a `config/general.php`. It sets some useful shared settin
 return [
     // Global settings
     '*' => [
-        'cpTrigger'    => 'godmode',
-        'securityKey'  => getenv('SECURITY_KEY'),
-        'siteUrl'      => getenv('SITE_URL')
-    ],
-    // ENVIRONMENT specific 
+        'cpTrigger'           => 'godmode',
+        'userSessionDuration' => 'P24H',
+        'securityKey'         => getenv('SECURITY_KEY'),
+        'siteUrl'             => getenv('SITE_URL') ?: '@web'
+    ],    
     // fortrabbit
     'production' => [
         'devMode'      => false,
@@ -77,6 +81,11 @@ Craft CMS has the option to run updates directly from the Craft control panel. A
 ### cpTrigger
 
 "Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. If you don't set this value it defaults to `admin`.
+
+### userSessionDuration
+
+The amount of time a user stays logged in seconds as an integer value or a [period](http://php.net/manual/en/dateinterval.construct.php) as a string.
+
 
 ## Manually setting ENV vars
 
@@ -105,15 +114,13 @@ DB_TABLE_PREFIX=craft_
 
 ## Updating Craft
 
-On a regular basis Craft ... 
-
-We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
+We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. Test updates locally first! Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
 
 ### A. Update Craft with a Git workflow
 
 When you have used a Git to deploy Craft, your update workflow likely looks like this: Use Composer to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**: 
 
-```shell
+```bash
 # Make sure to be in the projects root folder (locally)
 $ composer update
 
@@ -138,7 +145,8 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 
 ### B. Update Craft with a SFTP workflow
 
-Just use the shiny update button interface. Follow [the official guides](https://docs.craftcms.com/v3/updating.html). You need to do that twice: Once for your local installation, once for the one on remote (ony your App).
+Just use the shiny update button in the control panel locally and upload the changes. Then, to run the database migrations, access the control panel on remote and hit the "Finish" button.
+ 
 
 ## The storage folder
 

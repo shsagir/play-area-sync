@@ -28,7 +28,7 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/get-ready) and have [Craft running on your local machine](/craft-3-install-local). Further, this guide is for advanced users on the [Uni Stack](/app-uni) already using [Git deployment to deploy Craft](/craft-3-deploy-git). You don't need to care about all this, when you have [uploaded Craft with SFTP](/craft-3-upload-sftp).
+For best results here, make sure you have completed all steps from the [get ready guide](/craft-3-about). Further, this guide is for advanced users on the [Uni Stack](/app-uni) already using [Git deployment to deploy Craft](/craft-3-deploy-git). You don't need to care about all this, when you have [uploaded Craft with SFTP](/craft-3-upload-sftp).
 
 ## About Craft assets
 
