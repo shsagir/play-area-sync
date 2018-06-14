@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.9
+version:          3.0.11
 
 keywords:
   - craft
@@ -130,7 +130,7 @@ Updating dependencies (including require-dev)
 Package operations: 0 installs, 9 updates, 0 removals
   - Updating symfony/process (v4.0.11 => v4.1.0): Downloading (100%)
   - Updating symfony/console (v4.0.11 => v4.1.0): Downloading (100%)
-  - Updating craftcms/cms (3.0.9 => 3.0.11): Downloading (100%)
+  - Updating craftcms/cms (3.0.11 => 3.0.11): Downloading (100%)
   [...]
   - Updating symfony/event-dispatcher (v4.0.11 => v4.1.0): Downloading (100%)
 Writing lock file

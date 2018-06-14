@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.9
+version:          3.0.11
 
 keywords:
   - craft
