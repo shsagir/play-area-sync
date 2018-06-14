@@ -147,14 +147,14 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 
 Just use the shiny update button in the control panel locally and upload the changes. Then, to run the database migrations, access the control panel on remote and hit the "Finish" button.
  
-
+<!--
+Git deployment related?
 ## The storage folder
 
-The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore` file](). So we 
+The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore` file](). 
 
 * [docs.craftcms.com/v2/folder-structure.html#craft-storage](https://docs.craftcms.com/v2/folder-structure.html#craft-storage)
-* [craftcms.com/support/craft-storage-gitignore](https://craftcms.com/support/craft-storage-gitignore)
-
+-->
 
 ## Image tuning 
 
@@ -166,15 +166,20 @@ Image uploads to Craft are usually getting processed by ImageMagick. [Some peopl
 Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
 
 
+<!-- 
+Not tuning related
 
 ## Older Craft versions
 
 We have an install guide for Craft CMS Version 2 [over here](/install-craft-2-uni) as well, but recommend to use Craft CMS 3 instead. Consider an [upgrade](/craft-2-3-upgrade) when you have an old installation. 
+-->
 
+<!--
+Unfinished
 ## Multi site
 
 Craft now supports to host multiple websites in a single installation, see the [offical docs](https://docs.craftcms.com/v3/sites.html) on that topic. Use cases for this, is a one website in very similar versions, for example the same website in different languages or marketing landing pages that are very similar. Please don't try to install all you different Craft [websites in one App](/app#toc-one-app-one-website).
-
+-->
 
 
 
