@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-14
+reviewed:         2018-06-14
 title:            Deploy Craft CMS with Git 
 naviTitle:        Deploy Craft with Git
 lead:             Learn how to deploy Craft CMS code base with Git to fortrabbit. 
@@ -25,12 +25,11 @@ keywords:
 
 ---
 
-This is the advanced guide, there is a more basic guide to install Craft using SFTP [over here](/craft-3-upload-sftp).
 
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/craft-3-about). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer), it can be applied to [Professional](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. 
+For best results here, make sure you have completed all steps from the [get ready guide](/craft-3-about), have [Craft installed locally](craft-3-install-local) and [setup](/craft-3-setup). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer), it can be applied to [Professional](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. There is a more basic guide to install Craft using SFTP [over here](/craft-3-upload-sftp).
 
 
 ## Deploy the Craft code base with Git
@@ -72,4 +71,4 @@ Please also make yourself familiar with the options to deploy the Craft `assets`
 * Universal: [Deploy assets with rsync](/craft-3-assets-uni)
 * Professional: [Deploy assets to the Object Storage](/craft-3-assets-pro).
 
-Last not least, see our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.
+Last not least, see our [Craft tuning guide](/craft-3-tune) to truly master Craft on fortrabbit.

@@ -70,7 +70,7 @@ Don't forget to upload hidden `.htaccess` file. This file is required. You can n
 
 ## Consider
 
-A downside of the SFTP workflow is, that you have keep both of your Craft environments in sync manually. Our [manage assets with rsync](/craft-3-assets-uni) is optional but still helpful for SFTP users. Also see our [Craft tuning guide](/craft-3-tuning) to truly master Craft on fortrabbit.
+A downside of the SFTP workflow is, that you have keep both of your Craft environments in sync manually. Our [manage assets with rsync](/craft-3-assets-uni) is optional but still helpful for SFTP users.
 
 
 ## Next steps

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-22
+reviewed:         2018-06-14
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to the Object Storage with fortrabbit Professional Apps.
@@ -29,7 +29,7 @@ keywords:
 
 ## Get ready
 
-For best results here, make sure you have completed all steps from the [get ready guide](/craft-3-about) and have [Craft running on your local machine](/craft-3-install-local). This guide is for advanced users on the advanced [Pro Stack](/app-pro).
+For best results here, make sure you have completed all steps from the [get ready guide](/craft-3-about) and have [Craft running on your local machine](/craft-3-install-local), [setup](/craft-3-setup) and [deployed](/craft-3-deploy-git). This guide is for advanced users on the advanced [Pro Stack](/app-pro).
 
 ## About Craft CMS assets
 
@@ -55,4 +55,4 @@ One reason to choose our Professional Stack is the option to have a horizontally
 
 ## Next steps
 
-Continue with the [Craft setup](/craft-3-setup) and then [tune Craft](/craft-3-tuning). 
+Continue with [tuning Craft](/craft-3-tune).
