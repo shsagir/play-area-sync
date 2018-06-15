@@ -238,7 +238,7 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com secrets OBJECT_STORAGE
 
 Then put the values to your .env file an prefix the keys with `OBJECT_STORAGE_`. In your `webpack.mix.js` you load the plugin and configure it with the env vars:
 
-```
+```js
 let mix = require('laravel-mix');
 let S3Plugin = require('webpack-s3-plugin')
 
