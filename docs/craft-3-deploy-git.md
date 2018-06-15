@@ -32,6 +32,13 @@ keywords:
 For best results here, make sure you have completed all steps from the [get ready guide](/craft-3-about), have [Craft installed locally](craft-3-install-local) and [setup](/craft-3-setup). This guide is for advanced users, making use of [Git](/git) and [Composer](/composer), it can be applied to [Professional](/app-pro) and [Universal Apps](/app-uni) on fortrabbit. There is a more basic guide to install Craft using SFTP [over here](/craft-3-upload-sftp).
 
 
+<!--
+Git deployment related?
+## The storage folder
+
+The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore` file](). 
+-->
+
 ## Deploy the Craft code base with Git
 
 Trigger the following commands in your **local** terminal:

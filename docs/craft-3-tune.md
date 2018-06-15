@@ -82,6 +82,32 @@ Craft CMS has the option to run updates directly from the Craft control panel. A
 
 "Security through obscurity" is a widely discussed concept. We suggest to obscurify the control panel URL of your Craft installation, just because you can. If you don't set this value it defaults to `admin`.
 
+### siteUrl
+
+Using `'siteUrl' => getenv('SITE_URL') ?: '@web'` like in the [example above](#toc-craft-config-example), tells Craft to use the `SITE_URL` ENV var or the `@web` fallback, which is a good default. For multi site setups, you may need to hardcode the domains for each environment. Here is an example for that:
+
+```php
+<?php
+return [
+   
+    // fortrabbit
+    'production' => [
+        'siteUrl' => [
+            'en' => '//www.site.com',
+            'nl' => '//www.site.nl',
+        ]
+    ],
+    // local
+    'dev' => [
+        'siteUrl' => [
+            'en' => '//en.site.dev',
+            'nl' => '//nl.site.dev',
+        ]
+    ]
+];
+```
+
+
 ### userSessionDuration
 
 The amount of time a user stays logged in seconds as an integer value or a [period](http://php.net/manual/en/dateinterval.construct.php) as a string.
@@ -147,14 +173,6 @@ $ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
 
 Just use the shiny update button in the control panel locally and upload the changes. Then, to run the database migrations, access the control panel on remote and hit the "Finish" button.
  
-<!--
-Git deployment related?
-## The storage folder
-
-The `storage` folder within Craft is part of the [fortrabbit custom `.gitignore` file](). 
-
-* [docs.craftcms.com/v2/folder-structure.html#craft-storage](https://docs.craftcms.com/v2/folder-structure.html#craft-storage)
--->
 
 ## Image tuning 
 
@@ -166,21 +184,6 @@ Image uploads to Craft are usually getting processed by ImageMagick. [Some peopl
 Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
 
 
-<!-- 
-Not tuning related
-
-## Older Craft versions
-
-We have an install guide for Craft CMS Version 2 [over here](/install-craft-2-uni) as well, but recommend to use Craft CMS 3 instead. Consider an [upgrade](/craft-2-3-upgrade) when you have an old installation. 
--->
-
-<!--
-Unfinished
-## Multi site
-
-Craft now supports to host multiple websites in a single installation, see the [offical docs](https://docs.craftcms.com/v3/sites.html) on that topic. Use cases for this, is a one website in very similar versions, for example the same website in different languages or marketing landing pages that are very similar. Please don't try to install all you different Craft [websites in one App](/app#toc-one-app-one-website).
--->
-
 
 
 <!--
@@ -189,25 +192,7 @@ TODO:
 
 integrate the following topics, headlines and snippets:
 
-
-
-
-HTTPS?
-
-I'd like to see the TLS/HTTPS topic covered in the help pages here for Craft, it's new for many users how this is done here. We have the X-forward header thing in the general article. Maybe there is a setting in Craft CMS?
-
-https://craftcms.stackexchange.com/questions/4128/how-do-i-force-ssl-on-craft?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-
 - - 
-
-Describe what needs to be done to set a domain with Craft and fortrabbit.
-
-DOMAINS
-https://craftcms.com/support/site-url
-https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/480927/conversations/16114188408
-adding domains? which config needs to be changed in Craft?
-
-- - -
 
 cache headers images:
 https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/conversation/16319087993
