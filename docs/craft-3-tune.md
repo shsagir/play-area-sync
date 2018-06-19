@@ -183,7 +183,14 @@ Image uploads to Craft are usually getting processed by ImageMagick. [Some peopl
 
 Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
 
+## Cache & Session on the Professional Stack
 
+In multi node environments you can not rely on the file based cache or session storage. Instead you store this data in Memcache, a key-value-storage which is accessible from all nodes.  
+With this little extension, no further configuration is required, you just need to pull it in to your `composer.json`:
+
+```bash
+$ composer require fortrabbit/yii-memcached
+```
 
 
 <!--
