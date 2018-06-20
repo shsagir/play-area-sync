@@ -45,14 +45,6 @@ So what you want: is to swap the assets folder on the file system with external 
 
 That will make the App use the Object Storage. To access the Object Storage yourself, you can use any S3 compatible SFTP client — most of them speak the S3 protocol.
 
-### Craft asset bundler
-
-<!-- TODO: Check this, not sure how it integrates with the Object Storage? -->
-
-One reason to choose our Professional Stack is the option to have a horizontally scaled setup AKA high availability. But there are still some [problems with Craft 3 itself](https://github.com/craftcms/cms/issues/2500) in such cases currently — fix hopefully soon. For now we have published a plugin as a workaround:
-
-* [github.com/fortrabbit/craft-asset-bundler](https://github.com/fortrabbit/craft-asset-bundler)
-
 ## Next steps
 
 Continue with [tuning Craft](/craft-3-tune).
