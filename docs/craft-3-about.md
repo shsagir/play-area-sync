@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-13
+reviewed:         2018-06-15
 title:            About Craft on fortrabbit
 naviTitle:        About Craft on fortrabbit
 order:            1
@@ -46,7 +46,8 @@ Sophisticated developers, experienced in backend development and ready to work w
 1. **[Run Craft locally](craft-3-install-local)**: Install new with Composer or existing project
 2. **[Setup Craft](/craft-3-setup)**: Prepare environments, sync database
 3. **[Deploy Craft with Git](/craft-3-deploy-git)**
-4. **[Tune Craft](/craft-3-tune)**: Master it!
+4. **Manage assets** by [rsync for Uni](/craft-3-assets-uni) or via [Object Storage for Pro](/craft-3-assets-pro)
+5. **[Tune Craft](/craft-3-tune)**: Master it!
 
 
 ### Craft Copy
