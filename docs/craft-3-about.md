@@ -55,7 +55,7 @@ Sophisticated developers, experienced in backend development and ready to work w
 
 ```bash
 # Install and initialize
-$ composer require fortrabbit/craft-copy
+$ composer require fortrabbit/craft-copy:^1.0.0-beta
 $ ./craft install/plugin
 $ ./craft copy/setup
 
