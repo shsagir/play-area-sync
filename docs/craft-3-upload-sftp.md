@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-11
+reviewed:         2018-06-28
 title:            Upload Craft CMS with SFTP 
 naviTitle:        Upload Craft with SFTP
 lead:             Are you more "web designer" and less a "web developer"? Learn how to upload Craft in a classical way using SFTP. 
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.11
+version:          3.0.13
 
 otherVersions:
     2 : install-craft-2-uni
@@ -66,7 +66,7 @@ Make sure that Craft can write the files `composer.json`, `composer.lock`, `conf
 
 ### Hidden .htaccess file
 
-Don't forget to upload hidden `.htaccess` file. This file is required. You can not see that file in your Desktop, unless you set the option to show hidden files. The file browser from your SFTP client most likely will show that file by default. Leave the other hidden `.env` file — which is only for your local development — at home.
+Don't forget to upload hidden `web/.htaccess` file. This file is required. You can not see that file in your Desktop, unless you set the option to show hidden files. The file browser from your SFTP client most likely will show that file by default. Leave the other hidden `.env` file — which is only for your local development — at home.
 
 ## Consider
 

@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-13
+reviewed:         2018-06-28
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.11
+version:          3.0.13
 
 keywords:
   - craft

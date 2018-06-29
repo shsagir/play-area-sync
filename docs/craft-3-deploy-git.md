@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-14
+reviewed:         2018-06-28
 title:            Deploy Craft CMS with Git 
 naviTitle:        Deploy Craft with Git
 lead:             Learn how to deploy Craft CMS code base with Git to fortrabbit. 
@@ -12,7 +12,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.11
+version:          3.0.13
 
 otherVersions:
     2.6 : install-craft-2-uni

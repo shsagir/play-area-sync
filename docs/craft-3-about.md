@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-15
+reviewed:         2018-06-28
 title:            About Craft on fortrabbit
 naviTitle:        About Craft on fortrabbit
 order:            1
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.11
+version:          3.0.13
 
 otherVersions:
     2 : install-craft-2-uni
@@ -56,6 +56,7 @@ Sophisticated developers, experienced in backend development and ready to work w
 
 ```bash
 # Install and initialize
+$ composer config platform --unset
 $ composer require fortrabbit/craft-copy:^1.0.0-beta
 $ ./craft install/plugin
 $ ./craft copy/setup

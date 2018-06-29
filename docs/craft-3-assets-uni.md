@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-11
+reviewed:         2018-06-28
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to Universal Apps using rsync or SFTP.
@@ -12,7 +12,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.11
+version:          3.0.13
 proLink:          craft-3-assets-pro
 
 otherVersions:

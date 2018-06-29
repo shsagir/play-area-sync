@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-14
+reviewed:         2018-06-28
 title:            Manage Craft assets
 naviTitle:        Manage Craft assets
 lead:             Learn how to deploy Craft CMS runtime data to the Object Storage with fortrabbit Professional Apps.
@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.11
+version:          3.0.13
 uniLink:          craft-3-assets-uni
 
 otherVersions:
@@ -39,11 +39,13 @@ The [fortrabbit Craft CMS starter .gitignore](https://raw.githubusercontent.com/
 
 ### Upload assets to the Object Storage
 
-So what you want: is to swap the assets folder on the file system with external files stored on the fortrabbit [Object Storage](/object-storage). We have developed a special Craft plugin to connect the fortrabbit Craft App with the Object Storage. All uploads will transferred to the Object Storage directly, all URLs will point to the Object Storage. See the install guide on GitHub for usage:
+So what you want: is to swap the assets folder on the file system with external files stored on the fortrabbit [Object Storage](/object-storage). We have developed a Craft plugin to connect the fortrabbit Craft App with the Object Storage. All uploads will transferred to the Object Storage directly, all URLs will point to the Object Storage. See the install guide on GitHub for usage:
 
 * [github.com/fortrabbit/craft-object-storage](https://github.com/fortrabbit/craft-object-storage)
 
-That will make the App use the Object Storage. To access the Object Storage yourself, you can use any S3 compatible SFTP client — most of them speak the S3 protocol.
+Once the plugin is installed and enabled, a new Volume Type "fortrabbit Object Storage" is available. In your `config/volumes.php` you can setup additional volumes. 
+
+To access the Object Storage from your computer, use a S3 compatible SFTP client - [Transmit for Mac](https://panic.com/transmit/) works best in our experience.
 
 ## Next steps
 
