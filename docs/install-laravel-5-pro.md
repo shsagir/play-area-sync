@@ -206,7 +206,8 @@ return [
             'secret'   => $secrets['OBJECT_STORAGE']['SECRET'],
             'bucket'   => $secrets['OBJECT_STORAGE']['BUCKET'],
             'endpoint' => 'https://'. $secrets['OBJECT_STORAGE']['SERVER'],
-            'region'   => $secrets['OBJECT_STORAGE']['REGION']
+            'url'      => 'https://'. $secrets['OBJECT_STORAGE']['HOST'],
+            'region'   => $secrets['OBJECT_STORAGE']['REGION'],
         ],
         // other code …
     ],
