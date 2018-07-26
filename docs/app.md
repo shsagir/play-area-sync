@@ -58,7 +58,7 @@ With classical server hosting you rent out a machine to host multiple websites. 
 Apps are better:
 
 * Apps start a friction of a server but can be scaled across multiple servers
-* Each App has it's own settings
+* Each App has its own settings
 * Apps are isolated from each other
 
 
@@ -66,8 +66,8 @@ So, a fortrabbit App is designed to host one website:
 
 * There is only one MySQL database per App
 * Each App has only one Git repo
-* Each App has it's own collaboration rules
-* Each App has it's own performance metrics
+* Each App has its own collaboration rules
+* Each App has its own performance metrics
 
 <div markdown="1" data-user="known">
 
