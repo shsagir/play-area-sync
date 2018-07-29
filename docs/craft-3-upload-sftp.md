@@ -49,24 +49,23 @@ Doesn't work as expected? Keep calm and read on:
 
 ### File permissions
 
-<!--
-
-TODO: 
-
-Either confirm or delete this part. I have added this based on that feedback: 
-https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/search/conversations/16267404732?q=744
-
-Maybe it's OS related? It's also in the offcial docs:
-https://docs.craftcms.com/v3/installation.html#step-2-set-the-file-permissions
-
--->
-
-
-Make sure that Craft can write the files `composer.json`, `composer.lock`, `config/license.key`, `storage/*` and `vendor/*` on the App. Set the file permissions for those files to `744` with your SFTP client. 
+You might need to change file permissions. Make sure that Craft can write the files `composer.json`, `composer.lock`, `config/license.key`, `storage/*` and `vendor/*` on the App. Set the file permissions for those files to `744` with your SFTP client. 
 
 ### Hidden .htaccess file
 
 Don't forget to upload hidden `web/.htaccess` file. This file is required. You can not see that file in your Desktop, unless you set the option to show hidden files. The file browser from your SFTP client most likely will show that file by default. Leave the other hidden `.env` file — which is only for your local development — at home.
+
+### Service unavailable error
+
+When you don't have a local development environment like suggested and just upload the latest .zip package from Craft via SFTP (and not made any of the errors above), it will not work out of the box and throw the service unavailable error. Within the logs you can see that the error was caused in line 515 in `Application.php`. When you look at the lines before in that file you can see that a condition for the installer to run is, that it has to be in "dev" mode.
+
+**To fix that**: Change the ENV var in the Dashboard from: `ENVIRONMENT=production` to `ENVIRONMENT=dev`
+
+Run the installer like so (the base URL will still throw the error):  
+https://{{app-name}}.frb.io/admin/
+
+You can then change the ENV back to production. We actually assume that the Craft you have on fortrabbit is the production and that all development is done locally. Please read our guides!
+
 
 ## Consider
 
