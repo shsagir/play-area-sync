@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.13
+version:          3.0.17.1
 
 otherVersions:
     2 : install-craft-2-uni
@@ -40,13 +40,13 @@ On fortrabbit the [environment variables](/env-vars) are getting seeded from the
 
 ## Security key
 
-The mandatory Craft CMS security key has to be shared among all environments. We recommend to use your local security key as the master key. Open your local (hidden) `.env` file from the root folder of your project and find a line that looks like this:
+The mandatory Craft CMS security key has to be shared among all environments. We recommend to use your local security key as the master key. When you used Composer to install, that key was shown at the end of the installation. If not, open your local (hidden) `.env` file from the root folder of your project and find a line that looks like this:
 
 ```dotenv
 SECURITY_KEY=69UzZSEquw9E7RdCyRRTRb1lxe7h0EPd
 ```
 
-It will contain a value when you have [installed Craft 3 correctly](/craft-3-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
+It will contain a value when you have [installed Craft 3 correctly on your local machine](/craft-3-install-local). Copy that line. Go to the App's ENV vars settings in the Dashboard and paste that line. Here is the direct link:
 
 * [dashboard.fortrabbit.com/apps/{{app-name}}/vars](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 

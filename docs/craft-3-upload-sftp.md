@@ -13,7 +13,7 @@ websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
 image:            craft-cms-logo.png
-version:          3.0.13
+version:          3.0.17.1
 
 otherVersions:
     2 : install-craft-2-uni
