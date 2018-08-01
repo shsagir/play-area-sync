@@ -61,8 +61,8 @@ When you don't have a local development environment like suggested and just uplo
 
 **To fix that**: Change the ENV var in the Dashboard from: `ENVIRONMENT=production` to `ENVIRONMENT=dev`
 
-Run the installer like so (the base URL will still throw the error):  
-https://{{app-name}}.frb.io/admin/
+Run the installer like so (the base URL will still throw an error):  
+[{{app-name}}.frb.io/admin/](https://{{app-name}}.frb.io/admin/)
 
 You can then change the ENV back to production. We actually assume that the Craft you have on fortrabbit is the production and that all development is done locally. Please read our guides!
 

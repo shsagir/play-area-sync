@@ -16,12 +16,6 @@ keywords:
 ---
 
 
-<!--
-
-TODO: check it one more time!
-
--->
-
 
 ## Set a root path below htdocs
 
