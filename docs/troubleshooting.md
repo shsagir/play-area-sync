@@ -5,7 +5,7 @@ reviewed:      2018-08-01
 title:         Troubleshooting index
 naviTitle:     troubleshooting
 excerpt:       Hanging somewhere? Something is not working? Check out the most common gotchas here.
-lead:          New to fortrabbit? Here is a collection of common problems. 
+lead:          New to fortrabbit? Here is a collection of common problems when getting started. 
 group:         platform
 stack:         all
 dontList:      true
@@ -75,4 +75,4 @@ See what the error says and try to find out the solution yourself. This is a hos
 
 ## But I still have problems
 
-Do not hesitate to contact us. Make sure to provide all details upfront so that we can back on you easily. See [here](https://www.fortrabbit.com/support-policy#successful-support) on how to not suck at support.
+Do not hesitate to contact us. Make sure to provide all details upfront so that we can back on you easily. See [here](https://www.fortrabbit.com/support-policy#successful-support) on how to get good support quickly.
