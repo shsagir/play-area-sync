@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-12
+reviewed:      2018-08-02
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -262,7 +262,7 @@ Please see the [example setup above](#toc-example-setup).
 
 
 
-## Dig
+### Dig
 
 You can use the terminal to see the current DNS settings of your domain. With the `dig` command you can see if there are any CNAME entries and where they are pointing to. Here we lookup `help.fortrabbit.com` and see a CNAME pointing to the App URL: `help-frbit.frb.io`.
 
@@ -292,7 +292,7 @@ help-frbit.eu2.frbit.net.  20    IN  A       52.48.51.144
 
 Alternately you can use a browser based DNS lookup tool. See [these results](http://lmgtfy.com/?q=dns+lookup).
 
-### Dig an IP
+#### Dig an IP
 
 ```bash
 # This will print out the IP of your App
@@ -304,8 +304,6 @@ See also [here](/quirks#toc-outgoing-ip) why you'll probably need your Apps IP.
 ### Time delays
 
 Many DNS providers default the TTL (Time To Live) of all records to 24 hours. This means that all changes will apply with a delay up to 24 hours, because everybody who has looked up the domain caches the result for the TTL duration. Also the TTL is not guaranteed: One badly programmed router on the way, who ignores the TTL or imposes it's own minimal TTL, can change the TTL for everybody "behind it". The caching itself is actually a good thing as it helps to reduce round trips. Some providers let you set down the TTL, which is very useful when moving or changing domains.
-
-
 
 
 ### Testing domain routing with your local hosts file
