@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-28
+reviewed:         2018-08-02
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -191,6 +191,16 @@ With this little extension, no further configuration is required, you just need 
 ```bash
 $ composer require fortrabbit/yii-memcached
 ```
+
+
+## Troubleshooting
+
+
+
+### Large assets upload problems
+
+Most likely this is a setting within Craft CMS itself. The setting you are looking for is `maxuploadfilesize` and it's default is 16MB, please see the official [Craft Docs on that](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-maxuploadfilesize). This can also be caused by the `post_max_size`, `memory_limit`, `upload_max_filesize` or `max_execution_time` which you can set in the Dashbaord, but by default those are OK. If that still doesn't help, check the [logs](/logging-uni) if you can find some meaningful errors.
+
 
 
 <!--
