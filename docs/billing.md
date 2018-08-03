@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-06-03
+reviewed:      2018-08-03
 title:         Billing on fortrabbit
 naviTitle:     Billing
 excerpt:       Our consumption based pricing model explained.
@@ -29,6 +29,13 @@ When you book something on the 16th day of a month and the month has 30 days you
 ### Monthly invoices
 
 Within the first days of every new month you will get the invoice for your last month's consumption. After receiving the invoice, the payments are due and will automatically be done by us. Credit Cards usually will happen within the first days of the month, SEPA direct within the first two weeks.
+
+### The monthly billing cycle in detail
+
+At the end of the month, the fortrabbit billing bot will go through all the Billing Contacts and check for the currents month usage. Based on that data, the monthly invoices will be created and made accessible from the Dashboard. The invoice is dated on the last day of the month and the service period is that month. On the first of the (next) month, the fortrabbit mail bot will send an invoice notice by e-mail to all clients. On the 3rd of the month, the fortrabbit billing bot will attempt to charge for all invoice with payment method credit card. Around the 7th of the month the SEPA direct payments for the invoices, for clients with that payment method will be issued and a few days later executed.
+
+At the middle of the month, a human will look after all the bounced invoices. That human also will attempt to issue payment again and will also might write addition payment reminders.
+
 
 ### Costs monitoring
 
