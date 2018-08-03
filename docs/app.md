@@ -335,6 +335,17 @@ Your application is just throwing a 500 or 502 internal server error? Congrats, 
 There are many different reasons for 5xx errors. Be a detective and start the investigation by examining the logs, see [here for Uni Apps](logging-uni) and [here for Pro Apps](logging-pro). Within the logs you will find where application exited with which error, this is the hot leas you are after.
 
 
+### Version mismatch without any changes made
+
+Sometimes service reboots are issued to Apps. This usually doesn't happen often, but sometimes needs to be done in case of an incident, a scheduled maintenance or a re-distribution. Now, with these service restarts, the orchestration logic will look for an existing Git repo and re-deploy that.
+
+Depending on your workflow, that might cause some strange results on Universal Apps. 
+
+As you hopefully know, we originally assume that you have a local development and that this is your "master" and all changes are done there first. Also, the core code is always deployed with Git and thus Git is up-to-date and that re-deploy should therefore do no harm. So when you have been following our guides, everything should work for you.
+
+The strangeness occurs when you are mixing workflows and are going offroad: For example, you have initially deployed by Git and then later updated your CMS directly on the App itself from the Control Panel in the browser. Using the [overwrite but not delete strategy](deployment-methods-uni#toc-git-push-overwrite-but-not-deletes) the old files from Git get re-deployed. This can get messy, when the files are outdated but the database is already migrated to the newer version. We also saw this overwriting session and cache files (which might be excluded from Git anyways).
+
+The fix for that depends on your specific situation. In many cases we suggest to update your installation and bring that in order and then re-deploy the changes via Git one more time.
 
 
 
