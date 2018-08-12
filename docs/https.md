@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-06-11
+reviewed:      2018-08-11
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit
 excerpt:       All about HTTPS and TLS.
@@ -133,7 +133,7 @@ The following practical tips on how to deal with HTTPS are applying to all TLS o
 
 ### Redirect all requests to HTTPS
 
-There is no need for your application to be reached over a non-secure connection. It is recommended to forward all requests to the secure line. To establish this, create or modify the `.htaccess` file in your root path folder like so:
+There is no need for your application to be reached over a non-secure connection. It is recommended to forward all requests to the secure line. To establish this, create or modify the `.htaccess` file (also see our [htaccess article](/htaccess)) in your root path folder like so:
 
 ```plain
 RewriteEngine On
