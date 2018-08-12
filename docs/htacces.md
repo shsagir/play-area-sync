@@ -13,6 +13,8 @@ keywords:
     - Apache config
     - apache2.conf
     - php
+    - ssi
+    - gzip
 
 ---
 
@@ -44,6 +46,11 @@ Hop over to our dedicated [HTTP Auth article](/http-auth) to learn on how to imp
 ### Custom error pages
 
 You can also define templates to make your error pages look more cool.
+
+### Gzip compression
+
+You can set gzip compression for static files like .html, .js, .css, .jpg and alike, so that they get first compressed, then send over and then decompressed by the users browser. This might or might not speed up things.
+
 
 
 ## Tips and tricks

@@ -112,7 +112,7 @@ Don't serve the same content to the same client twice! This is especially useful
 
 ### GZIP compression with Apache
 
-GZIP provides lossless compression for text files such as HTML, CSS or JS. It's implemented on the web server — Apache in our case otherwise nginx — as a module. You can [enable and configure](quirks#toc-php-compression) it in your `.htaccess` file.
+GZIP provides lossless compression for text files such as HTML, CSS or JS. It's implemented on the web server — Apache in our case otherwise nginx — as a module. You can [enable and configure](quirks#toc-php-compression) it in your `.htaccess` file (see also our [htaccess article](/htaccess)).
 
 It works like this: after all the HTML is rendered on the server side it gets compressed and send to the browser in such a minified format. The browser then has to decompress everything on the fly.
 
