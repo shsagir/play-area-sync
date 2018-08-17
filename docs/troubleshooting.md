@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-08-01
+reviewed:      2018-08-17
 title:         Troubleshooting index
 naviTitle:     troubleshooting
 excerpt:       Hanging somewhere? Something is not working? Check out the most common gotchas here.
@@ -31,6 +31,12 @@ Please also the question above on authentication. Check if SSH/SFTP is working f
 ## Composer update is failing!
 
 That's likely because you have tried to run the Composer update on the App itself? That's not the way it is supposed to work for most workflows. Please also see the [Composer article](/composer) and especially the section on [using Composer via SSH](/composer#toc-composer-from-ssh).
+
+
+## Old files are not deleted!
+
+When deploying with Git, you might wonder why some old files have not been deleted from the Apps web storage, although you have deleted them from Git. That's not a bug, it's a feature. The [Universal Stack](/app-uni) has a persistent web storage, therefore the App can change the file system, like when uploading images. The Git repo and the web storage are not the same thing, so those changes will not be reflected in the Git repo. That's, why with the Universal Apps, the Git deployment uses an overwrite but not delete strategy. Changes will be applied, nothing will get deleted. See more details in our [deployment article](deployment-methods-uni#toc-git-works-only-one-way).
+
 
 
 ## I see a 404 error
