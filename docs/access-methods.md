@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2018-08-21
 naviTitle:     Access methods
 title:         How to access fortrabbit services
 lead:          Learn about the different authentication methods with fortrabbit.
@@ -42,7 +42,7 @@ Of course these operations need to be protected. We need to make sure that only 
 
 ## How to edit your access method
 
-In the "[Dashboard](/dashboard)", go to "Your Account" (upper right). Under "Access method" you can find your current settings. You see which method is currently set.
+In the "[Dashboard](/dashboard)", go to "Your Account" (upper right). Under "Code access" you can find your current settings. If you have already added an SSH key this section will be called "SSH keys".
 
 
 ## SSH key authentication
@@ -53,7 +53,7 @@ We recommend to use public SSH key authentication to identify yourself with fort
 
 ### How to add public SSH keys
 
-SSH keys are stored with your Account. In the "Dashboard" > "Your Account" > "Access method" you can add and remove SSH keys.
+SSH keys are stored with your Account. In the "Dashboard" > "Your Account" > "Code access"/"SSH keys" you can add and remove SSH keys.
 
 <div markdown="1" data-user="known">
 
@@ -87,7 +87,7 @@ This is the default method when no public SSH keys are installed. Use this, when
 
 ### How to change from password to SSH key authentication
 
-In the "Dashboard" > "Your Account" > "Access method" you can add an SSH key. Once you have added your first public SSH key, password authentication will be disabled and SSH key authentication will be enabled.
+In the "Dashboard" > "Your Account" > "Code access" you can add an SSH key. Once you have added your first public SSH key, password authentication will be disabled and SSH key authentication will be enabled.
 
 
 <div markdown="1" data-user="known">
@@ -97,7 +97,7 @@ In the "Dashboard" > "Your Account" > "Access method" you can add an SSH key. On
 
 ### How to change from SSH key to password authentication
 
-When for some reason SSH key authentication does not work for you, you can downgrade to password like so: In the "Dashboard" > "Your Account" > "Access method" you can click on your public SSH keys, this will bring up a view where you can delete the key. When deleting the last key, password authentication will be re-enabled.
+When for some reason SSH key authentication does not work for you, you can downgrade to password like so: In the "Dashboard" > "Your Account" > "SSH keys" you can click on your public SSH keys, this will bring up a view where you can delete the key. When deleting the last key, password authentication will be re-enabled.
 
 
 ### When you change your Account password
@@ -152,7 +152,7 @@ Your app: {{app-name}}
 
 ### Authentication in teams
 
-You manage your access method with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different acess method and that your settings might not work for them. Also see our [team work article](/collaboration).
+You manage your code access with your user Account on fortrabbit. This way you always have up-to-date code access on each App you own and collaborate on. It also makes managing the team easy — add/remove collaborators and code access is handled "automagically". Please mind that your team members might have a different acess method and that your settings might not work for them. Also see our [team work article](/collaboration).
 
 - - -
 
