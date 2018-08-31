@@ -60,6 +60,8 @@ Hooked? So let's jump into your local terminal:
 ### The rsync command structure
 
 ```bash
+# sync all files UP
+# 
 #      options
 #       ─┴─
 $ rsync -av ./ {{app-name}}@deploy.{{region}}.frbit.com:~/
@@ -123,7 +125,7 @@ Here are some common options to alter the sync mode:
 | `-g`       | Set Unix group of file/folder on destination to group in source. Also: use group as check criteria |
 | `-o`       | Set Unix group of file/folder on destination to group in source. Also: use group as check criteria |
 | `-c`       | Instead of modification time and size, use checksum of the file contents. Use with caution when  modification time on destination is not reliable. |
-| `-C`       | Shorthand for `--cvs-exclude`, tries to exclude all version control sub folders and files, like `.git`, `.hg`, `.svn`. |
+| `-C`       | Shorthand for `--cvs-exclude`. Exclude version control files like `.git`, `.hg`, `.svn`. |
 | `-h`       | Human readable output: display byte sizes in MiB, GiB instead of plain bytes. |
 | `-delete`  | Remove unused files. See [below](#toc-dealing-with-obsolete-files) |
 | `-exclude` | Omit files from being synced. See [below](#toc-excluding-files) |
@@ -157,17 +159,17 @@ Sometimes you want to omit files from being synced. You can just add `--exclude=
 
 ```bash
 # use absolute path, as viewed from the source root
-$ rsync -av --exclude wp-content/themes/my-theme/404.php ./ my-app@deploy.eu2.frbit.com:~/
+$ rsync -avC --exclude wp-content/themes/my-theme/404.php ./ my-app@deploy.eu2.frbit.com:~/
 ```
 
 The value of `--exclude` is a pattern. It can be matched against the files to be transferred. In this case, the following patterns will have the same effect:
 
 ```bash
 # use partial path
-$ rsync -av --exclude themes/my-theme/404.php ./ my-app@deploy.eu2.frbit.com:~/
+$ rsync -avC --exclude themes/my-theme/404.php ./ my-app@deploy.eu2.frbit.com:~/
 
 # use smallest possible partial path
-$ rsync -av --exclude 404.php ./ my-app@deploy.eu2.frbit.com:~/
+$ rsync -avC --exclude 404.php ./ my-app@deploy.eu2.frbit.com:~/
 ```
 
 NOTE: The initial `/` character is important. `--exclude 404.php` and `--exclude /404.php` are _not_ the same. The former means: Any path, which contains "404.php" is to be excluded. The latter means: Any path, which starts with "/404.php" is to be excluded.
@@ -200,7 +202,7 @@ $ echo 404.php >> .rsyncignore
 $ echo something-else.php >> .rsyncignore
 
 # run rsync, using the excludes file
-$ rsync -av --exclude-from .rsyncignore ./ my-app@deploy.eu2.frbit.com:~/
+$ rsync -av --exclude-from .rsyncignore ./ {{app-name}}@deploy.{{region}}.frbit.com:~/
 ```
 
 NOTE: The file name `.rsyncignore` is just an example name, use any name you want for your excludes.
@@ -208,9 +210,21 @@ NOTE: The file name `.rsyncignore` is just an example name, use any name you wan
 There is still a lot more you can do with exclude and filtering. Not only is there `--include`, which allows to granulate previous `--exclude` patterns, but there is also `--filter`. Here is a [very interesting blog post by Ira Cooke](http://blog.mudflatsoftware.com/blog/2012/10/31/tricks-with-rsync-filter-rules/).
 
 
+### Partial syncing
+
+This is the example for using rsync as an addition deployment tool when primarily working with Git. In this case you only want to include a specific folder and it's contents. You might want to "upload" your `dist` folder with your compiled CSS, JS and images. Or you want to "download" the assets folder, when an editor has uploaded new images to the CMS. This is the basic command:
+
+```bash
+$ rsync -av --include='/{{folder}}/***' --exclude='*' ./ {{app-name}}@deploy.{{region}}.frbit.com:~/
+```
+
+With the `--include` parameter you can specify the path to include, still you need to exclude everything else.
+
 ### Dealing with obsolete files
 
-How to remove obsolete files on the remote? The short answer is: add the option `--delete` to your command line and you are done. To give you and example, using the WordPress setup from before: say you deleted this pesky `404.php` file locally. Now, if you run rsync without the `--delete` option (and no other added or modified files), rsync would tell that it will do nothing:
+rsync will work in a non-destructive way per default, like our ]overwrite but not delete](deployment-methods-uni#toc-git-push-overwrite-but-not-deletes) strategy when deploying with Git. So new files will be written and replaced, but old files will not get deleted. Sometimes that's not what you want. Sometimes you want an exact copy - a mirror.
+
+So, how to remove obsolete files on the remote? The short answer is: add the option `--delete` to your command line and you are done. To give you and example, using the WordPress setup from before: say you deleted this pesky `404.php` file locally. Now, if you run rsync without the `--delete` option (and no other added or modified files), rsync would tell that it will do nothing:
 
 ```
 $ rsync -av ./ my-app@deploy.eu2.frbit.com:~/
