@@ -153,6 +153,17 @@ Sometimes you can't get it to work and you want to start over again. So you can 
 
 The most prominent use of your App name is your default App URL which looks like this: `https://your-app.frb.io/`. This is where you can always reach your App thru the web browser. Use the App URL for development, testing and to connect to external services. Later on your App can also be reached through your [own top-level-doamin](/domains). The App URL can't be removed or renamed.
 
+Once you've added a custom domain you may want to prevent requests to your App URL. The example below shows how to set up a redirect in your `.htaccess` file.
+
+```htaccess
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^your-app-name.frb.io$ [NC]
+RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
+```
+
+
+
 #### Sending transactional mails from your App URL
 
 Some clients asked how to setup TXT records for App URLs. They have the idea of sending mails over a transactional mail service from the App URL, for testing or even for production.
