@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-06-01
+reviewed:      2018-09-02
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -151,17 +151,7 @@ Sometimes you can't get it to work and you want to start over again. So you can 
 
 ### App URL
 
-The most prominent use of your App name is your default App URL which looks like this: `https://your-app.frb.io/`. This is where you can always reach your App thru the web browser. Use the App URL for development, testing and to connect to external services. Later on your App can also be reached through your [own top-level-doamin](/domains). The App URL can't be removed or renamed.
-
-Once you've added a custom domain you may want to prevent requests to your App URL. The example below shows how to set up a redirect in your `.htaccess` file.
-
-```htaccess
-RewriteEngine On
-
-RewriteCond %{HTTP_HOST} ^your-app-name.frb.io$ [NC]
-RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
-```
-
+The most prominent use of your App name is your default App URL which looks like this: `https://your-app.frb.io/`. This is where you can always reach your App thru the web browser. Use the App URL for development, testing and to connect to external services. Later on your App can also be reached through your [own top-level-doamin](/domains). The App URL can't be removed or renamed. Check out our [htaccess article](/htaccess) on forwarding and redirecting this URL.
 
 
 #### Sending transactional mails from your App URL

@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-08-12
+reviewed:    2018-09-06
 title:       Using .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about?
 naviTitle:   .htaccess
@@ -38,6 +38,17 @@ You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS
 ### Redirects
 
 The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`. You can direct requests to a subdirectory, add the www subdomain to all requests, prettify URLs by omitting file endings, [force https](https#toc-redirect-all-requests-to-https) and much more.
+
+### Redirect all requests to the primary domain
+
+Once you've added a [custom domain](/domains) you may want to prevent requests to your [App URL](/app#toc-app-url). The example below shows how to set up a redirect in your `.htaccess` file.
+
+```htaccess
+# From App URL to your domain
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^{{app-name}}.frb.io$ [NC]
+RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
+```
 
 ### Authentication
 
