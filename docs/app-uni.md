@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Universal Stack"
 title:         "About the Universal Stack"
-reviewed:      2018-01-12
+reviewed:      2018-09-06
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Universal Stack.'
 group:         stacks
 stack:         uni
@@ -16,7 +16,7 @@ The Universal Stack is made for general purpose PHP web development — websites
 
 ## Target audience
 
-The Universal Stack is, well, universally usable. Everyone should be able to use the Universal stack out-of-the-box. It's a good start for developers new to the cloud to get their feet wet without having to learn a bunch of new technologies and workflows. In short: the target groups is everybody.
+The Universal Stack is, well, universally usable. Everyone should be able to use the Universal stack out-of-the-box. It's a good start for developers new to the cloud to get their feet wet without having to learn a bunch of new technologies and workflows.
 
 
 ## Specs, limits, purpose
