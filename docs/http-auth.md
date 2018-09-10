@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-06-11
+reviewed:    2018-09-10
 title:       Using HTTP Auth on fortrabbit
 lead:        You probably don't want the whole world to see your development in progress. Better restrict access to a fortunate few. This is how to use HTTP (basic) authentication to trigger a username/password prompt in the browser.
 naviTitle:   HTTP auth
@@ -19,9 +19,7 @@ keywords:
 
 ## Set a root path below htdocs
 
-When no framework or CMS was chosen when creating the App, `htdocs` is the default root folder of the App. Create a new folder, called something like `web` or `root`. Move all your web contents into that folder. Set the newly created folder containing everything now, as the new root path in the Dashboard, see also [here on how to do the last part](/app#toc-root-path).
-
-This step not required, as with fortrabbit all files starting with: `.ht*` will be blocked from delivery. Still it is recommended.
+When no framework or CMS was chosen when creating the App, `htdocs` is the default root folder of the App. Create a new folder, called something like `web` or `root`. Move all your web contents into that folder. Set the newly created folder containing everything now, as the new root path in the Dashboard, see also [here on how to do the last part](/app#toc-root-path). This step not required, as with fortrabbit all files starting with: `.ht*` will be blocked from delivery.
 
 
 ## Create the .htaccess file
@@ -77,3 +75,8 @@ When deploying with Git, you can use a post-deploy hook, to trigger automatic ge
 ## Alternative solutions
 
 HTTP Auth is a basic, standard, minimally invasive solution. There is no UI and no dependency you need to take care of. Even database access is not required. That's the beauty of it. So it's most likely compatible with the rest of your application. But HTTP Auth is not the only way to protect your website with username and password. Your CMS or framework might bring their on solutions for this. There are plenty plugins for Craft CMS and WordPress. 
+
+
+## See also
+
+Check out our [htaccess](/htaccess) article for more hands-on examples.
