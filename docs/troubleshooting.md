@@ -38,10 +38,15 @@ That's likely because you have tried to run the Composer update on the App itsel
 When deploying with Git, you might wonder why some old files have not been deleted from the Apps web storage, although you have deleted them from Git. That's not a bug, it's a feature. The [Universal Stack](/app-uni) has a persistent web storage, therefore the App can change the file system, like when uploading images. The Git repo and the web storage are not the same thing, so those changes will not be reflected in the Git repo. That's, why with the Universal Apps, the Git deployment uses an overwrite but not delete strategy. Changes will be applied, nothing will get deleted. You can login to that App by [SSH](/ssh-uni) or [SFTP](/sftp-uni) and delete the files manually. See more details in our [deployment article](deployment-methods-uni#toc-git-works-only-one-way).
 
 
+## I see a 403 error
+
+That can have multiple causes. One common reason is that the hidden `.htaccess` file is missing. See [here](/htaccess#toc-missing-htaccess).
+
 
 ## I see a 404 error
 
 That can have multiple causes: Maybe no code deployed, maybe wrong root path, maybe something else. Please see [here](app#toc-404-not-found).
+
 
 
 ## My domain is not working!

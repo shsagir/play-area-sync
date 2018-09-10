@@ -33,13 +33,13 @@ RewriteRule ^(.*)$ https://www.facebook.com/$1 [L,R=301,NC]
 
 ## Common .htaccess usage
 
-You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS come with predefined ones, that are also managed. You will also find copy-pastable examples in context on these help pages here on fortrabbit. Following are common categories of usage: 
+You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS come with predefined ones, that are also managed. You will also find examples in context on these help pages here on fortrabbit. Following are common categories of usage: 
 
 ### Redirects
 
 The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`. You can direct requests to a subdirectory, add the www subdomain to all requests, prettify URLs by omitting file endings, [force https](https#toc-redirect-all-requests-to-https) and much more.
 
-### Redirect all requests to the primary domain
+#### Redirect all requests to the primary domain
 
 Once you've added a [custom domain](/domains) you may want to prevent requests to your [App URL](/app#toc-app-url). The example below shows how to set up a redirect in your `.htaccess` file.
 
@@ -50,18 +50,80 @@ RewriteCond %{HTTP_HOST} ^{{app-name}}.frb.io$ [NC]
 RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
 ```
 
+#### Redirect all requests to https
+
+<!-- TODO!  -->
+
 ### Authentication
 
-Hop over to our dedicated [HTTP Auth article](/http-auth) to learn on how to implement a simple password check.
+You can implement a simple standard browser prompt password check for your website without any extra PHP magic with .htaccess. Hop over to our dedicated [HTTP Auth article](/http-auth) to learn on how.
 
 ### Custom error pages
 
-You can also define templates to make your error pages look more cool.
+You can define templates to make your error pages look more cool like so:
 
-### Gzip compression
+```htaccess
+ErrorDocument 404 /404.html
+```
 
-You can set gzip compression for static files like .html, .js, .css, .jpg and alike, so that they get first compressed, then send over and then decompressed by the users browser. This might or might not speed up things.
+### GZIP compression
 
+You can set GZIP compression for static files like `*.html`, `*.js`, `*.css` and alike, so that they get first compressed, then send over and then decompressed by the users browser.
+
+### Other usage
+
+That's not all. `.htaccess` can do much more like: prevent hot-linking, have multiple domains in one root path, manage translated content, shorten URLs, capture variables …
+
+
+### Secure access
+
+You can use htaccess to ban user agents, referrers and script-kiddies from accessing your website.
+
+
+<!--
+
+Found multiple ways to do the next one, not sure which one is correct?!
+
+#### Secure WordPress against pingback DDOS
+
+
+```htaccess
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} Wordpress
+RewriteRule . - [F,L]
+```
+
+or
+
+```htaccess
+<FilesMatch "^(xmlrpc\.php|wp-trackback\.php)">
+  Order Deny,Allow
+  Deny from all
+</FilesMatch>
+```
+
+or
+
+```htaccess
+# protect xmlrpc
+<Files xmlrpc.php>
+  Order Deny,Allow
+  Deny from all
+</Files>
+```
+
+-->
+
+
+## .htaccess on fortrabbit
+
+These sensitive defaults are set on the fortrabbit platform regarding .htaccess:
+
+* Apache configuration syntax 2.2 and 2.4 are supported 
+* GZIP compression is enabled per default
+* Access on all `.ht*` files is disabled, so nobody can read your .htaccess
+
+<!-- Anything else? -->
 
 
 ## Tips and tricks
@@ -75,18 +137,16 @@ Apache directives with regular expressions tend to look glibberish. Make sure to
 
 Here are the most common mistakes we see in combination with `.htaccess`:
 
-
-### Wrong location
-
-The `.htaccess` file has to be placed in the [root path](/app#toc-root-path) of the website. Per default, that is the `htdocs` folder. But certain modern frameworks and CMS have path below that, like Laravel with `public`. So make sure to place your `.htaccess` in the correct directory.
-
-
 ### Missing .htaccess
 
-Another common mistake we see quite often is to miss out the `.htaccess` file. The dot at the beginning of the file name indicates that this file should be invisible in your operating system. So when you dragged files in your FTP client from the Downloads folder, it's very likely that the `.htaccess` file was left home. 
+Another common mistake we see quite often is to miss out the `.htaccess` file. The dot at the beginning of the file name indicates that this file should be invisible in your operating system. So when you dragged files in your FTP client from the Downloads folder, it's very likely that the `.htaccess` file was left home. This can cause 403 errors.
 
 In macOS Finder you can toggle invisible files with ` CMD + SHIFT + .`, easy to remember, like dot files. SFTP clients with a split view option are mostly showing those files by default. Take care, there are possibly other hidden files in your project, like `.gitignore` and `.env`.
 
+
+### Wrong location
+
+The `.htaccess` file is usually placed in the [root path](/app#toc-root-path) of the website. Per default, that is the `htdocs` folder. But certain modern frameworks and CMS have path below that, like Laravel with `public`. So make sure to place your `.htaccess` in the correct directory. You can place the `.htaccess` files in folders below the root path as well, those will have a higher specificity and can override rules. 
 
 
 ## Possible performance issues
