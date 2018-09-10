@@ -133,25 +133,7 @@ The following practical tips on how to deal with HTTPS are applying to all TLS o
 
 ### Redirect all requests to HTTPS
 
-There is no need for your application to be reached over a non-secure connection. It is recommended to forward all requests to the secure line. To establish this, create or modify the `.htaccess` file (also see our [htaccess article](/htaccess)) in your root path folder like so:
-
-```htaccess
-RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-Port} !=443
-RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
-```
-
-Please note the x-header part. Other code snippets you have pasted from elsewhere might not work here. Many CMS and frameworks are offering convenient settings and configurations for this.
-
-### Force HTTPS for future visits with HSTS
-
-This goes one step further than just forwarding requests, it tells the browser to not ever again accept any connection in the future on not secured domain to your App. In your `.htaccess` file you can add this line (in addition to the rewrite rule above):
-
-```plain
-Header always set Strict-Transport-Security "max-age=31536000"
-```
-
-This will make your browser remember to always use the secured version of your App. It makes use of the "[HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security)" policy and improves security by eliminating the risks of man-in-the-middle TLS-protocol-downgrade attacks. Be careful: setting this header will tell the browser never (or that is: until max-age) to use `http://` again. So if you later on decide to serve (parts of) your site using no encryption, all those clients (browsers) which saw the header will not comply and keep using `https://`.
+It is recommended to forward all requests to the secure line, so no more "http://", only "http**s**://". See [an example here](/htaccess#toc-redirect-all-requests-to-https).
 
 
 ### Secure your domain with a CAA record

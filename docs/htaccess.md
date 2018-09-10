@@ -3,9 +3,10 @@
 template:    article
 reviewed:    2018-09-10
 title:       Using .htaccess
-lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about?
+lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
 group:       deployment
+workInProgress: yes
 stack:       all
 
 keywords:
@@ -25,7 +26,8 @@ keywords:
 ### .htaccess example
 
 ```htaccess
-## Redirect all requests to www domain
+# This example shows how to redirect all requests to www domain
+# That is not needed on fortrabbit  
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^facebook\.com [NC]
 RewriteRule ^(.*)$ https://www.facebook.com/$1 [L,R=301,NC]
@@ -52,7 +54,26 @@ RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
 
 #### Redirect all requests to https
 
-<!-- TODO!  -->
+There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
+
+```htaccess
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Port} !=443
+RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
+```
+
+Please note the x-header part. Other code snippets you have pasted from elsewhere might not work here. Many CMS and frameworks are offering convenient settings and configurations for this.
+
+
+#### Force HTTPS for future visits with HSTS
+
+This goes one step further than just forwarding requests, it tells the browser to not ever again accept any connection in the future on not secured domain to your App. In your `.htaccess` file you can add this line (in addition to the rewrite rule above):
+
+```htaccess
+Header always set Strict-Transport-Security "max-age=31536000"
+```
+
+This will make your browser remember to always use the secured version of your App. It makes use of the "[HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security)" policy and improves security by eliminating the risks of man-in-the-middle TLS-protocol-downgrade attacks. Be careful: setting this header will tell the browser never (or that is: until max-age) to use `http://` again. So if you later on decide to serve (parts of) your site using no encryption, all those clients (browsers) which saw the header will not comply and keep using `https://`.
 
 ### Authentication
 
