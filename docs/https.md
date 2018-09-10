@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-08-11
+reviewed:      2018-09-10
 title:         Using HTTPS with fortrabbit
 naviTitle:     HTTPS on fortrabbit
 excerpt:       All about HTTPS and TLS.
@@ -135,18 +135,10 @@ The following practical tips on how to deal with HTTPS are applying to all TLS o
 
 There is no need for your application to be reached over a non-secure connection. It is recommended to forward all requests to the secure line. To establish this, create or modify the `.htaccess` file (also see our [htaccess article](/htaccess)) in your root path folder like so:
 
-```plain
+```htaccess
 RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Port} !=443
 RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
-```
-
-The reverse (redirect all traffic to HTTP) would be:
-
-```plain
-RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-Port} !=80
-RewriteRule (.*) http://%{HTTP_HOST}/$1 [R=301,L]
 ```
 
 Please note the x-header part. Other code snippets you have pasted from elsewhere might not work here. Many CMS and frameworks are offering convenient settings and configurations for this.
