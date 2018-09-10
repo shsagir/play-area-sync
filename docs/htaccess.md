@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-09-06
+reviewed:    2018-09-10
 title:       Using .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about?
 naviTitle:   .htaccess

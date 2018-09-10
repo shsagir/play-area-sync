@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-08-31
+reviewed:    2018-09-10
 title:       rsync
 naviTitle:   rsync
 lead:        rsync is one of the best ways to deploy code fast and without hassle. It's also an often overlooked option. Let's change this! This article gives you some direction on how to use it (here on fortrabbit).
@@ -16,7 +16,7 @@ keywords:
 
 <!--
   TODO: 
-  * what if rsync creates a loop of changes? test: Git push, rsync down (hopefully not all files)
+  * what if rsync creates a loop of changes? test: Git push, rsync down (hopefully not all files) — Tested and there was no prob,
 
 -->
 
