@@ -2,7 +2,7 @@
 
 template:    article
 reviewed:    2018-09-10
-title:       Using .htaccess
+title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
 group:       deployment
@@ -21,13 +21,13 @@ keywords:
 
 ## About .htaccess
 
-`.htaccess` is a hidden file that usually lives in the web root folder of your code base. It enables altering the web server's (Apache) configuration directives. Therefore the syntax is a bit cryptic. `.htaccess` rules apply to all subdirectories. 
+`.htaccess` is a hidden file that usually lives in the web root folder of your code base. It enables altering the web server's, Apache in this case, configuration directives. Therefore the syntax is a bit cryptic. `.htaccess` rules apply to all subdirectories. 
 
 ### .htaccess example
 
 ```htaccess
 # This example shows how to redirect all requests to www domain
-# That is not needed on fortrabbit  
+# That is not needed on fortrabbit  ;)
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^facebook\.com [NC]
 RewriteRule ^(.*)$ https://www.facebook.com/$1 [L,R=301,NC]
@@ -35,11 +35,11 @@ RewriteRule ^(.*)$ https://www.facebook.com/$1 [L,R=301,NC]
 
 ## Common .htaccess usage
 
-You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS come with predefined ones, that are also managed. You will also find examples in context on these help pages here on fortrabbit. Following are common categories of usage: 
+You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS come with predefined ones, that are also managed. You will also find examples in context on these help pages here on fortrabbit. Following are common categories of usage with examples: 
 
 ### Redirects
 
-The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`. You can direct requests to a subdirectory, add the www subdomain to all requests, prettify URLs by omitting file endings, [force https](https#toc-redirect-all-requests-to-https) and much more.
+The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`. You can direct requests to a subdirectory, or specific domain, prettify URLs by omitting file endings, force https and much more.
 
 #### Redirect all requests to the primary domain
 
@@ -54,7 +54,7 @@ RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
 
 #### Redirect all requests to https
 
-There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
+**Force https!** There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
 
 ```htaccess
 RewriteEngine On
