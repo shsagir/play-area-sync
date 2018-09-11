@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2018-05-07
+reviewed:     2018-09-07
 title:        Local development
 naviTitle:    Local development
 lead:         Why and how to set up a local PHP development environment.
@@ -34,6 +34,10 @@ The following open source software should run in your local development environm
 * **PHP** – the server side scripting language
 * **Git** – the version control - [see dedicated article](/git)
 * **Composer** – the dependency manager for PHP - [see dedicated section](/composer#toc-local-composer)
+
+#### Additionally recommended
+
+* **Node.js** and NPM for frontend build processes
 
 ## Setup
 
