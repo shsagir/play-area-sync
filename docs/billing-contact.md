@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-06-02
+reviewed:      2018-09-02
 title:         Billing Contact
 naviTitle:     Billing Contact
 excerpt:       What you can do with a Billing Contact
@@ -33,9 +33,25 @@ Most people are happy with just one Billing Contact, but in some cases you need 
 
 Each App (except trial Apps) has is always associated with a specific Billing Contact. Each Billing Contact has its own invoice archive. Please also see the [billing article](/billing).
 
-## The difference between Billing Contact and Company
+## Differences between Billing Contact, Company and Account
 
-The Billing Contact is part of a [Company](/company) on fortrabbit. Within the fortrabbit Company you can create multiple Billing Contacts and then assign individual Apps to either Billing Contacts. You could also create multiple Companies to achieve that, but with multiple you can still manage the same team on the Company.
+```
+┌───────────────────────────────────┐     ┌─────────────┐
+│                                   │ ┌───▶    App 1    │
+│             ┌───────────────────┐ │ │   └─────────────┘
+│             │ Billing Contact 1 ├─┼─┤   ┌─────────────┐
+│             └───────────────────┘ │ └───▶    App 2    │
+│   Company   ┌───────────────────┐ │     └─────────────┘
+│             │ Billing Contact 2 ├─┼─┐   ┌─────────────┐
+│             └───────────────────┘ │ └───▶    App 3    │
+│                                   │     └─────────────┘
+└───────────────────────────────────┘  
+┌─────────────┐    ┌─────────────┐     
+│  Account 1  │    │  Account 2  │     
+└─────────────┘    └─────────────┘     
+```
+
+The Billing Contact is part of a [Company](/company) on fortrabbit. Within the fortrabbit Company you can create multiple Billing Contacts and then assign individual Apps to either Billing Contacts. You could also create multiple Companies to achieve that, but with multiple you can still manage the same team on the Company. Remember: Accounts are representing persons here on fortrabbit.
 
 ### Creating a Billing Contact
 
