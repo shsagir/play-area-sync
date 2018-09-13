@@ -145,9 +145,18 @@ A Certification Authority Authorization (CAA) is a DNS record to specify which c
 
 Sometimes it just doesn't work as supposed to. Don't panic. You can of course always ask us for support. Here are some things you can do on your own:
 
+### Review certificates in the browser
+
+To debug TLS, it's often helpful a certificate in the browser. In Chrome and Firefox you can:
+
+1. open https://www.{{domain}}.com/ < make sure to use https not http
+2. click on the lock icon 
+3. click on the "certificate" to reveal the cert
+
 ### You see a certificate warning 
 
-You visit your Apps domain under the `https://` address and the browser throws an error that the certificate can't be verified. This happens, when the domain is brand new and the cert is not YET installed (can take up to 24 hours). In this case, please wait a little. This can also happen, when your domain is not routed to fortrabbit (YET), only domains that are already routed to fortrabbit will receive a Let's Encrypt cert. Please the domain settings in the Dashboard.
+You visit your Apps domain under the `https://` address and the browser throws an error that the certificate can't be verified. The cert is shown to be on `*.frb.io`. This happens, when the domain is brand new and the cert is not YET installed (can take up to 24 hours). In this case, please wait a little. This can also happen, when your domain is not routed to fortrabbit (YET), only domains that are already routed to fortrabbit will receive a Let's Encrypt cert. Please the domain settings in the Dashboard.
+
 
 ### Cert is installed but browser bar is not green
 
@@ -156,6 +165,11 @@ In most cases this is due to "**mixed content**", which means, the cert is insta
 ### It's not working with Internet Explorer 8 or older
 
 Sorry, IE8 is not supported any more. All our TLS implementations are based on SNI.
+
+
+
+
+
 
 ### Solve SSL verification errors
 
