@@ -51,7 +51,7 @@ Each App (except trial Apps) has is always associated with a specific Billing Co
 └─────────────┘    └─────────────┘     
 ```
 
-The Billing Contact is part of a [Company](/company) on fortrabbit. Within the fortrabbit Company you can create multiple Billing Contacts and then assign individual Apps to either Billing Contacts. You could also create multiple Companies to achieve that, but with multiple you can still manage the same team on the Company. Remember: Accounts are representing persons here on fortrabbit.
+The Billing Contact is part of a [Company](/company) on fortrabbit. Within the fortrabbit Company you can create multiple Billing Contacts and then assign individual Apps to either Billing Contacts. You could also create multiple Companies to achieve that, but with multiple you can still manage the same team on the Company. Remember: [Accounts](/account) are representing persons here on fortrabbit.
 
 ### Creating a Billing Contact
 
