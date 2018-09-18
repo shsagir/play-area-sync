@@ -105,9 +105,7 @@ return [
 If you have not chosen the Laravel in the [Software Preset](app#toc-software-preset) on App creation, then please make sure to [set the ENV vars as described above](#toc-env-vars).
 
 
-### Database migration
-
-This is about migrating your existing MySQL data set, not running `artisan migrate`, which is described [below](#toc-migrate-amp-other-artisan-commands).
+### Database import and export
 
 There are various use cases to export and import the database:
 
@@ -115,11 +113,11 @@ There are various use cases to export and import the database:
 2. Export your local database to import it to the fortrabbit database
 3. Export the remote database from fortrabbit to bring your local installation up-to-date
 
-#### Migrating the database with a GUI
+#### Import/export the database with a GUI
 
 Read on in the [MySQL Article: Export & import > Using MySQL Workbench (GUI)](mysql-uni#toc-using-mysql-workbench-gui-).
 
-#### Migrating the database in the terminal
+#### Import/export the database in the terminal
 
 Read on in the [MySQL Article: Export & import > Using the terminal](mysql-uni#toc-using-the-terminal).
 
@@ -127,9 +125,9 @@ Read on in the [MySQL Article: Export & import > Using the terminal](mysql-uni#t
 
 Please see the [MySQL article](mysql-uni#toc-access-mysql-from-local) on how to access the database remotely from your computer.
 
-### Migrate & other artisan commands
+### Update database with artisan migrate command
 
-You can either login to [SSH](ssh-uni) and execute `artsian` or utilize [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
+You can either login to [SSH](ssh-uni) and execute `artisan` or utilize [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
 
 ```bash
 # remote execution
@@ -142,6 +140,17 @@ $ php artisan migrate
 
 **Note**: If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
 
+You can also add this command to your `composer.json` to have it run automatically every time you push changes.
+
+```json
+"scripts": {
+    "post-install-cmd": [
+        "php artisan migrate --no-interaction --force",
+    ],
+}
+```
+
+With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
 
 
 ### Logging
@@ -203,7 +212,7 @@ $ envoy run migrate
 
 ### Laravel Mix
 
-Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can not on fortrabbit as there is [no Node] on remote running. So you need to run the built process for production locally first. For deploying the minified output — this also applies to other workflows like with Gulp — you can either: 
+Laravel Mix compiles JS and CSS to really small and handy files using webpack, also see the [Laravel docs on this](https://laravel.com/docs/mix). You can not on fortrabbit as there is [no Node] on remote running. So you need to run the built process for production locally first. For deploying the minified output — this also applies to other workflows like with Gulp — you can either:
 
 1. Include the .min files with Git and push it along. That's not a clean method, but it works.
 2. Deploy the minified files separately. You can do this with SFTP or rsync.

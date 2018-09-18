@@ -149,7 +149,7 @@ public function boot()
 
 Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to access the database remotely from your computer.
 
-#### Migrate & other database commands
+#### Update database with artisan migrate command
 
 You can [execute remote commands via SSH](/remote-ssh-execution-pro), for example:
 
@@ -160,6 +160,19 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php artisan tinker'
 ```
 
 If `APP_ENV` is set to `production` - which is the default - then Laravel expects `--force` for migrate commands.
+
+You can also add this command to your `composer.json` to have it run automatically every time you push changes.
+
+```json
+"scripts": {
+    "post-install-cmd": [
+        "php artisan migrate --no-interaction --force",
+    ],
+}
+```
+
+With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
+
 
 #### Database Session
 
@@ -176,7 +189,7 @@ $ git push
 
 # Run the migration
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com php artisan migrate --force
-  
+
 ```
 
 Add a new ENV var `SESSION_DRIVER` with the value `database` in the Dashboard to make use of the database sessions.
@@ -284,7 +297,7 @@ Mind that you need to tell your source code to look for the minified CSS & JS fi
 
 ### Logging
 
-Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead. 
+Per default Laravel writes all logs to `storage/log/..`. Since you don't have [direct file access](/quirks#toc-ephemeral-storage), you need to configure Laravel to write to the PHP `error_log` method instead.
 
 #### In Laravel 5.6
 
