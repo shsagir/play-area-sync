@@ -32,12 +32,12 @@ For Windows 10 we recommend to install the Linux subsystem (WSL). For Windows 7 
 
 ## Use cases
 
-There are multiple ways to deploy here on fortrabbit: with [Git](/git-deployment), with [SFTP](/sftp) and/or [SSH](/ssh). You can hook in `rsync` in most deployment work-flows, either as an enhancement or as a replacement. It just doesn't really work well with [Professional Apps](/app-pro) as those have ephemeral storage and no direct SSH access. These are your main options for using `rsync` to deploy code to fortrabbit [Universal Apps](/app-uni):
+There are multiple ways to deploy here on fortrabbit: with [Git](/git-deployment), with [SFTP](/sftp) and/or [SSH](/ssh). You can hook in `rsync` in most deployment work-flows, either as an enhancement or as a replacement. Only it doesn't work well with [Professional Apps](/app-pro) as those have ephemeral storage and no direct SSH access. These are your main options for using `rsync` to deploy code to fortrabbit [Universal Apps](/app-uni):
 
 
 ### rsync instead of SFTP
 
-Not using Git and **still using [SFTP](/sftp)?** Consider `rsync` as a replacement. With SFTP - unless your SFTP client has some kind of synchronization method (which still will be slower) - you will copy each files manually, one by one. This is mundane and can also be dangerous when forgetting to copy critical files. `rsync` can work as a two way street directly on the file system. Easily synchronize files up and down from your [local development](/local-development) to the [App](/app). 
+Not using Git and **still using [SFTP](/sftp)?** Consider `rsync` as a replacement. With SFTP - unless your SFTP client has some kind of synchronization method (which still will be slower) - you will copy each file manually, one by one. This is mundane and can also be dangerous when forgetting to copy critical files. `rsync` can work as a two way street directly on the file system. Easily synchronize files up and down from your [local development](/local-development) to the [App](/app).
 
 ### rsync in addition to Git
 
@@ -49,15 +49,15 @@ Not using Git and **still using [SFTP](/sftp)?** Consider `rsync` as a replaceme
 You are likely making use of some kind of frontend bundling process - a build tool like webpack, Brunch, Parcel, browserify, gulp.js or alike. That includes compiling, concatenating and minifying of Javascript, SASS, LESS, stylus and maybe also images. Most modern build tools are based on Javascript and Node.js. fortrabbit Apps do not support to trigger such a frontend builds. So we advice to run the production build process [locally](/local-development). That has the advantage that you can optimally debug errors. But you also need to copy those files to your remote App somehow!
 
 
-**Option 1: Just include built files in Git!** You can just include the uglyfied files withing Git and deploy it along with the rest of the code. That's not clean, but can be practical when your build process is not that complex. Mind that you might have a development and a production build tasks. 
+**Option 1: Just include built files in Git!** You can just include the uglyfied files withing Git and deploy it along with the rest of the code. That's not clean, but can be practical when your build process is not that complex. Mind that you might have a development and a production build tasks.
 
-**Option 2: Deploy separately.** Ideally, those bundled binary-like files should be excluded from Git. Deployment is faster when the Git repo is small. And only uncompressed text can be "diffed". Those one-line files can not be tracked for changes. You can upload those files manually or even better use rsync to upload those bundles. 
+**Option 2: Deploy separately.** Ideally, those bundled binary-like files should be excluded from Git. Deployment is faster when the Git repo is small. And only uncompressed text can be "diffed". Those one-line files can not be tracked for changes. You can upload those files manually or even better use rsync to upload those bundles.
 
 See our old ["I love assets" blog post](https://blog.fortrabbit.com/i-love-assets) on that matter as well.
 
 #### Synchronize uploaded assets with rsync
 
-Also, there likely will be files, like image uploads and alike on the Apps file system itself which will [not be reflected in Git](deployment-methods-uni#toc-git-works-only-one-way). The only way to get those files back into your local development so far was to SFTP or SSH in and grab the files manually. So, here, assuming that you have a live application where content editors are changing files on the App itself, you likelly would like to download certain files from the App into your local development.
+Also, there likely will be files, like image uploads and alike on the Apps file system itself which will [not be reflected in Git](deployment-methods-uni#toc-git-works-only-one-way). The only way to get those files back into your local development so far was to SFTP or SSH in and grab the files manually. So, here, assuming that you have a live application where content editors are changing files on the App itself, you likely would want to download certain files from the App into your local development.
 
 PRO TIP: For [Craft CMS](/craft-3-about) users we have developed [Craft Copy](https://github.com/fortrabbit/craft-copy), which besides other nice features, also incorporates rsync to keep the assets in sync.
 
@@ -71,7 +71,7 @@ Hooked? So let's jump into your local terminal:
 
 ```bash
 # sync all files UP
-# 
+#
 #      options
 #       ─┴─
 $ rsync -av ./ {{app-name}}@deploy.{{region}}.frbit.com:~/
@@ -105,7 +105,7 @@ $ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/ {{app-name-2}}@deploy.{{
 
 #### Remote paths
 
-Remote URLs consist of `{{user}}@{{host}}:{{folder}}`. In the examples here [fortrabbit App placeholders](access-methods#toc-the-code-example-helper) are used. 
+Remote URLs consist of `{{user}}@{{host}}:{{folder}}`. In the examples here [fortrabbit App placeholders](access-methods#toc-the-code-example-helper) are used.
 
 
 #### Local paths
@@ -158,7 +158,7 @@ sent 39,119 bytes  received 196 bytes  11,232.86 bytes/sec
 total size is 23,325,044  speedup is 593.29 (DRY RUN)
 ```
 
-Now, running this will print out everything that `rsync` **would** transfer - without doing anything. Better always execute a dry run before actually syncing. Once you're sure, that only files which you want to transfer are in the change set, you can just remove the `n` again from the options and execute it normally. 
+Now, running this will print out everything that `rsync` **would** transfer - without doing anything. Better always execute a dry run before actually syncing. Once you're sure, that only files which you want to transfer are in the change set, you can just remove the `n` again from the options and execute it normally.
 
 
 #### Syncing single folders
@@ -259,7 +259,7 @@ total size ...
 
 After you confirm that `rsync` would only delete, what you want (otherwise: `--exclude` works also to exclude files which are not in your local file set but remote, and you don't want to remove them from remote), you can go ahead and remove the `-n` option and run again.
 
-Now, `rsync` wouldn't be if it would give you not at least four different ways to handle deletes: Besides the `--delete` flag, there is also `--delete-before`, `--delete-after`, `--delete-during` and `--delete-delay` (and `--delete-excluded`, but that's another special case in it's own). Those four variants of `--delete` just let you control when files are remove. This is actually quite handy: When thinking larger amounts of changed files to a live website, you might want to use `--delete-after` instead of `--delete-before`, so that first all new files are in place, then obsolete files are removed, which makes it more likely that your website is not "interrupted", when handling a request during the synchronization, which relies on files which would be removed.. I think you get the gist.
+Now, `rsync` wouldn't be if it would give you not at least four different ways to handle deletes: Besides the `--delete` flag, there is also `--delete-before`, `--delete-after`, `--delete-during` and `--delete-delay` (and `--delete-excluded`, but that's another special case in it's own). Those four variants of `--delete` just let you control when files are removed. This is actually quite handy: When thinking larger amounts of changed files to a live website, you might want to use `--delete-after` instead of `--delete-before`, so that first all new files are in place, then obsolete files are removed, which makes it more likely that your website is not "interrupted", when handling a request during the synchronization, which relies on files which would be removed.. I think you get the gist.
 
 
 ## Advanced topics
