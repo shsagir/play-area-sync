@@ -29,13 +29,21 @@ We assume you've already created an [App](app) and chose WordPress in the [Softw
 
 ## Quick start
 
-Start by downloading the [latest WordPress archive](https://wordpress.org/latest.zip) from the WordPress website and unpack it locally. It will extract into the folder `wordpress`. Now copy the **contents** of the local `wordpress` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
+### 1. Download WordPress
+
+Start by downloading the [latest WordPress archive](https://wordpress.org/latest.zip) from the WordPress website and unpack it locally. It will extract into the folder `wordpress`. 
+
+### 2. Upload WordPress files
+
+Now copy the **contents** of the local `wordpress` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 
 * **Server**: `deploy.{{region}}.frbit.com`
 * **User name**: `{{ssh-user}}`
 * **Password**: `{{ssh-password}}`
 
 The upload will take around 7 minutes, depending on your internet speed. A quicker method is shown [below](#toc-installing-wordpress-with-ssh).
+
+### 3. Run the installer
 
 When the upload is finished, visit [{{app-name}}.frb.io](https://{{app-name}}.frb.io) in your browser and commence with the guided web installation to finish the setup. You will need MySQL access, which is:
 
@@ -124,23 +132,24 @@ Read on in the [MySQL Article: Export & import > Using the terminal](mysql-uni#t
 
 Continuous development of a WordPress site has different requirements than first time setup. Speed and certainty of deployed code are of utmost importance.
 
-#### Uploading WordPress with SFTP
+#### Uploading WordPress changes with SFTP
 
 You can simply use your preferred [SFTP](/sftp) tool to upload your code modifications. This does not need further explanation: Just upload your changed files. The advantage is that it's easy as pie. The disadvantage is that it's slow and one can get confused about which changes are online and and which are not.
 
-#### Syncing WordPress with SFTP
+#### Syncing WordPress changes with SFTP
 
 One strategy to simplify your live is to use SFTP synchronization, please see the dedicated [section in the SFTP article](sftp#toc-file-synchronization) on that.
 
-#### Deploying WordPpress with rsync
+#### Deploying WordPress changes with rsync
 
 Sophisticated developers might have a look at rsync. It's by many times faster than SFTP. See our [rsync article](/rsync).
 
-#### Deploying WordPress with Git
+#### Deploying WordPress changes with Git
 
 WordPress itself has not arrived in the new PHP age in terms of using the latest technologies and paradigms. So — we do not recommend to use the standard WordPress with Git and Composer. But there is a super-cool WordPress boilerplate called [Bedrock](https://roots.io/bedrock/). Please see our [WordPress install guide for the Professional stack](/install-wordpress-4-pro) on how to set it up. It works best with the Professional Stack, but can also be used on the Universal Stack.
 
-#### Installing WordPress with SSH
+
+### Installing WordPress with SSH
 
 This is an alternative much quicker and more advanced way to install WordPress via shell commands. Issue the following in your local terminal:
 
