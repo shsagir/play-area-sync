@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-06-20
+reviewed:         2017-09-10
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -29,7 +29,7 @@ Please make sure to have followed our [get ready guide](/get-ready) before start
 
 ## Quick start
 
-Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-advanced-setup-and-migration). Execute the following in your terminal **on your local machine**:
+Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing Laravel](#toc-database-migration). Execute the following in your terminal **on your local machine**:
 
 ```bash
 # 1. Use Composer to create a local Laravel project named like your App
