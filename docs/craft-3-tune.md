@@ -76,7 +76,7 @@ Sometime while developing you might want to see some error output directly on yo
 
 ### allowUpdates
 
-Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in production. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) and that those changes get lost. So you better prevent the shiny "update me" button from showing up at all. You can do that in your Craft configuration, see an [example above](#toc-craft-config-example). Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates). 
+Craft CMS has the option to run updates directly from the Craft control panel. A client or editor might be tempted to use that update button in production. This is not a good idea, as Git is a [one-way street](/deployment-methods-uni#toc-git-works-only-one-way) and that those changes get lost. So you better prevent the shiny "update me" button from showing up at all. You can do that in your Craft configuration, see an [example above](#toc-craft-config-example). Also see the [official guide](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-allowupdates).
 
 ### cpTrigger
 
@@ -89,7 +89,7 @@ Using `'siteUrl' => getenv('SITE_URL') ?: '@web'` like in the [example above](#t
 ```php
 <?php
 return [
-   
+
     // fortrabbit
     'production' => [
         'siteUrl' => [
@@ -144,13 +144,13 @@ We recommend to always use the latest version for security reasons. Mind that yo
 
 ### A. Update Craft with a Git workflow
 
-When you have used a Git to deploy Craft, your update workflow likely looks like this: Use Composer to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**: 
+When you have used a Git to deploy Craft, your update workflow likely looks like this: Use Composer to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**:
 
 ```bash
 # Make sure to be in the projects root folder (locally)
 $ composer update
 
-# The output looks something like this: 
+# The output looks something like this:
 Loading composer repositories with package information
 Updating dependencies (including require-dev)
 Package operations: 0 installs, 9 updates, 0 removals
@@ -166,15 +166,28 @@ Generating optimized autoload files
 The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App. During the [Git deployment](/git-deployment), `composer install` will run automatically. This way your local Composer changes get applied on the remote. Some plugins or the Craft core may include database migrations. Don't forget to run the following SSH remote execution command after the updated packages are deployed:
 
 ```bash
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft setup/update"
+$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft migrate/up"
 ```
+
+You can also add this migrate command to your `composer.json` to have it run automatically every time you push changes.
+
+```json
+"scripts": {
+    "post-install-cmd": [
+        "php craft migrate/up",
+    ],
+}
+```
+
+With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
+
 
 ### B. Update Craft with a SFTP workflow
 
 Just use the shiny update button in the control panel locally and upload the changes. Then, to run the database migrations, access the control panel on remote and hit the "Finish" button.
- 
 
-## Image tuning 
+
+## Image tuning
 
 Image uploads to Craft are usually getting processed by ImageMagick. [Some people suggest](https://nystudio107.com/blog/creating-optimized-images-in-craft-cms) to further optimize images with jpegoptim or optipng. These tools are not available here on fortrabbit, see [here why](/quirks#toc-no-root-shell). But there are some good alternatives. We evangelize to use dedicated specialized third party image optimization services, like imgix, tinypng, kraken or imageoptim to do the job best. These two Craft plugins are supporting external services:
 
@@ -209,7 +222,7 @@ TODO:
 
 integrate the following topics, headlines and snippets:
 
-- - 
+- -
 
 cache headers images:
 https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/conversation/16319087993
@@ -219,6 +232,6 @@ https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/conversation/16319087993
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.+)\.(\d+)\.(bmp|css|cur|gif|ico|jpe?g|js|png|svgz?|webp|webmanifest)$ $1.$3 [L]
 </IfModule>
- 
+
 
 -->
