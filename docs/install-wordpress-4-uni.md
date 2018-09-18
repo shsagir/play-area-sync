@@ -110,8 +110,6 @@ if ( !defined('ABSPATH') )
 require_once(ABSPATH . 'wp-settings.php');
 ```
 
-Once that's done you can upload WordPress via SFTP as described above.
-
 ### Database migration
 
 WordPress consists of code files, the user generated uploads and of course the [MySQL database](/mysql), in which most contents are stored. There are various use cases to export and import the database:
@@ -172,6 +170,16 @@ $ rm -r wordpress latest.tar.gz
 
 Now proceed with the web installer as shown above. Combine this workflow with SFTP or SSH/rsync deployment methods. When you install WordPress directly on the App, the contents will not be represented in Git.
 
+#### Using the WP-CLI
+
+You can also use the popular and handy WordPress Command Line Interface on your fortrabbit App. When logged in to your fortrabbit App via SSH, you can just issue this command:
+
+```
+$ wp
+```
+
+The first time you call this will install it, next time you can just use it. See a [list of commands here](https://developer.wordpress.org/cli/commands/).
+
 
 ### Adding a custom domain
 
@@ -229,13 +237,14 @@ As you now have seen above, there are many ways to deploy and develop WordPress.
 
 With WordPress, expect when using [Bedrock](/install-wordpress-pro), most likely you will just use the update functionality provided by the WordPress admin. Login to wp-admin, when an update is available, it will inform you and display a "update" button you can click. That will trigger the update.
 
+See also the [official WordPress docs on updating](https://codex.wordpress.org/Upgrading_WordPress).
+
 ### Update locally first
 
 We recommend to have a [local development environment](/local-development) and do the updates locally first and then deploy the changes to the App on fortrabbit. That way you can make sure that everything works in development before doing something in production. 
 
-While updating the WordPress core, it's likely that the database design changes. The update script will do a migration, converting the tables to the new design while keeping it's contents. When you run the installer in your local development and then deploy the new files only, the database version and the file versions do not match. Most liekely you will see a warning in "wp-admin" to run the migration from there. 
+While updating the WordPress core, it's likely that the database design changes. The update script will do a migration, converting the tables to the new design while keeping it's contents. When you run the installer in your local development and then deploy the new files only, the database version and the file versions do not match. Most likely you will see a warning in "wp-admin" to run the migration from there. 
 
-See also the [official WordPress docs on updating](https://codex.wordpress.org/Upgrading_WordPress).
 
 ### Parallel updates
 
