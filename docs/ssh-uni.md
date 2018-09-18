@@ -55,15 +55,6 @@ $ grep -E ' 50[0-9] ' ../logs/apache_access.log
 Also checkout: [WordPress install from SSH](install-wordpress-4-uni#toc-installing-wordpress-with-ssh), [Execute Laravel's artisan](install-laravel-5-uni#toc-migrate-amp-other-artisan-commands).
 
 
-### Using CLIs
-
-We pre-installed various CLIs for you:
-
-* [WP-CLI](http://wp-cli.org/): eg `wp theme ...`
-* [Drush](http://www.drush.org/): eg `drush topic`
-* [Drupal Console](https://www.drupal.org/project/console): eg `drupal check`
-
-
 ### Executing PHP scripts
 
 If you want to execute PHP scripts, including `artisan` and it's like, make sure to specify the PHP interpreter explicity:
