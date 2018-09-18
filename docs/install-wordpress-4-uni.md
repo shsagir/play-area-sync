@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-05-04
+reviewed:         2018-09-18
 title:            Install WordPress 4
 naviTitle:        WordPress
 group:            Install_guides
@@ -15,7 +15,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          4.9.5
+version:          4.9.8
 
 keywords:
     - wp-admin

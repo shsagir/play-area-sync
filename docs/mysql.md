@@ -164,7 +164,7 @@ $ ssh -N -L 13306:{{app-name}}.mysql.{{region}}.frbit.com:3306 {{ssh-user}}@tunn
 $ mysql -h127.0.0.1 -P13306 -u{{app-name}} -p {{app-name}} < dump.sql
 ```
 
-If you see a connection error with the first command, please troubleshoot your 
+If you see a connection error with the first command, please troubleshoot your connection. 
 
 ### Using MySQL Workbench (GUI)
 
