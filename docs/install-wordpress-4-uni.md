@@ -25,11 +25,9 @@ keywords:
 
 ## Get ready
 
-We assume you've already created an [App](app) and chose WordPress in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard).
+We assume you've already created an [App](app) and chose WordPress in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-advanced-setup).
 
 ## Quick start
-
-Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-advanced-setup).
 
 Start by downloading the [latest WordPress archive](https://wordpress.org/latest.zip) from the WordPress website and unpack it locally. It will extract into the folder `wordpress`. Now copy the **contents** of the local `wordpress` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 
@@ -241,4 +239,10 @@ So far we have covered updating the WordPress core, but WordPress wouldn't be Wo
 
 ## Keeping your environments in sync
 
-Sure you know that WordPress is a CMS: **C**ontent will be **M**anaged by that **S**ystem.
+Sure you know that WordPress is a CMS: **C**ontent can be **M**anaged in that **S**ystem. So in consequence that means that content is likely added and edited on the system — the App — itself. This content can be blog posts or pages and also media like images. Maybe you are adding them, maybe the client, maybe the editors. Now, when you have been following our recommendation to have a local development environment, you might find yourself asking: **How can I get the contents from the App back into the local development?**
+
+A little refresh first: WordPress stores the text content of posts and pages in the MySQL database, uploads are stored on the file system. So you need to sync two things:
+
+For the **database**, check our [MySQL article for import/export](/mysql). For the **files** you can either use [SFTP](/sftp) or have a look at [rsync](/rsync) to synchronize certain folders.
+
+The techniques described are working in both directions. Most likely you want to get the newest contents from the App into your local development environment, but maybe have you local changes that you would like to see on the App as well.
