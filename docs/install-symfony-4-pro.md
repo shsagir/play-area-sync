@@ -47,7 +47,7 @@ APP_SECRET=ClickToGenerate
 DATABASE_URL=mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${MYSQL_HOST}/${MYSQL_DATABASE}
 ```
 
-Within the Dashboard under your App settings you can modify the ENV vars. Modify `APP_DEBUG` or `APP_ENV` to change the behavior of your application. You can also define your own key-value-pairs and use them in your configuration files. 
+Within the Dashboard under your App settings you can modify the ENV vars. Modify `APP_DEBUG` or `APP_ENV` to change the behavior of your application. You can also define your own key-value-pairs and use them in your configuration files.
 
 <div markdown="1" data-user="known">
 [Go to ENV vars for the App: **{{app-name}}**](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
@@ -56,7 +56,7 @@ Within the Dashboard under your App settings you can modify the ENV vars. Modify
 
 ## Quick start
 
-We assume that you already have [Symfony installed locally](http://symfony.com/download). If your project is not under Git version control yet, follow these steps to be prepared for your first `git push`. 
+We assume that you already have [Symfony installed locally](http://symfony.com/download). If your project is not under Git version control yet, follow these steps to be prepared for your first `git push`.
 
 ```bash
 # 1. Pull the .htaccess file via flex
@@ -100,7 +100,7 @@ doctrine:
     dbal:
         # All in one single line (default)
         url: '%env(DATABASE_URL)%'
-        
+
 ```
 
 ### Doctrine & symfony console
@@ -115,6 +115,18 @@ $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console doctrine:fixture
 # cache clear
 $ ssh {{ssh-user}}@deploy.{{region}}.frbit.com 'php bin/console cache:clear'
 ```
+
+You can also add this migrate command to your `composer.json` to have it run automatically every time you push changes.
+
+```json
+"scripts": {
+    "post-install-cmd": [
+        "php bin/console doctrine:migrations:migrate",
+    ],
+}
+```
+
+With that in place, any time you deploy your code, database changes will be applied immediately. If no database changes are required, nothing happens, so it is safe to run all the time. Just make sure to test your upgrades and migrations locally first.
 
 
 ## Advanced configurations
