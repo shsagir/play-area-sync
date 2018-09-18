@@ -80,18 +80,7 @@ $ ./some-script.php
 
 ### Syncing code with rsync
 
-The command line tool `rsync` grants a fast and reliable way to upload your code changes. As the name implies, `rsync` is made to synchronize (two) data sets. Following an example showcasing the synchronization of a WordPress plugin from local to fortrabbit:
-
-```shell
-# change to the folder above your plugin folder locally
-$ cd local-app-folder/wp-content/plugins
-
-# execute synchronization
-$ rsync -az --delete custom-plugin/ {{ssh-user}}@deploy.{{region}}.frbit.com:~/wp-content/plugins/custom-plugin/
-```
-
-The above command assures that the remote folder `custom-plugin` contains exactly what your local folder of the same name contains. The exemplified `--delete` flag will remove all remove files, which do not exist locally anymore. You can safely omit it, if that you just want to update changed files, but do not remove any file.
-
+rsync is a super cool deployment tool that adds on top of SSH. Please read the dedicated [rsync article](/rsync).
 
 ### Using Composer
 
