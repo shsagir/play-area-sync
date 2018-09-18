@@ -29,7 +29,7 @@ We assume you've already created an [App](app) and chose WordPress in the [Softw
 
 ## Quick start
 
-Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-advanced-setup-and-migration).
+Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-advanced-setup).
 
 Start by downloading the [latest WordPress archive](https://wordpress.org/latest.zip) from the WordPress website and unpack it locally. It will extract into the folder `wordpress`. Now copy the **contents** of the local `wordpress` folder (not the folder itself) via SFTP to the `htdocs` folder of your App. The `htdocs` folder is the one you are automatically in after logging in via SFTP. The SFTP access for your App **{{app-name}}** is:
 
@@ -55,7 +55,7 @@ After the guided web setup is done, you will be automatically redirected to the 
 * [{{app-name}}.frb.io/wp-admin](https://{{app-name}}.frb.io/wp-admin) _< WordPress admin_
 
 
-## Advanced setup and migration
+## Advanced setup
 
 **Don't stop with a plain vanilla installation. Make it yours!** Check out the following topics if you have an existing WordPress installation or if you would like to setup WordPress so that you can run in a local development environment as well as in your fortrabbit App:
 
