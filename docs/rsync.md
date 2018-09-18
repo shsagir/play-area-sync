@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-09-10
+reviewed:    2018-09-18
 title:       rsync
 naviTitle:   rsync
 lead:        rsync is one of the best ways to deploy code fast and without hassle. It's also an often overlooked option. Let's change this! This article gives you some direction on how to use it in general and especially here on fortrabbit.
@@ -16,9 +16,13 @@ keywords:
 
 ## About rsync
 
-`rsync` is a shorthand for **r**emote **sync**hronization. It's a command line tool to synchronize files over the network. It's open source. It's old but really good and it's is up to **10 times faster than FTP** as it uses compression and diffs to only transfers changes. It works on top of [SSH](/ssh), so it's also secure and extra convenient when using [SSH key auth](/ssh-keys). Usually, like most deployment related tasks here, you will **use rsync from your local machine**, not on your fortrabbit App directly.
+`rsync` is a shorthand for **r**emote **sync**hronization. It's a command line tool to synchronize files over the network. It's open source. It's old but really good and it's is up to **10 times faster than FTP** as it uses compression and diffs to only transfers changes.
 
-### Installing rsync
+### Read before using
+
+rsync is a mighty sharp sword. Use it carefully. Please mind that providing the falsy parameters or the wrong order can result in data loss. rsync works on top of [SSH](/ssh), so it's also secure and extra convenient when using [SSH key auth](/ssh-keys). Usually, like most deployment related tasks here, you will **use rsync from your local machine**, not on your fortrabbit App directly.
+
+## Installing rsync
 
 Chances are that you already have it: **rsync is built-in with Linux and macOS**. Check if it is installed. Run this command in the Terminal of your local machine:
 
