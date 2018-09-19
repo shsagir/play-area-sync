@@ -106,9 +106,8 @@ External services like Google Web Fonts or Typekit can help optimize font size a
 
 ### Caching assets
 
-Don't serve the same content to the same client twice! This is especially useful for asset resources that don't change often. Caching reduces the number of request and the data transmitted. On the HTTP part of your App/website caching is achieved by using **HTTP headers**.
+Don't serve the same content to the same client twice. Cache it with their browser. While modern browsers are already doing great work here. You can further control the caching by altering the Cache-Control with the HTTP headers. See the [.htaccess section](/htaccess#toc-cache-control) for an example.
 
-<script src="https://gist.github.com/ostark/074d8e122499b61dd04b.js"></script>
 
 ### GZIP compression with Apache
 

@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-09-10
+reviewed:    2018-09-18
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -21,7 +21,7 @@ keywords:
 
 ## About .htaccess
 
-`.htaccess` is a hidden file that usually lives in the web root folder of your code base. It enables altering the web server's, Apache in this case, configuration directives. Therefore the syntax is a bit cryptic. `.htaccess` rules apply to all subdirectories. 
+`.htaccess` is a hidden file that usually lives in the web root folder of your code base. It enables altering the web server's, Apache in this case, configuration directives. Therefore the syntax is a bit cryptic. `.htaccess` rules apply to all subdirectories. Take care: htaccess is a sharp sword. With great power comes great responsibility. 
 
 ### .htaccess example
 
@@ -78,6 +78,44 @@ This will make your browser remember to always use the secured version of your A
 ### Authentication
 
 You can implement a simple standard browser prompt password check for your website without any extra PHP magic with .htaccess. Hop over to our dedicated [HTTP Auth article](/http-auth) to learn on how.
+
+
+### Control HTTP headers
+
+HTTP headers are part of an Hyper Text Transfer Protocol request and response. HTTP headers are defining the operating parameters of an HTTP transaction. Use htaccess to modify these.
+
+
+#### Cache-Control
+
+Don't serve the same content to the same client twice! Control how the browser of the client caches results and files locally. This is especially useful for asset resources that don't change often. Caching reduces the number of request and the data transmitted. On the HTTP part of your App/website caching is achieved by using HTTP headers. You can control the caching in htaccess like so:
+
+```htaccess
+# Example to cache images and CSS files
+# adjust and extend to your needs
+<ifModule mod_headers.c>
+  #  images expire after 1 month
+  <filesMatch ".(gif|png|jpg|jpeg|ico|pdf|svg|js)$">
+    Header set Cache-Control "max-age=2592000"
+  </filesMatch>
+  # CSS expires after 1 day
+  <filesMatch ".(css)$">
+    Header set Cache-Control "max-age=86400"
+  </filesMatch>
+</ifModule>
+```
+
+#### CORS headers
+
+For "Cross-Site XMLHttpRequests" you'll need "Cross-origin resource sharing" or in short CORS headers. Those are mostly used in context of JavaScript AJAX requests across different domains. Like when `domain-a.com` loads a script from `domain-b.com`. Per default this is not possible for security reasons. But you can enable it for certain or even all of your files:
+
+```htaccess
+# Access all areas (use carefully)
+Header add Access-Control-Allow-Origin "*"
+Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
+```
+
+Use this with care and only open what you really need. Reduce the risk of XSS. Also check out the new Content Security Policy (CSP) for more advanced control on what you allow and what not. This website is a good reference: https://content-security-policy.com/
+
 
 ### Custom error pages
 
