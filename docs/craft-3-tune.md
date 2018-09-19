@@ -156,7 +156,7 @@ Updating dependencies (including require-dev)
 Package operations: 0 installs, 9 updates, 0 removals
   - Updating symfony/process (v4.0.11 => v4.1.0): Downloading (100%)
   - Updating symfony/console (v4.0.11 => v4.1.0): Downloading (100%)
-  - Updating craftcms/cms (3.0.11 => 3.0.11): Downloading (100%)
+  - Updating craftcms/cms (3.0.11 => 3.0.25): Downloading (100%)
   [...]
   - Updating symfony/event-dispatcher (v4.0.11 => v4.1.0): Downloading (100%)
 Writing lock file
@@ -166,7 +166,7 @@ Generating optimized autoload files
 The `composer.lock` file reflects the exact package versions you've installed locally. Commit your updated lock file and push it to your App. During the [Git deployment](/git-deployment), `composer install` will run automatically. This way your local Composer changes get applied on the remote. Some plugins or the Craft core may include database migrations. Don't forget to run the following SSH remote execution command after the updated packages are deployed:
 
 ```bash
-$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft migrate/up"
+$ ssh {{app-name}}@deploy.{{region}}.frbit.com "php craft migrate/all"
 ```
 
 You can also add this migrate command to your `composer.json` to have it run automatically every time you push changes.
@@ -174,7 +174,7 @@ You can also add this migrate command to your `composer.json` to have it run aut
 ```json
 "scripts": {
     "post-install-cmd": [
-        "php craft migrate/up",
+        "php craft migrate/all",
     ],
 }
 ```
