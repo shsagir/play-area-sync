@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-18
+reviewed:         2018-09-18
 title:            Setup Craft CMS
 naviTitle:        Setup Craft
 lead:             How to configure Craft CMS to run locally AND on fortrabbit.
