@@ -61,7 +61,7 @@ There are so called "naked", "APEX" or "root" domains. They have no prefix and l
 
 Yes, naked domains may look more pleasing to the eye, but don't take this too serious. Look, all big players, like Google are using a www. subdomain, without that you ever noticed, most bigger sites you'll visit do as well. 
 
-Safari and Chrome doesn't even show the `www.` suffix any more in the address bar.
+Safari and Chrome don't even show the `www.` suffix any more in the address bar. Firefox is greying out the protocol of this so called trivial domain.
 
 The www prefix is so common, you'll hardly hardly recognize it. Is Facebook with www? Is Google with www? Is Wikipedia with www? Do you know? Yes, they all are and you don't care. It's just the best way to deal with DNS. 
 
