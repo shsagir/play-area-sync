@@ -38,11 +38,6 @@ The goals here are:
 3. Save the public key with your fortrabbit Account
 
 
-## Is Git installed?
-
-For the everything to work together, first check if you have Git installed on your local machine already. Please see our [Git article](git) first, if you are unsure.
-
-
 ## Do you have any SSH keys already?
 
 To check if you have any existing SSH keys installed: Mac Os & Linux: Open a terminal (Mac OS & Linux) or a Git Bash (Windows) and type:
