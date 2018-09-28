@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2018-09-28
 naviTitle:     SSH keys setup
 title:         Troubleshooting SSH keys setup
 lead:          This article helps solving common issues setting up your SSH keys.
