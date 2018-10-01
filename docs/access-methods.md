@@ -196,9 +196,6 @@ PreferredAuthentications    publickey,password
 ```
 
 
-
-
-
 ### Problems with SSH keys
 
 Please see our [SSH key trouble shooting guides](/ssh-keys#troubleshooting) to resolve common problems with SSH key authentication.

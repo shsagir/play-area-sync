@@ -91,14 +91,8 @@ Do not hesitate to contact us. Make sure to provide all details upfront so that 
 
 ## Blacklisting
 
-We are actively filtering deployment traffic for security reasons: too many falsy login attempts or parallel connections are considered dangerous and will therefore get blacklisted.
+We are actively filtering deployment traffic for security reasons: too many falsy login attempts or parallel connections are considered dangerous and will therefore get blacklisted. This applies to all kind of deployment connections, S3, SSH/SFTP and Git.
 
+Before thinking about blacklisting, please assure that it has worked before. We haven't had any support case where blacklisting occurred before it worked at least once. So, when you have not been able to connect before, chances are very very high that this is NOT blacklisting. Please see our [access methods troubleshooting section](/access-methods#toc-troubleshooting) next instead.
 
-
-### Git blacklisting
-
-Some graphical clients for Git, like SourceTree and GitKraken are fetching often are opening many parallel connections. So you might get blacklisted here for using one of those. You can change the settings of your GUI client, in Git Kraken, you can turn off auto-fetching under your preferences. In SourceTree you can turn off checks for default remotes.
-
-
-
-Get a new IP by disconnecting from the internet shortly, by restarting your router device. <a href="#asd" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__')">Ask us</a> to remove your IP from the blacklisting ban.
+Get a new IP by disconnecting from the internet shortly, by restarting your router device. <a class="type-bold" href="#asd" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__. My App Name is _______. Its not the first time I am trying to connect, it has worked before.')">Ask us</a> to remove your IP from the blacklisting ban.

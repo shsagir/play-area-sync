@@ -190,6 +190,11 @@ $ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
 
 **Note**: The remote name `fortrabbit` might be `origin` or any other custom name you have chosen, or it might not be needed, so without `fortrabbit master`
 
+
+### Git client max connections
+
+Some graphical clients for Git, like SourceTree and GitKraken are fetching often are opening many parallel connections. So you might get blacklisted here for using one of those. You can change the settings of your GUI client, in Git Kraken, you can turn off auto-fetching under your preferences. In SourceTree you can turn off checks for default remotes.
+
 ## Blacklisting
 
 When nothing works any more, see if you are blacklisted, more [here](/troubleshooting#toc-blacklisting).
