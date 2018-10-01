@@ -165,7 +165,7 @@ We don't have any fancy GitHub/Bitbucket integrations (yet). But it is easily po
 Git submodules are not supported. We recommend to use Git subtrees instead. See [this post from Atlassian](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/).
 
 
-## Troubleshooting Git
+## Troubleshooting
 
 If your Git deployment fails for any reason: 
 
