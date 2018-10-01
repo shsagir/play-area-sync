@@ -192,10 +192,4 @@ $ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
 
 ## Blacklisting
 
-We are actively filtering deployment traffic for security reasons: too many falsy login attempts or parallel connections are considered dangerous and will get blacklisted.
-
-Some graphical clients for Git, like SourceTree and GitKraken are fetching often are opening many parallel connections. So you might get blacklisted here for using one of those. You can: 
-
-1. Change the settings of your GUI client, in Git Kraken, you can turn off auto-fetching under your preferences. In SourceTree you can turn off checks for default remotes.
-2. <a href="#asd" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__')">Ask us</a> to remove your IP from the blacklisting ban.
-3. Get a new IP by disconnecting from the internet shortly.
+When nothing works any more, see if you are blacklisted, more [here](/troubleshooting#toc-blacklisting).

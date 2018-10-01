@@ -95,9 +95,4 @@ Got an error when trying to login? fortrabbit supports username + password and p
 
 ### Blacklisting
 
-We are actively filtering deployment traffic for security reasons: too many falsy login attempts or parallel connections are considered dangerous and will get blacklisted.
-
-When you have tried to connect to often, you might got blacklisted, you can: 
-
-1. <a href="#asd" onclick="Intercom('showNewMessage', 'I might have been blacklisted, my IP is: __.__.__.__')">Ask us</a> to remove your IP from the blacklisting ban.
-2. Get a new IP by disconnecting from the internet shortly.
+When nothing works any more, see if you are blacklisted, more [here](/troubleshooting#toc-blacklisting).
