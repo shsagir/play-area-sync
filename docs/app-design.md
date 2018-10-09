@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-09
+reviewed:      2018-10-09
 title:         Application design & optimization
 naviTitle:     Application design
 lead:          Best practices: from development to production, from backend to frontend.
@@ -14,7 +14,7 @@ Of course: in case of a performance problem we can always throw more hardware on
 
 ## Backend design
 
-The performance of a modern web application depends on the hosting environment AND the application design. In short: **We are in this together!** We — fortrabbit — as your hosting vendor, are responsible to provide a great, scalable and [secure](security) infrastructure. You, as the developer, are responsible to leverage this infrastructure by good application design.
+The performance of a modern web application depends on the hosting environment AND the application design. In short: **We are in this together!** We — fortrabbit — as your hosting vendor, are responsible to provide a great, scalable and [secure](https://www.fortrabbit.com/security) infrastructure. You, as the developer, are responsible to leverage this infrastructure by good application design.
 
 
 ### Prepare to cache
