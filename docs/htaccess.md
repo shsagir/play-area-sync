@@ -25,7 +25,7 @@ keywords:
 
 ### .htaccess example
 
-```htaccess
+```plain
 # This example shows how to redirect all requests to www domain
 # That is not needed on fortrabbit  ;)
 RewriteEngine on
