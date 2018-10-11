@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-09-18
+reviewed:    2018-10-11
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -45,7 +45,7 @@ The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`.
 
 Once you've added a [custom domain](/domains) you may want to prevent requests to your [App URL](/app#toc-app-url). The example below shows how to set up a redirect in your `.htaccess` file.
 
-```htaccess
+```plain
 # From App URL to your domain
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^{{app-name}}.frb.io$ [NC]
@@ -56,7 +56,7 @@ RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
 
 **Force https!** There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
 
-```htaccess
+```htaccess plain
 RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Port} !=443
 RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
