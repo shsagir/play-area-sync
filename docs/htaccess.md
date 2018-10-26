@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-09-18
+reviewed:    2018-10-26
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -138,6 +138,17 @@ That's not all. `.htaccess` can do much more like: prevent hot-linking, have mul
 
 You can use htaccess to ban user agents, referrers and script-kiddies from accessing your website.
 
+### Restrict access to your IP
+
+While developing your website, you might want to restrict access to the IP dedicated to your office. You can do that too:
+
+```htaccess
+ErrorDocument 403 "Not Allowed"
+Deny from all
+
+# Your company IP
+Allow from 1.2.3.4
+```
 
 <!--
 
