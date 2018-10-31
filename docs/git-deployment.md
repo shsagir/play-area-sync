@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-10-01
+reviewed:      2018-10-31
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -154,6 +154,40 @@ To keep deployment fast for everyone the size of the release package is [limited
 $ tar -zcf my-project.tar.gz {{app-name}}
 $ ls -lh {{app-name}}.tar.gz
 ```
+
+### Code revision file
+
+There is a hidden file called `.code-revision`. It's located at `/srv/app/{{app-name}}/.code-revision`. and is getting renewed each time you deploy with Git. It includes the Unix Timestamp of the last Git deployment and the hash of the latest commit, separated by a dot. This what the content looks like:
+
+```
+1540931024080267920.26b284844c746f80f42ad7ac77a4ad42d25b27de
+```
+
+There are various advanced use cases. Hook that file into your deployment cycle like so: 
+
+* check whether the correct commit has been deployed
+* use the timestamp to bust static assets like JS and CSS
+
+<!--
+TODO: 
+
+* provide usage code example! (see below)
+* provide more use cases!
+
+Q: Position to file in ENV var? Or at least concat APPNAME ENV var with location.
+
+```php
+# 1. grab the file
+$last_deploy = json_decode(file_get_contents('/srv/app/{{app-name}}/.code-revision', true);
+
+# 2. split on dot
+
+# 3. use the 
+
+```
+-->
+
+
 
 ### Integrating with GitHub & Bitbucket
 
