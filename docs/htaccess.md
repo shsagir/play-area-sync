@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-10-26
+reviewed:    2018-10-11
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -25,7 +25,7 @@ keywords:
 
 ### .htaccess example
 
-```htaccess
+```plain
 # This example shows how to redirect all requests to www domain
 # That is not needed on fortrabbit  ;)
 RewriteEngine on
@@ -45,7 +45,7 @@ The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`.
 
 Once you've added a [custom domain](/domains) you may want to prevent requests to your [App URL](/app#toc-app-url). The example below shows how to set up a redirect in your `.htaccess` file.
 
-```htaccess
+```plain
 # From App URL to your domain
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^{{app-name}}.frb.io$ [NC]
@@ -56,13 +56,13 @@ RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
 
 **Force https!** There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
 
-```htaccess
+```plain
 RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Port} !=443
 RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
 ```
 
-Please note the x-header part. Other code snippets you have pasted from elsewhere might not work here. Many CMS and frameworks are offering convenient settings and configurations for this.
+Please note the X-Header part. Other code snippets you have pasted from elsewhere might not work here. Many CMS and frameworks are offering convenient settings and configurations for this.
 
 
 #### Force HTTPS for future visits with HSTS
@@ -106,7 +106,7 @@ Don't serve the same content to the same client twice! Control how the browser o
 
 #### CORS headers
 
-For "Cross-Site XMLHttpRequests" you'll need "Cross-origin resource sharing" or in short CORS headers. Those are mostly used in context of JavaScript AJAX requests across different domains. Like when `domain-a.com` loads a script from `domain-b.com`. Per default this is not possible for security reasons. But you can enable it for certain or even all of your files:
+For "Cross-Site XMLHttpRequests" you'll need "Cross-origin resource sharing" or in short CORS headers. Those are mostly used in context of JavaScript AJAX requests across different domains. Like when `domain-a.com` loads a script from `domain-b.com`. Per default this is not possible for security reasons. But you can enable it for certain or even all origins:
 
 ```htaccess
 # Access all areas (use carefully)
@@ -125,64 +125,6 @@ You can define templates to make your error pages look more cool like so:
 ErrorDocument 404 /404.html
 ```
 
-### GZIP compression
-
-You can set GZIP compression for static files like `*.html`, `*.js`, `*.css` and alike, so that they get first compressed, then send over and then decompressed by the users browser.
-
-### Other usage
-
-That's not all. `.htaccess` can do much more like: prevent hot-linking, have multiple domains in one root path, manage translated content, shorten URLs, capture variables …
-
-
-### Secure access
-
-You can use htaccess to ban user agents, referrers and script-kiddies from accessing your website.
-
-### Restrict access to your IP
-
-While developing your website, you might want to restrict access to the IP dedicated to your office. You can do that too:
-
-```htaccess
-ErrorDocument 403 "Not Allowed"
-Deny from all
-
-# Your company IP
-Allow from 1.2.3.4
-```
-
-<!--
-
-Found multiple ways to do the next one, not sure which one is correct?!
-
-#### Secure WordPress against pingback DDOS
-
-
-```htaccess
-RewriteEngine On
-RewriteCond %{HTTP_USER_AGENT} Wordpress
-RewriteRule . - [F,L]
-```
-
-or
-
-```htaccess
-<FilesMatch "^(xmlrpc\.php|wp-trackback\.php)">
-  Order Deny,Allow
-  Deny from all
-</FilesMatch>
-```
-
-or
-
-```htaccess
-# protect xmlrpc
-<Files xmlrpc.php>
-  Order Deny,Allow
-  Deny from all
-</Files>
-```
-
--->
 
 
 ## .htaccess on fortrabbit
