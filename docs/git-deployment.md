@@ -157,19 +157,19 @@ $ ls -lh {{app-name}}.tar.gz
 
 ### Code revision file
 
-There is a hidden file called `.code-revision`. It's located at `/srv/app/{{app-name}}/.code-revision`. and is getting renewed each time you deploy with Git. It includes the Unix Timestamp of the last Git deployment and the hash of the latest commit, separated by a dot. This what the content looks like:
+In your deployment there is a hidden file called `.code-revision`. It's located at `/srv/app/{{app-name}}/.code-revision`. and is getting renewed each time you deploy with Git. It includes the Unix Timestamp of the last Git deployment and the hash of the latest commit, separated by a dot. This what the content looks like:
 
 ```
 1540931024080267920.26b284844c746f80f42ad7ac77a4ad42d25b27de
 ```
 
-There are various advanced use cases. Hook that file into your deployment cycle like so: 
+There are various advanced use cases. Hook that file into your deployment cycle to:
 
 * check whether the correct commit has been deployed
 * use the timestamp to bust static assets like JS and CSS
 
 <!--
-TODO: 
+TODO:
 
 * provide usage code example! (see below)
 * provide more use cases!
