@@ -169,21 +169,17 @@ There are various advanced use cases. Hook that file into your deployment cycle 
 * use the timestamp to bust static assets like JS and CSS
 
 <!--
-TODO: 
-
-* provide usage code example! (see below)
-* provide more use cases!
-
-Q: Position to file in ENV var? Or at least concat APPNAME ENV var with location.
+TODO: test if that works
 
 ```php
-# 1. grab the file
-$last_deploy = json_decode(file_get_contents('/srv/app/{{app-name}}/.code-revision', true);
+<?php
 
-# 2. split on dot
-
-# 3. use the 
-
+if (getenv('APP_NAME')) {
+ $rev    = file_get_contents(sprintf("/srv/app/%s/.code-revision", getenv('APP_NAME')));
+ [$ts, $hash] = explode('.', $rev, 2); 
+}
+echo $ts;
+echo $hash;
 ```
 -->
 
