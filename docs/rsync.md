@@ -27,7 +27,7 @@ rsync is a mighty sharp sword. Use it carefully. Please mind that providing the 
 Chances are that you already have it: **rsync is built-in with Linux and macOS**. Check if it is installed. Run this command in the Terminal of your local machine:
 
 ```bash
-$ which rsync
+$ rsync --version
 # If installed, it will output the version number.
 ```
 
@@ -53,7 +53,7 @@ Not using Git and **still using [SFTP](/sftp)?** Consider `rsync` as a replaceme
 You are likely making use of some kind of frontend bundling process - a build tool like webpack, Brunch, Parcel, browserify, gulp.js or alike. That includes compiling, concatenating and minifying of Javascript, SASS, LESS, stylus and maybe also images. Most modern build tools are based on Javascript and Node.js. fortrabbit Apps do not support to trigger such a frontend builds. So we advice to run the production build process [locally](/local-development). That has the advantage that you can optimally debug errors. But you also need to copy those files to your remote App somehow!
 
 
-**Option 1: Just include built files in Git!** You can just include the uglyfied files withing Git and deploy it along with the rest of the code. That's not clean, but can be practical when your build process is not that complex. Mind that you might have a development and a production build tasks.
+**Option 1: Just include built files in Git!** You can just include the uglyfied files within your Git repo and deploy it along with the rest of the code. That's not clean, but can be practical when your build process is not that complex. Mind that you might have separate development and production build tasks.
 
 **Option 2: Deploy separately.** Ideally, those bundled binary-like files should be excluded from Git. Deployment is faster when the Git repo is small. And only uncompressed text can be "diffed". Those one-line files can not be tracked for changes. You can upload those files manually or even better use rsync to upload those bundles.
 
@@ -63,7 +63,7 @@ See our old ["I love assets" blog post](https://blog.fortrabbit.com/i-love-asset
 
 Also, there likely will be files, like image uploads and alike on the Apps file system itself which will [not be reflected in Git](deployment-methods-uni#toc-git-works-only-one-way). The only way to get those files back into your local development so far was to SFTP or SSH in and grab the files manually. So, here, assuming that you have a live application where content editors are changing files on the App itself, you likely would want to download certain files from the App into your local development.
 
-PRO TIP: For [Craft CMS](/craft-3-about) users we have developed [Craft Copy](https://github.com/fortrabbit/craft-copy), which besides other nice features, also incorporates rsync to keep the assets in sync.
+PRO TIP: For [Craft CMS](/craft-3-about) we have developed [Craft Copy](https://github.com/fortrabbit/craft-copy), which besides other nice features, also incorporates rsync to keep the assets in sync.
 
 
 
@@ -118,7 +118,7 @@ rsync accepts all kind of defining local paths. `./`  will translate to the curr
 
 
 <style>
-  td>code { white-space: nowrap; }
+  code { white-space: nowrap; }
 </style>
 
 ### Options
@@ -139,8 +139,8 @@ Here are some common options to alter the sync mode:
 | `-c`       | Instead of modification time and size, use checksum of the file contents. Use with caution when  modification time on destination is not reliable. |
 | `-C`       | Shorthand for `--cvs-exclude`. Exclude version control files like `.git`, `.hg`, `.svn`. |
 | `-h`       | Human readable output: display byte sizes in MiB, GiB instead of plain bytes. |
-| `-delete`  | Remove unused files. See [below](#toc-dealing-with-obsolete-files) |
-| `-exclude` | Omit files from being synced. See [below](#toc-excluding-files) |
+| `--delete`  | Remove unused files. See [below](#toc-dealing-with-obsolete-files) |
+| `--exclude` | Omit files from being synced. See [below](#toc-excluding-files) |
 
 For an exhaustive list of all the possible options and more in depth info on the above options, check out the official [rsync man page](https://linux.die.net/man/1/rsync). Mind that rsync options can be chained, `rsync -av` combines the two flags `-a` and `-v`.
 
@@ -263,7 +263,7 @@ total size ...
 
 After you confirm that `rsync` would only delete, what you want (otherwise: `--exclude` works also to exclude files which are not in your local file set but remote, and you don't want to remove them from remote), you can go ahead and remove the `-n` option and run again.
 
-Now, `rsync` wouldn't be if it would give you not at least four different ways to handle deletes: Besides the `--delete` flag, there is also `--delete-before`, `--delete-after`, `--delete-during` and `--delete-delay` (and `--delete-excluded`, but that's another special case in it's own). Those four variants of `--delete` just let you control when files are removed. This is actually quite handy: When thinking larger amounts of changed files to a live website, you might want to use `--delete-after` instead of `--delete-before`, so that first all new files are in place, then obsolete files are removed, which makes it more likely that your website is not "interrupted", when handling a request during the synchronization, which relies on files which would be removed.. I think you get the gist.
+`rsync` even gives you four different ways to handle deletes: Besides the `--delete` flag, there is also `--delete-before`, `--delete-after`, `--delete-during` and `--delete-delay` (and `--delete-excluded`, but that's another special case in it's own). Those four variants of `--delete` just let you control when files are removed. This is actually quite handy: When thinking larger amounts of changed files to a live website, you might want to use `--delete-after` instead of `--delete-before`, so that first all new files are in place, then obsolete files are removed, which makes it more likely that your website is not "interrupted", when handling a request during the synchronization, which relies on files which would be removed.. I think you get the gist.
 
 
 ## Advanced topics
