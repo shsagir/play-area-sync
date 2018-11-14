@@ -7,7 +7,6 @@ naviTitle:   rsync
 lead:        rsync is one of the best ways to deploy code fast and without hassle. It's also an often overlooked option. Let's change this! This article gives you some direction on how to use it in general and especially here on fortrabbit.
 group:       deployment
 stack:       uni
-workInProgress: no
 
 keywords:
     - rsync
@@ -27,7 +26,7 @@ rsync is a mighty sharp sword. Use it carefully. Please mind that providing the 
 Chances are that you already have it: **rsync is built-in with Linux and macOS**. Check if it is installed. Run this command in the Terminal of your local machine:
 
 ```bash
-$ rsync --version
+$ rsync --version 
 # If installed, it will output the version number.
 ```
 
