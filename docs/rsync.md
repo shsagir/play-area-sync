@@ -72,7 +72,7 @@ Hooked? So let's jump into your local terminal:
 
 ### The rsync command structure
 
-```bash
+```
 # sync all files UP
 #
 #      options
@@ -115,10 +115,6 @@ Remote URLs consist of `{{user}}@{{host}}:{{folder}}`. In the examples here [for
 
 rsync accepts all kind of defining local paths. `./`  will translate to the current directory. You can also use absolute paths like `/home/your-user/projects/{{app-name}}` or relative paths like `../{{app-name}}`.
 
-
-<style>
-  code { white-space: nowrap; }
-</style>
 
 ### Options
 
