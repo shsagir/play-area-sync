@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-06-09
+reviewed:         2018-11-15
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -86,9 +86,10 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 **Scope**: Universal Apps
 
-**Description**: Each Universal App comes with a limited amount of available [persistent web storage](app-uni#toc-persistent-storage). The amounts per scaling are available in [our specs](/specs#plans). [Professional Apps](/app-pro) have [ephemeral storage](/app-pro#toc-ephemeral-storage), uploads will be outsourced to the [Object Storage](/object-storage). 
+**Description**: Each Universal App comes with a limited amount of available [persistent web storage](app-uni#toc-persistent-storage). The amounts per scaling are available in [our specs](/specs#plans). [Professional Apps](/app-pro) have [ephemeral storage](/app-pro#toc-ephemeral-storage), so uploads will be outsourced to the [Object Storage](/object-storage). Consider that we are doing backups with some plans. Backups have a retention period, so there are multiple backups. For example, when you are using 5 GB web storage, there are 14 copies, so 70 GB in total used. That's really a lot. Each a new copy gets created and transferred. At a certain size and file number those backups might fail.
 
-**Solution**: We currently allow slight exceeding those limits, about 10%. You might upgrade to the next bigger scaling, when available. The storage availability of the biggest Universal App scaling is currently the highest we offer. The purpose of fortrabbit Apps is fast light weight PHP engines, the web storage limits are set accordingly. To store many large images or videos, better use an external image/video hosting service or cloud storage. Also consider that our backups are more handy with a small web storage. 
+
+**Solution**: We currently allow slight exceeding those limits, there is no hard capping in place. You might upgrade to the next bigger scaling, when available. The storage availability of the biggest Universal App scaling is currently the highest we offer. The purpose of fortrabbit Apps is fast light weight PHP engines, the web storage limits are set accordingly. To store many large images or videos, better use an external image/video hosting service or cloud storage. Consider our Professional Stack with Object Storage an alternative. Review your files. Maybe there are custom temp files, custom logs or other unused resources you can safely delete. Maybe you have a WordPress backup plugin enabled filling up the web storage? Turn it off.
 
 
 ## Object Storage
