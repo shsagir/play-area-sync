@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-10-11
+reviewed:    2018-11-16
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -21,19 +21,40 @@ keywords:
 
 ## About .htaccess
 
-`.htaccess` is a hidden file that usually lives in the web root folder of your code base. It enables altering the web server's, Apache in this case, configuration directives. Therefore the syntax is a bit cryptic. `.htaccess` rules apply to all subdirectories. Take care: htaccess is a sharp sword. With great power comes great responsibility. 
+`.htaccess` is a hidden file that usually lives in the web root folder of your code base. It enables altering the web server's configuration directives. Therefore the syntax is a bit cryptic. `.htaccess` rules apply to all subdirectories. `.htaccess` is usually not excluded `.gitignore`so it will be deployed alongside. Take care: htaccess is a sharp sword. With great power comes great responsibility.
+
+### .htaccess on fortrabbit
+
+Your fortrabbit Apps are running on the Apache web server. You can make use of `.htaccess`. Missing (remember it's hidden) and wrong `htaccess` directives are common issues. These sensitive defaults are set on the fortrabbit platform regarding .htaccess:
+
+* Apache configuration syntax 2.2 and 2.4 are supported 
+* GZIP compression is enabled per default
+* Access on all `.ht*` files is disabled, so nobody can read your .htaccess
+
+<!-- Anything else? -->
+
+### .htaccess and your framework or CMS
+
+When you are using a framework or a CMS, chances are high, that you don't need to wrangle with `.htaccess` at all, as that comes built-in. Here are the most used ones:
+
+* **Laravel** comes with a [boilerplate htaccess](https://github.com/laravel/laravel/blob/master/public/.htaccess) you can extend
+* **Craft CMS** comes with a [boilerplate htaccess](https://github.com/craftcms/craft/blob/master/web/.htaccess) you can extend
+* **WordPress** [manages htaccess](https://codex.wordpress.org/htaccess) for you
+
 
 ### .htaccess example
 
-```plain
+Talk is cheap, here is some code:
+
+```htaccess
 # This example shows how to redirect all requests to www domain
-# That is not needed on fortrabbit  ;)
+# THAT is not needed on fortrabbit  ;)
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^facebook\.com [NC]
 RewriteRule ^(.*)$ https://www.facebook.com/$1 [L,R=301,NC]
 ```
 
-## Common .htaccess usage
+## Using .htaccess
 
 You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS come with predefined ones, that are also managed. You will also find examples in context on these help pages here on fortrabbit. Following are common categories of usage with examples: 
 
@@ -45,7 +66,7 @@ The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`.
 
 Once you've added a [custom domain](/domains) you may want to prevent requests to your [App URL](/app#toc-app-url). The example below shows how to set up a redirect in your `.htaccess` file.
 
-```plain
+```htaccess
 # From App URL to your domain
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^{{app-name}}.frb.io$ [NC]
@@ -56,7 +77,7 @@ RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
 
 **Force https!** There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
 
-```plain
+```htaccess
 RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Port} !=443
 RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
@@ -125,17 +146,6 @@ You can define templates to make your error pages look more cool like so:
 ErrorDocument 404 /404.html
 ```
 
-
-
-## .htaccess on fortrabbit
-
-These sensitive defaults are set on the fortrabbit platform regarding .htaccess:
-
-* Apache configuration syntax 2.2 and 2.4 are supported 
-* GZIP compression is enabled per default
-* Access on all `.ht*` files is disabled, so nobody can read your .htaccess
-
-<!-- Anything else? -->
 
 
 ## Tips and tricks
