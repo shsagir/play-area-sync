@@ -73,6 +73,22 @@ RewriteCond %{HTTP_HOST} ^{{app-name}}.frb.io$ [NC]
 RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
 ```
 
+<!--
+
+TOOD or delete. Maybe not importnt.
+
+#### Redirect custom domains to different folders
+
+You can add as many [custom domains]((/domains)) to one App, as you want. With the Dashboard you can also set individual root paths for those. An alternative is to use .htaccess for that. In the example below domains are getting redirected into folders within the App.
+
+```htaccess
+# From App URL to your domain
+RewriteEngine On
+[TODO]
+```
+-->
+
+
 #### Redirect all requests to https
 
 **Force https!** There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
@@ -91,6 +107,7 @@ Please note the X-Header part. Other code snippets you have pasted from elsewher
 This goes one step further than just forwarding requests, it tells the browser to not ever again accept any connection in the future on not secured domain to your App. In your `.htaccess` file you can add this line (in addition to the rewrite rule above):
 
 ```htaccess
+RewriteEngine on
 Header always set Strict-Transport-Security "max-age=31536000"
 ```
 
@@ -143,9 +160,11 @@ Use this with care and only open what you really need. Reduce the risk of XSS. A
 You can define templates to make your error pages look more cool like so:
 
 ```htaccess
-ErrorDocument 404 /404.html
+RewriteEngine on
+ErrorDocument 404 /srv/app/{{app-name}}/htdocs/404.html
 ```
 
+That applies to 4XX and 5XX errors. When using a framework or CMS likely the router will catch such errors and use PHP logic to resolve that, still some 5XX errors might appear before the programm can execute the router.
 
 
 ## Tips and tricks
