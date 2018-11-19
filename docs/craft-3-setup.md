@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-09-18
+reviewed:         2018-11-19
 title:            Setup Craft CMS
 naviTitle:        Setup Craft
 lead:             How to configure Craft CMS to run locally AND on fortrabbit.
@@ -36,7 +36,11 @@ Make sure to have followed [our guides](/craft-3-about) so far. You should have 
 
 Craft 3 uses modern `.env` style configuration, learn more about the concepts [here](/env-vars). In result, you can run your Craft locally and on remote without code or configuration file changes. Locally, your `.env` file will be modified and read.
 
+
+## Database setup
+
 On fortrabbit the [environment variables](/env-vars) are getting seeded from the ones set in the Dashboard. When you have chosen Craft in the [Software Preset](/app#toc-software-preset) while have creating the App, all ENV vars at fortrabbit are already pre-populated. **No need to configure the MySQL database connection for fortrabbit.** If not, see [here](craft-3-tune#toc-manually-set-env-vars).
+
 
 ## Security key
 
