@@ -39,7 +39,8 @@ Craft 3 uses modern `.env` style configuration, learn more about the concepts [h
 
 ## Database setup
 
-On fortrabbit the [environment variables](/env-vars) are getting seeded from the ones set in the Dashboard. When you have chosen Craft in the [Software Preset](/app#toc-software-preset) while have creating the App, all ENV vars at fortrabbit are already pre-populated. **No need to configure the MySQL database connection for fortrabbit.** If not, see [here](craft-3-tune#toc-manually-set-env-vars).
+
+TLDR: **No need to configure the MySQL database connection for fortrabbit, it should be set.** On fortrabbit the [environment variables](/env-vars) are getting seeded from the ones set in the Dashboard (not from the .env file). When you have chosen Craft in the [Software Preset](/app#toc-software-preset) while have creating the App, all ENV vars at fortrabbit are already pre-populated. If not, see [here](craft-3-tune#toc-manually-set-env-vars).
 
 
 ## Security key
