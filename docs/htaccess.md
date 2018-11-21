@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-11-16
+reviewed:    2018-11-21
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -18,6 +18,15 @@ keywords:
     - gzip
 
 ---
+
+
+<!--
+
+DO NOT USE THE .htaccess class for code blocks, it will break the $ from being copy/pasteable....
+
+-->
+
+
 
 ## About .htaccess
 
@@ -42,18 +51,6 @@ When you are using a framework or a CMS, chances are high, that you don't need t
 * **WordPress** [manages htaccess](https://codex.wordpress.org/htaccess) for you
 
 
-### .htaccess example
-
-Talk is cheap, here is some code:
-
-```htaccess
-# This example shows how to redirect all requests to www domain
-# THAT is not needed on fortrabbit  ;)
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^facebook\.com [NC]
-RewriteRule ^(.*)$ https://www.facebook.com/$1 [L,R=301,NC]
-```
-
 ## Using .htaccess
 
 You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS come with predefined ones, that are also managed. You will also find examples in context on these help pages here on fortrabbit. Following are common categories of usage with examples: 
@@ -66,7 +63,7 @@ The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`.
 
 Once you've added a [custom domain](/domains) you may want to prevent requests to your [App URL](/app#toc-app-url). The example below shows how to set up a redirect in your `.htaccess` file.
 
-```htaccess
+```plain
 # From App URL to your domain
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^{{app-name}}.frb.io$ [NC]
@@ -93,7 +90,7 @@ RewriteEngine On
 
 **Force https!** There is no need for your application to be reached over a non-secure connection. Use `.htaccess` to redirect all `http://` requests over to `https://`. This is how:
 
-```htaccess
+```plain
 RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Port} !=443
 RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
@@ -106,7 +103,7 @@ Please note the X-Header part. Other code snippets you have pasted from elsewher
 
 This goes one step further than just forwarding requests, it tells the browser to not ever again accept any connection in the future on not secured domain to your App. In your `.htaccess` file you can add this line (in addition to the rewrite rule above):
 
-```htaccess
+```plain
 RewriteEngine on
 Header always set Strict-Transport-Security "max-age=31536000"
 ```
@@ -127,7 +124,7 @@ HTTP headers are part of an Hyper Text Transfer Protocol request and response. H
 
 Don't serve the same content to the same client twice! Control how the browser of the client caches results and files locally. This is especially useful for asset resources that don't change often. Caching reduces the number of request and the data transmitted. On the HTTP part of your App/website caching is achieved by using HTTP headers. You can control the caching in htaccess like so:
 
-```htaccess
+```plain
 # Example to cache images and CSS files
 # adjust and extend to your needs
 <ifModule mod_headers.c>
@@ -146,7 +143,7 @@ Don't serve the same content to the same client twice! Control how the browser o
 
 For "Cross-Site XMLHttpRequests" you'll need "Cross-origin resource sharing" or in short CORS headers. Those are mostly used in context of JavaScript AJAX requests across different domains. Like when `domain-a.com` loads a script from `domain-b.com`. Per default this is not possible for security reasons. But you can enable it for certain or even all origins:
 
-```htaccess
+```plain
 # Access all areas (use carefully)
 Header add Access-Control-Allow-Origin "*"
 Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
