@@ -6,7 +6,6 @@ title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
 group:       deployment
-workInProgress: yes
 stack:       all
 
 keywords:
@@ -27,10 +26,9 @@ DO NOT USE THE .htaccess class for code blocks, it will break the $ from being c
 -->
 
 
-
 ## About .htaccess
 
-`.htaccess` is a hidden file that usually lives in the web root folder of your code base. It enables altering the web server's configuration directives. Therefore the syntax is a bit cryptic. `.htaccess` rules apply to all subdirectories. `.htaccess` is usually not excluded `.gitignore`so it will be deployed alongside. Take care: htaccess is a sharp sword. With great power comes great responsibility.
+`.htaccess` is a hidden file that usually lives in the web root folder of your code base. It enables altering the web server's configuration directives. `.htaccess` rules apply to all subdirectories. `.htaccess` is usually not excluded in `.gitignore` so it will be deployed alongside your code. Take care: htaccess is a sharp sword. With great power comes great responsibility.
 
 ### .htaccess on fortrabbit
 
@@ -53,7 +51,7 @@ When you are using a framework or a CMS, chances are high, that you don't need t
 
 ## Using .htaccess
 
-You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS come with predefined ones, that are also managed. You will also find examples in context on these help pages here on fortrabbit. Following are common categories of usage with examples: 
+You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS come with predefined ones, and some are also managed. You will also find examples in context on these help pages here on fortrabbit. Here are a couple of common categories of usage with examples: 
 
 ### Redirects
 
@@ -61,29 +59,14 @@ The most common use case for `.htaccess` is to re-write URLs with `mod_rewrite`.
 
 #### Redirect all requests to the primary domain
 
-Once you've added a [custom domain](/domains) you may want to prevent requests to your [App URL](/app#toc-app-url). The example below shows how to set up a redirect in your `.htaccess` file.
+Once you've added a [custom domain](/domains) you may want to prevent requests to your [App URL](/app#toc-app-url). The example below shows how to set up a domain based redirect in your `.htaccess` file.
 
 ```plain
 # From App URL to your domain
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^{{app-name}}.frb.io$ [NC]
-RewriteRule ^(.*)$ https://www.your-domain.com/$1 [r=301,L]
+RewriteRule ^(.*)$ https://www.your-domain.example/$1 [r=301,L]
 ```
-
-<!--
-
-TOOD or delete. Maybe not importnt.
-
-#### Redirect custom domains to different folders
-
-You can add as many [custom domains]((/domains)) to one App, as you want. With the Dashboard you can also set individual root paths for those. An alternative is to use .htaccess for that. In the example below domains are getting redirected into folders within the App.
-
-```htaccess
-# From App URL to your domain
-RewriteEngine On
-[TODO]
-```
--->
 
 
 #### Redirect all requests to https
@@ -92,11 +75,11 @@ RewriteEngine On
 
 ```plain
 RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-Port} !=443
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
 ```
 
-Please note the X-Header part. Other code snippets you have pasted from elsewhere might not work here. Many CMS and frameworks are offering convenient settings and configurations for this.
+Please note the X-Header part. Other code snippets you find elsewhere might not work here. This is because we are running our Apache behind a set of loadbalancers. They are performing the HTTPS encryption and not Apache. Many CMS and frameworks are already offering convenient settings and configurations for this.
 
 
 #### Force HTTPS for future visits with HSTS
@@ -104,8 +87,9 @@ Please note the X-Header part. Other code snippets you have pasted from elsewher
 This goes one step further than just forwarding requests, it tells the browser to not ever again accept any connection in the future on not secured domain to your App. In your `.htaccess` file you can add this line (in addition to the rewrite rule above):
 
 ```plain
-RewriteEngine on
+<IfModule mod_headers.c>
 Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
 ```
 
 This will make your browser remember to always use the secured version of your App. It makes use of the "[HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security)" policy and improves security by eliminating the risks of man-in-the-middle TLS-protocol-downgrade attacks. Be careful: setting this header will tell the browser never (or that is: until max-age) to use `http://` again. So if you later on decide to serve (parts of) your site using no encryption, all those clients (browsers) which saw the header will not comply and keep using `https://`.
@@ -139,6 +123,10 @@ Don't serve the same content to the same client twice! Control how the browser o
 </ifModule>
 ```
 
+If you are using a CMS this is usually already managed for you in PHP code. You can open the web inspector on your website, go to the network tab and check the headers for any images, to see if they already have cache headers.
+
+Beware: Adding this also introduces the main problem of caching. If you later decide to change the image or css file, you must either wait the full cache time, or give the file a new name to make the browser retrieve it again. Otherwise it will use the old cached version.
+
 #### CORS headers
 
 For "Cross-Site XMLHttpRequests" you'll need "Cross-origin resource sharing" or in short CORS headers. Those are mostly used in context of JavaScript AJAX requests across different domains. Like when `domain-a.com` loads a script from `domain-b.com`. Per default this is not possible for security reasons. But you can enable it for certain or even all origins:
@@ -157,7 +145,6 @@ Use this with care and only open what you really need. Reduce the risk of XSS. A
 You can define templates to make your error pages look more cool like so:
 
 ```htaccess
-RewriteEngine on
 ErrorDocument 404 /srv/app/{{app-name}}/htdocs/404.html
 ```
 
