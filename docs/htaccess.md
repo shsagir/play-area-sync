@@ -64,8 +64,8 @@ Once you've added a [custom domain](/domains) you may want to prevent requests t
 ```plain
 # From App URL to your domain
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^{{app-name}}.frb.io$ [NC]
-RewriteRule ^(.*)$ https://www.your-domain.example/$1 [r=301,L]
+RewriteCond %{HTTP_HOST} ^.*\.frb\.io$ [NC]
+RewriteRule .* https://www.your-domain.example%{REQUEST_URI} [r=301,L,N]
 ```
 
 
@@ -76,7 +76,8 @@ RewriteRule ^(.*)$ https://www.your-domain.example/$1 [r=301,L]
 ```plain
 RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,N]
+
 ```
 
 Please note the X-Header part. Other code snippets you find elsewhere might not work here. This is because we are running our Apache behind a set of loadbalancers. They are performing the HTTPS encryption and not Apache. Many CMS and frameworks are already offering convenient settings and configurations for this.
