@@ -53,20 +53,11 @@ Following an example which assumes that your `composer.*` files are within the f
 version: 2
 
 # execute alternate composer run before anything
-pre: composer-run.php
+pre: ccomposer install -d sub-folder
 
 # make sure the new vendor folder is sustained during deploys
 sustained:
   - sub-folder/vendor
-```
-
-**composer-run.php**
-
-```php
-<?php
-
-chdir("sub-folder");
-exec("composer install");
 ```
 
 ### Private repositories in Composer
