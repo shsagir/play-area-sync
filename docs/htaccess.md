@@ -143,13 +143,13 @@ Use this with care and only open what you really need. Reduce the risk of XSS. A
 
 ### Custom error pages
 
-You can define templates to make your error pages look more cool like so:
+You can define custom pages to make your error pages look more cool like so:
 
 ```htaccess
-ErrorDocument 404 //404.html
+ErrorDocument 404 /404.html
 ```
 
-That applies to 4XX and 5XX errors. When using a framework or CMS likely the router will catch such errors and use PHP logic to resolve it, still some 5XX errors might appear before the program can execute the router.
+This has to be a publically accessible URL. You can do this with 4XX and 5XX errors. When using a framework or CMS likely the router will catch such errors and use PHP logic to resolve it, still some 5XX errors might appear before the program can execute the router.
 
 
 ## Tips and tricks
