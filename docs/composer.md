@@ -53,7 +53,7 @@ Following an example which assumes that your `composer.*` files are within the f
 version: 2
 
 # execute alternate composer run before anything
-pre: ccomposer install -d sub-folder
+pre: /usr/local/bin/composer install --prefer-dist -d sub-folder
 
 # make sure the new vendor folder is sustained during deploys
 sustained:
