@@ -37,12 +37,6 @@ Make sure to have followed [our guides](/craft-3-about) so far. You should have 
 Craft 3 uses modern `.env` style configuration, learn more about the concepts [here](/env-vars). In result, you can run your Craft locally and on remote without code or configuration file changes. Locally, your `.env` file will be modified and read.
 
 
-## Database setup
-
-
-TLDR: **No need to configure the MySQL database connection for fortrabbit, it should be set.** On fortrabbit the [environment variables](/env-vars) are getting seeded from the ones set in the Dashboard (not from the .env file). When you have chosen Craft in the [Software Preset](/app#toc-software-preset) while have creating the App, all ENV vars at fortrabbit are already pre-populated. If not, see [here](craft-3-tune#toc-manually-set-env-vars).
-
-
 ## Security key
 
 The mandatory Craft CMS security key has to be shared among all environments. We recommend to use your local security key as the master key. When you used Composer to install, that key was shown at the end of the installation. If not, open your local (hidden) `.env` file from the root folder of your project and find a line that looks like this:
@@ -56,6 +50,11 @@ It will contain a value when you have [installed Craft 3 correctly on your local
 * [dashboard.fortrabbit.com/apps/{{app-name}}/vars](https://dashboard.fortrabbit.com/apps/{{app-name}}/vars)
 
 That ENV var is already set. Just replace it with your local one. Also see the [official Craft guide on that topic](https://docs.craftcms.com/v3/installation.html#step-3-set-a-security-key) to learn about the different ways to create the key.
+
+
+## Database setup
+
+TLDR: **No need to configure the MySQL database connection for fortrabbit, it should be set.** On fortrabbit the [environment variables](/env-vars) are getting seeded from the ones set in the Dashboard (not from the .env file). When you have chosen Craft in the [Software Preset](/app#toc-software-preset) while have creating the App, all ENV vars at fortrabbit are already pre-populated. If not, see [here](craft-3-tune#toc-manually-set-env-vars).
 
 
 ## Database synchronization
