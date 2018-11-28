@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-11-21
+reviewed:    2018-11-28
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -38,7 +38,6 @@ Your fortrabbit Apps are running on the Apache web server. You can make use of `
 * GZIP compression is enabled per default
 * Access on all `.ht*` files is disabled, so nobody can read your .htaccess
 
-<!-- Anything else? -->
 
 ### .htaccess and your framework or CMS
 
@@ -51,7 +50,7 @@ When you are using a framework or a CMS, chances are high, that you don't need t
 
 ## Using .htaccess
 
-You usually will not have to wrangle with `.htaccess`. Modern frameworks and CMS come with predefined ones, and some are also managed. You will also find examples in context on these help pages here on fortrabbit. Here are a couple of common categories of usage with examples: 
+You will find examples in context on the different help pages here on fortrabbit. Here are a couple of common categories of usage: 
 
 ### Redirects
 
