@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2017-09-10
+reviewed:         2018-11-28
 title:            Install Laravel 5
 naviTitle:        Laravel
 lead:             Laravel is the most PHPopular framework. Learn how to install and tune Laravel 5 on fortrabbit.
@@ -218,6 +218,12 @@ Laravel Mix compiles JS and CSS to really small and handy files using webpack, a
 2. Deploy the minified files separately. You can do this with SFTP or rsync.
 
 <!-- TODO: include rsync example -->
+
+
+### Scheduling
+
+The [Laravel scheduler](https://laravel.com/docs/5.7/scheduling) is not supported with the Universal Stack by design. The minimum time frame for standard crons is 10 minutes here, but the Laravel scheduler requires a 1 minute scheduling. Use the [Pro Stack](/app-pro) in combination with the [Workers Component](/worker-pro). That way your crons will be outsourced into background processes. 
+
 
 
 ### Sending mail
