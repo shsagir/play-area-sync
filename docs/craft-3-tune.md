@@ -205,33 +205,16 @@ With this little extension, no further configuration is required, you just need 
 $ composer require fortrabbit/yii-memcached
 ```
 
+## HTTPS
+
+fortrabbit will provide Let's Encrypt certificates for all domains, please see our [HTTPS article](/https) for more on that.
+
+Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https. Please see our [.htaccess article](/htaccess) for more.
+
 
 ## Troubleshooting
-
 
 
 ### Large assets upload problems
 
 Most likely this is a setting within Craft CMS itself. The setting you are looking for is `maxuploadfilesize` and it's default is 16MB, please see the official [Craft Docs on that](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-maxuploadfilesize). This can also be caused by the `post_max_size`, `memory_limit`, `upload_max_filesize` or `max_execution_time` which you can set in the Dashbaord, but by default those are OK. If that still doesn't help, check the [logs](/logging-uni) if you can find some meaningful errors.
-
-
-
-<!--
-
-TODO:
-
-integrate the following topics, headlines and snippets:
-
-- -
-
-cache headers images:
-https://app.intercom.io/a/apps/ntt8mpby/inbox/inbox/conversation/16319087993
-
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^(.+)\.(\d+)\.(bmp|css|cur|gif|ico|jpe?g|js|png|svgz?|webp|webmanifest)$ $1.$3 [L]
-</IfModule>
-
-
--->
