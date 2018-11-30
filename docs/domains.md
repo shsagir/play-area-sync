@@ -64,7 +64,7 @@ Save the settings with your domain provider and wait a while, depending on your 
 
 ## Routing options
 
-The world of DNS is one of its own. Let's dive into it – understand the backgrounds, explore advanced and alternative settings.
+The world of DNS is one of its own. You want to some more than just the basics? Cool! Let's dive into it – understand the backgrounds, explore advanced and alternative settings.
 
 
 ### www and other subdomains
