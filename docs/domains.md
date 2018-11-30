@@ -44,6 +44,24 @@ First off, make sure that the App knows about the domain. Then point the domain 
 3. Use the provided informations to route the domain with your domain provider
 
 
+## Basic setup
+
+This is the most common usage. You first add the domain within the fortrabbit Dashboard. Use the preselected "www" option. That will bring you to a screen showing the current DNS settings and the desired settings. Go to your domain providers control panel and change the settings as provided by the fortrabbit Dashboard. That basically means:
+
+For the www prefix: 
+
+* Remove any A Record
+* Point the CNAME Record to the fortrabbit App URL: {{ app-name }}.frb.io
+* Leave NS or TXT or any other records untouched
+
+For the naked domain:
+
+* Change the A Record to use the IP of our forwarding service
+* Leave any other records untouched, especially MX
+
+Save the settings with your domain provider and wait a while, depending on your TTL settings that can take up to 24h. 
+
+
 ## Routing options
 
 The world of DNS is one of its own. Let's dive into it – understand the backgrounds, explore advanced and alternative settings.
@@ -199,8 +217,8 @@ There some reasons why to point more than one domain to your fortrabbit App:
 
 You probably want to host more than one website on your App like so:
 
-1. `your-first-domain.com` resovles in `htdocs/your-first-domain/public`
-2. `your-other-domain.com` resovles in `htdocs/your-other-domain/public`
+1. `your-first-domain.com` resolves in `htdocs/your-first-domain/public`
+2. `your-other-domain.com` resolves in `htdocs/your-other-domain/public`
 3. …
 
 **Please don't do this!** It's the way VPS hosting works, but it's really not a good design pattern. Your App is NOT a server, there are good reasons to only host one project, website or application in one App. Please see our [App help article](/app#toc-one-website-per-app) to learn more.
