@@ -1,7 +1,7 @@
 ---
 
 template:    article
-reviewed:    2018-11-28
+reviewed:    2018-12-03
 title:       .htaccess
 lead:        Browsing the docs here you will find lot's of reference to a mysterious invisible file called ".htaccess". What's that about? How can you make use of it?
 naviTitle:   .htaccess
@@ -138,6 +138,25 @@ Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
 ```
 
 Use this with care and only open what you really need. Reduce the risk of XSS. Also check out the new Content Security Policy (CSP) for more advanced control on what you allow and what not. This website is a good reference: [content-security-policy.com](https://content-security-policy.com/)
+
+
+### Prevent access
+
+You may want to prevent accessing your website from anyone except your company. So when your company has  a fixed IP, you can use `.htaccess` to only allow traffic from that IP or range of IPs.
+
+```
+### 1st deny all
+
+ErrorDocument 403 "Not Allowed"
+Deny from all
+
+### 2nd Allow your IPs 
+
+Allow from 11.11.11.11
+Allow from 12.12.12.12
+```
+
+An alternative to this is to use a password check with [HTTP Auth article](/http-auth).
 
 
 ### Custom error pages
