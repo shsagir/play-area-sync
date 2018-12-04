@@ -71,7 +71,6 @@ $ php craft copy/db/up
 $ php craft copy/db/down
 ```
 
-
 ## Next steps
 
 Craft CMS is configured to run locally and is also ready for fortrabbit. Next you can [deploy it with Git](/craft-3-deploy-git) or [upload it by SFTP](/craft-3-upload-sftp). Don't forget our [Craft tuning guide](/craft-3-tune) afterwards.

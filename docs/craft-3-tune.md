@@ -222,7 +222,35 @@ fortrabbit will provide Let's Encrypt certificates for all domains, please see o
 Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms/craft/blob/master/web/.htaccess) that lives inside the `web` folder, which is the root path. You can extend that with your own rules, like forwarding all requests to https. Please see our [.htaccess article](/htaccess) for more.
 
 
+
 ## Troubleshooting
+
+## You see a "Service Unavailable" or 5xx message
+
+What to do when your Craft CMS throws an "Service Unavailable" message on the screen instead of rendering your website? Don't be afraid, you can likely solve that yourself. Especially during setup it's likely that some tiny config is still missing or wrong.
+
+### Common errors while initial setup
+
+Here are some common errors, the cause of 90% of failing Craft CMS installations here:
+
+* **Mismatching Security Key** — Make sure to have the same key with your local development environment and on your fortrabbit App
+* **Wrong database configuration** - Make sure your fortrabbit database is using the ENV vars provided by the fortrabbit Dashboard to connect to the fortrabbit database in production. Leave your .env file at home as it will be ignored anyways.
+* **Missing .htaccess file** — Commonly happens with SFTP upload, the `.htaccess` is hidden, make sure to copy it over as well
+
+### Temporary turning on/off dev mode
+
+Your fortrabbit App is set to be your production environment per default. So when an runtime exception occurs, you will represented with the very basic "Service Unavailable" error screen. That's a feature, as visitors of your website should not be able to get any information about the system and the errors. One thing you can do, is temporarily setting DevMode to true, so that you can see the error output printed on screen. So so in the fortrabbit Dashboard, with the App under ENV vars, set the "devMode" to true (or 1). Don't forget to turn this off, later on, as you do not want to expose your development settings to the world.
+
+
+### Checking the logs
+
+There are two kind of 5xx errors you can see on fortrabbit with Craft CMS: The "Service Unavailable" by Craft CMS, or an error page rendered by fortrabbit. In the first case, at least something is working as Craft rendered the error, in the second case an exception is thrown before PHP reached the Craft CMS part.
+
+Craft CMS is piping the PHP errors to it's own location, located here:
+
+```craft/storage/runtime/logs/craft.log```
+
+You can use [SFTP](/stfp-uni) or maybe better [SSH](/ssh-uni) to analyze the PHP error logs. Most likely you will find information on where the script has crashed and stopped. Also see our [log article](/logging-uni) for more details.
 
 
 ### Large assets upload problems
