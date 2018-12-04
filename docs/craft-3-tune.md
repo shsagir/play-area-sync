@@ -225,7 +225,7 @@ Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms
 
 ## Troubleshooting
 
-## You see a "Service Unavailable" or 5xx message
+### You see a "Service Unavailable" or 5xx message
 
 What to do when your Craft CMS throws an "Service Unavailable" message on the screen instead of rendering your website? Don't be afraid, you can likely solve that yourself. Especially during setup it's likely that some tiny config is still missing or wrong.
 
