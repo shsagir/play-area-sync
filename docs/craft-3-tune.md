@@ -108,9 +108,17 @@ return [
 ```
 
 
+<!--
+
+  TBD: Why is the above documented here? 
+  Not sure how this is connected to Multi Staging ? And why this is important to us?
+
 ### userSessionDuration
 
 The amount of time a user stays logged in seconds as an integer value or a [period](http://php.net/manual/en/dateinterval.construct.php) as a string.
+
+
+-->
 
 
 ## Manually setting ENV vars
@@ -198,7 +206,7 @@ Don't forget that this is only tuning — making images a little smaller. Also c
 
 ## Cache & Session on the Professional Stack
 
-In multi node environments you can not rely on the file based cache or session storage. Instead you store this data in Memcache, a key-value-storage which is accessible from all nodes.  
+In multi node environments you can not rely on the file based cache or session storage. Instead you store this data in [Memcache](/memcache-pro), a key-value-storage which is accessible from all nodes.  
 With this little extension, no further configuration is required, you just need to pull it in to your `composer.json`:
 
 ```bash
