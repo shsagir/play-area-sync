@@ -11,7 +11,7 @@ websiteLink:      https://getgrav.org?utm_source=fortrabbit
 websiteLinkText:  getgrav.org
 category:         CMS
 image:            grav-symbol.png
-version:          1.5.1
+version:          1.5.5
 stack:            uni
 proLink:          install-grav-1-pro
 
