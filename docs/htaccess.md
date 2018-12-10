@@ -67,6 +67,8 @@ RewriteCond %{HTTP_HOST} ^.*\.frb\.io$ [NC]
 RewriteRule .* https://www.your-domain.example%{REQUEST_URI} [r=301,L,N]
 ```
 
+A CMS will have it's own options for that. If you don't use a redirect, make sure to at least set the "canonical URL" to be on your primary custom domain so that that search engines know that there is only one content.
+
 
 #### Redirect all requests to https
 
@@ -140,7 +142,7 @@ Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
 Use this with care and only open what you really need. Reduce the risk of XSS. Also check out the new Content Security Policy (CSP) for more advanced control on what you allow and what not. This website is a good reference: [content-security-policy.com](https://content-security-policy.com/)
 
 
-### Prevent access
+### Allow access only for you
 
 You may want to prevent accessing your website from anyone except your company. So when your company has  a fixed IP, you can use `.htaccess` to only allow traffic from that IP or range of IPs.
 
@@ -157,7 +159,6 @@ Allow from 12.12.12.12
 ```
 
 An alternative to this is to use a password check with [HTTP Auth article](/http-auth).
-
 
 ### Custom error pages
 
