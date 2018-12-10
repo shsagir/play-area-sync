@@ -1,8 +1,8 @@
 ---
 
 template:         article
-reviewed:         2018-09-18
-title:            Install WordPress 4
+reviewed:         2018-12-10
+title:            Install WordPress 5
 naviTitle:        WordPress
 group:            Install_guides
 stack:            uni
@@ -15,7 +15,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          4.9.8
+version:          5.0.0
 
 keywords:
     - wp-admin
@@ -25,7 +25,9 @@ keywords:
 
 ## Get ready
 
-We assume you've already created an [App](app) and chose WordPress in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-advanced-setup).
+We assume you've already created an [App](app) and chose WordPress in the [Software Preset](app#toc-software-preset). If not: You can do so in the [fortrabbit Dashboard](/dashboard). Following the fastest way to start with a fresh installation. Please scroll below for [migrating an existing WordPress](#toc-advanced-setup). 
+
+This install guide was last tested with version 5.0.0 but believed to work with older versions in the exact same way.
 
 ## Quick start
 
