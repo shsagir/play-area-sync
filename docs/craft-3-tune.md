@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-11-28
+reviewed:         2018-12-17
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -148,11 +148,11 @@ DB_TABLE_PREFIX=craft_
 
 ## Updating Craft
 
-We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. Test updates locally first! Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
+We recommend to always use the latest version for security reasons. Mind that you are responsible for the software you write yourself and use. **Test updates locally first!** For production (your fortrabbit App) we have set the ENV "allowUpdates" to false (see above). That will make the update button not show up in the control panel, so that your client will not accidentally update. Depending on your deployment workflow — [Git](/craft-3-deploy-git) or [SFTP](/craft-3-upload-sftp) — there are two ways to update Craft:
 
 ### A. Update Craft with a Git workflow
 
-When you have used a Git to deploy Craft, your update workflow likely looks like this: Use Composer to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**:
+When you have used a Git to deploy Craft, your update workflow can looks like this: Use Composer from the command line to first update your local installation, then push the changes to trigger the update on remote. Run the following command in the terminal on your computer **locally**:
 
 ```bash
 # Make sure to be in the projects root folder (locally)
@@ -192,7 +192,11 @@ With that in place, any time you deploy your code, database changes will be appl
 
 ### B. Update Craft with a SFTP workflow
 
-Just use the shiny update button in the control panel locally and upload the changes. Then, to run the database migrations, access the control panel on remote and hit the "Finish" button.
+It's a bit more dangerous, updating Craft with a SFTP workflow. The goal is - again - to have your local Craft CMS and the one on fortrabbit in sync and to start locally first. Mind: An update will change the files, this might also trigger changes in the database structure. 
+
+Locally: Use the update button in the control panel, or like above "composer update". This will also change your local database structure.
+
+Then upload the file changes. `rsync` can help to sync only changed files, see our [rsync article](/rsync). Now your files on the fortrabbit are up-to-date, but the database structure might not. To run the database migrations on the fortrabbit App and thereby finish the installation, access the control panel on remote and hit the "Finish" button.
 
 
 ## Image tuning
