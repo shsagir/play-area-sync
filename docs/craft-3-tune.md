@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-11-28
+reviewed:         2018-12-17
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -248,7 +248,7 @@ There are two kind of 5xx errors you can see on fortrabbit with Craft CMS: The "
 
 Craft CMS is piping the PHP errors to it's own location, located here:
 
-```craft/storage/runtime/logs/craft.log```
+```/storage/logs/web.log```
 
 You can use [SFTP](/stfp-uni) or maybe better [SSH](/ssh-uni) to analyze the PHP error logs. Most likely you will find information on where the script has crashed and stopped. Also see our [log article](/logging-uni) for more details.
 
