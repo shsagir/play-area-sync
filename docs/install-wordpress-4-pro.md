@@ -3,7 +3,7 @@
 template:         article
 reviewed:         2017-01-20
 title:            Install WordPress 4
-naviTitle:        WordPress
+naviTitle:        WordPress 4
 lead:             WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 4 on fortrabbit.
 group:            Install_guides
 

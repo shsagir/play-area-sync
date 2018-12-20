@@ -46,7 +46,7 @@ Apps are designed for fast web delivery — to answer page requests swiftly. Unl
 
 We believe in a clear division of security. In a nutshell: We - fortrabbit - take care of the Operarting Sytem level and the PHP runtime, you - the developer - are responsible for the software you write and use. Installing additional software would blur that strict division.
 
-* [Learn about the security concepts here](/security)
+* [Learn about the security concepts here](https://www.fortrabbit.com/security)
 
 
 ## Service location
