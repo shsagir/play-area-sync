@@ -58,7 +58,7 @@ Sophisticated developers, experienced in backend development and ready to work w
 # Install and initialize
 $ composer config platform --unset
 $ composer require fortrabbit/craft-copy:^1.0.0-beta
-$ ./craft install/plugin
+$ ./craft install/plugin copy
 $ ./craft copy/setup
 
 # Sync database up (local ⟶ fortrabbit)
