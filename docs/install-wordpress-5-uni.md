@@ -15,7 +15,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          5.0.0
+version:          5.0.2
 
 keywords:
     - wp-admin
