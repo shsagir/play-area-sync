@@ -91,8 +91,7 @@ If not: Make sure that your [local development](/local-development) is setup cor
 
 ## Deploy WordPress to fortrabbit
 
-Now, you have WordPress running with Bedrock locally and already configured it to play nice with your fortrabbit App.
-
+Now, you have WordPress running with Bedrock locally and already configured it to play nice with your fortrabbit App. Let's set it live on fortrabbit:
 
 ### MySQL sync
 
@@ -101,7 +100,7 @@ Next off, we want the remote database to know about our first local contents, li
 Please see the [MySQL article](mysql#toc-access-mysql-from-local) on how to access the database remotely from your computer and the various ways to export / import the database. 
 
 
-### Setup Git 
+### Setup Git and deploy
 
 While being into your **local** WordPress installation folder within the terminal, initialize your local Git and add your fortrabbit App as the remote like so:
 
@@ -111,27 +110,27 @@ $ git init
 
 # 2. Add the fortrabbit App remote, so you can git push later on
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
-```
 
-### Deploy with Git
-
-You came a long way. You have initialized and configured WordPress, locally and with fortrabbit. Now it's time for the final step: Deployment. Run these commands in your local terminal:
-
-``` bash
 # 1. Add all changes to Git
 $ git add -A
 
 # 2. Commit changes
 $ git commit -am "Initial"
 
-# 3. Push to deploy
+# 3. Push to deploy (and set the upstream)
 $ git push -u fortrabbit master
 ```
+
+That first deployment will take a little longer as Composer will also run during the deployment. From there on you can simply only use `git push`.
 
 **Got an error?** Please see the [access troubleshooting](/access-methods#toc-troubleshooting). **Did it work?** Cool, finally you can visit your App in the browser and follow the WordPress setup:
 
 * [{{app-name}}.frb.io](https://{{app-name}}.frb.io)
 
+
+## Final configuration
+
+While you can already login and use WordPress, further essential steps need to be done:
 
 
 ### Permalinks
@@ -139,14 +138,9 @@ $ git push -u fortrabbit master
 WordPress creates an `.htaccess` file during setup on the fly, also see our [.htaccess help](/htaccess). With [ephemeral storage](quirks#toc-ephemeral-storage) this will be destroyed during each deployment. We'll make the `.htaccess` permanent. To do so, open the hidden `.gitignore` file on top level and remove the .htaccess file from being ignored from Git by deleting or commenting the line like so:
 
 ```
-# other code …
-
 # WordPress
 web/wp
 #web/.htaccess
-# the line above is no longer in use
-
-# other code …
 ```
 
 Next, create an `.htaccess` file with following contents and also place it on top level.
@@ -164,18 +158,67 @@ RewriteRule . /index.php [L]
 # END WordPress
 ```
 
-Then again in the terminal, deploy the changes:
+Then in your local terminal, deploy the changes:
 
 ```
-# 7. Add .htaccess & modified .gitignore to Git
+# 1. Add .htaccess & modified .gitignore to Git
 $ git add -A
 
-# 8. Commit changes
+# 2. Commit changes
 $ git commit -am "Added htaccess"
 
-# 9. Push to deploy htaccess
+# 3. Push to deploy htaccess
 $ git push
 ```
+
+### Object storage
+
+Since WordPress is a CMS living on editorial provided content you most likely need a persistent storage — but fortrabbit App have [ephemeral storage](/quirks#toc-ephemeral-storage). That's not a breaker: Use our [Object Storage](/object-storage). Once you have booked the Component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
+
+Now you need to install two plugins. Best do it with Composer in your local terminal:
+
+```bash
+$ composer require wpackagist-plugin/amazon-web-services
+$ composer require deliciousbrains/wp-amazon-s3-and-cloudfront
+```
+
+Next create a new file `web/app/plugins/amazon-s3-fortrabbit.php` with the following contents:
+
+```
+<?php
+/*
+Plugin Name: Amazon S3 fortrabbit
+*/
+
+$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
+define('DBI_AWS_ACCESS_KEY_ID', $secrets['OBJECT_STORAGE']['KEY']);
+define('DBI_AWS_SECRET_ACCESS_KEY', $secrets['OBJECT_STORAGE']['SECRET']);
+
+add_filter('aws_get_client_args', function($args) use ($secrets) {
+    $args['endpoint'] = 'https://'. $secrets['OBJECT_STORAGE']['SERVER'];
+    return $args;
+});
+```
+
+To make sure the plugin becomes part of the Git repo you need to open the `.gitignore` file and edit it like so:
+
+```
+# …
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+!web/app/plugins/amazon-s3-fortrabbit.php
+# …
+```
+
+Now, in your local terminal commit everything and push it online:
+
+```bash
+$ git commit -am "With Object Storage"
+$ git push
+```
+
+Once the deployment is done, you can head over to the WordPress Admin on the fortrabbit App, activate all three plugins ("Amazon S3 fortrabbit", "Amazon Web Services" and "WP Offload S3 (Lite)") and then navigate to AWS > "S3 and CloudFront". First choose your bucket (there will be only one with the same name as your App), then enable "CloudFront or Custom Domain" and enter `{{app-name}}.objects.frb.io` as a custom domain. Save and done! Now, uploads to your WordPress will go directly to the Object Storage.
+
 
 ## Tuning
 
@@ -230,56 +273,6 @@ Once that's done you can head over your WordPress admin and activate the plugin 
 ### Installing themes
 
 Bedrock recommends to install themes by unpacking them into the `web/app/themes` folder and to use Composer only in [rare cases](https://roots.io/bedrock/docs/composer/#themes).
-
-### Object storage
-
-Since WordPress is a CMS living on editorial provided content you most likely need a persistent storage — but fortrabbit App have [ephemeral storage](/quirks#toc-ephemeral-storage). That's not a breaker: Use our [Object Storage](/object-storage). Once you have booked the Component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
-
-Now you need to install two plugins. Best do it with Composer in your local terminal:
-
-```bash
-$ composer require wpackagist-plugin/amazon-web-services
-$ composer require deliciousbrains/wp-amazon-s3-and-cloudfront
-```
-
-Next create the file `web/app/plugins/amazon-s3-fortrabbit.php` with the following contents:
-
-```
-<?php
-/*
-Plugin Name: Amazon S3 fortrabbit
-*/
-
-$secrets = json_decode(file_get_contents($_SERVER['APP_SECRETS']), true);
-define('DBI_AWS_ACCESS_KEY_ID', $secrets['OBJECT_STORAGE']['KEY']);
-define('DBI_AWS_SECRET_ACCESS_KEY', $secrets['OBJECT_STORAGE']['SECRET']);
-
-add_filter('aws_get_client_args', function($args) use ($secrets) {
-    $args['endpoint'] = 'https://'. $secrets['OBJECT_STORAGE']['SERVER'];
-    return $args;
-});
-```
-
-To make sure the plugin becomes part of the Git repo you need to open the `.gitignore` file and edit it like so:
-
-```
-# other code …
-web/app/plugins/*
-!web/app/plugins/.gitkeep
-!web/app/plugins/amazon-s3-fortrabbit.php
-# other code …
-```
-
-Now commit everything and push it online:
-
-```bash
-$ git commit -am "With Object Storage"
-$ git push
-```
-
-Once the deployment is done, you can head over to the WordPress Admin, activate all three plugins ("Amazon S3 fortrabbit", "Amazon Web Services" and "WP Offload S3 (Lite)") and then navigate to AWS > "S3 and CloudFront". First choose your bucket (there will be only one with the same name as your App), then enable "CloudFront or Custom Domain" and enter `{{app-name}}.objects.frb.io` as a custom domain. Save and done!
-
-
 
 
 ### Sending mail
