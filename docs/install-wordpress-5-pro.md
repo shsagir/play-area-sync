@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-12-21
+reviewed:         2018-12-23
 title:            Install WordPress 5
 naviTitle:        WordPress 5
 lead:             WordPHPress is PHPowering much of the web. Learn here how to install and tune the popular blogging and CMS engine WordPress 5 on fortrabbit.
@@ -175,10 +175,9 @@ $ git push
 
 Since WordPress is a CMS living on editorial provided content you most likely need a persistent storage — but fortrabbit App have [ephemeral storage](/quirks#toc-ephemeral-storage). That's not a breaker: Use our [Object Storage](/object-storage). Once you have booked the Component in the Dashboard the credentials will automatically become available via the [App secrets](/secrets).
 
-Now you need to install two plugins. Best do it with Composer in your local terminal:
+Now you install a plugin locally. Best do it with Composer in your local terminal:
 
 ```bash
-$ composer require wpackagist-plugin/amazon-web-services
 $ composer require deliciousbrains/wp-amazon-s3-and-cloudfront
 ```
 
