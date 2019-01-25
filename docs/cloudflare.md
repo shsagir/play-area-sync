@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        CloudFlare
-reviewed:         2018-06-12
+reviewed:         2019-01-21
 title:            Using CloudFlare with fortrabbit
 group:            Domains_and_DNS
 section:          Extending_fortrabbit
@@ -60,7 +60,9 @@ Each domain on CloudFlare comes with a bunch of settings. One is called "Crypto"
 └──────┘       └────────────┘             └────────────┘
 ```
 
-CloudFlare is the domain end point for the user. CloudFlare itself will actually talk to the App URL. As the App URL has HTTPS, you can and should set SSL to **full** to ensure end-to-end encryption. The default **flexible** setting is not enough (in our opinion). When 
+CloudFlare is the domain end point for the user. CloudFlare itself will actually talk to the App URL. The connection between the App and CloudFlare should also be encrypted. 
+
+The App URL has HTTPS, so you can and should set SSL to **full** to ensure end-to-end encryption. The default **flexible** setting is not enough (as we think). "Full (strict)" mode will not work but is not necessary.
 
 
 ## Advanced topics
