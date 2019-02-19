@@ -252,7 +252,7 @@ There are two kind of 5xx errors you can see on fortrabbit with Craft CMS: The "
 
 Craft CMS is piping the PHP errors to it's own location, located here:
 
-```craft/storage/web.log```
+```storage/web.log```
 
 You can use [SFTP](/stfp-uni) or maybe better [SSH](/ssh-uni) to analyze the PHP error logs. Most likely you will find information on where the script has crashed and stopped. Also see our [log article](/logging-uni) for more details.
 

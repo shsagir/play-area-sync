@@ -47,7 +47,7 @@ stderr.log.1.gz
 Mind that your CMS or framework might store logs in a different location. The basic concepts here will still apply, but the location and file name of the logs might be different. You might also can turn on more verbose logging output. See specific guides here:
 
 * [Craft CMS logging](/craft-3-tune#toc-logging)
-* [Laravel logging](/craft-3-tune#toc-logging)
+* [Laravel logging](/install-laravel-5-uni#toc-logging)
 
 
 ## Live log access
