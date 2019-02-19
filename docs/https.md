@@ -141,6 +141,7 @@ It is recommended to forward all requests to the secure line, so no more "http:/
 A Certification Authority Authorization (CAA) is a DNS record to specify which certificate authorities (CAs) are allowed to issue certificates for a domain. It's an extra security layer, so that now one else can intercept any certificates by wrong authorities. There is no integration here on fortrabbit needed. See if your DNS / domain provider supports CAA entries, set the according identifying domain name. When you are using our free Let's Encrypt certs, see [this article](https://letsencrypt.org/docs/caa/) on how to set it up. Mind that already existing CAA entries can also become a problem when trying to issue new certificates. 
 
 
+
 ## Troubleshooting TLS
 
 Sometimes it just doesn't work as supposed to. Don't panic. You can of course always ask us for support. Here are some things you can do on your own:
@@ -155,7 +156,13 @@ To debug TLS, it's often helpful a certificate in the browser. In Chrome and Fir
 
 ### You see a certificate warning 
 
-You visit your Apps domain under the `https://` address and the browser throws an error that the certificate can't be verified. The cert is shown to be on `*.frb.io`. This happens, when the domain is brand new and the cert is not YET installed (can take up to 24 hours). In this case, please wait a little. This can also happen, when your domain is not routed to fortrabbit (YET), only domains that are already routed to fortrabbit will receive a Let's Encrypt cert. Please the domain settings in the Dashboard.
+You visit your Apps domain under the `https://` address and the browser throws an error that the certificate can't be verified. If you expect the cert in the browser, you see that the cert is issued for `*.frb.io` not for your domain. 
+
+This can happen, when the domain is brand new and the cert is not YET installed (can take up to 24 hours). In this case, please wait a little. 
+
+This can also happen, when your domain is not routed to fortrabbit (YET), only domains that are already routed to fortrabbit will receive a Let's Encrypt cert. Please see the domain settings in the Dashboard. 
+
+There are also other edge cases when this can happen and is not resolving on it's own. One case is, that your domain has set CAA records (see above) with DNS. 
 
 
 ### Cert is installed but browser bar is not green
