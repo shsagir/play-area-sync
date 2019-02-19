@@ -246,7 +246,7 @@ Here are some common errors, the cause of 90% of failing Craft CMS installations
 Your fortrabbit App is set to be your production environment per default. So when an runtime exception occurs, you will represented with the very basic "Service Unavailable" error screen. That's a feature, as visitors of your website should not be able to get any information about the system and the errors. One thing you can do, is temporarily setting DevMode to true, so that you can see the error output printed on screen. So so in the fortrabbit Dashboard, with the App under ENV vars, set the "devMode" to true (or 1). Don't forget to turn this off, later on, as you do not want to expose your development settings to the world.
 
 
-### Checking the logs
+### Logging
 
 There are two kind of 5xx errors you can see on fortrabbit with Craft CMS: The "Service Unavailable" by Craft CMS, or an error page rendered by fortrabbit. In the first case, at least something is working as Craft rendered the error, in the second case an exception is thrown before PHP reached the Craft CMS part.
 

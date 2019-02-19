@@ -42,6 +42,14 @@ stderr.log
 stderr.log.1.gz
 ```
 
+### Log files in your CMS/framework
+
+Mind that your CMS or framework might store logs in a different location for you. So the basic concepts here still apply, but the location of the logs might be different. In some cases you might also can turn on more verbose logging output.
+
+* [Craft CMS logging](/craft-3-tune#toc-logging)
+* [Laravel logging](/craft-3-tune#toc-logging)
+
+
 ## Live log access
 
 Use the SSH logging [SSH remote command](remote-ssh-execution) in the terminal to get a live streams of all the logs for your Apps:
