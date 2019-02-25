@@ -15,6 +15,9 @@ category:         CMS
 image:            drupal8-mark.png
 version:          8.1
 deprecated:       yes
+dontList:         true
+dontIndex:        true
+
 
 keywords:
     - drupal
