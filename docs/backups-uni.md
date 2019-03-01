@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-06-10
+reviewed:      2019-03-01
 naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
@@ -35,7 +35,7 @@ Backups are not included with all App plans. See our [pricing page](https://www.
 * MySQL backups
 * Zero downtime
 * No performance impact on live database
-* Secure off site backups
+* Off site backups
 * end-to-end encrypted transport
 * AES-256 encrypted storage
 * Stored in a non-public S3 bucket
