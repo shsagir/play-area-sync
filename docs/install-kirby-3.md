@@ -40,6 +40,7 @@ Now, Kirby is a bit in between. Kirby is, like [Grav](/install-grav), file based
 
 There is not much to say on that topic. Just make sure to upload all contents of your local Kirby folder, including the hidden `.htaccess` file into the `htdocs` folder within your App. 
 
+
 ## Deploy with Git and Composer
 
 Make sure to read the [Kirby meets Composer](https://getkirby.com/docs/cookbook/installation/composer) article from official Kirby docs. Here is a basic rundown: 
@@ -57,6 +58,7 @@ $ composer create-project getkirby/plainkit {{app-name}}
 ```
 
 Note that Kirby offers a "starterkit" (with some demo contents and a theme with some templates) and a "plainkit" with no contents at all (which is used here). Maybe you also have a project running locally and are just looking for ways to deploy that. Continue with the next steps.
+
 
 ### Configure Kirby for Git deployment
 
@@ -120,17 +122,24 @@ $ rsync -av {{app-name}}@deploy.{{region}}.frbit.com:~/content ./content
 
 You can also use [SFTP](/sftp) to synchronize the `content` folder.
 
-<div class="alert p-m"> 
-    HERE IT SHOULD ACTUALLY WORK. The local files are working fine in local dev, but on remote I get a simple "Not found" output. nothing in logs. When uploading the "plainkit" via SFTP, it works. <br>
-    With fortrabbit: When you Git push > Composer will be triggered. The "vendor" folder is in place. The "kirby" folder is also in place.  <br><br>
-    A difference I have noticed between the "downloaded SFTP version" and the "composer version" is that with SFTP the vendor folder inside the kirby folder, with the Composer version it's top level.
-</div>
 
-<!--
+### Recap
+
+By now, you have Kirby installation running on your local machine and you can easily deploy it to your fortrabbit App. You can deploy code changes and Kirby updated with Git. Additionally contents are synced down and up using rsync or Git.
+
 
 ## Tuning
 
 Let's get deeper:
+
+### Continuos development
+
+We recommend to always develop locally first — it's just the most convenient way. Deploy, when you have reached a certain status of development. In many cases the real content will be created on the fortrabbit App. You can easily sync down changes from production into development with rsync.
+
+
+### Updating Kirby
+
+We recommend to update your local development environment first. On your local computer issue `composer update` in Terminal on root level of the project folder to trigger the update. When you have confirmed that everything works, `git push` to bring the latest updates to your fortrabbit App.
 
 
 ### Sending mails
@@ -153,5 +162,3 @@ Remember that Kirby is not a free software. Get a license, support the authors!
 ## Disclaimer
 
 Kirby is a mighty system with lot's of options. I might have missed some good stuff. Don't hesitate to contribute here.
-
--->
