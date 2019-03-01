@@ -132,6 +132,13 @@ By now, you have Kirby installation running on your local machine and you can ea
 
 Let's get deeper:
 
+### Working with the panel
+
+
+
+https://{{app-name}}.frb.io/panel/
+
+
 ### Continuos development
 
 We recommend to always develop locally first — it's just the most convenient way. Deploy, when you have reached a certain status of development. In many cases the real content will be created on the fortrabbit App. You can easily sync down changes from production into development with rsync.
