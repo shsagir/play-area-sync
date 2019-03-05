@@ -1,20 +1,20 @@
 ---
 
 template:         article
-reviewed:         2019-03-01
+reviewed:         2019-03-05
 title:            Install Kirby 3 on fortrabbit
 naviTitle:        Kirby
 lead:             Kirby is a popular, file based CMS originated from Germany (YEAH!). Learn here how to install and tune Kirby on fortrabbit.
 group:            Install_guides
 stack:            uni
 dontList:         false
-workInProgress:   yes
+workInProgress:   no
 
 websiteLink:      https://getkirby.com/
 websiteLinkText:  getkirby.com
 category:         CMS
 image:            kirby-mark.png
-version:          3.0.2
+version:          3.0.3
 
 otherVersions:
     2 : install-kirby-2
