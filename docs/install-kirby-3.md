@@ -8,7 +8,7 @@ lead:             Kirby is a popular, file based CMS originated from Germany (YE
 group:            Install_guides
 stack:            uni
 dontList:         false
-workInProgress:   no
+workInProgress:   false
 
 websiteLink:      https://getkirby.com/
 websiteLinkText:  getkirby.com
