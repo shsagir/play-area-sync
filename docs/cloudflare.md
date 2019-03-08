@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        CloudFlare
-reviewed:         2019-01-21
+reviewed:         2019-03-08
 title:            Using CloudFlare with fortrabbit
 group:            Domains_and_DNS
 section:          Extending_fortrabbit
@@ -84,7 +84,16 @@ While free SSL has become a commodity, there are other reasons to use CloudFlare
 * Domain analytics
 * …
 
-## Prevent direct access
+
+### Using CloudFlare for naked domains
+
+So, we tried to convince you that [a naked domain (a domain without www or other prefix) is not necessary at all](/domains#toc-naked-domains), but you still want a naked domain to be your primary domain instead of just a forward with fortrabbit: CloudFlare can help you here as well. You need to set two things in the CloudFlare Dashboard to make this work:
+
+1. **DNS Settings**: choose CNAME and enter the naked as Name and the App URL as value (this is only possible with CloudFlare black magic)
+2. **Page Rules**: `*.domainname.com/*` forward to `https://domainname.com` using 301 (that will catch if someone enters your domain with www)
+
+
+### Prevent direct access
 
 You may want to assure all traffic is routed through CloudFlare. This is important to secure 360 DDoS protection. You'll basically disable the App URL to be accessible. To block direct access and whitelist only CloudFlare's IPs, extend your `.htaccess` file with the following rules:
 

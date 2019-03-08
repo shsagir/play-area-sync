@@ -87,7 +87,7 @@ We are providing a forwarding service, so that all requests on the naked domain 
 
 Sometimes we have heard that the move from naked to www can impact SEO in a negative way. This should not be the case, when you do it properly, as all your old URLs and deeplinks shall be redirected to the new ones, using a standard 301 moved permanently HTTP header. 
 
-So please, as long as the naked domain works and will forward all requests, don't bother too much.
+So please, as long as the naked domain works and will forward all requests, don't bother too much. If your boss still says so, use an external DNS provider that support CNAME flattening (sometimes called ANAME), [here is help to do that on CloudFlare](/cloudflare#toc-using-cloudflare-for-naked-domains).
 
 
 #### Don't dos
