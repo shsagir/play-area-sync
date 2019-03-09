@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-11-30
+reviewed:      2019-03-09
 title:         All about domains & DNS
 lead:          How to configure and route domains to your fortrabbit App.
 naviTitle:     Domains
@@ -99,20 +99,20 @@ In some cases you could just use `CNAME` routing for your naked domain. It's the
 
 ### Forwarding a naked domain to www
 
-You still should care about your naked domain, as some users might type it in directly in the browser address bar. So you want to forward all requests from your naked domain to your primary canonical subdomain:
+You still should care about your naked domain, as some users might type it in directly in the browser address bar. So you usually want to forward all requests from your naked domain to your primary canonical subdomain:
 
-When you register a `www.` domain in the fortrabbit Dashboard, we additionally provide a forwarding service for your naked domain. You'll get two routing values, the main `CNAME` target and an additional `A`-record that points to our forwarding service.
+When you register a `www.` domain in the fortrabbit Dashboard, we additionally provide a simple forwarding service for your naked domain. That's why you'll get two routing values, the main `CNAME` target (for the www domain) and an additional `A`-record (for the naked domain) that points to our forwarding service.
 
 #### Example setup
 
 ```plain
-HOSTNAME      TYPE        VALUE
--------------------------------------------------
-@             A-Record    52.18.136.112  < See Dashboard for IP, only naked!
-www           CNAME       {{app-name}}.  < Only www!
+HOSTNAME  TYPE       VALUE
+--------------------------------------------
+@         A-Record   52.18.136.112        < Only naked - IP depends on region, check Dashboard
+www       CNAME      {{app-name}}.frb.io  < Only www!
 ```
 
-This will redirect all requests incoming to the naked domain to the `www.` domain.
+This will redirect all requests incoming to the naked domain to the `www.` domain. The service is optional but recommended. We will also issue an SSL cert for the redirect service, so that ALL communication is secured.
 
 
 
