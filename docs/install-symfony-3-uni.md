@@ -8,6 +8,7 @@ lead:             Symfony has been around for some while — but it doesn't look
 
 group:            Install_guides
 dontList:         true
+deprecated:       true
 stack:            uni
 proLink:          install-symfony-3-pro
 
