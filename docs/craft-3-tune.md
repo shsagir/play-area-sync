@@ -217,43 +217,6 @@ With this little extension, no further configuration is required, you just need 
 $ composer require fortrabbit/yii-memcached
 ```
 
-## Logging on the Professional Stack
-
-To access [php_error logs](/logging-uni#toc-live-log-access) you need to adjust Craft's log target in your `config/app.php` file. 
-
-```php
-<?php 
-// app.php
-return [
-    'components' => [
-        'log'    => [
-            'targets' => [
-                function () {
-                    return new class() extends \craft\log\FileTarget
-                    {
-                        public function init()
-                        {
-                            $this->setLevels(
-                                YII_DEBUG === true
-                                    ? ['trace', 'warning', 'error']
-                                    : ['warning', 'error']
-                            );
-                        }
-
-                        public function export()
-                        {
-                            $text = implode(PHP_EOL, array_map([$this, 'formatMessage'], $this->messages));
-                            // revert to php defaults & log
-                            ini_set('error_log', 'syslog');
-                            error_log($text . PHP_EOL);
-                        }
-                    };
-                }
-            ]
-        ]
-    ]
-]; 
-```
 
 ## HTTPS
 
@@ -290,10 +253,45 @@ There are two kind of 5xx errors you can see on fortrabbit with Craft CMS: The "
 
 Craft CMS is piping the PHP errors to it's own location, located here:
 
-```storage/web.log```
+```storage/logs/web.log```
 
 You can use [SFTP](/stfp-uni) or maybe better [SSH](/ssh-uni) to analyze the PHP error logs. Most likely you will find information on where the script has crashed and stopped. Also see our [log article](/logging-uni) for more details.
 
+To access [php_error logs](/logging-pro#toc-log-access) on the Professional Stack you need to adjust Craft's log target in your `config/app.php` file. 
+
+```php
+<?php 
+// app.php
+return [
+    'components' => [
+        'log'    => [
+            'targets' => [
+                function () {
+                    return new class() extends \craft\log\FileTarget
+                    {
+                        public function init()
+                        {
+                            $this->setLevels(
+                                YII_DEBUG === true
+                                    ? ['trace', 'warning', 'error']
+                                    : ['warning', 'error']
+                            );
+                        }
+
+                        public function export()
+                        {
+                            $text = implode(PHP_EOL, array_map([$this, 'formatMessage'], $this->messages));
+                            // revert to php defaults & log
+                            ini_set('error_log', 'syslog');
+                            error_log($text . PHP_EOL);
+                        }
+                    };
+                }
+            ]
+        ]
+    ]
+]; 
+```
 
 ### Large assets upload problems
 
