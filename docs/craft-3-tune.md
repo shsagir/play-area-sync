@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-12-17
+reviewed:         2019-03-11
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -215,6 +215,44 @@ With this little extension, no further configuration is required, you just need 
 
 ```bash
 $ composer require fortrabbit/yii-memcached
+```
+
+## Logging on the Professional Stack
+
+To access [php_error logs](/logging-uni#toc-live-log-access) you need to adjust Craft's log target in your `config/app.php` file. 
+
+```php
+<?php 
+// app.php
+return [
+    'components' => [
+        'log'    => [
+            'targets' => [
+                function () {
+                    return new class() extends \craft\log\FileTarget
+                    {
+                        public function init()
+                        {
+                            $this->setLevels(
+                                YII_DEBUG === true
+                                    ? ['trace', 'warning', 'error']
+                                    : ['warning', 'error']
+                            );
+                        }
+
+                        public function export()
+                        {
+                            $text = implode(PHP_EOL, array_map([$this, 'formatMessage'], $this->messages));
+                            // revert to php defaults & log
+                            ini_set('error_log', 'syslog');
+                            error_log($text . PHP_EOL);
+                        }
+                    };
+                }
+            ]
+        ]
+    ]
+]; 
 ```
 
 ## HTTPS
