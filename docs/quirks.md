@@ -2,7 +2,7 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2018-12-20
+reviewed:      2019-03-12
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions — aren't there always some? Heads up so it doesn't cost you hours of researching in the wrong direction."
 stack:         all
@@ -64,9 +64,9 @@ In recent days, this is a really bad practice: your web server can send mails, b
 
 ### Direct SMTP
 
-Instead of `sendmail` you can use a mail script that uses SMTP (Simple Mail Transfer Protocol) with your e-mail provider - usually the one that provides your domain - directly.
+There is no mailing builtin here. Instead of `sendmail` you can use a mail script that uses SMTP (Simple Mail Transfer Protocol) via your e-mail provider - usually the one that provides your domain - directly.
 
-There are countless possibilities how to use SMTP this. Most frameworks and CMS give them to you out of the box. If you use a custom script, have a look at [Swift Mailer](https://swiftmailer.symfony.com/). There are special solutions for [WordPress](install-wordpress#toc-smtp), [Laravel](install-laravel#toc-smtp) & [Symfony](install-symfony#toc-smtp).
+There are countless possibilities how to use SMTP. Most frameworks and CMS give them to you out of the box. If you use a custom script, have a look at [Swift Mailer](https://swiftmailer.symfony.com/). There are special solutions for [WordPress](install-wordpress#toc-smtp), [Laravel](install-laravel#toc-smtp) & [Symfony](install-symfony#toc-smtp).
 
 Pro tip: in Gmail you need to allow "less secure apps" to connect. See the [official Google help](https://support.google.com/accounts/answer/6010255).
 
