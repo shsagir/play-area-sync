@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-08-21
+reviewed:      2019-03-20
 naviTitle:     Access methods
 title:         How to access fortrabbit services
 lead:          Learn about the different authentication methods with fortrabbit.
@@ -199,3 +199,7 @@ PreferredAuthentications    publickey,password
 ### Problems with SSH keys
 
 Please see our [SSH key trouble shooting guides](/ssh-keys#troubleshooting) to resolve common problems with SSH key authentication.
+
+### Multiple Accounts with different access methods issues
+
+When you have multiple Accounts here at fortrabbit, or you have had an Account here before and you have used one access method to identify, your SSH config might saves our host to use that access method for our host. Now when using a different method with a different Account, your computer might still need the old saved one. <!--  TODO: How to fix? -->
