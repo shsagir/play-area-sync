@@ -113,7 +113,7 @@ All other write operations, such as `DELETE` or `DROP`, which are needed for pos
 
 ## Load testing
 
-So, you want to run a stress test to check if this works as advertised? You are welcome! Mind the limits above. Make sure to have a swift PHP response time already, at least 200ms. Also please respect the following limits: 
+So, you want to run a stress test to check if this works as advertised? You are welcome! Mind the limits above. Make sure to have a swift PHP response time already, at least 200ms. Also, please respect the following limits: 
 
 * Universal Stack: Max 300 RPM
 * Professional Stack: 300 RPM per Node
