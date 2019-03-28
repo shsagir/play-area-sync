@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-02-21
+reviewed:         2019-03-28
 title:            Limitations
 naviTitle:        Limits
 lead:             Our service comes in different variations and sizes. Here we explain what happens when a limit is reached.
@@ -70,7 +70,7 @@ The danger with using such a technique is producing a [deadlock](https://en.wiki
 
 **Scope**: Universal and Professional Apps
 
-**Description**: Each MySQL scaling comes with a fixed amount of maximum available storage - [Universal](http://www.fortrabbit.com/specs#plans) & [Professional](http://www.fortrabbit.com/specs-pro#mysql)). When this limit is exceeded all privileges to write operations, which could create additional data, are suspended. Those write operations are:
+**Description**: Each MySQL scaling comes with a fixed amount of maximum available MySQL storage - [Universal](http://www.fortrabbit.com/specs#plans) & [Professional](http://www.fortrabbit.com/specs-pro#mysql)). When this limit is exceeded all privileges to write operations, which could create additional data, are suspended. Those write operations are:
 
 * `CREATE TABLE`
 * `CREATE VIEW`
@@ -80,6 +80,14 @@ The danger with using such a technique is producing a [deadlock](https://en.wiki
 All other write operations, such as `DELETE` or `DROP`, which are needed for possible cleanup operations, are still allowed. The implementation of those suspensions is time delayed and can take effect a few minutes after the limit has been exceeded.
 
 **Solution**: To re-enable write capabilities you either can upgrade to a bigger scaling or reduce data size by deleting rows or dropping tables. Mind that the time delay goes both ways: When you clean up the DB and remove data size, it can take a couple of minutes for the privileges to become available again.
+
+
+## MySQL index
+
+**Scope**: Professional Apps
+
+**Description**: Each MySQL scaling comes with a fixed amount of maximum available MySQL index size [Professional](http://www.fortrabbit.com/specs-pro#mysql)). That is just a soft limit.
+
 
 
 ## Web storage
