@@ -22,7 +22,7 @@ Data loss is something, which can happen to everybody: be it an unpatched securi
 Automatic, out-of-the box, off-site, encrypted daily MySQL backups, without configuration and without hassle.
 
 
-## Availabilty
+## Availability
 
 MySQL Backups are not included with all database plans. See our [pricing page](https://www.fortrabbit.com/pricing-pro) for more.
 

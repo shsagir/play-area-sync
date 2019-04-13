@@ -33,7 +33,7 @@ A high cache hit rate indicates if your caching strategy works as expected. For 
 
 It's always a good idea to reduce file input/output operations on the disk to the minimum. In PHP this means:
 
-* **PHP includes**: Reduce amount of includes as much as possible. Always use absolute pathnames, which reduces the amount of lookups.
+* **PHP includes**: Reduce amount of includes as much as possible. Always use absolute path names, which reduces the amount of lookups.
 * **Avert files**: Don't use file-sessions, file-caches or anything `file-*`, if you can replace it with an in-memory cache or even the database.
 * **Outsource static files**: Put your static files on an object storage. Sure, they could be delivered very fast from local, but still, they will create I/O which your (PHP) App will be missing.
 * **Shrink your loader chain**: Make sure you load only the classes (files) you need. For a production App (in which code changes do not occur often) you can set `apc.stat` or `pcache.validate_timestamps` to `0`, which reduces I/O on `.php` files even further, but requires an APC/OPcache flush for changed files to apply.
@@ -124,7 +124,7 @@ Eat diet Cookies! Cookies are sent in the HTTP headers in every single request, 
 
 ### DNS lookups
 
-You might parallelize downloads across hostnames. This may help speed up delivery, but if the number of hostnames is too long the time that the client spends to resolve the domain can affect negatively. The concurrent connections of web browsers is limited.
+You might parallelize downloads across host names. This may help speed up delivery, but if the number of host names is too long the time that the client spends to resolve the domain can affect negatively. The concurrent connections of web browsers is limited.
 
 
 ### Check your speed
