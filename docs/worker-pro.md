@@ -49,7 +49,7 @@ The Worker is an optional Component that can be booked and scaled from the [Apps
 
 In addition the CPU resources available scale linear with the amount of memory: a plan with 512 MB memory has access to four times the CPU time as a plan with 128 MB memory.
 
-The memory limit is for all jobs combined. For *Worker L* plans and above, there's also a default soft limit of 1024 MB memory per job to ensure there's enough for all concurrently running jobs - this can be overriden with `ini_set('memory_limit', xxxxM');` up to your Worker plan limit. The number of configurable jobs is based on the average usage we have seen on our platform. Resources needed for each application can vary largely, depending on what each particular job is doing. It's not unheard of for a single job to consume beyond 512 MB when doing extremely memory intensive tasks. In this case you need to select a plan accordingly.
+The memory limit is for all jobs combined. For *Worker L* plans and above, there's also a default soft limit of 1024 MB memory per job to ensure there's enough for all concurrently running jobs - this can be overwritten with `ini_set('memory_limit', xxxxM');` up to your Worker plan limit. The number of configurable jobs is based on the average usage we have seen on our platform. Resources needed for each application can vary largely, depending on what each particular job is doing. It's not unheard of for a single job to consume beyond 512 MB when doing extremely memory intensive tasks. In this case you need to select a plan accordingly.
 
 * See the [specs page](http://www.fortrabbit.com/specs#worker) for limits.
 
@@ -71,7 +71,7 @@ Nonstop Jobs are continuous running PHP processes. They are meant to run forever
 
 * **Name**: A unique name, identifier for Dashboard, logs & statistics
 * **Command**: PHP command to be executed, for example `artisan queue:listen -v` or `path/to/my-script.php`
-* **Termination Signal**: Unix termination signal to restart job, just use default when unusure
+* **Termination Signal**: Unix termination signal to restart job, just use default when unsure
 * **Termination Timeout**: Grace time after which the job will be "hard killed" (`SIGKILL`), if shutdown termination signal has been sent
 * **Status**: You can temporary disable jobs (start/stop)
 

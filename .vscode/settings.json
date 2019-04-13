@@ -2,6 +2,9 @@
   "cSpell.words": [
     "DDOS",
     "Gravatar",
+    "PCNTL",
+    "SIGKILL",
+    "SIGTERM",
     "TOTP",
     "automagically",
     "deeplinks",
@@ -12,6 +15,7 @@
     "nohighlight",
     "publickey",
     "sendmail",
+    "signo",
     "signup",
     "smtp",
     "symfony",
