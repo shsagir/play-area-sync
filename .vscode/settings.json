@@ -1,13 +1,18 @@
 {
   "cSpell.words": [
     "DDOS",
+    "Gravatar",
+    "TOTP",
     "automagically",
     "deeplinks",
     "getcomposer",
     "hotfix",
+    "multitenancy",
     "navi",
+    "nohighlight",
     "publickey",
     "sendmail",
+    "signup",
     "smtp",
     "symfony",
     "webspace"

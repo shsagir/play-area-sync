@@ -48,10 +48,10 @@ Most classical hosting works like Twitter: You have a personal account and addit
 └─────────────────┘  └─────────────────┘ └────────────────┘
 ```
 
-| Account 😀          | [Company](/company) 🏢 | [App](/app)                            |
-| ------------------- | ---------------------- | --------------------------------------- |
-| represents a person | represents a company   | represents a web application or website |
-| is activly managing | is managed by Accounts | is managed by Accounts                  |
+| Account 😀           | [Company](/company) 🏢 | [App](/app)                            |
+| -------------------- | ---------------------- | --------------------------------------- |
+| represents a person  | represents a company   | represents a web application or website |
+| is actively managing | is managed by Accounts | is managed by Accounts                  |
 
 
 
