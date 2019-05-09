@@ -67,7 +67,7 @@ We provide an additional Component to store user uploads, static assets and any 
 
 #### Logs
 
-As a result of the horizontal scalable resources and the ephemeral storage, [logs can only be accessed live](logging-pro). If you need historic logs, we recommend [Logentries](logentries).
+As a result of the horizontal scalable resources and the ephemeral storage, [logs can only be accessed live](logging-pro).
 
 ### High availability
 
