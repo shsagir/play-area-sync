@@ -225,6 +225,13 @@ $ GIT_SSH_COMMAND="ssh -vvv" git pull fortrabbit master
 
 **Note**: The remote name `fortrabbit` might be `origin` or any other custom name you have chosen, or it might not be needed, so without `fortrabbit master`
 
+### Deployment lock error
+
+```
+!! Could not get lock on repository; probably deployment in progress.
+```
+
+Wait around 20 minutes when you see above message when deploying. That can happen when somebody else is deploying at the same time, a Git deployment was cancelled or there was a connection error during the deployment. That should not happen often, but can happen from time to time. As the error suggests, the fortrabbit deploy service makes sure that only one deployment is ongoing at a time. That will be cancelled after some time when not finished before successfully. Contact support, when the repository lock is not resolving or when that happens often or even all the time.
 
 ### Git client max connections
 
