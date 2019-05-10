@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-10-31
+reviewed:      2019-05-10
 naviTitle:     Git deployment
 title:         Deploy with Git on fortrabbit
 lead:          Learn how to get your code up and running with a simple git push.
@@ -37,7 +37,7 @@ $ echo '<?php echo "PHPower to the PHPeople";' >index.php
 
 # 4. Initialize Git locally
 $ git add index.php
-$ git commit -am 'Intial commit'
+$ git commit -am 'Initial commit'
 
 # 5. Set upstream and 1st push
 $ git push -u origin master
@@ -76,7 +76,7 @@ The reset operation is non-destructive, meaning: It does not generate a release.
 
 ### Git with a GUI or IDE
 
-You can also use a graphical interface like SourceTree, Tower, Gitbox and so on - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an IDE like PhpStorm or Eclipse to manage Git. You'll need these access credentials:
+You can also use a graphical interface like SourceTree, Tower and so on - see the [official list of Git GUIs](https://git-scm.com/downloads/guis) – or an IDE like PhpStorm or Eclipse to manage Git. You'll need these access credentials:
 
 * **SSH clone URL**: {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}
 * **SSH password**: {{ssh-password}}
