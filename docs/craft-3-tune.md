@@ -28,6 +28,14 @@ keywords:
 Make sure to have followed [our guides](/craft-3-about) so far. You should have already [installed Craft locally](craft-3-install-local), [configured](/craft-3-setup) and deployed it your fortrabbit App. This guide helps you with running, tuning and troubleshooting.
 
 
+## Domain setup
+
+Your fortrabbit App comes with a predefined App Name and an URL like https://{{appname}}.frb.io — which is good for testing. At some point you will very likely add your own domains. For general information on how to that here, please see our [domains article](/domains). For Craft make sure to have set your domains root path to "/web" folder. Craft CMS usually plays well with any domain, as long as you have used the "@web" prefix in your settings and templates. 
+
+### Domain license
+
+The Craft CMS license is limited to a single domain, which means you can only access the Craft CP with one domain - otherwise you'll see a warning. You can change the domain of a Craft licence as well when for instance you have started with our App URL but now want to use your own domain with your Craft ID — over at https://id.craftcms.com/.
+
 
 ## Multi-Environment configuration
 
