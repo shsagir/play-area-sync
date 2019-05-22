@@ -76,7 +76,8 @@ Associated backups will also get removed when an App is getting deleted. There i
 
 ## Backup excludes
 
-We do not store all files. Some files are excluded to save some space and for our sanity as well. Nobody needs temp files, or log files, also there is no reason to have local database backups backed up there (there are MySQL backups already). This is what is excluded.
+Some run-time and cache files, like a `storage` folder, are excluded from the file backups to save some space within the backups. For the same reason `*.mysql` files are excluded - we already provide MySQL backups without affecting performance while creating. Whole exclude list:
+
 
 ```
 # Craft 2
