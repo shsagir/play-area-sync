@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-04-14
+reviewed:      2019-05-22
 naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
@@ -73,3 +73,30 @@ Web storage backups are stored in an uncompressed `.tar` archive file. How to re
 ## Backups from deleted Apps
 
 Associated backups will also get removed when an App is getting deleted. There is a short delay of 2 days in which backups from already deleted Apps — only in case the previous App plan contained backups - can be supplied on request by fortrabbit.
+
+## Backup excludes
+
+We do not store all files. Some files are excluded to save some space and for our sanity as well. Nobody needs temp files, or log files, also there is no reason to have local database backups backed up there (there are MySQL backups already). This is what is excluded.
+
+```
+# Craft 2
+craft/storage/backups
+craft/storage/logs
+craft/storage/runtime
+
+# Craft 3
+storage/backups
+storage/logs
+storage/runtime
+web/cpresources
+
+# Laravel
+storage/framework
+storage/logs
+
+# Misc
+.git
+.idea
+*.sql
+```
+
