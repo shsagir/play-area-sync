@@ -2,7 +2,7 @@
 
 template:      article
 title:         "Quirks & constraints"
-reviewed:      2019-03-12
+reviewed:      2019-06-06
 naviTitle:     Quirks
 lead:          "Limits, restrictions, permissions — aren't there always some? Heads up so it doesn't cost you hours of researching in the wrong direction."
 stack:         all
@@ -20,11 +20,16 @@ Apps are lightweight containers optimized for speedy web delivery of PHP applica
 
 ## No root shell
 
-Professinal Apps only have [remote SSH execution](/remote-ssh-execution-pro). [Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. 
+Professinal Apps only have [remote SSH execution](/remote-ssh-execution-pro). [Universal Apps](/app-uni) are coming with a SSH environment, but that is not a root shell, it's "jailed". So you can use it for deployment and for common tasks around development. Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, Gulp, webpack, ruby, Rails a mailserver. 
 
-Therefore, it's NOT possible to install software like: FFmpeg, Node, NPM, jpegoptim, optipng, Gulp, webpack, ruby, Rails a mailserver. Sounds scary? Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video. Consider to use an alternative or a third party service.
+We do so for security and performance reasons. Embrace the idea of decoupled services, don't let your users wait, while your application is crunching a video or some images. Consider to use an alternative or a third party service.
 
 The Pro Stack has the [Worker Component](/worker-pro) to have CPU intensive long running tasks run in the background, but again only for software you can install via Composer.
+
+## Image optimization tools
+
+Tools like jpegoptim and optipng can additionally help to reduce file size of your images and are considered a best practice today. As much as we would like to make those tools available, we can't. They consume a lot of CPU time and memory. fortrabbit Apps are build for fast short running light processes, not heavy lifting. 
+
 
 ### wkhtmltopdf
 
