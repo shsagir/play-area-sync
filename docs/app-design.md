@@ -155,4 +155,4 @@ If your App runs fast with only a few visitors it doesn't mean it can handle the
 
 ## Security design
 
-Last not least: take care to integrate [security patterns](security) as well!
+Last not least: Take care to keep your App secure. Check our [security page](https://www.fortrabbit.com/security) with some best practices and duties.
