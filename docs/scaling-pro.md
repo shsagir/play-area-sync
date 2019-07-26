@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-04-27
+reviewed:      2019-07-26
 title:         Scaling
 naviTitle:     Scaling
 lead:          When and how to grow and shrink your Apps resources.
@@ -203,3 +203,15 @@ s
 **Worker memory** is a soft limit. When exceeding it, either nothing happens or you can see fatal errors or slower execution depending on whether memory exhaustion is caused by permanent usage or isolated events or accidental overlapping of time scheduled jobs.
 
 **Worker memory** is limited in the Dashboard. You can only add a s many jobs as included in the selected plan.
+
+
+
+## General scaling tips
+
+* Scaling between plans should only cause seconds or no downtime at all.
+* In unusual cases hanging "PHP processes" can extend downtime to minutes.
+* The actual execution of the scaling happens postponed. Usually a few minutes after booking the plan. 
+* Required scaling is very unique to your application.
+* Experiment with the settings that are working good for you.
+* Experimenting with scaling settings is not cost-intensive, thanks to daily billing.
+    ​
