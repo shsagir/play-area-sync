@@ -209,9 +209,8 @@ s
 ## General scaling tips
 
 * Scaling between plans should only cause seconds or no downtime at all.
-* In unusual cases hanging "PHP processes" can extend downtime to minutes.
+* In edge cases hanging "PHP processes" can extend downtime to minutes.
 * The actual execution of the scaling happens postponed. Usually a few minutes after booking the plan. 
 * Required scaling is very unique to your application.
-* Experiment with the settings that are working good for you.
-* Experimenting with scaling settings is not cost-intensive, thanks to daily billing.
-    ​
+* Experiment with the settings that are best working good for you.
+* Experimenting with scaling settings is not cost-intensive, thanks to [daily billing](/billing).
