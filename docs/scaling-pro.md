@@ -155,7 +155,7 @@ The Object Storage plans are limited by storage (not traffic). It will not scale
 
 ## Clean code saves money
 
-We are in this together. The smarter you code, the less resources you'll need. Or to put it in more dramatic words: bad code doesn't scale. So please don't miss our [application design and coding practices article](app-design).
+We are in this together. The smarter you code, the less resources you'll need. Or to put it in more dramatic words: bad code doesn't scale. So please don't miss our [application design and coding practices article](app-design). Also the [limits article](/limits) to understand what happens when your App is exceeding those.
 
 
 ## Advanced specifications
