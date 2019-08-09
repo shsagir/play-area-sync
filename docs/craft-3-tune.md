@@ -306,3 +306,8 @@ return [
 ### Large assets upload problems
 
 Most likely this is a setting within Craft CMS itself. The setting you are looking for is `maxuploadfilesize` and it's default is 16MB, please see the official [Craft Docs on that](https://docs.craftcms.com/api/v3/craft-config-generalconfig.html#property-maxuploadfilesize). This can also be caused by the `post_max_size`, `memory_limit`, `upload_max_filesize` or `max_execution_time` which you can set in the Dashboard, but by default those are OK. If that still doesn't help, check the [logs](/logging-uni) if you can find some meaningful errors.
+
+
+### Sending mail
+
+You can not use sendmail on fortrabbit - see our [quirks article](/quirks#toc-mailing). Craft CMS allows your to configure sending mail via SMTP. The mail configuration can be done in `project.yaml`. It includes options to set your SMTP host, port, and credentials. You can use environment variables there as well. It's also possible to do that configuration within the Craft control panel.
