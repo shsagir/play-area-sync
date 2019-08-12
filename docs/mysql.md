@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-05-12
+reviewed:      2019-08-12
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -205,6 +205,17 @@ $ mysql> LOAD DATA LOCAL INFILE '/path/to/tablename.sql' INTO TABLE tablename;
 ```
 
 **Note**: You will be asked to enter your App's database password. [Look it up in the Dashboard](https://dashboard.fortrabbit.com/apps/{{app-name}}#mysql).
+
+### Foreign keys
+
+In some cases — like when importing our [MySQL backups](/backups) — you might need to temporarily disable a foreign key constraint first, before importing the database. Just run this MySQL query, after connecting in to the database to import dato to before actually doing the import:
+
+```mysql
+SET FOREIGN_KEY_CHECKS=0;
+```
+
+In a GUI like Sequel Pro there is a query window to run it.
+
 
 ## Local MySQL
 
