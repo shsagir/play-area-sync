@@ -12,8 +12,6 @@ stack:        all
 keywords:
     - ci
     - continuous-integration
-    - 
-    
     - wrecker
     - travis
     - jenkins
