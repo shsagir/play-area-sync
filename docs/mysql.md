@@ -208,13 +208,13 @@ $ mysql> LOAD DATA LOCAL INFILE '/path/to/tablename.sql' INTO TABLE tablename;
 
 ### Foreign keys
 
-In some cases — like when importing our [MySQL backups](/backups) — you might need to temporarily disable a foreign key constraint first, before importing the database. Just run this MySQL query, after connecting in to the database to import dato to before actually doing the import:
+In some cases — like when importing our [MySQL backups](/backups) — you might need to temporarily disable foreign key constraints first, before importing the database. Just run this MySQL query, after connecting in to the database before actually doing the import:
 
 ```mysql
 SET FOREIGN_KEY_CHECKS=0;
 ```
 
-In a GUI like Sequel Pro there is a query window to run it.
+In a GUI like Sequel Pro there is a query window to run it. This value will then be reset to the default value when you close the connection.
 
 
 ## Local MySQL
