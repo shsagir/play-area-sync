@@ -136,7 +136,7 @@ There is one special case in which you can not leave a Company and that is when 
 
 Let's say a project phase has ended, so that an App Collaborator does not need have access any more. Who can can fire whom:
 
-* An Owner can remove Admins and App collaboratores
+* An Owner can remove Admins and App collaborators
 * An Admin can remove App collaborators
 * An App Collaborator can remove nobody
 * No one can remove an Owner
