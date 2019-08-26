@@ -103,7 +103,7 @@ Just like in real life the roles of Accounts inside a Company can change like so
 * Admins can promote App collaborators to become Admins
 * Owners can promote App collaborators to become Admins or Owners
 * Owners can promote Admins to become Owners
-* Owners can demote Admins to become App collaboratoes
+* Owners can demote Admins to become App collaborators
 
 Role changes have immediate effect, they do not require another confirmation by the affected Account.
 
