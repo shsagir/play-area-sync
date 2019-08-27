@@ -50,8 +50,9 @@ $ git init .
 # 2. Add your App's Git remote to your local repo
 $ git remote add fortrabbit {{ssh-user}}@deploy.{{region}}.frbit.com:{{app-name}}.git
 
-# 3. Download the fortrabbit Craft .gitignore file
-$ curl -O  https://raw.githubusercontent.com/fortrabbit/craft-starter/master/.gitignore
+# 3. Download a fortrabbit Craft .gitignore file
+$ curl -O  https://raw.githubusercontent.com/fortrabbit/craft-cms-gitignore/master/.gitignore
+# This exclude the assets folder from Git, manage uploads outside via ssh/rsync/sftp
 
 # 4. Add changes to Git
 $ git add -A
