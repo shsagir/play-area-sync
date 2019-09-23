@@ -153,7 +153,7 @@ Outgoing traffic is limited for [security](security) reasons — most ports for 
 
 In some cases you need to know your Apps IP address, like for payment processing or with fire-walling in corporate environments.
 
-For [Professional Apps](/app-pro) the outgoing IP is fix, for each region (EU: `52.50.42.152`, US: `52.72.32.63`), except for the deploy service. For [Universal Apps](/apps-uni) the IP is not guaranteed. Although with high probability, it won't change during the Apps lifetime. 
+For [Professional Apps](/app-pro) on a production level plan the outgoing IP is fix, for each region (EU: `52.50.42.152`, US: `52.72.32.63`), except for the deploy service. For [Universal Apps](/apps-uni) and for Pro Apps on development plans the IP is not guaranteed. Although with high probability, it won't change during the Apps lifetime. 
 
 You can setup a regular running "test", which queries https://ifconfig.co/ or the like to notify you on changes. Querying such a service from your App eg `<?php echo file_get_contents("https://ifconfig.co/");` is the easiest way to determine your Apps current IP. Depending on the use-case, it is possible to use a HTTP proxy provider like [QuoteGuard](https://www.quotaguard.com/) for a vanity IP address. There is also a [semi-official list of AWS IP ranges](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
 
