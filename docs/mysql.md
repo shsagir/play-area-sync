@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-08-12
+reviewed:      2019-09-28
 title:         All about MySQL
 naviTitle:     MySQL
 lead:          PHP + MySQL is a classic. Access & configure the common database on fortrabbit.
@@ -151,7 +151,7 @@ Using `mysqldump` and `mysql` is the standard approach to migrate a database bet
 $ mysqldump -u{{your-local-db-user}} -p{{your-local-db-password}} {{your-local-db-name}} > dump.sql
 ```
 
-Replace the placeholders with your local 
+Replace the placeholders with your local credentials. 
 
 Next, open a tunnel and import the just created dump file into your database. This requires two terminal windows: One containing the open tunnel, the other to execute the import. Do this on your **local machine**, please don't login via SSH before, run it locally:
 
