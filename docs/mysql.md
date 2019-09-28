@@ -291,5 +291,5 @@ The most common misunderstanding when trying to connect from a local machine, is
 
 You'll see a `max_user_connections` error when you've reached the max connection limit of your current MySQL plan. Most likely you are trying to connect to the database with a MySQL GUI, like Navicat, Workbench or Sequel Pro. Some those clients are "eating" MySQL connections like popcorn. With fortrabbit, the MySQL connections and the PHP processes are balanced and therefore kept on a low level, to force best practices and improve security. Once the connection are eaten up, it can take a little until the App recovers, auto-heals itself. There might be a setting with the client to limit the connections, or you'll try the command line tools as an alternative.
 
-If you see that error on other ocasions or it's not going away after a while, contact support.
+If you see that error on other occasions or it's not going away after a while, contact support.
 
