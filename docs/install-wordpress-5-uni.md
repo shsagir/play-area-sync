@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2018-12-10
+reviewed:         2019-09-30
 title:            Install WordPress 5
 naviTitle:        WordPress
 group:            Install_guides
@@ -15,7 +15,7 @@ websiteLink:      http://wordpress.org/?utm_source=fortrabbit
 websiteLinkText:  wordpress.org
 category:         CMS
 image:            wordpress-mark.png
-version:          5.0.2
+version:          5.2.3
 
 keywords:
     - wp-admin
