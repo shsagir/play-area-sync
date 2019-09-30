@@ -3,7 +3,7 @@
 template:      article
 naviTitle:     "Professional Stack"
 title:         "About the Professional Stack"
-reviewed:      2018-06-08
+reviewed:      2019-09-30
 lead:          'With each App you create, you can choose between two technology stacks. This article helps you to understand the Professional Stack.'
 group:         stacks
 stack:         pro
