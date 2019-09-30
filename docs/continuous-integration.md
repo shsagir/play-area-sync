@@ -1,13 +1,14 @@
 ---
 
-template:     article
-reviewed:     2017-12-20
-title:        Integrating CI with fortrabbit
-naviTitle:    Continuous Integration
-lead:         Automated testing, builds, special deploy scripts and other actions on fortrabbit.
-group:        deployment
-stack:        all
-
+template:         article
+reviewed:         2017-12-20
+title:            Integrating CI with fortrabbit
+naviTitle:        Continuous Integration
+lead:             Automated testing, builds, special deploy scripts and other actions on fortrabbit.
+group:            deployment
+stack:            all
+dontList:         true
+deprecated:       true
 
 keywords:
     - ci
