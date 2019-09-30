@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        mLab
-reviewed:         2017-12-20
+reviewed:         2019-09-30
 title:            Using mLab with fortrabbit
 group:            Databases
 section:          Extending_fortrabbit
@@ -48,7 +48,7 @@ Go to the [mLab sign up page](https://mlab.com/signup?utm_source=fortrabbit) and
 Once you are logged in click on the "Create new" button. In the next dialog, choose "amazon web services" as the "cloud provider". In the below "Location" chooser use the location fitting with the placement of your fortrabbit App:
 
 * Europe: Choose `Amazon's EU (Ireland) Region (us-west-1)`
-* USA: Choose `Amazon's US East (Virgina) Region (us-east-1)`
+* USA: Choose `Amazon's US East (Virginia) Region (us-east-1)`
 
 Now you need to decide which plan to choose. First mind that you can later on upgrade, so no need to panic if you do not exactly know what you are doing. As a guideline: If you are using fortrabbit redundant Production level plans, then you want to use mLab's "Replica set cluster", because they are redundant as well. If you just want to test things out, then choose the "Single-node Sandbox" plan, which is free.
 
