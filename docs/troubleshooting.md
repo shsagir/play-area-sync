@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2018-08-17
+reviewed:      2019-09-30
 title:         Troubleshooting index
 naviTitle:     troubleshooting
 excerpt:       Hanging somewhere? Something is not working? Check out the most common gotchas here.

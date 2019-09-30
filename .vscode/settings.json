@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
     "ANAME",
+    "Atlassian",
     "Bitbucket",
     "Blackfire",
     "CLIs",
@@ -21,6 +22,7 @@
     "TOTP",
     "automagically",
     "backend",
+    "barebone",
     "changeset",
     "craftcms",
     "deeplinks",
@@ -34,6 +36,7 @@
     "htaccess",
     "htpasswd",
     "innodb",
+    "interwebs",
     "inwantmyname",
     "keypair",
     "multitenancy",
@@ -43,6 +46,7 @@
     "nohighlight",
     "parallelize",
     "pcache",
+    "phpdotenv",
     "phpinfo",
     "phpmyadmin",
     "publickey",
