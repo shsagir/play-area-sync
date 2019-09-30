@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2017-12-20
+reviewed:      2019-09-30
 title:         Object Storage
 naviTitle:     Object Storage
 lead:          How to work with files that are not part of your code base.
@@ -213,7 +213,7 @@ Once you have uploaded some files, the ultimate goal is of course to serve them 
 
 * [{{app-name}}.objects.frb.io/README.md](https://{{app-name}}.objects.frb.io/README.md) < works when Object Storage is booked
 
-We recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS. Most framwork/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
+We recommend to use a secured connection via `HTTPS` but that it is not required. Notice that the Object Storage supports HTTP/2 when using HTTPS. Most framework/CMS integrations will already rewrite the URLs in your templates with the correct URLs.
 
 ### Log access
 
