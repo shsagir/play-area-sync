@@ -22,7 +22,7 @@ keywords:
     - multitenancy
     - tenant
     - client
-    - epmloyees
+    - employees
     - developer
     - collaborator
     - administrator

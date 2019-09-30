@@ -35,7 +35,7 @@ pre: my-script.php arg1 arg2 arg3
 # optional Composer settings
 composer:
 
-    # Per default dist is prefered
+    # Per default dist is preferred
     prefer-source: false
 
     # Resolves to the --no-dev parameter
