@@ -79,4 +79,4 @@ During initial development, everything is in Git, including content. This allows
 
 Once it's ready to handover to the client, the user-editable content get's pulled out of Git. Simply leave it on the App's file system so it can be edited from that point on via Grav admin and not overwritten by Git. The fortrabbit backups are helping to keep things stored safely. 
 
-The rest of Grav stays in Git. Theme, plugin or core Grav udgrades are first done in local dev environment, then committed, and deployed.
+The rest of Grav stays in Git. Theme, plugin or core Grav upgrades are first done in local dev environment, then committed, and deployed.
