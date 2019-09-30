@@ -10,7 +10,7 @@ group:            Install_guides
 websiteLink:      http://laravel.com?utm_source=fortrabbit
 websiteLinkText:  laravel.com
 category:         framework
-image:            laravel-mark.png
+image:            laravel-mark.svg
 version:          5.6
 stack:            uni
 proLink:          install-laravel-5-pro
