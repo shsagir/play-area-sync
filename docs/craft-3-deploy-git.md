@@ -11,7 +11,7 @@ stack:            all
 websiteLink:      https://craftcms.com/
 websiteLinkText:  craftcms.com
 category:         CMS
-image:            craft-cms-logo.png
+image:            craft-cms-mark.svg
 version:          3.3
 
 otherVersions:
