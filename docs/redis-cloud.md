@@ -8,6 +8,9 @@ group:            Databases
 section:          Extending_fortrabbit
 stack:            all
 
+dontList:         true
+deprecated:       true
+
 websiteLink:      https://redislabs.com/redis-cloud?utm_source=fortrabbit
 websiteLinkText:  redislabs.com/redis-cloud
 dataCenters:      US, EU
