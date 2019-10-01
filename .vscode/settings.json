@@ -9,6 +9,7 @@
     "Cyberduck",
     "DDOS",
     "Flysystem",
+    "Gmail",
     "Grav",
     "Gravatar",
     "IOPS",
@@ -41,6 +42,7 @@
     "innodb",
     "interwebs",
     "inwantmyname",
+    "jpegoptim",
     "keypair",
     "multitenancy",
     "mydomain",
@@ -48,6 +50,7 @@
     "navi",
     "nohighlight",
     "openssh",
+    "optipng",
     "parallelize",
     "pcache",
     "phpdotenv",
@@ -63,6 +66,7 @@
     "webhosting",
     "webspace",
     "whitescreen",
+    "wkhtmltopdf",
     "wordpress",
     "yourdomain"
   ]
