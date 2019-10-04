@@ -9,7 +9,8 @@ lead:             Slim is a PHP micro framework that helps you write simple web 
 group:            Install_guides
 stack:            all
 deprecated:       true
-dontlist:         true
+dontList:         true
+dontIndex:        true
 
 websiteLink:      http://www.slimframework.com/?utm_source=fortrabbit
 websiteLinkText:  slimframework.com
