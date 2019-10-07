@@ -40,7 +40,7 @@ When deploying with Git, you might wonder why some old files have not been delet
 
 ## I see a 403 error
 
-That can have multiple causes. One common reason is that the hidden `.htaccess` file is missing. See [here](/htaccess#toc-missing-htaccess).
+That can have multiple causes. One common reason is that the hidden `.htaccess` file is missing, see [here](/htaccess#toc-missing-htaccess). Another common issue is that you have forgotten to set a correct root path, see [here](https://help.fortrabbit.com/app#toc-root-path).
 
 
 ## I see a 404 error
