@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-05-21
+reviewed:         2019-10-14
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -218,10 +218,9 @@ Image uploads to Craft are usually getting processed by ImageMagick. [Some peopl
 
 Don't forget that this is only tuning — making images a little smaller. Also check out our [application design article](/app-design) on website performance best practices.
 
-## Cache & Session on the Professional Stack
+## Cache and sessions on the Professional Stack
 
-In multi node environments you can not rely on the file based cache or session storage. Instead you store this data in [Memcache](/memcache-pro), a key-value-storage which is accessible from all nodes.  
-With this little extension, no further configuration is required, you just need to pull it in to your `composer.json`:
+In multi Node environments you can not rely on the file based cache or session storage. Store this data in [Memcache](/memcache-pro), a key-value-storage which is accessible from all Nodes instead. We have a custom extension developed. With that no further configuration is required, you just need to pull it in to your `composer.json` like so:
 
 ```bash
 $ composer require fortrabbit/yii-memcached
