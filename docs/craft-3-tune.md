@@ -220,7 +220,7 @@ Don't forget that this is only tuning — making images a little smaller. Also c
 
 ## Cache and sessions on the Professional Stack
 
-In multi Node environments you can not rely on the file based cache or session storage. Store this data in [Memcache](/memcache-pro), a key-value-storage which is accessible from all Nodes instead. We have a custom extension developed. With that no further configuration is required, you just need to pull it in to your `composer.json` like so:
+In multi Node environments - see [terminology](/terminology) - you can not rely on the file based cache or session storage. Store this data in Memcache a key-value-storage which is accessible from all Nodes instead - also see [Memcache article](/memcache-pro). We have a custom extension developed. With that no further configuration is required, you just need to pull it in to your `composer.json` like so:
 
 ```bash
 $ composer require fortrabbit/yii-memcached
