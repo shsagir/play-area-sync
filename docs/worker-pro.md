@@ -1,7 +1,7 @@
 ---
 
 template:     article
-reviewed:     2019-08-20
+reviewed:     2019-10-28
 title:        Worker
 naviTitle:    Worker
 lead:         Offshore long running and compute intensive tasks with background jobs — that's what the Worker Component is for.
@@ -53,6 +53,7 @@ The memory limit is for all jobs combined. For *Worker L* plans and above, there
 
 * See the [specs page](http://www.fortrabbit.com/specs#worker) for limits.
 
+Please mind that the Worker Component is not available for Apps in trail mode.
 
 ## Using the Worker
 
