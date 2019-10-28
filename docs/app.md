@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-03-29
+reviewed:      2019-10-28
 naviTitle:     About Apps
 title:         What is an App?
 lead:          Forget servers. Think services instead. Learn the basic fortrabbit concepts.
@@ -249,7 +249,7 @@ Find the "Create an App" on the Dashboard home. When asked for the plan, you can
 
 ### Trial limits
 
-The trial App scaling specs are matching a small preset, always enough to get started. The trial is NOT a forever-free tier. An urgent limitation is, that the trial has a limited lifetime:
+The trial App scaling specs are matching a small preset, always enough to get started. For the Pro Stack not all Components are enabled. The trial is NOT a forever-free tier. An urgent limitation is, that the trial has a limited lifetime. 
 
 ### Extending the trial
 
