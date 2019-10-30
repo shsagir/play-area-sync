@@ -29,6 +29,11 @@ keywords:
 ---
 
 
+## Please note
+
+**Craft 2 is deprecated.** Better not use it any more. It's end of life was/will be January 2020. See more details on the [official Craft CMS page](https://craftcms.com/guides/craft-cms-2-and-craft-commerce-1-end-of-life-information). We do have an [upgrade guide](/craft-2-3-upgrade).
+
+
 ## Get ready
 
 We assume you've already created an [App](app) with fortrabbit. You should also have a [PHP development environment](/local-development) running on your local machine.
