@@ -1,7 +1,7 @@
 ---
 
 template:   article
-reviewed:   2019-09-30
+reviewed:   2019-10-30
 title:      Using environment variables in PHP and on fortrabbit
 naviTitle:  Environment variables
 lead:       ENV vars help to create and shape the environment of where the code runs. It's a good modern practice.
@@ -201,6 +201,36 @@ php -r "echo base64_encode('YOUR-M$Pa#A-VALUEx') . PHP_EOL;"
 
 And [this example](https://github.com/laravel/ideas/issues/416#issuecomment-280436034) should give you an idea how you can do the decoding.
 
+
+
+## Reserved environment variable names
+
+```
+There are some names you can not use here:
+
+- APP_NAME
+- DOCUMENT_ROOT
+- FCGI_ROLE
+- GATEWAY_INTERFACE
+- GROUP
+- HOME
+- PATH
+- PS1
+- QUERY_STRING
+- SESSION
+- USER
+
+Also names cannot begin with:
+
+- HTTP_
+- PHP_
+- REDIRECT_
+- REMOTE_
+- REQUEST_
+- SCRIPT_
+- SERVER_
+- LC_
+```
 
 <!--
 
