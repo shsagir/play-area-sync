@@ -1,7 +1,7 @@
 ---
 
 template:         article
-reviewed:         2019-10-14
+reviewed:         2019-10-31
 title:            Tune Craft CMS
 naviTitle:        Tune Craft
 lead:             Tips, tricks, best practices and advanced topics on how to run Craft CMS successfully on fortrabbit.
@@ -30,9 +30,10 @@ Make sure to have followed [our guides](/craft-3-about) so far. You should have 
 
 ## Domain setup
 
-Your fortrabbit App comes with a predefined App Name and an URL like https://{{appname}}.frb.io — which is good for testing. At some point you will very likely add your own domains. For general information on how to that here, please see our [domains article](/domains). For Craft make sure to have set your domains root path to "/web" folder. Craft CMS usually plays well with any domain, as long as you have used the "@web" prefix in your settings and templates. 
+Your fortrabbit App comes with a predefined App Name and an URL like `{{appname}}.frb.io` — which is good for testing. At some point you will very likely add your own domains. For general information on how to that here, please see our [domains article](/domains). For Craft make sure to have set your domains root path to "/web" folder. Craft CMS usually plays well with any domain, as long as you have used the "@web" prefix in your settings and templates. 
 
 You can also add multiple domains. From the fortrabbit side, just point them to the Apps root path, configure routing and display of contents withing Craft CMS and/or use additional [htaccess rules](/htaccess).
+
 
 ### Domain license
 
@@ -51,6 +52,7 @@ We assume fortrabbit to be your production environment, so the `ENVIRONMENT` ENV
 # Local environment ENV setting
 ENVIRONMENT=dev
 ```
+
 
 ### Craft config example
 
@@ -238,6 +240,10 @@ Craft CMS comes with a [predefined `.htaccess` file](https://github.com/craftcms
 
 
 ## Troubleshooting
+
+### You see a Max Execution Time warning
+
+The Craft CMS Control Panel has a system report that will check for technical requirements. Our default setting for `max_execution_time` is 60 seconds. The Control Panel will complain that: "Craft requires a minimum PHP max execution time of 120 seconds. The max_execution_time directive in php.ini is currently set to 60." We believe that Pixel and Tonic is wrong about this and we are asking them to change their mind. We think: Long execution times will make your App slow. Nothing should take longer than a second, actually. Please see our [App design article](/app-design#toc-reduce-the-max-execution-time) for more details on the matter.
 
 ### You see a "Service Unavailable" or 5xx message
 
