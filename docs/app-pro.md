@@ -77,7 +77,7 @@ Most plans are available as Development and Production. All Production plans, an
 
 Universal Apps offer a synchronization Git deployment mode: the Git repo contents gets rsynced file by file. Per default this is non-destructive, new files will be created and changes files will overwrite existing files, but no files will be deleted (overwrite but not delete).
 
-The Professional Apps deployment is [atomic](http://blog.fortrabbit.com/new-apps-are-here). That means that a completely new release package will substitute the old one on every deploy. We have made a [behind the scenes video](deployment-architecture-video) showcasing what is happening in the background. The atomic deployment also features a more robust build process: your code will only be released if all scripts (composer install, optional pre- and post-deploy scripts) succeed.
+The Professional Apps deployment is atomic. That means that a completely new release package will substitute the old one on every deploy. We have made a [behind the scenes video](deployment-architecture-video) showcasing what is happening in the background. The atomic deployment also features a more robust build process: your code will only be released if all scripts (composer install, optional pre- and post-deploy scripts) succeed.
 
 
 ### Network security
