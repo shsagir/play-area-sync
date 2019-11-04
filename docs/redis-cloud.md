@@ -78,6 +78,7 @@ Login to the fortrabbit Dashboard, navigate to your App > Settings > Firewall wh
 ### 2. Enable the PHP extension
 
 While you are logged in the Dashboard, navigate to your App > Settings > PHP and enable the `redis` extension.
+Some options can be passed while creating a connection to redis, through the php redis extension. As [advised in the official documentation](https://github.com/phpredis/phpredis#php-session-handler<Paste>), you should prefer using a persistent connection by adding a `persistent` option set to `1`.
 
 
 ## Using Redis Cloud
