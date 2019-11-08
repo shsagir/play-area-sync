@@ -89,7 +89,7 @@ For specific integrations check out the [install guides](/#install-guides) and f
 
 ## Session handler
 
-If you don't use a framework, configure session.save_handler and session.save_path in your php.ini to tell phpredis where to store the sessions:
+If you don't use a framework, configure session.save_handler and session.save_path in your php.ini to tell phpredis where to store the sessions. Make sure to do it very early in your application, before accessing session data.
 
 ```php
 // Read the secrects you've set in the Dashboard
@@ -98,7 +98,7 @@ $host    = $secrets['CUSTOM']['REDIS_HOST'];
 $port    = $secrets['CUSTOM']['REDIS_PORT'];
 $auth    = $secrets['CUSTOM']['REDIS_PASSWORD'];
 
-// change the session handler
+// Change the session handler
 ini_set('session.save_handler', 'redis');
 ini_set("session.save_path", "tcp://{$host}:{$port}?persistent=1&timeout=2&auth={$auth}"); 
 ```
