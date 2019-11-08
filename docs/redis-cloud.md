@@ -75,12 +75,30 @@ By default all outgoing calls to non-standard ports from your fortrabbit App are
 
 Login to the fortrabbit Dashboard, navigate to your App > Settings > Firewall whitelist and request a custom firewall rule. Write nothing under the optional IP field and insert the port you got from Redis Labs in the Port field. As descriptions we suggest "Redis Labs" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new Redis database!
 
-### 2. Enable the PHP extension
+### 2. Enable the PHP (phpredis) extension
 
 While you are logged in the Dashboard, navigate to your App > Settings > PHP and enable the `redis` extension.
-Some options can be passed while creating a connection to redis, through the php redis extension. As [advised in the official documentation](https://github.com/phpredis/phpredis#php-session-handler), you should prefer using a persistent connection by adding a `persistent` option set to `1`.
 
 
-## Using Redis Labs
+## Using Redis in your application
 
-Redis is supported by many PHP frameworks and CMS out of the box. The first thing you should do is add your redis credentials into your App's secrets. For specific integrations check out the [install guides](/#install-guides) and find out how to use it with your favorite framework or CMS.
+
+Redis is supported by many PHP frameworks and CMS out of the box. 
+
+For specific integrations check out the [install guides](/#install-guides) and find out how to use it with your favorite framework or CMS. We recommend using persistent connections. Most adapters are configurable with a setting like `persistent: 1`.
+
+## Session handler
+
+If you don't use a framework, configure session.save_handler and session.save_path in your php.ini to tell phpredis where to store the sessions:
+
+```php
+// Read the secrects you've set in the Dashboard
+$secrets = json_decode(file_get_contents($_SERVER["APP_SECRETS"]), true);
+$host    = $secrets['CUSTOM']['REDIS_HOST'];
+$port    = $secrets['CUSTOM']['REDIS_PORT'];
+$auth    = $secrets['CUSTOM']['REDIS_PASSWORD'];
+
+// change the session handler
+ini_set('session.save_handler', 'redis');
+ini_set("session.save_path", "tcp://{$host}:{$port}?persistent=1&timeout=2&auth={$auth}"); 
+```
