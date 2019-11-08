@@ -1,18 +1,18 @@
 ---
 
 template:         article
-naviTitle:        Redis Cloud
-reviewed:         2017-12-20
-title:            Using Redis Cloud with fortrabbit
+naviTitle:        Redis Labs
+reviewed:         2010-11-08
+title:            Using Redis Labs with fortrabbit
 group:            Databases
 section:          Extending_fortrabbit
 stack:            all
 
 dontList:         true
-deprecated:       true
+deprecated:       false
 
-websiteLink:      https://redislabs.com/redis-cloud?utm_source=fortrabbit
-websiteLinkText:  redislabs.com/redis-cloud
+websiteLink:      https://redislabs.com/
+websiteLinkText:  redislabs.com
 dataCenters:      US, EU
 image:            redis-cloud-logo.png
 
@@ -20,7 +20,7 @@ image:            redis-cloud-logo.png
 
 ## About Redis
 
-Redis is an open-source in-memory key-value storage software. Redis is newer and sexier than [Memcache](memcache-pro).
+Redis is an open source, in-memory data structure store, used as a database, cache or queue message broker.
 
 ## About Redis Cloud
 
@@ -29,7 +29,7 @@ Redis Labs is a popular hosted Redis provider. They also support the open-source
 
 ## Pricing
 
-It starts with a free plan which you can scale vertically by size (amount of available memory) and horizontally (going high available with multi-az). See the [Redis Cloud pricing page](https://redislabs.com/pricing?utm_source=fortrabbit).
+It starts with a free plan which you can scale vertically by size (amount of available memory) and horizontally (going high available with multi-az). See the [Redis Cloud pricing page](https://redislabs.com/redis-enterprise-cloud/essentials-pricing/).
 
 
 
@@ -73,14 +73,14 @@ Now you can use Redis Cloud in general. To use Redis Cloud from your fortrabbit 
 
 By default all outgoing calls to non-standard ports from your fortrabbit App are blocked for [security](security) reasons. But you can request the fortrabbit team to open up any port for you. That doesn't take long and isn't complicated.
 
-Login to the fortrabbit Dashboard, navigate to your App > Settings > Firewall whitelist and request a custom firewall rule. Write nothing under the optional IP field and insert the port you got from Redis Labs in the Port field. As descriptions we suggest "Redis Cloud on Redis Labs" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new Redis database!
+Login to the fortrabbit Dashboard, navigate to your App > Settings > Firewall whitelist and request a custom firewall rule. Write nothing under the optional IP field and insert the port you got from Redis Labs in the Port field. As descriptions we suggest "Redis Labs" or the like. Once your request has been approved, which usually takes not very long, you are ready to use your new Redis database!
 
 ### 2. Enable the PHP extension
 
 While you are logged in the Dashboard, navigate to your App > Settings > PHP and enable the `redis` extension.
-Some options can be passed while creating a connection to redis, through the php redis extension. As [advised in the official documentation](https://github.com/phpredis/phpredis#php-session-handler<Paste>), you should prefer using a persistent connection by adding a `persistent` option set to `1`.
+Some options can be passed while creating a connection to redis, through the php redis extension. As [advised in the official documentation](https://github.com/phpredis/phpredis#php-session-handler), you should prefer using a persistent connection by adding a `persistent` option set to `1`.
 
 
-## Using Redis Cloud
+## Using Redis Labs
 
 Redis is supported by many PHP frameworks and CMS out of the box. The first thing you should do is add your redis credentials into your App's secrets. For specific integrations check out the [install guides](/#install-guides) and find out how to use it with your favorite framework or CMS.
