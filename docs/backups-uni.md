@@ -1,7 +1,7 @@
 ---
 
 template:      article
-reviewed:      2019-05-22
+reviewed:      2019-11-10
 naviTitle:     Backups
 title:         Working with fortrabbit backups
 excerpt:       Download web storage and MySQL database backups
@@ -68,6 +68,11 @@ Web storage backups are stored in an uncompressed `.tar` archive file. How to re
 **Recover a single or a couple of files**: Just download the web storage backup file, unpack it locally, copy the files you want to recover manually to back to your App.
 
 **Recover everything**: After downloading and unpacking the web storage `.tar` archive locally, you need to remove all files from your current App, then upload the previously unpacked archive again.
+
+
+## Environment variables and App secrets
+
+Please mind that [environment variables](/env-vars) and [App secrets](/secrets) will not be backed up.
 
 
 ## Backups from deleted Apps
