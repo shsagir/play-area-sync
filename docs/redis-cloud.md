@@ -2,7 +2,7 @@
 
 template:         article
 naviTitle:        Redis Labs
-reviewed:         2010-11-08
+reviewed:         2019-11-11
 title:            Using Redis Labs with fortrabbit
 group:            Databases
 section:          Extending_fortrabbit
@@ -22,14 +22,14 @@ image:            redis-cloud-logo.png
 
 Redis is an open source, in-memory data structure store, used as a database, cache or queue message broker.
 
-## About Redis Cloud
+## About Redis Labs
 
 Redis Labs is a popular hosted Redis provider. They also support the open-source project. Redis Labs offer a public cloud model: it's called "Redis Cloud" and brings "Fully-Managed Redis-as-a-Service".
 
 
 ## Pricing
 
-It starts with a free plan which you can scale vertically by size (amount of available memory) and horizontally (going high available with multi-az). See the [Redis Cloud pricing page](https://redislabs.com/redis-enterprise-cloud/essentials-pricing/).
+It starts with a free plan which you can scale vertically by size (amount of available memory) and horizontally (going high available with multi-az). See the [Redis Labs pricing page](https://redislabs.com/redis-enterprise-cloud/essentials-pricing/).
 
 
 
