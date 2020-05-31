@@ -1,7 +1,7 @@
 ---
 
 template:      video
-reviewed:      2020-05-27
+reviewed:      2020-05-31
 naviTitle:     App architecture video
 title:         Video: App architecture
 videoid:       SKMaiJhoPJw
@@ -23,4 +23,4 @@ Add sentence. And another. And yet another. And again. Oy again. And again.
 
 Add sentence. And another. And yet another. And again. Oy again. And again.
 
-Add sentence.
+Add sentence. And another.
